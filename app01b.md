@@ -1,3 +1,25 @@
+<head>
+  <meta charset="utf-8">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [["\\(","\\)"]],
+      displayMath: [["\\[","\\]"]],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <title>Section 2.4 - The Art of Computer Programming: Volume 1 / Fundamental Algorithms, Third Edition</title>
+  <link href="../Styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+
 <div class="heading">
 
 #### Section 2.3.1 {#app01lev2sec23}
