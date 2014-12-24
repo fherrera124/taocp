@@ -38,9 +38,9 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_5" id="ch01ex_2_13_5a">5</a>. Each <code>OUT</code> waits for the previous printer operation to finish (from the other buffer).</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_6" id="ch01ex_2_13_6a">6</a>. (a) If <em>n</em> is not prime, by definition <em>n</em> has a divisor <em>d</em> with $1\lt d\lt n$. If <span class="middle"><img src="../Images/e511_01.gif"></span>, then $n/d$ is a divisor with <span class="middle"><img src="../Images/e511_02.gif"></span>. (b) If <code>N</code> is not prime, <code>N</code> has a <em>prime</em> divisor <em>d</em> with <span class="middle"><img src="../Images/e511_03.gif"></span>. The algorithm has verified that <code>N</code> has no prime divisors $≤ p=\tt PRIME[K]$; also ${\tt N}=p{\tt Q}+{\tt R}\lt p{\tt Q}+p≤p^{2}+p\lt (p+1)^{2}$. Any prime divisor of <code>N</code> is therefore greater than <span class="middle"><img src="../Images/e511_04.gif"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_6" id="ch01ex_2_13_6a">6</a>. (a) If <em>n</em> is not prime, by definition <em>n</em> has a divisor <em>d</em> with $1\lt d\lt n$. If $d\gt\sqrt{n}$, then $n/d$ is a divisor with $1\lt{n/d}\lt\sqrt{n}$. (b) If <code>N</code> is not prime, <code>N</code> has a <em>prime</em> divisor <em>d</em> with $1\lt{d}\le\sqrt{\tt N}$. The algorithm has verified that <code>N</code> has no prime divisors $≤ p=\tt PRIME[K]$; also ${\tt N}=p{\tt Q}+{\tt R}\lt p{\tt Q}+p≤p^{2}+p\lt (p+1)^{2}$. Any prime divisor of <code>N</code> is therefore greater than $p+1\gt\sqrt{\tt N}$.</p>
 
-  <p class="indent"><a id="page_512"></a>We must also prove that there will be a sufficiently large prime less than <code>N</code> when <code>N</code> is prime, namely that the (<em>k</em> + 1)st prime $p_{k+1}$ is less than <span class="middle"><img src="../Images/e512_01.gif"></span> otherwise <code>K</code> would exceed <code>J</code> and <code>PRIME[K]</code> would be zero when we needed it to be large. The necessary proof follows from “Bertrand’s postulate”: If <em>p</em> is prime there is a larger prime less than 2<em>p</em>.</p>
+  <p class="indent"><a id="page_512"></a>We must also prove that there will be a sufficiently large prime less than <code>N</code> when <code>N</code> is prime, namely that the $(k+1)$st prime $p_{k+1}$ is less than $p_{k}^{2}+p_{k}$ otherwise <code>K</code> would exceed <code>J</code> and $\tt PRIME[K]$ would be zero when we needed it to be large. The necessary proof follows from “Bertrand’s postulate”: If <em>p</em> is prime there is a larger prime less than 2<em>p</em>.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_7" id="ch01ex_2_13_7a">7</a>. (a) It refers to the location of line 29. (b) The program would then fail; line 14 would refer to line 15 instead of line 25; line 24 would refer to line 15 instead of line 12.</p>
 
@@ -80,7 +80,7 @@
 
   <p class="exercisesp">In our case this is <span class="middle"><img src="../Images/e515_01a.gif"></span>, only one chance in 1430. (b) Under the second assumption, an entirely different method must be used. The probability equals the probability that there is a saddle point with value zero plus the probability that there is a saddle point with value one. The former is the probability that there is at least one column of zeros; the latter is the probability that there is at least one row of ones. The answer is $(1-(1-2^{-m})^{n})+(1-(1-2^{-n})^{m})$; in our case it comes to $924744796234036231/18446744073709551616$, about 1 in $19.9$. An approximate answer is $n2^{-m}+m2^{-n}$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_12" id="ch01ex_2_13_12a">12</a>. M. Hofri and P. Jacquet [<em>Algorithmica</em> <strong>22</strong> (1998), 516–528] have analyzed the case when the $m\times n$ matrix entries are distinct and in random order. The running times of the two <code>MIX</code> programs are then respectively <span class="middle"><img src="../Images/e515_02.gif"></span> and $(5mn+2nH_{m}+7m+7n+9H_{n})u+O(1/n)+O((\log n)^{2}/m)$, as $m→∞$ and $n→∞$, assuming that $(\log n)/m→0$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_12" id="ch01ex_2_13_12a">12</a>. M. Hofri and P. Jacquet [<em>Algorithmica</em> <strong>22</strong> (1998), 516–528] have analyzed the case when the $m\times n$ matrix entries are distinct and in random order. The running times of the two <code>MIX</code> programs are then respectively $(6mn+5mH_{n}+8m+6+5(m+1)/(n-1))u+O\left((m+n)^{2}/{\small \binom{m+n}{m}}\right)$ and $(5mn+2nH_{m}+7m+7n+9H_{n})u+O(1/n)+O((\log n)^{2}/m)$, as $m→∞$ and $n→∞$, assuming that $(\log n)/m→0$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_13" id="ch01ex_2_13_13a">13</a>.</p>
 
@@ -106,7 +106,7 @@
 
   <p class="indent">Incidentally, T. H. O’Beirne pointed out that the date of Easter repeats with a period of exactly 5,700,000 years. Calculations by Robert Hill show that the most common date is April 19 (220400 times per period), while the earliest and least common is March 22 (27550 times); the latest, and next-to-least common, is April 25 (42000 times). Hill found a nice explanation for the curious fact that the number of times any particular day occurs in the period is always a multiple of 25.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_16" id="ch01ex_2_13_16a">16</a>. Work with scaled numbers, $R_{n}=10^{n}r_{n}$. Then $R_{n} (1/m)=R$ if and only if <span class="middle"><img src="../Images/e518_01.gif"></span>; thus we find $m_{h}=\lfloor 2 · 10^{n}/(2R-1)\rfloor$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_16" id="ch01ex_2_13_16a">16</a>. Work with scaled numbers, $R_{n}=10^{n}r_{n}$. Then $R_{n} (1/m)=R$ if and only if $10^{n}/\left(R+\frac12\right)\lt{m}\le10^{n}/\left(R-\frac12\right)$; thus we find $m_{h}=\left\lfloor 2·10^{n}/(2R-1)\right\rfloor$.</p>
 
   <div class="image"><img src="../Images/518pro01.gif"></div>
 
@@ -116,9 +116,9 @@
 
   <p class="center"><code>0006.16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0008.449&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0010.7509&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0013.05363</code></p>
 
-  <p class="exercisesp">in 65595<em>u</em> plus output time. (It would be faster to calculate $R_{n} (1/m)$ directly when <span class="middle"><img src="../Images/e519_01.gif"></span>, and then to apply the suggested procedure.)</p>
+  <p class="exercisesp">in 65595<em>u</em> plus output time. (It would be faster to calculate $R_{n} (1/m)$ directly when $m\lt{10^{n/2}\sqrt{2}}$, and then to apply the suggested procedure.)</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then <span class="middle"><img src="../Images/e519_02.gif"></span> if we sum by parts and set $m ≈ 10^{n/2}$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then $S_{n}=H_{N}+O(N/10^{n})+\sum_{k=1}^{m}(\lfloor2·10^{n}/(2k-1)\rfloor-\lfloor2·10^{n}/(2k+1)\rfloor)k/10^{n}=$ $H_{N}+O(m^{-1})+O(m/10^{n})-1+2H_{2m}-H_{m}=$ $n\ln{10}+2\gamma-1+2\ln{2}+O(10^{-n/2})$ if we sum by parts and set $m ≈ 10^{n/2}$.</p>
 
   <p class="indent">Incidentally, the next several values are $S_{6}=15.356262$, $S_{7}=17.6588276$, $S_{8}=19.96140690$, $S_{9}=22.263991779$, and $S_{10}=24.5665766353$; our approximation to $S_{10}$ is $≈ 24.566576621$, which is closer than predicted.</p>
 
@@ -152,7 +152,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_2" id="ch01ex_2_14_2a">2</a>. $a↔c$, $c↔f$; $b↔d$. The generalization to arbitrary permutations is clear.</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_3" id="ch01ex_2_14_3a">3</a>. <span class="middle"><img src="../Images/e522_01.gif"></span>.</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_3" id="ch01ex_2_14_3a">3</a>. $\left(\matrix{a&amp;b&amp;c&amp;d&amp;e&amp;f\\d&amp;b&amp;f&amp;c&amp;a&amp;e}\right)$.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_4" id="ch01ex_2_14_4a">4</a>. $(a\;d\;c\;f\;e)$.</p>
 
@@ -220,7 +220,7 @@
 
   <div class="image"><img src="../Images/e525_01.gif"></div>
 
-  <p class="exercisesp">The desired answer is <span class="middle"><img src="../Images/e525_02.gif"></span>.</p>
+  <p class="exercisesp">The desired answer is $\frac12{H_{\lfloor{n/2}\rfloor}}$.</p>
 
   <p class="indent">(e) Set $φ(α_{1},α_{2},\ldots)=z^{α_{m}}$, and observe that the average value of <em>φ</em> is</p>
 
@@ -266,13 +266,13 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_29" id="ch01ex_2_14_29a">29</a>. When passing over a man, assign him a new number (starting with <em>n</em> + 1). Then the <em>k</em>th man executed is number 2<em>k</em>, and man number <em>j</em> for <em>j</em> &gt; <em>n</em> was previously number $(2j)\bmod (2n+1)$. Incidentally, the original number of the <em>k</em>th man executed is $2n+1-(2n+1-2k)2^{\lfloor\lg(2n/(2n+1-2k))\rfloor}$. [Armin Shams, <em>Proc. Nat. Computer Conf. 2002</em>, English papers section, <strong>2</strong> (Mashhad, Iran: Ferdowsi University, 2002), 29–33.]</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_31" id="ch01ex_2_14_31a">31</a>. See <em>CMath</em>, Section 3.3. Let $x_{0}=jm$ and $x_{i+1}=(m(x_{i}-n)-d_{i})/(m-1)$, where $1≤d_{i}\lt m$. Then $x_{k}=j$ if and only if $a_{k}j=b_{k}n+t_{k}$, where $a_{k}=m^{k+1}-(m-1)^{k}$, $b_{k}=m(m^{k}-(m-1)^{k})$, and <span class="middle"><img src="../Images/e526_02.gif"></span>. Since $a_{k}⊥b_{k}$ and the $(m-1)^{k}$ possibilities for $t_{k}$ are distinct, the average number of <em>k</em>-step fixed elements is $(m-1)^{k}/a_{k}$.</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_31" id="ch01ex_2_14_31a">31</a>. See <em>CMath</em>, Section 3.3. Let $x_{0}=jm$ and $x_{i+1}=(m(x_{i}-n)-d_{i})/(m-1)$, where $1≤d_{i}\lt m$. Then $x_{k}=j$ if and only if $a_{k}j=b_{k}n+t_{k}$, where $a_{k}=m^{k+1}-(m-1)^{k}$, $b_{k}=m(m^{k}-(m-1)^{k})$, and $t_{k}=\sum_{i=0}^{k-1}m^{k-1-i}(m-1)^{i}d_{i}$. Since $a_{k}⊥b_{k}$ and the $(m-1)^{k}$ possibilities for $t_{k}$ are distinct, the average number of <em>k</em>-step fixed elements is $(m-1)^{k}/a_{k}$.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_32" id="ch01ex_2_14_32a">32</a>. (a) In fact, $k-1≤π_{k}≤k+2$ when <em>k</em> is even; $k-2≤π_{k}≤k+1$ when <em>k</em> is odd. (b) Choose the exponents from left to right, setting $e_{k}=1$ if and only if <em>k</em> and <em>k</em> + 1 are in different cycles of the permutation so far. [Steven Alpern, <em>J. Combinatorial Theory</em> <strong>B25</strong> (1978), 62–73.]</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_33" id="ch01ex_2_14_33a">33</a>. For <em>l</em> = 0, let $(α_{01},α_{02}; β_{01},β_{02})=(π,ρ;\epsilon,\epsilon)$ and $(α_{11},α_{12}; β_{11},β_{12})=(\epsilon,\epsilon; π,ρ)$, where $π=(1\;4)(2\;3)$, $ρ=(1\;5)(2\;4)$, and $\epsilon=()$.</p>
 
-  <p class="indent">Suppose we have made such a construction for some <em>l</em> ≥ 0, where <span class="middle"><img src="../Images/e526_02a.gif"></span> for 0 ≤ <em>j</em> &lt; <em>m</em> and 1 ≤ <em>k</em> ≤ <em>n</em>. Then the permutations</p>
+  <p class="indent">Suppose we have made such a construction for some <em>l</em> ≥ 0, where $\alpha_{jk}^{2}=\beta_{jk}^{2}=()$ for 0 ≤ <em>j</em> &lt; <em>m</em> and 1 ≤ <em>k</em> ≤ <em>n</em>. Then the permutations</p>
 
   <div class="image"><img src="../Images/p526_02.gif"></div>
 
@@ -286,7 +286,7 @@
 
   <div class="image"><img src="../Images/e526_04.gif"></div>
 
-  <p class="exercisesp">for $0≤i,j\lt m=2^{2^{l}}$ when $n=6^{l+1}-4^{l+1}$.</p>
+  <p class="exercisesp">for $0≤i,j\lt m=2^{\large 2^{l}}$ when $n=6^{l+1}-4^{l+1}$.</p>
 
   <p><a id="page_527"></a><a href="../Text/ch01c.html#ch01ex_2_14_34" id="ch01ex_2_14_34a">34</a>. Let $N=m+n$. If $m⊥n$ there is only one cycle, because every element can be written in the form $am mod N$ for some integer <em>a</em>. And in general if $d=\gcd(m,n)$, there are exactly <em>d</em> cycles $C_{0},C_{1},\ldots,C_{d-1}$, where $C_{j}$ contains the elements $\{j,j+d,\ldots,j+N-d\}$ in some order. To carry out the permutation, we can therefore proceed as follows for 0 ≤ <em>j</em> &lt; <em>d</em> (in parallel, if convenient): Set $t←x_{j}$ and $k←j$; then while $(k+m)\bmod N≠j$, set $x_{k}←x_{(k+m)\bmod N}$ and $k←(k+m)\bmod N$; finally set $x_{k}←t$. In this algorithm the relation $(k+m)\bmod N≠j$ will hold if and only if $(k+m)\bmod N≥d$, so we can use whichever test is more efficient. [W. Fletcher and R. Silver, <em>CACM</em> <strong>9</strong> (1966), 326.]</p>
 
@@ -325,7 +325,7 @@
 
   <div class="imageL"><img src="../Images/p0528_02.gif"></div>
 
-  <p class="exercisesp">The code is like (<a href="../Text/ch01b.html#ch01eq-lev2sec14-1">1</a>), but the first instruction becomes ‘$\tt MAX100\;STA\;EXIT(0:2)$’.</p>
+  <p class="exercisesp">The code is like (<a href="../Text/ch01b.html#ch01eq-lev2sec14-1">1</a>), but the first instruction becomes ‘$\tt MAX100\;STA\;EXIT(0\colon2)$’.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_6" id="ch01ex_2_15_6a">6</a>. (Solution by Joel Goldberg and Roger M. Aarons.)</p>
 
@@ -358,7 +358,7 @@
 
   <div class="image"><img src="../Images/529pro03.gif"></div>
 
-  <p class="exercisesp">[<em>Note:</em> With <em>n</em> coroutines, 2(<em>n</em>− 1)<em>n</em> cells would be required for this style of linkage. If <em>n</em> is large, a “centralized” routine for linkage could of course be used; a method with 3<em>n</em> + 2 cells is not hard to invent. But in practice the faster method above requires just 2<em>m</em> cells, where <em>m</em> is the number of pairs (<em>i, j</em>) such that coroutine <em>i</em> jumps to coroutine <em>j</em>. When there are many coroutines each independently jumping to others, the sequence of control is usually under external influence, as discussed in <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>.]</p>
+  <p class="exercisesp">[<em>Note:</em> With <em>n</em> coroutines, $2(n-1)n$ cells would be required for this style of linkage. If <em>n</em> is large, a “centralized” routine for linkage could of course be used; a method with 3<em>n</em> + 2 cells is not hard to invent. But in practice the faster method above requires just 2<em>m</em> cells, where <em>m</em> is the number of pairs $(i,j)$ such that coroutine <em>i</em> jumps to coroutine <em>j</em>. When there are many coroutines each independently jumping to others, the sequence of control is usually under external influence, as discussed in <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>.]</p>
 
   <h5 id="app01lev3sec4"><a id="page_530"></a>Section 1.4.3.1</h5>
 
@@ -445,8 +445,8 @@
 
   <div class="image"><img src="../Images/533pro02.gif"></div>
 
-  <p class="indenthangingN1"><a href="../Text/ch01c.html#ch01ex_2_18_13" id="ch01ex_2_18_13a">13</a>. <br>
-  <code>JRED CONTROL(U)</code>
+  <p class="indenthangingN1"><a href="../Text/ch01c.html#ch01ex_2_18_13" id="ch01ex_2_18_13a">13</a>.<br>
+  <code>JRED CONTROL(U)</code><br>
   <code>J6NZ *-1</code>&nbsp;&nbsp;<span class="middle"><img src="../Images/box.gif"></span></p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_14" id="ch01ex_2_18_14a">14</a>. If <em>N</em> = 1 the algorithm breaks down (possibly referring to the buffer while I/O is in progress); otherwise the construction will have the effect that there are two yellow buffers. This can be useful if the computational program wants to refer to two buffers at once, although it ties up buffer space. In general, the excess of <code>ASSIGN</code>s over <code>RELEASE</code>s should be nonnegative and not greater than <em>N</em>.</p>
@@ -531,9 +531,9 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_1_4" id="ch02ex_2_1_4a">4</a>. This problem is equivalent to many other interesting problems, such as the enumeration of binary trees, the number of ways to insert parentheses into a formula, and the number of ways to divide a polygon into triangles, and it appeared as early as 1759 in notes by Euler and von Segner (see <a href="../Text/ch02b.html#ch02lev3sec6">Section 2.3.4.6</a>).</p>
 
-  <p class="indent">The following elegant solution uses a “reflection principle” due to J. Aebly and D. Mirimanoff [<em>L’Enseignement Math.</em> <strong>23</strong> (1923), 185–189]: There are obviously <span class="middle"><img src="../Images/e536_01.gif"></span> sequences of S’s and X’s that contain <em>n</em> of each. It remains to evaluate the number of <em>inadmissible</em> sequences (those that contain the right number of S’s and X’s but violate the other condition). In any inadmissible sequence, locate the first X for which the X’s outnumber the S’s. Then in the partial sequence leading up to and including this X, replace each X by S and each S by X. The result is a sequence with $(n+1)$ S’s and $(n-1)$ X’s. Conversely for every sequence of the latter type we can reverse the process and find the inadmissible sequence of the former type that leads to it. For example, the sequence XXSXSSSXXSSS must have come from SSXSXXXXXSSS. This correspondence shows that the number of inadmissible sequences is <span class="middle"><img src="../Images/e536_01a.gif"></span>. Hence <span class="middle"><img src="../Images/e536_02.gif"></span>.</p>
+  <p class="indent">The following elegant solution uses a “reflection principle” due to J. Aebly and D. Mirimanoff [<em>L’Enseignement Math.</em> <strong>23</strong> (1923), 185–189]: There are obviously $\binom{2n}{2}$ sequences of S’s and X’s that contain <em>n</em> of each. It remains to evaluate the number of <em>inadmissible</em> sequences (those that contain the right number of S’s and X’s but violate the other condition). In any inadmissible sequence, locate the first X for which the X’s outnumber the S’s. Then in the partial sequence leading up to and including this X, replace each X by S and each S by X. The result is a sequence with $(n+1)$ S’s and $(n-1)$ X’s. Conversely for every sequence of the latter type we can reverse the process and find the inadmissible sequence of the former type that leads to it. For example, the sequence XXSXSSSXXSSS must have come from SSXSXXXXXSSS. This correspondence shows that the number of inadmissible sequences is $\binom{2n}{n-1}$. Hence $a_{n}=\binom{2n}{2}{-}\binom{2n}{n-1}$.</p>
 
-  <p class="indent">Using the same idea, we can solve the more general “ballot problem” of probability theory, which essentially is the enumeration of all partial admissible sequences with a given number of S’s and X’s. This problem was actually resolved as early as 1708 by Abraham de Moivre, who showed that the number of sequences containing <em>l</em> A’s and <em>m</em> B’s, and containing at least one initial substring with <em>n</em> more A’s than B’s, is <span class="middle"><img src="../Images/e536_03.gif"></span>. In particular, <span class="middle"><img src="../Images/e536_04.gif"></span> as above. (De Moivre stated this result without proof [<em>Philos. Trans.</em> <strong>27</strong> (1711), 262–263]; but it is clear from other passages in his paper that he knew how to prove it, since the formula is obviously true when $l≥m+n$, and since his generating-function approach to similar problems yields the symmetry condition $f(l,m,n)=f(m+n,l-n,n)$ by simple algebra.) For the later history of the ballot problem and some generalizations, see the comprehensive survey by D. E. Barton and C. L. Mallows, <em>Annals of Math. Statistics</em> <strong>36</strong> (1965), 236–260; see also <a href="../Text/ch02b.html#ch02ex_3_4_32">exercise 2.3.4.4–32</a> and Section 5.1.4.</p>
+  <p class="indent">Using the same idea, we can solve the more general “ballot problem” of probability theory, which essentially is the enumeration of all partial admissible sequences with a given number of S’s and X’s. This problem was actually resolved as early as 1708 by Abraham de Moivre, who showed that the number of sequences containing <em>l</em> A’s and <em>m</em> B’s, and containing at least one initial substring with <em>n</em> more A’s than B’s, is $f(l,m,n)=\binom{l+m}{\min(m,l-n)}$. In particular, $a_{n}=\binom{2n}{n}{-}f(n,n,1)$ as above. (De Moivre stated this result without proof [<em>Philos. Trans.</em> <strong>27</strong> (1711), 262–263]; but it is clear from other passages in his paper that he knew how to prove it, since the formula is obviously true when $l≥m+n$, and since his generating-function approach to similar problems yields the symmetry condition $f(l,m,n)=f(m+n,l-n,n)$ by simple algebra.) For the later history of the ballot problem and some generalizations, see the comprehensive survey by D. E. Barton and C. L. Mallows, <em>Annals of Math. Statistics</em> <strong>36</strong> (1965), 236–260; see also <a href="../Text/ch02b.html#ch02ex_3_4_32">exercise 2.3.4.4–32</a> and Section 5.1.4.</p>
 
   <p class="indent">We present here a new method for solving the ballot problem with the use of double generating functions, since this method lends itself to the solution of more difficult problems such as the question in <a href="../Text/ch02.html#ch02ex_2_1_11">exercise 11</a>.</p>
 
@@ -613,21 +613,21 @@
 
   <p class="indent">Another way to solve this problem, suggested by V. Pratt, is to use context-free grammars for the set of strings (see Chapter 10). The infinite grammar with productions $S→ q^{n}(Bx)^{n}$, $B→sq^{n}(Bx)^{n+1}B$, for all <em>n</em> ≥ 0, and $B→\epsilon$, is unambiguous, and it allows us to count the number of strings with <em>n</em> <em>x</em>’s, as in <a href="../Text/ch02b.html#ch02ex_3_4_31">exercise 2.3.4.4–31</a>.</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_1_12" id="ch02ex_2_1_12a">12</a>. We have <span class="middle"><img src="../Images/e539_04.gif"></span> by Stirling’s formula. To analyze $b_{n}$, let us first consider the general problem of estimating the coefficient of $w^{n}$ in the power series for <span class="middle"><img src="../Images/e539_05.gif"></span> when $|α|\lt 1$. We have, for sufficiently small <em>α</em>,</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_1_12" id="ch02ex_2_1_12a">12</a>. We have $a_n=4^{n}\sqrt{\pi n^{3}}+O(4^{n}n^{-5/2})$ by Stirling’s formula. To analyze $b_{n}$, let us first consider the general problem of estimating the coefficient of $w^{n}$ in the power series for $\sqrt{1-w}\sqrt{1-\alpha w}$ when $|α|\lt 1$. We have, for sufficiently small <em>α</em>,</p>
 
   <div class="image"><img src="../Images/e539_06.gif"></div>
 
-  <p class="exercisesp">where $β=α/(1-α)$; hence the desired coefficient is $(-1)^{n}<span class="middle"><img src="../Images/e539_07.gif"></span>$.</p>
+  <p class="exercisesp">where $β=α/(1-α)$; hence the desired coefficient is $(-1)^{n}\sqrt{1-\alpha}\sum_{k}\binom{1/2}{k}\beta^{k}\binom{k+1/2}{n}$.</p>
 
   <p class="exercisesp">Now</p>
 
   <div class="image"><img src="../Images/e539_08.gif"></div>
 
-  <p class="exercisesp">and <span class="middle"><img src="../Images/e539_09.gif"></span> by <a href="../Text/ch01a.html#ch01lev3sec1">Eq. 1.2.11.1</a>–(<a href="../Text/ch01a.html#ch01eq-lev3sec1-16">16</a>). Thus we obtain the asymptotic series <span class="middle"><img src="../Images/e539_10.gif"></span> where</p>
+  <p class="exercisesp">and $\large n^{\overline{-k-1/2}}=\sum_{j=0}^{m}{{-k-1/2}\brack{-k-1/2-j}}n^{-k-1/2-j}+O(n^{-k-3/2-m})$ by <a href="../Text/ch01a.html#ch01lev3sec1">Eq. 1.2.11.1</a>–(<a href="../Text/ch01a.html#ch01eq-lev3sec1-16">16</a>). Thus we obtain the asymptotic series $\large[w^{n}]\sqrt{1-w}\sqrt{1-\alpha w}=c_{0}n^{-3/2}+c_{1}n^{-5/2}+\cdots+c_{m}n^{-m-3/2}+O\left(n^{-m-5/2}\right)$ where</p>
 
   <div class="image"><img src="../Images/e539_11.gif"></div>
 
-  <p class="exercisesp">For $b_{n}$, we write <span class="middle"><img src="../Images/e539_12.gif"></span> and let <span class="middle"><img src="../Images/e539_13.gif"></span> <span class="middle"><img src="../Images/e539_14.gif"></span>, obtaining the asymptotic formula</p>
+  <p class="exercisesp">For $b_{n}$, we write $1-6z+z^{2}=(1-(3+\sqrt{8})z)(1-(3-\sqrt{8})z)$ and let $w=(3+\sqrt{8})z$, $\alpha=(3-\sqrt{8}/(3+\sqrt{8})$, obtaining the asymptotic formula</p>
 
   <div class="image"><img src="../Images/e539_15.gif"></div>
 
@@ -671,7 +671,7 @@
 
   <p class="uln-indentC"><strong>A3.</strong> [Indirect?] If either ${\tt I}_{1}\tt(C)$ or ${\tt I}_{2}\tt(C)$ equals 7, set $\tt C←M$ and go to A2. Otherwise set ${\tt M←M}+\tt H$, ${\tt H}←0$.</p>
 
-  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}-1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/common-01.gif"></span></p>
+  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}-1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/box.gif"></span></p>
 
   <p class="indent">This algorithm will handle any situation correctly except those in which ${\tt I}_{1}=7$ and $1≤{\tt I}_{2}≤6$ <em>and</em> the evaluation of the address in <code>ADDRESS</code> involves a case with ${\tt I}_{1}={\tt I}_{2}=7$. The effect is as if ${\tt I}_{2}$ were zero. To understand the operation of <a href="../Text/app01a.html#app01alg-lev2sec16-A">Algorithm A</a>, consider the notation of part (a); the state “<code>L</code>,7,1,2,5,2,7,7,7,7” is represented by <code>C</code> or <code>M</code> = <code>L</code>, <code>N</code> = 4 (the number of trailing 7s), and <code>H</code> = rI1 + rI2 + rI5 + rI2 (the post-indexing). In a solution to part (b) of this exercise, the counter <code>N</code> will always be either 0 or 1.</p>
 
@@ -693,7 +693,7 @@
 
   <p class="exercisesp">where $A={\tt BASE[}j\tt]$, $B={\tt REAR[}j\tt]$, $C={\tt FRONT[}j\tt]$, $D={\tt BASE[}j+1\tt]$. The two cases are distinguished by the conditions <em>B</em> ≤ <em>C</em> and <em>B</em> &gt; <em>C</em>, respectively, in a nonempty <a id="page_542"></a>queue; or, if the queue is known not to have overflowed, the distinguishing conditions are respectively <em>B</em> &lt; <em>C</em> and <em>B</em> ≥ <em>C</em>. The algorithms should therefore be modified in an obvious way so as to widen or narrow the gaps of vacant information. (Thus in case of overflow, when <em>B</em> = <em>C</em>, we make empty space between <em>B</em> and <em>C</em> by moving one part and not the other.) In the calculation of <code>SUM</code> and ${\tt D[}j\tt]$ in step G2, each queue should be considered to occupy one more cell than it really does (see <a href="../Text/ch02.html#ch02ex_2_2_1">exercise 1</a>).</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_9" id="ch02ex_2_2_9a">9</a>. Given any sequence specification $a_{1},a_{2},\ldots,a_{m}$ there is one move operation required for every pair $(j,k)$ such that <em>j</em> &lt; <em>k</em> and $a_{j}\gt a_{k}$. (Such a pair is called an “inversion”; see Section 5.1.1.) The number of such pairs is therefore the number of moves required. Now imagine all $n^{m}$ specifications written out, and for each of the <span class="middle"><img src="../Images/e542_01.gif"></span> pairs $(j,k)$ with <em>j</em> &lt; <em>k</em> count how many specifications have $a_{j}\gt a_{k}$. Clearly this equals <span class="middle"><img src="../Images/e542_02.gif"></span>, the number of choices for $a_{j}$ and $a_{k}$, times $n^{m-2}$, the number of ways to fill in the remaining places. Hence the total number of moves among all specifications is <span class="middle"><img src="../Images/e542_03.gif"></span>. Divide this by <em>n^{m}</em> to get the average, Eq. (<a href="../Text/ch02.html#ch02eq-lev2sec2-14">14</a>).</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_9" id="ch02ex_2_2_9a">9</a>. Given any sequence specification $a_{1},a_{2},\ldots,a_{m}$ there is one move operation required for every pair $(j,k)$ such that <em>j</em> &lt; <em>k</em> and $a_{j}\gt a_{k}$. (Such a pair is called an “inversion”; see Section 5.1.1.) The number of such pairs is therefore the number of moves required. Now imagine all $n^{m}$ specifications written out, and for each of the $\binom{m}{2}$ pairs $(j,k)$ with <em>j</em> &lt; <em>k</em> count how many specifications have $a_{j}\gt a_{k}$. Clearly this equals $\binom{n}{2}$, the number of choices for $a_{j}$ and $a_{k}$, times $n^{m-2}$, the number of ways to fill in the remaining places. Hence the total number of moves among all specifications is $\binom{m}{2}\binom{n}{2}n^{m-2}$. Divide this by $n^{m}$ to get the average, Eq. (<a href="../Text/ch02.html#ch02eq-lev2sec2-14">14</a>).</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_10" id="ch02ex_2_2_10a">10</a>. As in <a href="../Text/ch02.html#ch02ex_2_2_9">exercise 9</a> we find that the expected value is</p>
 
@@ -725,17 +725,17 @@
 
   <div class="image"><img src="../Images/e543_01.gif"></div>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_13" id="ch02ex_2_2_13a">13</a>. A. C. Yao has proved that we have E max<span class="middle"><img src="../Images/e543_02.gif"></span> for large <em>m</em>, when <span class="middle"><img src="../Images/e543_03.gif"></span>. [<em>SICOMP</em> <strong>10</strong> (1981), 398–403.] And P. Flajolet has extended the analysis, showing in particular that the expected value is asymptotically <em>αm</em> when <span class="middle"><img src="../Images/e543_04.gif"></span>, where</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_13" id="ch02ex_2_2_13a">13</a>. A. C. Yao has proved that we have ${\rm E\,}\max(k_{1},k_{2})=\frac{1}{2}m+(2\pi(1-2p))^{-1/2}\sqrt{m}+O(m^{-1/2}(\log m)^{2})$ for large <em>m</em>, when $p\lt\frac12$. [<em>SICOMP</em> <strong>10</strong> (1981), 398–403.] And P. Flajolet has extended the analysis, showing in particular that the expected value is asymptotically <em>αm</em> when $p=\frac12$, where</p>
 
   <div class="image"><img src="../Images/e543_05.gif"></div>
 
-  <p class="exercisesp">Moreover, when <span class="middle"><img src="../Images/e543_06.gif"></span> the final value of $k_{1}$ tends to be uniformly distributed as $m→∞$, so $E max<span class="middle"><img src="../Images/e543_07.gif"></span>$. [See <em>Lecture Notes in Comp. Sci.</em> <strong>233</strong> (1986), 325–340.]</p>
+  <p class="exercisesp">Moreover, when $p\gt\frac12$ the final value of $k_{1}$ tends to be uniformly distributed as $m→∞$, so ${\rm E\,}\max(k_{1},k_{2})\approx\frac{3}{4}m$. [See <em>Lecture Notes in Comp. Sci.</em> <strong>233</strong> (1986), 325–340.]</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_14" id="ch02ex_2_2_14a">14</a>. Let <span class="middle"><img src="../Images/e543_08.gif"></span>. (This idea was suggested by N. G. de Bruijn.) Stirling’s approximation implies that</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_14" id="ch02ex_2_2_14a">14</a>. Let $k_{j}=m/n+\sqrt{m}x_{j}$. (This idea was suggested by N. G. de Bruijn.) Stirling’s approximation implies that</p>
 
   <div class="image"><img src="../Images/e543_09.gif"></div>
 
-  <p class="exercisesp">when $k_{1}+\cdots+k_{n} = m$ and when the <em>x</em>’s are uniformly bounded. The sum of the latter quantity over all nonnegative $k_{1},\ldots,k_{n}$ satisfying this condition is an approximation to a Riemann integral; we may deduce that the asymptotic behavior of the sum is <span class="middle"><img src="../Images/e543_10.gif"></span>, where</p>
+  <p class="exercisesp">when $k_{1}+\cdots+k_{n} = m$ and when the <em>x</em>’s are uniformly bounded. The sum of the latter quantity over all nonnegative $k_{1},\ldots,k_{n}$ satisfying this condition is an approximation to a Riemann integral; we may deduce that the asymptotic behavior of the sum is $a_{n}(m/n)+c_{n}\sqrt{m}+O(1)$, where</p>
 
   <div class="image"><img src="../Images/e543_11.gif"></div>
 
@@ -757,7 +757,7 @@
 
   <div class="image"><img src="../Images/e544_02.gif"></div>
 
-  <p class="exercisesp">here $Q_{0}$ is <em>Q</em> with $y_{2}$ replaced by zero. [When <em>n</em> = 2, let $I_{3} = 1$.] Now let <span class="middle"><img src="../Images/e544_03.gif"></span>. Then <span class="middle"><img src="../Images/e544_04.gif"></span>, and we deduce that <span class="middle"><img src="../Images/e544_05.gif"></span>, where</p>
+  <p class="exercisesp">here $Q_{0}$ is <em>Q</em> with $y_{2}$ replaced by zero. [When <em>n</em> = 2, let $I_{3} = 1$.] Now let $z_j=\sqrt{n}y_{j}-(y_3+\cdots+y_n)/(\sqrt{2}+\sqrt{n})$, $3\le j\le n$. Then $Q_0=z_{3}^{2}+\cdots+z_{n}^{2}$, and we deduce that $I_3=I_{4}/n^{(n-3)/2}\sqrt{2}$, where</p>
 
   <div class="image"><img src="../Images/e544_06.gif"></div>
 
@@ -845,7 +845,7 @@
 
   <p><a id="page_547"></a><a href="../Text/ch02.html#ch02ex_2_3_12" id="ch02ex_2_3_12a">12</a>. For example: (a) List all sets with <em>k</em> elements (in any order) before all sets with <em>k</em> + 1 elements, 0 ≤ <em>k</em> &lt; <em>n</em>. (b) Represent a subset by a sequence of 0s and 1s showing which elements are in the set. This gives a correspondence between all subsets and the integers 0 through $2^{n}-1$, via the binary number system. The order of correspondence is a topological sequence.</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_3_13" id="ch02ex_2_3_13a">13</a>. Sha and Kleitman, <em>Discrete Math.</em> <strong>63</strong> (1987), 271–278, have proved that the number is at most <span class="middle"><img src="../Images/e547_01.gif"></span>. This exceeds the obvious lower bound <span class="middle"><img src="../Images/e547_02.gif"></span> by a factor of $\large e^{2^{n}+O(n)}$; they conjecture that the lower bound is closer to the truth.</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_3_13" id="ch02ex_2_3_13a">13</a>. Sha and Kleitman, <em>Discrete Math.</em> <strong>63</strong> (1987), 271–278, have proved that the number is at most $\prod_{k=0}^{n}\binom{n}{k}^{\large\binom{n}{k}}$. This exceeds the obvious lower bound $\prod_{k=0}^{n}\binom{n}{k}!=2^{\large2^{n}(n+O(\log n))}$ by a factor of $\large e^{2^{n}+O(n)}$; they conjecture that the lower bound is closer to the truth.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_14" id="ch02ex_2_3_14a">14</a>. If $a_{1}a_{2}\ldots a_{n}$ and $b_{1}b_{2}\ldots b_{n}$ are two possible topological sorts, let <em>j</em> be minimal such that $a_{j}≠b_{j}$; then $a_{k}=b_{j}$ and $a_{j}=b_{m}$ for some <em>k</em>, <em>m</em> &gt; <em>j</em>. Now $b_{j}\npreceq a_{j}$ since <em>k</em> &gt; <em>j</em>, and $a_{j}\npreceq b_{j}$ since <em>m</em> &gt; <em>j</em>, hence (iv) fails. Conversely if there is only one topological sort $a_{1}a_{2}\ldots a_{n}$, we must have $a_{j}\preccurlyeq a_{j+1}$ for 1 ≤ <em>j</em> &lt; <em>n</em>, since otherwise $a_{j}$ and $a_{j+1}$ could be interchanged. This and transitivity imply (iv).</p>
 
@@ -987,7 +987,7 @@
 
   <div class="image"><img src="../Images/552pro03a.gif"></div>
 
-  <p><a id="page_553"></a><a href="../Text/ch02.html#ch02ex_2_4_16" id="ch02ex_2_4_16a">16</a>. Let <em>r</em> be the number of terms in ${\rm polynomial}\tt(M)$. The subroutine requires $21pr+38r+29+27\sum{m'}+18\sum{m''}+27\sum{p'}+8\sum{q'}$ units of time, where the summations refer to the corresponding quantities during the <em>r</em> activations of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. The number of terms in ${\rm polynomial}\tt(Q)$ goes up by $p'-m'$ each activation of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. If we make the not unreasonable assumption that $m'=0$ and $p'=αp$ where 0 &lt; <em>α</em> &lt; 1, we get the respective sums equal to 0, $(1-α)pr$, $αpr$, and <span class="middle"><img src="../Images/e553_01.gif"></span>, where <span class="middle"><img src="../Images/e553_02.gif"></span> is the value of <em>q</em>′ in the first iteration. The grand total is <span class="middle"><img src="../Images/e553_03.gif"></span>. This analysis indicates that the multiplier ought to have fewer terms than the multiplicand, since we have to skip over unmatching terms in ${\rm polynomial}\tt(Q)$ more often. (See exercise 5.2.3–29 for a faster algorithm.)</p>
+  <p><a id="page_553"></a><a href="../Text/ch02.html#ch02ex_2_4_16" id="ch02ex_2_4_16a">16</a>. Let <em>r</em> be the number of terms in ${\rm polynomial}\tt(M)$. The subroutine requires $21pr+38r+29+27\sum{m'}+18\sum{m''}+27\sum{p'}+8\sum{q'}$ units of time, where the summations refer to the corresponding quantities during the <em>r</em> activations of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. The number of terms in ${\rm polynomial}\tt(Q)$ goes up by $p'-m'$ each activation of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. If we make the not unreasonable assumption that $m'=0$ and $p'=αp$ where 0 &lt; <em>α</em> &lt; 1, we get the respective sums equal to 0, $(1-α)pr$, $αpr$, and $rq'_0+αp(r(r-1)/2)$, where $q'_0$ is the value of <em>q</em>′ in the first iteration. The grand total is $4αpr^{2}+40pr+4αpr+8q'_0r+38r+29$. This analysis indicates that the multiplier ought to have fewer terms than the multiplicand, since we have to skip over unmatching terms in ${\rm polynomial}\tt(Q)$ more often. (See exercise 5.2.3–29 for a faster algorithm.)</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_17" id="ch02ex_2_4_17a">17</a>. There actually is very little advantage; addition and multiplication routines with either type of list would be virtually the same. The efficiency of the <code>ERASE</code> subroutine (see <a href="../Text/ch02.html#ch02ex_2_4_13">exercise 13</a>) is apparently the only important difference.</p>
 
