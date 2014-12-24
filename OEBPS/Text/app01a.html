@@ -126,7 +126,7 @@
 
   <div class="image"><img src="../Images/519pro02.gif"></div>
 
-  <p><a id="page_520"></a><a href="../Text/ch01b.html#ch01ex_2_13_19" id="ch01ex_2_13_19a">19</a>. (a) Induction. (b) Let <em>k</em> ≥ 0 and $X=ax_{k+1}-x_{k}$, $Y=ay_{k+1}-y_{k}$, where $a=\left\lfloor (y_{k}+n)/y_{k+1}\right\rfloor$. By part (a) and the fact that 0 &lt; <em>Y</em> ≤ <em>n</em>, we have $X ⊥ Y$ and $X/Y\gt x_{k+1}/y_{k+1}$. So if $X/Y ≠ x_{k+2}/y_{k+2}$ we have, by definition, $X/Y\gt x_{k+2}/y_{k+2}$. But this implies that</p>
+  <p><a id="page_520"></a><a href="../Text/ch01b.html#ch01ex_2_13_19" id="ch01ex_2_13_19a">19</a>. (a) Induction. (b) Let <em>k</em> ≥ 0 and $X=ax_{k+1}-x_{k}$, $Y=ay_{k+1}-y_{k}$, where $a=\left\lfloor (y_{k}+n)/y_{k+1}\right\rfloor$. By part (a) and the fact that 0 &lt; <em>Y</em> ≤ <em>n</em>, we have $X ⊥ Y$ and $X/Y\gt x_{k+1}/y_{k+1}$. So if $X/Y≠x_{k+2}/y_{k+2}$ we have, by definition, $X/Y\gt x_{k+2}/y_{k+2}$. But this implies that</p>
 
   <div class="image"><img src="../Images/e520_01.gif"></div>
 
@@ -288,7 +288,7 @@
 
   <p class="exercisesp">for $0 ≤ i, j\lt m=2^{2^{l}}$ when $n=6^{l+1}-4^{l+1}$.</p>
 
-  <p><a id="page_527"></a><a href="../Text/ch01c.html#ch01ex_2_14_34" id="ch01ex_2_14_34a">34</a>. Let $N=m+n$. If $m ⊥ n$ there is only one cycle, because every element can be written in the form $am mod N$ for some integer <em>a</em>. And in general if $d=gcd(m, n)$, there are exactly <em>d</em> cycles $C_{0}, C_{1},\ldots, C_{d-1}$, where C_{j} contains the elements $\{j,j+d,..., j+N-d\}$ in some order. To carry out the permutation, we can therefore proceed as follows for 0 ≤ <em>j &lt; d</em> (in parallel, if convenient): Set $t←x_{j}$ and $k ←j$; then while $(k+m)\bmod N ≠ j$, set $x_{k}← x_{(k+m)\bmod N}$ and $k←(k+m)\bmod N$; finally set $x_{k}←t$. In this algorithm the relation $(k+m)\bmod N ≠ j$ will hold if and only if $(k+m)\bmod N ≥ d$, so we can use whichever test is more efficient. [W. Fletcher and R. Silver, <em>CACM</em> <strong>9</strong> (1966), 326.]</p>
+  <p><a id="page_527"></a><a href="../Text/ch01c.html#ch01ex_2_14_34" id="ch01ex_2_14_34a">34</a>. Let $N=m+n$. If $m⊥n$ there is only one cycle, because every element can be written in the form $am mod N$ for some integer <em>a</em>. And in general if $d=gcd(m, n)$, there are exactly <em>d</em> cycles $C_{0}, C_{1},\ldots, C_{d-1}$, where C_{j} contains the elements $\{j,j+d,..., j+N-d\}$ in some order. To carry out the permutation, we can therefore proceed as follows for 0 ≤ <em>j &lt; d</em> (in parallel, if convenient): Set $t←x_{j}$ and $k←j$; then while $(k+m)\bmod N≠j$, set $x_{k}← x_{(k+m)\bmod N}$ and $k←(k+m)\bmod N$; finally set $x_{k}←t$. In this algorithm the relation $(k+m)\bmod N≠j$ will hold if and only if $(k+m)\bmod N ≥ d$, so we can use whichever test is more efficient. [W. Fletcher and R. Silver, <em>CACM</em> <strong>9</strong> (1966), 326.]</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_35" id="ch01ex_2_14_35a">35</a>. Let $M=l+m+n$ and $N=l+2m+n$. The cycles for the desired rearrangement are obtained from the cycles of the permutation on $\{0,1,...,N-1\}$ that takes <em>k</em> to $(k+l+m)\bmod N$, by simply striking out all elements of each cycle that are ≥ <em>M</em>. (Compare this behavior with the similar situation in <a href="../Text/ch01c.html#ch01ex_2_14_29">exercise 29</a>.) <em>Proof:</em> When the hinted interchange sets $x_{k}← x_{k'}$ and $x_{k'}← x_{k''}$ for some <em>k</em> with $k'=(k+l+m)\bmod N$ and $k''=(k'+l+m)\bmod N$ and $k' ≥ M$, we know that $x_{k'}=x_{k''}$; hence the rearrangement $αβγ→γβα$ replaces $x_{k}$ by $x_{k''}$.</p>
 
@@ -493,17 +493,17 @@
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_2" id="ch02ex_1_1_2a">2</a>. Whenever <code>V</code> is a link variable (else <code>CONTENTS(V)</code> makes no sense) whose value is not <em>Λ</em>. It is wise to <em>avoid</em> using <code>LOC</code> in contexts like this.</p>
 
-  <p><a id="page_535"></a><a href="../Text/ch02.html#ch02ex_1_1_3" id="ch02ex_1_1_3a">3</a>. Set $\tt NEWCARD←TOP$, and if $\tt TOP ≠ Λ$ set $\tt TOP←NEXT(TOP)$.</p>
+  <p><a id="page_535"></a><a href="../Text/ch02.html#ch02ex_1_1_3" id="ch02ex_1_1_3a">3</a>. Set $\tt NEWCARD←TOP$, and if $\tt TOP≠Λ$ set $\tt TOP←NEXT(TOP)$.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_4" id="ch02ex_1_1_4a">4</a>. <strong>C1.</strong> Set $\tt X←LOC(TOP)$. (For convenience we make the reasonable assumption that $\tt TOP ≡ NEXT(LOC(TOP))$, namely that the value of <code>TOP</code> appears in the <code>NEXT</code> field of the location where it is stored. This assumption is compatible with program (<a href="../Text/ch02a.html#ch02eq-lev1sec3-5">5</a>), and it saves us the bother of writing a special routine for the case of an empty pile.)</p>
 
-  <p class="uln-indentC"><strong>C2.</strong> If $\tt NEXT(X) ≠ Λ$, set $\tt X←NEXT(X)$ and repeat this step.</p>
+  <p class="uln-indentC"><strong>C2.</strong> If $\tt NEXT(X)≠Λ$, set $\tt X←NEXT(X)$ and repeat this step.</p>
 
   <p class="uln-indentC"><strong>C3.</strong> Set $\tt NEXT(X)←NEWCARD$, $\tt NEXT(NEWCARD)←Λ$, $\tt TAG(NEWCARD)←1$. <span class="middle"><img src="../Images/box.gif"></span></p>
 
-  <p><a href="../Text/ch02.html#ch02ex_1_1_5" id="ch02ex_1_1_5a">5</a>. <strong>D1.</strong> Set $\tt X←LOC(TOP)$, $\tt Y←TOP$. (See step C1 above. By hypothesis, $\tt Y ≠ Λ$. Throughout the algorithm that follows, <code>X</code> trails one step behind <code>Y</code> in the sense that ${\tt Y}=\tt NEXT(X)$.)</p>
+  <p><a href="../Text/ch02.html#ch02ex_1_1_5" id="ch02ex_1_1_5a">5</a>. <strong>D1.</strong> Set $\tt X←LOC(TOP)$, $\tt Y←TOP$. (See step C1 above. By hypothesis, $\tt Y≠Λ$. Throughout the algorithm that follows, <code>X</code> trails one step behind <code>Y</code> in the sense that ${\tt Y}=\tt NEXT(X)$.)</p>
 
-  <p class="uln-indentC"><strong>D2.</strong> If $\tt NEXT(Y) ≠ Λ$, set $\tt X←Y$, $\tt Y←NEXT(Y)$, and repeat this step.</p>
+  <p class="uln-indentC"><strong>D2.</strong> If $\tt NEXT(Y)≠Λ$, set $\tt X←Y$, $\tt Y←NEXT(Y)$, and repeat this step.</p>
 
   <p class="uln-indentC"><strong>D3.</strong> (Now ${\tt NEXT(Y)}=\tt Λ$, so <code>Y</code> points to the bottom card; also <code>X</code> points to the next-to-last card.) Set $\tt NEXT(X)←Λ$, $\tt NEWCARD←Y$. <span class="middle"><img src="../Images/box.gif"></span></p>
 
@@ -531,7 +531,7 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_1_4" id="ch02ex_2_1_4a">4</a>. This problem is equivalent to many other interesting problems, such as the enumeration of binary trees, the number of ways to insert parentheses into a formula, and the number of ways to divide a polygon into triangles, and it appeared as early as 1759 in notes by Euler and von Segner (see <a href="../Text/ch02b.html#ch02lev3sec6">Section 2.3.4.6</a>).</p>
 
-  <p class="indent">The following elegant solution uses a “reflection principle” due to J. Aebly and D. Mirimanoff [<em>L’Enseignement Math.</em> <strong>23</strong> (1923), 185–189]: There are obviously <span class="middle"><img src="../Images/e536_01.gif"></span> sequences of S’s and X’s that contain <em>n</em> of each. It remains to evaluate the number of <em>inadmissible</em> sequences (those that contain the right number of S’s and X’s but violate the other condition). In any inadmissible sequence, locate the first X for which the X’s outnumber the S’s. Then in the partial sequence leading up to and including this X, replace each X by S and each S by X. The result is a sequence with $(n+1)$ S’s and $(n−1)$ X’s. Conversely for every sequence of the latter type we can reverse the process and find the inadmissible sequence of the former type that leads to it. For example, the sequence XXSXSSSXXSSS must have come from SSXSXXXXXSSS. This correspondence shows that the number of inadmissible sequences is <span class="middle"><img src="../Images/e536_01a.gif"></span>. Hence <span class="middle"><img src="../Images/e536_02.gif"></span>.</p>
+  <p class="indent">The following elegant solution uses a “reflection principle” due to J. Aebly and D. Mirimanoff [<em>L’Enseignement Math.</em> <strong>23</strong> (1923), 185–189]: There are obviously <span class="middle"><img src="../Images/e536_01.gif"></span> sequences of S’s and X’s that contain <em>n</em> of each. It remains to evaluate the number of <em>inadmissible</em> sequences (those that contain the right number of S’s and X’s but violate the other condition). In any inadmissible sequence, locate the first X for which the X’s outnumber the S’s. Then in the partial sequence leading up to and including this X, replace each X by S and each S by X. The result is a sequence with $(n+1)$ S’s and $(n-1)$ X’s. Conversely for every sequence of the latter type we can reverse the process and find the inadmissible sequence of the former type that leads to it. For example, the sequence XXSXSSSXXSSS must have come from SSXSXXXXXSSS. This correspondence shows that the number of inadmissible sequences is <span class="middle"><img src="../Images/e536_01a.gif"></span>. Hence <span class="middle"><img src="../Images/e536_02.gif"></span>.</p>
 
   <p class="indent">Using the same idea, we can solve the more general “ballot problem” of probability theory, which essentially is the enumeration of all partial admissible sequences with a given number of S’s and X’s. This problem was actually resolved as early as 1708 by Abraham de Moivre, who showed that the number of sequences containing <em>l</em> A’s and <em>m</em> B’s, and containing at least one initial substring with <em>n</em> more A’s than B’s, is <span class="middle"><img src="../Images/e536_03.gif"></span>. In particular, <span class="middle"><img src="../Images/e536_04.gif"></span> as above. (De Moivre stated this result without proof [<em>Philos. Trans.</em> <strong>27</strong> (1711), 262–263]; but it is clear from other passages in his paper that he knew how to prove it, since the formula is obviously true when $l ≥ m+n$, and since his generating-function approach to similar problems yields the symmetry condition $f(l, m, n)=f(m+n, l-n, n)$ by simple algebra.) For the later history of the ballot problem and some generalizations, see the comprehensive survey by D. E. Barton and C. L. Mallows, <em>Annals of Math. Statistics</em> <strong>36</strong> (1965), 236–260; see also <a href="../Text/ch02b.html#ch02ex_3_4_32">exercise 2.3.4.4–32</a> and Section 5.1.4.</p>
 
@@ -671,7 +671,7 @@
 
   <p class="uln-indentC"><strong>A3.</strong> [Indirect?] If either ${\tt I}_{1}\tt(C)$ or ${\tt I}_{2}\tt(C)$ equals 7, set $\tt C←M$ and go to A2. Otherwise set ${\tt M←M}+\tt H$, ${\tt H}←0$.</p>
 
-  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}−1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/common-01.gif"></span></p>
+  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}-1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/common-01.gif"></span></p>
 
   <p class="indent">This algorithm will handle any situation correctly except those in which ${\tt I}_{1}=7$ and $1 ≤ {\tt I}_{2} ≤ 6$ <em>and</em> the evaluation of the address in <code>ADDRESS</code> involves a case with ${\tt I}_{1}={\tt I}_{2}=7$. The effect is as if ${\tt I}_{2}$ were zero. To understand the operation of <a href="../Text/app01a.html#app01alg-lev2sec16-A">Algorithm A</a>, consider the notation of part (a); the state “<code>L</code>,7,1,2,5,2,7,7,7,7” is represented by <code>C</code> or <code>M</code> = <code>L</code>, <code>N</code> = 4 (the number of trailing 7s), and <code>H</code> = rI1 + rI2 + rI5 + rI2 (the post-indexing). In a solution to part (b) of this exercise, the counter <code>N</code> will always be either 0 or 1.</p>
 
@@ -693,19 +693,19 @@
 
   <p class="exercisesp">where $A={\tt BASE[}j\tt]$, $B={\tt REAR[}j\tt]$, $C={\tt FRONT[}j\tt]$, $D={\tt BASE[}j+1\tt]$. The two cases are distinguished by the conditions <em>B</em> ≤ <em>C</em> and <em>B</em> &gt; <em>C</em>, respectively, in a nonempty <a id="page_542"></a>queue; or, if the queue is known not to have overflowed, the distinguishing conditions are respectively <em>B</em> &lt; <em>C</em> and <em>B</em> ≥ <em>C</em>. The algorithms should therefore be modified in an obvious way so as to widen or narrow the gaps of vacant information. (Thus in case of overflow, when <em>B</em> = <em>C</em>, we make empty space between <em>B</em> and <em>C</em> by moving one part and not the other.) In the calculation of <code>SUM</code> and ${\tt D[}j\tt]$ in step G2, each queue should be considered to occupy one more cell than it really does (see <a href="../Text/ch02.html#ch02ex_2_2_1">exercise 1</a>).</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_9" id="ch02ex_2_2_9a">9</a>. Given any sequence specification $a_{1},a_{2},\ldots,a_{m}$ there is one move operation required for every pair $(j,k)$ such that <em>j</em> &lt; <em>k</em> and $a_{j}\gt a_{k}$. (Such a pair is called an “inversion”; see Section 5.1.1.) The number of such pairs is therefore the number of moves required. Now imagine all $n^{m}$ specifications written out, and for each of the <span class="middle"><img src="../Images/e542_01.gif"></span> pairs $(j,k)$ with <em>j</em> &lt; <em>k</em> count how many specifications have $a_{j}\gt a_{k}$. Clearly this equals <span class="middle"><img src="../Images/e542_02.gif"></span>, the number of choices for $a_{j}$ and $a_{k}$, times $n^{m−2}$, the number of ways to fill in the remaining places. Hence the total number of moves among all specifications is <span class="middle"><img src="../Images/e542_03.gif"></span>. Divide this by <em>n^{m}</em> to get the average, Eq. (<a href="../Text/ch02.html#ch02eq-lev2sec2-14">14</a>).</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_9" id="ch02ex_2_2_9a">9</a>. Given any sequence specification $a_{1},a_{2},\ldots,a_{m}$ there is one move operation required for every pair $(j,k)$ such that <em>j</em> &lt; <em>k</em> and $a_{j}\gt a_{k}$. (Such a pair is called an “inversion”; see Section 5.1.1.) The number of such pairs is therefore the number of moves required. Now imagine all $n^{m}$ specifications written out, and for each of the <span class="middle"><img src="../Images/e542_01.gif"></span> pairs $(j,k)$ with <em>j</em> &lt; <em>k</em> count how many specifications have $a_{j}\gt a_{k}$. Clearly this equals <span class="middle"><img src="../Images/e542_02.gif"></span>, the number of choices for $a_{j}$ and $a_{k}$, times $n^{m-2}$, the number of ways to fill in the remaining places. Hence the total number of moves among all specifications is <span class="middle"><img src="../Images/e542_03.gif"></span>. Divide this by <em>n^{m}</em> to get the average, Eq. (<a href="../Text/ch02.html#ch02eq-lev2sec2-14">14</a>).</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_10" id="ch02ex_2_2_10a">10</a>. As in <a href="../Text/ch02.html#ch02ex_2_2_9">exercise 9</a> we find that the expected value is</p>
 
   <div class="image"><img src="../Images/e542_04.gif"></div>
 
-  <p class="exercisesp">For this model, it makes <em>absolutely no difference</em> what the relative order of the lists is! (A moment’s reflection explains why; if we consider all possible permutations of a given sequence $a_{1},\ldots,a_{m}$, we find that the total number of moves summed over all these permutations depends only on the number of pairs of distinct elements $a_{j} ≠ a_{k}$.)</p>
+  <p class="exercisesp">For this model, it makes <em>absolutely no difference</em> what the relative order of the lists is! (A moment’s reflection explains why; if we consider all possible permutations of a given sequence $a_{1},\ldots,a_{m}$, we find that the total number of moves summed over all these permutations depends only on the number of pairs of distinct elements $a_{j}≠a_{k}$.)</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_11" id="ch02ex_2_2_11a">11</a>. Counting as before, we find that the expected number is</p>
 
   <div class="image"><img src="../Images/e542_05.gif"></div>
 
-  <p class="exercisesp">here <em>r</em> is the number of entries in $a_{1},a_{2},\ldots,a_{k−1}$ that equal $a_{k}$. This quantity can also be expressed in the simpler form</p>
+  <p class="exercisesp">here <em>r</em> is the number of entries in $a_{1},a_{2},\ldots,a_{k-1}$ that equal $a_{k}$. This quantity can also be expressed in the simpler form</p>
 
   <div class="image"><img src="../Images/e542_06.gif"></div>
 
@@ -713,7 +713,7 @@
 
   <div class="image"><img src="../Images/e542_07.gif"></div>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_12" id="ch02ex_2_2_12a">12</a>. If <em>m</em> = 2<em>k</em>, the average is $2^{−2k}$ times</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_12" id="ch02ex_2_2_12a">12</a>. If <em>m</em> = 2<em>k</em>, the average is $2^{-2k}$ times</p>
 
   <div class="image"><img src="../Images/e542_08.gif"></div>
 
@@ -753,7 +753,7 @@
 
   <div class="image"><img src="../Images/e543_14.gif"></div>
 
-  <p class="exercisesp"><a id="page_544"></a>and <span class="middle"><img src="../Images/e544_01.gif"></span>. Now by symmetry, $I_{2}$ is $(n − 1)$ times the same integral with $(y_{2} +\cdots+y_{n})$ replaced by $y_{2}$; hence $I_{2} = (n − 1)I_{3}$, where</p>
+  <p class="exercisesp"><a id="page_544"></a>and <span class="middle"><img src="../Images/e544_01.gif"></span>. Now by symmetry, $I_{2}$ is $(n -1)$ times the same integral with $(y_{2} +\cdots+y_{n})$ replaced by $y_{2}$; hence $I_{2} = (n -1)I_{3}$, where</p>
 
   <div class="image"><img src="../Images/e544_02.gif"></div>
 
@@ -761,11 +761,11 @@
 
   <div class="image"><img src="../Images/e544_06.gif"></div>
 
-  <p class="exercisesp">where $α_{n}$ is the “solid angle” in $(n − 2)$-dimensional space spanned by the vectors <span class="middle"><img src="../Images/e544_07.gif"></span>, divided by the total solid angle of the whole space. Hence</p>
+  <p class="exercisesp">where $α_{n}$ is the “solid angle” in $(n -2)$-dimensional space spanned by the vectors <span class="middle"><img src="../Images/e544_07.gif"></span>, divided by the total solid angle of the whole space. Hence</p>
 
   <div class="image"><img src="../Images/e544_08.gif"></div>
 
-  <p class="exercisesp">We have $α_{2} = 1$, $α_{3}=\frac12$, $α_{4} = π^{−1}\arctan\sqrt{2}\approx .304$, and</p>
+  <p class="exercisesp">We have $α_{2} = 1$, $α_{3}=\frac12$, $α_{4} = π^{-1}\arctan\sqrt{2}\approx .304$, and</p>
 
   <div class="image"><img src="../Images/e544_11.gif"></div>
 
@@ -775,7 +775,7 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_17" id="ch02ex_2_2_17a">17</a>. First show that ${\tt BASE[}j{\tt]_{0} ≤ BASE[}j\tt]_{1}$ at all times. Then observe that each overflow for stack <em>i</em> in $s_{0}(σ)$ that does not also overflow in $s_{1}(σ)$ occurs at a time when stack <em>i</em> has gotten larger than ever before, yet its new size is not more than the original size allocated to stack <em>i</em> in $s_{1}(σ)$.</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_2_18" id="ch02ex_2_2_18a">18</a>. Suppose the cost of an insertion is <em>a</em>, plus <em>bN</em> + <em>cn</em> if repacking is needed, where <em>N</em> is the number of occupied cells; let the deletion cost be <em>d</em>. After a repacking that leaves <em>N</em> cells occupied and <em>S</em> = <em>M</em> − <em>N</em> cells vacant, imagine that each insertion until the next repacking costs $a+b+10c+10(b+c)nN/S=O(1+nα/(1−α))$, where $α=N/M$. If <em>p</em> insertions and <em>q</em> deletions occur before that repacking, the imagined cost is $p(a+b+10c+10(b+c)nN/S)+qd$, while the actual cost is $pa+bN'+cn+qd ≤ pa+pb+bN+cn+qd$. The latter is less than the imagined cost, because $p\gt .1S/n$; our assumption that $M ≥ n^{2}$ implies that $cS/n+(b+c)N≥bN+cn$.</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_2_18" id="ch02ex_2_2_18a">18</a>. Suppose the cost of an insertion is <em>a</em>, plus <em>bN</em> + <em>cn</em> if repacking is needed, where <em>N</em> is the number of occupied cells; let the deletion cost be <em>d</em>. After a repacking that leaves <em>N</em> cells occupied and <em>S</em> = <em>M</em> − <em>N</em> cells vacant, imagine that each insertion until the next repacking costs $a+b+10c+10(b+c)nN/S=O(1+nα/(1-α))$, where $α=N/M$. If <em>p</em> insertions and <em>q</em> deletions occur before that repacking, the imagined cost is $p(a+b+10c+10(b+c)nN/S)+qd$, while the actual cost is $pa+bN'+cn+qd ≤ pa+pb+bN+cn+qd$. The latter is less than the imagined cost, because $p\gt .1S/n$; our assumption that $M ≥ n^{2}$ implies that $cS/n+(b+c)N≥bN+cn$.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_19" id="ch02ex_2_2_19a">19</a>. We could simply decrease all the subscripts by 1; the following solution is slightly nicer. Initially <code>T</code> = <code>F</code> = <code>R</code> = 0.</p>
 
@@ -787,7 +787,7 @@
 
   <p class="uln-indent">Delete <code>Y</code> from queue <code>X</code>: if <code>F</code> = <code>R</code> then <code>UNDERFLOW</code>; $\tt Y←X[F]$; ${\tt F}←({\tt F}+1)\bmod\tt M$.</p>
 
-  <p class="exercisesp">As before, <code>T</code> is the number of elements on the stack, and $({\tt R}−{\tt F})\bmod\tt M$ is the number of elements on the queue. But the top stack element is now ${\tt X[T}−1\tt]$, not $\tt X[T]$.</p>
+  <p class="exercisesp">As before, <code>T</code> is the number of elements on the stack, and $({\tt R}-{\tt F})\bmod\tt M$ is the number of elements on the queue. But the top stack element is now ${\tt X[T}-1\tt]$, not $\tt X[T]$.</p>
 
   <p class="indent">Even though it is almost always better for computer scientists to start counting at 0, the rest of the world will probably never change to 0-origin indexing. Even Edsger Dijkstra counts “$1{–}2{–}3{–}4\mid1{–}2{–}3{–}4$” when he plays the piano!</p>
 
@@ -843,11 +843,11 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_11" id="ch02ex_2_3_11a">11</a>. “Multiply out” the following to get all 52 solutions: 13749(25 + 52)86 + (1379 + 1397 + 1937 + 9137)(4258 + 4528 + 2458 + 5428 + 2548 + 5248 + 2584 + 5284)6 + (1392 + 1932 + 1923 + 9123 + 9132 + 9213)7(458 + 548 + 584)6.</p>
 
-  <p><a id="page_547"></a><a href="../Text/ch02.html#ch02ex_2_3_12" id="ch02ex_2_3_12a">12</a>. For example: (a) List all sets with <em>k</em> elements (in any order) before all sets with <em>k</em> + 1 elements, 0 ≤ <em>k</em> &lt; <em>n</em>. (b) Represent a subset by a sequence of 0s and 1s showing which elements are in the set. This gives a correspondence between all subsets and the integers 0 through $2^{n} − 1$, via the binary number system. The order of correspondence is a topological sequence.</p>
+  <p><a id="page_547"></a><a href="../Text/ch02.html#ch02ex_2_3_12" id="ch02ex_2_3_12a">12</a>. For example: (a) List all sets with <em>k</em> elements (in any order) before all sets with <em>k</em> + 1 elements, 0 ≤ <em>k</em> &lt; <em>n</em>. (b) Represent a subset by a sequence of 0s and 1s showing which elements are in the set. This gives a correspondence between all subsets and the integers 0 through $2^{n} -1$, via the binary number system. The order of correspondence is a topological sequence.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_13" id="ch02ex_2_3_13a">13</a>. Sha and Kleitman, <em>Discrete Math.</em> <strong>63</strong> (1987), 271–278, have proved that the number is at most <span class="middle"><img src="../Images/e547_01.gif"></span>. This exceeds the obvious lower bound <span class="middle"><img src="../Images/e547_02.gif"></span> by a factor of $\large e^{2^{n}+O(n)}$; they conjecture that the lower bound is closer to the truth.</p>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_3_14" id="ch02ex_2_3_14a">14</a>. If $a_{1}a_{2}...a_{n}$ and $b_{1}b_{2}...b_{n}$ are two possible topological sorts, let <em>j</em> be minimal such that $a_{j} ≠ b_{j}$; then $a_{k}=b_{j}$ and $a_{j}=b_{m}$ for some <em>k</em>, <em>m</em> &gt; <em>j</em>. Now $b_{j}\npreceq a_{j}$ since <em>k</em> &gt; <em>j</em>, and $a_{j}\npreceq b_{j}$ since <em>m</em> &gt; <em>j</em>, hence (iv) fails. Conversely if there is only one topological sort $a_{1}a_{2}... a_{n}$, we must have $a_{j}\preccurlyeq a_{j+1}$ for 1 ≤ <em>j</em> &lt; <em>n</em>, since otherwise $a_{j}$ and $a_{j+1}$ could be interchanged. This and transitivity imply (iv).</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_3_14" id="ch02ex_2_3_14a">14</a>. If $a_{1}a_{2}...a_{n}$ and $b_{1}b_{2}...b_{n}$ are two possible topological sorts, let <em>j</em> be minimal such that $a_{j}≠b_{j}$; then $a_{k}=b_{j}$ and $a_{j}=b_{m}$ for some <em>k</em>, <em>m</em> &gt; <em>j</em>. Now $b_{j}\npreceq a_{j}$ since <em>k</em> &gt; <em>j</em>, and $a_{j}\npreceq b_{j}$ since <em>m</em> &gt; <em>j</em>, hence (iv) fails. Conversely if there is only one topological sort $a_{1}a_{2}... a_{n}$, we must have $a_{j}\preccurlyeq a_{j+1}$ for 1 ≤ <em>j</em> &lt; <em>n</em>, since otherwise $a_{j}$ and $a_{j+1}$ could be interchanged. This and transitivity imply (iv).</p>
 
   <p class="indent"><em>Note:</em> The following alternative proofs work also for infinite sets. (a) Every partial ordering can be embedded in a linear ordering. For if we have two elements with $x_{0} ⋠ y_{0}$ and $y_{0} ⋠ x_{0}$ we can generate another partial ordering by the rule “$x\preccurlyeq y$ or ($x\preccurlyeq x_{0}$ and $y_{0}\preccurlyeq y$). “The latter ordering “includes” the former and has $x_{0}\preccurlyeq y_{0}$. Now apply Zorn’s lemma or transfinite induction in the usual way to complete the proof. (b) Obviously a linear ordering cannot be embedded in any different linear ordering. (c) A partial ordering that has incomparable elements $x_{0}$ and $y_{0}$ as in (a) can be extended to two linear orderings in which $x_{0}\preccurlyeq y_{0}$ and $y_{0}\preccurlyeq x_{0}$, respectively, so at least two linear orderings exist.</p>
 
@@ -867,7 +867,7 @@
 
   <p class="uln-indentC"><a id="page_548"></a><strong>T4.</strong> Set $\tt T←0$. For 1 ≤ <em>k</em> ≤ <em>n</em> if ${\tt COUNT[}k\tt]$ is zero do the following: Set ${\tt SLINK[}k\tt]←T$, $\tt T←k$. (${\tt SLINK[}k{\tt]≡QLINK[}k\tt]$.)</p>
 
-  <p class="uln-indentC"><strong>T5.</strong> Output the value of <code>T</code>. If <code>T</code> = 0, go to T8; otherwise, set ${\tt N←N}−1$, $\tt P←TOP[T]$, $\tt T←SLINK[T]$.</p>
+  <p class="uln-indentC"><strong>T5.</strong> Output the value of <code>T</code>. If <code>T</code> = 0, go to T8; otherwise, set ${\tt N←N}-1$, $\tt P←TOP[T]$, $\tt T←SLINK[T]$.</p>
 
   <p class="uln-indentC"><strong>T6.</strong> Same as before, except go to T5 instead of T7; and when $\tt COUNT[SUC(P)]$ goes down to zero, set $\tt SLINK[SUC(P)]←T$ and $\tt T←SUC(P)$.</p>
 
@@ -947,7 +947,7 @@
 
   <div class="image"><img src="../Images/551fig01.gif"></div>
 
-  <p><a href="../Text/ch02.html#ch02ex_2_4_3" id="ch02ex_2_4_3a">3</a>. If ${\tt PTR}_{1} = {\tt PTR}_{2}$, the only effect is ${\tt PTR}_{2}←\varLambda$. If ${\tt PTR}_{1} ≠ {\tt PTR}_{2}$, the exchange of links breaks the list into two parts, as if a circle had been broken in two by cutting at two points; the second part of the operation then makes ${\tt PTR}_{1}$ point to a circular list that consists of the nodes that would have been traversed if, in the original list, we followed the links from ${\tt PTR}_{1}$ to ${\tt PTR}_{2}$.</p>
+  <p><a href="../Text/ch02.html#ch02ex_2_4_3" id="ch02ex_2_4_3a">3</a>. If ${\tt PTR}_{1} = {\tt PTR}_{2}$, the only effect is ${\tt PTR}_{2}←\varLambda$. If ${\tt PTR}_{1}≠{\tt PTR}_{2}$, the exchange of links breaks the list into two parts, as if a circle had been broken in two by cutting at two points; the second part of the operation then makes ${\tt PTR}_{1}$ point to a circular list that consists of the nodes that would have been traversed if, in the original list, we followed the links from ${\tt PTR}_{1}$ to ${\tt PTR}_{2}$.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_4" id="ch02ex_2_4_4a">4</a>. Let <code>HEAD</code> be the address of the list head. To push down <code>Y</code> onto the stack: Set $\tt P\Leftarrow AVAIL$, $\tt INFO(P)←Y$, $\tt LINK(P)←LINK(HEAD)$, $\tt LINK(HEAD)←P$. To pop up the stack onto <code>Y</code>: If ${\tt LINK(HEAD)}=\tt HEAD$ then <code>UNDERFLOW</code>; otherwise set $\tt P←LINK(HEAD)$, $\tt LINK(HEAD)←LINK(P)$, $\tt Y←INFO(P)$, $\tt AVAIL\Leftarrow P$.</p>
 
@@ -1043,7 +1043,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_4" id="ch02ex_2_6_4a">4</a>. <code>LOC(A[J,K])</code> = <code>LOC(A[</code>0,0<code>])</code> + <em>n</em><code>J</code> − <code>J</code>(<code>J</code> − 1)/2 + <code>K</code>.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_6_5" id="ch02ex_2_6_5a">5</a>. Let ${\tt A0}={\tt LOC(A[}0{\tt,}0\tt])$. There are at least two solutions, assuming that <code>J</code> is in rI1 and <code>K</code> is in rI2. (i) ‘<code>LDA TA2,1:7</code>’, where location <code>TA2+</code><em>j</em> is ‘<code>NOP</code> <em>j</em><code>+1*</code><em>j</em><code>/2+A0,2</code>’; (ii) ‘<code>LDA C1,7:2</code>’, where location <code>C1</code> contains ‘<code>NOP TA,1:7</code>’ and location <code>TA+</code><em>j</em> says ‘<code>NOP</code> <em>j</em><code>+1*</code><em>j</em><code>/2+A0</code>’. The latter takes one more cycle but doesn’t tie the table down to index register 2.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_6_5" id="ch02ex_2_6_5a">5</a>. Let ${\tt A0}={\tt LOC(A[}0{\tt,}0\tt])$. There are at least two solutions, assuming that <code>J</code> is in rI1 and <code>K</code> is in rI2. (i) ‘<code>LDA TA2,1:7</code>’, where location ${\tt TA2+}j$ is ‘${\tt NOP}\;j{\tt+1{*}}j\tt/2{+}A0,2$’; (ii) ‘<code>LDA C1,7:2</code>’, where location <code>C1</code> contains ‘<code>NOP TA,1:7</code>’ and location ${\tt TA+}j$ says ‘${\tt NOP}\;j{\tt+1{*}}j\tt/2{+}A0$’. The latter takes one more cycle but doesn’t tie the table down to index register 2.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_6" id="ch02ex_2_6_6a">6</a>.</p>
 
@@ -1115,7 +1115,7 @@
 
   <div class="image"><img src="../Images/e560_01.gif"></div>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_6_20" id="ch02ex_2_6_20a">20</a>. $a_{0}={\tt LOC(A[1,1])}-3$, $a_{1}=\text{1 or 2}$, $a_{2}=3−a_{1}$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_6_20" id="ch02ex_2_6_20a">20</a>. $a_{0}={\tt LOC(A[1,1])}-3$, $a_{1}=\text{1 or 2}$, $a_{2}=3-a_{1}$.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_21" id="ch02ex_2_6_21a">21</a>. For example, ${\tt M}←\max({\tt I},{\tt J})$, ${\tt LOC(A[I,J])}={\tt LOC(A[}1,1{\tt])}+{\tt M}({\tt M}-1)+{\tt I}-{\tt J}$. (Such formulas have been proposed independently by many people. A. L. Rosenberg and H. R. Strong have suggested the following <em>k</em>-dimensional generalization: ${\tt LOC(A[I}_{1}{\tt,\ldots,I}_{k}{\tt ])}={\tt L}_{k}$ where ${\tt L}_{1}={\tt LOC(A[}1,\ldots,1{\tt ])}+{\tt I}_{1}-1$, ${\tt L}_{r}={\tt L}_{r-1}+({\tt M}_{r}-1)^{r}+({\tt M}_{r}-{\tt I}_{r})({\tt M}_{r}^{r-1}-({\tt M}_{r}-1)^{r-1})$, and ${\tt M}_{r}=\max({\tt I}_{1},\ldots,{\tt I}_{r})$ [<em>IBM Technical Disclosure Bulletin</em> <strong>14</strong> (1972), 3026–3028]. See <em>Current Trends in Programming Methodology</em> <strong>4</strong> (Prentice–Hall, 1978), 263–311, for further results of this kind.)</p>
 
@@ -1143,11 +1143,11 @@
 
   <div class="image"><img src="../Images/561fig01.gif"></div>
 
-  <p><a href="../Text/ch02a.html#ch02ex_1_3_2" id="ch02ex_1_3_2a">2</a>. The first two trees in the answer to <a href="../Text/ch02a.html#ch02ex_1_3_1">exercise 1</a> are the same, as oriented trees, so we get only 9 different possibilities in this case. For the general solution, see <a href="../Text/ch02b.html#ch02lev3sec4">Section 2.3.4.4</a>, where the formula $n^{n− 1}$ is proved.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_1_3_2" id="ch02ex_1_3_2a">2</a>. The first two trees in the answer to <a href="../Text/ch02a.html#ch02ex_1_3_1">exercise 1</a> are the same, as oriented trees, so we get only 9 different possibilities in this case. For the general solution, see <a href="../Text/ch02b.html#ch02lev3sec4">Section 2.3.4.4</a>, where the formula $n^{n-1}$ is proved.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_3" id="ch02ex_1_3_3a">3</a>. Part 1: To show there is <em>at least one</em> such sequence. Let the tree have <em>n</em> nodes. The result is clear when <em>n</em> = 1, since <em>X</em> must be the root. If <em>n</em> &gt; 1, the definition implies there is a root $X_{1}$ and subtrees $T_{1},T_{2},\ldots,T_{m}$; either $X=X_{1}$ or <em>X</em> is a member of a unique $T_{j}$. In the latter case, there is by induction a path $X_{2},\ldots,X$ where $X_{2}$ is the root of $T_{j}$, and since $X_{1}$ is the parent of $X_{2}$ we have a path $X_{1},X_{2},\ldots,X$.</p>
 
-  <p class="indent">Part 2: To show there is <em>at most one</em> such sequence. We will prove by induction that if <em>X</em> is not the root of the tree, <em>X</em> has a unique parent (so that $X_{k}$ determines $X_{k −1}$ determines $X_{k −2}$, etc.) If the tree has one node, there is nothing to prove; otherwise <em>X</em> is in a unique $T_{j}$. Either <em>X</em> is the root of $T_{j}$, in which case <em>X</em> has a unique parent by definition; or <em>X</em> is not the root of $T_{j}$, in which case <em>X</em> has a unique parent in $T_{j}$ by induction, and no node outside of $T_{j}$ can be <em>X</em>’s parent.</p>
+  <p class="indent">Part 2: To show there is <em>at most one</em> such sequence. We will prove by induction that if <em>X</em> is not the root of the tree, <em>X</em> has a unique parent (so that $X_{k}$ determines $X_{k-1}$ determines $X_{k-2}$, etc.) If the tree has one node, there is nothing to prove; otherwise <em>X</em> is in a unique $T_{j}$. Either <em>X</em> is the root of $T_{j}$, in which case <em>X</em> has a unique parent by definition; or <em>X</em> is not the root of $T_{j}$, in which case <em>X</em> has a unique parent in $T_{j}$ by induction, and no node outside of $T_{j}$ can be <em>X</em>’s parent.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_4" id="ch02ex_1_3_4a">4</a>. True (unfortunately).</p>
 
@@ -1173,7 +1173,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_12" id="ch02ex_1_3_12a">12</a>. We impose an additional condition on the partial ordering (analogous to that of “nested sets”) to ensure that it corresponds to a forest: If $x\preccurlyeq y$ and $x\preccurlyeq z$ then either $y\preccurlyeq z$ or $z\preccurlyeq y$. In other words, the elements larger than any given element are linearly ordered. To make a tree, also assert the existence of a largest element <em>r</em> such that $x\preccurlyeq r$ for all <em>x</em>. A proof that this gives an unordered tree as defined in the text, when the number of nodes is finite, runs like the proof for nested sets in <a href="../Text/ch02a.html#ch02ex_1_3_10">exercise 10</a>.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_1_3_13" id="ch02ex_1_3_13a">13</a>. $a_{1}.a_{2}.\cdots.a_{k},a_{1}.a_{2}.\cdots.a_{k−1},\ldots,a_{1}.a_{2},a_{1}$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_1_3_13" id="ch02ex_1_3_13a">13</a>. $a_{1}.a_{2}.\cdots.a_{k},a_{1}.a_{2}.\cdots.a_{k-1},\ldots,a_{1}.a_{2},a_{1}$.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_14" id="ch02ex_1_3_14a">14</a>. Since <em>S</em> is nonempty, it contains an element $1.a_{1}.\cdots.a_{k}$ where <em>k</em> is as small as possible; if <em>k</em> &gt; 0 we also take $a_{k}$ as small as possible in <em>S</em>, and we immediately see that <em>k</em> must be 0. In other words, <em>S</em> must contain the element 1. Let 1 be the root. All other elements have <em>k</em> &gt; 0, and so the remaining elements of <em>S</em> can be partitioned into sets $S_{j} =\{1.j.a_{2}.\cdots.a_{k}\}$, 1 ≤ <em>j</em> ≤ <em>m</em>, for some <em>m</em> ≥ 0. If <em>m</em> ≠ 0 and $S_{m}$ is nonempty, we deduce by reasoning as above that $1.j$ is in $S_{j}$ for each $S_{j}$; hence each $S_{j}$ is nonempty. Then it is easy to see that the sets $S'_{j} =\{1.a_{2}.\cdots.a_{k}\mid 1.j.a_{2}.\cdots.a_{k}\text{ is in }S_{j}\}$ satisfy the same condition as <em>S</em> did. By induction, each of the $S_{j}$ forms a tree.</p>
 
@@ -1199,11 +1199,11 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_20" id="ch02ex_1_3_20a">20</a>. (Intuitively, the correspondence between 0-2-trees and binary trees is obtained by removing all terminal nodes of the 0-2-tree; see the important construction in <a href="../Text/ch02b.html#ch02lev3sec5">Section 2.3.4.5</a>.) Let a 0-2-tree with one node correspond to the empty binary tree; and let a 0-2-tree with more than one node, consisting therefore of a root <em>r</em> and 0-2-trees $T_{1}$ and $T_{2}$, correspond to the binary tree with root <em>r</em>, left subtree $T'_{1}$, and right subtree $T'_{2}$, where $T_{1}$ and $T_{2}$ correspond respectively to $T'_{1}$ and $T'_{2}$.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_1_3_21" id="ch02ex_1_3_21a">21</a>. $1+0·n_{1}+1·n_{2}+\cdots+(m−1)·n_{m}$. <em>Proof:</em> The number of nodes in the tree is $n_{0}+n_{1}+n_{2}+\cdots+n_{m}$, and this also equals 1 + (number of children in the tree) = $1+0·n_{0}+1·n_{1}+2·n_{2}+\cdots+m·n_{m}$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_1_3_21" id="ch02ex_1_3_21a">21</a>. $1+0·n_{1}+1·n_{2}+\cdots+(m-1)·n_{m}$. <em>Proof:</em> The number of nodes in the tree is $n_{0}+n_{1}+n_{2}+\cdots+n_{m}$, and this also equals 1 + (number of children in the tree) = $1+0·n_{0}+1·n_{1}+2·n_{2}+\cdots+m·n_{m}$.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_22" id="ch02ex_1_3_22a">22</a>. The basic idea is to proceed recursively, with the representation of a nonempty binary tree defined to be the representation of its root plus half-size-and-rotated representations of its left and right subtrees. Thus an arbitrarily large binary tree can be represented on a single sheet of paper, if one has a sufficiently powerful magnifying glass.</p>
 
-  <p class="indent">Many variations on this theme are possible. For example, one idea is to represent the root by a line from the center of a given landscape-oriented page to the top edge, and to rotate the left-subtree representation by $90^{°}$ clockwise in the left halfpage, the right-subtree representation by $90^{°}$ counterclockwise in the right halfpage. Each node is then represented by a line. (When this method is applied to a complete binary tree having $2^{k}−1$ nodes on <em>k</em> levels, it yields so-called “H-trees,” which are the most efficient layouts of such binary trees on a VLSI chip; see R. P. Brent and H. T. Kung, <em>Inf. Proc. Letters</em> <strong>11</strong> (1980), 46–48.)</p>
+  <p class="indent">Many variations on this theme are possible. For example, one idea is to represent the root by a line from the center of a given landscape-oriented page to the top edge, and to rotate the left-subtree representation by $90^{°}$ clockwise in the left halfpage, the right-subtree representation by $90^{°}$ counterclockwise in the right halfpage. Each node is then represented by a line. (When this method is applied to a complete binary tree having $2^{k}-1$ nodes on <em>k</em> levels, it yields so-called “H-trees,” which are the most efficient layouts of such binary trees on a VLSI chip; see R. P. Brent and H. T. Kung, <em>Inf. Proc. Letters</em> <strong>11</strong> (1980), 46–48.)</p>
 
   <div class="image"><img src="../Images/563fig04.gif"></div>
 
