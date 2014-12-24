@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'MathJax_Typewriter';
+  src:url('../Fonts/MathJax_Typewriter-Regular.otf');
+  font-style: normal;
+}
+body {
+  margin: 70px;
+  padding: 0;
+  font-family: Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6em;
+  text-align: left;
+  font-size: 100%;
+  text-indent: 0.002pt;
+}
+h1, h2, h3, h4, h5 {
+  font-family: "source sans pro", sans-serif, "AvenirNextCondensed-Medium", "HelveticaNeue-CondensedBold", "Droid Sans", Helvetica, Arial, sans-serif !important;
+  line-height: 1.1;
+  font-style: normal;
+  font-weight: 700;
+  page-break-after: avoid;
+}
+h1 {
+  font-size: 2em;
+  margin-top: 15pt;
+  margin-bottom: 12pt;
+  text-align: center;
+}
+h2 {
+  font-size: 1.575em;
+}
+h3 {
+  font-size: 1.25em;
+  text-indent: 0 !important;
+}
+h4 {
+  font-size: 1.15em;
+}
+h5 {
+  font-size: 0.9375em;
+}
+.indent {
+  text-indent: 18pt;
+}
+div.image img {
+  max-width: 99%;
+  max-height: 99%;
+}
+.image {
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: center;
+  page-break-inside: avoid;
+  /*display:block;*/
+}
+p.image {
+  text-align: center;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.answer2, .answer3, .uln-indent, .uln-indent1, .indenthangingA, .indenthangingAA, .uln-indentC, .uln-indentCC, .indent, .indenthangingAA1 {
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+  text-align: left;
+}
+.uln-indent {
+  margin-left: 28pt;
+}
+.uln-indent1 {
+  margin-left: 45pt;
+}
+.uln-indentC {
+  margin-left: 44pt;
+  text-indent: -18pt;
+}
+/*#################Seccion respuestas##################*/
+.answer2 {
+  margin-left: 50pt;
+  text-indent: -32pt;
+}
+.answer3 {
+  margin-left: 50pt;
+  text-indent: -37pt;
+}
+
+/*#####################################################*/
+.indenthangingA {/*pendiente arreglar para ejs resueltos*/
+  margin-left: 35pt;
+  text-indent: -13pt;
+}
+.indenthangingAA {
+  margin-left: 50pt;
+  text-indent: -20.5pt;
+}
+.uln-indentCC {
+  margin-left: 38pt;
+  text-indent: -27pt;
+}
+.indenthangingAA1 {
+  margin-left: 50pt;
+  text-indent: -22pt;
+}
+sup {
+  vertical-align: 0.8ex;
+  font-size:75%;
+}
+sub {
+  vertical-align: -1ex;
+  font-size:75%;
+}
+fieldset, img {
+  border: 0;
+}
+code {
+  font-family: 'MathJax_Typewriter';
+  font-size: inherit;
+}
+address, caption, cite, code, dfn, strong, th, var {
+  font-style: normal;
+  font-weight: 400;
+}
+strong {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+}
+.middle img {
+  vertical-align: middle;
+}
+.baseline img {
+  vertical-align: baseline;
+}
+.top img {
+  vertical-align: text-top;
+}
+/*.Rotsan_italic
+{
+  font-family: "RotisSansSerif-Italic";
+  src: url(fonts/RotisSansSerif-Italic.ttf);
+  font-weight: normal;
+  font-style: italic;
+}*/
