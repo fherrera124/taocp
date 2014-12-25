@@ -1,0 +1,1565 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$","$"]],
+        displayMath: [["$$","$$"]],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+  </script>
+  <script src="MathJax-2.4-latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+  <title></title>
+  <link href="../Styles/app01b.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h2 id="app01"><a id="page_466"></a>Answers to Exercises</h2>
+
+  <p class="blockquote"><span class="roman_italic">I am not bound to please thee with my answers</span>.</p>
+
+  <p class="attribution">— SHYLOCK, in <span class="roman_italic">The Merchant of Venice</span> (Act IV, Scene 1, Line 65)</p>
+
+  <h3 id="app01lev1sec1">Notes on the Exercises</h3>
+
+  <p><a href="../Text/pref03.html#pref03ex_3_1" id="pref03ex_3_1a">1</a>. An average problem for a mathematically inclined reader.</p>
+
+  <p><a href="../Text/pref03.html#pref03ex_3_4" id="pref03ex_3_4a">4</a>. See W. J. LeVeque, <em>Topics in Number Theory</em> <strong>2</strong> (Reading, Mass.: Addison–Wesley, 1956), Chapter 3; P. Ribenboim, <em>13 Lectures on Fermat’s Last Theorem</em> (New York: Springer-Verlag, 1979); A. Wiles, <em>Annals of Mathematics</em> (2) <strong>141</strong> (1995), 443–551.</p>
+
+  <h3 id="app01lev1sec2">Section 1.1</h3>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_1" id="ch01ex_1_1_1a">1</a>. $t←a$, $a←b$, $b←c$, $c←d$, $d←t$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_2" id="ch01ex_1_1_2a">2</a>. After the first time, the values of the variables <em>m</em> and <em>n</em> are the previous values of <em>n</em> and <em>r</em>, respectively; and <em>n</em> &gt; <em>r</em>.</p>
+
+  <p><strong><a href="../Text/ch01.html#ch01ex_1_1_3" id="ch01ex_1_1_3a">3</a>. Algorithm F</strong> (<em>Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, find their greatest common divisor.</p>
+
+  <p class="uln-indentC"><strong>F1.</strong> [Remainder $m/n$.] Divide <em>m</em> by <em>n</em> and let <em>m</em> be the remainder.</p>
+
+  <p class="uln-indentC"><strong>F2.</strong> [Is it zero?] If <em>m</em> = 0, the algorithm terminates with answer <em>n</em>.</p>
+
+  <p class="uln-indentC"><strong>F3.</strong> [Remainder $n/m$.] Divide <em>n</em> by <em>m</em> and let <em>n</em> be the remainder.</p>
+
+  <p class="uln-indentC"><strong>F4.</strong> [Is it zero?] If <em>n</em> = 0, the algorithm terminates with answer <em>m</em>; otherwise go back to step F1. <span class="middle"><img src="../Images/common-01.gif"></span></p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_4" id="ch01ex_1_1_4a">4</a>. By <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, <em>n</em> = 6099, 2166, 1767, 399, 171, 57. Answer: 57.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_5" id="ch01ex_1_1_5a">5</a>. Not finite nor definite nor effective, perhaps no output; in format, no letter is given before step numbers, no summary phrase appears, and there is no “<span class="middle"><img src="../Images/common-01.gif"></span>”.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_6" id="ch01ex_1_1_6a">6</a>. Trying <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> with <em>n</em> = 5 and <em>m</em> = 1, 2, 3, 4, 5, we find that step E1 is executed 2, 3, 4, 3, 1 times, respectively. So the average is $2.6 = T_{5}$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_7" id="ch01ex_1_1_7a">7</a>. In all but a finite number of cases, <em>n</em> &gt; <em>m</em>. And when <em>n</em> &gt; <em>m</em>, the first iteration of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> merely exchanges these numbers; so $U_{m} = T_{m} + 1$.</p>
+
+  <p><a id="page_467"></a><a href="../Text/ch01.html#ch01ex_1_1_8" id="ch01ex_1_1_8a">8</a>. Let $A = {a, b, c}$, <em>N</em> = 5. The algorithm will terminate with the string $a^{gcd(m,n)}$.</p>
+
+  <div class="image"><img src="../Images/e467_01.gif"></div>
+
+  <p class="answerNP">Each iteration either decreases <em>m</em> or keeps <em>m</em> unchanged and decreases <em>n</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_1_1_9" id="ch01ex_1_1_9a">9</a>. For example we can say $C_{2}$ represents $C_{1}$ if there is a function <em>g</em> from $I_{1}$ into $I_{2}$, a function <em>h</em> from $Q_{2}$ into $Q_{1}$, and a function <em>j</em> from $Q_{2}$ into the positive integers, satisfying the following conditions:</p>
+
+  <p class="answer-a">a) If <em>x</em> is in $I_{1}$ then $h(g(x)) = x$.</p>
+
+  <p class="answer-a">b) If <em>q</em> is in $Q_{2}$ then <span class="middle"><img src="../Images/e467_02.gif"></span>, where <span class="middle"><img src="../Images/e467_03.gif"></span> means that the function $f_{2}$ is to be iterated $j(q)$ times.</p>
+
+  <p class="answer-a">c) If <em>q</em> is in $Q_{2}$ then $h(q)$ is in $Ω_{1}$ if and only if <em>q</em> is in $Ω_{2}$.</p>
+
+  <p class="exercises1N">For example, let $C_{1}$ be as in (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>) and let $C_{2}$ have $I_{2} = {(m, n)}$, $Ω_{2} = {(m, n, d)}$, $Q_{2} = I_{2}∪Ω_{2}∪{(m, n, a, b, 1)}∪{(m, n, a, b, r, 2)}∪{(m, n, a, b, r, 3)}∪{(m, n, a, b, r, 4)}∪{(m, n, a, b, 5)}$. Let $f_{2}((m, n)) = (m, n, m, n, 1)$; $f_{2}((m, n, d)) = (m, n, d)$; $f_{2}((m, n, a, b, 1)) = (m, n, a, b, a mod b, 2)$; $f_{2}((m, n, a, b, r, 2)) = (m, n, b)$ if <em>r</em> = 0, otherwise $(m, n, a, b, r, 3)$; $f_{2}((m, n, a, b, r, 3)) = (m, n, b, b, r, 4)$; $f_{2}((m, n, a, b, r, 4)) = (m, n, a, r, 5)$; $f_{2}((m, n, a, b, 5)) = f_{2}((m, n, a, b, 1))$.</p>
+
+  <p class="exercises1N">Now let $h((m, n)) = g((m, n)) = (m, n)$; $h((m, n, d)) = (d)$; $h((m, n, a, b, 1)) = (a, b, 0, 1)$; $h((m, n, a, b, r, 2)) = (a, b, r, 2)$; $h((m, n, a, b, r, 3)) = (a, b, r, 3)$; $h((m, n, a, b, r, 4)) = h(f_{2}((m, n, a, b, r, 4)))$; $h((m, n, a, b, 5)) = (a, b, b, 1)$; $j((m, n, a, b, r, 3)) = j((m, n, a, b, r, 4)) = 2$, otherwise $j(q) = 1$. Then $C_{2}$ represents $C_{1}$.</p>
+
+  <p class="exercises1N"><em>Notes</em>: It is tempting to try to define things in a more simple way—for example, to let <em>g</em> map $Q_{1}$ into $Q_{2}$ and to insist only that when $x_{0}, x_{1}, ...$ is a computational sequence in $C_{1}$ then $g(x_{0}), g(x_{1}), ...$ is a subsequence of the computational sequence in $C_{2}$ that begins with $g(x_{0})$. But this is inadequate; in the example above, $C_{1}$ forgets the original value of <em>m</em> and <em>n</em> but $C_{2}$ does not.</p>
+
+  <p class="exercises1N">If $C_{2}$ represents $C_{1}$ by means of functions <em>g</em>, <em>h</em>, <em>j</em>, and if $C_{3}$ represents $C_{2}$ by means of functions <em>g</em>′, <em>h</em>′, <em>j</em>′, then $C_{3}$ represents $C_{1}$ by means of functions $g^{′′}$, $h^{′′}$, $j^{′′}$, where</p>
+
+  <div class="image"><img src="../Images/e467_04.gif"></div>
+
+  <p class="answerNP">if $q_{0} = q$ and <span class="middle"><img src="../Images/e467_05.gif"></span>. Hence the relation defined above is transitive. We can say $C_{2}$ <em>directly represents</em> $C_{1}$ if the function <em>j</em> is bounded; this relation is also transitive. The relation “$C_{2}$ represents $C_{1}$” generates an equivalence relation in which two computational methods apparently are equivalent if and only if they compute isomorphic functions of their inputs; the relation “$C_{2}$ directly represents $C_{1}$” generates a more interesting equivalence relation that perhaps matches the intuitive idea of being “essentially the same algorithm.”</p>
+
+  <p class="exercises1N">For an alternative approach to simulation, see R. W. Floyd and R. Beigel, <em>The Language of Machines</em> (Computer Science Press, 1994), Section 3.3.</p>
+
+  <h4 id="app01lev2sec1"><a id="page_468"></a>Section 1.2.1</h4>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_1" id="ch01ex_2_1_1a">1</a>. (a) Prove $P(0)$. (b) Prove that $P (0), ..., P(n)$ implies $P(n + 1)$, for all <em>n</em> ≥ 0.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_2" id="ch01ex_2_1_2a">2</a>. The theorem has not been proved for <em>n</em> = 2. In the second part of the proof, take <em>n</em> = 1; we assume there that $a^{(n−1)−1} = a^{−1} = 1$. If this condition is true (so that <em>a</em> = 1), the theorem is indeed valid.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_3" id="ch01ex_2_1_3a">3</a>. The correct answer is $1 − 1/n$. The mistake occurs in the proof for <em>n</em> = 1, when the formula on the left either may be assumed to be meaningless, or it may be assumed to be zero (since there are <em>n</em> − 1 terms).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_5" id="ch01ex_2_1_5a">5</a>. If <em>n</em> is prime, it is trivially a product of one or more primes. Otherwise <em>n</em> has factors, so <em>n</em> = <em>km</em> for some <em>k</em> and <em>m</em> with 1 &lt; <em>k</em>,<em>m</em> &lt; <em>n</em>. Since both <em>k</em> and <em>m</em> are less than <em>n</em>, by induction they can be written as products of primes; hence <em>n</em> is the product of the primes appearing in the representations of <em>k</em> and <em>m</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_6" id="ch01ex_2_1_6a">6</a>. In the notation of <a href="../Text/ch01.html#ch01fig04">Fig. 4</a>, we prove <em>A5</em> implies <em>A6</em>. This is clear since <em>A5</em> implies $(a′ − qa)m + (b′ − qb)n = (a′ m + b′ n) − q(am + bn) = c − qd = r$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_7" id="ch01ex_2_1_7a">7</a>. $n^{2} − (n − 1)^{2} + · · · − (−1)^{n} 1^{2} = 1 + 2 + · · · + n = n(n + 1)/2$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_8" id="ch01ex_2_1_8a">8</a>. (a) We must show that $(n^{2} − n + 1) + (n^{2} − n + 3) + · · · + (n^{2} + n − 1)$ equals $n^{3}$: And indeed, the sum is $n(n^{2} − n) + (1 + 3 + · · · + (2n−1)) = n^{3} − n^{2} + n^{2}$, by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>). But an inductive proof was requested, so another approach should be taken! For <em>n</em> = 1, the result is obvious. Let <em>n</em> ≥ 1; we have $(n + 1)^{2} − (n + 1) = n^{2} − n + 2n$, so the first terms for <em>n</em> + 1 are 2<em>n</em> larger; thus the sum for <em>n</em> + 1 is the sum for <em>n</em> plus</p>
+
+  <div class="image"><img src="../Images/e468_01.gif"></div>
+
+  <p class="answerNP">this equals $n^{3} + 2n^{2} + n^{2} + 3n + 1 = (n + 1)^{3}$. (b) We have shown that the first term for $(n + 1)^{3}$ is two greater than the last term for $n^{3}$. Therefore by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>), $1^{3} + 2^{3} + · · · + n^{3} =$ sum of consecutive odd numbers starting with unity = $(number of terms)^{2} = (1 + 2 + · · · + n)^{2}$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_10" id="ch01ex_2_1_10a">10</a>. Obvious for <em>n</em> = 10. If <em>n</em> ≥ 10, we have $2^{n+1} = 2 · 2^{n} &gt; (1 + 1/n)^{3} 2^{n}$ and by induction this is greater than $(1 + 1/n)^{3}n^{3} = (n + 1)^{3}$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_11" id="ch01ex_2_1_11a">11</a>. $(−1)^{n}(n + 1)/(4(n + 1)^{2} + 1)$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_12" id="ch01ex_2_1_12a">12</a>. The only nontrivial part of the extension is the calculation of the integer <em>q</em> in E2. This can be done by repeated subtraction, reducing to the problem of determining whether <span class="middle"><img src="../Images/e468_02.gif"></span> is positive, negative, or zero, and the latter problem is readily solved.</p>
+
+  <p class="answerp">It is easy to show that whenever <span class="middle"><img src="../Images/e468_03.gif"></span>, we must have <em>u</em> = <em>u</em>′ and <em>v</em> = <em>v</em>′, since \sqrt{2} is irrational. Now it is clear that 1 and \sqrt{2} have no common divisor, if we define divisor in the sense that $u + v \sqrt{2}$ divides $a(u + v \sqrt{2})$ if and only if <em>a</em> is an integer. The algorithm extended in this way computes the regular continued fraction of the ratio of its inputs; see Section 4.5.3.</p>
+
+  <p class="answerp">[<em>Note:</em> If we extend the concept of divisor so that $u + v \sqrt{2}$ divides $a(u + v \sqrt{2})$ if and only if <em>a</em> has the form $u′ + v′ \sqrt{2}$ for integers <em>u</em>′ and <em>v</em>′, there <em>is</em> a way to extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> so that it always will terminate: If in step E2 we have $c = u+v \sqrt{2}$ and $d = u′ +v′ \sqrt{2}$, compute $c/d = c(u′ −v′ \sqrt{2})/(u′ ^{2} −2v′^{2}) = x + y\sqrt{2}$ where <em>x</em> and <em>y</em> are rational. Now let $q = u^{′′} + v^{′′}\sqrt{2}$, where $u^{′′}$ and $v^{′′}$ are the nearest integers to <em>x</em> and <em>y</em>; and let <em>r</em> = <em>c</em> − <em>qd</em>. If $r = u^{′′′} + v^{′′′}\sqrt{2}$, it follows that $|u^{′′′2} − 2v^{′′′2} | &lt; |u′ ^{2} − 2v′ ^{2} |$, hence the computation will terminate. See “quadratic Euclidean domains” in number theory texts.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_1_13" id="ch01ex_2_1_13a">13</a>. Add “<em>T</em> ≤ 3(<em>n</em> − <em>d</em>) + <em>k</em>” to assertions <em>A3</em>, <em>A4</em>, <em>A5</em>, <em>A6</em>, where <em>k</em> takes the respective values 2, 3, 3, 1. Also add “<em>d</em> &gt; 0” to <em>A4</em>.</p>
+
+  <p><a id="page_469"></a><a href="../Text/ch01.html#ch01ex_2_1_15" id="ch01ex_2_1_15a">15</a>. (a) Let <em>A</em> = <em>S</em> in (iii); every nonempty well-ordered set has a least element.</p>
+
+  <p class="exercises1I">(b) Let $x <span class="ent">≺</span> y$ if $|x| &lt; |y|$ or if $|x| = |y|$ and <em>x</em> &lt; 0 &lt; <em>y</em>.</p>
+
+  <p class="exercises1I">(c) No, the subset of all positive reals fails to satisfy (iii). [<em>Note:</em> Using the so-called axiom of choice, a rather complicated argument can be given to show that every set can be well-ordered somehow; but nobody has yet been able to define an explicit relation that well-orders the real numbers.]</p>
+
+  <p class="exercises1I">(d) To prove (iii) for $T_{n}$, use induction on <em>n</em>: Let <em>A</em> be a nonempty subset of $T_{n}$ and consider A_{1}, the set of first components of <em>A</em>. Since $A_{1}$ is a nonempty subset of <em>S</em>, and <em>S</em> is well-ordered, $A_{1}$ contains a smallest element <em>x</em>. Now consider $A_{x}$, the subset of <em>A</em> in which the first component equals <em>x</em>; $A_{x}$ may be considered a subset of $T_{n−1}$ if its first component is suppressed, so by induction $A_{x}$ contains a smallest element $(x, x_{2}, ..., x_{n})$ that in fact is the smallest element of <em>A</em>.</p>
+
+  <p class="exercises1I">(e) No, although properties (i) and (ii) are valid. If <em>S</em> contains at least two distinct elements, $a <span class="ent">≺</span> b$, the set $(b), (a, b), (a, a, b), (a, a, a, b), (a, a, a, a, b), ...$ has no least element. On the other hand <em>T</em> can be well-ordered if we define $(x_{1}, ..., x_{m}) <span class="ent">≺</span> (y_{1}, ..., y_{n})$ whenever <em>m</em> &lt; <em>n</em>, or <em>m</em> = <em>n</em> and $(x_{1}, ..., x_{n}) <span class="ent">≺</span> (y_{1}, ..., y_{n})$ in $T_{n}$.</p>
+
+  <p class="exercises1I">(f) Let <em>S</em> be well-ordered by <span class="ent">≺</span>. If such an infinite sequence exists, the set <em>A</em> consisting of the members of the sequence fails to satisfy property (iii), for no element of the sequence can be smallest. Conversely if <span class="ent">≺</span> is a relation satisfying (i) and (ii) but not (iii), let <em>A</em> be a nonempty subset of <em>S</em> that has no smallest element. Since <em>A</em> is not empty, we can find $x_{1}$ in <em>A</em>; since $x_{1}$ is not the smallest element of <em>A</em>, there is $x_{2}$ in <em>A</em> for which $x_{2}<span class="ent">≺</span> x_{1}$; since $x_{2}$ is not the smallest element either, we can find $x_{3}<span class="ent">≺</span> x_{2}$; etc.</p>
+
+  <p class="exercises1I">(g) Let <em>A</em> be the set of all <em>x</em> for which $P(x)$ is false. If <em>A</em> is not empty, it contains a smallest element x_{0}. Hence $P(y)$ is true for all $y <span class="ent">≺</span> x_{0}$. But this implies $P(x_{0})$ is true, so $x_{0}$ is not in <em>A</em> (a contradiction). Therefore <em>A</em> must be empty: $P(x)$ is always true.</p>
+
+  <h4 id="app01lev2sec2">Section 1.2.2</h4>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_1" id="ch01ex_2_2_1a">1</a>. There is none; if <em>r</em> is a positive rational, <em>r/</em>2 is smaller.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_2" id="ch01ex_2_2_2a">2</a>. Not if infinitely many nines appear in a row; in that case the decimal expansion of the number is $1 + .24000000 . . .$ , according to Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-2">2</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_3" id="ch01ex_2_2_3a">3</a>. $−1/27$, but the text hasn’t defined it.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_4" id="ch01ex_2_2_4a">4</a>. 4.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_6" id="ch01ex_2_2_6a">6</a>. The decimal expansion of a number is unique, so <em>x</em> = <em>y</em> if and only if <em>m</em> = <em>n</em> and $d_{i} = e_{i}$ for all <em>i</em> ≥ 1. If <em>x</em> ≠ <em>y</em>, one may compare <em>m</em> vs. <em>n</em>, $d_{1}$ vs. $e_{1}$, $d_{2}$ vs. $e_{2}$, etc.; when the first inequality occurs, the larger quantity belongs to the larger of ${x, y}$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_7" id="ch01ex_2_2_7a">7</a>. One may use induction on <em>x</em>, first proving the laws for <em>x</em> positive, and then for <em>x</em> negative. Details are omitted here.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_8" id="ch01ex_2_2_8a">8</a>. By trying $n = 0, 1, 2, ...$ we find the value of <em>n</em> for which $n^{m} ≤ u &lt; (n + 1)^{m}$. Assuming inductively that $n, d_{1}, ..., d_{k−1}$ have been determined, $d_{k}$ is the digit such that</p>
+
+  <div class="image"><img src="../Images/e469_06.gif"></div>
+
+  <p class="answerNP">This construction can’t make $d_{k} = 9$ for all <em>k</em> &gt; <em>l</em>, because that could happen only if $(n + d_{1}/10 + · · · + d_{l}/10^{l} + 1/10^{l}) ^{m} ≤ u$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_9" id="ch01ex_2_2_9a">9</a>. $((b^{p/q})^{u/v})^{qv} = (((b^{p/q})^{u/v})^{v})^{q} = ((b^{p/q})^{u})^{q} = ((b^{p/q})^{q})^{u} = b^{pu}$, hence $(b^{p/q})^{u/v} = b^{pu/qv}$. This proves the second law. We prove the first law using the second: $b^{p/q}b^{u/v} = (b^{1}/^{qv})^{pv} (b^{1/qv})^{qu} = (b^{1/qv})^{pv + qu} = b^{p/q + u/v}$.</p>
+
+  <p><a id="page_470"></a><a href="../Text/ch01.html#ch01ex_2_2_10" id="ch01ex_2_2_10a">10</a>. If log_{10} 2 = p/q, with <em>p</em> and <em>q</em> positive, then 2^{q} = 10^{p}, which is absurd since the right-hand side is divisible by 5 but the left-hand side isn’t.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_11" id="ch01ex_2_2_11a">11</a>. Infinitely many! No matter how many digits of <em>x</em> are given, we will not know whether 10^{x} = 1.99999 . . . or 2.00000 . . . , if <em>x</em>’s digits agree with the digits of log_{10} 2. There is nothing mysterious or paradoxical in this; a similar situation occurs in addition, if we are adding .444444 . . . to .55555 . . . .</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_12" id="ch01ex_2_2_12a">12</a>. They are the only values of d_{1}, ...,d_{8} that satisfy Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_13" id="ch01ex_2_2_13a">13</a>. (a) First prove by induction that if <em>y</em> &gt; 0, 1 + <em>ny</em> ≤ (1 + <em>y</em>)^{n}. Then set <em>y</em> = x/n, and take <em>n</em>th roots. (b) <em>x</em> = <em>b</em> − 1, <em>n</em> = 10^{k}.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_14" id="ch01ex_2_2_14a">14</a>. Set <em>x</em> = log_{b}<em>c</em> in the second equation of (<a href="../Text/ch01.html#ch01eq-lev2sec2-5">5</a>), then take logarithms of both sides.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_15" id="ch01ex_2_2_15a">15</a>. Prove it, by transposing “log_{b}<em>y</em>” to the other side of the equation and using (<a href="../Text/ch01.html#ch01eq-lev2sec2-11">11</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_16" id="ch01ex_2_2_16a">16</a>. ln <em>x/</em>ln 10, by (<a href="../Text/ch01.html#ch01eq-lev2sec2-14">14</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_17" id="ch01ex_2_2_17a">17</a>. 5; 1; 1; 0; undefined.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_18" id="ch01ex_2_2_18a">18</a>. No, <span class="middle"><img src="../Images/e470_01.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_19" id="ch01ex_2_2_19a">19</a>. Yes, since lg <em>n</em> &lt; (log_{10}<em>n</em>)<em>/.</em>301 &lt; 14<em>/.</em>301 &lt; 47.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_20" id="ch01ex_2_2_20a">20</a>. They are reciprocals.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_21" id="ch01ex_2_2_21a">21</a>. (ln ln <em>x</em> − ln ln <em>b</em>)/ ln <em>b</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_22" id="ch01ex_2_2_22a">22</a>. From the tables in <a href="../Text/app02.html#app02">Appendix A</a>, lg <em>x</em> ≈ 1.442695 ln <em>x</em>; log_{10}<em>x</em> ≈ .4342945 ln <em>x</em>. The relative error is ≈ (1.442695 − 1.4342945)/1.442695 ≈ 0.582%.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_23" id="ch01ex_2_2_23a">23</a>. Take the figure of area ln <em>y</em>, and divide its height by <em>x</em> while multiplying its length by <em>x</em>. This deformation preserves its area and makes it congruent to the piece left when ln <em>x</em> is removed from ln <em>xy</em>, since the height at point <em>x</em> + <em>xt</em> in the diagram for ln <em>xy</em> is 1/(<em>x</em> + <em>xt</em>) = (1/(1 + <em>t</em>))<em>/x</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_24" id="ch01ex_2_2_24a">24</a>. Substitute 2 everywhere 10 appears.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_25" id="ch01ex_2_2_25a">25</a>. Note that <em>z</em> = 2^{−<em>p</em>}\lfloor 2^{<em>p</em>−<em>k</em>}<em>x</em>\rfloor  &gt; 0, when <em>p</em> is the precision (the number of binary digits after the radix point). The quantity <em>y</em> + log_{b}<em>x</em> stays approximately constant.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_27" id="ch01ex_2_2_27a">27</a>. Prove by induction on <em>k</em> that</p>
+
+  <div class="image"><img src="../Images/e470_02.gif"></div>
+
+  <p class="answerNP">and take logarithms.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_28" id="ch01ex_2_2_28a">28</a>. The following solution uses the same auxiliary table as before.</p>
+
+  <p class="uln-indentC"><strong>E1.</strong> [Initialize.] Set <em>x</em> ← 1 − \epsilon − <em>x</em>, <em>y</em> ← y_{0}, and <em>k</em> ← 1, where 1 − \epsilon is the largest possible value of <em>x</em>, and y_{0} is the nearest approximation to b^{1−\epsilon}. (The quantity yb^{<em>−x</em>} will remain approximately constant in the following steps.)</p>
+
+  <p class="uln-indentC"><strong>E2.</strong> [Test for end.] If <em>x</em> = 0, stop.</p>
+
+  <p class="uln-indentC"><strong>E3.</strong> [Compare.] If <em>x</em> &lt; log_{b}(2^{k}/(2^{k} − 1)), increase <em>k</em> by 1 and repeat this step.</p>
+
+  <p class="uln-indentC"><strong>E4.</strong> [Reduce values.] Set $x←x − log_{b}(2^{k}/(2^{k} − 1)), y←y − (<em>y</em> shifted right <em>k</em>), and go to E2. <span class="middle"><img src="../Images/common-01.gif"></span></p>
+
+  <p class="answerp">If <em>y</em> is set to b^{1−\epsilon} (1 + \epsilon_{0}) in step E1, the subsequent computational error arises when $x←x + log_{b} (1 − 2^{−k}) + δ_{j}$ and $y←y(1 − 2^{−k})(1 + \epsilon_{j})$ during the <em>j</em> th execution of step E4, for certain small errors δ_{j} and \epsilon_{j}. When the algorithm terminates we have computed <em>y</em> = b^{x−Σδ_{j}} ∏_{j} (1 + \epsilon_{j}). Further analysis depends on <em>b</em> and the computer word size. Notice that both in this case and in <a href="../Text/ch01.html#ch01ex_2_2_26">exercise 26</a>, it is possible to refine the error estimates somewhat if the base is <em>e</em>, since for most values of <em>k</em> the table entry ln(2^{k}/(2^{k} − 1)) can be given with high accuracy: It equals <span class="middle"><img src="../Images/e470_03.gif"></span>.</p>
+
+  <p class="answerp"><a id="page_471"></a><em>Note:</em> Similar algorithms can be given for trigonometric functions; see J. E. Meggitt, <em>IBM J. Res. and Dev.</em> <strong>6</strong> (1962), 210–226; <strong>7</strong> (1963), 237–245. See also T. C. Chen, <em>IBM J. Res. and Dev.</em> <strong>16</strong> (1972), 380–388; V. S. Linsky, <em>Vychisl. Mat.</em> <strong>2</strong> (1957), 90–119; D. E. Knuth, <span class="EmpItalic">METAFONT:</span> The Program (Reading, Mass.: Addison–Wesley, 1986), §120–§147.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_29" id="ch01ex_2_2_29a">29</a>. <em>e</em>; 3; 4.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_2_30" id="ch01ex_2_2_30a">30</a>. <em>x</em>.</p>
+
+  <h4 id="app01lev2sec3">Section 1.2.3</h4>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_1" id="ch01ex_2_3_1a">1</a>. −a_{1}; and a_{2} + · · · + a_{1} = 0. In general, sums with ‘· · ·’ are defined so that (a_{p} + · · · + a_{q}) + (a_{q+1} + · · · + a_{r}) = a_{p} + · · · + a_{r} for arbitrary integers <em>p</em>, <em>q</em>, and <em>r</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_2" id="ch01ex_2_3_2a">2</a>. a_{1} + a_{2} + a_{3}.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_3" id="ch01ex_2_3_3a">3</a>. <span class="middle"><img src="../Images/e471_01.gif"></span>. The rule for <em>p</em>(<em>j</em>) is violated: In the first case n^{2} = 3 occurs for no <em>n</em>, and in the second case n^{2} = 4 occurs for <em>two n</em>. [See Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-18">18</a>).]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_4" id="ch01ex_2_3_4a">4</a>. (a_{11}) + (a_{21} + a_{22}) + (a_{31} + a_{32} + a_{33}) = (a_{11} + a_{21} + a_{31}) + (a_{22} + a_{32}) + (a_{33}).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_5" id="ch01ex_2_3_5a">5</a>. It is only necessary to use the rule <em>a</em> ∑_{R(i)}<em>xi</em> = ∑_{R(i)}(ax_{i}):</p>
+
+  <div class="image"><img src="../Images/e471_02.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_7" id="ch01ex_2_3_7a">7</a>. Use Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-3">3</a>); the two limits are interchanged and the terms between a_{0} and a_{c} must be transferred from one limit to the other.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_8" id="ch01ex_2_3_8a">8</a>. Let a_{(i+1)i} = +1, and a_{i(i+1)} = −1, for all <em>i</em> ≥ 0, and all other a_{ij} zero; let <em>R</em>(<em>i</em>) = <em>S</em>(<em>i</em>) = “<em>i</em> ≥ 0”. The left-hand side is −1, the right-hand side is +1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_9" id="ch01ex_2_3_9a">9</a>, <a href="../Text/ch01.html#ch01ex_2_3_10" id="ch01ex_2_3_10a">10</a>. No; the applications of rule (d) assume that <em>n</em> ≥ 0. (The result is correct for <em>n</em> = −1 but the derivation isn’t.)</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_11" id="ch01ex_2_3_11a">11</a>. (<em>n</em> + 1)<em>a</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_12" id="ch01ex_2_3_12a">12</a>. <span class="middle"><img src="../Images/e471_03.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_13" id="ch01ex_2_3_13a">13</a>. <span class="middle"><img src="../Images/e471_04.gif"></span>; or, <span class="middle"><img src="../Images/e471_05.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_14" id="ch01ex_2_3_14a">14</a>. <span class="middle"><img src="../Images/e471_06.gif"></span>, if <em>m</em> ≤ <em>n</em> and <em>r</em> ≤ <em>s</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_15" id="ch01ex_2_3_15a">15</a>, <a href="../Text/ch01.html#ch01ex_2_3_16" id="ch01ex_2_3_16a">16</a>. Key steps:</p>
+
+  <div class="image"><img src="../Images/e471_07.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_17" id="ch01ex_2_3_17a">17</a>. The number of elements in <em>S</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_18" id="ch01ex_2_3_18a">18</a>. <em>S</em>′ (<em>j</em>) = “1≤ <em>j</em> &lt; <em>n</em>”. <em>R</em>′ (<em>i</em>, <em>j</em>) = “<em>n</em> is a multiple of <em>i</em> and <em>i</em> &gt; <em>j</em>”.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_19" id="ch01ex_2_3_19a">19</a>. (a_{n} − a_{m−1}) [<em>m</em> ≤ <em>n</em>].</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_20" id="ch01ex_2_3_20a">20</a>. <span class="middle"><img src="../Images/e471_08.gif"></span>; this formula follows from (<a href="../Text/ch01.html#ch01eq-lev2sec3-14">14</a>) and the result of <a href="../Text/ch01.html#ch01ex_2_3_16">exercise 16</a>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_21" id="ch01ex_2_3_21a">21</a>. ∑_{R(j)}a_{j} + ∑_{S(j)}a_{j} = ∑_{j}a_{j} [<em>R</em>(<em>j</em>)] + ∑_{j}a_{j} [<em>S</em>(<em>j</em>)] = ∑_{j}a_{j} ([<em>R</em>(<em>j</em>)] + [<em>S</em>(<em>j</em>)]); now use the fact that [<em>R</em>(<em>j</em>)] + [<em>S</em>(<em>j</em>)] = [<em>R</em>(<em>j</em>) or <em>S</em>(<em>j</em>)] + [<em>R</em>(<em>j</em>) and <em>S</em>(<em>j</em>)]. In general, bracket notation gives us the ability to manipulate “on the line” instead of “below the line.”</p>
+
+  <p><a id="page_472"></a><a href="../Text/ch01.html#ch01ex_2_3_22" id="ch01ex_2_3_22a">22</a>. For (<a href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), just change ∑ to ∏. We also have ∏_{R(i)}b_{i}c_{i} = (∏_{R(i)}b_{i}) (∏_{R(i)}c_{i}) and</p>
+
+  <div class="image"><img src="../Images/e472_01.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_23" id="ch01ex_2_3_23a">23</a>. 0 + <em>x</em> = <em>x</em> and 1 · <em>x</em> = <em>x</em>. This makes many operations and equations simpler, such as rule (d) and its analog in the previous exercise.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_25" id="ch01ex_2_3_25a">25</a>. The first step and last step are OK. The second step uses <em>i</em> for two different purposes at once. The third step should probably be <span class="middle"><img src="../Images/e472_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_26" id="ch01ex_2_3_26a">26</a>. Key steps, after transforming the problem as in <a href="../Text/ch01.html#ch01exam-1-2">Example 2</a>:</p>
+
+  <div class="image"><img src="../Images/e472_03.gif"></div>
+
+  <p class="answerNP">The answer is <span class="middle"><img src="../Images/e472_04.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_28" id="ch01ex_2_3_28a">28</a>. (<em>n</em> + 1)/2<em>n</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_29" id="ch01ex_2_3_29a">29</a>. (a) ∑_{0 ≤ k ≤ j ≤ i ≤ n}<em>a_{i} a</em>_{j}a_{k}. (b) Let <span class="middle"><img src="../Images/e472_05.gif"></span>. <em>Solutions</em>: <span class="middle"><img src="../Images/e472_06.gif"></span>. The general solution to this problem, as the number of indices gets larger, may be found in <a href="../Text/ch01a.html#ch01lev2sec9">Section 1.2.9</a>, Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-38">38</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_30" id="ch01ex_2_3_30a">30</a>. Write the left side as ∑_{1≤ j,k ≤ n}a_{j}b_{k}x_{j}y_{k}, and do a similar thing on the right. (This identity is the special case <em>m</em> = 2 of <a href="../Text/app01.html#ch01ex_2_3_46a">exercise 46</a>.)</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_31" id="ch01ex_2_3_31a">31</a>. Set a_{j} = u_{j}, b_{j} = 1, x_{j} = v_{j}, and y_{j} = 1, to obtain the answer <span class="middle"><img src="../Images/e472_07.gif"></span>. Consequently we have <span class="middle"><img src="../Images/e472_08.gif"></span> when u_{1} ≤ u_{2} ≤ · · · ≤ u_{n} and v_{1} ≤ v_{2} ≤ · · · ≤ v_{n}, a result known as <em>Chebyshev’s monotonic inequality</em>. [See <em>Soobshch. mat. obshch. Khar, kovskom Univ.</em> <strong>4</strong>, 2 (1882), 93–98.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_33" id="ch01ex_2_3_33a">33</a>. This can be proved by induction on <em>n</em>, if we rewrite the formula as</p>
+
+  <div class="image"><img src="../Images/e472_09.gif"></div>
+
+  <p class="answerNP">Each of these sums now has the form of the original sum, except on <em>n</em> − 1 elements, and the values turn out nicely by induction when 0 ≤ <em>r</em> ≤ <em>n</em> − 1. When <em>r</em> = <em>n</em>, consider the identity</p>
+
+  <div class="image"><img src="../Images/e472_10.gif"></div>
+
+  <p class="answerNP">where <em>P</em>(x_{j}) is a polynomial of degree <em>n</em> − 2 in x_{j} whose coefficients are symmetric functions of {x_{1}<em>, ..., x_{n}</em>} that don’t depend on <em>j</em>. (See <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 1.2.9–10</a>.) We obtain the desired answer from the solutions for <em>r</em> = 0, 1, ..., <em>n</em> − 1.</p>
+
+  <p class="exercises1N"><em>Notes:</em> Dr. Matrix was anticipated in this discovery by L. Euler, who wrote to Christian Goldbach about it on 9 November 1762. See Euler’s <em>Institutionum Calculi Integralis</em> <strong>2</strong> (1769),§1169; and E. Waring, <em>Phil. Trans.</em> <strong>69</strong> (1779), 64–67. The following alternative method of proof, using complex variable theory, is less elementary but more elegant: By the residue theorem, the value of the given sum is</p>
+
+  <div class="image"><img src="../Images/e472_11.gif"></div>
+
+  <p class="answerNP"><a id="page_473"></a>where $R &gt; |x_{1}|, ...,|x_{n}|. The Laurent expansion of the integrand converges uniformly on <em>|z|</em> = <em>R</em>; it is</p>
+
+  <div class="image"><img src="../Images/e473_01.gif"></div>
+
+  <p class="answerNP">Integrating term by term, everything vanishes except the coefficient of z^{−1}. This method gives us the <em>general formula</em> for an arbitrary integer <em>r</em> ≥ 0:</p>
+
+  <div class="image"><img src="../Images/e473_02.gif"></div>
+
+  <p class="answerNP">see Eq. <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-33">33</a>). [J. J. Sylvester, <em>Quart. J. Math.</em> <strong>1</strong> (1857), 141–152.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_34" id="ch01ex_2_3_34a">34</a>. If the reader has tried earnestly to solve this problem, <em>without</em> getting the answer, perhaps its purpose has been achieved. The temptation to regard the numerators as polynomials in <em>x</em> rather than as polynomials in <em>k</em> is almost overwhelming. It would undoubtedly be easier to prove the considerably more general result</p>
+
+  <div class="image"><img src="../Images/e473_03.gif"></div>
+
+  <p class="answerNP">which is an identity in 2<em>n</em> − 1 variables!</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_35" id="ch01ex_2_3_35a">35</a>. If <em>R</em>(<em>j</em>) never holds, the value should be −∞. The stated analog of rule (a) is based on the identity <em>a</em> + max(<em>b, c</em>) = max(<em>a</em> + <em>b, a</em> + <em>c</em>). Similarly if all a_{i}, b_{j} are <em>nonnegative</em>, we have</p>
+
+  <p class="center">$\sup_{R(i)}a_{i} \sup_{S(j)}b_{j} = \sup_{R(i)} \sup_{S(j)}a_{i}b_{j}$.</p>
+
+  <p class="answerNP">Rules (b), (c) do not change; for rule (d) we get the simpler form</p>
+
+  <p class="center">$\sup(\sup_{R(j)a_{j},\sup_{S(j)}a_{j}) = \sup_{R(j) or S(j)}a_{j}$.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_36" id="ch01ex_2_3_36a">36</a>. Subtract column one from columns 2<em>, ..., n</em>. Add rows 2<em>, ..., n</em> to row one. The result is a triangular determinant.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_37" id="ch01ex_2_3_37a">37</a>. Subtract column one from columns 2<em>, ..., n</em>. Then subtract x_{1} times row <em>k</em> − 1 from row <em>k</em>, for <em>k</em> = <em>n</em>, <em>n</em> −1, ..., 2 (in that order). Now factor x_{1} out of the first column and factor x_{k} − x_{1} out of columns <em>k</em> = 2<em>, ..., n</em>, obtaining x_{1}(x_{2} − x_{1}) ... (x_{n} − x_{1}) times a Vandermonde determinant of order <em>n</em> − 1. The process continues by induction.</p>
+
+  <p class="answerp">Alternative proof, using “higher” mathematics: The determinant is a polynomial in the variables x_{1}<em>, ..., x_{n}</em> of total degree 1+2+· · ·+<em>n</em>. It vanishes if x_{j} = 0 or if x_{i} = x_{j}(<em>i &lt; j</em>), and the coefficient of <span class="middle"><img src="../Images/e473_04.gif"></span> is + 1. These facts characterize its value. In general, if two rows of a matrix become equal for x_{i} = x_{j}, their difference is usually divisible by x_{i} − x_{j}, and this observation often speeds the evaluation of determinants.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_38" id="ch01ex_2_3_38a">38</a>. Subtract column one from columns 2<em>, ..., n</em>, and factor out</p>
+
+  <p class="center">(x_{1} + y_{1})^{−1} ... (x_{n} + y_{1})^{−1}(y_{1}− y_{2}) ... (y_{1}− y_{n})</p>
+
+  <p class="answerNP">from rows and columns. Now subtract row one from rows 2<em>, ..., n</em> and factor out (x_{1}−x_{2}) ... (x_{1}<em>−x_{n}</em>)(x_{1}+y_{2})^{−1} ... (x_{1}+y_{n})^{−1}; we are left with the Cauchy determinant of order <em>n</em> − 1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_39" id="ch01ex_2_3_39a">39</a>. Let <em>I</em> be the identity matrix (<em>δ_{ij}</em>), and <em>J</em> the matrix of all ones. Since J^{2} = <em>nJ</em>, we have (<em>xI</em> + <em>yJ</em>)((<em>x</em> + <em>ny</em>)<em>I</em> − <em>yJ</em>) = <em>x</em>(<em>x</em> + <em>ny</em>)<em>I</em>.</p>
+
+  <p><a id="page_474"></a><a href="../Text/ch01.html#ch01ex_2_3_40" id="ch01ex_2_3_40a">40</a>. [A. de Moivre, <em>The Doctrine of Chances</em>, 2nd edition (London: 1738), 197–199.] We have</p>
+
+  <div class="image"><img src="../Images/e474_01.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_41" id="ch01ex_2_3_41a">41</a>. This follows immediately from the relation of an inverse matrix to its cofactors. It may also be interesting to give a direct proof here: We have</p>
+
+  <div class="image"><img src="../Images/e474_02.gif"></div>
+
+  <p class="answerNP">when <em>x</em> = 0. This is a polynomial of degree at most <em>n</em> − 1 in <em>x</em>. If we set <em>x</em> = x_{j} + y_{s}, 1≤ <em>s</em> ≤ <em>n</em>, the terms are zero except when <em>s</em> = <em>t</em>, so the value of this polynomial is</p>
+
+  <div class="image"><img src="../Images/e474_03.gif"></div>
+
+  <p class="answerp">These polynomials of degree at most <em>n</em> − 1 agree at <em>n</em> distinct points <em>x</em>, so they agree also for <em>x</em> = 0; hence</p>
+
+  <div class="image"><img src="../Images/e474_04.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_42" id="ch01ex_2_3_42a">42</a>. <em>n/</em>(<em>x</em> + <em>ny</em>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_43" id="ch01ex_2_3_43a">43</a>. <span class="middle"><img src="../Images/e474_05.gif"></span>. This is easily verified if any x_{i} = 1, since the inverse of any matrix having a row or column all of ones must have elements whose sum is 1. If none of the x_{i} equals one, sum the elements of row <em>i</em> by setting <em>x</em> = 1 in <a href="../Text/ch01.html#ch01ex_2_3_40">exercise 40</a> and obtaining ∏_{k≠i}(x_{k} − 1)<em>/x_{i}</em> ∏_{k≠i}(x_{k} − x_{i}). After multiplying numerator and denominator by x_{i} − 1, we can sum on <em>i</em> by applying <a href="../Text/ch01.html#ch01ex_2_3_33">exercise 33</a> with <em>r</em> = 0 to the <em>n</em> + 2 numbers {0, 1, x_{1}, ..., x_{n}}.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_44" id="ch01ex_2_3_44a">44</a>. We find</p>
+
+  <div class="image"><img src="../Images/e474_06.gif"></div>
+
+  <p class="answerNP">after applying <a href="../Text/ch01.html#ch01ex_2_3_33">exercise 33</a>. And</p>
+
+  <div class="image"><img src="../Images/e474_07.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_45" id="ch01ex_2_3_45a">45</a>. Let x_{i} = <em>i</em>, y_{j} = <em>j</em> − 1. From <a href="../Text/ch01.html#ch01ex_2_3_44">exercise 44</a>, the sum of the elements of the inverse is (1 + 2 + · · · + <em>n</em>) + ((<em>n</em> − 1) + (<em>n</em> − 2) + · · · + 0) = n^{2}. From <a href="../Text/ch01.html#ch01ex_2_3_38">exercise 38</a>, the elements of the inverse are</p>
+
+  <div class="image"><img src="../Images/e474_08.gif"></div>
+
+  <p class="answerNP">This quantity can be put into several forms involving binomial coefficients, for example</p>
+
+  <div class="image"><img src="../Images/e474_09.gif"></div>
+
+  <p class="answerNP"><a id="page_475"></a>From the latter formula we see that <em>b_{ij}</em> is not only an integer, it is divisible by <em>i</em>, <em>j</em>, <em>n</em>, <em>i</em> + <em>j</em> − 1, <em>i</em> + <em>n</em> − 1, <em>j</em> + <em>n</em> − 1, <em>n</em> − <em>i</em> + 1, and <em>n</em> − <em>j</em> + 1. Perhaps the prettiest formula for <em>b_{ij}</em> is</p>
+
+  <div class="image"><img src="../Images/e475_01.gif"></div>
+
+  <p class="exercises1N">The solution to this problem would be extremely difficult if we had not realized that a Hilbert matrix is a special case of a Cauchy matrix; the more general problem is much easier to solve than its special case! It is frequently wise to generalize a problem to its “inductive closure,” i.e., to the smallest generalization such that all subproblems that arise in an attempted proof by mathematical induction belong to the same class. In this case, we see that cofactors of a Cauchy matrix are determinants of Cauchy matrices, but cofactors of Hilbert matrices are not determinants of Hilbert matrices. [For further information, see J. Todd, <em>J. Research Nat. Bur. Stand.</em> <strong>65</strong> (1961), 19–22; A. Cauchy, <em>Exercices d’analyse et de physique mathématique</em> <strong>2</strong> (1841), 151–159.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_46" id="ch01ex_2_3_46a">46</a>. For any integers k_{1}, k_{2}, ..., k_{m}, let \epsilon(k_{1}, ..., k_{m}) = sign(∏_{1≤i&lt;j≤m}(<em>k_{j}−k_{i}</em>)), where sign <em>x</em> = [<em>x</em> &gt; 0] − [<em>x</em> &lt; 0]. If (l_{1}, ..., l_{m}) is equal to (k_{1}, ..., k_{m}) except for the fact that k_{i} and k_{j} have been interchanged, we have \epsilon(l_{1}, ..., l_{m}) = −\epsilon(k_{1}, ..., k_{m}). Therefore we have the equation det(B_{k_{1}...k_{m}}) = \epsilon(k_{1}, ..., k_{m}) det(B_{j_{1}...j_{m}}), if j_{1}≤ · · · ≤ j_{m} are the numbers k_{1}, ..., k_{m} rearranged into nondecreasing order. Now by definition of the determinant,</p>
+
+  <div class="image"><img src="../Images/e475_02.gif"></div>
+
+  <p class="answerNP">Finally, if j_{i} = j_{i+1}, det(A_{j_{1}...j_{m}}) = 0. [<em>J. de l’École Polytechnique</em> <strong>9</strong> (1813), 280–354; <strong>10</strong> (1815), 29–112. Binet and Cauchy presented their papers on the same day in 1812.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_3_47" id="ch01ex_2_3_47a">47</a>. Let <span class="middle"><img src="../Images/e475_03.gif"></span>. Subtract column <em>k</em> − 1 from column <em>k</em> and factor out p_{k−j} − q_{k}, for <em>k</em> = <em>n</em>, <em>n</em> − 1, ..., <em>j</em> + 1 (in that order), for <em>j</em> = 1, 2, ..., <em>n</em> − 1 (in that order). This leaves ∏_{1≤i&lt;j≤n}(p_{i} − q_{j}) times det(<em>b_{ij}</em>) where <span class="middle"><img src="../Images/e475_04.gif"></span>. Now subtract q_{k+j} times column <em>k</em> + 1 from column <em>k</em> for <em>k</em> = 1, ..., <em>n</em> − <em>j</em>, and for <em>j</em> = 1, ..., <em>n</em> − 1; this leaves det(<em>c_{ij}</em>), where <span class="middle"><img src="../Images/e475_05.gif"></span> essentially defines a Vandermonde matrix. We can now proceed as in <a href="../Text/ch01.html#ch01ex_2_3_37">exercise 37</a>, operating on rows instead of columns, obtaining</p>
+
+  <div class="image"><img src="../Images/e475_06.gif"></div>
+
+  <p class="answerNP">When p_{j} = q_{j} = y_{j} for 1≤ <em>j</em> ≤ <em>n</em>, the matrix in this exercise is a Cauchy matrix with row <em>i</em> multiplied by <span class="middle"><img src="../Images/e475_07.gif"></span>. Therefore this result generalizes <a href="../Text/ch01.html#ch01ex_2_3_38">exercise 38</a> by adding <em>n</em> − 2 independent parameters. [<em>Manuscripta Math.</em> <strong>69</strong> (1990), 177–178.]</p>
+
+  <h4 id="app01lev2sec4"><a id="page_476"></a>Section 1.2.4</h4>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_1" id="ch01ex_2_4_1a">1</a>. 1,−2, −1, 0, 5.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_2" id="ch01ex_2_4_2a">2</a>. \lfloor <em>x</em>\rfloor .</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_3" id="ch01ex_2_4_3a">3</a>. By definition, \lfloor <em>x</em>\rfloor  is the greatest integer less than or equal to <em>x</em>; therefore\lfloor <em>x</em>\rfloor  is an integer,\lfloor <em>x</em>\rfloor  ≤ <em>x</em>, and \lfloor <em>x</em>\rfloor  + 1 <em>&gt; x</em>. The latter properties, plus the fact that when <em>m</em> and <em>n</em> are integers we have <em>m &lt; n</em> if and only if <em>m</em> ≤ <em>n</em> − 1, lead to an easy proof of propositions (a) and (b). Similar arguments prove (c) and (d). Finally, (e) and (f) are just combinations of previous parts of this exercise.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_4" id="ch01ex_2_4_4a">4</a>. <em>x</em> − 1 &lt; \lfloor <em>x</em>\rfloor  ≤ <em>x</em>; so <em>−x</em> + 1 &gt; −\lfloor <em>x</em>\rfloor  <em>≥ −x</em>; hence the result.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_5" id="ch01ex_2_4_5a">5</a>. <span class="middle"><img src="../Images/e476_01.gif"></span>. The value of (<em>−x</em> rounded) will be the same as −(<em>x</em> rounded), <em>except</em> when <span class="middle"><img src="../Images/e476_02.gif"></span>. In the latter case, the negative value is rounded towards zero and the positive value is rounded away from zero.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_6" id="ch01ex_2_4_6a">6</a>. (a) is true: \lfloor <span class="middle"><img src="../Images/root-x.gif"></span>\rfloor  = <em>n</em><span class="ent">⇔</span> n^{2} ≤ <em>x</em> &lt; (<em>n</em> + 1)^{2}<span class="ent">⇔</span> n^{2}<em>≤ \lfloor x</em>\rfloor  &lt; (<em>n</em> + 1)^{2}<span class="ent">⇔</span> \lfloor <span class="middle"><img src="../Images/root-x.gif"></span>\rfloor  = <em>n</em>. Similarly, (b) is true. But (c) fails when <em>x</em> is, say, 1.1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_7" id="ch01ex_2_4_7a">7</a>. \lfloor <em>x</em> + <em>y</em>\rfloor  = \lfloor \lfloor <em>x</em>\rfloor  + <em>x</em> mod 1 +\lfloor <em>y</em>\rfloor  + <em>y</em> mod 1\rfloor  = \lfloor <em>x</em>\rfloor  +\lfloor <em>y</em>\rfloor  + \lfloor <em>x</em> mod 1 + <em>y</em> mod 1\rfloor . The inequality should be ≥ for ceilings, and then equality holds if and only if either <em>x</em> or <em>y</em> is an integer or <em>x</em> mod 1 +<em>y</em> mod 1 &gt; 1; that is, if and only if (<em>−x</em>) mod 1 +(<em>−y</em>) mod 1 &lt; 1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_8" id="ch01ex_2_4_8a">8</a>. 1, 2, 5, −100.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_9" id="ch01ex_2_4_9a">9</a>. −1, 0, −2.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_10" id="ch01ex_2_4_10a">10</a>. 0.1, 0.01, −0.09.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_11" id="ch01ex_2_4_11a">11</a>. <em>x</em> = <em>y</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_12" id="ch01ex_2_4_12a">12</a>. All.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_13" id="ch01ex_2_4_13a">13</a>. +1, −1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_14" id="ch01ex_2_4_14a">14</a>. 8.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_15" id="ch01ex_2_4_15a">15</a>. Multiply both sides of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec4-1">1</a>) by <em>z</em>; the result is also easily verified if <em>y</em> = 0.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_17" id="ch01ex_2_4_17a">17</a>. As an example, consider the multiplication portion of Law A: We have <em>a</em> = <em>b</em> + <em>qm</em> and <em>x</em> = <em>y</em> + <em>rm</em>, for some integers <em>q</em> and <em>r</em>; so <em>ax</em> = <em>by</em> + (<em>br</em> + <em>yq</em> + <em>qrm</em>)<em>m</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_18" id="ch01ex_2_4_18a">18</a>. We have <em>a</em> − <em>b</em> = <em>kr</em> for some integer <em>k</em>, and also <em>kr</em> ≡ 0 (modulo <em>s</em>). Hence by Law B, <em>k</em> ≡ 0 (modulo <em>s</em>), so <em>a</em> − <em>b</em> = <em>qsr</em> for some integer <em>q</em>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_20" id="ch01ex_2_4_20a">20</a>. Multiply both sides of the congruence by <em>a</em>′.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_21" id="ch01ex_2_4_21a">21</a>. There is at least one such representation, by the previously proved exercise. If there are two representations, <em>n</em> = p_{1}... p_{k} = q_{1}... q_{m}, we have q_{1}... q_{m} ≡ 0 (modulo p_{1}); so if none of the <em>q</em>’s equals p_{1} we could cancel them all by Law B and obtain 1 ≡ 0 (modulo p_{1}). The latter is impossible since p_{1} is not equal to 1. So some q_{j} equals p_{1}, and n/p_{1} = p_{2}... p_{k} = q_{1}... q_{j−1}q_{j+1}... q_{m}. Either <em>n</em> is prime, when the result is clearly true, or by induction the two factorizations of n/p_{1} are the same.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_22" id="ch01ex_2_4_22a">22</a>. Let <em>m</em> = <em>ax</em>, where <em>a</em> &gt; 1 and <em>x</em> &gt; 0. Then <em>ax</em> ≡ 0 but <em>x</em><span class="ent">≢</span> 0 (modulo <em>m</em>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_24" id="ch01ex_2_4_24a">24</a>. Law A is always valid for addition and subtraction; Law C is always valid.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_26" id="ch01ex_2_4_26a">26</a>. If <em>b</em> is not a multiple of <em>p</em>, then b^{2} − 1 is, so one of the factors must be.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_27" id="ch01ex_2_4_27a">27</a>. A number is relatively prime to <em>p^{e}</em> if and only if it is not a multiple of <em>p</em>. So we count those that are not multiples of <em>p</em> and get φ(<em>p^{e}</em>) = <em>p^{e}</em>− p^{<em>e</em>−1}.</p>
+
+  <p><a id="page_477"></a><a href="../Text/ch01.html#ch01ex_2_4_28" id="ch01ex_2_4_28a">28</a>. If <em>a</em> and <em>b</em> are relatively prime to <em>m</em>, so is <em>ab</em> mod <em>m</em>, since any prime dividing the latter and <em>m</em> must divide <em>a</em> or <em>b</em> also. Now simply let x_{1}, ..., x_{φ(m)} be the numbers relatively prime to <em>m</em>, and observe that ax_{1} mod m, ..., ax_{φ(m)} mod <em>m</em> are the same numbers in some order, etc.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_29" id="ch01ex_2_4_29a">29</a>. We prove (b): If <em>r</em><span class="ent">⊥</span> <em>s</em> and if k^{2} divides <em>rs</em>, then p^{2} divides <em>rs</em> for some prime <em>p</em>, so <em>p</em> divides <em>r</em> (say) and cannot divide <em>s</em>; so p^{2} divides <em>r</em>. We see that <em>f</em>(<em>rs</em>) = 0 if and only if <em>f</em>(<em>r</em>) = 0 or <em>f</em>(<em>s</em>) = 0.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_30" id="ch01ex_2_4_30a">30</a>. Suppose <em>r</em><span class="ent">⊥</span> <em>s</em>. One idea is to prove that the φ(<em>rs</em>) numbers relatively prime to <em>rs</em> are precisely the φ(<em>r</em>)φ(<em>s</em>) distinct numbers (sx_{i} + ry_{j}) mod (<em>rs</em>) where x_{1}, ..., x_{φ(r)} and y_{1}, ..., y_{φ(s)} are the corresponding values for <em>r</em> and <em>s</em>.</p>
+
+  <p class="answerp">Since φ is multiplicative, φ(10^{6}) = φ(2^{6})φ(5^{6}) = (2^{6}− 2^{5})(5^{6}− 5^{5}) = 400000. And in general when <span class="middle"><img src="../Images/e477_01.gif"></span>, we have <span class="middle"><img src="../Images/e477_02.gif"></span>. (Another proof appears in <a href="../Text/ch01c.html#ch01ex_2_14_27">exercise 1.3.3–27</a>.)</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_31" id="ch01ex_2_4_31a">31</a>. Use the fact that the divisors of <em>rs</em> may be uniquely written in the form <em>cd</em> where <em>c</em> divides <em>r</em> and <em>d</em> divides <em>s</em>. Similarly, if <em>f</em>(<em>n</em>)≥ 0, one can show that the function max_{d\n} f(<em>d</em>) is multiplicative (see <a href="../Text/ch01.html#ch01ex_2_3_35">exercise 1.2.3–35</a>).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_33" id="ch01ex_2_4_33a">33</a>. Either <em>n</em> + <em>m</em> or <em>n</em>− <em>m</em> + 1 is even, so one of the quantities inside the brackets is an integer; so equality holds in <a href="../Text/ch01.html#ch01ex_2_4_7">exercise 7</a>, and we obtain (a) <em>n</em>; (b) <em>n</em> + 1.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_34" id="ch01ex_2_4_34a">34</a>. <em>b</em> must be an integer ≥ 2. (Set <em>x</em> = <em>b</em>.) The sufficiency is proved as in <a href="../Text/ch01.html#ch01ex_2_4_6">exercise 6</a>. The same condition is necessary and sufficient for \lceil log<em>_{b} x</em>\rceil  = \lceil log<em>_{b}</em>\lceil <em>x</em>\rceil \rceil .</p>
+
+  <p class="answerp"><em>Note:</em> R. J. McEliece has pointed out the following generalization: Let <em>f</em> be a continuous, strictly increasing function defined on an interval <em>A</em>, and assume that both \lfloor <em>x</em>\rfloor  and \lceil <em>x</em>\rceil  are in <em>A</em> whenever <em>x</em> is in <em>A</em>. Then the relation\lfloor <em>f</em>(<em>x</em>)\rfloor  = \lfloor <em>f</em>(\lfloor <em>x</em>\rfloor )\rfloor  holds for all <em>x</em> in <em>A</em> if and only if the relation \lceil <em>f</em>(<em>x</em>)\rceil  = \lceil <em>f</em>(\lceil <em>x</em>\rceil )\rceil  holds for all <em>x</em> in <em>A</em>, if and only if the following condition is satisfied for all <em>x</em> in <em>A</em>: “<em>f</em>(<em>x</em>) is an integer implies <em>x</em> is an integer.” The condition is obviously necessary, for if <em>f</em>(<em>x</em>) is an integer and it equals \lfloor <em>f</em>(\lfloor <em>x</em>\rfloor )\rfloor  or \lceil <em>f</em>(\lceil <em>x</em>\rceil )\rceil  then <em>x</em> must equal\lfloor <em>x</em>\rfloor  or \lceil <em>x</em>\rceil . Conversely if, say, \lfloor <em>f</em>(\lfloor <em>x</em>\rfloor )\rfloor  &lt; \lfloor <em>f</em>(<em>x</em>)\rfloor  then by continuity there is some <em>y</em> with\lfloor <em>x</em>\rfloor  &lt; <em>y</em>≤ <em>x</em> for which <em>f</em>(<em>y</em>) is an integer; but <em>y</em> cannot be an integer.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_35" id="ch01ex_2_4_35a">35</a>. <span class="middle"><img src="../Images/e477_03.gif"></span> apply <a href="../Text/ch01.html#ch01ex_2_4_3">exercise 3</a>. Use of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> gives a similar result for the ceiling function. Both identities follow as a special case of McEliece’s theorem in <a href="../Text/ch01.html#ch01ex_2_4_34">exercise 34</a>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_36" id="ch01ex_2_4_36a">36</a>. Assume first that <em>n</em> = 2<em>t</em>. Then</p>
+
+  <div class="image"><img src="../Images/e477_04.gif"></div>
+
+  <p class="answerNP">hence</p>
+
+  <div class="image"><img src="../Images/e477_05.gif"></div>
+
+  <p class="answerNP">by <a href="../Text/ch01.html#ch01ex_2_4_33">exercise 33</a>. And if <em>n</em> = 2<em>t</em> + 1, we have t^{2} +\lfloor <em>n/</em>2\rfloor  = t^{2} + <em>t</em> = n^{2}/4 − 1/4. For the second sum we get, similarly, \lceil <em>n</em>(<em>n</em> + 2)/4\rceil .</p>
+
+  <p><a id="page_478"></a><a href="../Text/ch01.html#ch01ex_2_4_37" id="ch01ex_2_4_37a">37</a>. <span class="middle"><img src="../Images/e478_01.gif"></span>. Let {<em>y</em>} denote <em>y</em> mod 1; we must subtract</p>
+
+  <div class="image"><img src="../Images/e478_02.gif"></div>
+
+  <p class="answerNP">This quantity <em>S</em> consists of <em>d</em> copies of the same sum, since if <em>t</em> = n/d we have</p>
+
+  <div class="image"><img src="../Images/e478_03.gif"></div>
+
+  <p class="answerNP">Let <em>u</em> = m/d; then</p>
+
+  <div class="image"><img src="../Images/e478_04.gif"></div>
+
+  <p class="answerNP">and since <em>t</em> <span class="ent">⊥</span> <em>u</em> this sum may be rearranged to equal</p>
+
+  <div class="image"><img src="../Images/e478_05.gif"></div>
+
+  <p class="answerNP">Finally, since (<em>x</em> mod <em>d</em>)<em>/n</em> &lt; 1<em>/t</em>, the braces in this sum may be removed and we have</p>
+
+  <div class="image"><img src="../Images/e478_06.gif"></div>
+
+  <p class="exercises1N">An application of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> yields the similar identity</p>
+
+  <div class="image"><img src="../Images/e478_07.gif"></div>
+
+  <p class="answerNP">This formula would become symmetric in <em>m</em> and <em>n</em> if it were extended over the range 0 <em>&lt; k</em> ≤ <em>n</em>. (The symmetry can be explained by drawing the graph of the summand as a function of <em>k</em>, then reflecting about the line <em>y</em> = <em>x</em>.)</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_38" id="ch01ex_2_4_38a">38</a>. Both sides increase by \lceil <em>y</em>\rceil  when <em>x</em> increases by 1, so we can assume that 0≤ <em>x</em> &lt; 1. Then both sides are zero when <em>x</em> = 0, and both sides increase by 1 when <em>x</em> increases past the values 1 − k/y for <em>y &gt; k</em> ≥ 0. [<em>Crelle</em> <strong>136</strong> (1909), 42; the case <em>y</em> = <em>n</em> is due to C. Hermite, <em>Acta Math.</em> <strong>5</strong> (1884), 315.]</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_39" id="ch01ex_2_4_39a">39</a>. Proof of part (f): Consider the more general identity ∏_{0≤k&lt;n}2 sin π(<em>x</em> + k/n) = 2 sin <em>πnx</em>, which can be demonstrated as follows: Since 2sinθ = (<em>e^{iθ}</em>− <em>e^{−iθ}</em>) <em>/i</em> = (1 − e^{−2iθ})e^{iθ −iπ/2}, the identity is a consequence of the two formulas</p>
+
+  <div class="image"><img src="../Images/e478_08.gif"></div>
+
+  <p class="answerNP">The latter is true since the function <span class="middle"><img src="../Images/e478_09.gif"></span> is replicative; and the former is true because we may set <em>z</em> = 1 in the factorization of the polynomial <em>z^{n}</em>− <em>α^{n}</em> = (<em>z</em>− α)(<em>z</em>− ωα) ... (<em>z</em>− ω^{<em>n</em>−1} α), where ω = e^{−2<em>πi/n</em>}.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_40" id="ch01ex_2_4_40a">40</a>. (Note by N. G. de Bruijn.) If <em>f</em> is replicative, <em>f</em>(<em>nx</em> + 1)− <em>f</em>(<em>nx</em>) = <em>f</em>(<em>x</em> + 1)− <em>f</em>(<em>x</em>) for all <em>n</em> &gt; 0. Hence if <em>f</em> is continuous, <em>f</em>(<em>x</em> + 1)− <em>f</em>(<em>x</em>) = <em>c</em> for all <em>x</em>, and <em>g</em>(<em>x</em>) = <em>f</em>(<em>x</em>)− <em>c</em>\lfloor <em>x</em>\rfloor  is replicative and periodic. Now</p>
+
+  <div class="image"><img src="../Images/e478_10.gif"></div>
+
+  <p class="answerNP"><a id="page_479"></a>expanding in Fourier series shows that <span class="middle"><img src="../Images/e479_01.gif"></span> for 0 <em>&lt; x</em> &lt; 1. It follows that <span class="middle"><img src="../Images/e479_02.gif"></span>. In general, this argument shows that any replicative locally Riemann-integrable function has the form <span class="middle"><img src="../Images/e479_03.gif"></span> max(\lfloor <em>x</em>\rfloor , 0)+<em>c</em> min(\lfloor <em>x</em>\rfloor , 0) almost everywhere. For further results see L. J. Mordell, <em>J. London Math. Soc.</em> <strong>33</strong> (1958), 371–375; M. F. Yoder, <em>Æquationes Mathematic</em>æ <strong>13</strong> (1975), 251–261.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_41" id="ch01ex_2_4_41a">41</a>. We want a_{n} = <em>k</em> when <span class="middle"><img src="../Images/e479_04.gif"></span>. Since <em>n</em> is an integer, this is equivalent to</p>
+
+  <div class="image"><img src="../Images/e479_05.gif"></div>
+
+  <p class="answerNP">i.e., <span class="middle"><img src="../Images/e479_06.gif"></span>. Hence <span class="middle"><img src="../Images/e479_07.gif"></span>, the nearest integer to <span class="middle"><img src="../Images/e479_08.gif"></span>. Other correct answers are <span class="middle"><img src="../Images/e479_09.gif"></span>, <span class="middle"><img src="../Images/e479_10.gif"></span>, <span class="middle"><img src="../Images/e479_11.gif"></span>, etc.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_42" id="ch01ex_2_4_42a">42</a>. (a) See <a href="../Text/ch01a.html#ch01ex_2_7_10">exercise 1.2.7–10</a>. (b) The given sum is <em>n</em>\lfloor log<em>_{b} n</em>\rfloor  − <em>S</em>, where</p>
+
+  <div class="image"><img src="../Images/e479_12.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_43" id="ch01ex_2_4_43a">43</a>. <span class="middle"><img src="../Images/e479_13.gif"></span>.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_44" id="ch01ex_2_4_44a">44</a>. The sum is <em>n</em> + 1 when <em>n</em> is negative.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_45" id="ch01ex_2_4_45a">45</a>. \lfloor <em>mj/n</em>\rfloor  = <em>r</em> if and only if <span class="middle"><img src="../Images/e479_14.gif"></span>, and we find that the given sum is therefore</p>
+
+  <div class="image"><img src="../Images/e479_15.gif"></div>
+
+  <p class="answerNP">The stated result follows by rearranging the latter sum, grouping the terms with a particular value of \lceil <em>rn/m</em>\rceil . The second formula is immediate by the substitution</p>
+
+  <div class="image"><img src="../Images/e479_16.gif"></div>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_46" id="ch01ex_2_4_46a">46</a>. ∑_{0≤j&lt;αn}f(\lfloor <em>mj/n</em>\rfloor ) = ∑_{0≤r&lt;αm}\lceil <em>rn/m</em>\rceil (<em>f</em>(<em>r</em>− 1) <em>− f</em>(<em>r</em>)) + \lceil <em>αn</em>\rceil <em>f</em>(\lceil <em>αm</em>\rceil  − 1).</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_47" id="ch01ex_2_4_47a">47</a>. (a) The numbers 2, 4, ..., <em>p</em>− 1 are the even residues (modulo <em>p</em>); since 2<em>kq</em> = <em>p</em>\lfloor 2<em>kq/p</em>\rfloor  + (2<em>kq</em>) mod <em>p</em>, the number (−1)^{\lfloor  2<em>kq/p</em>\rfloor } ((2<em>kq</em>) mod <em>p</em>) will be an even residue or an even residue minus <em>p</em>, and each even residue clearly occurs just once. Hence (−1)<em>^{σ}q</em>^{(<em>p</em>−1)/2} 2· 4 ... (<em>p</em>− 1)≡ 2· 4 ... (<em>p</em>− 1). (b) Let <em>q</em> = 2. If <em>p</em> = 4<em>n</em> + 1, σ = <em>n</em>; if <em>p</em> = 4<em>n</em> + 3, σ = <em>n</em> + 1. Hence <span class="middle"><img src="../Images/e479_17.gif"></span> according as <em>p</em> mod 8 = (1, 3, 5, 7), respectively. (c) For <em>k &lt; p/</em>4, we have</p>
+
+  <p class="center">\lfloor (<em>p</em>−1−2<em>k</em>)q/p\rfloor  = <em>q</em>−\lceil (2<em>k</em>+1)q/p\rceil  = <em>q</em>−1−\lfloor (2<em>k</em>+1)q/p\rfloor  ≡ \lfloor (2<em>k</em>+1)q/p\rfloor  (modulo 2).</p>
+
+  <p class="answerNP">Hence we may replace the last terms \lfloor (<em>p</em>− 1)q/p\rfloor ,\lfloor (<em>p</em>− 3)q/p\rfloor <em>, ...</em> by\lfloor q/p\rfloor ,\lfloor 3q/p\rfloor , etc. (d) ∑_{0≤k&lt;p/2}\lfloor <em>kq/p</em>\rfloor  + ∑_{0≤r&lt;q/2}\lceil <em>rp/q</em>\rceil  = \lceil <em>p/</em>2\rceil  (\lceil <em>q/</em>2\rceil  − 1) = (<em>p</em> + 1)(<em>q</em>− 1)/4. Also ∑_{0≤r&lt;q/2}\lceil <em>rp/q</em>\rceil  = ∑_{0≤r&lt;q/2}\lfloor <em>rp/q</em>\rfloor  + (<em>q</em>− 1)/2. The idea of this proof goes back to G. Eisenstein, <em>Crelle</em> <strong>28</strong> (1844), 246–248; Eisenstein also gave several other proofs of this and other reciprocity laws in the same volume.</p>
+
+  <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when <em>n</em> &lt; 0; when <em>n</em> &gt; 0 it is easy to verify. (b) \lfloor (<em>n</em> + 2− \lfloor n/25\rfloor )/3\rfloor  = \lceil (<em>n</em>− \lfloor n/25\rfloor )/3\rceil  = \lceil (<em>n</em> + \lceil −<em>n</em>/25\rceil )/3\rceil  = \lceil  \lceil 24<em>n/</em>25\rceil /3\rceil  = \lceil 8<em>n/</em>25\rceil  = \lfloor (8<em>n</em> + 24)/25\rfloor . The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
+
+  <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since <em>f</em>(0) = <em>f</em>(<em>f</em>(0)) = <em>f</em>(<em>f</em>(0) + 0) = <em>f</em>(0) + <em>f</em>(0), we have <em>f</em>(<em>n</em>) = <em>n</em> for all integers <em>n</em>. If <span class="middle"><img src="../Images/e480_01.gif"></span>, we have <span class="middle"><img src="../Images/e480_02.gif"></span>. And if <span class="middle"><img src="../Images/e480_03.gif"></span> we have <span class="middle"><img src="../Images/e480_04.gif"></span>; furthermore 1≤ <em>m &lt; n</em> implies <span class="middle"><img src="../Images/e480_05.gif"></span>, for <em>a</em> = \lceil n/m\rceil , by induction on <em>m</em>. Thus <span class="middle"><img src="../Images/e480_06.gif"></span> implies <em>f</em>(<em>x</em>) = \lfloor <em>x</em>\rfloor  for all rational <em>x</em>. On the other hand, if <span class="middle"><img src="../Images/e480_07.gif"></span> the function <em>g</em>(<em>x</em>) = <em>−f</em>(<em>−x</em>) satisfies (i) and (ii) and has <span class="middle"><img src="../Images/e480_08.gif"></span>; hence <em>f</em>(<em>x</em>) = <em>−g</em>(<em>−x</em>) = −\lfloor  <em>−x</em>\rfloor  = \lceil <em>x</em>\rceil  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
+
+  <p class="exercises1N">It does not follow, however, that <em>f</em>(<em>x</em>) = \lfloor <em>x</em>\rfloor  or \lceil <em>x</em>\rceil  for all <em>real</em> values of <em>x</em>. If, for example, <em>h</em>(<em>x</em>) is any function with <em>h</em>(1) = 1 and <em>h</em>(<em>x</em> + <em>y</em>) = <em>h</em>(<em>x</em>) + <em>h</em>(<em>y</em>) for all real <em>x</em> and <em>y</em>, then the function <em>f</em>(<em>x</em>) = \lfloor <em>h</em>(<em>x</em>)\rfloor  satisfies (i) and (ii); but <em>h</em>(<em>x</em>) may be unbounded and highly erratic when 0 <em>&lt; x</em> &lt; 1 [G. Hamel, <em>Math. Annalen</em> <strong>60</strong> (1905), 459–462].</p>
+
+  <h4 id="app01lev2sec5">Section 1.2.5</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_1" id="ch01ex_2_5_1a">1</a>. 52!. For the curious, this number is 806 58175 17094 38785 71660 63685 64037 66975 28950 54408 83277 82400 00000 00000. (!)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_2" id="ch01ex_2_5_2a">2</a>. p_{nk}= p_{n(k−1)}(<em>n</em>− <em>k</em> + 1). After the first <em>n</em>− 1 objects have been placed, there is only one possibility for the last object.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_3" id="ch01ex_2_5_3a">3</a>. 5 3 1 2 4, 3 5 1 2 4, 3 1 5 2 4, 3 1 2 5 4, 3 1 2 4 5; 4 2 3 5 1, 4 1 3 5 2, 4 1 2 5 3, 3 1 2 5 4, 3 1 2 4 5.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_4" id="ch01ex_2_5_4a">4</a>. There are 2568 digits. The leading digit is 4 (since log_{10} 4 = 2 log_{10} 2 ≈ .602). The least significant digit is zero, and in fact by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) the low order 249 digits are all zero. The exact value of 1000! was calculated by H. S. Uhler using a desk calculator and much patience over a period of several years, and appears in <em>Scripta Mathematica</em> <strong>21</strong> (1955), 266–267. It begins with 402 38726 00770 ... . (The last step in the calculation, to multiply the two numbers 750! and <span class="middle"><img src="../Images/e480_13.gif"></span>, was performed on UNIVAC I by John W. Wrench, Jr., “in the extraordinary time of 2½ minutes.” Nowadays, of course, a desktop machine easily produces 1000! in a fraction of a second, and we can confirm that Uhler’s value was 100% correct.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_5" id="ch01ex_2_5_5a">5</a>. (39902)(97/96)≈ 416 + 39902 = 40318.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_6" id="ch01ex_2_5_6a">6</a>. 2^{18}· 3^{8}· 5^{4}· 7^{2}· 11· 13· 17· 19.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_8" id="ch01ex_2_5_8a">8</a>. It is lim_{m→∞} m^{n} m!/((<em>n</em> + <em>m</em>)!<em>/n</em>!) = <em>n</em>! lim_{m→∞} m^{n}/((<em>m</em> + 1) ... (<em>m</em> + <em>n</em>)) = <em>n</em>!, since <em>m/</em>(<em>m</em> + <em>k</em>) → 1.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_9" id="ch01ex_2_5_9a">9</a>. <span class="middle"><img src="../Images/e480_09.gif"></span> and <span class="middle"><img src="../Images/e480_10.gif"></span>. (<a href="../Text/ch01a.html#ch01ex_2_5_10">Exercise 10</a> used.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_10" id="ch01ex_2_5_10a">10</a>. Yes, except when <em>x</em> is zero or a negative integer. For we have</p>
+
+  <div class="image"><img src="../Images/e480_11.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_11" id="ch01ex_2_5_11a">11</a>, <a href="../Text/ch01a.html#ch01ex_2_5_12" id="ch01ex_2_5_12a">12</a>. <span class="middle"><img src="../Images/e480_12.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_13" id="ch01ex_2_5_13a">13</a>. For each <em>n</em>, 1≤ <em>n &lt; p</em>, determine <em>n</em>′ as in <a href="../Text/ch01.html#ch01ex_2_4_19">exercise 1.2.4–19</a>. There is exactly one such <em>n</em>′, by Law 1.2.4B; and (<em>n</em>′)′ = <em>n</em>. Therefore we can pair off the numbers in groups of two, provided that <em>n</em>′≠ <em>n</em>. If <em>n</em>′ = <em>n</em>, we have n^{2} ≡ 1 (modulo <em>p</em>); hence, as in <a href="../Text/ch01.html#ch01ex_2_4_26">exercise 1.2.4–26</a>, <em>n</em> = 1 or <em>n</em> = <em>p</em>− 1. So (<em>p</em>− 1)!≡ 1· 1 ... 1· (−1), since 1 and <em>p</em>− 1 are the only unpaired elements.</p>
+
+  <p><a id="page_481"></a><a href="../Text/ch01a.html#ch01ex_2_5_14" id="ch01ex_2_5_14a">14</a>. Among the numbers {1, 2<em>, ..., n</em>} that are <em>not</em> multiples of <em>p</em>, there are\lfloor n/p\rfloor  complete sets of <em>p</em>− 1 consecutive elements, each with a product congruent to −1 (modulo <em>p</em>) by Wilson’s theorem. There are also a_{0} left over, which are congruent to a_{0}! (modulo <em>p</em>); so the contribution from the factors that are not multiples of <em>p</em> is (−1)^{\lfloor n/p\rfloor }a_{0}!. The contribution from the factors that <em>are</em> multiples of <em>p</em> is the same as the contribution in\lfloor n/p\rfloor !; this argument can therefore be repeated to get the desired formula.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_15" id="ch01ex_2_5_15a">15</a>. (<em>n</em>!)^{3}. There are <em>n</em>! terms. Each term has one entry from each row and each column, so it has the value (<em>n</em>!)^{2}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_16" id="ch01ex_2_5_16a">16</a>. The terms do not approach zero, since the coefficients approach 1<em>/e</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_17" id="ch01ex_2_5_17a">17</a>. Express the gamma functions as limits by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_18" id="ch01ex_2_5_18a">18</a>. <span class="image"><img src="../Images/e481_01.gif"></span></p>
+
+  <p class="answerNP">[Wallis’s own heuristic “proof” can be found in D. J. Struik’s <em>Source Book in Mathematics</em> (Harvard University Press, 1969), 244–253.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_19" id="ch01ex_2_5_19a">19</a>. Change of variable <em>t</em> = <em>mt</em>, integration by parts, and induction.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_20" id="ch01ex_2_5_20a">20</a>. [For completeness, we prove the stated inequality. Start with the easily verified inequality 1 + <em>x</em> ≤ <em>e^{x}</em>; set <em>x</em> = <em>±t/n</em> and raise to the <em>n</em>th power to get (1 ± t/n)<em>^{n}</em> ≤ e^{±t}. Hence e^{−t} ≥ (1 <em>−t/n</em>)<em>^{n}</em> = e^{−t}(1 <em>−t/n</em>)<em>^{n}e^{t}</em> ≥ e^{−t}(1 <em>−t/n</em>)<em>^{n}</em>(1+t/n)<em>^{n}</em> = e^{−t}(1 −t^{2}/n^{2})<em>^{n}</em> ≥ e^{−t}(1− t^{2}<em>/n</em>) by <a href="../Text/ch01.html#ch01ex_2_1_09">exercise 1.2.1–9</a>.]</p>
+
+  <p class="exercises1N">Now the given integral minus Γ_{m}(<em>x</em>) is</p>
+
+  <div class="image"><img src="../Images/e481_02.gif"></div>
+
+  <p class="answerNP">As <em>m</em>→ ∞, the first of these integrals approaches zero, since <em>t^{x− 1} &lt; e^{<em>t</em>/2} for large <em>t</em>; and the second is less than</p>
+
+  <div class="image"><img src="../Images/e481_03.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_21" id="ch01ex_2_5_21a">21</a>. If <em>c</em>(<em>n, j, k</em>_{1}, k_{2}, ...) denotes the appropriate coefficient, we find</p>
+
+  <p class="center"><em>c</em>(<em>n</em>+1<em>, j, k</em>_{1}, ...) = <em>c</em>(<em>n, j</em>−1, k_{1}−1, k_{2}, ...) + (k_{1}+1)<em>c</em>(<em>n, j, k</em>_{1}+1, k_{2}−1, k_{3}, ...) + (k_{2}+1)<em>c</em>(<em>n, j, k</em>_{1}, k_{2}+1, k_{3}−1, k_{4}, ...) + · · · ,</p>
+
+  <p class="answerNP">by differentiation. The equations k_{1} + k_{2} + · · · = <em>j</em> and k_{1} + 2k_{2} + · · · = <em>n</em> are preserved in this induction relationship. We can easily factor <em>n</em>!/(k_{1}! (1!)^{k_{1}}k_{2}! (2!)^{k_{2}} ...) out of each term appearing on the right-hand side of the equation for <em>c</em>(<em>n</em> + 1<em>, j, k</em>_{1}, ...), and we are left with k_{1} + 2k_{2} + 3k_{3} + · · · = <em>n</em> + 1. (In the proof it is convenient to assume that there are infinitely many <em>k</em>’s, although clearly k_{n+1} = k_{n+2} = · · · = 0.)</p>
+
+  <p class="exercises1N">The solution just given makes use of standard techniques, but it doesn’t give a satisfactory explanation of <em>why</em> the formula has this form, nor how it could have been discovered in the first place. Let us examine this question using a combinatorial argument suggested by H. S. Wall [<em>Bull. Amer. Math. Soc.</em> <strong>44</strong> (1938), 395–398]. Write for convenience <span class="middle"><img src="../Images/e481_04.gif"></span>, <span class="middle"><img src="../Images/e481_05.gif"></span>. Then D_{x}(w_{j}) = w_{j+1}u_{1} and D_{x}(u_{k}) = u_{k+1}.</p>
+
+  <p class="answerNP"><a id="page_482"></a>By these two rules and the rule for derivative of a product we find</p>
+
+  <div class="image"><img src="../Images/e482_01.gif"></div>
+
+  <p class="answerNP">Analogously we may set up a corresponding tableau of set partitions thus:</p>
+
+  <div class="image"><img src="../Images/e482_02.gif"></div>
+
+  <p class="answerNP">Formally, if a_{1}a_{2}... a_{j} is a partition of the set{1, 2<em>, ..., n</em>− 1}, define</p>
+
+  <p class="center">Da_{1}a_{2}... a_{j} ={<em>n</em>}a_{1}a_{2}... a_{j} + (a_{1}∪{<em>n</em>})a_{2}... a_{j} + a_{1}(a_{2}∪{<em>n</em>}) <em>... a_{j}</em> + · · · + a_{1}a_{2} ... (a_{j}∪{<em>n</em>}).</p>
+
+  <p class="answerNP">This rule is an exact parallel of the rule</p>
+
+  <p class="center">$D_{x}(w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}) = w_{j+1}u_{1}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}} + w_{j}u_{r_{1} + 1}u_{r_{2}}\ldots u_{r_{j}} + w_{j}u_{r_{1}}u_{r_{2} + 1}\ldots u_{r_{j}} +\cdots+ w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}+1}$,</p>
+
+  <p class="answerNP">if we let the term w_{j}u_{r_{1}}u_{r_{2}}... u_{r_{j}} correspond to a partition a_{1}a_{2}... a_{j} with r_{t} elements in a_{t}, 1≤ <em>t</em> ≤ <em>j</em>. So there is a natural mapping from <em>D^{n}</em> onto <span class="middle"><img src="../Images/e482_03.gif"></span>, and furthermore it is easy to see that <em>D^{n}</em> includes each partition of the set {1, 2<em>, ..., n</em>} exactly once. (See <a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 1.2.6–64</a>.)</p>
+
+  <p class="exercises1N">From these observations we find that if we collect like terms in <span class="middle"><img src="../Images/e482_04.gif"></span>, we obtain a sum of terms <span class="middle"><img src="../Images/e482_05.gif"></span> ..., where <em>j</em> = k_{1} + k_{2} + · · · and <em>n</em> = k_{1} + 2k_{2} + · · ·, and where <em>c</em>(k_{1}, k_{2}, ...) is <em>the number of partitions of</em> {1, 2<em>, ..., n</em>} <em>into j subsets such that there are k_{t} subsets having t elements</em>.</p>
+
+  <p class="exercises1N">It remains to count these partitions. Consider an array of k_{t} boxes of capacity <em>t</em>:</p>
+
+  <div class="image"><img src="../Images/e482_06.gif"></div>
+
+  <p class="answerNP">The number of ways to put <em>n</em> different elements into these boxes is the multinomial coefficient</p>
+
+  <div class="image"><img src="../Images/e482_07.gif"></div>
+
+  <p class="answerNP">To get <em>c</em>(k_{1}, k_{2}, k_{3}, ...) we should divide this by k_{1}! k_{2}! k_{3}! ..., since the boxes in each group of k_{t} are indistinguishable from each other; they may be permuted in k_{t}! ways without affecting the set partition.</p>
+
+  <p class="exercises1N">Arbogast’s original proof [<em>Du Calcul des Dérivations</em> (Strasbourg: 1800), §52] was based on the fact that <span class="middle"><img src="../Images/e482_08.gif"></span> is the coefficient of <em>z^{k}</em> in <em>u</em>(<em>x</em> + <em>z</em>) and <span class="middle"><img src="../Images/e482_09.gif"></span> is the <a id="page_483"></a>coefficient of <em>y^{j}</em> in <em>w</em>(<em>u</em> + <em>y</em>), hence the coefficient of <em>z^{n}</em> in <em>w</em>(<em>u</em>(<em>x</em> + <em>z</em>)) is</p>
+
+  <div class="image"><img src="../Images/e483_01.gif"></div>
+
+  <p class="answerNP">His formula was forgotten for many years, then rediscovered independently by F. Faà di Bruno [<em>Quarterly J. Math.</em> <strong>1</strong> (1857), 359–360], who observed that it can also be expressed as a determinant</p>
+
+  <div class="image"><img src="../Images/e483_02.gif"></div>
+
+  <p class="answerNP">where <span class="middle"><img src="../Images/e483_03.gif"></span>; both sides of this equation are differential operators to be applied to <em>w</em>. For a generalization of Arbogast’s formula to functions of several variables, and a list of references to other related work, see the paper by I. J. Good, <em>Annals of Mathematical Statistics</em> <strong>32</strong> (1961), 540–541.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_22" id="ch01ex_2_5_22a">22</a>. The hypothesis that lim_{n→∞}(<em>n</em>+<em>x</em>)!/(<em>n</em>! <em>n^{x}</em>) = 1 is valid for integers <em>x</em>; for example, if <em>x</em> is positive, the quantity is (1+1<em>/n</em>)(1+2<em>/n</em>) ... (1+x/n), which certainly approaches unity. If we also assume that <em>x</em>! = <em>x</em>(<em>x</em>− 1)!, the hypothesis leads us to conclude immediately that</p>
+
+  <div class="image"><img src="../Images/e483_04.gif"></div>
+
+  <p class="answerNP">which is equivalent to the definition given in the text.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_23" id="ch01ex_2_5_23a">23</a>. <span class="middle"><img src="../Images/e483_05.gif"></span> by (<a href="../Text/ch01.html#ch01eq-lev2sec5-13">13</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_24" id="ch01ex_2_5_24a">24</a>. <span class="middle"><img src="../Images/e483_06.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_25" id="ch01ex_2_5_25a">25</a>. <span class="middle"><img src="../Images/e483_07.gif"></span>;<span class="middle"><img src="../Images/e483_08.gif"></span>. These laws hold also when <em>m</em> and <em>n</em> are nonintegers, by (<a href="../Text/ch01.html#ch01eq-lev2sec5-21">21</a>).</p>
+
+  <h4 id="app01lev2sec6">Section 1.2.6</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_1" id="ch01ex_2_6_1a">1</a>. <em>n</em>, since each combination leaves out one item.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_2" id="ch01ex_2_6_2a">2</a>. 1. There’s exactly one way to choose nothing from the empty set.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_3" id="ch01ex_2_6_3a">3</a>. <span class="middle"><img src="../Images/52by13.gif"></span>. The actual number is 635013559600.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_4" id="ch01ex_2_6_4a">4</a>. 2^{4}· 5^{2}· 7^{2}· 17· 23· 41· 43· 47.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_5" id="ch01ex_2_6_5a">5</a>. (10 + 1)^{4} = 10000 + 4(1000) + 6(100) + 4(10) + 1.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_6" id="ch01ex_2_6_6a">6</a>. <span class="middle"><img src="../Images/e483_09.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_7" id="ch01ex_2_6_7a">7</a>. \lfloor <em>n/</em>2\rfloor ; or, alternatively, \lceil <em>n/</em>2\rceil . It is clear from (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) that for smaller values the binomial coefficient is strictly increasing, and afterwards it decreases to zero.</p>
+
+  <p><a id="page_484"></a><a href="../Text/ch01a.html#ch01ex_2_6_8" id="ch01ex_2_6_8a">8</a>. The nonzero entries in each row are the same from left to right as from right to left.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_9" id="ch01ex_2_6_9a">9</a>. One if <em>n</em> is positive or zero; zero if <em>n</em> is negative.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_10" id="ch01ex_2_6_10a">10</a>. (a), (b) and (f) follow immediately from (e); (c) and (d) follow from (a), (b), and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>). Thus it suffices to prove (e). Consider <span class="middle"><img src="../Images/nbyk.gif"></span> as a fraction, given by Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) with factors in numerator and denominator. The first <em>k</em> mod <em>p</em> factors have no <em>p</em>’s in the denominator, and in the numerator and denominator these terms are clearly congruent to the corresponding terms of</p>
+
+  <div class="image"><img src="../Images/e484_01.gif"></div>
+
+  <p class="answerNP">which differ by multiples of <em>p</em>. (When dealing with non-multiples of <em>p</em> we may work modulo <em>p</em> in both numerator and denominator, since if <em>a</em> ≡ <em>c</em> and <em>b</em> ≡ <em>d</em> and a/b, c/d are integers, then a/b ≡ c/d.) There remain <em>k</em>− <em>k</em> mod <em>p</em> factors, which fall into\lfloor k/p\rfloor  groups of <em>p</em> consecutive values each. Each group contains exactly one multiple of <em>p</em>; the other <em>p</em>− 1 factors in a group are congruent (modulo <em>p</em>) to (<em>p</em>− 1)! so they cancel in numerator and denominator. It remains to investigate the\lfloor k/p\rfloor  multiples of <em>p</em> in numerator and denominator; we divide each of them by <em>p</em> and are left with the binomial coefficient</p>
+
+  <div class="image"><img src="../Images/e484_02.gif"></div>
+
+  <p class="answerNP">If <em>k</em> mod <em>p</em> ≤ <em>n</em> mod <em>p</em>, this equals</p>
+
+  <div class="image"><img src="../Images/e484_03.gif"></div>
+
+  <p class="answerNP">as desired; and if <em>k</em> mod <em>p &gt; n</em> mod <em>p</em>, the other factor <span class="middle"><img src="../Images/e484_04.gif"></span> is zero, so the formula holds in general. [<em>American J. Math.</em> <strong>1</strong> (1878), 229–230; see also L. E. Dickson, <em>Quart. J. Math.</em> <strong>33</strong> (1902), 383–384; N. J. Fine, <em>AMM</em> <strong>54</strong> (1947), 589–592.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_11" id="ch01ex_2_6_11a">11</a>. If <em>a</em> = <em>a_{r}p^{r}</em> + · · · + a_{0}, <em>b</em> = <em>b_{r}p^{r}</em> + · · · + b_{0}, and <em>a</em> + <em>b</em> = <em>c_{r}p^{r}</em> + · · · + c_{0}, the value of <em>n</em> (according to <a href="../Text/ch01a.html#ch01ex_2_5_12">exercise 1.2.5–12</a> and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-5">5</a>)) is</p>
+
+  <p class="center">(a_{0} + · · · + a_{r} + b_{0} + · · · + b_{r}− c_{0}− · · · − c_{r})/(<em>p</em>− 1).</p>
+
+  <p class="answerNP">A carry decreases c_{j} by <em>p</em> and increases c_{j+1} by 1, giving a net change of +1 in this formula. [Similar results hold for <em>q</em>-nomial and Fibonomial coefficients; see Knuth and Wilf, <em>Crelle</em> <strong>396</strong> (1989), 212–219.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_12" id="ch01ex_2_6_12a">12</a>. By either of the two previous exercises, <em>n</em> must be one less than a power of 2. More generally, <span class="middle"><img src="../Images/nbyk.gif"></span> is never divisible by the prime <em>p</em>, 0 ≤ <em>k</em> ≤ <em>n</em>, if and only if <em>n</em> = <em>ap^{m}</em>− 1, 1≤ <em>a &lt; p</em>, <em>m</em> ≥ 0.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_14" id="ch01ex_2_6_14a">14</a>. <span class="middle"><img src="../Images/e484_05.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_15" id="ch01ex_2_6_15a">15</a>. Induction and (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_17" id="ch01ex_2_6_17a">17</a>. We may assume that <em>r</em> and <em>s</em> are positive integers. Also</p>
+
+  <div class="image"><img src="../Images/e484_06.gif"></div>
+
+  <p class="answerNP">for all <em>x</em>, so the coefficients of <em>x^{n}</em> must be identical.</p>
+
+  <p><a id="page_485"></a><a href="../Text/ch01a.html#ch01ex_2_6_21" id="ch01ex_2_6_21a">21</a>. The left-hand side is a polynomial of degree ≤ <em>n</em>; the right-hand side is a polynomial of degree <em>m</em> + <em>n</em> + 1. The polynomials agree at <em>n</em> + 1 points, but that isn’t enough to prove them equal. [In fact, the correct formula in general is</p>
+
+  <div class="image"><img src="../Images/e485_01.gif"></div>
+
+  <p class="answerNP">when <em>m</em>, <em>n</em>, and <em>r</em> are nonnegative integers.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_22" id="ch01ex_2_6_22a">22</a>. Assume that <em>n</em> &gt; 0. The <em>k</em>th term is <em>r/</em>(<em>r</em>− <em>tk</em>) times</p>
+
+  <div class="image"><img src="../Images/e485_02.gif"></div>
+
+  <p class="answerNP">and the two products give a polynomial of degree <em>n</em>− 1 in <em>k</em> after division by <em>r</em>− <em>tk</em>. So the sum over <em>k</em> is zero by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_24" id="ch01ex_2_6_24a">24</a>. The proof is by induction on <em>n</em>. If <em>n</em> ≤ 0 the identity is obvious. If <em>n</em> &gt; 0, we prove it holds for (<em>r, n</em>− <em>r</em> + <em>nt</em> + <em>m, t, n</em>), by induction on the integer <em>m</em> ≥ 0, using the previous two exercises and the validity for <em>n</em>− 1. This establishes the identity (<em>r, s, t, n</em>) for infinitely many <em>s</em>, and it holds for all <em>s</em> since both sides are polynomials in <em>s</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_25" id="ch01ex_2_6_25a">25</a>. Using the ratio test and straightforward estimates for large values of <em>k</em> we can prove convergence. When <em>w</em> is sufficiently small, we have</p>
+
+  <div class="image"><img src="../Images/e485_03.gif"></div>
+
+  <p class="answerNP">Now let <em>x</em> = 1/(1 + <em>w</em>), <em>z</em> = <em>−w/</em>(1+<em>w</em>)^{1+<em>t</em>}. This proof is due to H. W. Gould [<em>AMM</em> <strong>63</strong> (1956), 84–91]. See also the more general formulas in <a href="../Text/ch02b.html#ch02ex_3_4_33">exercises 2.3.4.4–33</a> and 4.7–22.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_26" id="ch01ex_2_6_26a">26</a>. We could start with identity (<a href="../Text/ch01a.html#ch01eq-lev2sec6-35">35</a>) in the form</p>
+
+  <div class="image"><img src="../Images/e485_04.gif"></div>
+
+  <p class="answerNP">and proceed as in <a href="../Text/ch01a.html#ch01ex_2_6_25">exercise 25</a>. Another way is to differentiate the formula of that exercise with respect to <em>z</em>; we get</p>
+
+  <div class="image"><img src="../Images/e485_05.gif"></div>
+
+  <p class="answerNP">hence we can obtain the value of</p>
+
+  <div class="image"><img src="../Images/e485_06.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_27" id="ch01ex_2_6_27a">27</a>. For Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-26">26</a>), multiply the series for x^{<em>r</em>+1}/((<em>t</em> + 1)<em>x</em>− <em>t</em>) by the series for x^{s}, and get a series for x^{<em>r</em>+<em>s</em>+1}/((<em>t</em> + 1)<em>x</em>− <em>t</em>) in which coefficients of <em>z</em> may be equated to the coefficients arising from the series for x^{(<em>r</em>+<em>s</em>)+1}/((<em>t</em> + 1)<em>x</em>− <em>t</em>).</p>
+
+  <p><a id="page_486"></a><a href="../Text/ch01a.html#ch01ex_2_6_28" id="ch01ex_2_6_28a">28</a>. Denoting the left-hand side by <em>f</em>(<em>r, s, t, n</em>), we find</p>
+
+  <div class="image"><img src="../Images/e486_01.gif"></div>
+
+  <p class="answerNP">by considering the identity</p>
+
+  <div class="image"><img src="../Images/e486_02.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_29" id="ch01ex_2_6_29a">29</a>. <span class="middle"><img src="../Images/e486_03.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_30" id="ch01ex_2_6_30a">30</a>. Apply (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>), (<a href="../Text/ch02a.html#ch02eq-lev2sec6-6">6</a>), and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-19">19</a>) to get</p>
+
+  <div class="image"><img src="../Images/e486_04.gif"></div>
+
+  <p class="answerNP">Now we can apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-26">26</a>) with (<em>r, s, t, n</em>) = (1<em>, m</em>− 2<em>n</em>− 1,−2<em>, n</em>− <em>m</em>), obtaining</p>
+
+  <div class="image"><img src="../Images/e486_05.gif"></div>
+
+  <p class="answerNP">This result is the same as our previous formula, when <em>n</em> is positive, but when <em>n</em> = 0 the answer we have obtained is correct while <span class="middle"><img src="../Images/e486_06.gif"></span> is not. Our derivation has a further bonus, since the answer <span class="middle"><img src="../Images/e486_07.gif"></span> is valid for <em>n</em> ≥ 0 and <em>all</em> integers <em>m</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_31" id="ch01ex_2_6_31a">31</a>. [This sum was first obtained in closed form by J. F. Pfaff, <em>Nova Acta Acad. Scient. Petr.</em> <strong>11</strong> (1797), 38–57.] We have</p>
+
+  <div class="image"><img src="../Images/e486_08.gif"></div>
+
+  <p class="answerNP">Changing <span class="middle"><img src="../Images/e486_09.gif"></span> to <span class="middle"><img src="../Images/e486_10.gif"></span> and applying (<a href="../Text/ch01a.html#ch01eq-lev2sec6-20">20</a>) again, we get</p>
+
+  <div class="image"><img src="../Images/e486_11.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_32" id="ch01ex_2_6_32a">32</a>. Replace <em>x</em> by <em>−x</em> in (<a href="../Text/ch01a.html#ch01eq-lev2sec6-44">44</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_33" id="ch01ex_2_6_33a">33</a>, <a href="../Text/ch01a.html#ch01ex_2_6_34" id="ch01ex_2_6_34a">34</a>. [<em>Mém. Acad. Roy. Sci.</em> (Paris, 1772), part 1, 492; C. Kramp, <em>Élémens d’Arithmétique Universelle</em> (Cologne: 1808), 359; <em>Giornale di Mat. Battaglini</em> <strong>33</strong> (1895), 179–182.] Since <span class="middle"><img src="../Images/e486_12.gif"></span>, the equation may be transformed into</p>
+
+  <div class="image"><img src="../Images/e486_13.gif"></div>
+
+  <p class="answerNP">which is a case of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-26">26</a>). Similarly, <span class="middle"><img src="../Images/e486_14.gif"></span>, an equivalent formula of Rothe [<em>Formulæ de Serierum Reversione</em> (Leipzig: 1793), 18].</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_35" id="ch01ex_2_6_35a">35</a>. For example, we prove the first formula:</p>
+
+  <div class="image"><img src="../Images/e486_15.gif"></div>
+
+  <p><a id="page_487"></a><a href="../Text/ch01a.html#ch01ex_2_6_36" id="ch01ex_2_6_36a">36</a>. By (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>), assuming that <em>n</em> is a nonnegative integer, we get 2<em>^{n}</em> and δ_{n0}, respectively.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_37" id="ch01ex_2_6_37a">37</a>. When <em>n</em> &gt; 0, 2<em>^{n−1}. (The odd and even terms cancel, so each equals half the total sum.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_38" id="ch01ex_2_6_38a">38</a>. Let ω = e^{2<em>πi/m</em>}. Then</p>
+
+  <div class="image"><img src="../Images/e487_01.gif"></div>
+
+  <p class="answerNP">Now</p>
+
+  <div class="image"><img src="../Images/e487_02.gif"></div>
+
+  <p class="answerNP">(it is the sum of a geometric progression), so the right-hand sum is <span class="middle"><img src="../Images/e487_03.gif"></span>.</p>
+
+  <p class="answerNP">The original sum on the left is</p>
+
+  <div class="image"><img src="../Images/e487_04.gif"></div>
+
+  <p class="answerNP">Since the quantity is known to be real, we may take the real part and obtain the stated formula. [See <em>Crelle</em> <strong>11</strong> (1834), 353–355.]</p>
+
+  <p class="exercises1N">The cases <em>m</em> = 3 and <em>m</em> = 5 have special properties discussed in <em>CMath</em>, exercises 5.75 and 6.57.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_39" id="ch01ex_2_6_39a">39</a>. <em>n</em>!; δ_{n0}− δ_{n1}. (The row sums in the second triangle are not so simple; we will find (<a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 64</a>) that <span class="middle"><img src="../Images/e487_05.gif"></span> is the number of ways to partition a set of <em>n</em> elements into disjoint sets, which is the number of equivalence relations on{1, 2<em>, ..., n</em>}.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_40" id="ch01ex_2_6_40a">40</a>. Proof of (c): By parts,</p>
+
+  <div class="image"><img src="../Images/e487_06.gif"></div>
+
+  <p class="answerNP">Now use (b).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_41" id="ch01ex_2_6_41a">41</a>. <em>m^{x}</em> B(<em>x, m</em> + 1) → <em>Γ</em>(<em>x</em>) as <em>m</em> → ∞, regardless of whether <em>m</em> runs through integer values or not (by monotonicity). Hence, (<em>m</em> + <em>y</em>)<em>^{x}</em> B(<em>x, m</em> + <em>y</em> + 1) → <em>Γ</em>(<em>x</em>), and <em>(m/</em>(<em>m</em> + <em>y</em>))<em>^{x}</em>→ 1.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_42" id="ch01ex_2_6_42a">42</a>. 1/((<em>r</em> + 1)B(<em>k</em> + 1<em>, r</em>− <em>k</em> + 1)), if this is defined according to <a href="../Text/ch01a.html#ch01ex_2_6_41">exercise 41</a>(b). In general when <em>z</em> and <em>w</em> are arbitrary complex numbers we define</p>
+
+  <p class="center"><span class="middle"><img src="../Images/e487_07.gif"></span>;</p>
+
+  <p class="answerNP">the value is infinite when <em>z</em> is a negative integer and <em>w</em> is not an integer.</p>
+
+  <p class="exercises1N">With this definition, the symmetry condition (<a href="../Text/ch01a.html#ch01eq-lev2sec6-6">6</a>) holds for all complex <em>n</em> and <em>k</em>, except when <em>n</em> is a negative integer and <em>k</em> is an integer; Eqs. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-7">7</a>), (<a href="../Text/ch01a.html#ch01eq-lev2sec6-9">9</a>), and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-20">20</a>) are never false, although they may occasionally take indeterminate forms such as 0 · ∞ or ∞ + ∞. Equation (<a href="../Text/ch01a.html#ch01eq-lev2sec6-17">17</a>) becomes</p>
+
+  <div class="image"><img src="../Images/e487_08.gif"></div>
+
+  <p class="answerNP">We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining <span class="middle"><img src="../Images/e487_09.gif"></span> and <span class="middle"><img src="../Images/e487_10.gif"></span>; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
+
+  <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. <span class="middle"><img src="../Images/e488_01.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_45" id="ch01ex_2_6_45a">45</a>. For large <em>r</em>, <span class="middle"><img src="../Images/e488_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. <span class="middle"><img src="../Images/e488_03.gif"></span>, and <span class="middle"><img src="../Images/e488_04.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is δ_{k0} when <em>k</em> ≤ 0, and is multiplied by <span class="middle"><img src="../Images/e488_05.gif"></span> when <em>k</em> is replaced by <em>k</em> + 1. When <span class="middle"><img src="../Images/e488_06.gif"></span> this implies <span class="middle"><img src="../Images/e488_07.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_48" id="ch01ex_2_6_48a">48</a>. This can be proved by induction, using the fact that</p>
+
+  <div class="image"><img src="../Images/e488_08.gif"></div>
+
+  <p class="answerNP">when <em>n</em> &gt; 0. Alternatively, we have</p>
+
+  <div class="image"><img src="../Images/e488_09.gif"></div>
+
+  <p class="answerNP">(In fact, the stated sum equals B(<em>x, n</em> + 1) for noninteger <em>n</em> also, when the series converges.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_49" id="ch01ex_2_6_49a">49</a>. <span class="middle"><img src="../Images/e488_10.gif"></span>, integer <em>m</em>. (See <a href="../Text/ch01a.html#ch01ex_2_6_17">exercise 17</a>.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_50" id="ch01ex_2_6_50a">50</a>. The <em>k</em>th summand is <span class="middle"><img src="../Images/e488_11.gif"></span>. Apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_51" id="ch01ex_2_6_51a">51</a>. The right-hand side is</p>
+
+  <div class="image"><img src="../Images/e488_12.gif"></div>
+
+  <p class="answerNP">The same device may be used to prove Torelli’s sum (<a href="../Text/ch01a.html#ch01ex_2_6_34">exercise 34</a>).</p>
+
+  <p class="exercises1N">Another neat proof of Abel’s formula comes from the fact that it is readily transformed into the more symmetric identity derived in <a href="../Text/ch02b.html#ch02ex_3_4_29">exercise 2.3.4.4–29</a>:</p>
+
+  <div class="image"><img src="../Images/e488_13.gif"></div>
+
+  <p class="exercises1N">Abel’s theorem has been generalized even further by A. Hurwitz [<em>Acta Mathematica</em> <strong>26</strong> (1902), 199–203] as follows:</p>
+
+  <div class="image"><img src="../Images/e488_14.gif"></div>
+
+  <p class="answerNP">where the sum is over all 2<em>^{n}</em> choices of \epsilon_{1}, ..., \epsilon_{n} = 0 or 1 independently. This is an identity in <em>x, y, z</em>_{1}, ..., z_{n}, and Abel’s formula is the special case z_{1} = z_{2} = · · · = z_{n}. Hurwitz’s formula follows from the result in <a href="../Text/ch02b.html#ch02ex_3_4_30">exercise 2.3.4.4–30</a>.</p>
+
+  <p><a id="page_489"></a><a href="../Text/ch01a.html#ch01ex_2_6_52" id="ch01ex_2_6_52a">52</a>. ∑_{k≥0}(<em>k</em> + 1)^{−2} = π^{2}/6. [M. L. J. Hautus observes that the sum is absolutely convergent for all complex <em>x</em>, <em>y</em>, <em>z</em>, <em>n</em> whenever <em>z</em> ≠ 0, since the terms for large <em>k</em> are always of order 1/k^{2}. This convergence is uniform in bounded regions, so we may differentiate the series term by term. If <em>f</em>(<em>x, y, n</em>) is the value of the sum when <em>z</em> = 1, we find (<em>∂/∂y</em>)<em>f</em>(<em>x, y, n</em>) = <em>nf</em>(<em>x, y, n</em>− 1) and (<em>∂/∂x</em>)<em>f</em>(<em>x, y, n</em>) = <em>nf</em>(<em>x</em>− 1<em>, y</em> + 1<em>, n</em>− 1). These formulas are consistent with <em>f</em>(<em>x, y, n</em>) = (<em>x</em>+<em>y</em>)<em>^{n}</em>; but actually the latter equality seems to hold rarely, if ever, unless the sum is finite. Furthermore the derivative with respect to <em>z</em> is almost always nonzero.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_53" id="ch01ex_2_6_53a">53</a>. For (b), set <span class="middle"><img src="../Images/e489_01.gif"></span> and <span class="middle"><img src="../Images/e489_02.gif"></span> in the result of (a).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_54" id="ch01ex_2_6_54a">54</a>. Insert minus signs in a checkerboard pattern as shown.</p>
+
+  <div class="image"><img src="../Images/e489_03.gif"></div>
+
+  <p class="answerNP">This is equivalent to multiplying <em>a_{ij}</em> by (−1)^{<em>i</em> +<em>j</em>}. The result is the desired inverse, by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-33">33</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_55" id="ch01ex_2_6_55a">55</a>. Insert minus signs in one triangle, as in the previous exercise, to get the inverse of the other. (Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-47">47</a>).)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_56" id="ch01ex_2_6_56a">56</a>. 210 310 320 321 410 420 421 430 431 432 510 520 521 530 531 532 540 541 542 543 610. With <em>a</em> fixed, <em>b</em> and <em>c</em> run through the combinations of <em>a</em> things two at a time; with <em>a</em> and <em>b</em> fixed, <em>c</em> runs through the combinations of <em>b</em> things one at a time.</p>
+
+  <p class="exercises1N">Similarly, we could express all numbers in the form <span class="middle"><img src="../Images/e489_04.gif"></span> with <em>a &gt; b &gt; c &gt; d</em> ≥ 0; the sequence begins 3210 4210 4310 4320 4321 5210 5310 5320 ... . We can find the combinatorial representation by a “greedy” method, first choosing the largest possible <em>a</em>, then the largest possible <em>b</em> for <span class="middle"><img src="../Images/e489_05.gif"></span>, etc. [Section 7.2.1.3 discusses further properties of this representation.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_58" id="ch01ex_2_6_58a">58</a>. [<em>Systematisches Lehrbuch der Arithmetik</em> (Leipzig: 1811), xxix.] Use induction and</p>
+
+  <div class="image"><img src="../Images/e489_06.gif"></div>
+
+  <p class="answerNP">Therefore [F. Schweins, <em>Analysis</em> (Heidelberg: 1820),§151] the <em>q</em>-generalization of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>) is</p>
+
+  <div class="image"><img src="../Images/e489_07.gif"></div>
+
+  <p class="answerNP">And the identity 1 − <em>q^{t}</em> = <em>−q^{t}</em>(1− <em>q ^{−t}</em>) makes it easy to generalize (<a href="../Text/ch01a.html#ch01eq-lev2sec6-17">17</a>) to</p>
+
+  <div class="image"><img src="../Images/e489_08.gif"></div>
+
+  <p class="answerNP">The <em>q</em>-nomial coefficients arise in many diverse applications; see, for example, Section 5.1.2, and the author’s note in <em>J. Combinatorial Theory</em> <strong>A10</strong> (1971), 178–180.</p>
+
+  <p class="exercises1N"><em>Useful facts:</em> When <em>n</em> is a nonnegative integer, <span class="middle"><img src="../Images/nbykq.gif"></span> is a polynomial of degree <em>k</em>(<em>n</em>− <em>k</em>) in <em>q</em> with nonnegative integer coefficients, and it satisfies the reflective laws</p>
+
+  <div class="image"><img src="../Images/e489_09.gif"></div>
+
+  <p class="answerNP">If <em>|q|</em> &lt; 1 and <em>|x|</em> &lt; 1, the <em>q</em>-nomial theorem holds when <em>n</em> is an arbitrary real number, if we replace the left-hand side by ∏_{k≥0}((1 + <em>q^{k}x</em>)/(1 + q^{<em>n</em>+<em>k</em>}<em>x</em>)). Properties of power <a id="page_490"></a>series make it necessary to verify this only when <em>n</em> is a positive integer, because we can set <em>q^{n}</em> = <em>y</em>; the identity has then been verified for infinitely many values of <em>y</em>. Now we can negate the upper index in the <em>q</em>-nomial theorem, obtaining</p>
+
+  <div class="image"><img src="../Images/e490_01.gif"></div>
+
+  <p class="answerNP">For further information, see G. Gasper and M. Rahman, <em>Basic Hypergeometric Series</em> (Cambridge Univ. Press, 1990). The <em>q</em>-nomial coefficients were introduced by Gauss in <em>Commentationes societatis regiæ scientiarum Gottingensis recentiores</em> <strong>1</strong> (1808), 147– 186; see also Cauchy [<em>Comptes Rendus Acad. Sci.</em> <strong>17</strong> (Paris, 1843), 523–531], Jacobi [<em>Crelle</em> <strong>32</strong> (1846), 197–204], Heine [<em>Crelle</em> <strong>34</strong> (1847), 285–328], and Section 7.2.1.4.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. <span class="middle"><img src="../Images/e490_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. <span class="middle"><img src="../Images/e490_03.gif"></span>. This formula can be remembered easily, since it is</p>
+
+  <div class="image"><img src="../Images/e490_04.gif"></div>
+
+  <p class="answerNP">like Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-2">2</a>) except that the numbers in the numerator go up instead of down. A slick way to prove it is to note that we want to count the number of integer solutions (a_{1}, ..., a_{k}) to the relations 1≤ a_{1} ≤ a_{2}≤ · · · ≤ a_{k} ≤ <em>n</em>. This is the same as 0 &lt; a_{1} &lt; a_{2} + 1 &lt; · · · &lt; a_{k} + k − 1 &lt; n + k; and the number of solutions to</p>
+
+  <p class="center">$0 &lt; b_{1} &lt; b_{2} &lt; · · · &lt; b_{k} &lt; n + k$</p>
+
+  <p class="answerNP">is the number of choices of <em>k</em> distinct things from the set{1, 2<em>, ..., n</em> + <em>k</em>− 1}. (This trick is due to H. F. Scherk, <em>Crelle</em> <strong>3</strong> (1828), 97; curiously it was also given by W. A. Förstemann in the same journal, <strong>13</strong> (1835), 237, who said “One would almost believe this must have been known long ago, but I have found it nowhere, even though I have consulted many works in this regard.”)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_61" id="ch01ex_2_6_61a">61</a>. If a_{mn} is the desired quantity, we have a_{mn} = na_{m(n −1)} + δ_{mn} by (<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-47">47</a>). Hence the answer is [<em>n</em> ≥ <em>m</em>] <em>n</em>!<em>/m</em>!. The same formula is also easily obtained by inversion of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-56">56</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_62" id="ch01ex_2_6_62a">62</a>. Use the identity of <a href="../Text/ch01a.html#ch01ex_2_6_31">exercise 31</a>, with (<em>m, n, r, s, k</em>)← (<em>m</em> + <em>k, l</em>− <em>k, m</em> + <em>n, n</em> + <em>l, j</em>):</p>
+
+  <div class="image"><img src="../Images/e490_05.gif"></div>
+
+  <p class="answerNP">by rearranging the factorial signs. The sum on <em>k</em> now vanishes unless <em>j</em> = <em>l</em>.</p>
+
+  <p class="exercises1N">The case <em>l</em> = <em>m</em> = <em>n</em> of this identity was published by A. C. Dixon [<em>Messenger of Math.</em> <strong>20</strong> (1891), 79–80], who established the general case twelve years later [<em>Proc. London Math. Soc.</em> <strong>35</strong> (1903), 285–289]. However, L. J. Rogers had already published a much more general formula in the meantime [<em>Proc. London Math. Soc.</em> <strong>26</strong> (1895), 15–32,§8]. See also papers by P. A. MacMahon, <em>Quarterly Journal of Pure and Applied Math.</em> <strong>33</strong> (1902), 274–288, and John Dougall, <em>Proc. Edinburgh Math. Society</em> <strong>25</strong> <a id="page_491"></a>(1907), 114–132. The corresponding <em>q</em>-nomial identities are</p>
+
+  <div class="image"><img src="../Images/e491_01.gif"></div>
+
+  <p class="answerNP">where <span class="middle"><img src="../Images/e491_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_63" id="ch01ex_2_6_63a">63</a>. See <em>CMath</em>, exercises 5.83 and 5.106.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_64" id="ch01ex_2_6_64a">64</a>. Let <em>f</em>(<em>n, m</em>) be the number of partitions of{1, 2<em>, ..., n</em>} into <em>m</em> parts. Clearly <em>f</em>(1<em>, m</em>) = δ_{1m}. If <em>n</em> &gt; 1, the partitionings are of two varieties: (a) The element <em>n</em> alone forms a set of the partition; there are <em>f</em>(<em>n</em>− 1<em>, m</em>− 1) ways to construct partitions like this. (b) The element <em>n</em> appears together with another element; there are <em>m</em> ways to insert <em>n</em> into any <em>m</em>-partition of{1, 2<em>, ..., n</em>− 1}, hence there are <em>mf</em>(<em>n</em>− 1<em>, m</em>) ways to construct partitions like this. We conclude that <em>f</em>(<em>n, m</em>) = <em>f</em>(<em>n</em>− 1<em>, m</em>− 1) + <em>mf</em>(<em>n</em>− 1<em>, m</em>), and <span class="middle"><img src="../Images/e491_03.gif"></span> by induction.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_65" id="ch01ex_2_6_65a">65</a>. See <em>AMM</em> <strong>99</strong> (1992), 410–422.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let <span class="middle"><img src="../Images/e491_04.gif"></span>, <span class="middle"><img src="../Images/e491_05.gif"></span>, <span class="middle"><img src="../Images/e491_06.gif"></span>, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that <em>y &gt; n</em>− 1 is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
+
+  <p class="exercises1N">Let <span class="middle"><img src="../Images/e491_07.gif"></span>, and suppose that <em>F</em>(<em>z</em>) = 0 for some <em>z &gt; n</em>− 2. We will prove that <em>F</em>′(<em>z</em>) &lt; 0; therefore <em>z</em> = <em>y</em> must be the only root <em>&gt; n</em>−2, proving the second inequality. Since <span class="middle"><img src="../Images/e491_08.gif"></span> and <em>x &gt; y</em> and <em>Y, Z</em> &gt; 0, we must have <span class="middle"><img src="../Images/e491_09.gif"></span>. Setting <em>X</em>′ = <em>dX/dx</em> and <em>Z</em>′ = <em>dZ/dz</em> = <em>dX/dz</em>, we have</p>
+
+  <div class="image"><img src="../Images/e491_10.gif"></div>
+
+  <p class="answerNP">since <span class="middle"><img src="../Images/e491_11.gif"></span>. Thus <span class="middle"><img src="../Images/e491_12.gif"></span>, and</p>
+
+  <div class="image"><img src="../Images/e491_13.gif"></div>
+
+  <p class="exercises1N">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if <span class="middle"><img src="../Images/e491_14.gif"></span> for some <em>z &gt; n</em>− 2, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
+
+  <p class="exercises1N"><em>References:</em> L. Lovász, <em>Combinatorial Problems and Exercises</em> (1993), Problem 13.31(a); R. M. Redheffer, <em>AMM</em> <strong>103</strong> (1996), 62–64.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_67" id="ch01ex_2_6_67a">67</a>. If <em>k</em> &gt; 0, <a href="../Text/ch01a.html#ch01ex_2_5_24">exercise 1.2.5–24</a> gives the slightly sharper (but less memorable) upper bounds <span class="middle"><img src="../Images/e491_15.gif"></span>. The corresponding lower bound is <span class="middle"><img src="../Images/e491_16.gif"></span>, which is less memorable (but often sharper) than <span class="middle"><img src="../Images/e491_20.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_68" id="ch01ex_2_6_68a">68</a>. Let <span class="middle"><img src="../Images/e491_17.gif"></span>; then <span class="middle"><img src="../Images/e491_18.gif"></span>. So the stated sum is</p>
+
+  <div class="image"><img src="../Images/e491_19.gif"></div>
+
+  <p class="answerNP">[De Moivre stated this identity in <em>Miscellanea Analytica</em> (1730), 101, in the case that <em>np</em> is an integer; H. Poincaré proved the general case in his <em>Calcul des Probabilités</em> (1896), 56–60. See P. Diaconis and S. Zabell, <em>Statistical Science</em> <strong>6</strong> (1991), 284–302, for the interesting history of this identity and for a variety of similar formulas.]</p>
+
+  <h4 id="app01lev2sec7"><a id="page_492"></a>Section 1.2.7</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_1" id="ch01ex_2_7_1a">1</a>. 0, 1, and 3/2.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_2" id="ch01ex_2_7_2a">2</a>. Replace each term 1/(2<em>^{m}</em> + <em>k</em>) by the upper bound 1/2<em>^{m}</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_3" id="ch01ex_2_7_3a">3</a>. <span class="middle"><img src="../Images/e492_01.gif"></span> is an upper bound.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_4" id="ch01ex_2_7_4a">4</a>. (b) and (c).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_5" id="ch01ex_2_7_5a">5</a>. 9.78760 60360 44382 ...</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_6" id="ch01ex_2_7_6a">6</a>. Induction and Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. <em>T</em>(<em>m</em> + 1<em>, n</em>)− <em>T</em>(<em>m, n</em>) = 1/(<em>m</em> + 1)− 1/(<em>mn</em> + 1) <em>− · ·</em> · − 1/(<em>mn</em> + <em>n</em>) ≤ 1/(<em>m</em> + 1)− (1/(<em>mn</em> + <em>n</em>) + · · · + 1/(<em>mn</em> + <em>n</em>)) = 1/(<em>m</em> + 1)− <em>n/</em>(<em>mn</em> + <em>n</em>) = 0. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_8" id="ch01ex_2_7_8a">8</a>. By Stirling’s approximation, ln <em>n</em>! is approximately <span class="middle"><img src="../Images/e492_02.gif"></span> ln <span class="middle"><img src="../Images/e492_03.gif"></span>; also <span class="middle"><img src="../Images/e492_04.gif"></span> is approximately (<em>n</em>+1) ln <span class="middle"><img src="../Images/e492_05.gif"></span>; the difference is approximately <span class="middle"><img src="../Images/e492_06.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_9" id="ch01ex_2_7_9a">9</a>. −1<em>/n</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_10" id="ch01ex_2_7_10a">10</a>. Break the left side into two sums; change <em>k</em> to <em>k</em> + 1 in the second sum.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_11" id="ch01ex_2_7_11a">11</a>. 2− <em>H_{n}/n</em>− 1<em>/n</em>, for <em>n</em> &gt; 0.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_12" id="ch01ex_2_7_12a">12</a>. 1.000 ... is correct to more than three hundred decimal places.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_13" id="ch01ex_2_7_13a">13</a>. Use induction as in the proof of <a href="../Text/ch02b.html#ch02b_the_a">Theorem A</a>. Or use calculus: Differentiate with respect to <em>x</em>, also evaluate at <em>x</em> = 1.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_14" id="ch01ex_2_7_14a">14</a>. See <a href="../Text/ch01.html#ch01lev2sec3">Section 1.2.3</a>, <a href="../Text/ch01.html#ch01exam-1-2">Example 2</a>. The second sum is <span class="middle"><img src="../Images/e492_07.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_15" id="ch01ex_2_7_15a">15</a>. <span class="middle"><img src="../Images/e492_08.gif"></span> can be summed by formulas in the text; the answer comes to <span class="middle"><img src="../Images/e492_09.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_16" id="ch01ex_2_7_16a">16</a>. <span class="middle"><img src="../Images/e492_10.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be (<em>p</em>− 1)!, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, (<em>p</em>− 1)!/1 + (<em>p</em>− 1)!/2 + · · · + (<em>p</em>− 1)!/(<em>p</em>− 1), <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, (<em>p</em>− 1)!<em>/k</em> ≡ (<em>p</em>− 1)! <em>k</em>′, where <em>k</em>′ can be determined by the relation <em>kk</em>′ mod <em>p</em> = 1. The set{1<em>′,</em> 2<em>′, ...,</em>(<em>p</em>− 1)<em>′</em>} is just the set{1, 2<em>, ..., p</em>− 1}; so the numerator is congruent to (<em>p</em>− 1)! (1 + 2 + · · · + <em>p</em>− 1)≡ 0.</p>
+
+  <p class="exercises1N"><em>Second solution</em> (advanced): By exercise 4.6.2–6, we have <span class="middle"><img src="../Images/e492_11.gif"></span> (modulo <em>p</em>); hence <span class="middle"><img src="../Images/e492_12.gif"></span>, by <a href="../Text/ch01a.html#ch01ex_2_6_32">exercise 1.2.6–32</a>. Now apply <a href="../Text/ch01a.html#ch01ex_2_7_6">exercise 6</a>.</p>
+
+  <p class="exercises1N">The numerator of H_{p−1} is in fact known to be a multiple of p^{2} when <em>p</em> &gt; 3; see Hardy and Wright, <em>An Introduction to the Theory of Numbers</em>, Section 7.8.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_18" id="ch01ex_2_7_18a">18</a>. If <em>n</em> = 2<em>^{k}m</em> where <em>m</em> is odd, the sum equals 2^{2<em>k</em>}m_{1}/m_{2} where m_{1} and m_{2} are both odd. [<em>AMM</em> <strong>67</strong> (1960), 924–925.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only <em>n</em> = 0, <em>n</em> = 1. For <em>n</em> ≥ 2, let <em>k</em> =\lfloor lg <em>n</em>\rfloor . There is precisely one term whose denominator is 2<em>^{k}</em>, so <span class="middle"><img src="../Images/e492_13.gif"></span> is a sum of terms involving only odd primes in the denominator. If H_{n} were an integer, <span class="middle"><img src="../Images/e492_14.gif"></span> would have a denominator equal to 2.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_20" id="ch01ex_2_7_20a">20</a>. Expand the integrand term by term. See also <em>AMM</em> <strong>69</strong> (1962), 239, and an article by H. W. Gould, <em>Mathematics Magazine</em> <strong>34</strong> (1961), 317–321.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_21" id="ch01ex_2_7_21a">21</a>. <span class="middle"><img src="../Images/e492_15.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_22" id="ch01ex_2_7_22a">22</a>. <span class="middle"><img src="../Images/e492_16.gif"></span>.</p>
+
+  <p><a id="page_493"></a><a href="../Text/ch01a.html#ch01ex_2_7_23" id="ch01ex_2_7_23a">23</a>. <em>Γ</em> ′(<em>n</em> + 1) <em>/ Γ</em>(<em>n</em> + 1) = 1<em>/n</em> + <em>Γ</em> ′ (<em>n</em>) <em>/ Γ</em>(<em>n</em>), since <em>Γ</em>(<em>x</em> + 1) = <em>x Γ</em>(<em>x</em>). Hence H_{n} = γ + <em>Γ</em> ′(<em>n</em> + 1) <em>/ Γ</em>(<em>n</em> + 1). The function <em>Ψ</em>(<em>x</em>) = <em>Γ</em> ′(<em>x</em>) <em>/ Γ</em> (<em>x</em>) = H_{x −1}− <em>γ</em> is called the <em>psi function</em> or the <em>digamma function</em>. Some values for rational <em>x</em> appear in <a href="../Text/app02.html#app02">Appendix A</a>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_24" id="ch01ex_2_7_24a">24</a>. It is</p>
+
+  <div class="image"><img src="../Images/e493_01.gif"></div>
+
+  <p class="answerNP"><em>Note:</em> The generalization of H_{n} considered in the previous exercise is therefore equal to <span class="middle"><img src="../Images/e493_02.gif"></span>, when <em>r</em> = 1; the same idea can be used for larger values of <em>r</em>. The infinite product converges for all complex <em>x</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_25" id="ch01ex_2_7_25a">25</a>. <span class="middle"><img src="../Images/e493_03.gif"></span> and <span class="middle"><img src="../Images/e493_04.gif"></span>; so the identity generalizes (<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>). [See L. Euler, <em>Novi Comment. Acad. Sci. Pet.</em> <strong>20</strong> (1775), 140–186,§2.]</p>
+
+  <h4 id="app01lev2sec8">Section 1.2.8</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_1" id="ch01ex_2_8_1a">1</a>. After <em>k</em> months there are F_{k+2} pairs, so the answer is F_{14} = 377 pairs.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_2" id="ch01ex_2_8_2a">2</a>. <span class="middle"><img src="../Images/e493_05.gif"></span>; log_{10}F_{1000} is 1/(ln 10) times this, or 208.64; F_{1000} is therefore a 209-digit number whose leading digit is 4.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_4" id="ch01ex_2_8_4a">4</a>. 0, 1, 5; afterwards F_{n} increases too fast.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_5" id="ch01ex_2_8_5a">5</a>. 0, 1, 12.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_6" id="ch01ex_2_8_6a">6</a>. Induction. (The equation holds for <em>negative n</em> also; see <a href="../Text/ch01a.html#ch01ex_2_8_8">exercise 8</a>.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_7" id="ch01ex_2_8_7a">7</a>. If <em>d</em> is a proper divisor of <em>n</em>, F_{d} divides F_{n}. Now F_{d} is greater than one and less than F_{n} provided <em>d</em> is greater than 2. The only nonprime number that has no proper factor greater than 2 is <em>n</em> = 4; F_{4} = 3 is the only exception.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_8" id="ch01ex_2_8_8a">8</a>. <em>F_{−1} = 1; F_{−2} = −1; F_{−n} = (−1)^{n+1}F_{n} by induction on <em>n</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_9" id="ch01ex_2_8_9a">9</a>. Not (<a href="../Text/ch01a.html#ch01eq-lev2sec8-15">15</a>). The others are valid, by an inductive argument that proves something true for <em>n</em>− 1 assuming it true for <em>n</em> and greater.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_10" id="ch01ex_2_8_10a">10</a>. When <em>n</em> is even, it is greater; when <em>n</em> is odd, it is less. (See Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-14">14</a>).)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_11" id="ch01ex_2_8_11a">11</a>.. Induction; see <a href="../Text/ch01a.html#ch01ex_2_8_9">exercise 9</a>. This is a special case of <a href="../Text/ch01a.html#ch01ex_2_8_13">exercise 13</a>(a).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_12" id="ch01ex_2_8_12a">12</a>. If <span class="middle"><img src="../Images/e493_16.gif"></span>, <span class="middle"><img src="../Images/e493_17.gif"></span>. Hence <span class="middle"><img src="../Images/e493_18.gif"></span>; from Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-17">17</a>) we find <span class="middle"><img src="../Images/e493_19.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_13" id="ch01ex_2_8_13a">13</a>. (a) a_{n} = <em>rF_{n−1} + <em>sF_{n}</em>. (b) Since (b_{n+2} + <em>c</em>) = (b_{n+1} + <em>c</em>) + (b_{n} + <em>c</em>), we may consider the new sequence <em>b′_{n}</em> = b_{n} + <em>c</em>. Applying part (a) to <em>b′_{n}</em>, we obtain the answer <em>cF_{n−1} + (<em>c</em> + 1)F_{n}− <em>c</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. <span class="middle"><img src="../Images/e493_08.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_15" id="ch01ex_2_8_15a">15</a>. c_{n} = <em>xa_{n}</em> + <em>yb_{n}</em> + (1− <em>x</em>− <em>y</em>)F_{n}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. F_{n+1}. Induction, and <span class="middle"><img src="../Images/e493_09.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity (x^{<em>n</em>+<em>k</em>} − y^{<em>n</em>+<em>k</em>})(<em>x^{m−k}</em>− <em>y^{m−k}</em>)− (<em>x^{n}</em>−<em>y^{n}</em>)(<em>x^{m}</em>−<em>y^{m}</em>) is equal to (<em>xy</em>)<em>^{n}</em>(<em>x^{m−n−k}</em>−<em>y^{m−n−k}</em>)(<em>x^{k}</em>−<em>y^{k}</em>). Set <em>x</em> = φ, <em>y</em> = <span class="middle"><img src="../Images/pi-circ.gif"></span>, and divide by <span class="middle"><img src="../Images/e493_10.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_18" id="ch01ex_2_8_18a">18</a>. It is F_{2n+1}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_19" id="ch01ex_2_8_19a">19</a>. Let <em>u</em> = cos 72<em>^{°}</em>, <em>v</em> = cos 36<em>^{°}</em>. We have <em>u</em> = 2v^{2}− 1; <em>v</em> = 1− 2 sin^{2}18<em>^{°}</em> = 1− 2u^{2}. Hence <em>u</em> + <em>v</em> = 2(v^{2}− u^{2}), i.e., 1 = 2(<em>v</em>− <em>u</em>) = 2<em>v</em>− 4v^{2} + 2. We conclude that <span class="middle"><img src="../Images/e493_11.gif"></span>. (Also <span class="middle"><img src="../Images/e493_12.gif"></span>, sin 36<em>^{°}</em> = ½ 5^{1/4}φ^{−1/2}, sin 72<em>^{°}</em> = ½ 5^{1/4}φ^{1/2}. Another interesting angle is α = arctan <span class="middle"><img src="../Images/e493_15.gif"></span> arctan \frac12, for which we have sin α = 5^{− 1/4}φ^{1/2}, cos α = 5^{−1/4}φ^{−1/2}.)</p>
+
+  <p><a id="page_494"></a><a href="../Text/ch01a.html#ch01ex_2_8_20" id="ch01ex_2_8_20a">20</a>. F_{n+2}− 1.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_21" id="ch01ex_2_8_21a">21</a>. Multiply by x^{2} +<em>x</em>−1; the solution is (x^{n+1}F_{n+ 1} + x^{n+ 2}<em>F_{n−x}</em>)/(x^{2} +<em>x</em>−1). If the denominator is zero, <em>x</em> is 1/φ or <span class="middle"><img src="../Images/e494_01.gif"></span>; then the solution is (<em>n</em> + 1− <em>x^{n}F_{n+1})/(2<em>x</em> + 1).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. F_{m+2n}</em>; set <em>t</em> = 2 in the next exercise.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. <span class="middle"><img src="../Images/e494_02.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_24" id="ch01ex_2_8_24a">24</a>. F_{n+1} (expand by cofactors in the first row).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_25" id="ch01ex_2_8_25a">25</a>. <span class="middle"><img src="../Images/e494_03.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_26" id="ch01ex_2_8_26a">26</a>. By Fermat’s theorem, 2^{p−1} ≡ 1; now apply the previous exercise and <a href="../Text/ch01a.html#ch01ex_2_6_10">exercise 1.2.6–10</a>(b).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_27" id="ch01ex_2_8_27a">27</a>. The statement is true if <em>p</em> = 2. Otherwise <span class="middle"><img src="../Images/e494_04.gif"></span>; hence, from the previous exercise and Fermat’s theorem, F_{p−1}F_{p+1}≡ 0 (modulo <em>p</em>). Only one of these factors can be a multiple of <em>p</em>, since F_{p+1} = F_{p} + F_{p−1}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_28" id="ch01ex_2_8_28a">28</a>. <span class="middle"><img src="../Images/e494_05.gif"></span>. <em>Note:</em> The solution to the recurrence a_{n+1} = <em>Aa_{n}</em> + <em>B^{n}</em>, a_{0} = 0, is</p>
+
+  <p class="center">a_{n} = (<em>A^{n}</em>− <em>B^{n}</em>)/(<em>A</em>− <em>B</em>) if <em>A</em>≠ <em>B,</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a_{n} = <em>nA^{n}</em>− ^{1} if <em>A</em> = <em>B.</em></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_29" id="ch01ex_2_8_29a">29</a>. (a) <span class="middle"><img src="../Images/e494_06.gif"></span></p>
+
+  <p class="exercises1N">(b) follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec8-6">6</a>). [É. Lucas, <em>Amer. J. Math.</em> <strong>1</strong> (1878), 201–204.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_30" id="ch01ex_2_8_30a">30</a>. We argue by induction on <em>m</em>, the statement being obvious when <em>m</em> = 1:</p>
+
+  <p class="exercises2I">(a) <span class="middle"><img src="../Images/e494_07.gif"></span>.</p>
+
+  <p class="exercises2I">(b) <span class="middle"><img src="../Images/e494_08.gif"></span>.</p>
+
+  <p class="exercises2I">(c) Since (−1)<em>^{k}F_{m−k} = F_{k−1}F_{m}− F_{k}F_{m−1} and F_{m}≠ 0, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.gif"></span>.</p>
+
+  <p class="exercises2I">(d) Since F_{n+k} = F_{k−1}F_{n} + F_{k}F_{n+1} the result follows from (a) and (c). This result may also be proved in slightly more general form by using the <em>q</em>-nomial theorem of <a href="../Text/ch01a.html#ch01ex_2_6_58">exercise 1.2.6–58</a>. <em>References:</em> Dov Jarden, <em>Recurring Sequences</em>, 2nd ed. (Jerusalem, 1966), 30–33; J. Riordan, <em>Duke Math. J.</em> <strong>29</strong> (1962), 5–12.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_31" id="ch01ex_2_8_31a">31</a>. Use <a href="../Text/ch01a.html#ch01ex_2_8_8">exercises 8</a> and <a href="../Text/ch01a.html#ch01ex_2_8_11">11</a>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_32" id="ch01ex_2_8_32a">32</a>. Modulo F_{n} the Fibonacci sequence is 0, 1<em>, ..., F_{n−1}, 0, F_{n−1}, −F_{n−2}, ... .</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_33" id="ch01ex_2_8_33a">33</a>. Note that cos <em>z</em> = \frac12 (<em>e^{<em>iz</em>}</em> + e^{−<em>iz</em>}) = <em>−i/</em>2, for this particular <em>z</em>; then use the fact that sin(<em>n</em> + 1)<em>z</em> + sin(<em>n</em>− 1)<em>z</em> = 2 sin <em>nz</em> cos <em>z</em>, for all <em>z</em>.</p>
+
+  <p><a id="page_495"></a><a href="../Text/ch01a.html#ch01ex_2_8_34" id="ch01ex_2_8_34a">34</a>. Prove that the only possible value for F_{k_{1}} is the largest Fibonacci number less than or equal to <em>n</em>; hence <em>n</em>− F_{k_{1}} is less than F_{k_{1}−1}, and by induction there is a unique representation of <em>n</em>− F_{k_{1}}. The outline of this proof is quite similar to the proof of the unique factorization theorem. The Fibonacci number system is due to E. Zeckendorf [see <em>Simon Stevin</em> <strong>29</strong> (1952), 190–195; <em>Bull. Soc. Royale des Sciences de Liège</em> <strong>41</strong> (1972), 179–182]; but Section 7.2.1.7 points out that it was implicitly known in 14th-century India. Generalizations are discussed in exercise 5.4.2–10 and in Section 7.1.3.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_35" id="ch01ex_2_8_35a">35</a>. See G. M. Bergman, <em>Mathematics Magazine</em> <strong>31</strong> (1957), 98–110. To represent <em>x</em> &gt; 0, find the largest <em>k</em> with <em>φ^{k}</em>≤ <em>x</em> and represent <em>x</em> as <em>φ^{k}</em> plus the representation of <em>x</em>− <em>φ^{k}</em>.</p>
+
+  <p class="exercises1N">The representation of nonnegative integers can also be obtained from the following all-integer recursive rules, starting with the trivial representations of 0 and 1: Let <span class="middle"><img src="../Images/e495_01.gif"></span>. The representation of L_{2n}+m for 0 ≤ <em>m</em> ≤ L_{2n−1} and <em>n</em> ≥ 1 is φ^{2<em>n</em>} + φ^{−2<em>n</em>} plus the representation of <em>m</em>. The representation of L_{2n+1}+m for 0 &lt; <em>m</em> &lt; L_{2n} and <em>n</em> ≥ 0 is φ^{2<em>n</em> + 1} + φ^{−2<em>n</em>−2} plus the representation of <em>m</em>− φ^{−2<em>n</em>}, where the latter is obtained by applying the rule <em>φ^{k}</em>− φ^{<em>k</em>− 2<em>j</em>} = φ^{<em>k</em>−1} + φ^{<em>k</em>−3} + · · · + φ^{<em>k</em>−2<em>j</em>+1}. It turns out that all strings α of 0s and 1s, such that α begins with 1 and has no adjacent 1s, occur to the left of the radix point in the representation of exactly one positive integer, except for the strings that end with 10^{2<em>k</em>}1; the latter strings never occur in such representations.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_36" id="ch01ex_2_8_36a">36</a>. We may consider the infinite string S_{∞}, since S_{n} for <em>n</em> &gt; 1 consists of the first F_{n} letters of S_{∞}. There are no double <em>a</em>’s, no triple <em>b</em>’s. The string S_{n} contains F_{n−2} <em>a</em>’s and F_{n−1} <em>b</em>’s. If we express <em>m</em>− 1 in the Fibonacci number system as in <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>, the <em>m</em>th letter of S_{∞} is <em>a</em> if and only if k_{r} = 2. The <em>k</em>th letter of S_{∞} is <em>b</em> if and only if\lfloor (<em>k</em> + 1)φ^{−1}\rfloor  = 1; the number of <em>b</em>’s in the first <em>k</em> letters is therefore \lfloor (<em>k</em> + 1)φ^{−1}\rfloor . Also, the <em>k</em>th letter is <em>b</em> if and only if <em>k</em> = \lfloor <em>m</em>φ\rfloor  for some positive integer <em>m</em>. This sequence was studied by John Bernoulli III in the 18th century, by A. A. Markov in the 19th, and by many other mathematicians since then; see K. B. Stolarsky, <em>Canadian Math. Bull.</em> <strong>19</strong> (1976), 473–482.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_37" id="ch01ex_2_8_37a">37</a>. [<em>Fibonacci Quarterly</em> <strong>1</strong> (December 1963), 9–12.] Consider the Fibonacci number system of <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>; if <em>n</em> = F_{k_{1}} + · · · + F_{k_{r}} &gt; 0 in that system, let μ(<em>n</em>) = F_{k_{r}}. Also let <em>μ</em>(0) = ∞. We find that: (A) If <em>n</em> &gt; 0, μ(<em>n</em>− μ(<em>n</em>)) &gt; 2μ(<em>n</em>). <em>Proof:</em> μ(<em>n</em>− μ(<em>n</em>)) = F_{k_{r−1}} ≥ F_{k_{r+2}} &gt; 2F_{k_{r}} since k_{r} ≥ 2. (B) If 0 &lt; <em>m</em> &lt; F_{k}, μ(<em>m</em>) ≤ 2(F_{k} − <em>m</em>). <em>Proof:</em> Let <em>μ</em><span class="middle"><img src="../Images/e495_02.gif"></span>. (C) If 0 &lt; <em>m</em> &lt; μ(<em>n</em>), μ(<em>n</em>− μ(<em>n</em>) + <em>m</em>) ≤ 2(μ(<em>n</em>) − <em>m</em>). <em>Proof:</em> This follows from (B). (D) If 0 <em>&lt; m</em> &lt; μ(<em>n</em>), μ(<em>n</em>− <em>m</em>) ≤ 2<em>m</em>. <em>Proof:</em> Set <em>m</em> = μ(<em>n</em>) − <em>m</em> in (C).</p>
+
+  <p class="exercises1N">Now we will prove that if there are <em>n</em> chips, and if at most <em>q</em> may be taken in the next turn, there is a winning move if and only if μ(<em>n</em>) ≤ <em>q</em>. <em>Proof:</em> (a) If μ(<em>n</em>) <em>&gt; q</em> all moves leave a position <em>n</em>′, <em>q</em>′ with μ(<em>n</em>′) ≤ <em>q</em>′. [This follows from (D), above.] (b) If μ(<em>n</em>) ≤ <em>q</em>, we can either win on this move (if <em>q</em> ≥ <em>n</em>) or we can make a move that leaves a position <em>n</em>′, <em>q</em>′ with μ(<em>n</em>′) <em>&gt; q</em>′. [This follows from (A) above: Our move is to take μ(<em>n</em>) chips.] It can be seen that the set of all winning moves, if <em>n</em> = F_{k_{1}} + · · · + F_{k_{r}}, is to remove F_{k_{j}} + · · · + F_{k_{r}}, for some <em>j</em> with 1≤ <em>j</em> ≤ <em>r</em>, provided that <em>j</em> = 1 or F_{k_{j−1}} &gt; 2(F_{k_{j}} + · · · + F_{k_{r}}).</p>
+
+  <p class="exercises1N">The Fibonacci representation of 1000 is 987+13; the <em>only</em> lucky move to force a victory is to take 13 chips. The first player can always win unless <em>n</em> is a Fibonacci number.</p>
+
+  <p class="exercises1N">The solution to considerably more general games of this type has been obtained by A. Schwenk [<em>Fibonacci Quarterly</em> <strong>8</strong> (1970), 225–234].</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_39" id="ch01ex_2_8_39a">39</a>. (3^{n} − (−2)^{n}) /5.</p>
+
+  <p><a id="page_496"></a><a href="../Text/ch01a.html#ch01ex_2_8_40" id="ch01ex_2_8_40a">40</a>. We prove, by induction on <em>m</em>, that <em>f</em>(<em>n</em>) = <em>m</em> for <em>F_{m} &lt; n</em> ≤ F_{m+1}: First, <em>f</em>(<em>n</em>) ≤ max(1 + <em>f</em>(F_{m}), 2 + <em>f</em>(<em>n</em>− F_{m})) = <em>m</em>. Second, if <em>f</em>(<em>n</em>) <em>&lt; m</em> there is some <em>k &lt; n</em> with 1 + <em>f</em>(<em>k</em>) <em>&lt; m</em> (hence <em>k</em> ≤ F_{m−1}) and 2 + <em>f</em>(<em>n</em>− <em>k</em>) <em>&lt; m</em> (hence <em>n</em>− <em>k</em> ≤ F_{m−2}); but then <em>n</em> ≤ F_{m−1} + F_{m−2}. [Thus the Fibonacci trees defined in Section 6.2.1 minimize the maximum root-to-leaf cost when a right branch costs twice as much as a left branch.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_41" id="ch01ex_2_8_41a">41</a>. <span class="middle"><img src="../Images/e496_01.gif"></span> is an integer, and the parenthesized quantity lies between <span class="middle"><img src="../Images/e496_02.gif"></span> and <span class="middle"><img src="../Images/e496_13.gif"></span>. Similarly, <span class="middle"><img src="../Images/e496_03.gif"></span>. [Such Fibonacci shifting is a convenient way to convert mentally between miles and kilometers; see <em>CMath</em>,§6.6.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_42" id="ch01ex_2_8_42a">42</a>. [<em>Fibonacci Quarterly</em> <strong>6</strong> (1968), 235–244.] If such a representation exists, we have</p>
+
+  <div class="equation"><img src="../Images/496equ01.gif"></div>
+
+  <p class="answerNP">for all integers <em>N</em>; hence two different representations would contradict <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>.</p>
+
+  <p class="exercises1N">Conversely, we can prove the existence of such joint representations for all nonnegative <em>m</em> and <em>n</em> by induction. But it is more interesting to use the previous exercise, and to prove that such joint representations exist for possibly negative integers <em>m</em> and <em>n</em> if and only if <em>m</em> + <em>φn</em> ≥ 0: Let <em>N</em> be large enough so that <span class="middle"><img src="../Images/e496_04.gif"></span>, and represent <em>mF_{N−1} + <em>nF_{N}</em> as in (<em>*</em>). Then <span class="middle"><img src="../Images/e496_05.gif"></span>, and it follows that (<em>*</em>) holds for all <em>N</em>. Now set <em>N</em> = 0 and <em>N</em> = 1.</p>
+
+  <h4 id="app01lev2sec9">Section 1.2.9</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_1" id="ch01ex_2_9_1a">1</a>. 1/(1− 2<em>z</em>) + 1/(1− 3<em>z</em>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_2" id="ch01ex_2_9_2a">2</a>. It follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec9-6">6</a>), since <span class="middle"><img src="../Images/e496_06.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_3" id="ch01ex_2_9_3a">3</a>. <em>G</em>′(<em>z</em>) = ln(1/(1− <em>z</em>))/(1− <em>z</em>)^{2} + 1/(1− <em>z</em>)^{2}. From this and the significance of <em>G</em>(<em>z</em>)/(1− <em>z</em>), we have <span class="middle"><img src="../Images/e496_07.gif"></span>; this agrees with Eq. <a href="../Text/ch01a.html#ch01lev2sec7">1.2.7</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_4" id="ch01ex_2_9_4a">4</a>. Put <em>t</em> = 0.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_5" id="ch01ex_2_9_5a">5</a>. The coefficient of <em>z^{k}</em> is, by (<a href="../Text/ch01a.html#ch01eq-lev2sec9-11">11</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec9-22">22</a>),</p>
+
+  <div class="image"><img src="../Images/e496_08.gif"></div>
+
+  <p class="answerNP">Now apply Eqs. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>) and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-52">52</a>). (Or, differentiate and use <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_6" id="ch01ex_2_9_6a">6</a>. (ln(1/(1− <em>z</em>)))^{2}; the derivative is twice the generating function for the harmonic numbers; the sum is therefore 2H_{n−1}/n.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_8" id="ch01ex_2_9_8a">8</a>. 1/((1− <em>z</em>)(1− z^{2})(1− z^{3}) ...). [This is historically one of the first applications of generating functions. For an interesting account of L. Euler’s eighteenth-century researches concerning this generating function, see G. Pólya, <em>Induction and Analogy in Mathematics</em> (Princeton: Princeton University Press, 1954), Chapter 6.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_9" id="ch01ex_2_9_9a">9</a>. <span class="middle"><img src="../Images/e496_09.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_10" id="ch01ex_2_9_10a">10</a>. <em>G</em>(<em>z</em>) = (1 + x_{1}z) ... (1 + <em>x_{n}z</em>). Taking logarithms as in the derivation of Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-38">38</a>), we have the same formulas except that (<a href="../Text/ch01a.html#ch01eq-lev2sec9-24">24</a>) replaces (<a href="../Text/ch01a.html#ch01eq-lev2sec9-17">17</a>), and the answer is exactly the same except that S_{2}, S_{4}, S_{6}, ... are replaced by −S_{2}, −S_{4}, −S_{6}, ... . We have <span class="middle"><img src="../Images/e496_10.gif"></span>, <span class="middle"><img src="../Images/e496_11.gif"></span>, <span class="middle"><img src="../Images/e496_12.gif"></span>. (See <a href="../Text/ch01a.html#ch01ex_2_9_9">exercise 9</a>.) The recurrence analogous to (<a href="../Text/ch01a.html#ch01eq-lev2sec9-39">39</a>) is <em>ne_{n}</em> = S_{1}e_{n−1} − S_{2}e_{n−2} + · · · .</p>
+
+  <p class="answerNP"><a id="page_497"></a><em>Note:</em> The equations in this recurrence are called <em>Newton’s identities</em>, since they were first published in Isaac Newton’s <em>Arithmetica Universalis</em> (1707); see D. J. Struik’s <em>Source Book in Mathematics</em> (Harvard University Press, 1969), 94–95.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_11" id="ch01ex_2_9_11a">11</a>. Since ∑_{m≥1}S_{m}z^{m}/m = ln <em>G</em>(<em>z</em>) = ∑_{k≥1}(−1)^{<em>k</em>− 1}(h_{1}z +h_{2}z^{2} + · · ·)<em>^{k}/k</em>, the desired coefficient is (−1)^{k_{1}+k_{2}+···+k_{m}−1}<em>m</em>(k_{1} + k_{2} + · · · + k_{m}− 1)!/k_{1}! k_{2}! ... k_{m}!. [Multiply by (−1)^{<em>m</em>− 1} to get the coefficient of <span class="middle"><img src="../Images/e497_01.gif"></span> when S_{m} is expressed in terms of the <em>e</em>’s of <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 10</a>. Albert Girard stated the formulas for S_{1}, S_{2}, S_{3}, and S_{4} in terms of e_{1}, e_{2}, e_{3}, and e_{4} near the end of his <em>Invention Nouvelle en Algébre</em> (Amsterdam: 1629); this was the birth of the theory of symmetric functions.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_12" id="ch01ex_2_9_12a">12</a>. <span class="middle"><img src="../Images/e497_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_13" id="ch01ex_2_9_13a">13</a>. <span class="middle"><img src="../Images/e497_03.gif"></span>. Adding these expressions together for all <em>n</em>, we find <strong>L</strong><em>f</em>(<em>s</em>) = <em>G</em>(<em>e</em> ^{<em>−s</em>})<em>/s</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_14" id="ch01ex_2_9_14a">14</a>. See <a href="../Text/ch01a.html#ch01ex_2_6_2">exercise 1.2.6–38</a>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_15" id="ch01ex_2_9_15a">15</a>. G_{n}(<em>z</em>) = G_{n−1}(<em>z</em>) + zG_{n−2}(<em>z</em>) + δ_{n0}, so we find <em>H</em>(<em>w</em>) = 1/(1− <em>w</em>− zw^{2}). Hence, ultimately, we find</p>
+
+  <div class="image"><img src="../Images/e497_04.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_16" id="ch01ex_2_9_16a">16</a>. <span class="middle"><img src="../Images/e497_05.gif"></span> .[Note the case <em>r</em> =∞.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_17" id="ch01ex_2_9_17a">17</a>. <span class="middle"><img src="../Images/e497_06.gif"></span>.</p>
+
+  <p class="answerNP">(Alternatively, write it as e^{<em>w</em> ln(1/(1 <em>−z</em>))} and expand first by powers of <em>w</em>.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_18" id="ch01ex_2_9_18a">18</a>. (a) For fixed <em>n</em> and varying <em>r</em>, the generating function is</p>
+
+  <div class="image"><img src="../Images/e497_07.gif"></div>
+
+  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>). Hence the answer is <span class="middle"><img src="../Images/e497_08.gif"></span> . (b) Similarly, the generating function is</p>
+
+  <div class="image"><img src="../Images/e497_09.gif"></div>
+
+  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-28">28</a>), so the answer is <span class="middle"><img src="../Images/e497_10.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. <span class="middle"><img src="../Images/e497_11.gif"></span>, where <em>w</em> = e^{2π<em>i</em>/<em>q</em>} and</p>
+
+  <div class="image"><img src="../Images/e497_12.gif"></div>
+
+  <p class="answerNP"><a id="page_498"></a>Now lim_{x→1−}g(<em>x</em>) = q/p− ln <em>q</em>. From the identity</p>
+
+  <div class="image"><img src="../Images/e498_01.gif"></div>
+
+  <p class="answerNP">we may write lim_{x→1−}f (<em>x</em>) = <em>f</em> (1) = <em>A</em> + <em>B</em> where</p>
+
+  <div class="image"><img src="../Images/e498_02.gif"></div>
+
+  <p class="answerNP">Finally,</p>
+
+  <div class="image"><img src="../Images/e498_03.gif"></div>
+
+  <p class="answerNP">[Gauss derived these results in §33 of his monograph on hypergeometric series, Eq. [75], but with insufficient proof; Abel provided a justification in <em>Crelle</em> <strong>1</strong> (1826), 314–315.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_20" id="ch01ex_2_9_20a">20</a>. <span class="middle"><img src="../Images/e498_04.gif"></span>, by Eq. <a href="../Text/ch01a.html#ch01eq-lev2sec6-45">1.2.6–45</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find z^{2}<em>G</em>′(<em>z</em>) + <em>zG</em>(<em>z</em>) = <em>G</em>(<em>z</em>) − 1. The solution to this differential equation is <em>G</em>(<em>z</em>) = (−1<em>/z</em>) e^{−1/z} (E_{1}(−1<em>/z</em>) + <em>C</em>), where <span class="middle"><img src="../Images/e498_05.gif"></span> and C is a constant. This function is very ill-behaved in the neighborhood of <em>z</em> = 0, and <em>G</em>(<em>z</em>) has no power series expansion. Indeed, since <span class="middle"><img src="../Images/e498_06.gif"></span> is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when <em>z</em> &lt; 0. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_22" id="ch01ex_2_9_22a">22</a>. <em>G</em>(<em>z</em>) = (1 + <em>z</em>)^{r}(1 + z^{2}) ^{r}(1 + z^{4}) ^{r}(1 + z^{8}) ^{r} ... = (1 − <em>z</em>)^{−<em>r</em>}. It follows that the stated sum is <span class="middle"><img src="../Images/e498_07.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_23" id="ch01ex_2_9_23a">23</a>. (a) When <em>m</em> = 1 this is the binomial theorem, with f_{1}(<em>z</em>) = <em>z</em> and g_{1}(<em>z</em>) = 1 + <em>z</em>. When <em>m</em> ≥ 1 we can increase <em>m</em> by 1 if we replace z_{m} by <span class="middle"><img src="../Images/e498_08.gif"></span> and let <span class="middle"><img src="../Images/e498_09.gif"></span>, <span class="middle"><img src="../Images/e498_10.gif"></span>. Thus g_{2} (z_{1}, z_{2}) = z_{1} + z_{2} + z_{1}+z_{2} and</p>
+
+  <div class="image"><img src="../Images/e498_11.gif"></div>
+
+  <p class="answerNP">Both polynomials f_{m} and g_{m} satisfy the same recurrence f_{m} = z_{m}f_{m−1} + z_{m−1}f_{m−2}, g_{m} = z_{m}g_{m−1} +z_{m−1}g_{m−2}, with the initial conditions f_{−1} = 0, f_{0} = g_{−1} = g_{0} = z_{0} = 1. It follows that g_{m} is the sum of all terms obtainable by starting with z_{1} ... z_{m} and striking out zero or more nonadjacent factors; there are F_{m+2} ways to do this. A similar interpretation applies to f_{m}, except that z_{1} must remain. In part (b) we will encounter the polynomial h_{m} = z_{m}g_{m−1} + z_{m−1}f_{m−2}; this is the sum of all terms <a id="page_499"></a>obtained from z_{1} ... z_{m} by striking out factors that are not <em>cyclically</em> adjacent. For example, h_{3} = z_{1}z_{2}z_{3} + z_{1}z_{2} + z_{1}z_{3} + z_{2}z_{3}.</p>
+
+  <p class="exercises1N">(b) By part (a), <span class="middle"><img src="../Images/e499_01.gif"></span>; hence</p>
+
+  <div class="image"><img src="../Images/e499_02.gif"></div>
+
+  <p class="answerNP">where <em>a</em> = z_{m}g_{m−1}, <em>b</em> = z_{m−1}g_{m−2}, <em>c</em> = z_{m}f_{m−1}, <em>d</em> = z_{m−1}f_{m−2}. Multiplying this equation by z^{n} and summing first on <em>n</em>, then on <em>r</em>, then on <em>s</em>, yields the closed form</p>
+
+  <div class="image"><img src="../Images/e499_03.gif"></div>
+
+  <p class="answerNP">where 1 − (<em>a</em> + <em>d</em>)<em>z</em> + (<em>ad</em>− <em>bc</em>)z^{2} = (1 − ρ<em>z</em>)(1 − <em>σz</em>). Here <em>a</em> + <em>d</em> = h_{m}, and <em>ad</em>− <em>bc</em> simplifies to (−1)^{m}z_{1}... z_{m} . [We have, incidentally, established the recurrence S_{n} = h_{m}S_{n−1} − (−1)^{m}z_{1} ... z_{m}S_{n−2}, a relation that is not easy to derive without the help of generating functions.]</p>
+
+  <p class="answerNP">(c) Let <span class="middle"><img src="../Images/e499_04.gif"></span> and <span class="middle"><img src="../Images/e499_05.gif"></span> be the roots when m = 1; then <span class="middle"><img src="../Images/e499_06.gif"></span> and <span class="middle"><img src="../Images/e499_07.gif"></span>.</p>
+
+  <p class="exercises1N">Carlitz used this result to deduce a surprising fact: The characteristic polynomial det(<em>xI</em>− <em>A</em>) of the <em>n</em> × <em>n</em> matrix</p>
+
+  <div class="image"><img src="../Images/e499_08.gif"></div>
+
+  <p class="answerNP">of “right justified binomial coefficients” is<span class="middle"><img src="../Images/e499_09.gif"></span>, with Fibonomial coefficients (see <a href="../Text/ch01a.html#ch01ex_2_8_30">exercise 1.2.8–30</a>). He also showed, using similar methods, that</p>
+
+  <div class="image"><img src="../Images/e499_10.gif"></div>
+
+  <p class="answerNP">[<em>Collectanea Math.</em> <strong>27</strong> (1965), 281–296.]</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_24" id="ch01ex_2_9_24a">24</a>. Both sides are equal to <span class="middle"><img src="../Images/e499_11.gif"></span>. When <em>G</em>(<em>z</em>) = 1/(1 − <em>z</em>), the identity becomes <span class="middle"><img src="../Images/e499_12.gif"></span>, a case of 1.2.6–21). When <em>G</em>(<em>z</em>) = (e^{z} – 1)/<em>z</em>, it becomes <span class="middle"><img src="../Images/e499_13.gif"></span>, Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">45</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_25" id="ch01ex_2_9_25a">25</a>. Σ_{k}[w^{k}](1 – 2<em>w</em>)^{n} [z^{n}] z^{k} (1 + <em>z</em>)^{2<em>n</em> – 2<em>k</em>} = [<em>z^{n}</em>](1 + <em>z</em>)^{2<em>n</em>} Σ _{k}[<em>w^{k}</em>](1-2<em>w</em>)^{n}(<em>z</em>/(1 + <em>z</em>)^{2})^{k}, which equals <span class="middle"><img src="../Images/e499_14.gif"></span> [<em>n</em> even]. Similarly, we find <span class="middle"><img src="../Images/e499_15.gif"></span>. Many examples of this summation technique can be found in G. P. Egorychev’s book <em>Integral Representation and the Computation of Combinatorial Sums</em> (Amer. Math. Soc., 1984), translated from the Russian edition of 1977.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_26" id="ch01ex_2_9_26a">26</a>. [<em>F</em> (<em>z</em>)] <em>G</em>(<em>z</em>) denotes the constant term of <em>F</em> (z^{−1}) <em>G</em>(<em>z</em>). See the discussion by D. E. Knuth in <em>A Classical Mind</em> (Prentice–Hall, 1994), 247–258.</p>
+
+  <h4 id="app01lev2sec10"><a id="page_500"></a>Section 1.2.10</h4>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_1" id="ch01ex_2_10_1a">1</a>. G_{n}(0) = 1/<em>n</em>; this is the probability that <em>X</em>[<em>n</em>] is the largest.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_2" id="ch01ex_2_10_2a">2</a>. <em>G</em>″(1) = Σ_{k}k(<em>k</em> – 1)p_{k}, <em>G</em>′(1) = Σ_{k}kpk.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_3" id="ch01ex_2_10_3a">3</a>. (min 0, ave 6.49, max 999, dev 2.42). Note that <span class="middle"><img src="../Images/e500_11.gif"></span> is approximately π^{2}/6; see Eq. <a href="../Text/ch01a.html#ch01lev2sec7">1.2.7</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec7-7">7</a>).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_4" id="ch01ex_2_10_4a">4</a>. <span class="middle"><img src="../Images/e500_01.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_5" id="ch01ex_2_10_5a">5</a>. The mean is 36/5 = 7.2; the standard deviation is <span class="middle"><img src="../Images/e500_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_6" id="ch01ex_2_10_6a">6</a>. For (<a href="../Text/ch01a.html#ch01eq-lev2sec10-18">18</a>), the formula</p>
+
+  <div class="image"><img src="../Images/e500_03.gif"></div>
+
+  <p class="answerNP">tells us that κ_{3}/<em>n</em> = <em>p</em>(1 − <em>p</em>)(1 − 2<em>p</em>) = <em>pq</em>(<em>q</em>− <em>p</em>). (This nice pattern does not continue to the coefficient of t^{4} .) Setting <em>p</em> = k^{−1} gives us <span class="middle"><img src="../Images/e500_04.gif"></span> in the case of distribution (<a href="../Text/ch01a.html#ch01eq-lev2sec10-8">8</a>). And for (<a href="../Text/ch01a.html#ch01eq-lev2sec10-20">20</a>), we have ln <em>G</em>(e^{t}) = <em>t</em> + <em>H</em>(<em>nt</em>) − <em>H</em>(<em>t</em>) where <em>H</em>(<em>t</em>) = ln((e^{t} − 1)<em>/t</em>). Since <em>H</em>′ (<em>t</em>) = e^{t}/(e^{t} − 1) − 1<em>/t</em>, we have κ_{r} = (n^{r} − 1) B_{r}/<em>r</em> for all <em>r</em> ≥ 2 in this case; in particular, κ_{3} = 0.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_7" id="ch01ex_2_10_7a">7</a>. The probability that <em>A</em> = <em>k</em> is p_{mk}. For we may consider the values to be 1, 2<em>, ..., m</em>. Given any partitioning of the <em>n</em> positions into <em>m</em> disjoint sets, there are <em>m</em>! ways to assign the numbers 1<em>, ..., m</em> to these sets. <a href="../Text/ch01a.html#ch01alg-lev2sec10-M">Algorithm M</a> treats these values as if only the rightmost element of each set were present; so p_{mk} is the average for any fixed partitioning. For example, if <em>n</em> = 5, <em>m</em> = 3, one partition is</p>
+
+  <p class="center">{<em>X</em>[1]<em>, X</em>[4]}&nbsp;&nbsp;&nbsp;&nbsp;{<em>X</em>[2]<em>, X</em>[5]}&nbsp;&nbsp;&nbsp;&nbsp;{<em>X</em>[3]};</p>
+
+  <p class="answerNP">the arrangements possible are 12312, 13213, 21321, 23123, 31231, 32132. In every partition we get the same percentage of arrangements with <em>A</em> = <em>k</em>.</p>
+
+  <p class="exercises1N">On the other hand, the probability distribution does change if more information is given. If <em>n</em> = 3 and <em>m</em> = 2, for example, our argument in the previous paragraph considers the six possibilities 122, 212, 221, 211, 121, 112; if we know that there are two 2s and one 1, then only the first three of these possibilities should be considered. But this interpretation is not consistent with the statement of the exercise.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_8" id="ch01ex_2_10_8a">8</a>. <span class="middle"><img src="../Images/e500_06.gif"></span>. The larger <em>M</em> is, the closer this probability gets to one.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_9" id="ch01ex_2_10_9a">9</a>. Let q_{nm} be the probability that exactly <em>m</em> distinct values occur; then from the recurrence</p>
+
+  <div class="image"><img src="../Images/e500_07.gif"></div>
+
+  <p class="answerNP">we deduce that</p>
+
+  <div class="image"><img src="../Images/e500_08.gif"></div>
+
+  <p class="answerNP">See also <a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 1.2.6–64</a>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_10" id="ch01ex_3_10_10a">10</a>. This is q_{nm}p_{mk} summed over all <em>m</em>, namely <span class="middle"><img src="../Images/e500_09.gif"></span>. There does not appear to be a simple formula for the average, which is one less than</p>
+
+  <div class="image"><img src="../Images/e500_10.gif"></div>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_11" id="ch01ex_2_10_11a">11</a>. Since this is a product, we add the semi-invariants of each term. If <em>H</em> (<em>z</em>) = z^{n}, H (e^{t}) = e^{<em>nt</em>}, so we find κ_{1} = <em>n</em> and all others are zero. Therefore, mean(<em>F</em>) = <em>n</em> + <a id="page_501"></a>mean(<em>G</em>), and all other semi-invariants are unchanged. (This accounts for the name “semi-invariant.”)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_12" id="ch01ex_2_10_12a">12</a>. The first identity is obvious by writing out the power series for <em>e^{<em>kt</em>}</em>. For the second, let <em>u</em> = 1 + M_{1}t + M_{2}t^{2}/2! + · · ·; when <em>t</em> = 0 we have <em>u</em> = 1 and <span class="middle"><img src="../Images/e501_01.gif"></span>. Also, <span class="middle"><img src="../Images/e501_02.gif"></span>. By <a href="../Text/ch01a.html#ch01ex_2_10_11">exercise 11</a>, the same formula applies for central moments except that we leave out all terms with k_{1} &gt; 0; thus κ_{2} = m_{2}, κ_{3} = m_{3}, <span class="middle"><img src="../Images/e501_03.gif"></span>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_13" id="ch01ex_2_10_13a">13</a>. <span class="middle"><img src="../Images/e501_04.gif"></span> Let z_{n} = e^{it/σ_{n}}. When <em>n</em>→ ∞ and <em>t</em> is fixed, we have z_{n}→ 1; hence <em>Γ</em>(z_{n} + 1)→ 1, and</p>
+
+  <div class="image"><img src="../Images/e501_05.gif"></div>
+
+  <p class="answerNP"><em>Notes:</em> This is a theorem of Goncharov [<em>Izv. Akad. Nauk SSSR Ser. Math.</em> <strong>8</strong> (1944), 3–48]. P. Flajolet and M. Soria [<em>Disc. Math.</em> <strong>114</strong> (1993), 159–180] have extended the analysis to show that G_{n}(<em>z</em>) and a large family of related distributions not only are approximately normal near their mean values, they also have uniformly exponential tails, in the sense that</p>
+
+  <div class="image"><img src="../Images/e501_06.gif"></div>
+
+  <p class="answerNP">for some positive constant <em>a</em> and for all <em>n</em> and <em>x</em>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_14" id="ch01ex_2_10_14a">14</a>. <span class="middle"><img src="../Images/e501_07.gif"></span>. Expand the exponentials in power series, to get (1−t^{2}/2<em>n</em>+<em>O</em>(n^{−3/2}))<em>^{n}</em> = exp(<em>n</em> ln(1−t^{2}/2<em>n</em>+<em>O</em>(n^{−3/2}))) = exp(−t^{2}/2 + <em>O</em>(n^{−1/2})) → exp(−t^{2}/2).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_15" id="ch01ex_2_10_15a">15</a>. (a)<span class="middle"><img src="../Images/e501_09.gif"></span>. (b) ln e^{μ}(e^{t} −1) = μ(<em>e^{t}</em>− 1), so all semi-invariants equal <em>μ</em>. (c) <span class="middle"><img src="../Images/e501_10.gif"></span></p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_16" id="ch01ex_2_10_16a">16</a>. <em>g</em>(<em>z</em>) = ∑_{k}p_{k}g_{k}(<em>z</em>); mean(<em>g</em>) = ∑_{k}p_{k} mean(g_{k}); and var(<em>g</em>) = ∑_{k}p_{k} var(g_{k}) + ∑_{j &lt; k}p_{j}p_{k} (mean(g_{j}) − mean(g_{k}))^{2}.</p>
+
+  <p><strong><a href="../Text/ch01a.html#ch01ex_2_10_17" id="ch01ex_2_10_17a">17</a></strong>. (a) The coefficients of <em>f</em>(<em>z</em>) and <em>g</em>(<em>z</em>) are nonnegative, and <em>f</em>(1) = <em>g</em>(1) = 1. Clearly <em>h</em>(<em>z</em>) shares these same characteristics, since <em>h</em>(1) = <em>g</em>(<em>f</em>(1)), and the coefficients of <em>h</em> are polynomials in those of <em>f</em> and <em>g</em>, with nonnegative coefficients.</p>
+
+  <p class="exercises1N">(b) Let <em>f</em>(<em>z</em>) = <em>∑p_{k}z^{k}</em> where p_{k} is the probability that some event yields a “score” of <em>k</em>. Let <em>g</em>(<em>z</em>) = <em>∑q_{k}z^{k}</em> where q_{k} is the probability that the event described by <em>f</em> happens exactly <em>k</em> times (each occurrence of the event being independent of the others). Then <em>h</em>(<em>z</em>) = <em>∑r_{k}z^{k}</em>, where r_{k} is the probability that the sum of the scores of the events that occurred is equal to <em>k</em>. (This is easy to see if we observe that <em>f</em>(<em>z</em>)<em>^{k}</em> = <em>∑s_{t}z^{t}</em>, where s_{t} is the probability that a total score <em>t</em> is obtained in <em>k</em> independent occurrences of the event.) <em>Example:</em> If <em>f</em> gives the probabilities that a woman has <em>k</em> female offspring, and if <em>g</em> gives the probabilities that there are <em>k</em> females in the <em>n</em>th generation, then <em>h</em> gives the probabilities that there are <em>k</em> females in the (<em>n</em> + 1)st generation, assuming independence.</p>
+
+  <p class="exercises1N">(c) mean(<em>h</em>) = mean(<em>g</em>) mean(<em>f</em>); var(<em>h</em>) = var(<em>g</em>) mean^{2}(<em>f</em>) + mean(<em>g</em>) var(<em>f</em>).</p>
+
+  <p><a id="page_502"></a><a href="../Text/ch01a.html#ch01ex_2_10_18" id="ch01ex_2_10_18a">18</a>. Consider the choice of <em>X</em>[1]<em>, ..., X</em>[<em>n</em>] as a process in which we first place all the <em>n</em>’s, then place all the (<em>n</em>− 1)’s among these <em>n</em>’s, ..., finally place the ones among the rest. As we place the <em>r</em>’s among the numbers {<em>r</em> + 1<em>, ..., n</em>}, the number of local maxima from right to left increases by one if and only if we put an <em>r</em> at the extreme right. This happens with probability <em>k_{r}/</em>(k_{r} + k_{r+1} + · · · + k_{n}).</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_19" id="ch01ex_2_10_19a">19</a>. Let a_{k} = <em>l</em>. Then a_{k} is a left-to-right maximum of a_{1}... a_{n}<span class="ent">⇔</span> <em>j &lt; k</em> implies <em>a_{j} &lt; l</em> <span class="ent">⇔</span> <em>a_{j} &gt; l</em> implies <em>j &gt; k</em><span class="ent">⇔</span> <em>j &gt; l</em> implies <em>b_{j} &gt; k</em><span class="ent">⇔</span> <em>k</em> is a right-to-left minimum of b_{1}... b_{n}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_20" id="ch01ex_2_10_20a">20</a>. We have m_{L} = max{a_{1}− b_{1}, ..., a_{n}− b_{n}}. <em>Proof:</em> If not, let <em>k</em> be the smallest subscript such that a_{k}− <em>b_{k} &gt; m_{L}</em>. Then a_{k} is not a left-to-right maximum, so there is a <em>j &lt; k</em> with a_{j} ≥ a_{k}. But then a_{j}− b_{j} ≥ a_{k}− <em>b_{k} &gt; m_{L}</em>, contradicting the minimality of <em>k</em>. Similarly, m_{R} = max{b_{1}−a_{1}, ..., b_{n}−a_{n}}.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_21" id="ch01ex_2_10_21a">21</a>. The result is trivial when \epsilon ≥ <em>q</em>, so we may assume that <em>\epsilon &lt; q</em>. Setting <span class="middle"><img src="../Images/e502_01.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>) gives <span class="middle"><img src="../Images/e502_02.gif"></span>. Now <span class="middle"><img src="../Images/e502_03.gif"></span> since <em>t</em> <span class="ent">≤</span> e^{<em>t</em>-1} for all real <em>t</em>. And (<em>q</em>− \epsilon) ln <span class="middle"><img src="../Images/e502_04.gif"></span>. (A more detailed analysis yields the slightly stronger estimate exp(−\epsilon^{2}<em>n/</em>(2<em>pq</em>)) when <span class="middle"><img src="../Images/e502_05.gif"></span>; still further work yields the upper bound exp(−2\epsilon^{2}<em>n</em>) for all <em>p</em>.)</p>
+
+  <p class="exercises1N">By reversing the roles of heads and tails we find</p>
+
+  <p class="center">$Pr(X≤ n(p− \epsilon)) = Pr(n− X ≥ n(q + \epsilon)) ≤ e^{−\epsilon^{2}n/(2p)}$.</p>
+
+  <p class="answerNP">(One should not confuse “tails” with the tail of a probability distribution.)</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_22" id="ch01ex_2_10_22a">22</a>. (a) Set <em>x</em> = <em>r</em> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-24">24</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>), and note that q_{k} + <em>p_{k}r</em> = 1 + (<em>r</em>− 1)p_{k}≤ e^{(<em>r</em>−1)<em>pk</em>}. [See H. Chernoff, <em>Annals of Math. Stat.</em> <strong>23</strong> (1952), 493–507.]</p>
+
+  <p class="exercises1N">(b) Let <em>r</em> = 1 + δ where<em>|δ|</em> ≤ 1. Then <span class="middle"><img src="../Images/e502_06.gif"></span>, which is ≤e^{−δ^{2}/2} when δ ≤ 0 and≤ e^{−δ^{2}/3} when δ ≥ 0.</p>
+
+  <p class="exercises1N">(c) The function r^{−1}e^{1−1<em>/r</em>} decreases from 1 to 0 as <em>r</em> increases from 1 to ∞. If <em>r</em> ≥ 2 it is ≤ e^{1/2}/2<em>&lt; .</em>825; if <em>r</em> ≥ 4.32 it is 1/2.</p>
+
+  <p class="exercises1N">Incidentally, the tail inequalities with <em>x</em> = <em>r</em> give precisely the same estimate (<em>r^{−r} e^{r−1})^{μ}</em> when <em>X</em> has the Poisson distribution of <a href="../Text/ch01a.html#ch01ex_2_10_15">exercise 15</a>.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_23" id="ch01ex_2_10_23a">23</a>. Setting <span class="middle"><img src="../Images/e502_07.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-24">24</a>) gives <span class="middle"><img src="../Images/e502_08.gif"></span>. Similarly, <span class="middle"><img src="../Images/e502_09.gif"></span> yields <span class="middle"><img src="../Images/e502_10.gif"></span>. Let <span class="middle"><img src="../Images/e502_11.gif"></span>, and note that <span class="middle"><img src="../Images/e502_12.gif"></span>. It follows that <em>f</em>(\epsilon)≤ −\epsilon^{2}/(6<em>pq</em>) if 0≤ \epsilon≤ <em>p</em>.</p>
+
+  <h5 id="app01lev3sec1">Section 1.2.11.1</h5>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_1" id="ch01ex_3_1_1a">1</a>. Zero.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_2" id="ch01ex_3_1_2a">2</a>. Each <em>O</em>-symbol represents a different approximate quantity; since the left-hand side might be <em>f</em>(<em>n</em>) − (−<em>f</em>(<em>n</em>)) = 2<em>f</em>(<em>n</em>), the best we can say is <em>O</em>(<em>f</em>(<em>n</em>)) − <em>O</em>(<em>f</em>(<em>n</em>)) = <em>O</em>(<em>f</em>(<em>n</em>)), which follows from (<a href="../Text/ch01a.html#ch01eq-lev3sec1-6">6</a>) and (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>). To prove (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>), note that if<em>|x_{n}|</em> ≤ <em>M|f</em>(<em>n</em>)<em>|</em> for <em>n</em> ≥ n_{0} and <span class="middle"><img src="../Images/e502_13.gif"></span> for <span class="middle"><img src="../Images/e502_14.gif"></span>, then <span class="middle"><img src="../Images/e502_15.gif"></span> for <em>n</em> ≥ max <span class="middle"><img src="../Images/e502_16.gif"></span>. (Signed, J. H. Quick, student.)</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_3" id="ch01ex_3_1_3a">3</a>. <span class="middle"><img src="../Images/e502_17.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_4" id="ch01ex_3_1_4a">4</a>. ln <em>a</em> + (ln <em>a</em>)^{2}/2<em>n</em> + (ln <em>a</em>)^{3}/6n^{2} + <em>O</em>(<em>n^{−3}</em>).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_5" id="ch01ex_3_1_5a">5</a>. If <em>f</em>(<em>n</em>) = n^{2} and <em>g</em>(<em>n</em>) = 1, then <em>n</em> belongs to the set <em>O</em>(<em>f</em>(<em>n</em>) + <em>g</em>(<em>n</em>)) but not to the set <em>f</em>(<em>n</em>) + <em>O</em>(<em>g</em>(<em>n</em>)). So the statement is false.</p>
+
+  <p><a id="page_503"></a><a href="../Text/ch01b.html#ch01ex_3_1_6" id="ch01ex_3_1_6a">6</a>. A variable number, <em>n</em>, of <em>O</em>-symbols has been replaced by a single <em>O</em>-symbol, falsely implying that a single value of <em>M</em> will suffice for each term<em>|kn|</em> ≤ <em>Mn</em>. The given sum is actually <em>Θ</em>(n^{3}), as we know. The last equality, <span class="middle"><img src="../Images/e503_01.gif"></span>, is perfectly valid.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_7" id="ch01ex_3_1_7a">7</a>. If <em>x</em> is positive, the power series <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-22">22</a>) tells us that e^{x} &gt; x^{<em>m</em>+ 1}/(<em>m</em> + 1)!; hence the ratio of <em>e^{x}/x^{m}</em> is unbounded by any <em>M</em>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_8" id="ch01ex_3_1_8a">8</a>. Replace <em>n</em> by <em>e^{n}</em> and apply the method of the previous exercise.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_9" id="ch01ex_3_1_9a">9</a>. If <em>|f</em>(<em>z</em>)<em>|</em> ≤ <em>M|z|^{m}</em> for <em>|z|</em> ≤ <em>r</em>, then |e^{<em>f</em>(<em>z</em>)}| ≤ e^{<em>M|z|m</em>} = 1 +<em>|z|^{m}</em>(<em>M</em> + M^{2}<em>|z|^{m}/</em>2! + M^{3}|z|^{2<em>m</em>}/3! + · · ·) ≤ 1 +<em>|z|^{m}</em>(<em>M</em> + M^{2}<em>r^{m}/</em>2! + M^{3}r^{2<em>m</em>}/3! + · · ·).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_10" id="ch01ex_3_1_10a">10</a>. ln(1 + <em>O</em>(<em>z^{m}</em>)) = <em>O</em>(<em>z^{m}</em>), if <em>m</em> is a positive integer. <em>Proof:</em> If <em>f</em>(<em>z</em>) = <em>O</em>(<em>z^{m}</em>), there exist positive numbers <em>r</em> &lt; 1, <em>r</em>′ &lt; 1, and a constant <em>M</em> such that <em>|f</em>(<em>z</em>)<em>|</em> ≤ <em>M|z|^{m}</em> ≤ <em>r</em>′ when <em>|z|</em> ≤ <em>r</em>. Then <span class="middle"><img src="../Images/e503_02.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_11" id="ch01ex_3_1_11a">11</a>. We can apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev3sec1-12">12</a>) with <em>m</em> = 1 and <em>z</em> = ln n/n. This is justified since ln n/n ≤ <em>r</em> for any given <em>r</em> &gt; 0, when <em>n</em> is sufficiently large.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_12" id="ch01ex_3_1_12a">12</a>. Let <em>f</em>(<em>z</em>) = (<em>ze^{z}/</em>(<em>e^{z}</em>−1))^{1}/2. If <span class="middle"><img src="../Images/e503_03.gif"></span> were <em>O</em>(<em>n^{k}</em>), the stated identity would show that [<em>z^{k}</em>] <em>f</em>(<em>z</em>) = <em>O</em>(<em>n^{k}/</em>(<em>k</em>−1)!), so <em>f</em>(<em>z</em>) would converge when <em>z</em> = 2<em>πi</em>. But <em>f</em>(2<em>πi</em>) =∞.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_13" id="ch01ex_3_1_13a">13</a>. <em>Proof:</em> We may take <em>L</em> = 1<em>/M</em> in the definitions of <em>O</em> and <em>Ω</em>.</p>
+
+  <h5 id="app01lev3sec2">Section 1.2.11.2</h5>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_1" id="ch01ex_3_2_1a">1</a>. (B_{0} +B_{1}<em>z</em> +B_{2}z^{2}/2!+ · · ·) <em>e^{z}</em> = (B_{0} +B_{1}<em>z</em> +B_{2}z^{2}/2!+ · · ·) +<em>z</em>; apply Eq. <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-11">11</a>).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_2" id="ch01ex_3_2_2a">2</a>. The function B_{m+1}(\{x\}) must be continuous, for the integration by parts.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_3" id="ch01ex_3_2_3a">3</a>. <span class="middle"><img src="../Images/e503_04.gif"></span>. [<em>Notes:</em> We have B_{m}(<em>x</em>) = (−1)<em>^{m} B_{m}</em>(1− <em>x</em>), and B_{m}(<em>x</em>) is <em>m</em>! times the coefficient of <em>z^{m}</em> in <em>ze^{<em>xz</em>}/</em>(<em>e^{z}</em>− 1). In particular, since e^{z/2}/(<em>e^{z}</em>− 1) = 1/(e^{z/2}− 1)− 1/(<em>e^{z}</em>− 1) we have <span class="middle"><img src="../Images/e503_05.gif"></span>. It is not difficult to prove that the maximum of<em>|B_{m}</em>−B_{m}(<em>x</em>)<em>|</em> for 0 ≤ <em>x</em> ≤ 1 occurs at <span class="middle"><img src="../Images/e503_06.gif"></span> when <em>m</em> is even. Now when <em>m</em> = 2<em>k</em> ≥ 4, let us write simply R_{m} and C_{m} for the quantities <em>R_{mn}</em> and <em>C_{mn}</em>. We have <span class="middle"><img src="../Images/e503_07.gif"></span>, and B_{m}− B_{m}({<em>x</em>}) is between 0 and (2− 2^{1−<em>m</em>})B_{m}; hence R_{m−2} lies between 0 and (2− 2^{1−<em>m</em>})C_{m}. It follows that R_{m} lies between−C_{m} and (1− 2^{1−<em>m</em>})C_{m}, a slightly stronger result. According to this argument we see that if f^{(<em>m</em>+2)}(<em>x</em>) f^{(<em>m</em>+4)}(<em>x</em>) &gt; 0 for 1 <em>&lt; x &lt; n</em>, the quantities C_{m+2} and C_{m+4} have opposite signs, while R_{m} has the sign of C_{m+2} and R_{m+2} has the sign of C_{m+4} and |R_{m+2}| ≤ |C_{m+2}|; this proves (<a href="../Text/ch01b.html#ch01eq-lev3sec2-13">13</a>). See J. F. Steffensen, <em>Interpolation</em> (Baltimore: 1927),§14.]</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_4" id="ch01ex_3_2_4a">4</a>. <span class="middle"><img src="../Images/e503_08.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_5" id="ch01ex_3_2_5a">5</a>. It follows that</p>
+
+  <div class="image"><img src="../Images/e503_09.gif"></div>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_6" id="ch01ex_3_2_6a">6</a>. Assume that <em>c</em> &gt; 0 and consider ∑_{0≤k&lt;n} ln(<em>k</em> + <em>c</em>). We find</p>
+
+  <div class="image"><img src="../Images/e503_10.gif"></div>
+
+  <p class="answerNP"><a id="page_504"></a>Also</p>
+
+  <div class="image"><img src="../Images/e504_01.gif"></div>
+
+  <p class="answerNP">Now $\ln Γ_{n−1}(c) = c \ln(n− 1) + \ln (n− 1)!− \ln(c ... (c + n− 1))$; substituting and letting <em>n</em> → ∞, we get</p>
+
+  <div class="image"><img src="../Images/e504_02.gif"></div>
+
+  <p class="answerNP">This shows that Γ (<em>c</em> + 1) = ce^{<em>ln</em> Γ (<em>c</em>)} has the same expansion we derived for <em>c</em>!.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_7" id="ch01ex_3_2_7a">7</a>. An^{n^{2}/2+n/2+1/12}e^{−n^{2}/4} where <em>A</em> is a constant. To obtain this result, apply Euler’s summation formula to <span class="middle"><img src="../Images/e504_03.gif"></span> ln <em>k</em>. A more accurate formula is obtained if we multiply the answer above by</p>
+
+  <p class="center">exp(–B_{4}/(2 · 3 · 4n^{2}) – · · · – B_{2t}/((2<em>t</em> – 2)(2<em>t</em> – 1)(2<em>t</em>)n^{2<em>t</em> – 2}) + <em>O</em>(1/n^{2<em>t</em>})).</p>
+
+  <p class="answerNP">In these formulas, <em>A</em> is the “Kinkelin–Glaisher constant” 1.2824271 ... [<em>Crelle</em> <strong>57</strong> (1860), 122–158; <em>Messenger of Math.</em> <strong>7</strong> (1877), 43–47], which can be shown to equal e^{1/12−ζ′(−1)} = (2πe^{γ −ζ′(2)/ζ(2)})^{1/12} [de Bruijn, <em>Asymptotic Methods in Analysis</em>,§3.7].</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_8" id="ch01ex_3_2_8a">8</a>. We have, for example, ln(an^{2} + <em>bn</em>) = 2 ln <em>n</em> + ln <em>a</em> + ln(1 + <em>b/</em>(<em>an</em>)). Thus the answer to the first question is found to be 2an^{2} ln <em>n</em> + <em>a</em>(ln <em>a</em>− 1)n^{2} + 2<em>bn</em> ln <em>n</em> + <em>bn</em> ln <em>a</em> + ln <em>n</em> + b^{2}/(2<em>a</em>) + \frac12 ln <em>a</em> + σ + (3<em>a</em>− b^{2})<em>b/</em>(6a^{2}<em>n</em>) + <em>O</em>(n^{−2}). Massive cancellation occurs when we compute the quantity ln (cn^{2})! − ln (cn^{2}− <em>n</em>)!− <em>n</em> ln <em>c</em>− ln n^{2}! + ln (n^{2}− <em>n</em>)! = (<em>c</em>− 1)/(2<em>c</em>) − (<em>c</em>− 1)(2<em>c</em>− 1)/(6c^{2}<em>n</em>) + <em>O</em>(n^{−2}). The answer is therefore</p>
+
+  <div class="image"><img src="../Images/e504_05.gif"></div>
+
+  <p class="answerNP">Incidentally, <span class="middle"><img src="../Images/e504_06.gif"></span> can be written <span class="middle"><img src="../Images/e504_07.gif"></span> where α = 1 – 1/c.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have ln <span class="middle"><img src="../Images/e504_08.gif"></span>, ln <span class="middle"><img src="../Images/e504_09.gif"></span>, and ln (<em>n</em>!)^{2} = (2<em>n</em> + 1) ln <span class="middle"><img src="../Images/e504_10.gif"></span>; hence <span class="middle"><img src="../Images/e504_11.gif"></span>. (b) Since <span class="middle"><img src="../Images/e504_12a.gif"></span> and <span class="middle"><img src="../Images/e504_12.gif"></span>, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
+
+  <div class="image"><img src="../Images/e504_13.gif"></div>
+
+  <p class="answerNP">Method (b) explains why the denominators in</p>
+
+  <div class="image"><img src="../Images/e504_14.gif"></div>
+
+  <p class="answerNP">are all powers of 2 [Knuth and Vardi, <em>AMM</em> <strong>97</strong> (1990), 629–630].</p>
+
+  <h5 id="app01lev3sec3">Section 1.2.11.3</h5>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_1" id="ch01ex_3_3_1a">1</a>. Integrate by parts.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_2" id="ch01ex_3_3_2a">2</a>. Substitute the series for e^{−<em>t</em>} in the integral.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_3" id="ch01ex_3_3_3a">3</a>. See Eq. <a href="../Text/ch01a.html#ch01ex_2_6_48">exercise 1.2.6–48</a>.</p>
+
+  <p><a id="page_505"></a><a href="../Text/ch01b.html#ch01ex_3_3_4" id="ch01ex_3_3_4a">4</a>. 1 + 1<em>/u</em> is bounded as a function of <em>v</em>, since it goes to zero as <em>v</em> goes from <em>r</em> to infinity. Replace it by <em>M</em> and the resulting integral is <em>Me^{−rx}</em>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_5" id="ch01ex_3_3_5a">5</a>. <em>f^{′′}</em>(<em>x</em>) = <em>f</em>(<em>x</em>)((<em>n</em> + 1/2)(<em>n</em>− 1/2)/x^{2}− (2<em>n</em> + 1)<em>/x</em> + 1) changes sign at the point <span class="middle"><img src="../Images/e505_01.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_6" id="ch01ex_3_3_6a">6</a>. It is n^{<em>n</em>+<em>β</em>} exp((<em>n</em> + β)(α/n− α^{2}/2n^{2} + <em>O</em>(n^{−3}))), etc.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_7" id="ch01ex_3_3_7a">7</a>. The integrand as a power series in x^{−1} has the coefficient of <em>x^{−n}</em> as <em>O</em>(u^{2<em>n</em>}). After integration, terms in x^{−3} are Cu^{7}/x^{3} = <em>O</em>(x^{−5/4}), etc. To get <em>O</em>(x^{−2}) in the answer, we can discard terms <em>u^{n}/x^{m}</em> with 4<em>m</em>− <em>n</em> ≥ 9. Thus, an expansion of the product exp(−u^{2}/2<em>x</em>) exp(u^{3}/3x^{2}) ... leads ultimately to the answer</p>
+
+  <div class="image"><img src="../Images/e505_02.gif"></div>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_8" id="ch01ex_3_3_8a">8</a>. (Solution by Miklós Simonovits.) We have |<em>f</em>(<em>x</em>)| &lt; <em>x</em> if <em>x</em> is large enough. Let <span class="middle"><img src="../Images/e505_03.gif"></span> be the difference between the two given integrals, where <em>g</em>(<em>u, x</em>) = <em>u</em>−<em>x</em> ln(1+<em>u</em>/<em>x</em>) and <em>h</em>(<em>u, x</em>) = u^{2}/2<em>x</em>−u^{3}/3x^{2} + · · ·+(−1)^{m}u^{m}/mx^{<em>m</em>−1}. Notice that <em>g</em>(<em>u, x</em>) ≥ 0 and <em>h</em>(<em>u, x</em>) ≥ 0 when |<em>u</em>| &lt; <em>x</em>; also <em>g</em>(<em>u, x</em>) = <em>h</em>(<em>u, x</em>) + <em>O</em>(u^{<em>m</em>+1}<em>/x^{m}</em>).</p>
+
+  <p class="exercises1N">According to the mean value theorem, <em>e^{a}</em>− <em>e^{b}</em> = (<em>a</em>− <em>b</em>) <em>e^{c}</em> for some <em>c</em> between <em>a</em> and <em>b</em>. Therefore |e^{a} − e^{b}| ≤ |<em>a</em>− <em>b</em>| when <em>a, b</em> ≤ 0. It follows that</p>
+
+  <div class="image"><img src="../Images/e505_04.gif"></div>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_9" id="ch01ex_3_3_9a">9</a>. We may assume that <em>p</em> ≠ 1, since <em>p</em> = 1 is given by <a href="../Text/ch02b.html#ch02b_the_a">Theorem A</a>. We also assume that <em>p</em> ≠ 0, since the case <em>p</em> = 0 is trivial.</p>
+
+  <p class="exercises1N"><em>Case 1: p</em> &lt; 1. Substitute <em>t</em> = <em>px</em>(1 − <em>u</em>) and then <em>v</em> = − ln(1 − <em>u</em>) − <em>pu</em>. We have <em>dv</em> = ((1 − <em>p</em> + <em>pu</em>)/(1 − <em>u</em>)) <em>du</em>, so the transformation is monotone for 0 ≤ <em>u</em> ≤ 1, and we obtain an integral of the form</p>
+
+  <div class="image"><img src="../Images/e505_05.gif"></div>
+
+  <p class="answerNP">Since the parenthesized quantity is (1− <em>p</em>)^{−1}(1− <em>v</em>(1− <em>p</em>)^{−2} + · · ·), the answer is</p>
+
+  <div class="image"><img src="../Images/e505_06.gif"></div>
+
+  <p class="exercises1N"><em>Case 2: p</em> &gt; 1. This is <span class="middle"><img src="../Images/e505_07.gif"></span>. In the latter integral, substitute <em>t</em> = <em>px</em>(1 + <em>u</em>), then <em>v</em> = <em>pu</em>− ln(1 + <em>u</em>), and proceed as in Case 1. The answer turns out to be the same formula as Case 1, plus one. Notice that pe^{1 − <em>p</em>} &lt; 1, so (pe^{1 − <em>p</em>})^{x} is <em>very</em> small.</p>
+
+  <p class="exercises1N">The answer to <a href="../Text/ch01b.html#ch01ex_3_3_11">exercise 11</a> gives another way to solve this problem.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_10" id="ch01ex_3_3_10a">10</a>. <span class="middle"><img src="../Images/e505_08.gif"></span></p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_11" id="ch01ex_3_3_11a">11</a>. First, <em>xQ_{x}</em>(<em>n</em>) + R_{1/x}(<em>n</em>) = <em>n</em>! (x/n)<em>^{n}e^{n/x}</em> generalizes (<a href="../Text/ch01b.html#ch01eq-lev3sec3-4">4</a>). Next, we have R_{x}(<em>n</em>) = <em>n</em>! (<em>e^{x}/nx</em>)<em>^{n}</em><em>γ</em>(<em>n, nx</em>)/(<em>n</em>− 1)!, generalizing (<a href="../Text/ch01b.html#ch01eq-lev3sec3-9">9</a>). Since <em>a</em><em>γ</em>(<em>a, x</em>) = <em>γ</em>(<em>a</em> + 1<em>, x</em>) + <em>e^{−x}x^{a}</em> we can also write R_{x}(<em>n</em>) = 1 + (<em>e^{x}/nx</em>)<em>^{n}</em><em>γ</em>(<em>n</em> + 1<em>, nx</em>), relating this problem to <a href="../Text/ch01b.html#ch01ex_3_3_9">exercise 9</a>.</p>
+
+  <p class="answerNP"><a id="page_506"></a>Moreover, we can tackle Q_{x}(<em>n</em>) and R_{x}(<em>n</em>) directly by using Eqs. <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">28</a>) to derive series expansions involving Stirling numbers:</p>
+
+  <div class="image"><img src="../Images/e506_01.gif"></div>
+
+  <p class="answerNP">The sums over <em>k</em> are convergent for fixed <em>m</em> when |<em>x</em>| &lt; 1, and when |<em>x</em>| &gt; 1 we can use the relation between Q_{x}(<em>n</em>) and R_{1/x}(<em>n</em>); this leads to the formulas</p>
+
+  <div class="image"><img src="../Images/e506_02.gif"></div>
+
+  <p class="answerNP">Here</p>
+
+  <div class="image"><img src="../Images/e506_03.gif"></div>
+
+  <p class="answerNP">and</p>
+
+  <div class="image"><img src="../Images/e506_04.gif"></div>
+
+  <p class="answerNP">are polynomials whose coefficients are “second-order Eulerian numbers” [<em>CMath</em> §6.2; see L. Carlitz, <em>Proc. Amer. Math. Soc.</em> <strong>16</strong> (1965), 248–252]. The case <em>x</em> = − 1 is somewhat delicate, but it can be handled by continuity, because the bound implied by <em>O</em>(<em>n</em> ^{− 1 −<em>m</em>}) is independent of <em>x</em> when <em>x</em> &lt; 0. It is interesting to note that <span class="middle"><img src="../Images/e506_05.gif"></span> is extremely small.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_12" id="ch01ex_3_3_12a">12</a>. <span class="middle"><img src="../Images/e506_06.gif"></span></p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_13" id="ch01ex_3_3_13a">13</a>. See P. Flajolet, P. Grabner, P. Kirschenhofer, and H. Prodinger, <em>J. Computational and Applied Math.</em> <strong>58</strong> (1995), 103–116.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_15" id="ch01ex_3_3_15a">15</a>. Expanding the integrand by the binomial theorem, we obtain 1 + <em>Q</em>(<em>n</em>).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_16" id="ch01ex_3_3_16a">16</a>. Write <em>Q</em>(<em>k</em>) as a sum, and interchange the order of summation using Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-53">53</a>).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_17" id="ch01ex_3_3_17a">17</a>. <span class="middle"><img src="../Images/e506_07.gif"></span>. [Note that <em>S</em>(<em>n</em> + 1) + <em>P</em>(<em>n</em>) = ∑_{k≥0}k^{<em>n</em>− <em>k</em>}<em>k</em>!/<em>n</em>!, while <em>Q</em>(<em>n</em>) + <em>R</em>(<em>n</em>) = ∑_{k≥0}<em>n</em>!/<em>k</em>! n^{<em>n</em>−<em>k</em>}.]</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_18" id="ch01ex_3_3_18a">18</a>. Let <span class="middle"><img src="../Images/e506_08.gif"></span> Then for n &gt; 0 we have <span class="middle"><img src="../Images/e506_09.gif"></span> by Abel’s formula <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-16">16</a>); consequently <span class="middle"><img src="../Images/e506_10.gif"></span> [This formula is due to Cauchy, who proved it using the calculus of residues; see his Œuvres (2) 6, 62–73.] The stated sums are therefore equal respectively to n^{n}(1 + <em>Q</em>(<em>n</em>)) and (<em>n</em> + 1)^{n}<em>Q</em>(<em>n</em> + 1).</p>
+
+  <p><a id="page_507"></a><a href="../Text/ch01b.html#ch01ex_3_3_19" id="ch01ex_3_3_19a">19</a>. Suppose C_{n} exists for all <em>n</em> ≥ <em>N</em> and <em>|f</em>(<em>x</em>)<em>|</em>≤ <em>Mx^{α}</em> for 0 ≤ <em>x</em> ≤ <em>r</em>. Let <span class="middle"><img src="../Images/e507_01.gif"></span>. Then when <em>n &gt; N</em> we have</p>
+
+  <div class="image"><img src="../Images/e507_02.gif"></div>
+
+  <p class="answerNP">[E. W. Barnes, <em>Phil. Trans.</em> <strong>A206</strong> (1906), 249–297; G. N. Watson, <em>Proc. London Math. Soc.</em> <strong>17</strong> (1918), 116–148.]</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_20" id="ch01ex_3_3_20a">20</a>. [C. C. Rousseau, <em>Applied Math. Letters</em> <strong>2</strong> (1989), 159–161.] We have <span class="middle"><img src="../Images/e507_03.gif"></span>, by substituting <em>u</em> = <em>x</em>− ln(1 + <em>x</em>) and letting <em>g</em>(<em>u</em>) = <em>dx/du</em>. Notice that <span class="middle"><img src="../Images/e507_04.gif"></span> when <em>u</em> is sufficiently small. Hence <span class="middle"><img src="../Images/e507_05.gif"></span>, and we can apply Watson’s lemma to <span class="middle"><img src="../Images/e507_06.gif"></span>.</p>
+
+  <h4 id="app01lev2sec11">Section 1.3.1</h4>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_1" id="ch01ex_2_12_1a">1</a>. Four; each byte would then contain 3^{4} = 81 different values.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_2" id="ch01ex_2_12_2a">2</a>. Five, since five bytes is always adequate but four is not.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_3" id="ch01ex_2_12_3a">3</a>. (0 : 2); (3 : 3); (4 : 4); (5 : 5).</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_4" id="ch01ex_2_12_4a">4</a>. Presumably index register 4 contains a value greater than or equal to 2000, so that a valid memory address results after indexing.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_5" id="ch01ex_2_12_5a">5</a>. ‘<code>DIV -80,3(0:5)</code>’ or simply ‘<code>DIV -80,3</code>’.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_6" id="ch01ex_2_12_6a">6</a>. (a) <span class="middle"><img src="../Images/e507_07.gif"></span>. (b) rI2 ← − 200. (c) <span class="middle"><img src="../Images/e507_08.gif"></span>. (d) Undefined; we can’t load such a big value into an index register. (e) <span class="middle"><img src="../Images/e507_09.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_7" id="ch01ex_2_12_7a">7</a>. Let <em>n</em> = |rAX| be the magnitude of registers A and X before the operation, and let <em>d</em> = |V| be the magnitude of the divisor. After the operation the magnitude of rA is \lfloor n/d\rfloor , and the magnitude of rX is <em>n</em> mod <em>d</em>. The sign of rX afterwards is the previous sign of rA; the sign of rA afterwards is + if the previous signs of rA and V were the same, otherwise it is −.</p>
+
+  <p class="exercises1N">Stating this another way: If the signs of rA and V are the same, rA ← \lfloor rAX/V\rfloor  and rX ← rAX mod V. Otherwise rA ← \lceil  rAX/V\rceil  and rX ← rAX mod −V.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_8" id="ch01ex_2_12_8a">8</a>. <span class="middle"><img src="../Images/e507_10.gif"></span> <span class="middle"><img src="../Images/e507_11.gif"></span>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_9" id="ch01ex_2_12_9a">9</a>. <code>ADD</code>, <code>SUB</code>, <code>DIV</code>, <code>NUM</code>, <code>JOV</code>, <code>JNOV</code>, <code>INCA</code>, <code>DECA</code>, <code>INCX</code>, <code>DECX</code>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_10" id="ch01ex_2_12_10a">10</a>. <code>CMPA</code>, <code>CMP1</code>, <code>CMP2</code>, <code>CMP3</code>, <code>CMP4</code>, <code>CMP5</code>, <code>CMP6</code>, <code>CMPX</code>. (Also <code>FCMP</code>, for floating point.)</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_11" id="ch01ex_2_12_11a">11</a>. <code>MOVE</code>, <code>LD1</code>, <code>LD1N</code>, <code>INC1</code>, <code>DEC1</code>, <code>ENT1</code>, <code>ENN1</code>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_12" id="ch01ex_2_12_12a">12</a>. <code>INC3 0,3</code>.</p>
+
+  <p><a id="page_508"></a><a href="../Text/ch01b.html#ch01ex_2_12_13" id="ch01ex_2_12_13a">13</a>. ‘<code>JOV 1000</code>’ makes no difference except time. ‘<code>JNOV 1001</code>’ makes a different setting of rJ in most cases. ‘<code>JNOV 1000</code>’ makes an extraordinary difference, since it may lock the computer in an infinite loop.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_14" id="ch01ex_2_12_14a">14</a>. <code>NOP</code> with anything; <code>ADD</code>, <code>SUB</code> with F = (0 : 0) or with address equal to <code>*</code> (the location of the instruction) and F = (3 : 3); <code>HLT</code> (depending on how you interpret the statement of the exercise); any shift with address and index zero; <code>SLC</code> or <code>SRC</code> with index 0 and address a multiple of 10; <code>MOVE</code> with F = 0; <code>STJ *(0:0)</code>, <code>STZ *(0:0)</code>, and <code>STZ *(3:3)</code>; <code>JSJ *+1</code>; any of the <code>INC</code> or <code>DEC</code> instructions with address and index zero. But ‘<code>ENT1 0,1</code>’ is not always a no-op, because it might change rI1 from −0 to +0.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_15" id="ch01ex_2_12_15a">15</a>. 70; 80; 120. (The block size times 5.)</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_16" id="ch01ex_2_12_16a">16</a>. (a) <code>STZ 0</code>; <code>ENT1 1</code>; <code>MOVE 0(49)</code>; <code>MOVE 0(50)</code>. If the byte size were known to equal 100, only one <code>MOVE</code> instruction would have been necessary, but we are not allowed to make assumptions about the byte size. (b) Use 100 <code>STZ</code>’s.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_17" id="ch01ex_2_12_17a">17</a>. (a) <code>STZ 0,2</code>; <code>DEC2 1</code>; <code>J2NN 3000</code>.</p>
+
+  <p class="answerp">(b)</p>
+
+  <div class="image"><img src="../Images/508fig01.gif"></div>
+
+  <p class="answerNP">(A slightly faster, but quite preposterous, program uses 993 <code>STZ</code>’s: <code>JMP 3995</code>; <code>STZ 1,2</code>; <code>STZ 2,2</code>; ...; <code>STZ 993,2</code>; <code>J2N 3999</code>; <code>DEC2 993</code>; <code>J2NN 3001</code>; <code>ENN1 0,2</code>; <code>JMP 3000,1</code>.)</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_18" id="ch01ex_2_12_18a">18</a>. (If you have correctly followed the instructions, an overflow will occur on the <code>ADD</code>, with minus zero in register A afterwards.) <em>Answer:</em> Overflow is set on, comparison is set <code>EQUAL</code>, rA is set to <span class="middle"><img src="../Images/e508_01.gif"></span> , rX is set to <span class="middle"><img src="../Images/e508_02.gif"></span>, rI1 is set to +3, and memory locations 0001, 0002 are set to +0. (Unless the program itself begins in location 0000.)</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_19" id="ch01ex_2_12_19a">19</a>. 42<em>u</em> = (2 + 1 + 2 + 2 + 1 + 1 + 1 + 2 + 2 + 1 + 2 + 2 + 3 + 10 + 10)<em>u</em>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_20" id="ch01ex_2_12_20a">20</a>.</p>
+
+  <div class="image"><img src="../Images/e508_03.gif"></div>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_21" id="ch01ex_2_12_21a">21</a>. (a) Not unless it can be set to zero by external means (see the “<code>GO</code> button”, <a href="../Text/ch01b.html#ch01ex_2_12_26">exercise 26</a>), since a program can set rJ ← <em>N</em> only by jumping from location <em>N</em>− 1.</p>
+
+  <p class="answerp">(b)</p>
+
+  <div class="image"><img src="../Images/e508_04.gif"></div>
+
+  <p><a id="page_509"></a><a href="../Text/ch01b.html#ch01ex_2_12_22" id="ch01ex_2_12_22a">22</a>. <em>Minimum time:</em> If <em>b</em> is the byte size, the assumption that |X^{13}| <em>&lt; b</em>^{5} implies that X^{2}<em>&lt; b</em>, so X^{2} can be contained in one byte. The following ingenious solution due to Y. N. Patt makes use of this fact. The sign of rA is the sign of <em>X</em>.</p>
+
+  <div class="image"><img src="../Images/e509_01.gif"></div>
+
+  <p class="answerNP">space = 14; time = 54<em>u</em>, not counting the <code>HLT</code>.</p>
+
+  <p class="answerNP">At least five multiplications are “necessary,” according to the theory developed in Section 4.6.3, yet this program uses only four! And in fact there is an even better solution below.</p>
+
+  <div class="image"><img src="../Images/e509_02.gif"></div>
+
+  <p class="answerNP"><em>True minimum time:</em> As R. W. Floyd points out, the conditions imply that |<em>X</em>| ≤ 5, so the minimum execution time is achieved by referring to a table:</p>
+
+  <div class="image"><img src="../Images/e509_03.gif"></div>
+
+  <p class="answerNP">space = 14; time = 4<em>u</em>.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_23" id="ch01ex_2_12_23a">23</a>. The following solution by R. D. Dixon appears to satisfy all the conditions:</p>
+
+  <div class="image"><img src="../Images/e509_04.gif"></div>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_24" id="ch01ex_2_12_24a">24</a>. (a) <code>DIV 3500</code>, where <span class="middle"><img src="../Images/e509_05.gif"></span>.</p>
+
+  <p class="answerp">(b) <code>SRC 4</code>; <code>SRA 1</code>; <code>SLC 5</code>.</p>
+
+  <p><a id="page_510"></a><a href="../Text/ch01b.html#ch01ex_2_12_25" id="ch01ex_2_12_25a">25</a>. Some ideas: (a) Obvious things like faster memory, more input-output devices. (b) The I field could be used for J-register indexing, and/or multiple indexing (to specify two different index registers) and/or “indirect addressing” (<a href="../Text/ch01c.html#ch01ex_2_18_3">exercise 1.4.4–4</a>. (e) A “real time clock” could be added, in a negative memory address. (f) Bitwise operations, jumps on register even or odd, and binary shifts could be added to binary versions of <code>MIX</code> (see, for example, exercises 2.5–28, 5.2.2–12, and 6.3–9; also Program 4.5.2B, 6.4–(24), and Section 7.1). (g) An “execute” command, meaning to perform the instruction at location M, could be another variant of C = 5. (h) Another variant of C = 48<em>, ...,</em> 55 could set CI← register: M.</p>
+
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_26" id="ch01ex_2_12_26a">26</a>. It is tempting to use a (2 : 5) field to get at columns 7–10 of the card, but this cannot be done since 2 · 8 + 5 = 21. To make the program easier to follow, it is presented here in symbolic language, anticipating <a href="../Text/ch01b.html#ch01lev2sec13">Section 1.3.2</a>.</p>
+
+  <div class="image"><img src="../Images/510fig01.gif"></div>
+</body>
+</html>
