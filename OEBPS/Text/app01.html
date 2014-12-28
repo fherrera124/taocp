@@ -68,7 +68,7 @@
 
   <p class="answer-a">a) If <em>x</em> is in $I_{1}$ then $h(g(x))=x$.</p>
 
-  <p class="answer-a">b) If <em>q</em> is in $Q_{2}$ then <span class="middle"><img src="../Images/e467_02.gif"></span>, where <span class="middle"><img src="../Images/e467_03.gif"></span> means that the function $f_{2}$ is to be iterated $j(q)$ times.</p>
+  <p class="answer-a">b) If <em>q</em> is in $Q_{2}$ then $f_{1}(h(q))=h(f_{2}^{[j(q)]}(q))$, where $f_{2}^{[j(q)]}$ means that the function $f_{2}$ is to be iterated $j(q)$ times.</p>
 
   <p class="answer-a">c) If <em>q</em> is in $Q_{2}$ then $h(q)$ is in $Ω_{1}$ if and only if <em>q</em> is in $Ω_{2}$.</p>
 
@@ -82,7 +82,7 @@
 
   <div class="image"><img src="../Images/e467_04.gif"></div>
 
-  <p class="answerNP">if $q_{0}=q$ and <span class="middle"><img src="../Images/e467_05.gif"></span>. Hence the relation defined above is transitive. We can say $C_{2}$ <em>directly represents</em> $C_{1}$ if the function <em>j</em> is bounded; this relation is also transitive. The relation “$C_{2}$ represents $C_{1}$” generates an equivalence relation in which two computational methods apparently are equivalent if and only if they compute isomorphic functions of their inputs; the relation “$C_{2}$ directly represents $C_{1}$” generates a more interesting equivalence relation that perhaps matches the intuitive idea of being “essentially the same algorithm.”</p>
+  <p class="answerNP">if $q_{0}=q$ and $q_{k+1}=f_{3}^{\large[j'(q_{k})]}(q_k)$. Hence the relation defined above is transitive. We can say $C_{2}$ <em>directly represents</em> $C_{1}$ if the function <em>j</em> is bounded; this relation is also transitive. The relation “$C_{2}$ represents $C_{1}$” generates an equivalence relation in which two computational methods apparently are equivalent if and only if they compute isomorphic functions of their inputs; the relation “$C_{2}$ directly represents $C_{1}$” generates a more interesting equivalence relation that perhaps matches the intuitive idea of being “essentially the same algorithm.”</p>
 
   <p class="exercises1N">For an alternative approach to simulation, see R. W. Floyd and R. Beigel, <em>The Language of Machines</em> (Computer Science Press, 1994), Section 3.3.</p>
 
@@ -110,9 +110,9 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_1_11" id="ch01ex_2_1_11a">11</a>. $(-1)^{n}(n+1)/(4(n+1)^{2}+1)$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_1_12" id="ch01ex_2_1_12a">12</a>. The only nontrivial part of the extension is the calculation of the integer <em>q</em> in E2. This can be done by repeated subtraction, reducing to the problem of determining whether <span class="middle"><img src="../Images/e468_02.gif"></span> is positive, negative, or zero, and the latter problem is readily solved.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_1_12" id="ch01ex_2_1_12a">12</a>. The only nontrivial part of the extension is the calculation of the integer <em>q</em> in E2. This can be done by repeated subtraction, reducing to the problem of determining whether $u+v\sqrt{2}$ is positive, negative, or zero, and the latter problem is readily solved.</p>
 
-  <p class="answerp">It is easy to show that whenever <span class="middle"><img src="../Images/e468_03.gif"></span>, we must have <em>u</em> = <em>u</em>′ and <em>v</em> = <em>v</em>′, since $\sqrt{2}$ is irrational. Now it is clear that 1 and $\sqrt{2}$ have no common divisor, if we define divisor in the sense that $u+v\sqrt{2}$ divides $a(u+v\sqrt{2})$ if and only if <em>a</em> is an integer. The algorithm extended in this way computes the regular continued fraction of the ratio of its inputs; see Section 4.5.3.</p>
+  <p class="answerp">It is easy to show that whenever $u+v\sqrt{2}=u'+v'\sqrt{2}$, we must have <em>u</em> = <em>u</em>′ and <em>v</em> = <em>v</em>′, since $\sqrt{2}$ is irrational. Now it is clear that 1 and $\sqrt{2}$ have no common divisor, if we define divisor in the sense that $u+v\sqrt{2}$ divides $a(u+v\sqrt{2})$ if and only if <em>a</em> is an integer. The algorithm extended in this way computes the regular continued fraction of the ratio of its inputs; see Section 4.5.3.</p>
 
   <p class="answerp">[<em>Note:</em> If we extend the concept of divisor so that $u+v\sqrt{2}$ divides $a(u+v\sqrt{2})$ if and only if <em>a</em> has the form $u'+v'\sqrt{2}$ for integers <em>u</em>′ and <em>v</em>′, there <em>is</em> a way to extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> so that it always will terminate: If in step E2 we have $c=u+v\sqrt{2}$ and $d=u'+v'\sqrt{2}$, compute $c/d=c(u'-v'\sqrt{2})/(u'^{2}-2v'^{2})=x+y\sqrt{2}$ where <em>x</em> and <em>y</em> are rational. Now let $q=u''+v''\sqrt{2}$, where $u''$ and $v''$ are the nearest integers to <em>x</em> and <em>y</em>; and let <em>r</em> = <em>c</em> − <em>qd</em>. If $r=u'''+v'''\sqrt{2}$, it follows that $|u'''^{2}-2v'''^{2}|\lt|u'^{2}-2v'^{2}|$, hence the computation will terminate. See “quadratic Euclidean domains” in number theory texts.]</p>
 
@@ -152,7 +152,7 @@
 
   <p class="answerNP">This construction can’t make $d_{k}=9$ for all <em>k</em> &gt; <em>l</em>, because that could happen only if $(n+d_{1}/10+\cdots+d_{l}/10^{l}+1/10^{l})^{m}≤u$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_9" id="ch01ex_2_2_9a">9</a>. $((b^{p/q})^{u/v})^{qv}=(((b^{p/q})^{u/v})^{v})^{q}=((b^{p/q})^{u})^{q}=((b^{p/q})^{q})^{u}=b^{pu}$, hence $(b^{p/q})^{u/v}=b^{pu/qv}$. This proves the second law. We prove the first law using the second: $b^{p/q}b^{u/v}=(b^{1}/^{qv})^{pv}(b^{1/qv})^{qu}=(b^{1/qv})^{pv+qu}=b^{p/q+u/v}$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_9" id="ch01ex_2_2_9a">9</a>. $((b^{p/q})^{u/v})^{qv}=(((b^{p/q})^{u/v})^{v})^{q}=((b^{p/q})^{u})^{q}=((b^{p/q})^{q})^{u}=b^{pu}$, hence $(b^{p/q})^{u/v}=b^{pu/qv}$. This proves the second law. We prove the first law using the second: $b^{p/q}b^{u/v}=(b^{1/qv})^{pv}(b^{1/qv})^{qu}=(b^{1/qv})^{pv+qu}=b^{p/q+u/v}$.</p>
 
   <p><a id="page_470"></a><a href="../Text/ch01.html#ch01ex_2_2_10" id="ch01ex_2_2_10a">10</a>. If $\log_{10}2=p/q$, with <em>p</em> and <em>q</em> positive, then $2^{q}=10^{p}$, which is absurd since the right-hand side is divisible by 5 but the left-hand side isn’t.</p>
 
@@ -170,7 +170,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_17" id="ch01ex_2_2_17a">17</a>. 5; 1; 1; 0; undefined.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_18" id="ch01ex_2_2_18a">18</a>. No, <span class="middle"><img src="../Images/e470_01.gif"></span>.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_18" id="ch01ex_2_2_18a">18</a>. No, $\log_{8}x=\lg{x}/\lg{8}=\frac13\lg{x}$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_19" id="ch01ex_2_2_19a">19</a>. Yes, since $\lg n\lt (\log_{10}n)/.301\lt 14/.301\lt 47$.</p>
 
@@ -216,7 +216,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_2" id="ch01ex_2_3_2a">2</a>. $a_{1}+a_{2}+a_{3}$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_3_3" id="ch01ex_2_3_3a">3</a>. <span class="middle"><img src="../Images/e471_01.gif"></span>. The rule for $p(j)$ is violated: In the first case $n^{2}=3$ occurs for no <em>n</em>, and in the second case $n^{2}=4$ occurs for <em>two</em> <em>n</em>. [See Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-18">18</a>).]</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_3_3" id="ch01ex_2_3_3a">3</a>. $\frac11+\frac13+\frac15+\frac17+\frac19+\frac{1}{11}$; $\frac19+\frac13+\frac11+\frac13+\frac19$. The rule for $p(j)$ is violated: In the first case $n^{2}=3$ occurs for no <em>n</em>, and in the second case $n^{2}=4$ occurs for <em>two</em> <em>n</em>. [See Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-18">18</a>).]</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_4" id="ch01ex_2_3_4a">4</a>. $(a_{11})+(a_{21}+a_{22})+(a_{31}+a_{32}+a_{33})=(a_{11}+a_{21}+a_{31})+(a_{22}+a_{32})+(a_{33})$.</p>
 
@@ -654,7 +654,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_5" id="ch01ex_2_6_5a">5</a>. $(10+1)^{4}=10000+4(1000)+6(100)+4(10)+1$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_6" id="ch01ex_2_6_6a">6</a>. <span class="middle"><img src="../Images/e483_09.gif"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_6" id="ch01ex_2_6_6a">6</a>. <span class="top"><img src="../Images/e483_09.gif"></span></p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_7" id="ch01ex_2_6_7a">7</a>. $\lfloor n/2\rfloor$; or, alternatively, $\lceil n/2\rceil$. It is clear from (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) that for smaller values the binomial coefficient is strictly increasing, and afterwards it decreases to zero.</p>
 
@@ -958,11 +958,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_6" id="ch01ex_2_7_6a">6</a>. Induction and Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=1/(m+1)-n/(mn+n)=0$. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤$ $1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=$ $1/(m+1)-n/(mn+n)=0$. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_8" id="ch01ex_2_7_8a">8</a>. By Stirling’s approximation, $\ln n!$ is approximately $<span class="middle"><img src="../Images/e492_02.gif"></span>\ln <span class="middle"><img src="../Images/e492_03.gif"></span>$; also <span class="middle"><img src="../Images/e492_04.gif"></span> is approximately $(n+1)\ln <span class="middle"><img src="../Images/e492_05.gif"></span>$; the difference is approximately <span class="middle"><img src="../Images/e492_06.gif"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_8" id="ch01ex_2_7_8a">8</a>. By Stirling’s approximation, $\ln n!$ is approximately $(n+\frac12)\ln n-n+\ln\sqrt{2\pi}$; also $\sum_{k=1}^{n}H_{k}$ is approximately $(n+1)\ln n-n(1-\gamma)+(\gamma+\frac12)$; the difference is approximately $\gamma n+\frac{1}{2}\ln n+.158$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_9" id="ch01ex_2_7_9a">9</a>. −1<em>/n</em>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_9" id="ch01ex_2_7_9a">9</a>. $-1/n$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_10" id="ch01ex_2_7_10a">10</a>. Break the left side into two sums; change <em>k</em> to <em>k</em> + 1 in the second sum.</p>
 
@@ -972,15 +972,15 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_13" id="ch01ex_2_7_13a">13</a>. Use induction as in the proof of <a href="../Text/ch02b.html#ch02b_the_a">Theorem A</a>. Or use calculus: Differentiate with respect to <em>x</em>, also evaluate at <em>x</em> = 1.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_14" id="ch01ex_2_7_14a">14</a>. See <a href="../Text/ch01.html#ch01lev2sec3">Section 1.2.3</a>, <a href="../Text/ch01.html#ch01exam-1-2">Example 2</a>. The second sum is <span class="middle"><img src="../Images/e492_07.gif"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_14" id="ch01ex_2_7_14a">14</a>. See <a href="../Text/ch01.html#ch01lev2sec3">Section 1.2.3</a>, <a href="../Text/ch01.html#ch01exam-1-2">Example 2</a>. The second sum is ${\frac12}{(H_{n+1}^{2}-H_{n+1}^{(2)})}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_15" id="ch01ex_2_7_15a">15</a>. <span class="middle"><img src="../Images/e492_08.gif"></span> can be summed by formulas in the text; the answer comes to <span class="middle"><img src="../Images/e492_09.gif"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_15" id="ch01ex_2_7_15a">15</a>. $\sum_{j=1}^{n}(1/j)\sum_{k=j}^{n}H_{k}$ can be summed by formulas in the text; the answer comes to $(n+1)H_{n}^{2}-(2n+1)H_{n}+2n$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_16" id="ch01ex_2_7_16a">16</a>. <span class="middle"><img src="../Images/e492_10.gif"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_16" id="ch01ex_2_7_16a">16</a>. $H_{2n-1}-\frac{1}{2}H_{n-1}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be $(p-1)!$, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, $(p-1)!/1+(p-1)!/2+\cdots+(p-1)!/(p-1)$, <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, $(p-1)!/k≡(p-1)!k'$, where <em>k</em>′ can be determined by the relation $kk'\bmod p=1$. The set $\{1',2',\ldots,(p-1)'\}$ is just the set $\{1,2,\ldots,p-1\}$; so the numerator is congruent to $(p-1)!(1+2+\cdots+p-1)≡ 0$.</p>
 
-  <p class="exercises1N"><em>Second solution</em> (advanced): By exercise 4.6.2–6, we have <span class="middle"><img src="../Images/e492_11.gif"></span> (modulo <em>p</em>); hence <span class="middle"><img src="../Images/e492_12.gif"></span>, by <a href="../Text/ch01a.html#ch01ex_2_6_32">exercise 1.2.6–32</a>. Now apply <a href="../Text/ch01a.html#ch01ex_2_7_6">exercise 6</a>.</p>
+  <p class="exercises1N"><em>Second solution</em> (advanced): By exercise 4.6.2–6, we have <span class="middle"><img src="../Images/e492_11.gif"></span> (modulo <em>p</em>)<span class="alert">←possibly should be: $x^{\overline p}\equiv x^{p}-x\text{ (modulo }p)$</span>; hence <span class="middle"><img src="../Images/e492_12.gif"></span>, by <a href="../Text/ch01a.html#ch01ex_2_6_32">exercise 1.2.6–32</a>. Now apply <a href="../Text/ch01a.html#ch01ex_2_7_6">exercise 6</a>.</p>
 
   <p class="exercises1N">The numerator of $H_{p-1}$ is in fact known to be a multiple of $p^{2}$ when <em>p</em> &gt; 3; see Hardy and Wright, <em>An Introduction to the Theory of Numbers</em>, Section 7.8.</p>
 
@@ -1090,7 +1090,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_36" id="ch01ex_2_8_36a">36</a>. We may consider the infinite string $S_{∞}$, since $S_{n}$ for <em>n</em> &gt; 1 consists of the first $F_{n}$ letters of $S_{∞}$. There are no double <em>a</em>’s, no triple <em>b</em>’s. The string $S_{n}$ contains $F_{n-2}$ <em>a</em>’s and $F_{n−1}$ <em>b</em>’s. If we express <em>m</em> − 1 in the Fibonacci number system as in <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>, the <em>m</em>th letter of $S_{∞}$ is <em>a</em> if and only if $k_{r}=2$. The <em>k</em>th letter of $S_{∞}$ is <em>b</em> if and only if $\lfloor(k+1)\phi^{-1}\rfloor=1$<span class="alert">←possibly should be: $\lfloor(k+1)\phi^{-1}\rfloor-\lfloor k\phi^{-1}\rfloor=1$</span>; the number of <em>b</em>’s in the first <em>k</em> letters is therefore $\lfloor(k+1)\phi^{-1}\rfloor$. Also, the <em>k</em>th letter is <em>b</em> if and only if $k=\lfloor m\phi\rfloor$ for some positive integer <em>m</em>. This sequence was studied by John Bernoulli III in the 18th century, by A. A. Markov in the 19th, and by many other mathematicians since then; see K. B. Stolarsky, <em>Canadian Math. Bull.</em> <strong>19</strong> (1976), 473–482.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_37" id="ch01ex_2_8_37a">37</a>. [<em>Fibonacci Quarterly</em> <strong>1</strong> (December 1963), 9–12.] Consider the Fibonacci number system of <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>; if $n=F_{k_{1}}+\cdots+F_{k_{r}}\gt 0$ in that system, let $μ(n)=F_{k_{r}}$. Also let $μ(0)=∞$. We find that: (A) If <em>n</em> &gt; 0, $μ(n-μ(n))\gt 2μ(n)$. <em>Proof:</em> $μ(n-μ(n))=F_{k_{r-1}}≥F_{k_{r+2}}\gt 2F_{k_{r}}$ since $k_{r}≥2$. (B) If $0\lt m\lt F_{k}$, $μ(m)≤2(F_{k}-m)$. <em>Proof:</em> Let <em>μ</em><span class="middle"><img src="../Images/e495_02.gif"></span>. (C) If $0\lt m\lt μ(n)$, $μ(n-μ(n)+m)≤2(μ(n)-m)$. <em>Proof:</em> This follows from (B). (D) If $0\lt m\lt μ(n)$, $μ(n-m)≤2m$. <em>Proof:</em> Set $m=μ(n)-m$ in (C).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_37" id="ch01ex_2_8_37a">37</a>. [<em>Fibonacci Quarterly</em> <strong>1</strong> (December 1963), 9–12.] Consider the Fibonacci number system of <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>; if $n=F_{k_{1}}+\cdots+F_{k_{r}}\gt 0$ in that system, let $μ(n)=F_{k_{r}}$. Also let $μ(0)=∞$. We find that: (A) If <em>n</em> &gt; 0, $μ(n-μ(n))\gt 2μ(n)$. <em>Proof:</em> $μ(n-μ(n))=F_{k_{r-1}}≥F_{k_{r+2}}\gt 2F_{k_{r}}$ since $k_{r}≥2$. (B) If $0\lt m\lt F_{k}$, $μ(m)≤2(F_{k}-m)$. <em>Proof:</em> Let $μ$<span class="alert">←possibly should be: $μ(m)=F_j$;</span> $m\le F_{k-1}+F_{k-3}+\cdots+F_{j+(k-1-j)\bmod 2}=-F_{j-1+(k-1-j)\bmod 2}+F_{k}\le-\frac{1}{2}F_{j}+F_{k}$. (C) If $0\lt m\lt μ(n)$, $μ(n-μ(n)+m)≤2(μ(n)-m)$. <em>Proof:</em> This follows from (B). (D) If $0\lt m\lt μ(n)$, $μ(n-m)≤2m$. <em>Proof:</em> Set $m=μ(n)-m$ in (C).</p>
 
   <p class="exercises1N">Now we will prove that if there are <em>n</em> chips, and if at most <em>q</em> may be taken in the next turn, there is a winning move if and only if $μ(n)≤q$. <em>Proof:</em> (a) If $μ(n)\gt q$ all moves leave a position <em>n</em>′, <em>q</em>′ with $μ(n')≤q'$. [This follows from (D), above.] (b) If $μ(n)≤q$, we can either win on this move (if <em>q</em> ≥ <em>n</em>) or we can make a move that leaves a position <em>n</em>′, <em>q</em>′ with $μ(n')\gt q'$. [This follows from (A) above: Our move is to take $μ(n)$ chips.] It can be seen that the set of all winning moves, if $n=F_{k_{1}}+\cdots+F_{k_{r}}$, is to remove $F_{k_{j}}+\cdots+F_{k_{r}}$, for some <em>j</em> with 1 ≤ <em>j</em> ≤ <em>r</em>, provided that <em>j</em> = 1 or $F_{k_{j-1}}\gt 2(F_{k_{j}}+\cdots+F_{k_{r}})$.</p>
 
@@ -1160,13 +1160,13 @@
 
   <div class="image"><img src="../Images/e497_07.gif"></div>
 
-  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>). Hence the answer is <span class="middle"><img src="../Images/e497_08.gif"></span> . (b) Similarly, the generating function is</p>
+  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>). Hence the answer is ${n+1}\brack{n+1-r}$. (b) Similarly, the generating function is</p>
 
   <div class="image"><img src="../Images/e497_09.gif"></div>
 
-  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-28">28</a>), so the answer is <span class="middle"><img src="../Images/e497_10.gif"></span>.</p>
+  <p class="answerNP">by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-28">28</a>), so the answer is ${n+r}\brace{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. <span class="middle"><img src="../Images/e497_11.gif"></span>, where $w=e^{2πi/q}$ and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. $\sum_{n\ge1}(1/n-1/(n+p/q))x^{p+nq}=\sum_{k=0}^{q-1}\omega^{-kp}\ln(1-\omega^{k}x)-x^{p}\ln(1-x^{q})+\frac{q}{p}x^{p}=$ $f(x)+g(x)$, where $\omega=e^{2πi/q}$ and</p>
 
   <div class="image"><img src="../Images/e497_12.gif"></div>
 
@@ -1184,7 +1184,7 @@
 
   <p class="answerNP">[Gauss derived these results in §33 of his monograph on hypergeometric series, Eq. [75], but with insufficient proof; Abel provided a justification in <em>Crelle</em> <strong>1</strong> (1826), 314–315.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_20" id="ch01ex_2_9_20a">20</a>. <span class="middle"><img src="../Images/e498_04.gif"></span>, by Eq. <a href="../Text/ch01a.html#ch01eq-lev2sec6-45">1.2.6–45</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_20" id="ch01ex_2_9_20a">20</a>. $c_{mk}=k!{m\brace k}$, by Eq. 1.2.6–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">45</a>).</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find $z^{2}G'(z)+zG(z)=G(z)-1$. The solution to this differential equation is $G(z)=(-1/z) e^{-1/z}(E_{1}(-1/z)+C)$, where <span class="middle"><img src="../Images/e498_05.gif"></span> and C is a constant. This function is very ill-behaved in the neighborhood of <em>z</em> = 0, and $G(z)$ has no power series expansion. Indeed, since <span class="middle"><img src="../Images/e498_06.gif"></span> is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when <em>z</em> &lt; 0. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
 
@@ -1298,11 +1298,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_20" id="ch01ex_2_10_20a">20</a>. We have $m_{L}=\max\{a_{1}-b_{1},\ldots,a_{n}-b_{n}\}$. <em>Proof:</em> If not, let <em>k</em> be the smallest subscript such that $a_{k}-b_{k}\gt m_{L}$. Then $a_{k}$ is not a left-to-right maximum, so there is a <em>j</em> &lt; <em>k</em> with $a_{j}≥a_{k}$. But then $a_{j}-b_{j}≥a_{k}-b_{k}\gt m_{L}$, contradicting the minimality of <em>k</em>. Similarly, $m_{R}=\max\{b_{1}-a_{1},\ldots,b_{n}-a_{n}\}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_21" id="ch01ex_2_10_21a">21</a>. The result is trivial when $\epsilon≥q$, so we may assume that $\epsilon\lt q$. Setting <span class="middle"><img src="../Images/e502_01.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>) gives <span class="middle"><img src="../Images/e502_02.gif"></span>. Now <span class="middle"><img src="../Images/e502_03.gif"></span> since $t≤e^{t-1}$ for all real <em>t</em>. And $(q-\epsilon)\ln\frac{q}{q-\epsilon}=\epsilon-\frac{1}{2\cdot1}\epsilon^{2}q^{-1}-\frac{1}{3\cdot2}\epsilon^{3}q^{-2}-\cdots\le\epsilon-\frac{1}{2q}\epsilon^{2}$. (A more detailed analysis yields the slightly stronger estimate $\exp(-\epsilon^{2}n/(2pq))$ when <span class="middle"><img src="../Images/e502_05.gif"></span>; still further work yields the upper bound $\exp(-2\epsilon^{2}n)$ for all <em>p</em>.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_21" id="ch01ex_2_10_21a">21</a>. The result is trivial when $\epsilon≥q$, so we may assume that $\epsilon\lt q$. Setting <span class="middle"><img src="../Images/e502_01.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>) gives <span class="middle"><img src="../Images/e502_02.gif"></span>. Now <span class="middle"><img src="../Images/e502_03.gif"></span> since $t≤e^{t-1}$ for all real <em>t</em>. And $(q-\epsilon)\ln\frac{q}{q-\epsilon}=\epsilon-\frac{1}{2·1}\epsilon^{2}q^{-1}-\frac{1}{3·2}\epsilon^{3}q^{-2}-\cdots≤\epsilon-\frac{1}{2q}\epsilon^{2}$. (A more detailed analysis yields the slightly stronger estimate $\exp(-\epsilon^{2}n/(2pq))$ when <span class="middle"><img src="../Images/e502_05.gif"></span>; still further work yields the upper bound $\exp(-2\epsilon^{2}n)$ for all <em>p</em>.)</p>
 
   <p class="exercises1N">By reversing the roles of heads and tails we find</p>
 
-  <p class="center">${\rm Pr}(X≤n(p-\epsilon))={\rm Pr}(n-X≥n(q+\epsilon))≤e^{-\epsilon^{2}n/(2p)}$.</p>
+  <p class="center">$\Pr(X≤n(p-\epsilon))=\Pr(n-X≥n(q+\epsilon))≤e^{-\epsilon^{2}n/(2p)}$.</p>
 
   <p class="answerNP">(One should not confuse “tails” with the tail of a probability distribution.)</p>
 
@@ -1556,9 +1556,9 @@
 
   <p class="answerp">(b) <code>SRC 4</code>; <code>SRA 1</code>; <code>SLC 5</code>.</p>
 
-  <p><a id="page_510"></a><a href="../Text/ch01b.html#ch01ex_2_12_25" id="ch01ex_2_12_25a">25</a>. Some ideas: (a) Obvious things like faster memory, more input-output devices. (b) The I field could be used for J-register indexing, and/or multiple indexing (to specify two different index registers) and/or “indirect addressing” (<a href="../Text/ch01c.html#ch01ex_2_18_3">exercise 1.4.4–4</a>. (e) A “real time clock” could be added, in a negative memory address. (f) Bitwise operations, jumps on register even or odd, and binary shifts could be added to binary versions of <code>MIX</code> (see, for example, exercises 2.5–28, 5.2.2–12, and 6.3–9; also Program 4.5.2B, 6.4–(24), and Section 7.1). (g) An “execute” command, meaning to perform the instruction at location M, could be another variant of C = 5. (h) Another variant of $\rm C=48,\ldots,55$ could set $\rm CI← register: M$.</p>
+  <p><a id="page_510"></a><a href="../Text/ch01b.html#ch01ex_2_12_25" id="ch01ex_2_12_25a">25</a>. Some ideas: (a) Obvious things like faster memory, more input-output devices. (b) The I field could be used for J-register indexing, and/or multiple indexing (to specify two different index registers) and/or “indirect addressing” (<a href="../Text/ch01c.html#ch01ex_2_18_3">exercise 1.4.4–4</a>. (e) A “real time clock” could be added, in a negative memory address. (f) Bitwise operations, jumps on register even or odd, and binary shifts could be added to binary versions of <code>MIX</code> (see, for example, exercises 2.5–28, 5.2.2–12, and 6.3–9; also Program 4.5.2B, 6.4–(24), and Section 7.1). (g) An “execute” command, meaning to perform the instruction at location M, could be another variant of C = 5. (h) Another variant of $\rm C=48,\ldots,55$ could set $\rm CI←register: M$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_12_26" id="ch01ex_2_12_26a">26</a>. It is tempting to use a (2 : 5) field to get at columns 7–10 of the card, but this cannot be done since $2·8+5=21$. To make the program easier to follow, it is presented here in symbolic language, anticipating <a href="../Text/ch01b.html#ch01lev2sec13">Section 1.3.2</a>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_26" id="ch01ex_2_12_26a">26</a>. It is tempting to use a (2:5) field to get at columns 7–10 of the card, but this cannot be done since $2·8+5=21$. To make the program easier to follow, it is presented here in symbolic language, anticipating <a href="../Text/ch01b.html#ch01lev2sec13">Section 1.3.2</a>.</p>
 
   <div class="image"><img src="../Images/510fig01.gif"></div>
 </body>
