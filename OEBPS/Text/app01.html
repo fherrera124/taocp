@@ -1320,27 +1320,27 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_1" id="ch01ex_3_1_1a">1</a>. Zero.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_2" id="ch01ex_3_1_2a">2</a>. Each <em>O</em>-symbol represents a different approximate quantity; since the left-hand side might be $f(n)-(-f(n))=2f(n)$, the best we can say is $O(f(n))-O(f(n))=O(f(n))$, which follows from (<a href="../Text/ch01a.html#ch01eq-lev3sec1-6">6</a>) and (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>). To prove (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>), note that if $|x_{n}|≤M|f(n)|$ for $n≥n_{0}$ and <span class="middle"><img src="../Images/e502_13.gif"></span> for <span class="middle"><img src="../Images/e502_14.gif"></span>, then <span class="middle"><img src="../Images/e502_15.gif"></span> for $n≥\max <span class="middle"><img src="../Images/e502_16.gif"></span>$. (Signed, J. H. Quick, student.)</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_2" id="ch01ex_3_1_2a">2</a>. Each <em>O</em>-symbol represents a different approximate quantity; since the left-hand side might be $f(n)-(-f(n))=2f(n)$, the best we can say is $O(f(n))-O(f(n))=O(f(n))$, which follows from (<a href="../Text/ch01a.html#ch01eq-lev3sec1-6">6</a>) and (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>). To prove (<a href="../Text/ch01a.html#ch01eq-lev3sec1-7">7</a>), note that if $|x_{n}|≤M|f(n)|$ for $n≥n_{0}$ and $|x'_n|≤M'|f(n)|$ for $n≥n'_{0}$, then $|x_{n}\pm x'_n|≤|x_n|+|x'_n|≤(M+M')|f(n)|$ for $n≥\max(n_{0},n'_{0})$. (Signed, J. H. Quick, student.)</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_3" id="ch01ex_3_1_3a">3</a>. <span class="middle"><img src="../Images/e502_17.gif"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_3" id="ch01ex_3_1_3a">3</a>. $n(\ln n)+\gamma n+O(\sqrt{n}\ln n)$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_4" id="ch01ex_3_1_4a">4</a>. $\ln a+(\ln a)^{2}/2n+(\ln a)^{3}/6n^{2}+O(n^{-3})$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_5" id="ch01ex_3_1_5a">5</a>. If $f(n)=n^{2}$ and $g(n)=1$, then <em>n</em> belongs to the set $O(f(n)+g(n))$ but not to the set $f(n)+O(g(n))$. So the statement is false.</p>
 
-  <p><a id="page_503"></a><a href="../Text/ch01b.html#ch01ex_3_1_6" id="ch01ex_3_1_6a">6</a>. A variable number, <em>n</em>, of <em>O</em>-symbols has been replaced by a single <em>O</em>-symbol, falsely implying that a single value of <em>M</em> will suffice for each term $|kn|≤Mn$. The given sum is actually $Θ(n^{3})$, as we know. The last equality, <span class="middle"><img src="../Images/e503_01.gif"></span>, is perfectly valid.</p>
+  <p><a id="page_503"></a><a href="../Text/ch01b.html#ch01ex_3_1_6" id="ch01ex_3_1_6a">6</a>. A variable number, <em>n</em>, of <em>O</em>-symbols has been replaced by a single <em>O</em>-symbol, falsely implying that a single value of <em>M</em> will suffice for each term $|kn|≤Mn$. The given sum is actually $Θ(n^{3})$, as we know. The last equality, $\sum_{k=1}^{n}O(n)=O(n^{2})$, is perfectly valid.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_7" id="ch01ex_3_1_7a">7</a>. If <em>x</em> is positive, the power series <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-22">22</a>) tells us that $e^{x}\gt x^{m+1}/(m+1)!$; hence the ratio of $e^{x}/x^{m}$ is unbounded by any <em>M</em>.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_8" id="ch01ex_3_1_8a">8</a>. Replace <em>n</em> by $e^{n}$ and apply the method of the previous exercise.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_9" id="ch01ex_3_1_9a">9</a>. If $|f(z)|≤M|z|^{m}$ for $|z|≤r$, then $|e^{f(z)}|≤e^{M|z|m}=1+|z|^{m}(M+M^{2}|z|^{m}/2!+M^{3}|z|^{2m}/3!+\cdots)≤1+|z|^{m}(M+M^{2}r^{m}/2!+M^{3}r^{2m}/3!+\cdots)$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_9" id="ch01ex_3_1_9a">9</a>. If $|f(z)|≤M|z|^{m}$ for $|z|≤r$, then $|e^{f(z)}|≤e^{M|z|^{m}}=1+|z|^{m}(M+M^{2}|z|^{m}/2!+$ $M^{3}|z|^{2m}/3!+\cdots)≤$ $1+|z|^{m}(M+M^{2}r^{m}/2!+M^{3}r^{2m}/3!+\cdots)$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_10" id="ch01ex_3_1_10a">10</a>. $\ln(1+O(z^{m}))=O(z^{m})$, if <em>m</em> is a positive integer. <em>Proof:</em> If $f(z)=O(z^{m})$, there exist positive numbers <em>r</em> &lt; 1, <em>r</em>′ &lt; 1, and a constant <em>M</em> such that $|f(z)|≤M|z|^{m}≤r'$ when $|z|≤r$. Then <span class="middle"><img src="../Images/e503_02.gif"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_10" id="ch01ex_3_1_10a">10</a>. $\ln(1+O(z^{m}))=O(z^{m})$, if <em>m</em> is a positive integer. <em>Proof:</em> If $f(z)=O(z^{m})$, there exist positive numbers <em>r</em> &lt; 1, <em>r</em>′ &lt; 1, and a constant <em>M</em> such that $|f(z)|≤M|z|^{m}≤r'$ when $|z|≤r$. Then $|\ln(1+f(z))|\le|f(z)|+$ $\frac12|f(z)|^{2}+\cdots\le|z|^{m}M(1+\frac{1}{2}r'+\cdots)$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_11" id="ch01ex_3_1_11a">11</a>. We can apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev3sec1-12">12</a>) with <em>m</em> = 1 and $z=\ln n/n$. This is justified since $\ln n/n≤r$ for any given <em>r</em> &gt; 0, when <em>n</em> is sufficiently large.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_12" id="ch01ex_3_1_12a">12</a>. Let $f(z)=(ze^{z}/(e^{z}-1))^{1}/2$. If <span class="middle"><img src="../Images/e503_03.gif"></span> were $O(n^{k})$, the stated identity would show that $[z^{k}]f(z)=O(n^{k}/(k-1)!)$, so $f(z)$ would converge when $z=2πi$. But $f(2πi)=∞$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_12" id="ch01ex_3_1_12a">12</a>. Let $f(z)=(ze^{z}/(e^{z}-1))^{1/2}$. If ${1/2}\brack{1/2-k}$ were $O(n^{k})$, the stated identity would show that $[z^{k}]f(z)=O(n^{k}/(k-1)!)$, so $f(z)$ would converge when $z=2πi$. But $f(2πi)=∞$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_13" id="ch01ex_3_1_13a">13</a>. <em>Proof:</em> We may take $L=1/M$ in the definitions of <em>O</em> and <em>Ω</em>.</p>
 
