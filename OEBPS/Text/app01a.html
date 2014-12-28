@@ -118,7 +118,7 @@
 
   <p class="exercisesp">in 65595<em>u</em> plus output time. (It would be faster to calculate $R_{n} (1/m)$ directly when $m\lt{10^{n/2}\sqrt{2}}$, and then to apply the suggested procedure.)</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then $S_{n}=H_{N}+O(N/10^{n})+\sum_{k=1}^{m}(\lfloor2·10^{n}/(2k-1)\rfloor-\lfloor2·10^{n}/(2k+1)\rfloor)k/10^{n}=$ $H_{N}+O(m^{-1})+O(m/10^{n})-1+2H_{2m}-H_{m}=$ $n\ln{10}+2\gamma-1+2\ln{2}+O(10^{-n/2})$ if we sum by parts and set $m ≈ 10^{n/2}$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then $S_{n}=H_{N}+O(N/10^{n})+∑_{k=1}^{m}(\lfloor2·10^{n}/(2k-1)\rfloor-\lfloor2·10^{n}/(2k+1)\rfloor)k/10^{n}=$ $H_{N}+O(m^{-1})+O(m/10^{n})-1+2H_{2m}-H_{m}=$ $n\ln{10}+2\gamma-1+2\ln{2}+O(10^{-n/2})$ if we sum by parts and set $m ≈ 10^{n/2}$.</p>
 
   <p class="indent">Incidentally, the next several values are $S_{6}=15.356262$, $S_{7}=17.6588276$, $S_{8}=19.96140690$, $S_{9}=22.263991779$, and $S_{10}=24.5665766353$; our approximation to $S_{10}$ is $≈ 24.566576621$, which is closer than predicted.</p>
 
@@ -236,7 +236,7 @@
 
   <div class="image"><img src="../Images/e525_08.gif"></div>
 
-  <p class="exercisesp">where ω = <em>e</em>^{2πi/3}. William C. Mitchell has calculated a high-precision value of $λ=.62432\;99885\;43550\;87099\;29363\;83100\;83724\;41796+$ [<em>Math. Comp</em>. <strong>22</strong> (1968), 411–415]; no relation between λ and classical mathematical constants is known. The same constant had, however, been computed in another context by Karl Dickman in <em>Arkiv för Mat., Astron. och Fys.</em> <strong>22A</strong>, 10 (1930), 1–14; the coincidence wasn’t noticed until many years later [<em>Theor. Comp. Sci.</em> <strong>3</strong> (1976), 373].</p>
+  <p class="exercisesp">where $ω=e^{2πi/3}$. William C. Mitchell has calculated a high-precision value of $λ=.62432\;99885\;43550\;87099\;29363\;83100\;83724\;41796+$ [<em>Math. Comp</em>. <strong>22</strong> (1968), 411–415]; no relation between λ and classical mathematical constants is known. The same constant had, however, been computed in another context by Karl Dickman in <em>Arkiv för Mat., Astron. och Fys.</em> <strong>22A</strong>, 10 (1930), 1–14; the coincidence wasn’t noticed until many years later [<em>Theor. Comp. Sci.</em> <strong>3</strong> (1976), 373].</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_24" id="ch01ex_2_14_24a">24</a>. See D. E. Knuth, <em>Proc. IFIP Congress</em> (1971), <strong>1</strong>, 19–27.</p>
 
@@ -248,7 +248,7 @@
 
   <div class="image"><img src="../Images/e525_10.gif"></div>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_26" id="ch01ex_2_14_26a">26</a>. Let $N_{0}=N$ and let $N_{k}=\sum_{1≤j_{1}\lt\cdots \lt j_{k}≤M} |S_{j_{1}} ∩\cdots ∩ S_{j_{k}}|$. Then</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_26" id="ch01ex_2_14_26a">26</a>. Let $N_{0}=N$ and let $N_{k}=∑_{1≤j_{1}\lt\cdots \lt j_{k}≤M} |S_{j_{1}} ∩\cdots ∩ S_{j_{k}}|$. Then</p>
 
   <div class="image"><img src="../Images/e525_11.gif"></div>
 
@@ -266,7 +266,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_29" id="ch01ex_2_14_29a">29</a>. When passing over a man, assign him a new number (starting with <em>n</em> + 1). Then the <em>k</em>th man executed is number 2<em>k</em>, and man number <em>j</em> for <em>j</em> &gt; <em>n</em> was previously number $(2j)\bmod (2n+1)$. Incidentally, the original number of the <em>k</em>th man executed is $2n+1-(2n+1-2k)2^{\lfloor\lg(2n/(2n+1-2k))\rfloor}$. [Armin Shams, <em>Proc. Nat. Computer Conf. 2002</em>, English papers section, <strong>2</strong> (Mashhad, Iran: Ferdowsi University, 2002), 29–33.]</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_31" id="ch01ex_2_14_31a">31</a>. See <em>CMath</em>, Section 3.3. Let $x_{0}=jm$ and $x_{i+1}=(m(x_{i}-n)-d_{i})/(m-1)$, where $1≤d_{i}\lt m$. Then $x_{k}=j$ if and only if $a_{k}j=b_{k}n+t_{k}$, where $a_{k}=m^{k+1}-(m-1)^{k}$, $b_{k}=m(m^{k}-(m-1)^{k})$, and $t_{k}=\sum_{i=0}^{k-1}m^{k-1-i}(m-1)^{i}d_{i}$. Since $a_{k}⊥b_{k}$ and the $(m-1)^{k}$ possibilities for $t_{k}$ are distinct, the average number of <em>k</em>-step fixed elements is $(m-1)^{k}/a_{k}$.</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_31" id="ch01ex_2_14_31a">31</a>. See <em>CMath</em>, Section 3.3. Let $x_{0}=jm$ and $x_{i+1}=(m(x_{i}-n)-d_{i})/(m-1)$, where $1≤d_{i}\lt m$. Then $x_{k}=j$ if and only if $a_{k}j=b_{k}n+t_{k}$, where $a_{k}=m^{k+1}-(m-1)^{k}$, $b_{k}=m(m^{k}-(m-1)^{k})$, and $t_{k}=∑_{i=0}^{k-1}m^{k-1-i}(m-1)^{i}d_{i}$. Since $a_{k}⊥b_{k}$ and the $(m-1)^{k}$ possibilities for $t_{k}$ are distinct, the average number of <em>k</em>-step fixed elements is $(m-1)^{k}/a_{k}$.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_32" id="ch01ex_2_14_32a">32</a>. (a) In fact, $k-1≤π_{k}≤k+2$ when <em>k</em> is even; $k-2≤π_{k}≤k+1$ when <em>k</em> is odd. (b) Choose the exponents from left to right, setting $e_{k}=1$ if and only if <em>k</em> and <em>k</em> + 1 are in different cycles of the permutation so far. [Steven Alpern, <em>J. Combinatorial Theory</em> <strong>B25</strong> (1978), 62–73.]</p>
 
@@ -282,7 +282,7 @@
 
   <p class="exercisesp">if <em>i</em> = <em>j</em> and <em>i</em>′ = <em>j</em>′, otherwise the product is (). Choosing $σ=(2\;3)(4\;5)$ and $τ=(3\;4\;5)$ will make the product $(1\;2\;3\;4\;5)$ as desired, when $im+i′=jm+j′$.</p>
 
-  <p class="indent">The construction that leads from <em>l</em> to <em>l</em> + 1 is due to David A. Barrington [<em>J. Comp. Syst. Sci.</em> <strong>38</strong> (1989), 150–164], who proved a general theorem by which any Boolean function can be represented as a product of permutations of \{1,2,3,4,5\}. With a similar construction we can, for example, find sequences of permutations $(α_{j1},\ldots,α_{jn}; β_{j1},\ldots,β_{jn})$ such that</p>
+  <p class="indent">The construction that leads from <em>l</em> to <em>l</em> + 1 is due to David A. Barrington [<em>J. Comp. Syst. Sci.</em> <strong>38</strong> (1989), 150–164], who proved a general theorem by which any Boolean function can be represented as a product of permutations of $\{1,2,3,4,5\}$. With a similar construction we can, for example, find sequences of permutations $(α_{j1},\ldots,α_{jn}; β_{j1},\ldots,β_{jn})$ such that</p>
 
   <div class="image"><img src="../Images/e526_04.gif"></div>
 
@@ -541,7 +541,7 @@
 
   <p class="center">$g_{(n+1)m}=g_{n(m-1)}+g_{n(m+1)},\;\;\;m≥0,\;\;\;n≥0\;\;\;\;\;\;g_{0m}=δ_{0m}$.</p>
 
-  <p class="exercisesp">Consider the double generating function $G(x,z)=\sum_{n,m} g_{nm}x^{m}z^{n}$, and let $g(z)=G(0,z)$. The recurrence above is equivalent to the equation</p>
+  <p class="exercisesp">Consider the double generating function $G(x,z)=∑_{n,m} g_{nm}x^{m}z^{n}$, and let $g(z)=G(0,z)$. The recurrence above is equivalent to the equation</p>
 
   <div class="image"><img src="../Images/e537_01.gif"></div>
 
@@ -559,7 +559,7 @@
 
   <div class="image"><img src="../Images/e537_04.gif"></div>
 
-  <p class="exercisesp">Let $w=z^{2}$ and $r_{2}(z)=zf(w)$. Then $f(w)=\sum_{k≥0}A_{k}(1,-2)w^{k}$ in the notation of <a href="../Text/ch01a.html#ch01lev2sec6">exercise 1.2.6</a>–<a href="../Text/ch01a.html#ch01ex_2_6_25">25</a>; hence</p>
+  <p class="exercisesp">Let $w=z^{2}$ and $r_{2}(z)=zf(w)$. Then $f(w)=∑_{k≥0}A_{k}(1,-2)w^{k}$ in the notation of <a href="../Text/ch01a.html#ch01lev2sec6">exercise 1.2.6</a>–<a href="../Text/ch01a.html#ch01ex_2_6_25">25</a>; hence</p>
 
   <div class="image"><img src="../Images/e537_05.gif"></div>
 
@@ -617,13 +617,13 @@
 
   <div class="image"><img src="../Images/e539_06.gif"></div>
 
-  <p class="exercisesp">where $β=α/(1-α)$; hence the desired coefficient is $(-1)^{n}\sqrt{1-\alpha}\sum_{k}\binom{1/2}{k}\beta^{k}\binom{k+1/2}{n}$.</p>
+  <p class="exercisesp">where $β=α/(1-α)$; hence the desired coefficient is $(-1)^{n}\sqrt{1-\alpha}∑_{k}\binom{1/2}{k}\beta^{k}\binom{k+1/2}{n}$.</p>
 
   <p class="exercisesp">Now</p>
 
   <div class="image"><img src="../Images/e539_08.gif"></div>
 
-  <p class="exercisesp">and $\large n^{\overline{-k-1/2}}=\sum_{j=0}^{m}{{-k-1/2}\brack{-k-1/2-j}}n^{-k-1/2-j}+O(n^{-k-3/2-m})$ by <a href="../Text/ch01a.html#ch01lev3sec1">Eq. 1.2.11.1</a>–(<a href="../Text/ch01a.html#ch01eq-lev3sec1-16">16</a>). Thus we obtain the asymptotic series $\large[w^{n}]\sqrt{1-w}\sqrt{1-\alpha w}=c_{0}n^{-3/2}+c_{1}n^{-5/2}+\cdots+c_{m}n^{-m-3/2}+O\left(n^{-m-5/2}\right)$ where</p>
+  <p class="exercisesp">and $\large n^{\overline{-k-1/2}}=∑_{j=0}^{m}{{-k-1/2}\brack{-k-1/2-j}}n^{-k-1/2-j}+O(n^{-k-3/2-m})$ by <a href="../Text/ch01a.html#ch01lev3sec1">Eq. 1.2.11.1</a>–(<a href="../Text/ch01a.html#ch01eq-lev3sec1-16">16</a>). Thus we obtain the asymptotic series $\large[w^{n}]\sqrt{1-w}\sqrt{1-\alpha w}=c_{0}n^{-3/2}+c_{1}n^{-5/2}+\cdots+c_{m}n^{-m-3/2}+O\left(n^{-m-5/2}\right)$ where</p>
 
   <div class="image"><img src="../Images/e539_11.gif"></div>
 
@@ -633,7 +633,7 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_1_13" id="ch02ex_2_1_13a">13</a>. V. Pratt has found that a permutation is unobtainable if and only if it contains a subsequence whose relative magnitudes are respectively</p>
 
-  <p class="center">$5,2,7,4,\ldots,4k\!+\!1,4k\!-\!2,3,4k,1\;\;\;{\rm or}\;\;\;5,2,7,4,\ldots,4k\!+\!3,4k,1,4k\!+\!2,3$</p>
+  <p class="center">$5,2,7,4,\ldots,4k{+}1,4k{-}2,3,4k,1\;\;\;{\rm or}\;\;\;5,2,7,4,\ldots,4k{+}3,4k,1,4k{+}2,3$</p>
 
   <p class="exercisesp">for some <em>k</em> ≥ 1, or the same with the last two elements interchanged, or with the 1 and 2 interchanged, or both. Thus the forbidden patterns for <em>k</em> = 1 are 52341, 52314, 51342, 51324, 5274163, 5274136, 5174263, 5174236. [<em>STOC</em> <strong>5</strong> (1973), 268–277.]</p>
 
@@ -757,7 +757,7 @@
 
   <div class="image"><img src="../Images/e544_02.gif"></div>
 
-  <p class="exercisesp">here $Q_{0}$ is <em>Q</em> with $y_{2}$ replaced by zero. [When <em>n</em> = 2, let $I_{3} = 1$.] Now let $z_j=\sqrt{n}y_{j}-(y_3+\cdots+y_n)/(\sqrt{2}+\sqrt{n})$, $3\le j\le n$. Then $Q_0=z_{3}^{2}+\cdots+z_{n}^{2}$, and we deduce that $I_3=I_{4}/n^{(n-3)/2}\sqrt{2}$, where</p>
+  <p class="exercisesp">here $Q_{0}$ is <em>Q</em> with $y_{2}$ replaced by zero. [When <em>n</em> = 2, let $I_{3} = 1$.] Now let $z_j=\sqrt{n}y_{j}-(y_3+\cdots+y_n)/(\sqrt{2}+\sqrt{n})$, $3≤j≤n$. Then $Q_0=z_{3}^{2}+\cdots+z_{n}^{2}$, and we deduce that $I_3=I_{4}/n^{(n-3)/2}\sqrt{2}$, where</p>
 
   <div class="image"><img src="../Images/e544_06.gif"></div>
 
@@ -987,7 +987,7 @@
 
   <div class="image"><img src="../Images/552pro03a.gif"></div>
 
-  <p><a id="page_553"></a><a href="../Text/ch02.html#ch02ex_2_4_16" id="ch02ex_2_4_16a">16</a>. Let <em>r</em> be the number of terms in ${\rm polynomial}\tt(M)$. The subroutine requires $21pr+38r+29+27\sum{m'}+18\sum{m''}+27\sum{p'}+8\sum{q'}$ units of time, where the summations refer to the corresponding quantities during the <em>r</em> activations of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. The number of terms in ${\rm polynomial}\tt(Q)$ goes up by $p'-m'$ each activation of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. If we make the not unreasonable assumption that $m'=0$ and $p'=αp$ where 0 &lt; <em>α</em> &lt; 1, we get the respective sums equal to 0, $(1-α)pr$, $αpr$, and $rq'_0+αp(r(r-1)/2)$, where $q'_0$ is the value of <em>q</em>′ in the first iteration. The grand total is $4αpr^{2}+40pr+4αpr+8q'_0r+38r+29$. This analysis indicates that the multiplier ought to have fewer terms than the multiplicand, since we have to skip over unmatching terms in ${\rm polynomial}\tt(Q)$ more often. (See exercise 5.2.3–29 for a faster algorithm.)</p>
+  <p><a id="page_553"></a><a href="../Text/ch02.html#ch02ex_2_4_16" id="ch02ex_2_4_16a">16</a>. Let <em>r</em> be the number of terms in ${\rm polynomial}\tt(M)$. The subroutine requires $21pr+38r+29+27∑m'+18∑m''+27∑p'+8∑q'$ units of time, where the summations refer to the corresponding quantities during the <em>r</em> activations of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. The number of terms in ${\rm polynomial}\tt(Q)$ goes up by $p'-m'$ each activation of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. If we make the not unreasonable assumption that $m'=0$ and $p'=αp$ where 0 &lt; <em>α</em> &lt; 1, we get the respective sums equal to 0, $(1-α)pr$, $αpr$, and $rq'_0+αp(r(r-1)/2)$, where $q'_0$ is the value of <em>q</em>′ in the first iteration. The grand total is $4αpr^{2}+40pr+4αpr+8q'_0r+38r+29$. This analysis indicates that the multiplier ought to have fewer terms than the multiplicand, since we have to skip over unmatching terms in ${\rm polynomial}\tt(Q)$ more often. (See exercise 5.2.3–29 for a faster algorithm.)</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_17" id="ch02ex_2_4_17a">17</a>. There actually is very little advantage; addition and multiplication routines with either type of list would be virtually the same. The efficiency of the <code>ERASE</code> subroutine (see <a href="../Text/ch02.html#ch02ex_2_4_13">exercise 13</a>) is apparently the only important difference.</p>
 
@@ -1035,7 +1035,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_1" id="ch02ex_2_6_1a">1</a>. (Here the indices run from 1 to <em>n</em>, not from 0 to <em>n</em> as in Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-6">6</a>).) ${\tt LOC(A[J,K])}={\tt LOC(A[}0{\tt,}0{\tt])}+2n{\tt J}+2\tt K$, where ${\tt A[}0{\tt,}0\tt]$ is an assumed node that is actually nonexistent. If we set <code>J</code> = <code>K</code> = 1,we get ${\tt LOC(A[}1{\tt,}1{\tt])}={\tt LOC(A[}0{\tt,}0{\tt])}+2n+2$,so the answer can be expressed in several ways. The fact that ${\tt LOC(A[}0{\tt,}0\tt])$ might be negative has led to many bugs in compilers and loading routines.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_6_2" id="ch02ex_2_6_2a">2</a>. ${\tt LOC(A[I}_{1}{\tt,\ldots,I}_{k}{\tt])}={\tt LOC(A[}0{\tt,\ldots,}0{\tt)}+\sum_{1≤r≤k}a_{r}{\tt I}_{r}={\tt LOC(A[}l_{1}{\tt,\ldots,}l_{k}{\tt])}+\sum_{1≤r≤k}a_{r}{\tt I}_{r}-\sum_{1≤r≤k}a_{r}l_{r}$, where $a_{r}=c∏_{r\lt s≤k}(u_{s}-l_{s}+1)$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_6_2" id="ch02ex_2_6_2a">2</a>. ${\tt LOC(A[I}_{1}{\tt,\ldots,I}_{k}{\tt])}={\tt LOC(A[}0{\tt,\ldots,}0{\tt)}+∑_{1≤r≤k}a_{r}{\tt I}_{r}={\tt LOC(A[}l_{1}{\tt,\ldots,}l_{k}{\tt])}+∑_{1≤r≤k}a_{r}{\tt I}_{r}-∑_{1≤r≤k}a_{r}l_{r}$, where $a_{r}=c∏_{r\lt s≤k}(u_{s}-l_{s}+1)$.</p>
 
   <p class="indent"><em>Note:</em> For a generalization to the structures occurring in programming languages such as C, and a simple algorithm to compute the relevant constants, see P. Deuel, <em>CACM</em> <strong>9</strong> (1966), 344–347.</p>
 
