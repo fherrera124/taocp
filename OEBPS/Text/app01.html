@@ -16,7 +16,7 @@
     });
   </script>
   <script src="MathJax-2.4-latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-
+  <style type="text/css">.st {font-weight: 800}</style>
   <title></title>
   <link href="../Styles/app01b.css" rel="stylesheet" type="text/css">
 </head>
@@ -58,7 +58,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_1_1_7" id="ch01ex_1_1_7a">7</a>. In all but a finite number of cases, <em>n</em> &gt; <em>m</em>. And when <em>n</em> &gt; <em>m</em>, the first iteration of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> merely exchanges these numbers; so $U_{m}=T_{m}+1$.</p>
 
-  <p><a id="page_467"></a><a href="../Text/ch01.html#ch01ex_1_1_8" id="ch01ex_1_1_8a">8</a>. Let $A={a,b,c}$, <em>N</em> = 5. The algorithm will terminate with the string $a^{gcd(m,n)}$.</p>
+  <p><a id="page_467"></a><a href="../Text/ch01.html#ch01ex_1_1_8" id="ch01ex_1_1_8a">8</a>. Let $A=\{a,b,c\}$, <em>N</em> = 5. The algorithm will terminate with the string $a^{\gcd(m,n)}$.</p>
 
   <div class="image"><img src="../Images/e467_01.gif"></div>
 
@@ -72,7 +72,7 @@
 
   <p class="answer-a">c) If <em>q</em> is in $Q_{2}$ then $h(q)$ is in $Ω_{1}$ if and only if <em>q</em> is in $Ω_{2}$.</p>
 
-  <p class="exercises1N">For example, let $C_{1}$ be as in (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>) and let $C_{2}$ have $I_{2}={(m,n)}$, $Ω_{2}={(m,n,d)}$, $Q_{2}=I_{2}∪Ω_{2}∪{(m,n,a,b,1)}∪{(m,n,a,b,r,2)}∪{(m,n,a,b,r,3)}∪{(m,n,a,b,r,4)}∪{(m,n,a,b,5)}$. Let $f_{2}((m,n))=(m,n,m,n,1)$; $f_{2}((m,n,d))=(m,n,d)$; $f_{2}((m,n,a,b,1))=(m,n,a,b,a\bmod b,2)$; $f_{2}((m,n,a,b,r,2))=(m,n,b)$ if <em>r</em> = 0, otherwise $(m,n,a,b,r,3)$; $f_{2}((m,n,a,b,r,3))=(m,n,b,b,r,4)$; $f_{2}((m,n,a,b,r,4))=(m,n,a,r,5)$; $f_{2}((m,n,a,b,5))=f_{2}((m,n,a,b,1))$.</p>
+  <p class="exercises1N">For example, let $C_{1}$ be as in (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>) and let $C_{2}$ have $I_{2}=\{(m,n)\}$, $Ω_{2}=\{(m,n,d)\}$, $Q_{2}=I_{2}∪Ω_{2}∪\{(m,n,a,b,1)\}∪\{(m,n,a,b,r,2)\}∪\{(m,n,a,b,r,3)\}∪\{(m,n,a,b,r,4)\}∪\{(m,n,a,b,5)\}$. Let $f_{2}((m,n))=(m,n,m,n,1)$; $f_{2}((m,n,d))=(m,n,d)$; $f_{2}((m,n,a,b,1))=(m,n,a,b,a\bmod b,2)$; $f_{2}((m,n,a,b,r,2))=(m,n,b)$ if <em>r</em> = 0, otherwise $(m,n,a,b,r,3)$; $f_{2}((m,n,a,b,r,3))=(m,n,b,b,r,4)$; $f_{2}((m,n,a,b,r,4))=(m,n,a,r,5)$; $f_{2}((m,n,a,b,5))=f_{2}((m,n,a,b,1))$.</p>
 
   <p class="exercises1N">Now let $h((m,n))=g((m,n))=(m,n)$; $h((m,n,d))=(d)$; $h((m,n,a,b,1))=(a,b,0,1)$; $h((m,n,a,b,r,2))=(a,b,r,2)$; $h((m,n,a,b,r,3))=(a,b,r,3)$; $h((m,n,a,b,r,4))=h(f_{2}((m,n,a,b,r,4)))$; $h((m,n,a,b,5))=(a,b,b,1)$; $j((m,n,a,b,r,3))=j((m,n,a,b,r,4))=2$, otherwise $j(q)=1$. Then $C_{2}$ represents $C_{1}$.</p>
 
@@ -104,7 +104,7 @@
 
   <div class="image"><img src="../Images/e468_01.gif"></div>
 
-  <p class="answerNP">this equals $n^{3}+2n^{2}+n^{2}+3n+1=(n+1)^{3}$. (b) We have shown that the first term for $(n+1)^{3}$ is two greater than the last term for $n^{3}$. Therefore by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>), $1^{3}+2^{3}+\cdots+n^{3}=$ sum of consecutive odd numbers starting with unity = $(text{number of terms})^{2}=(1+2+\cdots+n)^{2}$.</p>
+  <p class="answerNP">this equals $n^{3}+2n^{2}+n^{2}+3n+1=(n+1)^{3}$. (b) We have shown that the first term for $(n+1)^{3}$ is two greater than the last term for $n^{3}$. Therefore by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>), $1^{3}+2^{3}+\cdots+n^{3}=$ sum of consecutive odd numbers starting with unity $=(\text{number of terms})^{2}=(1+2+\cdots+n)^{2}$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_1_10" id="ch01ex_2_1_10a">10</a>. Obvious for <em>n</em> = 10. If <em>n</em> ≥ 10, we have $2^{n+1}=2·2^{n}\gt (1+1/n)^{3}2^{n}$ and by induction this is greater than $(1+1/n)^{3}n^{3}=(n+1)^{3}$.</p>
 
@@ -142,7 +142,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_4" id="ch01ex_2_2_4a">4</a>. 4.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_6" id="ch01ex_2_2_6a">6</a>. The decimal expansion of a number is unique, so <em>x</em> = <em>y</em> if and only if <em>m</em> = <em>n</em> and $d_{i}=e_{i}$ for all <em>i</em> ≥ 1. If <em>x</em> ≠ <em>y</em>, one may compare <em>m</em> vs. <em>n</em>, $d_{1}$ vs. $e_{1}$, $d_{2}$ vs. $e_{2}$, etc.; when the first inequality occurs, the larger quantity belongs to the larger of ${x,y}$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_6" id="ch01ex_2_2_6a">6</a>. The decimal expansion of a number is unique, so <em>x</em> = <em>y</em> if and only if <em>m</em> = <em>n</em> and $d_{i}=e_{i}$ for all <em>i</em> ≥ 1. If <em>x</em> ≠ <em>y</em>, one may compare <em>m</em> vs. <em>n</em>, $d_{1}$ vs. $e_{1}$, $d_{2}$ vs. $e_{2}$, etc.; when the first inequality occurs, the larger quantity belongs to the larger of $\{x,y\}$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_7" id="ch01ex_2_2_7a">7</a>. One may use induction on <em>x</em>, first proving the laws for <em>x</em> positive, and then for <em>x</em> negative. Details are omitted here.</p>
 
@@ -156,9 +156,9 @@
 
   <p><a id="page_470"></a><a href="../Text/ch01.html#ch01ex_2_2_10" id="ch01ex_2_2_10a">10</a>. If $\log_{10}2=p/q$, with <em>p</em> and <em>q</em> positive, then $2^{q}=10^{p}$, which is absurd since the right-hand side is divisible by 5 but the left-hand side isn’t.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_11" id="ch01ex_2_2_11a">11</a>. Infinitely many! No matter how many digits of <em>x</em> are given, we will not know whether $10^{x}=1.99999\ldots$ or $2.00000\ldots$, if <em>x</em>’s digits agree with the digits of log_{10} 2. There is nothing mysterious or paradoxical in this; a similar situation occurs in addition, if we are adding $.444444\ldots$ to $.55555\ldots$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_11" id="ch01ex_2_2_11a">11</a>. Infinitely many! No matter how many digits of <em>x</em> are given, we will not know whether $10^{x}=1.99999\ldots$ or $2.00000\ldots$, if <em>x</em>’s digits agree with the digits of $\log_{10}2$. There is nothing mysterious or paradoxical in this; a similar situation occurs in addition, if we are adding $.444444\ldots$ to $.55555\ldots$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_12" id="ch01ex_2_2_12a">12</a>. They are the only values of d_{1}, ...,d_{8} that satisfy Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>).</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_12" id="ch01ex_2_2_12a">12</a>. They are the only values of $d_{1},\ldots,d_{8}$ that satisfy Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>).</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_13" id="ch01ex_2_2_13a">13</a>. (a) First prove by induction that if <em>y</em> &gt; 0, $1+ny≤(1+y)^{n}$. Then set $y=x/n$, and take <em>n</em>th roots. (b) <em>x</em> = <em>b</em> − 1, $n=10^{k}$.</p>
 
@@ -178,9 +178,9 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_21" id="ch01ex_2_2_21a">21</a>. $(\ln\ln x-\ln\ln b)/\ln b$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_22" id="ch01ex_2_2_22a">22</a>. From the tables in <a href="../Text/app02.html#app02">Appendix A</a>, lg <em>x</em> ≈ 1.442695 ln <em>x</em>; log_{10}<em>x</em> ≈ .4342945 ln <em>x</em>. The relative error is ≈ (1.442695 − 1.4342945)/1.442695 ≈ 0.582%.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_22" id="ch01ex_2_2_22a">22</a>. From the tables in <a href="../Text/app02.html#app02">Appendix A</a>, $\lg x≈1.442695\ln x$; $\log_{10}x≈.4342945\ln x$. The relative error is $≈(1.442695-1.4342945)/1.442695≈0.582\%$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_23" id="ch01ex_2_2_23a">23</a>. Take the figure of area ln <em>y</em>, and divide its height by <em>x</em> while multiplying its length by <em>x</em>. This deformation preserves its area and makes it congruent to the piece left when $\ln x$ is removed from $\ln xy$, since the height at point <em>x</em> + <em>xt</em> in the diagram for $\ln xy$ is $1/(x+xt)=(1/(1+t))/x$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_23" id="ch01ex_2_2_23a">23</a>. Take the figure of area $\ln y$, and divide its height by <em>x</em> while multiplying its length by <em>x</em>. This deformation preserves its area and makes it congruent to the piece left when $\ln x$ is removed from $\ln xy$, since the height at point <em>x</em> + <em>xt</em> in the diagram for $\ln xy$ is $1/(x+xt)=(1/(1+t))/x$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_24" id="ch01ex_2_2_24a">24</a>. Substitute 2 everywhere 10 appears.</p>
 
@@ -264,7 +264,7 @@
 
   <div class="image"><img src="../Images/e472_03.gif"></div>
 
-  <p class="answerNP">The answer is $\left(\prod_{i=0}^{n}a_{i}\right)^{n+2}$.</p>
+  <p class="answerNP">The answer is $\left(∏_{i=0}^{n}a_{i}\right)^{n+2}$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_28" id="ch01ex_2_3_28a">28</a>. $(n+1)/2n$.</p>
 
@@ -282,7 +282,7 @@
 
   <div class="image"><img src="../Images/e472_10.gif"></div>
 
-  <p class="answerNP">where $P(x_{j})$ is a polynomial of degree <em>n</em> − 2 in $x_{j}$ whose coefficients are symmetric functions of ${x_{1},\ldots,x_{n}}$ that don’t depend on <em>j</em>. (See <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 1.2.9–10</a>.) We obtain the desired answer from the solutions for $r=0,1,\ldots,n-1$.</p>
+  <p class="answerNP">where $P(x_{j})$ is a polynomial of degree <em>n</em> − 2 in $x_{j}$ whose coefficients are symmetric functions of $\{x_{1},\ldots,x_{n}\}$ that don’t depend on <em>j</em>. (See <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 1.2.9–10</a>.) We obtain the desired answer from the solutions for $r=0,1,\ldots,n-1$.</p>
 
   <p class="exercises1N"><em>Notes:</em> Dr. Matrix was anticipated in this discovery by L. Euler, who wrote to Christian Goldbach about it on 9 November 1762. See Euler’s <em>Institutionum Calculi Integralis</em> <strong>2</strong> (1769),§1169; and E. Waring, <em>Phil. Trans.</em> <strong>69</strong> (1779), 64–67. The following alternative method of proof, using complex variable theory, is less elementary but more elegant: By the residue theorem, the value of the given sum is</p>
 
@@ -344,7 +344,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_42" id="ch01ex_2_3_42a">42</a>. $n/(x+ny)$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_3_43" id="ch01ex_2_3_43a">43</a>. $1-\prod_{k=1}^{n}(1-1/x_{k})$. This is easily verified if any $x_{i}=1$, since the inverse of any matrix having a row or column all of ones must have elements whose sum is 1. If none of the $x_{i}$ equals one, sum the elements of row <em>i</em> by setting <em>x</em> = 1 in <a href="../Text/ch01.html#ch01ex_2_3_40">exercise 40</a> and obtaining $∏_{k≠i}(x_{k}-1)/x_{i}∏_{k≠i}(x_{k}-x_{i})$. After multiplying numerator and denominator by $x_{i}-1$, we can sum on <em>i</em> by applying <a href="../Text/ch01.html#ch01ex_2_3_33">exercise 33</a> with <em>r</em> = 0 to the <em>n</em> + 2 numbers ${0,1,x_{1},\ldots,x_{n}}$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_3_43" id="ch01ex_2_3_43a">43</a>. $1-∏_{k=1}^{n}(1-1/x_{k})$. This is easily verified if any $x_{i}=1$, since the inverse of any matrix having a row or column all of ones must have elements whose sum is 1. If none of the $x_{i}$ equals one, sum the elements of row <em>i</em> by setting <em>x</em> = 1 in <a href="../Text/ch01.html#ch01ex_2_3_40">exercise 40</a> and obtaining $∏_{k≠i}(x_{k}-1)/x_{i}∏_{k≠i}(x_{k}-x_{i})$. After multiplying numerator and denominator by $x_{i}-1$, we can sum on <em>i</em> by applying <a href="../Text/ch01.html#ch01ex_2_3_33">exercise 33</a> with <em>r</em> = 0 to the <em>n</em> + 2 numbers $\{0,1,x_{1},\ldots,x_{n}\}$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_44" id="ch01ex_2_3_44a">44</a>. We find</p>
 
@@ -434,7 +434,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_30" id="ch01ex_2_4_30a">30</a>. Suppose $r⊥s$. One idea is to prove that the $\varphi(rs)$ numbers relatively prime to <em>rs</em> are precisely the $\varphi(r)\varphi(s)$ distinct numbers $(sx_{i}+ry_{j})\bmod(rs)$ where $x_{1},\ldots,x_{\varphi(r)}$ and $y_{1},\ldots,y_{\varphi(s)}$ are the corresponding values for <em>r</em> and <em>s</em>.</p>
 
-  <p class="answerp">Since $\varphi$ is multiplicative, $\varphi(10^{6})=\varphi(2^{6})\varphi(5^{6})=(2^{6}-2^{5})(5^{6}-5^{5})=400000$. And in general when $n=p_{1}^{\large e_{1}}\ldots p_{r}^{\large e_{r}}$, we have $\varphi(n)=(p_{1}^{\large e_{1}}-p_{1}^{{\large e_{1}}-1})\ldots(p_{r}^{\large e_{r}}-p_{r}^{{\large e_{r}}-1})=n\prod_{p\backslash n,\,p\text{ prime}}(1-1/p)$. (Another proof appears in <a href="../Text/ch01c.html#ch01ex_2_14_27">exercise 1.3.3–27</a>.)</p>
+  <p class="answerp">Since $\varphi$ is multiplicative, $\varphi(10^{6})=\varphi(2^{6})\varphi(5^{6})=(2^{6}-2^{5})(5^{6}-5^{5})=400000$. And in general when $n=p_{1}^{\large e_{1}}\ldots p_{r}^{\large e_{r}}$, we have $\varphi(n)=(p_{1}^{\large e_{1}}-p_{1}^{{\large e_{1}}-1})\ldots(p_{r}^{\large e_{r}}-p_{r}^{{\large e_{r}}-1})=n∏_{p\backslash n,\,p\text{ prime}}(1-1/p)$. (Another proof appears in <a href="../Text/ch01c.html#ch01ex_2_14_27">exercise 1.3.3–27</a>.)</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_31" id="ch01ex_2_4_31a">31</a>. Use the fact that the divisors of <em>rs</em> may be uniquely written in the form <em>cd</em> where <em>c</em> divides <em>r</em> and <em>d</em> divides <em>s</em>. Similarly, if $f(n)≥0$, one can show that the function $\max_{d\backslash n}f(d)$ is multiplicative (see <a href="../Text/ch01.html#ch01ex_2_3_35">exercise 1.2.3–35</a>).</p>
 
@@ -444,7 +444,7 @@
 
   <p class="answerp"><em>Note:</em> R. J. McEliece has pointed out the following generalization: Let <em>f</em> be a continuous, strictly increasing function defined on an interval <em>A</em>, and assume that both $\lfloor{x}\rfloor$ and $\lceil x\rceil$ are in <em>A</em> whenever <em>x</em> is in <em>A</em>. Then the relation $\lfloor f(x)\rfloor=\lfloor f(\lfloor{x}\rfloor)\rfloor$ holds for all <em>x</em> in <em>A</em> if and only if the relation $\lceil f(x)\rceil=\lceil f(\lceil x\rceil)\rceil$ holds for all <em>x</em> in <em>A</em>, if and only if the following condition is satisfied for all <em>x</em> in <em>A</em>: “$f(x)$ is an integer implies <em>x</em> is an integer.” The condition is obviously necessary, for if $f(x)$ is an integer and it equals $\lfloor f(\lfloor{x}\rfloor)\rfloor$ or $\lceil f(\lceil x\rceil)\rceil$ then <em>x</em> must equal $\lfloor{x}\rfloor$ or $\lceil x\rceil$. Conversely if, say, $\lfloor f(\lfloor{x}\rfloor)\rfloor\lt\lfloor f(x)\rfloor$ then by continuity there is some <em>y</em> with $\lfloor{x}\rfloor\lt y≤x$ for which $f(y)$ is an integer; but <em>y</em> cannot be an integer.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_35" id="ch01ex_2_4_35a">35</a>. $\large\frac{x+m}{n}-1=\frac{x+m}{n}-\frac{1}{n}-\frac{n-1}{n}\lt\frac{\lfloor{x}\rfloor+m}{n}-\frac{n-1}{n}\le\left\lfloor\frac{\lfloor{x}\rfloor+m}{n}\right\rfloor\le\frac{x+m}{n}$; apply <a href="../Text/ch01.html#ch01ex_2_4_3">exercise 3</a>. Use of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> gives a similar result for the ceiling function. Both identities follow as a special case of McEliece’s theorem in <a href="../Text/ch01.html#ch01ex_2_4_34">exercise 34</a>.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_35" id="ch01ex_2_4_35a">35</a>. $\large\frac{x+m}{n}-1=\frac{x+m}{n}-\frac{1}{n}-\frac{n-1}{n}\lt\frac{\lfloor{x}\rfloor+m}{n}-\frac{n-1}{n}≤\left\lfloor\frac{\lfloor{x}\rfloor+m}{n}\right\rfloor≤\frac{x+m}{n}$; apply <a href="../Text/ch01.html#ch01ex_2_4_3">exercise 3</a>. Use of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> gives a similar result for the ceiling function. Both identities follow as a special case of McEliece’s theorem in <a href="../Text/ch01.html#ch01ex_2_4_34">exercise 34</a>.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_36" id="ch01ex_2_4_36a">36</a>. Assume first that <em>n</em> = 2<em>t</em>. Then</p>
 
@@ -456,7 +456,7 @@
 
   <p class="answerNP">by <a href="../Text/ch01.html#ch01ex_2_4_33">exercise 33</a>. And if <em>n</em> = 2<em>t</em> + 1, we have $t^{2}+\lfloor n/2\rfloor=t^{2}+t=n^{2}/4-1/4$. For the second sum we get, similarly, $\lceil n(n+2)/4\rceil$.</p>
 
-  <p><a id="page_478"></a><a href="../Text/ch01.html#ch01ex_2_4_37" id="ch01ex_2_4_37a">37</a>. $\large\sum_{0\le k\lt n}\frac{mk+x}{n}=\frac{m(n-1)}{2}+x$. Let $\{y\}$ denote $y\bmod1$; we must subtract</p>
+  <p><a id="page_478"></a><a href="../Text/ch01.html#ch01ex_2_4_37" id="ch01ex_2_4_37a">37</a>. $\large∑_{0≤k\lt n}\frac{mk+x}{n}=\frac{m(n-1)}{2}+x$. Let $\{y\}$ denote $y\bmod1$; we must subtract</p>
 
   <div class="image"><img src="../Images/e478_02.gif"></div>
 
@@ -496,7 +496,7 @@
 
   <p class="answerNP"><a id="page_479"></a>expanding in Fourier series shows that $g(x)=(x-\frac12)a$ for 0 &lt; <em>x</em> &lt; 1. It follows that $f(x)=(x-\frac12)a$. In general, this argument shows that any replicative locally Riemann-integrable function has the form $(x-\frac12)a+b\max(\lfloor{x}\rfloor,0)+c\min(\lfloor{x}\rfloor,0)$ almost everywhere. For further results see L. J. Mordell, <em>J. London Math. Soc.</em> <strong>33</strong> (1958), 371–375; M. F. Yoder, <em>Æquationes Mathematic</em>æ <strong>13</strong> (1975), 251–261.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_41" id="ch01ex_2_4_41a">41</a>. We want $a_{n}=k$ when $\frac{1}{2}k(k-1)\lt n\le\frac{1}{2}k(k+1)$. Since <em>n</em> is an integer, this is equivalent to</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_41" id="ch01ex_2_4_41a">41</a>. We want $a_{n}=k$ when $\frac{1}{2}k(k-1)\lt n≤\frac{1}{2}k(k+1)$. Since <em>n</em> is an integer, this is equivalent to</p>
 
   <div class="image"><img src="../Images/e479_05.gif"></div>
 
@@ -510,7 +510,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_44" id="ch01ex_2_4_44a">44</a>. The sum is <em>n</em> + 1 when <em>n</em> is negative.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_45" id="ch01ex_2_4_45a">45</a>. $\lfloor mj/n\rfloor=r$ if and only if $\left\lceil\frac{rn}{m}\right\rceil\le j\lt \left\lceil\frac{(r+1)n}{m}\right\rceil$, and we find that the given sum is therefore</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_45" id="ch01ex_2_4_45a">45</a>. $\lfloor mj/n\rfloor=r$ if and only if $\left\lceil\frac{rn}{m}\right\rceil≤j\lt \left\lceil\frac{(r+1)n}{m}\right\rceil$, and we find that the given sum is therefore</p>
 
   <div class="image"><img src="../Images/e479_15.gif"></div>
 
@@ -528,7 +528,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when <em>n</em> &lt; 0; when <em>n</em> &gt; 0 it is easy to verify. (b) $\lfloor(n+2-\lfloor n/25\rfloor)/3\rfloor=\lceil(n-\lfloor n/25\rfloor)/3\rceil=\lceil(n+\lceil-n/25\rceil )/3\rceil=\lceil\lceil 24n/25\rceil /3\rceil=\lceil 8n/25\rceil=\lfloor(8n+24)/25\rfloor$. The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
 
-  <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since $f(0)=f(f(0))=f(f(0)+0)=f(0)+f(0)$, we have $f(n)=n$ for all integers <em>n</em>. If ${\large f}{\left(\frac12\right)}=k\le0$, we have $k={\large f}{\left(\frac{1}{1-2k}{\large f}{\left(\frac{1}{2}-k\right)}\right)}={\large f}{\left(\frac{1}{1-2k}\left({\large f}{\left(\frac{1}{2}\right)}-k\right)\right)}=f(0)=0$. And if ${\large f}{\left(\frac{1}{n-1}\right)}=0$ we have ${\large f}{\left(\frac{1}{n}\right)}={\large f}{\left(\frac{1}{n}{\large f}{\left(1+\frac{1}{n-1}\right)}\right)}={\large f}{\left(\frac{1}{n-1}\right)}=0$; furthermore 1 ≤ <em>m</em> &lt; <em>n</em> implies ${\large f}{\left(\frac{m}{n}\right)}={\large f}{\left(\frac{1}{a}{\large f}{\left(\frac{am}{n}\right)}\right)}={\large f}{\left(\frac{1}{a}\right)}=0$, for $a=\lceil n/m\rceil$, by induction on <em>m</em>. Thus ${\large f}{\left(\frac12\right)}\le0$ implies $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>. On the other hand, if ${\large f}{\left(\frac12\right)}\gt0$ the function $g(x)=-f(-x)$ satisfies (i) and (ii) and has ${\large g}{\left(\frac12\right)}=1-{\large f}{\left(\frac12\right)}\le0$; hence $f(x)=-g(-x)=-\lfloor-x\rfloor=\lceil x\rceil$  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
+  <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since $f(0)=f(f(0))=f(f(0)+0)=f(0)+f(0)$, we have $f(n)=n$ for all integers <em>n</em>. If ${\large f}{\left(\frac12\right)}=k≤0$, we have $k={\large f}{\left(\frac{1}{1-2k}{\large f}{\left(\frac{1}{2}-k\right)}\right)}={\large f}{\left(\frac{1}{1-2k}\left({\large f}{\left(\frac{1}{2}\right)}-k\right)\right)}=f(0)=0$. And if ${\large f}{\left(\frac{1}{n-1}\right)}=0$ we have ${\large f}{\left(\frac{1}{n}\right)}={\large f}{\left(\frac{1}{n}{\large f}{\left(1+\frac{1}{n-1}\right)}\right)}={\large f}{\left(\frac{1}{n-1}\right)}=0$; furthermore 1 ≤ <em>m</em> &lt; <em>n</em> implies ${\large f}{\left(\frac{m}{n}\right)}={\large f}{\left(\frac{1}{a}{\large f}{\left(\frac{am}{n}\right)}\right)}={\large f}{\left(\frac{1}{a}\right)}=0$, for $a=\lceil n/m\rceil$, by induction on <em>m</em>. Thus ${\large f}{\left(\frac12\right)}≤0$ implies $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>. On the other hand, if ${\large f}{\left(\frac12\right)}\gt0$ the function $g(x)=-f(-x)$ satisfies (i) and (ii) and has ${\large g}{\left(\frac12\right)}=1-{\large f}{\left(\frac12\right)}≤0$; hence $f(x)=-g(-x)=-\lfloor-x\rfloor=\lceil x\rceil$  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
 
   <p class="exercises1N">It does not follow, however, that $f(x)=\lfloor{x}\rfloor$ or $\lceil x\rceil$ for all <em>real</em> values of <em>x</em>. If, for example, $h(x)$ is any function with $h(1)=1$ and $h(x+y)=h(x)+h(y)$ for all real <em>x</em> and <em>y</em>, then the function $f(x)=\lfloor h(x)\rfloor$ satisfies (i) and (ii); but $h(x)$ may be unbounded and highly erratic when 0 <em>&lt;</em> <em>x</em> &lt; 1 [G. Hamel, <em>Math. Annalen</em> <strong>60</strong> (1905), 459–462].</p>
 
@@ -542,7 +542,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_4" id="ch01ex_2_5_4a">4</a>. There are 2568 digits. The leading digit is 4 (since $\log_{10}4=2\log_{10}2 ≈ .602$). The least significant digit is zero, and in fact by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) the low order 249 digits are all zero. The exact value of 1000! was calculated by H. S. Uhler using a desk calculator and much patience over a period of several years, and appears in <em>Scripta Mathematica</em> <strong>21</strong> (1955), 266–267. It begins with 402 38726 00770 ... . (The last step in the calculation, to multiply the two numbers 750! and <span class="middle"><img src="../Images/e480_13.gif"></span>, was performed on UNIVAC I by John W. Wrench, Jr., “in the extraordinary time of 2½ minutes.” Nowadays, of course, a desktop machine easily produces 1000! in a fraction of a second, and we can confirm that Uhler’s value was 100% correct.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_5" id="ch01ex_2_5_5a">5</a>. (39902)(97/96)≈ 416 + 39902 = 40318.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_5" id="ch01ex_2_5_5a">5</a>. $(39902)(97/96)≈416+39902=40318$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_6" id="ch01ex_2_5_6a">6</a>. $2^{18}·3^{8}·5^{4}·7^{2}·11·13·17·19$.</p>
 
@@ -558,7 +558,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_13" id="ch01ex_2_5_13a">13</a>. For each <em>n</em>, 1 ≤ <em>n</em> &lt; <em>p</em>, determine <em>n</em>′ as in <a href="../Text/ch01.html#ch01ex_2_4_19">exercise 1.2.4–19</a>. There is exactly one such <em>n</em>′, by Law 1.2.4B; and $(n')'=n$. Therefore we can pair off the numbers in groups of two, provided that <em>n</em>′≠ <em>n</em>. If <em>n</em>′ = <em>n</em>, we have $n^{2}≡1\text{ (modulo }p)$; hence, as in <a href="../Text/ch01.html#ch01ex_2_4_26">exercise 1.2.4–26</a>, <em>n</em> = 1 or <em>n</em> = <em>p</em> − 1. So $(p-1)!≡ 1·1\ldots1·(-1)$, since 1 and <em>p</em> − 1 are the only unpaired elements.</p>
 
-  <p><a id="page_481"></a><a href="../Text/ch01a.html#ch01ex_2_5_14" id="ch01ex_2_5_14a">14</a>. Among the numbers ${1,2,\ldots,n}$ that are <em>not</em> multiples of <em>p</em>, there are $\lfloor n/p\rfloor$ complete sets of <em>p</em> − 1 consecutive elements, each with a product congruent to $-1\text{ (modulo }p)$ by Wilson’s theorem. There are also $a_{0}$ left over, which are congruent to $a_{0}!\text{ (modulo }p)$; so the contribution from the factors that are not multiples of <em>p</em> is $(-1)^{\lfloor n/p\rfloor}a_{0}!$. The contribution from the factors that <em>are</em> multiples of <em>p</em> is the same as the contribution in $\lfloor n/p\rfloor !$; this argument can therefore be repeated to get the desired formula.</p>
+  <p><a id="page_481"></a><a href="../Text/ch01a.html#ch01ex_2_5_14" id="ch01ex_2_5_14a">14</a>. Among the numbers $\{1,2,\ldots,n\}$ that are <em>not</em> multiples of <em>p</em>, there are $\lfloor n/p\rfloor$ complete sets of <em>p</em> − 1 consecutive elements, each with a product congruent to $-1\text{ (modulo }p)$ by Wilson’s theorem. There are also $a_{0}$ left over, which are congruent to $a_{0}!\text{ (modulo }p)$; so the contribution from the factors that are not multiples of <em>p</em> is $(-1)^{\lfloor n/p\rfloor}a_{0}!$. The contribution from the factors that <em>are</em> multiples of <em>p</em> is the same as the contribution in $\lfloor n/p\rfloor !$; this argument can therefore be repeated to get the desired formula.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_15" id="ch01ex_2_5_15a">15</a>. $(n!)^{3}$. There are $n!$ terms. Each term has one entry from each row and each column, so it has the value $(n!)^{2}$.</p>
 
@@ -600,7 +600,7 @@
 
   <p class="answerNP">Formally, if $a_{1}a_{2}\ldots a_{j}$ is a partition of the set $\{1,2,\ldots,n-1\}$, define</p>
 
-  <p class="center">$Da_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪{n})a_{2}\ldots a_{j}+a_{1}(a_{2}∪{n})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪{n})$.</p>
+  <p class="center">$\cal{D}a_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪\{n\})a_{2}\ldots a_{j}+a_{1}(a_{2}∪\{n\})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪\{n\})$.</p>
 
   <p class="answerNP">This rule is an exact parallel of the rule</p>
 
@@ -1128,7 +1128,7 @@
 
   <p class="answerNP">Now apply Eqs. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>) and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-52">52</a>). (Or, differentiate and use <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_6" id="ch01ex_2_9_6a">6</a>. $(\ln(1/(1-z)))^{2}$; the derivative is twice the generating function for the harmonic numbers; the sum is therefore 2H_{n−1}/n.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_6" id="ch01ex_2_9_6a">6</a>. $(\ln(1/(1-z)))^{2}$; the derivative is twice the generating function for the harmonic numbers; the sum is therefore $2H_{n−1}/n$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_8" id="ch01ex_2_9_8a">8</a>. $1/((1-z)(1-z^{2})(1-z^{3})\ldots)$. [This is historically one of the first applications of generating functions. For an interesting account of L. Euler’s eighteenth-century researches concerning this generating function, see G. Pólya, <em>Induction and Analogy in Mathematics</em> (Princeton: Princeton University Press, 1954), Chapter 6.]</p>
 
@@ -1138,11 +1138,11 @@
 
   <p class="answerNP"><a id="page_497"></a><em>Note:</em> The equations in this recurrence are called <em>Newton’s identities</em>, since they were first published in Isaac Newton’s <em>Arithmetica Universalis</em> (1707); see D. J. Struik’s <em>Source Book in Mathematics</em> (Harvard University Press, 1969), 94–95.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_11" id="ch01ex_2_9_11a">11</a>. Since $∑_{m≥1}S_{m}z^{m}/m=\ln G(z)=∑_{k≥1}(-1)^{k-1}(h_{1}z+h_{2}z^{2}+\cdots)^{k}/k$, the desired coefficient is $(-1)^{k_{1}+k_{2}+\cdots+k_{m}-1}m(k_{1}+k_{2}+\cdots+k_{m}-1)!/k_{1}!k_{2}!\ldots k_{m}!$. [Multiply by $(-1)^{m-1$} to get the coefficient of <span class="middle"><img src="../Images/e497_01.gif"></span> when S_{m} is expressed in terms of the <em>e</em>’s of <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 10</a>. Albert Girard stated the formulas for $S_{1}$, $S_{2}$, $S_{3}$, and $S_{4}$ in terms of $e_{1}$, $e_{2}$, $e_{3}$, and $e_{4}$ near the end of his <em>Invention Nouvelle en Algébre</em> (Amsterdam: 1629); this was the birth of the theory of symmetric functions.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_11" id="ch01ex_2_9_11a">11</a>. Since $∑_{m≥1}S_{m}z^{m}/m=\ln G(z)=∑_{k≥1}(-1)^{k-1}(h_{1}z+h_{2}z^{2}+\cdots)^{k}/k$, the desired coefficient is $(-1)^{k_{1}+k_{2}+\cdots+k_{m}-1}m(k_{1}+k_{2}+\cdots+k_{m}-1)!/k_{1}!k_{2}!\ldots k_{m}!$. [Multiply by $(-1)^{m-1}$ to get the coefficient of <span class="middle"><img src="../Images/e497_01.gif"></span> when $S_{m}$ is expressed in terms of the <em>e</em>’s of <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 10</a>. Albert Girard stated the formulas for $S_{1}$, $S_{2}$, $S_{3}$, and $S_{4}$ in terms of $e_{1}$, $e_{2}$, $e_{3}$, and $e_{4}$ near the end of his <em>Invention Nouvelle en Algébre</em> (Amsterdam: 1629); this was the birth of the theory of symmetric functions.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_12" id="ch01ex_2_9_12a">12</a>. <span class="middle"><img src="../Images/e497_02.gif"></span>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_13" id="ch01ex_2_9_13a">13</a>. <span class="middle"><img src="../Images/e497_03.gif"></span>. Adding these expressions together for all <em>n</em>, we find $<strong>L</strong>f(s)=G(e^{-s})/s$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_13" id="ch01ex_2_9_13a">13</a>. <span class="middle"><img src="../Images/e497_03.gif"></span>. Adding these expressions together for all <em>n</em>, we find $\class{st}{\rm L}f(s)=G(e^{-s})/s$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_14" id="ch01ex_2_9_14a">14</a>. See <a href="../Text/ch01a.html#ch01ex_2_6_2">exercise 1.2.6–38</a>.</p>
 
@@ -1194,7 +1194,7 @@
 
   <div class="image"><img src="../Images/e498_11.gif"></div>
 
-  <p class="answerNP">Both polynomials $f_{m}$ and $g_{m}$ satisfy the same recurrence $f_{m}=z_{m}f_{m-1}+z_{m-1}f_{m-2}$, $g_{m}=z_{m}g_{m-1}+z_{m-1}g_{m-2}$, with the initial conditions $f_{-1}=0,f_{0}=g_{-1}=g_{0}=z_{0}=1$. It follows that $g_{m}$ is the sum of all terms obtainable by starting with $z_{1}\ldots z_{m}$ and striking out zero or more nonadjacent factors; there are $F_{m+2}$ ways to do this. A similar interpretation applies to f_{m}, except that $z_{1}$ must remain. In part (b) we will encounter the polynomial $h_{m}=z_{m}g_{m-1}+z_{m-1}f_{m-2}$; this is the sum of all terms <a id="page_499"></a>obtained from $z_{1}\ldots z_{m}$ by striking out factors that are not <em>cyclically</em> adjacent. For example, $h_{3}=z_{1}z_{2}z_{3}+z_{1}z_{2}+z_{1}z_{3}+z_{2}z_{3}$.</p>
+  <p class="answerNP">Both polynomials $f_{m}$ and $g_{m}$ satisfy the same recurrence $f_{m}=z_{m}f_{m-1}+z_{m-1}f_{m-2}$, $g_{m}=z_{m}g_{m-1}+z_{m-1}g_{m-2}$, with the initial conditions $f_{-1}=0,f_{0}=g_{-1}=g_{0}=z_{0}=1$. It follows that $g_{m}$ is the sum of all terms obtainable by starting with $z_{1}\ldots z_{m}$ and striking out zero or more nonadjacent factors; there are $F_{m+2}$ ways to do this. A similar interpretation applies to $f_{m}$, except that $z_{1}$ must remain. In part (b) we will encounter the polynomial $h_{m}=z_{m}g_{m-1}+z_{m-1}f_{m-2}$; this is the sum of all terms <a id="page_499"></a>obtained from $z_{1}\ldots z_{m}$ by striking out factors that are not <em>cyclically</em> adjacent. For example, $h_{3}=z_{1}z_{2}z_{3}+z_{1}z_{2}+z_{1}z_{3}+z_{2}z_{3}$.</p>
 
   <p class="exercises1N">(b) By part (a), <span class="middle"><img src="../Images/e499_01.gif"></span>; hence</p>
 
@@ -1242,7 +1242,7 @@
 
   <p class="answerNP">tells us that $κ_{3}/n=p(1-p)(1-2p)=pq(q-p)$. (This nice pattern does not continue to the coefficient of $t^{4}$.) Setting $p=k^{-1}$ gives us <span class="middle"><img src="../Images/e500_04.gif"></span> in the case of distribution (<a href="../Text/ch01a.html#ch01eq-lev2sec10-8">8</a>). And for (<a href="../Text/ch01a.html#ch01eq-lev2sec10-20">20</a>), we have $\ln G(e^{t})=t+H(nt)-H(t)$ where $H(t)=\ln((e^{t}-1)/t)$. Since $H'(t)=e^{t}/(e^{t}-1)-1/t$, we have $κ_{r}=(n^{r}-1) B_{r}/r$ for all <em>r</em> ≥ 2 in this case; in particular, $κ_{3}=0$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_7" id="ch01ex_2_10_7a">7</a>. The probability that <em>A</em> = <em>k</em> is $p_{mk}$. For we may consider the values to be $1,2,\ldots,m$. Given any partitioning of the <em>n</em> positions into <em>m</em> disjoint sets, there are $m!$ ways to assign the numbers $1,\ldots,m$ to these sets. <a href="../Text/ch01a.html#ch01alg-lev2sec10-M">Algorithm M</a> treats these values as if only the rightmost element of each set were present; so p_{mk} is the average for any fixed partitioning. For example, if <em>n</em> = 5, <em>m</em> = 3, one partition is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_7" id="ch01ex_2_10_7a">7</a>. The probability that <em>A</em> = <em>k</em> is $p_{mk}$. For we may consider the values to be $1,2,\ldots,m$. Given any partitioning of the <em>n</em> positions into <em>m</em> disjoint sets, there are $m!$ ways to assign the numbers $1,\ldots,m$ to these sets. <a href="../Text/ch01a.html#ch01alg-lev2sec10-M">Algorithm M</a> treats these values as if only the rightmost element of each set were present; so $p_{mk}$ is the average for any fixed partitioning. For example, if <em>n</em> = 5, <em>m</em> = 3, one partition is</p>
 
   <p class="center">$\{X[1],X[4]\}$&nbsp;&nbsp;&nbsp;&nbsp;$\{X[2],X[5]\}$&nbsp;&nbsp;&nbsp;&nbsp;$\{X[3]\}$;</p>
 
@@ -1274,7 +1274,7 @@
 
   <div class="image"><img src="../Images/e501_05.gif"></div>
 
-  <p class="answerNP"><em>Notes:</em> This is a theorem of Goncharov [<em>Izv. Akad. Nauk SSSR Ser. Math.</em> <strong>8</strong> (1944), 3–48]. P. Flajolet and M. Soria [<em>Disc. Math.</em> <strong>114</strong> (1993), 159–180] have extended the analysis to show that G_{n}(<em>z</em>) and a large family of related distributions not only are approximately normal near their mean values, they also have uniformly exponential tails, in the sense that</p>
+  <p class="answerNP"><em>Notes:</em> This is a theorem of Goncharov [<em>Izv. Akad. Nauk SSSR Ser. Math.</em> <strong>8</strong> (1944), 3–48]. P. Flajolet and M. Soria [<em>Disc. Math.</em> <strong>114</strong> (1993), 159–180] have extended the analysis to show that $G_{n}(z)$ and a large family of related distributions not only are approximately normal near their mean values, they also have uniformly exponential tails, in the sense that</p>
 
   <div class="image"><img src="../Images/e501_06.gif"></div>
 
@@ -1298,7 +1298,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_20" id="ch01ex_2_10_20a">20</a>. We have $m_{L}=\max\{a_{1}-b_{1},\ldots,a_{n}-b_{n}\}$. <em>Proof:</em> If not, let <em>k</em> be the smallest subscript such that $a_{k}-b_{k}\gt m_{L}$. Then $a_{k}$ is not a left-to-right maximum, so there is a <em>j</em> &lt; <em>k</em> with $a_{j}≥a_{k}$. But then $a_{j}-b_{j}≥a_{k}-b_{k}\gt m_{L}$, contradicting the minimality of <em>k</em>. Similarly, $m_{R}=\max\{b_{1}-a_{1},\ldots,b_{n}-a_{n}\}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_21" id="ch01ex_2_10_21a">21</a>. The result is trivial when $\epsilon≥q$, so we may assume that $\epsilon\lt q$. Setting <span class="middle"><img src="../Images/e502_01.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>) gives <span class="middle"><img src="../Images/e502_02.gif"></span>. Now <span class="middle"><img src="../Images/e502_03.gif"></span> since $t≤e^{t-1}$ for all real <em>t</em>. And $(q-\epsilon)\ln <span class="middle"><img src="../Images/e502_04.gif"></span>$. (A more detailed analysis yields the slightly stronger estimate $\exp(-\epsilon^{2}n/(2pq))$ when <span class="middle"><img src="../Images/e502_05.gif"></span>; still further work yields the upper bound $\exp(-2\epsilon^{2}n)$ for all <em>p</em>.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_21" id="ch01ex_2_10_21a">21</a>. The result is trivial when $\epsilon≥q$, so we may assume that $\epsilon\lt q$. Setting <span class="middle"><img src="../Images/e502_01.gif"></span> in (<a href="../Text/ch01a.html#ch01eq-lev2sec10-25">25</a>) gives <span class="middle"><img src="../Images/e502_02.gif"></span>. Now <span class="middle"><img src="../Images/e502_03.gif"></span> since $t≤e^{t-1}$ for all real <em>t</em>. And $(q-\epsilon)\ln\frac{q}{q-\epsilon}=\epsilon-\frac{1}{2\cdot1}\epsilon^{2}q^{-1}-\frac{1}{3\cdot2}\epsilon^{3}q^{-2}-\cdots\le\epsilon-\frac{1}{2q}\epsilon^{2}$. (A more detailed analysis yields the slightly stronger estimate $\exp(-\epsilon^{2}n/(2pq))$ when <span class="middle"><img src="../Images/e502_05.gif"></span>; still further work yields the upper bound $\exp(-2\epsilon^{2}n)$ for all <em>p</em>.)</p>
 
   <p class="exercises1N">By reversing the roles of heads and tails we find</p>
 
@@ -1350,7 +1350,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_2_2" id="ch01ex_3_2_2a">2</a>. The function $B_{m+1}(\{x\})$ must be continuous, for the integration by parts.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_3" id="ch01ex_3_2_3a">3</a>. <span class="middle"><img src="../Images/e503_04.gif"></span>. [<em>Notes:</em> We have $B_{m}(x)=(-1)^{m}B_{m}(1-x)$, and $B_{m}(x)$ is $m!$ times the coefficient of $z^{m}$ in $ze^{xz}/(e^{z}-1)$. In particular, since $e^{z/2}/(e^{z}-1)=1/(e^{z/2}-1)-1/(e^{z}-1)$ we have <span class="middle"><img src="../Images/e503_05.gif"></span>. It is not difficult to prove that the maximum of $|B_{m}-B_{m}(x)|$ for 0 ≤ <em>x</em> ≤ 1 occurs at <span class="middle"><img src="../Images/e503_06.gif"></span> when <em>m</em> is even. Now when <em>m</em> = 2<em>k</em> ≥ 4, let us write simply $R_{m}$ and $C_{m}$ for the quantities $R_{mn}$ and $C_{mn}$. We have <span class="middle"><img src="../Images/e503_07.gif"></span>, and $B_{m}-B_{m}({x})$ is between 0 and $(2-2^{1-m})B_{m}$; hence $R_{m-2}$ lies between 0 and $(2-2^{1-m})C_{m}$. It follows that $R_{m}$ lies between $-C_{m}$ and $(1-2^{1-m})C_{m}$, a slightly stronger result. According to this argument we see that if $f^{(m+2)}(x) f^{(m+4)}(x)\gt 0$ for 1 &lt; <em>x</em> &lt; <em>n</em>, the quantities $C_{m+2}$ and $C_{m+4}$ have opposite signs, while $R_{m}$ has the sign of $C_{m+2}$ and $R_{m+2}$ has the sign of $C_{m+4}$ and $|R_{m+2}|≤|C_{m+2}|$; this proves (<a href="../Text/ch01b.html#ch01eq-lev3sec2-13">13</a>). See J. F. Steffensen, <em>Interpolation</em> (Baltimore: 1927),§14.]</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_3" id="ch01ex_3_2_3a">3</a>. <span class="middle"><img src="../Images/e503_04.gif"></span>. [<em>Notes:</em> We have $B_{m}(x)=(-1)^{m}B_{m}(1-x)$, and $B_{m}(x)$ is $m!$ times the coefficient of $z^{m}$ in $ze^{xz}/(e^{z}-1)$. In particular, since $e^{z/2}/(e^{z}-1)=1/(e^{z/2}-1)-1/(e^{z}-1)$ we have <span class="middle"><img src="../Images/e503_05.gif"></span>. It is not difficult to prove that the maximum of $|B_{m}-B_{m}(x)|$ for 0 ≤ <em>x</em> ≤ 1 occurs at <span class="middle"><img src="../Images/e503_06.gif"></span> when <em>m</em> is even. Now when <em>m</em> = 2<em>k</em> ≥ 4, let us write simply $R_{m}$ and $C_{m}$ for the quantities $R_{mn}$ and $C_{mn}$. We have <span class="middle"><img src="../Images/e503_07.gif"></span>, and $B_{m}-B_{m}(\{x\})$ is between 0 and $(2-2^{1-m})B_{m}$; hence $R_{m-2}$ lies between 0 and $(2-2^{1-m})C_{m}$. It follows that $R_{m}$ lies between $-C_{m}$ and $(1-2^{1-m})C_{m}$, a slightly stronger result. According to this argument we see that if $f^{(m+2)}(x) f^{(m+4)}(x)\gt 0$ for 1 &lt; <em>x</em> &lt; <em>n</em>, the quantities $C_{m+2}$ and $C_{m+4}$ have opposite signs, while $R_{m}$ has the sign of $C_{m+2}$ and $R_{m+2}$ has the sign of $C_{m+4}$ and $|R_{m+2}|≤|C_{m+2}|$; this proves (<a href="../Text/ch01b.html#ch01eq-lev3sec2-13">13</a>). See J. F. Steffensen, <em>Interpolation</em> (Baltimore: 1927),§14.]</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_2_4" id="ch01ex_3_2_4a">4</a>. <span class="middle"><img src="../Images/e503_08.gif"></span>.</p>
 
@@ -1384,7 +1384,7 @@
 
   <p class="answerNP">Incidentally, <span class="middle"><img src="../Images/e504_06.gif"></span> can be written <span class="middle"><img src="../Images/e504_07.gif"></span> where $α=1-1/c$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln <span class="middle"><img src="../Images/e504_08.gif"></span>$, $\ln <span class="middle"><img src="../Images/e504_09.gif"></span>$, and $\ln (n!)^{2}=(2n+1)\ln <span class="middle"><img src="../Images/e504_10.gif"></span>$; hence <span class="middle"><img src="../Images/e504_11.gif"></span>. (b) Since <span class="middle"><img src="../Images/e504_12a.gif"></span> and <span class="middle"><img src="../Images/e504_12.gif"></span>, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln(2n)!=\left(2n+\frac12\right)\ln 2n-2n+\sigma+\frac{1}{24n}+O(n^{-3})$, and $\ln(n!)^{2}=(2n+1)\ln n-2n+2\sigma+\frac{1}{6n}+O(n^{-3})$; hence <span class="middle"><img src="../Images/e504_11.gif"></span>. (b) Since <span class="middle"><img src="../Images/e504_12a.gif"></span> and <span class="middle"><img src="../Images/e504_12.gif"></span>, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
 
   <div class="image"><img src="../Images/e504_13.gif"></div>
 
@@ -1398,7 +1398,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_1" id="ch01ex_3_3_1a">1</a>. Integrate by parts.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_2" id="ch01ex_3_3_2a">2</a>. Substitute the series for e^{−<em>t</em>} in the integral.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_2" id="ch01ex_3_3_2a">2</a>. Substitute the series for $e^{-t}$ in the integral.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_3" id="ch01ex_3_3_3a">3</a>. See Eq. <a href="../Text/ch01a.html#ch01ex_2_6_48">exercise 1.2.6–48</a>.</p>
 
