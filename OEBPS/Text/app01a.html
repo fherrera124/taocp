@@ -34,7 +34,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_4" id="ch01ex_2_13_4a">4</a>. Nonzero locations:</p>
 
-  <div class="image"><img src="../Images/511pro01.gif"></div>
+  <div class="image"><img src="../Images/511pro01.png"></div>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_5" id="ch01ex_2_13_5a">5</a>. Each <code>OUT</code> waits for the previous printer operation to finish (from the other buffer).</p>
 
@@ -48,25 +48,25 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_9" id="ch01ex_2_13_9a">9</a>. The (4:4) field of each entry in the following table holds the maximum F setting; the (1:2) field is the location of an appropriate validity-check routine.</p>
 
-  <div class="image"><img src="../Images/512pro01.gif"></div>
+  <div class="image"><img src="../Images/512pro01.png"></div>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_10" id="ch01ex_2_13_10a">10</a>. The catch to this problem is that there may be several places in a row or column where the minimum or maximum occurs, and each is a potential saddle point.</p>
 
   <p class="exercisesp"><a id="page_513"></a><em>Solution 1:</em> In this solution we run through each row in turn, making a list of all columns in which the row minimum occurs and then checking each column on the list to see if the row minimum is also a column maximum. rX ≡ current min; rI1 traces through the matrix, going from 72 down to zero unless a saddle point is found; rI2 ≡ column index of rI1; rI3 ≡ size of list of minima. Notice that in all cases the terminating condition for a loop is that an index register is ≤ 0.</p>
 
-  <div class="image"><img src="../Images/513pro01.gif"></div>
+  <div class="image"><img src="../Images/513pro01.png"></div>
 
   <p class="exercisesp"><em>Solution 2:</em> An infusion of mathematics gives a different algorithm.</p>
 
   <p class="exercisesp"><strong>Theorem.</strong> <em>Let $R(i)=\min_{j} a_{ij}$, $C(j)=\max_{i} a_{ij}$. The element $a_{\large i_{0}j_{0}}$ is a saddle point if and only if $R(i_{0})=\max_{i} R(i)=C(j_{0})=\min_{j} C(j)$</em>.</p>
 
-  <p class="exercisesp"><em>Proof.</em> If $a_{\large i_{0}j_{0}}$ is a saddle point, then for any fixed <em>i</em>, $R(i_{0})=C(j_{0})≥a_{ij_{0}}≥R(i)$; so $R(i_{0})=\max_{i} R(i)$. Similarly $C(j_{0})=\min_{j} C(j)$. Conversely, we have $R(i)≤a_{ij}≤C(j)$ for all <em>i</em> and <em>j</em>; hence $R(i_{0})=C(j_{0})$ implies that $a_{\large i_{0}j_{0}}$ is a saddle point. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="exercisesp"><em>Proof.</em> If $a_{\large i_{0}j_{0}}$ is a saddle point, then for any fixed <em>i</em>, $R(i_{0})=C(j_{0})≥a_{ij_{0}}≥R(i)$; so $R(i_{0})=\max_{i} R(i)$. Similarly $C(j_{0})=\min_{j} C(j)$. Conversely, we have $R(i)≤a_{ij}≤C(j)$ for all <em>i</em> and <em>j</em>; hence $R(i_{0})=C(j_{0})$ implies that $a_{\large i_{0}j_{0}}$ is a saddle point. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="indent">(This proof shows that we always have $\max_{i} R(i) ≤\min_{j} C(j)$. So there is no saddle point if and only if all the <em>R</em>’s are less than all the <em>C</em>’s.)</p>
 
   <p class="indent">According to the theorem, it suffices to find the smallest column maximum, then to search for an equal row minimum. During Phase 1, rI1 ≡ column index; rI2 runs through the matrix. During Phase 2, rI1 ≡ possible answer; rI2 runs through the matrix; rI3 ≡ row index times 8; rI4 ≡ column index.</p>
 
-  <div class="image"><a id="page_514"></a><img src="../Images/514pro01.gif"></div>
+  <div class="image"><a id="page_514"></a><img src="../Images/514pro01.png"></div>
 
   <p class="indent">We leave it to the reader to invent a still better solution in which Phase 1 records all possible rows that are candidates for the row search in Phase 2. It is not necessary to search all rows, just those $i_{0}$ for which $C(j_{0})=\min_{j} C(j)$ implies $a_{\large i_{0}j_{0}}=C(j_{0})$. Usually there is at most one such row.</p>
 
@@ -76,27 +76,27 @@
 
   <p><strong><a href="../Text/ch01b.html#ch01ex_2_13_11" id="ch01ex_2_13_11a">11.</a></strong> Assume an $m\times n$ matrix. (a) By the theorem in the answer to <a href="../Text/ch01b.html#ch01ex_2_13_10">exercise 10</a>, all saddle points of a matrix have the same value, so (under our assumption of distinct elements) there is at most one saddle point. By symmetry the desired probability is <em>mn</em> times the probability that $a_{11}$ is a saddle point. This latter is $1/(mn)!$ times the <a id="page_515"></a>number of permutations with $a_{12}\gt a_{11},\ldots,a_{1n}\gt a_{11},a_{11}\gt a_{21},\ldots,a_{11}\gt a_{m1}$; this is $1/(m+n-1)!$ times the number of permutations of $m+n-1$ elements in which the first is greater than the next $(m-1)$ and less than the remaining $(n-1)$, namely $(m-1)! (n-1)!$. The answer is therefore</p>
 
-  <div class="image"><img src="../Images/e515_01.gif"></div>
+  <div class="image"><img src="../Images/e515_01.png"></div>
 
-  <p class="exercisesp">In our case this is <span class="middle"><img src="../Images/e515_01a.gif"></span>, only one chance in 1430. (b) Under the second assumption, an entirely different method must be used. The probability equals the probability that there is a saddle point with value zero plus the probability that there is a saddle point with value one. The former is the probability that there is at least one column of zeros; the latter is the probability that there is at least one row of ones. The answer is $(1-(1-2^{-m})^{n})+(1-(1-2^{-n})^{m})$; in our case it comes to $924744796234036231/18446744073709551616$, about 1 in $19.9$. An approximate answer is $n2^{-m}+m2^{-n}$.</p>
+  <p class="exercisesp">In our case this is <span class="middle"><img src="../Images/e515_01a.png"></span>, only one chance in 1430. (b) Under the second assumption, an entirely different method must be used. The probability equals the probability that there is a saddle point with value zero plus the probability that there is a saddle point with value one. The former is the probability that there is at least one column of zeros; the latter is the probability that there is at least one row of ones. The answer is $(1-(1-2^{-m})^{n})+(1-(1-2^{-n})^{m})$; in our case it comes to $924744796234036231/18446744073709551616$, about 1 in $19.9$. An approximate answer is $n2^{-m}+m2^{-n}$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_12" id="ch01ex_2_13_12a">12</a>. M. Hofri and P. Jacquet [<em>Algorithmica</em> <strong>22</strong> (1998), 516–528] have analyzed the case when the $m\times n$ matrix entries are distinct and in random order. The running times of the two <code>MIX</code> programs are then respectively $(6mn+5mH_{n}+8m+6+5(m+1)/(n-1))u+O\left((m+n)^{2}/{\small \binom{m+n}{m}}\right)$ and $(5mn+2nH_{m}+7m+7n+9H_{n})u+O(1/n)+O((\log n)^{2}/m)$, as $m→∞$ and $n→∞$, assuming that $(\log n)/m→0$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_13" id="ch01ex_2_13_13a">13</a>.</p>
 
-  <div class="image"><img src="../Images/515pro01.gif"></div>
+  <div class="image"><img src="../Images/515pro01.png"></div>
 
-  <div class="image"><img src="../Images/515pro01a.gif"></div>
+  <div class="image"><img src="../Images/515pro01a.png"></div>
 
   <p class="exercisesp"><a id="page_516"></a>For this problem, buffering of <em>output</em> is not desirable since it could save at most 7<em>u</em> of time per line output.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_14" id="ch01ex_2_13_14a">14</a>. To make the problem more challenging, the following solution due in part to J. Petolino uses a lot of <em>trickery</em> in order to reduce execution time. Can the reader squeeze out any more microseconds?</p>
 
-  <div class="image"><img src="../Images/516pro01.gif"></div>
+  <div class="image"><img src="../Images/516pro01.png"></div>
 
-  <div class="image"><img src="../Images/516pro01a.gif"></div>
+  <div class="image"><img src="../Images/516pro01a.png"></div>
 
-  <div class="image"><a id="page_517"></a><img src="../Images/516pro01b.gif"></div>
+  <div class="image"><a id="page_517"></a><img src="../Images/516pro01b.png"></div>
 
   <p class="exercisesp"><a id="page_518"></a>A rigorous justification for the change from division to multiplication in several places can be based on the fact that the number in rA is not too large. The program works with all byte sizes.</p>
 
@@ -108,9 +108,9 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_16" id="ch01ex_2_13_16a">16</a>. Work with scaled numbers, $R_{n}=10^{n}r_{n}$. Then $R_{n} (1/m)=R$ if and only if $10^{n}/\left(R+\frac12\right)\lt{m}\le10^{n}/\left(R-\frac12\right)$; thus we find $m_{h}=\left\lfloor 2·10^{n}/(2R-1)\right\rfloor$.</p>
 
-  <div class="image"><img src="../Images/518pro01.gif"></div>
+  <div class="image"><img src="../Images/518pro01.png"></div>
 
-  <div class="image"><img src="../Images/518pro01a.gif"></div>
+  <div class="image"><img src="../Images/518pro01a.png"></div>
 
   <p class="exercisesp"><a id="page_519"></a>The output is</p>
 
@@ -124,25 +124,25 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_18" id="ch01ex_2_13_18a">18</a>.</p>
 
-  <div class="image"><img src="../Images/519pro02.gif"></div>
+  <div class="image"><img src="../Images/519pro02.png"></div>
 
   <p><a id="page_520"></a><a href="../Text/ch01b.html#ch01ex_2_13_19" id="ch01ex_2_13_19a">19</a>. (a) Induction. (b) Let <em>k</em> ≥ 0 and $X=ax_{k+1}-x_{k}$, $Y=ay_{k+1}-y_{k}$, where $a=\left\lfloor (y_{k}+n)/y_{k+1}\right\rfloor$. By part (a) and the fact that 0 &lt; <em>Y</em> ≤ <em>n</em>, we have $X⊥Y$ and $X/Y\gt x_{k+1}/y_{k+1}$. So if $X/Y≠x_{k+2}/y_{k+2}$ we have, by definition, $X/Y\gt x_{k+2}/y_{k+2}$. But this implies that</p>
 
-  <div class="image"><img src="../Images/e520_01.gif"></div>
+  <div class="image"><img src="../Images/e520_01.png"></div>
 
   <p class="indent"><em>Historical notes</em>: C. Haros gave a (more complicated) rule for constructing such sequences, in <em>J. de l’École Polytechnique</em> <strong>4</strong>, 11 (1802), 364–368; his method was correct, but his proof was inadequate. Several years later, the geologist John Farey independently conjectured that $x_{k}/y_{k}$ is always equal to $(x_{k-1}+x_{k+1})/(y_{k-1}+y_{k+1})$ [<em>Philos. Magazine and Journal</em> <strong>47</strong> (1816), 385–386]; a proof was supplied shortly afterwards by A. Cauchy [<em>Bull. Société Philomathique de Paris</em> (3) <strong>3</strong> (1816), 133–135], who attached Farey’s name to the series. For more of its interesting properties, see G. H. Hardy and E. M. Wright, <em>An Introduction to the Theory of Numbers</em>, Chapter 3.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_20" id="ch01ex_2_13_20a">20</a>.</p>
 
-  <div class="image"><img src="../Images/520pro01.gif"></div>
+  <div class="image"><img src="../Images/520pro01.png"></div>
 
-  <div class="image"><img src="../Images/520pro01a.gif"></div>
+  <div class="image"><img src="../Images/520pro01a.png"></div>
 
   <p><a id="page_521"></a><a href="../Text/ch01b.html#ch01ex_2_13_22" id="ch01ex_2_13_22a">22</a>.</p>
 
-  <div class="image"><img src="../Images/521pro01.gif"></div>
+  <div class="image"><img src="../Images/521pro01.png"></div>
 
-  <div class="image"><img src="../Images/521pro01a.gif"></div>
+  <div class="image"><img src="../Images/521pro01a.png"></div>
 
   <p class="exercisesp"><a id="page_522"></a>The last man is in position 15. The total time before output is $(4(N-1)(M+7.5)+16)u$. Several improvements are possible, such as D. Ingalls’s suggestion to have three-word packets of code ‘<code>DEC2 1; J2P NEXT; JMP OUT</code>’, where <code>OUT</code> modifies the <code>NEXT</code> field so as to delete a packet. An asymptotically faster method appears in exercise 5.1.1–5.</p>
 
@@ -176,7 +176,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_14" id="ch01ex_2_14_14a">14</a>. Writing the <em>inverse</em> of the given permutation in canonical cycle form and dropping parentheses, the quantity <em>A</em> − <em>N</em> is the sum of the number of consecutive elements greater than a given element and immediately to its right. For example, if the original permutation is $(1\;6\;5)(3\;7\;8\;4)$, the canonical form of the inverse is $(3\;4\;8\;7)(2)(1\;5\;6)$; set up the array</p>
 
-  <div class="image"><img src="../Images/523fig01.gif"></div>
+  <div class="image"><img src="../Images/523fig01.png"></div>
 
   <p class="exercisesp">and the quantity <em>A</em> is the number of “dots,” 16. The number of dots below the <em>k</em>th element is the number of right-to-left minima in the first <em>k</em> elements (there are 3 dots below 7 in the example above, since there are 3 right-to-left minima in 3487). Hence the average is $H_{1}+H_{2}+\cdots+H_{n}=(n+1)H_{n}-n$.</p>
 
@@ -184,11 +184,11 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_16" id="ch01ex_2_14_16a">16</a>. 1324, 4231, 3214, 4213, 2143, 3412, 2413, 1243, 3421, 1324, ....</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_17" id="ch01ex_2_14_17a">17</a>. (a) The probability $p_{m}$ that the cycle is an <em>m</em>-cycle is $n!/m$ divided by $n! H_{n}$, so $p_{m}=1/(mH_{n})$. The average length is <span class="middle"><img src="../Images/e524_01.gif"></span>. (b) Since the total number of <em>m</em>-cycles is $n!/m$, the total number of appearances of elements in <em>m</em>-cycles is $n!$. Each element appears as often as any other, by symmetry, so <em>k</em> appears $n!/n$ times in <em>m</em>-cycles. In <em>this</em> case, therefore, $p_{m}=1/n$ for all <em>k</em> and <em>m</em>; the average is <span class="middle"><img src="../Images/e524_02.gif"></span>.</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_17" id="ch01ex_2_14_17a">17</a>. (a) The probability $p_{m}$ that the cycle is an <em>m</em>-cycle is $n!/m$ divided by $n! H_{n}$, so $p_{m}=1/(mH_{n})$. The average length is <span class="middle"><img src="../Images/e524_01.png"></span>. (b) Since the total number of <em>m</em>-cycles is $n!/m$, the total number of appearances of elements in <em>m</em>-cycles is $n!$. Each element appears as often as any other, by symmetry, so <em>k</em> appears $n!/n$ times in <em>m</em>-cycles. In <em>this</em> case, therefore, $p_{m}=1/n$ for all <em>k</em> and <em>m</em>; the average is <span class="middle"><img src="../Images/e524_02.png"></span>.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_18" id="ch01ex_2_14_18a">18</a>. See <a href="../Text/ch01c.html#ch01ex_2_14_22">exercise 22</a>(e).</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_19" id="ch01ex_2_14_19a">19</a>. $|P_{n0}-n!/e|=n!/(n+1)!-n!/(n+2)!+\cdots$, an alternating series of decreasing magnitudes, which is less than <span class="middle"><img src="../Images/e524_03.gif"></span>.</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_19" id="ch01ex_2_14_19a">19</a>. $|P_{n0}-n!/e|=n!/(n+1)!-n!/(n+2)!+\cdots$, an alternating series of decreasing magnitudes, which is less than <span class="middle"><img src="../Images/e524_03.png"></span>.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_20" id="ch01ex_2_14_20a">20</a>. There are $α_{1}+α_{2}+\cdots$ cycles in all, which can be permuted among one another, and each <em>m</em>-cycle can be independently written in <em>m</em> ways. So the answer is</p>
 
@@ -200,41 +200,41 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_22" id="ch01ex_2_14_22a">22</a>. (a) If $k_{1}+2k_{2}+\cdots=n$, the probability in (ii) is $∏_{j\gt 0}f(w,j,k_{j})$, which is assumed to equal $(1-w)w^{n}/(k_{1}! 1^{k_{1}}k_{2}! 2^{k_{2}}\ldots)$; hence</p>
 
-  <div class="image"><img src="../Images/e524_04.gif"></div>
+  <div class="image"><img src="../Images/e524_04.png"></div>
 
   <p class="exercisesp">Therefore by induction $f(w,m,k)=(w^{m}/m)^{k}f(w,m,0)/k!$, and condition (i) implies that $f (w,m,k)=(w^{m}/m)^{k}e^{-w^{m}/m}/k!$. [In other words, $α_{m}$ is chosen with a Poisson distribution; see <a href="../Text/ch01a.html#ch01ex_2_10_15">exercise 1.2.10–15</a>.]</p>
 
-  <p class="indent">(b) <span class="middle"><img src="../Images/e524_05.gif"></span></p>
+  <p class="indent">(b) <span class="middle"><img src="../Images/e524_05.png"></span></p>
 
   <p class="exercisesp">Hence the probability that $α_{1}+2α_{2}+\cdots≤n$ is $(1-w)(1+w+\cdots+w^{n})=1-w^{n+1}$.</p>
 
   <p class="indent">(c) The average of <em>φ</em> is</p>
 
-  <div class="image"><img src="../Images/e524_06.gif"></div>
+  <div class="image"><img src="../Images/e524_06.png"></div>
 
   <p class="indent">(d) Let $φ(α_{1},α_{2},\ldots)=α_{2}+α_{4}+α_{6}+\cdots$. The average value of the linear combination <em>φ</em> is the sum of the average values of $α_{2},α_{4},α_{6},\ldots$; and the average value of $α_{m}$ is</p>
 
-  <div class="image"><img src="../Images/e524_07.gif"></div>
+  <div class="image"><img src="../Images/e524_07.png"></div>
 
   <p class="exercisesp"><a id="page_525"></a>Therefore the average value of <em>φ</em> is</p>
 
-  <div class="image"><img src="../Images/e525_01.gif"></div>
+  <div class="image"><img src="../Images/e525_01.png"></div>
 
   <p class="exercisesp">The desired answer is $\frac12{H_{\lfloor{n/2}\rfloor}}$.</p>
 
   <p class="indent">(e) Set $φ(α_{1},α_{2},\ldots)=z^{α_{m}}$, and observe that the average value of <em>φ</em> is</p>
 
-  <div class="image"><img src="../Images/e525_03.gif"></div>
+  <div class="image"><img src="../Images/e525_03.png"></div>
 
   <p class="exercisesp">Hence</p>
 
-  <div class="image"><img src="../Images/e525_04.gif"></div>
+  <div class="image"><img src="../Images/e525_04.png"></div>
 
   <p class="exercisesp">the statistics are $(\min 0,{\rm ave}\;{1/m},\max\lfloor n/m\rfloor,{\rm dev}\sqrt{1/m})$, when <em>n</em> ≥ 2<em>m</em>.</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_14_23" id="ch01ex_2_14_23a">23</a>. The constant λ is <span class="middle"><img src="../Images/e525_06.gif"></span>, where <span class="middle"><img src="../Images/e525_07.gif"></span>. See <em>Trans. Amer. Math. Soc.</em> <strong>121</strong> (1966), 340–357, where many other results are proved, in particular that the average length of the <em>shortest</em> cycle is approximately $e^{-γ}\ln n$. Further terms of the asymptotic representation of $l_{n}$ have been found by Xavier Gourdon [Ph.D. thesis, École Polytechnique (Paris, 1996)]; the series begins</p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_14_23" id="ch01ex_2_14_23a">23</a>. The constant λ is <span class="middle"><img src="../Images/e525_06.png"></span>, where <span class="middle"><img src="../Images/e525_07.png"></span>. See <em>Trans. Amer. Math. Soc.</em> <strong>121</strong> (1966), 340–357, where many other results are proved, in particular that the average length of the <em>shortest</em> cycle is approximately $e^{-γ}\ln n$. Further terms of the asymptotic representation of $l_{n}$ have been found by Xavier Gourdon [Ph.D. thesis, École Polytechnique (Paris, 1996)]; the series begins</p>
 
-  <div class="image"><img src="../Images/e525_08.gif"></div>
+  <div class="image"><img src="../Images/e525_08.png"></div>
 
   <p class="exercisesp">where $ω=e^{2πi/3}$. William C. Mitchell has calculated a high-precision value of $λ=.62432\;99885\;43550\;87099\;29363\;83100\;83724\;41796+$ [<em>Math. Comp</em>. <strong>22</strong> (1968), 411–415]; no relation between λ and classical mathematical constants is known. The same constant had, however, been computed in another context by Karl Dickman in <em>Arkiv för Mat., Astron. och Fys.</em> <strong>22A</strong>, 10 (1930), 1–14; the coincidence wasn’t noticed until many years later [<em>Theor. Comp. Sci.</em> <strong>3</strong> (1976), 373].</p>
 
@@ -242,23 +242,23 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_25" id="ch01ex_2_14_25a">25</a>. One proof, by induction on <em>N</em>, is based on the fact that when the <em>N</em>th element is a member of <em>s</em> of the sets it contributes exactly</p>
 
-  <div class="image"><img src="../Images/e525_09.gif"></div>
+  <div class="image"><img src="../Images/e525_09.png"></div>
 
   <p class="exercisesp">to the sum. Another proof, by induction on <em>M</em>, is based on the fact that the number of elements that are in $S_{M}$ but not in $S_{1} ∪\cdots ∪ S_{M-1}$ is</p>
 
-  <div class="image"><img src="../Images/e525_10.gif"></div>
+  <div class="image"><img src="../Images/e525_10.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_14_26" id="ch01ex_2_14_26a">26</a>. Let $N_{0}=N$ and let $N_{k}=∑_{1≤j_{1}\lt\cdots \lt j_{k}≤M} |S_{j_{1}} ∩\cdots ∩ S_{j_{k}}|$. Then</p>
 
-  <div class="image"><img src="../Images/e525_11.gif"></div>
+  <div class="image"><img src="../Images/e525_11.png"></div>
 
   <p class="exercisesp">is the desired formula. It can be proved from the principle of inclusion and exclusion itself, or by using the method of <a href="../Text/ch01c.html#ch01ex_2_14_25">exercise 25</a> together with the fact that</p>
 
-  <div class="image"><img src="../Images/e525_12.gif"></div>
+  <div class="image"><img src="../Images/e525_12.png"></div>
 
   <p><a id="page_526"></a><a href="../Text/ch01c.html#ch01ex_2_14_27" id="ch01ex_2_14_27a">27</a>. Let $S_{j}$ be the multiples of $m_{j}$ in the stated range and let $N=am_{1}\ldots m_{t}$. Then $|S_{j} ∩ S_{k}|=N/m_{j}m_{k}$, etc., so the answer is</p>
 
-  <div class="image"><img src="../Images/e526_01.gif"></div>
+  <div class="image"><img src="../Images/e526_01.png"></div>
 
   <p class="exercisesp">This also solves <a href="../Text/ch01.html#ch01ex_2_4_30">exercise 1.2.4–30</a>, if we let $m_{1},\ldots,m_{t}$ be the primes dividing <em>N</em>.</p>
 
@@ -274,17 +274,17 @@
 
   <p class="indent">Suppose we have made such a construction for some <em>l</em> ≥ 0, where $\alpha_{jk}^{2}=\beta_{jk}^{2}=()$ for 0 ≤ <em>j</em> &lt; <em>m</em> and 1 ≤ <em>k</em> ≤ <em>n</em>. Then the permutations</p>
 
-  <div class="image"><img src="../Images/p526_02.gif"></div>
+  <div class="image"><img src="../Images/p526_02.png"></div>
 
   <p class="exercisesp">have the property that</p>
 
-  <div class="image"><img src="../Images/p526_03.gif"></div>
+  <div class="image"><img src="../Images/p526_03.png"></div>
 
   <p class="exercisesp">if <em>i</em> = <em>j</em> and <em>i</em>′ = <em>j</em>′, otherwise the product is (). Choosing $σ=(2\;3)(4\;5)$ and $τ=(3\;4\;5)$ will make the product $(1\;2\;3\;4\;5)$ as desired, when $im+i′=jm+j′$.</p>
 
   <p class="indent">The construction that leads from <em>l</em> to <em>l</em> + 1 is due to David A. Barrington [<em>J. Comp. Syst. Sci.</em> <strong>38</strong> (1989), 150–164], who proved a general theorem by which any Boolean function can be represented as a product of permutations of $\{1,2,3,4,5\}$. With a similar construction we can, for example, find sequences of permutations $(α_{j1},\ldots,α_{jn}; β_{j1},\ldots,β_{jn})$ such that</p>
 
-  <div class="image"><img src="../Images/e526_04.gif"></div>
+  <div class="image"><img src="../Images/e526_04.png"></div>
 
   <p class="exercisesp">for $0≤i,j\lt m=2^{\large 2^{l}}$ when $n=6^{l+1}-4^{l+1}$.</p>
 
@@ -303,33 +303,33 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_1" id="ch01ex_2_15_1a">1</a>.</p>
 
-  <div class="imageL"><img src="../Images/p0527_01.gif"></div>
+  <div class="imageL"><img src="../Images/p0527_01.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_2" id="ch01ex_2_15_2a">2</a>.</p>
 
-  <div class="imageL"><img src="../Images/527pro02.gif"></div>
+  <div class="imageL"><img src="../Images/527pro02.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_3" id="ch01ex_2_15_3a">3</a>.</p>
 
-  <div class="imageL"><img src="../Images/p0527_02.gif"></div>
+  <div class="imageL"><img src="../Images/p0527_02.png"></div>
 
   <p class="exercisesp">(The analogous exercise for (<a href="../Text/ch01b.html#ch01eq-lev2sec14-9">9</a>) would of course be somewhat more complicated.)</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_4" id="ch01ex_2_15_4a">4</a>.</p>
 
-  <div class="imageL"><img src="../Images/527pro01.gif"></div>
+  <div class="imageL"><img src="../Images/527pro01.png"></div>
 
-  <div class="imageL"><a id="page_528"></a><img src="../Images/p0528_01.gif"></div>
+  <div class="imageL"><a id="page_528"></a><img src="../Images/p0528_01.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_5" id="ch01ex_2_15_5a">5</a>. Any other register can be used. For example,</p>
 
-  <div class="imageL"><img src="../Images/p0528_02.gif"></div>
+  <div class="imageL"><img src="../Images/p0528_02.png"></div>
 
   <p class="exercisesp">The code is like (<a href="../Text/ch01b.html#ch01eq-lev2sec14-1">1</a>), but the first instruction becomes ‘$\tt MAX100\;STA\;EXIT(0\colon2)$’.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_6" id="ch01ex_2_15_6a">6</a>. (Solution by Joel Goldberg and Roger M. Aarons.)</p>
 
-  <div class="imageL"><img src="../Images/528pro02.gif"></div>
+  <div class="imageL"><img src="../Images/528pro02.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_15_7" id="ch01ex_2_15_7a">7</a>. (<a href="../Text/ch01b.html#ch01eq-lev2sec14-1">1</a>) An operating system can allocate high-speed memory more efficiently if program blocks are known to be “read-only.” (<a href="../Text/ch01b.html#ch01eq-lev2sec14-2">2</a>) An instruction cache in hardware will be faster and less expensive if instructions cannot change. (<a href="../Text/ch01b.html#ch01eq-lev2sec14-3">3</a>) Same as (<a href="../Text/ch01b.html#ch01eq-lev2sec14-2">2</a>), with “pipeline” in place of “cache.” If an instruction is modified after entering a pipeline, the pipeline needs to be flushed; the circuitry needed to check this condition is complex and time-consuming. (<a href="../Text/ch01b.html#ch01eq-lev2sec14-4">4</a>) Self-modifying code cannot be used by more than one process at once. (<a href="../Text/ch01b.html#ch01eq-lev2sec14-5">5</a>) Self-modifying code can defeat a jump-trace routine (<a href="../Text/ch01c.html#ch01ex_3_5_7">exercise 1.4.3.2–7</a>), which is an important diagnostic tool for “profiling” (that is, for computing the number of times each instruction is executed).</p>
 
@@ -343,7 +343,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_16_4" id="ch01ex_2_16_4a">4</a>. Here are examples from three rather different computers of historic importance: (i) On the IBM 650, using SOAP assembly language, we would have the calling sequences ‘<code>LDD A</code>’ and ‘<code>LDD B</code>’, and linkage ‘<code>A STD BX AX</code>’ and ‘<code>B STD AX BX</code>’ (with the two linkage instructions preferably in core). (ii) On the IBM 709, using common assembly languages, the calling sequences would be ‘<code>TSX A,4</code>’ and ‘<code>TSX B,4</code>’; the linkage instructions would be as follows:</p>
 
-  <div class="image"><img src="../Images/529pro01.gif"></div>
+  <div class="image"><img src="../Images/529pro01.png"></div>
 
   <p class="exercisesp">(iii) On the CDC 1604, the calling sequences would be “return jump” (<code>SLJ 4</code>) to <code>A</code> or <code>B</code>, and the linkage would be, for example,</p>
 
@@ -356,7 +356,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_16_6" id="ch01ex_2_16_6a">6</a>. Within <code>A</code> write ‘<code>JMP AB</code>’ to activate <code>B</code>, ‘<code>JMP AC</code>’ to activate <code>C</code>. Locations <code>BA</code>, <code>BC</code>, <code>CA</code>, and <code>CB</code> would, similarly, be used within <code>B</code> and <code>C</code>. The linkage is:</p>
 
-  <div class="image"><img src="../Images/529pro03.gif"></div>
+  <div class="image"><img src="../Images/529pro03.png"></div>
 
   <p class="exercisesp">[<em>Note:</em> With <em>n</em> coroutines, $2(n-1)n$ cells would be required for this style of linkage. If <em>n</em> is large, a “centralized” routine for linkage could of course be used; a method with 3<em>n</em> + 2 cells is not hard to invent. But in practice the faster method above requires just 2<em>m</em> cells, where <em>m</em> is the number of pairs $(i,j)$ such that coroutine <em>i</em> jumps to coroutine <em>j</em>. When there are many coroutines each independently jumping to others, the sequence of control is usually under external influence, as discussed in <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>.]</p>
 
@@ -366,7 +366,7 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_3_4_2" id="ch01ex_3_4_2a">2</a>.</p>
 
-  <div class="image"><img src="../Images/530pro01.gif"></div>
+  <div class="image"><img src="../Images/530pro01.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_3_4_4" id="ch01ex_3_4_4a">4</a>. Just insert ‘<code>IN 0(16)</code>’ and ‘<code>JBUS *(16)</code>’ between lines 003 and 004. (Of course on another computer this would be considerably different since it would be necessary to convert to <code>MIX</code> character code.)</p>
 
@@ -380,13 +380,13 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_3_5_1" id="ch01ex_3_5_1a">1</a>. Change lines 48 and 49 to the following sequence:</p>
 
-  <div class="image"><a id="page_531"></a><img src="../Images/531pro01.gif"></div>
+  <div class="image"><a id="page_531"></a><img src="../Images/531pro01.png"></div>
 
   <p class="exercisesp">The operator ‘<code>JSJ</code>’ here is, of course, particularly crucial.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_3_5_2" id="ch01ex_3_5_2a">2</a>.</p>
 
-  <div class="image"><img src="../Images/531pro02.gif"></div>
+  <div class="image"><img src="../Images/531pro02.png"></div>
 
   <p class="indent">A supplementary routine that writes out the final buffer and rewinds tape 0 should be called after all tracing has been performed.</p>
 
@@ -407,15 +407,15 @@
   <code>JBUS *(6)</code><br>
   <code>MOVE 1000(50)</code><br>
   <code>MOVE 1050(50)</code><br>
-  <code>OUT&nbsp;&nbsp;2000(6)</code> <span class="middle"><img src="../Images/box.gif"></span></p>
+  <code>OUT&nbsp;&nbsp;2000(6)</code> <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_3" id="ch01ex_2_18_3a">3</a>.</p>
 
-  <div class="image"><img src="../Images/532pro01.gif"></div>
+  <div class="image"><img src="../Images/532pro01.png"></div>
 
   <p class="exercisesp">At the beginning of the program, give the instruction ‘<code>ENT5 OUTBUF1</code>’. At the end of the program, say</p>
 
-  <div class="image"><img src="../Images/532pro02.gif"></div>
+  <div class="image"><img src="../Images/532pro02.png"></div>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_4" id="ch01ex_2_18_4a">4</a>. If the calculation time exactly equals the I/O time (which is the most favorable situation), both the computer and the peripheral device running simultaneously will take half as long as if they ran separately. Formally, let <em>C</em> be the calculation time for the entire program, and let <em>T</em> be the total I/O time required; then the best possible running time with buffering is $\max(C,T)$, while the running time without buffering is <em>C</em> + <em>T</em>; and of course $\frac12(C+T) ≤\max(C,T)≤C+T$.</p>
 
@@ -423,13 +423,13 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_5" id="ch01ex_2_18_5a">5</a>. The best ratio is $(n+1)\colon\!1$.</p>
 
-  <p><a href="../Text/ch01c.html#ch01ex_2_18_6" id="ch01ex_2_18_6a">6</a>. <span class="middle"><img src="../Images/532pro03.gif"></span></p>
+  <p><a href="../Text/ch01c.html#ch01ex_2_18_6" id="ch01ex_2_18_6a">6</a>. <span class="middle"><img src="../Images/532pro03.png"></span></p>
 
   <p class="exercisesp">(possibly preceded by $\tt IOC 0(U)$ to rewind the tape just in case it is necessary).</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_7" id="ch01ex_2_18_7a">7</a>. One way is to use coroutines:</p>
 
-  <div class="image"><img src="../Images/532pro04.gif"></div>
+  <div class="image"><img src="../Images/532pro04.png"></div>
 
   <p class="exercisesp"><a id="page_533"></a>Adding a few more instructions to take advantage of special cases will actually make this routine faster than (<a href="../Text/ch01c.html#ch01eq-lev2sec16-4">4</a>).</p>
 
@@ -437,23 +437,23 @@
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_9" id="ch01ex_2_18_9a">9</a>, <a href="../Text/ch01c.html#ch01ex_2_18_10" id="ch01ex_2_18_10a">10</a>, <a href="../Text/ch01c.html#ch01ex_2_18_11" id="ch01ex_2_18_11a">11</a>.</p>
 
-  <div class="image"><img src="../Images/533pro01.gif"></div>
+  <div class="image"><img src="../Images/533pro01.png"></div>
 
   <p class="exercisesp">and so on. Total time when <em>N</em> = 1 is 110000<em>u</em>; when <em>N</em> = 2 it is 89000<em>u</em>; when <em>N</em> = 3 it is 81500<em>u</em>; and when <em>N</em> ≥ 4 it is 76000<em>u</em>.</p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_12" id="ch01ex_2_18_12a">12</a>. Replace the last three lines of <a href="../Text/ch01c.html#programB">Program B</a> by</p>
 
-  <div class="image"><img src="../Images/533pro02.gif"></div>
+  <div class="image"><img src="../Images/533pro02.png"></div>
 
   <p class="indenthangingN1"><a href="../Text/ch01c.html#ch01ex_2_18_13" id="ch01ex_2_18_13a">13</a>.<br>
   <code>JRED CONTROL(U)</code><br>
-  <code>J6NZ *-1</code>&nbsp;&nbsp;<span class="middle"><img src="../Images/box.gif"></span></p>
+  <code>J6NZ *-1</code>&nbsp;&nbsp;<span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_14" id="ch01ex_2_18_14a">14</a>. If <em>N</em> = 1 the algorithm breaks down (possibly referring to the buffer while I/O is in progress); otherwise the construction will have the effect that there are two yellow buffers. This can be useful if the computational program wants to refer to two buffers at once, although it ties up buffer space. In general, the excess of <code>ASSIGN</code>s over <code>RELEASE</code>s should be nonnegative and not greater than <em>N</em>.</p>
 
   <p><a id="page_534"></a><a href="../Text/ch01c.html#ch01ex_2_18_15" id="ch01ex_2_18_15a">15</a>.</p>
 
-  <div class="image"><img src="../Images/534pro01.gif"></div>
+  <div class="image"><img src="../Images/534pro01.png"></div>
 
   <p class="exercisesp">This is a special case of the algorithm indicated in <a href="../Text/ch01c.html#ch01fig26">Fig. 26</a>.</p>
 
@@ -467,7 +467,7 @@
 
   <p class="indent"><strong>R1′.</strong> Increase <em>n</em> by one.</p>
 
-  <p class="indent"><strong>R2′.</strong> If <em>t</em> = 0, force an interrupt, going to step B3′ (using the <code>INT</code> operator). <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="indent"><strong>R2′.</strong> If <em>t</em> = 0, force an interrupt, going to step B3′ (using the <code>INT</code> operator). <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="exercisesp"><a id="app01alg-lev2sec16-B"></a><strong>Algorithm B</strong>′ (<em>Buffer control routine, which processes interrupts</em>).</p>
 
@@ -481,7 +481,7 @@
 
   <p class="indent"><strong>B5′.</strong> Advance <code>NEXTR</code> to the next clockwise buffer.</p>
 
-  <p class="indent"><strong>B6′.</strong> Decrease <em>n</em> by one, and go to step B2′. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="indent"><strong>B6′.</strong> Decrease <em>n</em> by one, and go to step B2′. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch01c.html#ch01ex_2_18_19" id="ch01ex_2_18_19a">19</a>. If <em>C</em> ≤ <em>L</em> we can have $t_{k}=(k-1)L$, $u_{k}=t_{k}+T$, and $v_{k}=u_{k}+C$ if and only if $NL≥T+C$. If <em>C</em> &gt; <em>L</em> the situation is more complex; we can have $u_{k}=(k-1)C+T$ and $v_{k}=kC+T$ if and only if there are integers $a_{1}≤a_{2} ≤\cdots≤a_{n}$ such that $t_{k}=(k-1)L+a_{k}P$ satisfies $u_{k}-T≥t_{k}≥v_{k-N}$ for <em>N</em> &lt; <em>k</em> ≤ <em>n</em>. An equivalent condition is that $NC≥b_{k}$ for <em>N</em> &lt; <em>k</em> ≤ <em>n</em>, where $b_{k}=C+T+((k-1)(C-L))\bmod P$. Let $c_{l}=\max\{b_{l+1},\ldots,b_{n},0\}$; then $c_{l}$ decreases as <em>l</em> increases, and the smallest value of <em>N</em> that keeps the process going steadily is the minimum <em>l</em> such that $c_{l}/l≤C$. Since $c_{l}\lt C+T+P$ and $c_{l}≤L+T+n(C-L)$, this value of <em>N</em> never exceeds $\lceil\min\{C+T+P,L+T+n(C-L)\}/C\rceil$. [See A. Itai and Y. Raz, <em>CACM</em> <strong>31</strong> (1988), 1338–1342.]</p>
 
@@ -499,13 +499,13 @@
 
   <p class="uln-indentC"><strong>C2.</strong> If $\tt NEXT(X)≠Λ$, set $\tt X←NEXT(X)$ and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>C3.</strong> Set $\tt NEXT(X)←NEWCARD$, $\tt NEXT(NEWCARD)←\varLambda$, $\tt TAG(NEWCARD)←1$. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>C3.</strong> Set $\tt NEXT(X)←NEWCARD$, $\tt NEXT(NEWCARD)←\varLambda$, $\tt TAG(NEWCARD)←1$. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_5" id="ch02ex_1_1_5a">5</a>. <strong>D1.</strong> Set $\tt X←LOC(TOP)$, $\tt Y←TOP$. (See step C1 above. By hypothesis, $\tt Y≠Λ$. Throughout the algorithm that follows, <code>X</code> trails one step behind <code>Y</code> in the sense that ${\tt Y}=\tt NEXT(X)$.)</p>
 
   <p class="uln-indentC"><strong>D2.</strong> If $\tt NEXT(Y)≠Λ$, set $\tt X←Y$, $\tt Y←NEXT(Y)$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>D3.</strong> (Now ${\tt NEXT(Y)}=\tt Λ$, so <code>Y</code> points to the bottom card; also <code>X</code> points to the next-to-last card.) Set $\tt NEXT(X)←\varLambda$, $\tt NEWCARD←Y$. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>D3.</strong> (Now ${\tt NEXT(Y)}=\tt Λ$, so <code>Y</code> points to the bottom card; also <code>X</code> points to the next-to-last card.) Set $\tt NEXT(X)←\varLambda$, $\tt NEWCARD←Y$. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_6" id="ch02ex_1_1_6a">6</a>. Notations (b) and (d). <em>Not</em> (a)! <code>CARD</code> is a node, not a link to a node.</p>
 
@@ -513,11 +513,11 @@
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_8" id="ch02ex_1_1_8a">8</a>. Let rA ≡ <code>N</code>, rI1≡ <code>X</code>.</p>
 
-  <div class="image"><img src="../Images/535pro01.gif"></div>
+  <div class="image"><img src="../Images/535pro01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_9" id="ch02ex_1_1_9a">9</a>. Let rI2≡ <code>X</code>.</p>
 
-  <div class="image"><img src="../Images/535pro02.gif"></div>
+  <div class="image"><img src="../Images/535pro02.png"></div>
 
   <h4 id="app01lev2sec17"><a id="page_536"></a>Section 2.2.1</h4>
 
@@ -543,33 +543,33 @@
 
   <p class="exercisesp">Consider the double generating function $G(x,z)=∑_{n,m} g_{nm}x^{m}z^{n}$, and let $g(z)=G(0,z)$. The recurrence above is equivalent to the equation</p>
 
-  <div class="image"><img src="../Images/e537_01.gif"></div>
+  <div class="image"><img src="../Images/e537_01.png"></div>
 
   <p class="exercisesp">This equation unfortunately tells us nothing if we set <em>x</em> = 0, but we can proceed by factoring the denominator as $z(1-r_{1}(z)x)(1-r_{2}(z)x)$ where</p>
 
-  <div class="image"><img src="../Images/e537_02.gif"></div>
+  <div class="image"><img src="../Images/e537_02.png"></div>
 
   <p class="exercisesp">(Note that $r_{1}+r_{2}=1/z$; $r_{1}r_{2}=1$.) We now proceed heuristically; the problem is to find some value of $g(z)$ such that $G(x,z)$ as given by the formula above has an infinite power series expansion in <em>x</em> and <em>z</em>. The function $r_{2}(z)$ has a power series, and $r_{2}(0)=0$; moreover, for fixed <em>z</em>, the value $x=r_{2}(z)$ causes the denominator of $G(x,z)$ to vanish. This suggests that we should choose $g(z)$ so that the numerator also vanishes when $x=r_{2}(z)$; in other words, we probably ought to take $zg(z)=r_{2}(z)$. With this choice, the equation for $G(x,z)$ simplifies to</p>
 
-  <div class="image"><img src="../Images/e537_03.gif"></div>
+  <div class="image"><img src="../Images/e537_03.png"></div>
 
   <p class="exercisesp">This is a power series expansion that satisfies the original equation, so we must have found the right function $g(z)$.</p>
 
   <p class="indent">The coefficients of $g(z)$ are the solution to our problem. Actually we can go further and derive a simple form for all the coefficients of $G(x,z)$: By the binomial theorem,</p>
 
-  <div class="image"><img src="../Images/e537_04.gif"></div>
+  <div class="image"><img src="../Images/e537_04.png"></div>
 
   <p class="exercisesp">Let $w=z^{2}$ and $r_{2}(z)=zf(w)$. Then $f(w)=∑_{k≥0}A_{k}(1,-2)w^{k}$ in the notation of <a href="../Text/ch01a.html#ch01lev2sec6">exercise 1.2.6</a>–<a href="../Text/ch01a.html#ch01ex_2_6_25">25</a>; hence</p>
 
-  <div class="image"><img src="../Images/e537_05.gif"></div>
+  <div class="image"><img src="../Images/e537_05.png"></div>
 
   <p class="exercisesp">We now have</p>
 
-  <div class="image"><img src="../Images/e537_06.gif"></div>
+  <div class="image"><img src="../Images/e537_06.png"></div>
 
   <p class="exercisesp">so the general solution is</p>
 
-  <div class="image"><img src="../Images/e537_07.gif"></div>
+  <div class="image"><img src="../Images/e537_07.png"></div>
 
   <p><a id="page_538"></a><a href="../Text/ch02.html#ch02ex_2_1_5" id="ch02ex_2_1_5a">5</a>. If <em>j</em> &lt; <em>k</em> and $p_{j}\lt p_{k}$, we must have taken $p_{j}$ off the stack before $p_{k}$ was put on; if $p_{j}\gt p_{k}$, we must have left $p_{k}$ on the stack until after $p_{j}$ was put on. Combining these two rules, the condition <em>i</em> &lt; <em>j</em> &lt; <em>k</em> and $p_{j}\lt p_{k}\lt p_{i}$ is impossible, since it means that $p_{j}$ must go off before $p_{k}$ and after $p_{i}$, yet $p_{i}$ appears after $p_{k}$.</p>
 
@@ -599,15 +599,15 @@
 
   <p class="exercisesp"><a id="page_539"></a>Setting $h(z)=H(0,z)$, we find $z^{-1}G(x,z)=2xG(x,z)+x(H(x,z)-h(z))+x$, and $z^{-1}H(x,z)=x^{-1}G(x,z)+x^{-1}(H(x,z)-h(z))$; consequently</p>
 
-  <div class="image"><img src="../Images/e539_01.gif"></div>
+  <div class="image"><img src="../Images/e539_01.png"></div>
 
   <p class="exercisesp">As in <a href="../Text/ch02.html#ch02ex_2_1_4">exercise 4</a>, we try to choose $h(z)$ so that the numerator cancels with a factor of the denominator. We find $G(x,z)=xz/(1-2xr_{2}(z))$ where</p>
 
-  <div class="image"><img src="../Images/e539_02.gif"></div>
+  <div class="image"><img src="../Images/e539_02.png"></div>
 
   <p class="exercisesp">Using the convention $b_{0}=1$, the desired generating function comes to</p>
 
-  <div class="image"><img src="../Images/e539_03.gif"></div>
+  <div class="image"><img src="../Images/e539_03.png"></div>
 
   <p class="exercisesp">By differentiation we find a recurrence relation that is handy for calculation: $nb_{n}=3(2n-3)b_{n-1}-(n-3)b_{n-2},n≥2$.</p>
 
@@ -615,21 +615,21 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_1_12" id="ch02ex_2_1_12a">12</a>. We have $a_n=4^{n}\sqrt{\pi n^{3}}+O(4^{n}n^{-5/2})$ by Stirling’s formula. To analyze $b_{n}$, let us first consider the general problem of estimating the coefficient of $w^{n}$ in the power series for $\sqrt{1-w}\sqrt{1-\alpha w}$ when $|α|\lt 1$. We have, for sufficiently small <em>α</em>,</p>
 
-  <div class="image"><img src="../Images/e539_06.gif"></div>
+  <div class="image"><img src="../Images/e539_06.png"></div>
 
   <p class="exercisesp">where $β=α/(1-α)$; hence the desired coefficient is $(-1)^{n}\sqrt{1-\alpha}∑_{k}\binom{1/2}{k}\beta^{k}\binom{k+1/2}{n}$.</p>
 
   <p class="exercisesp">Now</p>
 
-  <div class="image"><img src="../Images/e539_08.gif"></div>
+  <div class="image"><img src="../Images/e539_08.png"></div>
 
   <p class="exercisesp">and $\large n^{\overline{-k-1/2}}=∑_{j=0}^{m}{{-k-1/2}\brack{-k-1/2-j}}n^{-k-1/2-j}+O(n^{-k-3/2-m})$ by <a href="../Text/ch01a.html#ch01lev3sec1">Eq. 1.2.11.1</a>–(<a href="../Text/ch01a.html#ch01eq-lev3sec1-16">16</a>). Thus we obtain the asymptotic series $\large[w^{n}]\sqrt{1-w}\sqrt{1-\alpha w}=c_{0}n^{-3/2}+c_{1}n^{-5/2}+\cdots+c_{m}n^{-m-3/2}+O\left(n^{-m-5/2}\right)$ where</p>
 
-  <div class="image"><img src="../Images/e539_11.gif"></div>
+  <div class="image"><img src="../Images/e539_11.png"></div>
 
   <p class="exercisesp">For $b_{n}$, we write $1-6z+z^{2}=(1-(3+\sqrt{8})z)(1-(3-\sqrt{8})z)$ and let $w=(3+\sqrt{8})z$, $\alpha=(3-\sqrt{8}/(3+\sqrt{8})$, obtaining the asymptotic formula</p>
 
-  <div class="image"><img src="../Images/e539_15.gif"></div>
+  <div class="image"><img src="../Images/e539_15.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_1_13" id="ch02ex_2_1_13a">13</a>. V. Pratt has found that a permutation is unobtainable if and only if it contains a subsequence whose relative magnitudes are respectively</p>
 
@@ -653,13 +653,13 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_4" id="ch02ex_2_2_4a">4</a>. (a) <code>NOP *,7</code>. (b) <code>LDA X,7:7(0:2)</code>. (c) This is impossible; the code <code>LDA Y,7:7</code> where location <code>Y</code> contains <code>NOP X,7:7</code> breaks the restriction on <code>7:7</code>. (See <a href="../Text/ch02.html#ch02ex_2_2_5">exercise 5</a>.) (d) <code>LDA X,7:1</code> with the auxiliary constants</p>
 
-  <div class="image"><img src="../Images/540pro01.gif"></div>
+  <div class="image"><img src="../Images/540pro01.png"></div>
 
   <p class="exercisesp">The execution time is 6 units. (e) <code>INC6 X,7:6</code> where <code>X</code> contains <code>NOP 0,6:6</code>.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_5" id="ch02ex_2_2_5a">5</a>. (a) Consider the instruction <code>ENTA 1000,7:7</code> with the memory configuration</p>
 
-  <div class="image"><img src="../Images/540pro02.gif"></div>
+  <div class="image"><img src="../Images/540pro02.png"></div>
 
   <p class="exercisesp">and with rI1 = 1, rI2 = 2. We find that 1000,7,7 = 1001,7,7,7 = 1004,7,1,7,7 = 1005,1,7,1,7,7 = 1006,7,1,7,7 = 1008,7,7,1,7,7 = 1003,7,2,7,1,7,7 = 1001,1,1,2,7,1,7,7 = 1002,1,2,7,1,7,7 = 1003,2,7,1,7,7 = 1005,7,1,7,7 = 1006,1,7,1,7,7 = 1007,7,1,7,7 = 1002,7,1,1,7,7 = 1002,2,2,1,1,7,7 = 1004,2,1,1,7,7 = 1006,1,1,7,7 = 1007,1,7,7 = 1008,7,7 = 1003,7,2,7 = 1001,1,1,2,7 = 1002,1,2,7 = 1003,2,7 = 1005,7 = 1006,1,7 = 1007,7 = <a id="page_541"></a>1002,7,1 = 1002,2,2,1 = 1004,2,1 = 1006,1 = 1007. (A faster way to do this derivation by hand would be to evaluate successively the addresses specified in locations 1002, 1003, 1007, 1008, 1005, 1006, 1004, 1001, 1000, in this order; but a computer evidently needs to go about the evaluation essentially as shown.) The author tried out several fancy schemes for changing the contents of memory while evaluating the address, with everything to be restored again by the time the final address has been obtained. Similar algorithms appear in <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a>. However, these attempts were unfruitful and it appears that there is just not enough room to store the necessary information.</p>
 
@@ -671,7 +671,7 @@
 
   <p class="uln-indentC"><strong>A3.</strong> [Indirect?] If either ${\tt I}_{1}\tt(C)$ or ${\tt I}_{2}\tt(C)$ equals 7, set $\tt C←M$ and go to A2. Otherwise set ${\tt M←M}+\tt H$, ${\tt H}←0$.</p>
 
-  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}-1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>A4.</strong> [Reduce depth.] If <code>N</code> &gt; 0, set $\tt C←M$, ${\tt N←N}-1$, and go to A2. Otherwise <code>M</code> is the desired answer. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="indent">This algorithm will handle any situation correctly except those in which ${\tt I}_{1}=7$ and $1≤{\tt I}_{2}≤6$ <em>and</em> the evaluation of the address in <code>ADDRESS</code> involves a case with ${\tt I}_{1}={\tt I}_{2}=7$. The effect is as if ${\tt I}_{2}$ were zero. To understand the operation of <a href="../Text/app01a.html#app01alg-lev2sec16-A">Algorithm A</a>, consider the notation of part (a); the state “<code>L</code>,7,1,2,5,2,7,7,7,7” is represented by <code>C</code> or <code>M</code> = <code>L</code>, <code>N</code> = 4 (the number of trailing 7s), and <code>H</code> = rI1 + rI2 + rI5 + rI2 (the post-indexing). In a solution to part (b) of this exercise, the counter <code>N</code> will always be either 0 or 1.</p>
 
@@ -681,15 +681,15 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_8" id="ch02ex_2_2_8a">8</a>. With a stack, the useful information appears at one end with the vacant information at the other:</p>
 
-  <div class="image"><img src="../Images/541fig01.gif"></div>
+  <div class="image"><img src="../Images/541fig01.png"></div>
 
   <p class="exercisesp">where $A={\tt BASE[}j\tt]$, $B={\tt TOP[}j\tt]$, $C={\tt BASE[}j+1\tt]$. With a queue or deque, the useful information appears at the ends with the vacant information somewhere in the middle:</p>
 
-  <div class="image"><img src="../Images/541fig02.gif"></div>
+  <div class="image"><img src="../Images/541fig02.png"></div>
 
   <p class="exercisesp">or in the middle with the vacant information at the ends:</p>
 
-  <div class="image"><img src="../Images/541fig03.gif"></div>
+  <div class="image"><img src="../Images/541fig03.png"></div>
 
   <p class="exercisesp">where $A={\tt BASE[}j\tt]$, $B={\tt REAR[}j\tt]$, $C={\tt FRONT[}j\tt]$, $D={\tt BASE[}j+1\tt]$. The two cases are distinguished by the conditions <em>B</em> ≤ <em>C</em> and <em>B</em> &gt; <em>C</em>, respectively, in a nonempty <a id="page_542"></a>queue; or, if the queue is known not to have overflowed, the distinguishing conditions are respectively <em>B</em> &lt; <em>C</em> and <em>B</em> ≥ <em>C</em>. The algorithms should therefore be modified in an obvious way so as to widen or narrow the gaps of vacant information. (Thus in case of overflow, when <em>B</em> = <em>C</em>, we make empty space between <em>B</em> and <em>C</em> by moving one part and not the other.) In the calculation of <code>SUM</code> and ${\tt D[}j\tt]$ in step G2, each queue should be considered to occupy one more cell than it really does (see <a href="../Text/ch02.html#ch02ex_2_2_1">exercise 1</a>).</p>
 
@@ -697,77 +697,77 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_10" id="ch02ex_2_2_10a">10</a>. As in <a href="../Text/ch02.html#ch02ex_2_2_9">exercise 9</a> we find that the expected value is</p>
 
-  <div class="image"><img src="../Images/e542_04.gif"></div>
+  <div class="image"><img src="../Images/e542_04.png"></div>
 
   <p class="exercisesp">For this model, it makes <em>absolutely no difference</em> what the relative order of the lists is! (A moment’s reflection explains why; if we consider all possible permutations of a given sequence $a_{1},\ldots,a_{m}$, we find that the total number of moves summed over all these permutations depends only on the number of pairs of distinct elements $a_{j}≠a_{k}$.)</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_11" id="ch02ex_2_2_11a">11</a>. Counting as before, we find that the expected number is</p>
 
-  <div class="image"><img src="../Images/e542_05.gif"></div>
+  <div class="image"><img src="../Images/e542_05.png"></div>
 
   <p class="exercisesp">here <em>r</em> is the number of entries in $a_{1},a_{2},\ldots,a_{k-1}$ that equal $a_{k}$. This quantity can also be expressed in the simpler form</p>
 
-  <div class="image"><img src="../Images/e542_06.gif"></div>
+  <div class="image"><img src="../Images/e542_06.png"></div>
 
   <p class="exercisesp">Is there a simpler way yet to give the answer? Apparently not, since the generating function for given <em>n</em> and <em>t</em> is</p>
 
-  <div class="image"><img src="../Images/e542_07.gif"></div>
+  <div class="image"><img src="../Images/e542_07.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_12" id="ch02ex_2_2_12a">12</a>. If <em>m</em> = 2<em>k</em>, the average is $2^{-2k}$ times</p>
 
-  <div class="image"><img src="../Images/e542_08.gif"></div>
+  <div class="image"><img src="../Images/e542_08.png"></div>
 
   <p class="exercisesp">The latter sum is</p>
 
-  <div class="image"><img src="../Images/e542_09.gif"></div>
+  <div class="image"><img src="../Images/e542_09.png"></div>
 
   <p class="exercisesp"><a id="page_543"></a>A similar argument may be used when <em>m</em> = 2<em>k</em> + 1. The answer is</p>
 
-  <div class="image"><img src="../Images/e543_01.gif"></div>
+  <div class="image"><img src="../Images/e543_01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_13" id="ch02ex_2_2_13a">13</a>. A. C. Yao has proved that we have ${\rm E\,}\max(k_{1},k_{2})=\frac{1}{2}m+(2\pi(1-2p))^{-1/2}\sqrt{m}+O(m^{-1/2}(\log m)^{2})$ for large <em>m</em>, when $p\lt\frac12$. [<em>SICOMP</em> <strong>10</strong> (1981), 398–403.] And P. Flajolet has extended the analysis, showing in particular that the expected value is asymptotically <em>αm</em> when $p=\frac12$, where</p>
 
-  <div class="image"><img src="../Images/e543_05.gif"></div>
+  <div class="image"><img src="../Images/e543_05.png"></div>
 
   <p class="exercisesp">Moreover, when $p\gt\frac12$ the final value of $k_{1}$ tends to be uniformly distributed as $m→∞$, so ${\rm E\,}\max(k_{1},k_{2})\approx\frac{3}{4}m$. [See <em>Lecture Notes in Comp. Sci.</em> <strong>233</strong> (1986), 325–340.]</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_2_14" id="ch02ex_2_2_14a">14</a>. Let $k_{j}=m/n+\sqrt{m}x_{j}$. (This idea was suggested by N. G. de Bruijn.) Stirling’s approximation implies that</p>
 
-  <div class="image"><img src="../Images/e543_09.gif"></div>
+  <div class="image"><img src="../Images/e543_09.png"></div>
 
   <p class="exercisesp">when $k_{1}+\cdots+k_{n} = m$ and when the <em>x</em>’s are uniformly bounded. The sum of the latter quantity over all nonnegative $k_{1},\ldots,k_{n}$ satisfying this condition is an approximation to a Riemann integral; we may deduce that the asymptotic behavior of the sum is $a_{n}(m/n)+c_{n}\sqrt{m}+O(1)$, where</p>
 
-  <div class="image"><img src="../Images/e543_11.gif"></div>
+  <div class="image"><img src="../Images/e543_11.png"></div>
 
   <p class="exercisesp">since it is possible to show that the corresponding sums come within $\epsilon$ of $a_{n}$ and $c_{n}$ for any $\epsilon$.</p>
 
   <p class="indent">We know that $a_{n} = 1$, since the corresponding sum can be evaluated explicitly. The integral that appears in the expression for $c_{n}$ equals $nI_{1}$, where</p>
 
-  <div class="image"><img src="../Images/e543_12.gif"></div>
+  <div class="image"><img src="../Images/e543_12.png"></div>
 
   <p class="exercisesp">We may make the substitution</p>
 
-  <p class="center"><span class="middle"><img src="../Images/e543_13.gif"></span></p>
+  <p class="center"><span class="middle"><img src="../Images/e543_13.png"></span></p>
 
   <p class="exercisesp">then we find $I_{1} = I_{2}/n^{2}$, where</p>
 
-  <div class="image"><img src="../Images/e543_14.gif"></div>
+  <div class="image"><img src="../Images/e543_14.png"></div>
 
-  <p class="exercisesp"><a id="page_544"></a>and <span class="middle"><img src="../Images/e544_01.gif"></span>. Now by symmetry, $I_{2}$ is $(n-1)$ times the same integral with $(y_{2}+\cdots+y_{n})$ replaced by $y_{2}$; hence $I_{2} = (n-1)I_{3}$, where</p>
+  <p class="exercisesp"><a id="page_544"></a>and <span class="middle"><img src="../Images/e544_01.png"></span>. Now by symmetry, $I_{2}$ is $(n-1)$ times the same integral with $(y_{2}+\cdots+y_{n})$ replaced by $y_{2}$; hence $I_{2} = (n-1)I_{3}$, where</p>
 
-  <div class="image"><img src="../Images/e544_02.gif"></div>
+  <div class="image"><img src="../Images/e544_02.png"></div>
 
   <p class="exercisesp">here $Q_{0}$ is <em>Q</em> with $y_{2}$ replaced by zero. [When <em>n</em> = 2, let $I_{3} = 1$.] Now let $z_j=\sqrt{n}y_{j}-(y_3+\cdots+y_n)/(\sqrt{2}+\sqrt{n})$, $3≤j≤n$. Then $Q_0=z_{3}^{2}+\cdots+z_{n}^{2}$, and we deduce that $I_3=I_{4}/n^{(n-3)/2}\sqrt{2}$, where</p>
 
-  <div class="image"><img src="../Images/e544_06.gif"></div>
+  <div class="image"><img src="../Images/e544_06.png"></div>
 
-  <p class="exercisesp">where $α_{n}$ is the “solid angle” in $(n-2)$-dimensional space spanned by the vectors <span class="middle"><img src="../Images/e544_07.gif"></span>, divided by the total solid angle of the whole space. Hence</p>
+  <p class="exercisesp">where $α_{n}$ is the “solid angle” in $(n-2)$-dimensional space spanned by the vectors <span class="middle"><img src="../Images/e544_07.png"></span>, divided by the total solid angle of the whole space. Hence</p>
 
-  <div class="image"><img src="../Images/e544_08.gif"></div>
+  <div class="image"><img src="../Images/e544_08.png"></div>
 
   <p class="exercisesp">We have $α_{2} = 1$, $α_{3}=\frac12$, $α_{4} = π^{-1}\arctan\sqrt{2}\approx .304$, and</p>
 
-  <div class="image"><img src="../Images/e544_11.gif"></div>
+  <div class="image"><img src="../Images/e544_11.png"></div>
 
   <p class="exercisesp">[The value of $c_{3}$ was found by Robert M. Kozelka, <em>Annals of Math. Stat.</em> <strong>27</strong> (1956), 507–512, but the solution to this problem for higher values of <em>n</em> has apparently never appeared in the literature.]</p>
 
@@ -797,15 +797,15 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_2" id="ch02ex_2_3_2a">2</a>.</p>
 
-  <div class="image"><img src="../Images/545pro01.gif"></div>
+  <div class="image"><img src="../Images/545pro01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_3" id="ch02ex_2_3_3a">3</a>.</p>
 
-  <div class="image"><img src="../Images/545pro02.gif"></div>
+  <div class="image"><img src="../Images/545pro02.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_4" id="ch02ex_2_3_4a">4</a>.</p>
 
-  <div class="image"><img src="../Images/545pro03.gif"></div>
+  <div class="image"><img src="../Images/545pro03.png"></div>
 
   <p><a id="page_546"></a><a href="../Text/ch02.html#ch02ex_2_3_5" id="ch02ex_2_3_5a">5</a>. Inserting at the front is essentially like the basic insertion operation (<a href="../Text/ch02.html#ch02eq-lev2sec2-8">8</a>), with an additional test for empty queue: $\tt P\Leftarrow AVAIL$, $\tt INFO(P)←Y$, $\tt LINK(P)←F$; if <code>F</code> = <em>Λ</em> then $\tt R←P$; $\tt F←P$.</p>
 
@@ -827,13 +827,13 @@
 
   <p class="uln-indentC"><strong>I2.</strong> If <code>P</code> ≠ <em>Λ</em>, set $\tt R←Q$, $\tt Q←P$, $\tt P←LINK(Q)$, $\tt LINK(Q)←R$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>I3.</strong> Set $\tt FIRST←Q$. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>I3.</strong> Set $\tt FIRST←Q$. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="exercisesp">In essence we are popping nodes off one stack and pushing them onto another.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_8" id="ch02ex_2_3_8a">8</a>.</p>
 
-  <div class="image"><img src="../Images/546pro01.gif"></div>
+  <div class="image"><img src="../Images/546pro01.png"></div>
 
   <p class="exercisesp">The time is $(7n+6)u$. Better speed $(5n+{\rm constant})u$ is attainable; see <a href="../Text/app01.html#ch01ex_1_1_3a">exercise 1.1–3</a>.</p>
 
@@ -887,17 +887,17 @@
 
   <p class="uln-indentCC"><strong>T13.</strong> (We have found the start of a loop.) Print the value of <em>k</em>, set ${\tt TOP[}k{\tt]}←0$, $k←{\tt QLINK[}k\tt]$, and if ${\tt TOP[}k{\tt]}=1$ repeat this step.</p>
 
-  <p class="uln-indentCC"><strong>T14.</strong> Print the value of <em>k</em> (the beginning and end of the loop) and stop. (<em>Note:</em> The loop has been printed backwards; if it is desired to print the loop in forward order, an algorithm like that in <a href="../Text/ch02.html#ch02ex_2_3_7">exercise 7</a> should be used between steps T12 and T13.) <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentCC"><strong>T14.</strong> Print the value of <em>k</em> (the beginning and end of the loop) and stop. (<em>Note:</em> The loop has been printed backwards; if it is desired to print the loop in forward order, an algorithm like that in <a href="../Text/ch02.html#ch02ex_2_3_7">exercise 7</a> should be used between steps T12 and T13.) <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_24" id="ch02ex_2_3_24a">24</a>. Insert three lines in the program of the text:</p>
 
-  <div class="image"><img src="../Images/548pro01.gif"></div>
+  <div class="image"><img src="../Images/548pro01.png"></div>
 
   <p class="indent">Replace lines 74–75 by the following:</p>
 
-  <div class="image"><img src="../Images/548pro02.gif"></div>
+  <div class="image"><img src="../Images/548pro02.png"></div>
 
-  <div class="image"><img src="../Images/548pro02a.gif"></div>
+  <div class="image"><img src="../Images/548pro02a.png"></div>
 
   <p class="indent"><a id="page_549"></a><em>Note:</em> If the relations $9\prec1$ and $6\prec9$ are added to the data (<a href="../Text/ch02.html#ch02eq-lev2sec3-18">18</a>), this program will print “9, 6, 8, 5, 9” as the loop.</p>
 
@@ -911,7 +911,7 @@
 
   <p class="uln-indentC"><strong>A2.</strong> If $|{\tt B(P)}|=1$, go to A1, otherwise set ${\tt P←P}+1$.</p>
 
-  <p class="uln-indentC"><strong>A3.</strong> If ${\tt B(SUB1(P))}≤ 0$, set ${\tt N←N}+1$, ${\tt B(SUB1(P))←B(SUB1(P))}+2$, $\tt X[N]←SUB1(P)$. If ${\tt SUB2(P)}≠ 0$ and ${\tt B(SUB2(P))}≤ 0$, do a similar set of actions with $\tt SUB2(P)$. Go to A2. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>A3.</strong> If ${\tt B(SUB1(P))}≤ 0$, set ${\tt N←N}+1$, ${\tt B(SUB1(P))←B(SUB1(P))}+2$, $\tt X[N]←SUB1(P)$. If ${\tt SUB2(P)}≠ 0$ and ${\tt B(SUB2(P))}≤ 0$, do a similar set of actions with $\tt SUB2(P)$. Go to A2. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="exercisesp"><em>Phase 2.</em> (We go through the table and allocate memory.)</p>
 
@@ -921,16 +921,16 @@
 
   <p class="uln-indentC"><a id="page_550"></a><strong>B3.</strong> If ${\tt B(P)}\gt0$, set ${\tt N←N}+1$, $\tt BASE(LOC(X[N]))←MLOC$, $\tt SUB(LOC(X[N]))←P$, ${\tt MLOC←MLOC}+\tt SPACE(P)$.</p>
 
-  <p class="uln-indentC"><strong>B4.</strong> Set $\tt P←LINK(P)$ and return to B2. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>B4.</strong> Set $\tt P←LINK(P)$ and return to B2. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_27" id="ch02ex_2_3_27a">27</a>. Comments on the following code are left to the reader.</p>
 
-  <div class="image"><img src="../Images/550pro01.gif"></div>
+  <div class="image"><img src="../Images/550pro01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_3_28" id="ch02ex_2_3_28a">28</a>. We give here only a few comments related to the military game. Let <em>A</em> be the player with three men whose pieces start on nodes A13; let <em>B</em> be the other player. In this game, <em>A</em> must “trap” <em>B</em>, and if <em>B</em> can cause a position to be repeated for a second time we can consider <em>B</em> the winner. To avoid keeping the entire past history of the game as an integral part of the positions, however, we should modify the algorithm in the following way: Start by marking the positions 157–4, 789–B, 359–6 with <em>B</em> to move as “lost” and apply the suggested algorithm. Now the idea is for player <em>A</em> to move only to <em>B</em>’s lost positions. But <em>A</em> must also take precautions against repeating prior moves. A good computer game-playing program will use a random number generator to select between several winning moves when more than one is present, so an obvious technique would be to make the computer, playing <em>A</em>, just choose randomly among those moves that lead to a lost position for <em>B</em>. But there are interesting situations that make this plausible procedure fail! For example, consider position 258–7 with <em>A</em> to move; this is a won position. From position 258–7, player <em>A</em> might try moving to 158–7 (which is a lost position for <em>B</em>, according to the algorithm). But then <em>B</em> plays to 158–B, and this forces <em>A</em> to play to 258–B, after which <em>B</em> plays back to 258–7; <em>B</em> has won, since the former position has been repeated! This example shows that the algorithm must be re-invoked after every move has been made, starting with each position that has previously occurred marked “lost” (if <em>A</em> is to move) or “won” (if <em>B</em> is to move). The military game makes a very satisfactory computer demonstration program.</p>
 
   <div class="image">
-    <img src="../Images/550fig01.gif">
+    <img src="../Images/550fig01.png">
 
     <p class="caption">Board for the “military game.”</p>
   </div>
@@ -945,7 +945,7 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_2" id="ch02ex_2_4_2a">2</a>. Before:</p>
 
-  <div class="image"><img src="../Images/551fig01.gif"></div>
+  <div class="image"><img src="../Images/551fig01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_3" id="ch02ex_2_4_3a">3</a>. If ${\tt PTR}_{1} = {\tt PTR}_{2}$, the only effect is ${\tt PTR}_{2}←\varLambda$. If ${\tt PTR}_{1}≠{\tt PTR}_{2}$, the exchange of links breaks the list into two parts, as if a circle had been broken in two by cutting at two points; the second part of the operation then makes ${\tt PTR}_{1}$ point to a circular list that consists of the nodes that would have been traversed if, in the original list, we followed the links from ${\tt PTR}_{1}$ to ${\tt PTR}_{2}$.</p>
 
@@ -955,9 +955,9 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_6" id="ch02ex_2_4_6a">6</a>.</p>
 
-  <p class="indenthangingAA">(a) <span class="middle"><img src="../Images/551fig02.gif"></span></p>
+  <p class="indenthangingAA">(a) <span class="middle"><img src="../Images/551fig02.png"></span></p>
 
-  <p class="indenthangingAA">(b) <span class="middle"><img src="../Images/551fig03.gif"></span></p>
+  <p class="indenthangingAA">(b) <span class="middle"><img src="../Images/551fig03.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_7" id="ch02ex_2_4_7a">7</a>. Matching terms in the polynomial are located in one pass over the list, so repeated random searches are avoided. Also, <em>increasing</em> order would be incompatible with the “−1” sentinel.</p>
 
@@ -969,23 +969,23 @@
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_11" id="ch02ex_2_4_11a">11</a>.</p>
 
-  <div class="image"><img src="../Images/552pro01.gif"></div>
+  <div class="image"><img src="../Images/552pro01.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_12" id="ch02ex_2_4_12a">12</a>. Let the polynomial copied have <em>p</em> terms. <a href="../Text/ch02.html#ch02pro_02">Program A</a> takes $(27p+13)u$, and to make it a fair comparison we should add the time to create a zero polynomial, say 18<em>u</em> with <a href="../Text/ch02.html#ch02ex_2_4_14">exercise 14</a>. The program of <a href="../Text/ch02.html#ch02ex_2_4_11">exercise 11</a> takes $(21p+31)u$, about 78% as much.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_13" id="ch02ex_2_4_13a">13</a>.</p>
 
-  <div class="image"><img src="../Images/552pro01-1.gif"></div>
+  <div class="image"><img src="../Images/552pro01-1.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_14" id="ch02ex_2_4_14a">14</a>.</p>
 
-  <div class="image"><img src="../Images/552pro02.gif"></div>
+  <div class="image"><img src="../Images/552pro02.png"></div>
 
   <p><a href="../Text/ch02.html#ch02ex_2_4_15" id="ch02ex_2_4_15a">15</a>.</p>
 
-  <div class="image"><img src="../Images/552pro03.gif"></div>
+  <div class="image"><img src="../Images/552pro03.png"></div>
 
-  <div class="image"><img src="../Images/552pro03a.gif"></div>
+  <div class="image"><img src="../Images/552pro03a.png"></div>
 
   <p><a id="page_553"></a><a href="../Text/ch02.html#ch02ex_2_4_16" id="ch02ex_2_4_16a">16</a>. Let <em>r</em> be the number of terms in ${\rm polynomial}\tt(M)$. The subroutine requires $21pr+38r+29+27∑m'+18∑m''+27∑p'+8∑q'$ units of time, where the summations refer to the corresponding quantities during the <em>r</em> activations of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. The number of terms in ${\rm polynomial}\tt(Q)$ goes up by $p'-m'$ each activation of <a href="../Text/ch02.html#ch02pro_02">Program A</a>. If we make the not unreasonable assumption that $m'=0$ and $p'=αp$ where 0 &lt; <em>α</em> &lt; 1, we get the respective sums equal to 0, $(1-α)pr$, $αpr$, and $rq'_0+αp(r(r-1)/2)$, where $q'_0$ is the value of <em>q</em>′ in the first iteration. The grand total is $4αpr^{2}+40pr+4αpr+8q'_0r+38r+29$. This analysis indicates that the multiplier ought to have fewer terms than the multiplicand, since we have to skip over unmatching terms in ${\rm polynomial}\tt(Q)$ more often. (See exercise 5.2.3–29 for a faster algorithm.)</p>
 
@@ -1015,13 +1015,13 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_5_8" id="ch02ex_2_5_8a">8</a>. Comments are left to the reader.</p>
 
-  <div class="image"><img src="../Images/554pro01.gif"></div>
+  <div class="image"><img src="../Images/554pro01.png"></div>
 
   <p><a id="page_555"></a><a href="../Text/ch02a.html#ch02ex_2_5_9" id="ch02ex_2_5_9a">9</a>.</p>
 
-  <div class="image"><img src="../Images/555pro01.gif"></div>
+  <div class="image"><img src="../Images/555pro01.png"></div>
 
-  <div class="image"><img src="../Images/555pro01a.gif"></div>
+  <div class="image"><img src="../Images/555pro01a.png"></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_5_11" id="ch02ex_2_5_11a">11</a>. Initially let ${\tt LINK[}k{\tt]}=0$, 1 ≤ <em>k</em> ≤ <em>n</em>, and <code>HEAD</code> = −1. During a simulation step that changes ${\tt V[}k\tt]$, give an error indication if ${\tt LINK[}k{\tt]}≠0$; otherwise set ${\tt LINK[}k\tt]←HEAD$, ${\tt HEAD}←k$ and set ${\tt NEWV[}k\tt]$ to the new value of ${\tt V[}k\tt]$. After each simulation step, set $\tt k←HEAD$, ${\tt HEAD}←-1$, and do the following operation repeatedly zero or more times until <em>k</em> &lt; 0: set ${\tt V[}k{\tt]←NEWV[}k\tt]$, $t←{\tt LINK[}k\tt]$, ${\tt LINK[}k{\tt]}←0$, $k←t$.</p>
 
@@ -1049,15 +1049,15 @@
 
   <p class="indenthangingAA">(a)</p>
 
-  <div class="image"><img src="../Images/e556_01.gif"></div>
+  <div class="image"><img src="../Images/e556_01.png"></div>
 
   <p class="indenthangingAA">(b)</p>
 
-  <div class="image"><img src="../Images/e556_02.gif"></div>
+  <div class="image"><img src="../Images/e556_02.png"></div>
 
   <p class="exercisesp">hence the stated form is possible in this case also.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_6_7" id="ch02ex_2_6_7a">7</a>.<span class="middle"><img src="../Images/e556_03.gif"></span>. See <a href="../Text/ch01a.html#ch01ex_2_6_56">exercise 1.2.6–56</a>.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_6_7" id="ch02ex_2_6_7a">7</a>.<span class="middle"><img src="../Images/e556_03.png"></span>. See <a href="../Text/ch01a.html#ch01ex_2_6_56">exercise 1.2.6–56</a>.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_8" id="ch02ex_2_6_8a">8</a>. (Solution by P. Nash.) Let $\tt X[I,J,K]$ be defined for 0 ≤ <code>I</code> ≤ <em>n</em>, 0 ≤ <code>J</code> ≤ <em>n</em> + 1, 0 ≤ <code>K</code> ≤ <em>n</em> + 2. We can let ${\tt A[I,J,K]}=\tt X[I,J,K]$; ${\tt B[I,J,K]}={\tt X[J,I}+1\tt,K]$; ${\tt C[I,J,K]}={\tt X[I,K,J}+1\tt]$; ${\tt D[I,J,K]}={\tt X[J,K,I}+2\tt]$; ${\tt E[I,J,K]}={\tt X[K,I}+1{\tt,J}+1\tt]$; ${\tt F[I,J,K]}={\tt X[K,J}+1{\tt,I}+2\tt]$. This scheme is the best possible, since it packs the $(n+1)(n+2)(n+3)$ elements of the six tetrahedral arrays into consecutive locations with no overlap. <em>Proof:</em> <code>A</code> and <code>B</code> exhaust all cells ${\tt X[}i{\tt,}j{\tt,}k\tt]$ with $k=\min(i,j,k)$; <code>C</code> and <code>D</code> exhaust all cells with $j=\min(i,j,k)≠k$; <code>E</code> and <code>F</code> exhaust all cells with $i=\min(i,j,k)≠j,k$.</p>
 
@@ -1071,7 +1071,7 @@
 
   <p class="uln-indentC"><strong>G4.</strong> Set $\tt P1←SEX(P1)$ until <code>P1</code> ≤ <code>P6</code>. If <code>P1</code> = <code>P6</code>, we have found one of the young ladies desired, so output her address, <code>P6</code>. (Her age can be determined from the settings of <code>P2</code>, <code>P3</code>, and <code>P4</code>.)</p>
 
-  <p class="uln-indentC"><strong>G5.</strong> Set $\tt P6←EYES(P6)$. Now stop if <code>P6</code> = <em>Λ</em>; otherwise return to G2. <span class="middle"><img src="../Images/box.gif"></span></p>
+  <p class="uln-indentC"><strong>G5.</strong> Set $\tt P6←EYES(P6)$. Now stop if <code>P6</code> = <em>Λ</em>; otherwise return to G2. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="exercisesp">This algorithm is interesting but not the best way to organize a list for such a search.</p>
 
@@ -1089,15 +1089,15 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_15" id="ch02ex_2_6_15a">15</a>. Let rI1 ≡ <code>PIVOT</code>, <code>J</code>; rI2 ≡ <code>P0</code>; rI3 ≡ <code>Q0</code>; rI4 ≡ <code>P</code>; rI5 ≡ <code>P1</code>, <code>X</code>; ${\tt LOC(BASEROW[}i{\tt])}≡{\tt BROW}+i$; ${\tt LOC(BASECOL[}j{\tt])}≡{\tt BCOL}+j$; ${\tt PTR[}j{\tt]}≡{\tt BCOL}+j(1\colon3)$.</p>
 
-  <div class="image"><img src="../Images/557pro01.gif"></div>
+  <div class="image"><img src="../Images/557pro01.png"></div>
 
-  <div class="image"><img src="../Images/557pro01_a.gif"></div>
+  <div class="image"><img src="../Images/557pro01_a.png"></div>
 
-  <div class="image"><img src="../Images/557pro01a.gif"></div>
+  <div class="image"><img src="../Images/557pro01a.png"></div>
 
-  <div class="image"><a id="page_558"></a><img src="../Images/557pro01b.gif"></div>
+  <div class="image"><a id="page_558"></a><img src="../Images/557pro01b.png"></div>
 
-  <div class="image"><img src="../Images/557pro01c.gif"></div>
+  <div class="image"><img src="../Images/557pro01c.png"></div>
 
   <p class="uln-indent"><a id="page_559"></a><em>Note:</em> Using the conventions of Chapter 4, lines 71–74 would actually be coded</p>
 
@@ -1109,11 +1109,11 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_18" id="ch02ex_2_6_18a">18</a>. The three pivot steps, in respective columns 3, 1, 2, yield respectively</p>
 
-  <div class="image"><img src="../Images/e559_01.gif"></div>
+  <div class="image"><img src="../Images/e559_01.png"></div>
 
   <p class="exercisesp"><a id="page_560"></a>after the final permutations, we have the answer</p>
 
-  <div class="image"><img src="../Images/e560_01.gif"></div>
+  <div class="image"><img src="../Images/e560_01.png"></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_20" id="ch02ex_2_6_20a">20</a>. $a_{0}={\tt LOC(A[1,1])}-3$, $a_{1}=\text{1 or 2}$, $a_{2}=3-a_{1}$.</p>
 
@@ -1121,13 +1121,13 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_22" id="ch02ex_2_6_22a">22</a>. According to the combinatorial number system (<a href="../Text/ch01a.html#ch01ex_2_6_56">exercise 1.2.6–56</a>), we can let</p>
 
-  <div class="image"><img src="../Images/e560_02.gif"></div>
+  <div class="image"><img src="../Images/e560_02.png"></div>
 
   <p class="exercisesp">[<em>Det Kongelige Norske Videnskabers Selskabs Forhandlinger</em> <strong>34</strong> (1961), 8–9.]</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_6_23" id="ch02ex_2_6_23a">23</a>. Let $c[{\tt J}]={\tt LOC(A[}0{\tt,J])}={\tt LOC(A[}0,0{\tt])}+m\tt J$, if there were <em>m</em> rows when the matrix grew from <code>J</code> to <code>J</code> + 1 columns; similarly, let $r[{\tt I}]={\tt LOC(A[I,}0{\tt])}={\tt LOC(A[}0,0{\tt])}+n\tt I$, if there were <em>n</em> columns when we created row <code>I</code>. Then we can use the allocation function</p>
 
-  <div class="image"><img src="../Images/e560_05.gif"></div>
+  <div class="image"><img src="../Images/e560_05.png"></div>
 
   <p class="exercisesp">It is not hard to prove that $c[{\tt J}]≥r[{\tt I}]$ implies $c[{\tt J}]≥r[{\tt I}]+\tt J$, and $c[{\tt J}]≤r[{\tt I}]$ implies $c[{\tt J}]+{\tt I}≤r[{\tt I}]$; therefore the relation</p>
 
@@ -1141,7 +1141,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_1" id="ch02ex_1_3_1a">1</a>. There are three ways to choose the root. Once the root has been chosen, say <em>A</em>, there are three ways to partition the other nodes into subtrees: $\{B\},\{C\}$; $\{C\},\{B\}$; $\{B,C\}$. In the latter case there are two ways to make $\{B,C\}$ into a tree, depending <a id="page_561"></a>on which is the root. Hence we get the four trees shown when <em>A</em> is the root, and 12 in all. This problem is solved for any number <em>n</em> of nodes in <a href="../Text/ch02.html#ch02ex_2_3_23">exercise 2.3.4.4–23</a>.</p>
 
-  <div class="image"><img src="../Images/561fig01.gif"></div>
+  <div class="image"><img src="../Images/561fig01.png"></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_2" id="ch02ex_1_3_2a">2</a>. The first two trees in the answer to <a href="../Text/ch02a.html#ch02ex_1_3_1">exercise 1</a> are the same, as oriented trees, so we get only 9 different possibilities in this case. For the general solution, see <a href="../Text/ch02b.html#ch02lev3sec4">Section 2.3.4.4</a>, where the formula $n^{n-1}$ is proved.</p>
 
@@ -1183,11 +1183,11 @@
 
   <p class="indenthangingAA">(a)</p>
 
-  <div class="image"><img src="../Images/563fig01.gif"></div>
+  <div class="image"><img src="../Images/563fig01.png"></div>
 
   <p class="indenthangingAA">(b)</p>
 
-  <div class="image"><img src="../Images/563fig02.gif"></div>
+  <div class="image"><img src="../Images/563fig02.png"></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_17" id="ch02ex_1_3_17a">17</a>. ${\rm parent}(Z[1])=A$; ${\rm parent}(Z[1,2])=C$; ${\rm parent}(Z[1,2,2])=E$.</p>
 
@@ -1195,7 +1195,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_19" id="ch02ex_1_3_19a">19</a>.</p>
 
-  <div class="image"><img src="../Images/563fig03.gif"></div>
+  <div class="image"><img src="../Images/563fig03.png"></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_1_3_20" id="ch02ex_1_3_20a">20</a>. (Intuitively, the correspondence between 0-2-trees and binary trees is obtained by removing all terminal nodes of the 0-2-tree; see the important construction in <a href="../Text/ch02b.html#ch02lev3sec5">Section 2.3.4.5</a>.) Let a 0-2-tree with one node correspond to the empty binary tree; and let a 0-2-tree with more than one node, consisting therefore of a root <em>r</em> and 0-2-trees $T_{1}$ and $T_{2}$, correspond to the binary tree with root <em>r</em>, left subtree $T'_{1}$, and right subtree $T'_{2}$, where $T_{1}$ and $T_{2}$ correspond respectively to $T'_{1}$ and $T'_{2}$.</p>
 
@@ -1205,7 +1205,7 @@
 
   <p class="indent">Many variations on this theme are possible. For example, one idea is to represent the root by a line from the center of a given landscape-oriented page to the top edge, and to rotate the left-subtree representation by $90^{°}$ clockwise in the left halfpage, the right-subtree representation by $90^{°}$ counterclockwise in the right halfpage. Each node is then represented by a line. (When this method is applied to a complete binary tree having $2^{k}-1$ nodes on <em>k</em> levels, it yields so-called “H-trees,” which are the most efficient layouts of such binary trees on a VLSI chip; see R. P. Brent and H. T. Kung, <em>Inf. Proc. Letters</em> <strong>11</strong> (1980), 46–48.)</p>
 
-  <div class="image"><img src="../Images/563fig04.gif"></div>
+  <div class="image"><img src="../Images/563fig04.png"></div>
 
   <p class="exercisesp"><a id="page_564"></a>Another idea is to represent an empty binary tree by some sort of box, and to rotate the subtree representations of nonempty binary trees so that left subsubtrees are alternately to the left of or below the corresponding right subsubtrees, depending on whether the depth of recursion is even or odd. Then the boxes correspond to external nodes in an extended binary tree (see <a href="../Text/ch02b.html#ch02lev3sec5">Section 2.3.4.5</a>). This representation, which is strongly related to the 2-d trees and quadtrees discussed in Section 6.5, is especially appropriate when the external nodes carry information but the internal nodes do not.</p>
 </body>
