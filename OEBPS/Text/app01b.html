@@ -60,11 +60,11 @@
 
   <p class="indent">When the binary tree represents a forest as described in <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>, the quantity analyzed here is the <em>height</em> of that forest (the furthest distance between a node and a root, plus one). Generalizations to many other varieties of trees have been obtained by Flajolet and Odlyzko [<em>j. Computer and System Sci.</em> <strong>25</strong> (1982), 171–213]; the asymptotic distribution of heights, both near the mean and far away, was subsequently analyzed by Flajolet, Gao, Odlyzko, and Richmond [<em>Combinatorics, Probability, and Computing</em> <strong>2</strong> (1993), 145–156].</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_7_12" id="ch02ex_2_7_12a">12</a>. Visit $\tt NODE(P)$ between steps T2 and T3, instead of in step T5. For the proof, demonstrate the validity of the statement “<em>Starting at step T2 with $\ldots$ original value</em> ${\tt A[}1{\tt]}\ldots{\tt A[}m{\tt]}$,” essentially as in the text.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_7_12" id="ch02ex_2_7_12a">12</a>. Visit $\tt NODE(P)$ between steps T2 and T3, instead of in step T5. For the proof, demonstrate the validity of the statement “<em>Starting at step T2 with $\ldots$ original value</em> ${\tt A[}1{\tt]\ldots A[}m\tt]$,” essentially as in the text.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_13" id="ch02ex_2_7_13a">13</a>. (Solution by S. Araújo, 1976.) Let steps T1 through T4 be unchanged, except that a new variable <code>Q</code> is initialized to <em>Λ</em> in step T1′; <code>Q</code> will point to the last node visited, if any. Step T5 becomes two steps:</p>
 
-  <p class="uln-indentC"><strong>T5′.</strong> [Right branch done?] If ${\tt RLINK(P)}=\varLambda$ or $\tt RLINK(P)=Q$, go on to T6; otherwise set $\tt A\Leftarrow P$, $\tt P←RLINK(P)$ and return to T2′.</p>
+  <p class="uln-indentC"><strong>T5′.</strong> [Right branch done?] If ${\tt RLINK(P)}=\varLambda$ or ${\tt RLINK(P)}=\tt Q$, go on to T6; otherwise set $\tt A\Leftarrow P$, $\tt P←RLINK(P)$ and return to T2′.</p>
 
   <p class="uln-indentC"><strong>T6′.</strong> [Visit <code>P</code>.] Visit $\tt NODE(P)$, set $\tt Q←P$, and return to T4′.</p>
 
@@ -122,7 +122,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_21" id="ch02ex_2_7_21a">21</a>. The following solution by Joseph M. Morris [<em>Inf. Proc. Letters</em> <strong>9</strong> (1979), 197–200] traverses also in preorder (see <a href="../Text/ch02a.html#ch02ex_2_7_18">exercise 18</a>).</p>
 
-  <p class="uln-indentC"><strong>U1.</strong> [Initialize.] Set $\tt P←T$ and ${\tt R}←\varLambda$.</p>
+  <p class="uln-indentC"><strong>U1.</strong> [Initialize.] Set $\tt P←T$ and $\tt R←\varLambda$.</p>
 
   <p class="uln-indentC"><strong>U2.</strong> [Done?] If ${\tt P}=\varLambda$, the algorithm terminates.</p>
 
@@ -130,7 +130,7 @@
 
   <p class="uln-indentC"><strong>U4.</strong> [Search for thread.] Set $\tt Q←RLINK(Q)$ zero or more times until either <code>Q</code> = <code>R</code> or ${\tt RLINK(Q)}=\varLambda$.</p>
 
-  <p class="uln-indentC"><strong>U5.</strong> [Insert or remove thread.] If $\tt Q\neq R$, set $\tt RLINK(Q)←P$ and go to U8. Otherwise set ${\tt RLINK(Q)}←\varLambda$ (it had been changed temporarily to <code>P</code>, but we’ve now traversed $\tt P\rm\unicode{39}s$ left subtree).</p>
+  <p class="uln-indentC"><strong>U5.</strong> [Insert or remove thread.] If $\tt Q\neq R$, set $\tt RLINK(Q)←P$ and go to U8. Otherwise set $\tt RLINK(Q)←\varLambda$ (it had been changed temporarily to <code>P</code>, but we’ve now traversed $\tt P\rm\unicode{39}s$ left subtree).</p>
 
   <p class="uln-indentC"><strong>U6.</strong> [Inorder visit.] Visit $\tt NODE(P)$ in inorder.</p>
 
@@ -148,7 +148,7 @@
 
   <p class="uln-indentC"><strong>W1.</strong> [Initialize.] Set $\tt P←T$ and $\tt Q←S$, where <code>S</code> is a sentinel value — any number that is known to be different from any link in the tree (e.g., $-1$).</p>
 
-  <p class="uln-indentC"><strong>W2.</strong> [Bypass null.] If ${\tt P}=\varLambda$, set $\tt P←Q$ and ${\tt Q}←\varLambda$.</p>
+  <p class="uln-indentC"><strong>W2.</strong> [Bypass null.] If ${\tt P}=\varLambda$, set $\tt P←Q$ and $\tt Q←\varLambda$.</p>
 
   <p class="uln-indentC"><strong>W3.</strong> [Done?] If <code>P</code> = <code>S</code>, terminate the algorithm. (We will have <code>Q</code> = <code>T</code> at termination.)</p>
 
@@ -166,7 +166,7 @@
 
   <p>The total running time is $21n+6a-3-14b$, where <em>n</em> is the number of nodes, <em>a</em> is the number of null <code>RLINK</code>s (hence $a-1$ is the number of nonnull <code>LLINK</code>s), and <em>b</em> is the number of nodes on the tree’s “right spine” <code>T</code>, $\tt RLINK(T)$, $\tt RLINK(RLINK(T))$, etc.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_7_23" id="ch02ex_2_7_23a">23</a>. Insertion to the right: $\tt RLINKT(Q)←RLINKT(P)$, $\tt RLINK(P)←Q$, ${\tt RTAG(P)}←0$, ${\tt LLINK(Q)}←\varLambda$. Insertion to the left, assuming ${\tt LLINK(P)}=\varLambda$: Set $\tt LLINK(P)←Q$, $\tt LLINK(Q)←\varLambda$, $\tt RLINK(Q)←P$, ${\tt RTAG(Q)}←1$. Insertion to the left, between <code>P</code> and $\tt LLINK(P)\neq\varLambda$: Set $\tt R←LLINK(P)$, $\tt LLINK(Q)←R$, and then set $\tt R←RLINK(R)$ zero or more times until ${\tt RTAG(R)}=1$; finally set $\tt RLINK(R)←Q$, $\tt LLINK(P)←Q$, $\tt RLINK(Q)←P$, ${\tt RTAG(Q)}←1$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_7_23" id="ch02ex_2_7_23a">23</a>. Insertion to the right: $\tt RLINKT(Q)←RLINKT(P)$, $\tt RLINK(P)←Q$, ${\tt RTAG(P)}←0$, $\tt LLINK(Q)←\varLambda$. Insertion to the left, assuming ${\tt LLINK(P)}=\varLambda$: Set $\tt LLINK(P)←Q$, $\tt LLINK(Q)←\varLambda$, $\tt RLINK(Q)←P$, ${\tt RTAG(Q)}←1$. Insertion to the left, between <code>P</code> and $\tt LLINK(P)\neq\varLambda$: Set $\tt R←LLINK(P)$, $\tt LLINK(Q)←R$, and then set $\tt R←RLINK(R)$ zero or more times until ${\tt RTAG(R)}=1$; finally set $\tt RLINK(R)←Q$, $\tt LLINK(P)←Q$, $\tt RLINK(Q)←P$, ${\tt RTAG(Q)}←1$.</p>
 
   <p class="indent">(A more efficient algorithm for the last case can be used if we know a node <code>F</code> such that $\tt P=LLINK(F)$ or $\tt P=RLINK(F)$; assuming the latter, for example, we could set $\tt INFO(P)\leftrightarrow INFO(Q)$, $\tt RLINK(F)←Q$, $\tt LLINK(Q)←P$, $\tt RLINKT(Q)←RLINKT(P)$, $\tt RLINK(P)←Q$, ${\tt RTAG(P)}←1$. This takes a fixed amount of time, but it is generally not recommended because it switches nodes around in memory.)</p>
 
@@ -278,11 +278,11 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_11" id="ch02ex_2_8_11a">11</a>.<span class="top"><img src="../Images/572fig01.png" /></span></p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_8_12" id="ch02ex_2_8_12a">12</a>. If ${\tt INFO(Q1)}\neq0$: Set $\tt R←COPY(P1)$; then if ${\tt TYPE(P2)}=0$ and ${\tt INFO(P2)}\neq2$, set ${\tt R←TREE(“\uparrow”,R,TREE(INFO(P2)}-1\tt))$; if ${\tt TYPE(P2)}\neq0$, set ${\tt R←TREE(“\uparrow”,R,TREE(“-”,COPY(P2),TREE(}1\tt)))$; then set ${\tt Q1←MULT(Q1,MULT(COPY(P2),R))}$.</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_8_12" id="ch02ex_2_8_12a">12</a>. If ${\tt INFO(Q1)}\neq0$: Set $\tt R←COPY(P1)$; then if ${\tt TYPE(P2)}=0$ and ${\tt INFO(P2)}\neq2$, set ${\tt R←TREE(“\uparrow”,R,TREE(INFO(P2)}-1\tt))$; if ${\tt TYPE(P2)}\neq0$, set ${\tt R←TREE(“\uparrow”,R,TREE(“-”,COPY(P2),TREE(}1\tt)))$; then set $\tt Q1←MULT(Q1,MULT(COPY(P2),R))$.</p>
 
-  <p class="indent">If ${\tt INFO(Q)}\neq0$: Set ${\tt Q←TREE(}“\times”{\tt,MULT(TREE(}“\rm ln”{\tt,COPY(P1)),Q),TREE(}“\uparrow”{\tt,COPY(P1),COPY(P2)))}$.</p>
+  <p class="indent">If ${\tt INFO(Q)}\neq0$: Set $\tt Q←TREE(“\times”,MULT(TREE(“\ln”,COPY(P1)),Q),TREE(“\uparrow”,COPY(P1),COPY(P2)))$.</p>
 
-  <p class="indent">Finally go to ${\tt DIFF[}4{\tt]}$.</p>
+  <p class="indent">Finally go to ${\tt DIFF[}4\tt]$.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_13" id="ch02ex_2_8_13a">13</a>. The following program implements <a href="../Text/ch02a.html#ch02alg-lev2sec7-C">Algorithm 2.3.1C</a> with $\rm rI1≡\tt P$, $\rm rI2≡\tt Q$, $\rm rI3≡\tt R$, and with appropriate changes to the initialization and termination conditions:</p>
 
@@ -302,7 +302,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_17" id="ch02ex_2_8_17a">17</a>. References to early work on such problems can be found in a survey article by J. Sammet, <em>CACM</em> <strong>9</strong> (1966), 555–569.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_8_18" id="ch02ex_2_8_18a">18</a>. First set ${\tt LLINK[}j{\tt]←RLINK[}j{\tt]}←j$ for all <em>j</em>, so that each node is in a circular list of length 1. Then for $j=n$, $n-1,\ldots,1$ (in this order), if ${\tt PARENT[}j{\tt]}=0$ set $r←j$, otherwise insert the circular list starting with <em>j</em> into the circular list starting with ${\tt PARENT[}j{\tt]}$ as follows: $k←{\tt PARENT[}j{\tt]}$, $l←{\tt RLINK[}k{\tt]}$, $i←{\tt LLINK[}j{\tt]}$, ${\tt LLINK[}j{\tt]}←k$, ${\tt RLINK[}k{\tt]}←j$, ${\tt LLINK[}l{\tt]}←i$, ${\tt RLINK[}i{\tt]}←l$. This works because (a) each nonroot node is always preceded by its parent or by a descendant of its parent; (b) nodes of each family appear in their parent’s list, in order of location; (c) preorder is the unique order satisfying (a) and (b).</p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_8_18" id="ch02ex_2_8_18a">18</a>. First set ${\tt LLINK[}j{\tt]←RLINK[}j{\tt]}←j$ for all <em>j</em>, so that each node is in a circular list of length 1. Then for $j=n$, $n-1,\ldots,1$ (in this order), if ${\tt PARENT[}j{\tt]}=0$ set $r←j$, otherwise insert the circular list starting with <em>j</em> into the circular list starting with ${\tt PARENT[}j\tt]$ as follows: $k←{\tt PARENT[}j\tt]$, $l←{\tt RLINK[}k\tt]$, $i←{\tt LLINK[}j\tt]$, ${\tt LLINK[}j{\tt]}←k$, ${\tt RLINK[}k{\tt]}←j$, ${\tt LLINK[}l{\tt]}←i$, ${\tt RLINK[}i{\tt]}←l$. This works because (a) each nonroot node is always preceded by its parent or by a descendant of its parent; (b) nodes of each family appear in their parent’s list, in order of location; (c) preorder is the unique order satisfying (a) and (b).</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_20" id="ch02ex_2_8_20a">20</a>. If <em>u</em> is an ancestor of <em>υ</em>, it is immediate by induction that <em>u</em> precedes <em>υ</em> in preorder and follows <em>υ</em> in postorder. Conversely, suppose <em>u</em> precedes <em>υ</em> in preorder and follows <em>υ</em> in postorder; we must show that <em>u</em> is an ancestor of <em>υ</em>. This is clear if <em>u</em> is the root of the first tree. If <em>u</em> is another node of the first tree, <em>υ</em> must be also, since <em>u</em> follows <em>υ</em> in postorder; so induction applies. Similarly if <em>u</em> is not in the first tree, <em>υ</em> must not be either, since <em>u</em> precedes <em>υ</em> in preorder. (This exercise also follows easily from the result of <a href="../Text/ch02a.html#ch02ex_2_8_3">exercise 3</a>. It gives us a quick test for ancestorhood, if we know each node’s position in preorder and postorder.)</p>
 
@@ -320,13 +320,13 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_2" id="ch02ex_2_9_2a">2</a>. Make the following changes in <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a>: Step F1, change to “last node of the forest in preorder.” Step F2, change “$f(x_d),\ldots,f(x_1)$” to “$f(x_1),\ldots,f(x_d)$” in two places. Step F4, “If <code>P</code> is the first node in preorder, terminate the algorithm. (Then the stack contains $f({\rm root}(T_1)),\ldots,f({\rm root}(T_m))$, from top to bottom, where $T_1,\ldots,T_m$ are the trees of the given forest, from left to right.) Otherwise set <code>P</code> to its predecessor in preorder (${\tt P←P}-c$ in the given representation), and return to F2.”</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_2_9_3" id="ch02ex_2_9_3a">3</a>. In step D1, also set ${\tt S}←\varLambda$. (<code>S</code> is a link variable that links to the top of the stack.) Step D2 becomes, for example, “If $\tt NODE(P)$ denotes a unary operator, set $\tt Q←S$, $\tt S←RLINK(Q)$, ${\tt P1←LLINK(P)}$; if it denotes a binary operator, set $\tt Q←S$, ${\tt Q1←RLINK(Q)}$, ${\tt S←RLINK(Q1)}$, ${\tt P1←LLINK(P)}$, ${\tt P2←RLINK(P1)}$. Then perform ${\tt DIFF[TYPE(P)]}$.” Step D3 becomes “Set $\tt RLINK(Q)←S$, $\tt S←Q$.” Step D4 becomes “Set $\tt P←P\$$.” The operation ${\tt LLINK(DY)←Q}$ may be avoided in step D5 if we assume that ${\tt S}≡\tt LLINK(DY)$. This technique clearly generalizes to ternary and higher-order operators.</p>
+  <p><a href="../Text/ch02b.html#ch02ex_2_9_3" id="ch02ex_2_9_3a">3</a>. In step D1, also set $\tt S←\varLambda$. (<code>S</code> is a link variable that links to the top of the stack.) Step D2 becomes, for example, “If $\tt NODE(P)$ denotes a unary operator, set $\tt Q←S$, $\tt S←RLINK(Q)$, ${\tt P1←LLINK(P)}$; if it denotes a binary operator, set $\tt Q←S$, $\tt Q1←RLINK(Q)$, ${\tt S←RLINK(Q1)}$, $\tt P1←LLINK(P)$, $\tt P2←RLINK(P1)$. Then perform $\tt DIFF[TYPE(P)]$.” Step D3 becomes “Set $\tt RLINK(Q)←S$, $\tt S←Q$.” Step D4 becomes “Set $\tt P←P\$$.” The operation $\tt LLINK(DY)←Q$ may be avoided in step D5 if we assume that $\tt S≡LLINK(DY)$. This technique clearly generalizes to ternary and higher-order operators.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_4" id="ch02ex_2_9_4a">4</a>. A representation like (<a href="../Text/ch02.html#ch02eq-lev2sec3-10">10</a>) takes $n-m$ <code>LLINK</code>s and $n+(n-m)$ <code>RLINK</code>s. The difference in total number of links is $n-2m$ between the two forms of representation. Arrangement (<a href="../Text/ch02.html#ch02eq-lev2sec3-10">10</a>) is superior when the <code>LLINK</code> and <code>INFO</code> fields require about the same amount of space in a node and when <em>m</em> is rather large, namely when the nonterminal nodes have rather large degrees.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_5" id="ch02ex_2_9_5a">5</a>. It would certainly be silly to include threaded <code>RLINK</code>s, since an <code>RLINK</code> thread just points to $\tt PARENT$ anyway. Threaded <code>LLINK</code>s as in <a href="../Text/ch02a.html#ch02lev2sec8">2.3.2</a>–(<a href="../Text/ch02a.html#ch02eq-lev2sec8-4">4</a>) would be useful if it is necessary to move leftward in the tree, for example if we wanted to traverse a tree in reverse postorder, or in family order; but these operations are not significantly harder without threaded <code>LLINK</code>s unless the nodes tend to have very high degrees.</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_2_9_6" id="ch02ex_2_9_6a">6</a>. <strong>L1.</strong> Set $\tt P←FIRST$, ${\tt FIRST}←\varLambda$.</p>
+  <p><a href="../Text/ch02b.html#ch02ex_2_9_6" id="ch02ex_2_9_6a">6</a>. <strong>L1.</strong> Set $\tt P←FIRST$, $\tt FIRST←\varLambda$.</p>
 
   <p class="uln-indentC"><strong>L2.</strong> If ${\tt P}=\varLambda$, terminate. Otherwise set $\tt Q←RLINK(P)$.</p>
 
@@ -340,7 +340,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_9" id="ch02ex_2_9_9a">9</a>. <span class="top"><img src="../Images/576pro01.png" /></span></p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_2_9_10" id="ch02ex_2_9_10a">10</a>. One idea is to set $\tt PARENT$ of each <em>root</em> node to the negative of the number of nodes in its tree (these values being easily kept up to date); then if $|{\tt PARENT[}j{\tt]}|\gt |{\tt PARENT[}k{\tt]}|$ in step E4, the roles of <em>j</em> and <em>k</em> are interchanged. This technique (due to M. D. McIlroy) ensures that each operation takes $O(\log n)$ steps.</p>
+  <p><a href="../Text/ch02b.html#ch02ex_2_9_10" id="ch02ex_2_9_10a">10</a>. One idea is to set $\tt PARENT$ of each <em>root</em> node to the negative of the number of nodes in its tree (these values being easily kept up to date); then if $|{\tt PARENT[}j{\tt]}|\gt|{\tt PARENT[}k{\tt]}|$ in step E4, the roles of <em>j</em> and <em>k</em> are interchanged. This technique (due to M. D. McIlroy) ensures that each operation takes $O(\log n)$ steps.</p>
 
   <p class="indent">For still more speed, we can use the following suggestion due to Alan Tritter: In step E4, set ${\tt PARENT[}x{\tt]}←k$ for all values $x\neq k$ that were encountered in step E3. This makes an extra pass up the trees, but it collapses them so that future searches are faster. (See Section 7.4.1.)</p>
 
@@ -350,17 +350,17 @@
 
   <p class="uln-indentC"><strong>T2.</strong> If $\tt PARENT(Q)\neq\varLambda$, set $k←k+\tt DELTA(Q)$, $\tt Q←PARENT(Q)$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>T3.</strong> If <code>P</code> = <code>Q</code>, check that $j=k$ (otherwise the input erroneously contains contradictory equivalences). If $\tt P\neq Q$, set ${\tt DELTA(Q)}←j-k$, $\tt PARENT(Q)←P$, ${\tt LBD(P)←\min(LBD(P),LBD(Q)+DELTA(Q))}$, and ${\tt UBD(P)←\max(UBD(P),UBD(Q)+DELTA(Q))}$. <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="uln-indentC"><strong>T3.</strong> If <code>P</code> = <code>Q</code>, check that $j=k$ (otherwise the input erroneously contains contradictory equivalences). If $\tt P\neq Q$, set ${\tt DELTA(Q)}←j-k$, $\tt PARENT(Q)←P$, ${\tt LBD(P)}←\min({\tt LBD(P)},{\tt LBD(Q)}+{\tt DELTA(Q)})$, and ${\tt UBD(P)}←\max({\tt UBD(P)},{\tt UBD(Q)}+{\tt DELTA(Q)})$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><em>Note:</em> It is possible to allow the ${\tt ARRAY\;X[}l:u\tt]$ declarations to occur intermixed with equivalences, or to allow assignment of certain addresses of variables before others are equivalenced to them, etc., under suitable conditions that are not difficult to understand. For further development of this algorithm, see <em>CACM</em> <strong>7</strong> (1964), 301–303, 506.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_12" id="ch02ex_2_9_12a">12</a>. (a) Yes. (If this condition is not required, it would be possible to avoid the loops on <code>S</code> that appear in steps A2 and A9.) (b) Yes.</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_2_9_13" id="ch02ex_2_9_13a">13</a>. The crucial fact is that the <code>UP</code> chain leading upward from <code>P</code> always mentions the same variables and the same exponents for these variables as the <code>UP</code> chain leading upward from <code>Q</code>, except that the latter chain may include additional steps for variables with exponent zero. (This condition holds throughout most of the algorithm, except during the execution of steps A9 and A10.) Now we get to step A8 either from A3 or from A10, and in each case it was verified that ${\tt EXP(Q)}\neq0$. Therefore ${\tt EXP(P)}\neq0$, and in particular it follows that ${\tt P}\neq\varLambda$, ${\tt Q}\neq\varLambda$, ${\tt UP(P)}\neq\varLambda$, ${\tt UP(Q)}\neq\varLambda$; the result stated in the exercise now follows. Thus the proof depends on showing that the <code>UP</code> chain condition stated above is preserved by the actions of the algorithm.</p>
+  <p><a href="../Text/ch02b.html#ch02ex_2_9_13" id="ch02ex_2_9_13a">13</a>. The crucial fact is that the <code>UP</code> chain leading upward from <code>P</code> always mentions the same variables and the same exponents for these variables as the <code>UP</code> chain leading upward from <code>Q</code>, except that the latter chain may include additional steps for variables with exponent zero. (This condition holds throughout most of the algorithm, except during the execution of steps A9 and A10.) Now we get to step A8 either from A3 or from A10, and in each case it was verified that ${\tt EXP(Q)}\neq0$. Therefore ${\tt EXP(P)}\neq0$, and in particular it follows that $\tt P\neq\varLambda$, $\tt Q\neq\varLambda$, $\tt UP(P)\neq\varLambda$, $\tt UP(Q)\neq\varLambda$; the result stated in the exercise now follows. Thus the proof depends on showing that the <code>UP</code> chain condition stated above is preserved by the actions of the algorithm.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_14" id="ch02ex_2_9_14a">14</a>, <a href="../Text/ch02b.html#ch02ex_2_9_15" id="ch02ex_2_9_15a">15</a>. See Martin Ward and Hussain Zedan, “Provably correct derivation of algorithms using FermaT,” <em>Formal Aspects of Computing</em> <strong>27</strong> (2015), to appear.</p>
 
-  <p id="page_577"><a href="../Text/ch02b.html#ch02ex_2_9_16" id="ch02ex_2_9_16a">16</a>. We prove (by induction on the number of nodes in a <em>single tree <em>T</em></em>) that if <code>P</code> is a pointer to <em>T</em>, and if the stack is initially empty, steps F2 through F4 will end with the single value $f({\rm root}(T))$ on the stack. This is true for $n=1$. If $n\gt1$, there are $0\lt d={\tt DEGREE}({\rm root}(T))$ subtrees $T_1,\ldots,T_d$; by induction and the nature of a stack, and since postorder consists of $T_1,\ldots,T_d$ followed by ${\rm root}(T)$, the algorithm computes $f(T_1),\ldots,f(T_d)$, and then $f({\rm root}(T))$, as desired. The validity of <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a> for forests follows.</p>
+  <p id="page_577"><a href="../Text/ch02b.html#ch02ex_2_9_16" id="ch02ex_2_9_16a">16</a>. We prove (by induction on the number of nodes in a <em>single tree <em>T</em></em>) that if <code>P</code> is a pointer to <em>T</em>, and if the stack is initially empty, steps F2 through F4 will end with the single value $f({\rm root}(T))$ on the stack. This is true for <em>n</em> = 1. If $n\gt1$, there are $0\lt d={\tt DEGREE}({\rm root}(T))$ subtrees $T_1,\ldots,T_d$; by induction and the nature of a stack, and since postorder consists of $T_1,\ldots,T_d$ followed by ${\rm root}(T)$, the algorithm computes $f(T_1),\ldots,f(T_d)$, and then $f({\rm root}(T))$, as desired. The validity of <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a> for forests follows.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_17" id="ch02ex_2_9_17a">17</a>. <strong>G1.</strong> Set the stack empty, and let <code>P</code> point to the root of the tree (the last node in postorder). Evaluate $f({\tt NODE(P)})$.</p>
 
@@ -378,11 +378,11 @@
 
   <p class="uln-indentC"><strong>P2.</strong> If ${\rm top}({\tt R})\gt j+1$, go to P5. (If an <code>LTAG</code> field were present, we could have tested ${\tt LTAG[}j{\tt]}=0$ instead of ${\rm top}({\tt R})\gt j+1$.)</p>
 
-  <p class="uln-indentC"><strong>P3.</strong> If <code>I</code> is empty, terminate the algorithm; otherwise set $i\Leftarrow\tt I$, $k←k+1$, ${\tt INFO2[}k{\tt]←INFO1[}i{\tt]}$, ${\tt DEGREE[}k{\tt]\Leftarrow D}$.</p>
+  <p class="uln-indentC"><strong>P3.</strong> If <code>I</code> is empty, terminate the algorithm; otherwise set $i\Leftarrow\tt I$, $k←k+1$, ${\tt INFO2[}k{\tt]←INFO1[}i\tt]$, ${\tt DEGREE[}k{\tt]\Leftarrow D}$.</p>
 
-  <p class="uln-indentC"><strong>P4.</strong> If ${\tt RLINK[}i{\tt]}=0$, go to P3; otherwise delete the top of <code>R</code> (which will equal ${\tt RLINK[}i{\tt]}$).</p>
+  <p class="uln-indentC"><strong>P4.</strong> If ${\tt RLINK[}i{\tt]}=0$, go to P3; otherwise delete the top of <code>R</code> (which will equal ${\tt RLINK[}i\tt]$).</p>
 
-  <p class="uln-indentC"><strong>P5.</strong> Set ${\rm top}({\tt D})←{\rm top}({\tt D})+1$, $j←j+1$, ${\tt I}\Leftarrow j$, ${\tt D}\Leftarrow 0$, and if ${\tt RLINK[}j{\tt]}\neq0$ set ${\tt R}\Leftarrow{\tt RLINK[}j{\tt]}$. Go to P2. <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="uln-indentC"><strong>P5.</strong> Set ${\rm top}({\tt D})←{\rm top}({\tt D})+1$, $j←j+1$, ${\tt I}\Leftarrow j$, ${\tt D}\Leftarrow 0$, and if ${\tt RLINK[}j{\tt]}\neq0$ set ${\tt R}\Leftarrow{\tt RLINK[}j\tt]$. Go to P2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_19" id="ch02ex_2_9_19a">19</a>. (a) This property is equivalent to saying that <code>SCOPE</code> links do not cross each other.</p>
 
@@ -966,13 +966,13 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_2_11_2" id="ch02ex_2_11_2a">2</a>. Not in the same way, since thread links in the usual representation lead back to “$\tt PARENT$,” which is not unique for sub-Lists. The representation discussed in <a href="../Text/ch02b.html#ch02ex_3_2_25">exercise 2.3.4.2–25</a>, or some similar method, could perhaps be used (but this idea has not yet been exploited at the time of writing).</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_2_11_3" id="ch02ex_2_11_3a">3</a>. As mentioned in the text, we prove also that <code>P</code> = <code>P0</code> upon termination. If only <code>P0</code> is to be marked, the algorithm certainly operates correctly. If $n\gt1$ nodes are to be marked, we must have ${\tt ATOM(P0)}=0$. Step E4 then sets ${\tt ALINK(P0)}←\varLambda$ and executes the algorithm with <code>P0</code> replaced by $\tt ALINK(P0)$ and <code>T</code> replaced by <code>P0</code>. By induction (note that since $\tt MARK(P0)$ is now 1, all links to <code>P0</code> are equivalent to <em>Λ</em> by steps E4 and E5), we see that ultimately we will mark all nodes on paths that start with $\tt ALINK(P0)$ and do not pass through <code>P0</code>; and we will then get to step E6 with <code>T</code> = <code>P0</code> and ${\tt P}=\tt ALINK(P0)$. Now since ${\tt ATOM(T)}=1$, step E6 restores $\tt ALINK(P0)$ and $\tt ATOM(P0)$ and we reach step E5. Step E5 sets ${\tt BLINK(P0)}←\varLambda$, etc., and a similar argument shows that we will ultimately mark all nodes on paths that start with $\tt BLINK(P0)$ and do not pass through <code>P0</code> or nodes reachable from $\tt ALINK(P0)$. Then we will get to E6 with <code>T</code> = <code>P0</code>, ${\tt P}=\tt BLINK(P0)$, and finally we get to E6 with ${\tt T}=\varLambda$, <code>P</code> = <code>P0</code>.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_2_11_3" id="ch02ex_2_11_3a">3</a>. As mentioned in the text, we prove also that <code>P</code> = <code>P0</code> upon termination. If only <code>P0</code> is to be marked, the algorithm certainly operates correctly. If $n\gt1$ nodes are to be marked, we must have ${\tt ATOM(P0)}=0$. Step E4 then sets $\tt ALINK(P0)←\varLambda$ and executes the algorithm with <code>P0</code> replaced by $\tt ALINK(P0)$ and <code>T</code> replaced by <code>P0</code>. By induction (note that since $\tt MARK(P0)$ is now 1, all links to <code>P0</code> are equivalent to <em>Λ</em> by steps E4 and E5), we see that ultimately we will mark all nodes on paths that start with $\tt ALINK(P0)$ and do not pass through <code>P0</code>; and we will then get to step E6 with <code>T</code> = <code>P0</code> and ${\tt P}=\tt ALINK(P0)$. Now since ${\tt ATOM(T)}=1$, step E6 restores $\tt ALINK(P0)$ and $\tt ATOM(P0)$ and we reach step E5. Step E5 sets $\tt BLINK(P0)←\varLambda$, etc., and a similar argument shows that we will ultimately mark all nodes on paths that start with $\tt BLINK(P0)$ and do not pass through <code>P0</code> or nodes reachable from $\tt ALINK(P0)$. Then we will get to E6 with <code>T</code> = <code>P0</code>, ${\tt P}=\tt BLINK(P0)$, and finally we get to E6 with ${\tt T}=\varLambda$, <code>P</code> = <code>P0</code>.</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_2_11_4" id="ch02ex_2_11_4a">4</a>. The program that follows incorporates the suggested improvements in the speed of processing atoms that appear in the text after the statement of <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a>.</p>
 
   <p class="indent">In steps E4 and E5 of the algorithm, we want to test if ${\tt MARK(Q)}=0$. If ${\tt NODE(Q)}=+0$, this is an unusual case that can be handled properly by setting it to $-0$ and treating it as if it were originally $-0$, since it has <code>ALINK</code> and <code>BLINK</code> both <em>Λ</em>. This simplification is not reflected in the timing calculations below.</p>
 
-  <p class="indent">$\rm rI1≡\tt P$, $\rm rI2≡\tt T$, $\rm rI3≡\tt Q$, and $rX≡-1$ (for setting $\tt MARK\rm{s}$).</p>
+  <p class="indent">$\rm rI1≡\tt P$, $\rm rI2≡\tt T$, $\rm rI3≡\tt Q$, and $rX≡-1$ (for setting <code>MARK</code>s$).</p>
 
   <div class="image"><img src="../Images/601pro01.png" /></div>
 
@@ -982,9 +982,9 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_2_11_5" id="ch02ex_2_11_5a">5</a>. (The following is the fastest known marking algorithm for a one-level memory.)</p>
 
-  <p class="uln-indentC"><strong>S1.</strong> Set ${\tt MARK(P0)}←1$. If $\tt ATOM(P0)=1$, the algorithm terminates; otherwise set $\tt S←0$, $\tt R←P0$, ${\tt T}←\varLambda$.</p>
+  <p class="uln-indentC"><strong>S1.</strong> Set ${\tt MARK(P0)}←1$. If $\tt ATOM(P0)=1$, the algorithm terminates; otherwise set $\tt S←0$, $\tt R←P0$, $\tt T←\varLambda$.</p>
 
-  <p class="uln-indentC"><strong>S2.</strong> Set $\tt P←BLINK(R)$. If ${\tt P}=\varLambda$ or $\tt MARK(P)=1$, go to S3. Otherwise set $\tt MARK(P)←1$. Now if $\tt ATOM(P)=1$, go to S3; otherwise if ${\tt S}\lt\tt N$ set ${\tt S←S}+1$, $\tt STACK[S]←P$, and go to S3; otherwise go to S5.</p>
+  <p class="uln-indentC"><strong>S2.</strong> Set $\tt P←BLINK(R)$. If ${\tt P}=\varLambda$ or ${\tt MARK(P)}=1$, go to S3. Otherwise set ${\tt MARK(P)}←1$. Now if ${\tt ATOM(P)}=1$, go to S3; otherwise if $\tt S\lt N$ set ${\tt S←S}+1$, $\tt STACK[S]←P$, and go to S3; otherwise go to S5.</p>
 
   <p class="uln-indentC" id="page_603"><strong>S3.</strong> Set $\tt P←ALINK(R)$. If ${\tt P}=\varLambda$ or ${\tt MARK(P)}=1$, go to S4. Otherwise set ${\tt MARK(P)}←1$. Now if ${\tt ATOM(P)}=1$, go to S4; otherwise set $\tt R←P$ and return to S2.</p>
 
@@ -1004,13 +1004,13 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_2_11_8" id="ch02ex_2_11_8a">8</a>. <em>Solution 1:</em> Analogous to <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a>, but simpler.</p>
 
-  <p class="uln-indentC"><strong>F1.</strong> Set ${\tt T}←\varLambda$, $\tt P←P0$.</p>
+  <p class="uln-indentC"><strong>F1.</strong> Set $\tt T←\varLambda$, $\tt P←P0$.</p>
 
   <p class="uln-indentC"><strong>F2.</strong> Set ${\tt MARK(P)}←1$, and set ${\tt P←P}+\tt SIZE(P)$.</p>
 
   <p class="uln-indentC"><strong>F3.</strong> If ${\tt MARK(P)}=1$, go to F5.</p>
 
-  <p class="uln-indentC"><strong>F4.</strong> Set $\tt Q←LINK(P)$. If ${\tt Q}\neq\varLambda$ and ${\tt MARK(Q)}=0$, set $\tt LINK(P)←T$, $\tt T←P$, $\tt P←Q$ and go to F2. Otherwise set ${\tt P←P}-1$ and return to F3.</p>
+  <p class="uln-indentC"><strong>F4.</strong> Set $\tt Q←LINK(P)$. If $\tt Q\neq\varLambda$ and ${\tt MARK(Q)}=0$, set $\tt LINK(P)←T$, $\tt T←P$, $\tt P←Q$ and go to F2. Otherwise set ${\tt P←P}-1$ and return to F3.</p>
 
   <p class="uln-indentC"><strong>F5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt Q←T$, $\tt T←LINK(Q)$, $\tt LINK(Q)←P$, ${\tt P←Q}-1$, and return to F3. <span class="middle"><img src="../Images/box.png" /></span></p>
 
@@ -1018,29 +1018,29 @@
 
   <p class="indent"><em>Solution 2:</em> Analogous to <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a>. For this solution, we assume that the <code>SIZE</code> field is large enough to contain a link address. Such an assumption is probably not justified by the statement of the problem, but it lets us use a slightly faster method than the first solution when it is applicable.</p>
 
-  <p class="uln-indentC"><strong>G1.</strong> Set ${\tt T}←\varLambda$, ${\tt MARK(P0)}←1$, ${\tt P←P0}+\tt SIZE(P0)$.</p>
+  <p class="uln-indentC"><strong>G1.</strong> Set $\tt T←\varLambda$, ${\tt MARK(P0)}←1$, ${\tt P←P0}+\tt SIZE(P0)$.</p>
 
   <p class="uln-indentC"><strong>G2.</strong> If ${\tt MARK(P)}=1$, go to G5.</p>
 
   <p class="uln-indentC"><strong>G3.</strong> Set $\tt Q←LINK(P)$, ${\tt P←P}-1$.</p>
 
-  <p class="uln-indentC"><strong>G4.</strong> If ${\tt Q}\neq\varLambda$ and ${\tt MARK(Q)}=0$, set ${\tt MARK(Q)}←1$, $\tt S←SIZE(Q)$, $\tt SIZE(Q)←T$, ${\tt T←Q}+\tt S$. Go back to G2.</p>
+  <p class="uln-indentC"><strong>G4.</strong> If $\tt Q\neq\varLambda$ and ${\tt MARK(Q)}=0$, set ${\tt MARK(Q)}←1$, $\tt S←SIZE(Q)$, $\tt SIZE(Q)←T$, ${\tt T←Q}+\tt S$. Go back to G2.</p>
 
   <p class="uln-indentC" id="page_604"><strong>G5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt P←T$ and find the first value of ${\tt Q}={\tt P},{\tt P}-1,{\tt P}-2,\ldots$ for which ${\tt MARK(Q)}=1$; set $\tt T←SIZE(Q)$ and ${\tt SIZE(Q)←P}-\tt Q$. Go back to G2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
-  <p class="answer2"><strong><a href="../Text/ch02c.html#ch02ex_2_11_9" id="ch02ex_2_11_9a">9</a>. H1.</strong> Set ${\tt L}←0$, ${\tt K←M}+1$, ${\tt MARK(0)}←1$, ${\tt MARK(M}+1{\tt)}←0$.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_2_11_9" id="ch02ex_2_11_9a">9</a>. <strong>H1.</strong> Set ${\tt L}←0$, ${\tt K←M}+1$, ${\tt MARK(0)}←1$, ${\tt MARK(M}+1{\tt)}←0$.</p>
 
   <p class="uln-indentC"><strong>H2.</strong> Increase <code>L</code> by one, and if ${\tt MARK(L)}=$ 1 repeat this step.</p>
 
   <p class="uln-indentC"><strong>H3.</strong> Decrease <code>K</code> by one, and if ${\tt MARK(K)}=0$ repeat this step.</p>
 
-  <p class="uln-indentC"><strong>H4.</strong> If ${\tt L}\gt\tt K$, go to step H5; otherwise set ${\tt NODE(L)←NODE(K)}$, $\tt ALINK(K)←L$, ${\tt MARK(K)}←0$, and return to H2.</p>
+  <p class="uln-indentC"><strong>H4.</strong> If $\tt L\gt K$, go to step H5; otherwise set $\tt NODE(L)←NODE(K)$, $\tt ALINK(K)←L$, ${\tt MARK(K)}←0$, and return to H2.</p>
 
   <p class="uln-indentC"><strong>H5.</strong> For ${\tt L}=1,2,\ldots,\tt K$ do the following: Set ${\tt MARK(L)}←0$. If ${\tt ATOM(L)}=0$ and $\tt ALINK(L)\gt K$, set $\tt ALINK(L)←ALINK(ALINK(L))$. If ${\tt ATOM(L)}=0$ and $\tt BLINK(L)\gt K$, set $\tt BLINK(L)←ALINK(BLINK(L))$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>See also <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 2.5–33</a>.</p>
 
-  <p class="answer3"><strong><a href="../Text/ch02c.html#ch02ex_2_11_10" id="ch02ex_2_11_10a">10</a>. Z1.</strong> [Initialize.] Set $\tt F←P0$, $\tt R\Leftarrow AVAIL$, $\tt NODE(R)←NODE(F)$, $\tt REF(F)←R$. (Here <code>F</code> and <code>R</code> are pointers for a queue set up in the <code>REF</code> fields of all header nodes encountered.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_2_11_10" id="ch02ex_2_11_10a">10</a>. <strong>Z1.</strong> [Initialize.] Set $\tt F←P0$, $\tt R\Leftarrow AVAIL$, $\tt NODE(R)←NODE(F)$, $\tt REF(F)←R$. (Here <code>F</code> and <code>R</code> are pointers for a queue set up in the <code>REF</code> fields of all header nodes encountered.)</p>
 
   <p class="uln-indentC"><strong>Z2.</strong> [Begin new List.] Set $\tt P←F$, $\tt Q←REF(P)$.</p>
 
@@ -1074,7 +1074,7 @@
 
   <p class="indenthangingAA"><strong>A5′.</strong> [Remove top level.] Remove the top stack entry; and if the new level number at the top of the stack is $\ge\tt L$, let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack and repeat this step. Otherwise set $\tt SIB(P1)←Q$ and then let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_4_4" id="ch02ex_1_4_4a">4</a>. (Solution by David S. Wise.) Rule (c) is violated if and only if there is a data item whose <em>complete qualification</em> $A_0{\tt OF}\ldots{\tt OF}A_n$ is also a COBOL reference to some other data item. Since the parent $A_1{\tt OF}\ldots{\tt OF}A_n$ must also satisfy rule (c), we may assume that this other data item is a descendant of the same parent. Therefore <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> would be extended to check, as each new data item is added to the Data Table, whether its parent is an ancestor of any other item of the same name, or if the parent of any other item of the same name is in the stack. (When the parent is <em>Λ</em>, it is everybody’s ancestor and always on the stack.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_4_4" id="ch02ex_1_4_4a">4</a>. (Solution by David S. Wise.) Rule (c) is violated if and only if there is a data item whose <em>complete qualification</em> $A_0{\tt OF\ldots OF}A_n$ is also a COBOL reference to some other data item. Since the parent $A_1{\tt OF\ldots OF}A_n$ must also satisfy rule (c), we may assume that this other data item is a descendant of the same parent. Therefore <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> would be extended to check, as each new data item is added to the Data Table, whether its parent is an ancestor of any other item of the same name, or if the parent of any other item of the same name is in the stack. (When the parent is <em>Λ</em>, it is everybody’s ancestor and always on the stack.)</p>
 
   <p class="indent">On the other hand, if we leave <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> as it stands, the COBOL programmer will get an error message from <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> when trying to use an illegal item. Only $\tt MOVE\;CORRESPONDING$ can make use of such items without error.</p>
 
@@ -1082,7 +1082,7 @@
 
   <div class="image"><img src="../Images/605pro01.png" /></div>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_4_6" id="ch02ex_1_4_6a">6</a>. A simple modification of <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> makes it search only for complete references (if $k=n$ and ${\tt PARENT(S)}\neq\varLambda$ in step B3, or if ${\tt NAME(S)}\neq P_k$ in step B6, set $\tt P←PREV(P)$ and go to B2). The idea is to run through this modified <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> first; then, if <code>Q</code> is <em>still</em> <em>Λ</em>, to perform the unmodified algorithm.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_4_6" id="ch02ex_1_4_6a">6</a>. A simple modification of <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> makes it search only for complete references (if <em>k</em> = <em>n</em> and $\tt PARENT(S)\neq\varLambda$ in step B3, or if ${\tt NAME(S)}\neq P_k$ in step B6, set $\tt P←PREV(P)$ and go to B2). The idea is to run through this modified <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> first; then, if <code>Q</code> is <em>still</em> <em>Λ</em>, to perform the unmodified algorithm.</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_7" id="ch02ex_1_4_7a">7</a>. <code>MOVE MONTH OF DATE OF SALES TO MONTH OF DATE OF PURCHASES. MOVE DAY OF DATE OF SALES TO DAY OF DATE OF PURCHASES. MOVE YEAR OF DATE OF SALES TO YEAR OF <a id="page_606"></a>DATE OF PURCHASES. MOVE ITEM OF TRANSACTION OF SALES TO ITEM OF TRANSACTION OF PURCHASES. MOVE QUANTITY OF TRANSACTION OF SALES TO QUANTITY OF TRANSACTION OF PURCHASES. MOVE PRICE OF TRANSACTION OF SALES TO PRICE OF TRANSACTION OF PURCHASES</code>. <code>MOVE TAX OF TRANSACTION OF SALES TO TAX OF TRANSACTION OF PURCHASES</code>.</p>
 
@@ -1090,15 +1090,15 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_9" id="ch02ex_1_4_9a">9</a>. “$\tt MOVE\;CORRESPONDING\;\alpha\;TO\;\beta$”, if neither <em>α</em> nor <em>β</em> is elementary, is equivalent to the set of statements “${\tt MOVE\;CORRESPONDING}\;A\;{\tt OF\;\alpha\;TO}\;A\;\tt OF\;\beta$” taken over all names <em>A</em> common to groups <em>α</em> and <em>β</em>. (This is a more elegant way to state the definition than the more traditional and more cumbersome definition of “$\tt MOVE\;CORRESPONDING$” given in the text.) We may verify that <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a> satisfies this definition, using an inductive proof that steps C2 through C5 will ultimately terminate with <code>P</code> = <code>P0</code> and <code>Q</code> = <code>Q0</code>. Further details of the proof are filled in as we have done many times before in a “tree induction” (see, for example, the proof of <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm 2.3.1T</a>).</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_4_10" id="ch02ex_1_4_10a">10</a>. (a) Set ${\tt S1←LINK}(P_k)$. Then repeatedly set ${\tt S1←PREV(S1)}$ zero or more times until either ${\tt S1}=\varLambda({\tt NAME(S)}\neq P_k)$ or ${\tt S1}={\tt S}({\tt NAME(S)}=P_k)$. (b) Set $\tt P1←P$ and then set ${\tt P1←PREV(P1)}$ zero or more times until ${\tt PREV(P1)}=\varLambda$; do a similar operation with variables <code>Q1</code> and <code>Q</code>; then test if <code>P1</code> = <code>Q1</code>. Alternatively, if the Data Table entries are ordered so that ${\tt PREV(P)}\lt\tt P$ for all <code>P</code>, a faster test can be made in an obvious way depending on whether ${\tt P}\gt\tt Q$ or not, following the <code>PREV</code> links of the larger to see if the smaller is encountered.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_4_10" id="ch02ex_1_4_10a">10</a>. (a) Set ${\tt S1←LINK}(P_k)$. Then repeatedly set ${\tt S1←PREV(S1)}$ zero or more times until either ${\tt S1}=\varLambda({\tt NAME(S)}\neq P_k)$ or ${\tt S1}={\tt S}({\tt NAME(S)}=P_k)$. (b) Set $\tt P1←P$ and then set ${\tt P1←PREV(P1)}$ zero or more times until ${\tt PREV(P1)}=\varLambda$; do a similar operation with variables <code>Q1</code> and <code>Q</code>; then test if <code>P1</code> = <code>Q1</code>. Alternatively, if the Data Table entries are ordered so that $\tt PREV(P)\lt P$ for all <code>P</code>, a faster test can be made in an obvious way depending on whether $\tt P\gt Q$ or not, following the <code>PREV</code> links of the larger to see if the smaller is encountered.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_4_11" id="ch02ex_1_4_11a">11</a>. A minuscule improvement in the speed of step C4 would be achieved by adding a new link field ${\tt SIB1(P)}≡{\tt CHILD(PARENT(P))}$. More significantly, we could modify the <code>CHILD</code> and <code>SIB</code> links so that ${\tt NAME(SIB(P))}\gt\tt NAME(P)$; this would speed up the search in step C3 considerably because it would require only one pass over each family to find the matching members. This change would therefore remove the only “search” present in <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a>. <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">C</a> are readily modified for this interpretation, and the reader may find it an interesting exercise. (However, if we consider the relative frequency of $\tt MOVE\;CORRESPONDING$ statements and the usual size of family groups, the resulting speedup will not be terribly significant in the translation of actual COBOL programs.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_4_11" id="ch02ex_1_4_11a">11</a>. A minuscule improvement in the speed of step C4 would be achieved by adding a new link field $\tt SIB1(P)≡CHILD(PARENT(P))$. More significantly, we could modify the <code>CHILD</code> and <code>SIB</code> links so that $\tt NAME(SIB(P))\gt NAME(P)$; this would speed up the search in step C3 considerably because it would require only one pass over each family to find the matching members. This change would therefore remove the only “search” present in <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a>. <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">C</a> are readily modified for this interpretation, and the reader may find it an interesting exercise. (However, if we consider the relative frequency of $\tt MOVE\;CORRESPONDING$ statements and the usual size of family groups, the resulting speedup will not be terribly significant in the translation of actual COBOL programs.)</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_12" id="ch02ex_1_4_12a">12</a>. Leave steps B1, B2, B3 unchanged; change the other steps thus:</p>
 
   <p class="indenthangingAA1"><strong>B4′.</strong> Set $k←k+1$, ${\tt R←LINK(}P_k\tt)$.</p>
 
-  <p class="indenthangingAA1"><strong>B5′.</strong> If ${\tt R}=\varLambda$, set $\tt P←PREV(P)$ and go to B2′ (we haven’t found a match). If $R\lt{\tt S}≤\tt SCOPE(R)$, set $\tt S←R$ and go to B3′. Otherwise set $\tt R←PREV(R)$ and repeat step B5′. <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="indenthangingAA1"><strong>B5′.</strong> If ${\tt R}=\varLambda$, set $\tt P←PREV(P)$ and go to B2′ (we haven’t found a match). If $\tt R\lt S≤SCOPE(R)$, set $\tt S←R$ and go to B3′. Otherwise set $\tt R←PREV(R)$ and repeat step B5′. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>This algorithm does <em>not</em> adapt to the PL/I convention of <a href="../Text/ch02c.html#ch02ex_1_4_6">exercise 6</a>.</p>
 
@@ -1110,36 +1110,36 @@
 
   <p class="indenthangingAA1" id="page_607"><strong>C2′.</strong> If ${\tt SCOPE(P)}=\tt P$ or ${\tt SCOPE(Q)}=\tt Q$, output $({\tt P},{\tt Q})$ as one of the desired pairs and go to C5′. Otherwise put $({\tt P},{\tt Q})$ on the stack and set ${\tt P←P}+1$, ${\tt Q←Q}+1$.</p>
 
-  <p class="indenthangingAA1"><strong>C3′.</strong> Determine if <code>P</code> and <code>Q</code> point to entries with the same name (see <a href="../Text/ch02c.html#ch02ex_1_4_10">exercise 10</a>(b)). If so, go to C2′. If not, let $({\tt P1},{\tt Q1})$ be the entry at the top of the stack; if ${\tt SCOPE(Q)}\lt\tt SCOPE(Q1)$, set ${\tt Q←SCOPE(Q)}+1$ and repeat step C3′.</p>
+  <p class="indenthangingAA1"><strong>C3′.</strong> Determine if <code>P</code> and <code>Q</code> point to entries with the same name (see <a href="../Text/ch02c.html#ch02ex_1_4_10">exercise 10</a>(b)). If so, go to C2′. If not, let $({\tt P1},{\tt Q1})$ be the entry at the top of the stack; if $\tt SCOPE(Q)\lt SCOPE(Q1)$, set ${\tt Q←SCOPE(Q)}+1$ and repeat step C3′.</p>
 
-  <p class="indenthangingAA1"><strong>C4′.</strong> Let $({\tt P1},{\tt Q1})$ be the entry at the top of the stack. If ${\tt SCOPE(P)}\lt\tt SCOPE(P1)$, set ${\tt P←SCOPE(P)}+1$, ${\tt Q←Q1}+1$, and go back to C3′. If ${\tt SCOPE(P)}=\tt SCOPE(P1)$, set $\tt P←P1$, $\tt Q←Q1$ and remove the top entry of the stack.</p>
+  <p class="indenthangingAA1"><strong>C4′.</strong> Let $({\tt P1},{\tt Q1})$ be the entry at the top of the stack. If $\tt SCOPE(P)\lt SCOPE(P1)$, set ${\tt P←SCOPE(P)}+1$, ${\tt Q←Q1}+1$, and go back to C3′. If ${\tt SCOPE(P)}=\tt SCOPE(P1)$, set $\tt P←P1$, $\tt Q←Q1$ and remove the top entry of the stack.</p>
 
   <p class="indenthangingAA1"><strong>C5′.</strong> If the stack is empty, the algorithm terminates. Otherwise go to C4′. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <h3 id="app01lev1sec6">Section 2.5</h3>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_1" id="ch02ex_1_5_1a">1</a>. In such fortuitous circumstances, a stack-like operation may be used as follows: Let the memory pool area be locations 0 through ${\tt M}-1$, and let <code>AVAIL</code> point to the lowest free location. To reserve <code>N</code> words, report failure if ${\tt AVAIL}+{\tt N}\ge\tt M$, otherwise set ${\tt AVAIL←AVAIL}+\tt N$. To free these <code>N</code> words, just set ${\tt AVAIL←AVAIL}-\tt N$.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_1" id="ch02ex_1_5_1a">1</a>. In such fortuitous circumstances, a stack-like operation may be used as follows: Let the memory pool area be locations 0 through ${\tt M}-1$, and let <code>AVAIL</code> point to the lowest free location. To reserve <code>N</code> words, report failure if ${\tt AVAIL}+\tt N\ge M$, otherwise set ${\tt AVAIL←AVAIL}+\tt N$. To free these <code>N</code> words, just set ${\tt AVAIL←AVAIL}-\tt N$.</p>
   </div>
 
   <p class="indent">Similarly, cyclic queue-like operation is appropriate for a first-in-first-out discipline.</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_2" id="ch02ex_1_5_2a">2</a>. The amount of storage space for an item of length <em>l</em> is $k\lceil{l/(k-b)}\rceil$, which has the average value $kL/(k-b)+(1-\alpha)k$, where <em>α</em> is assumed to be $1/2$, independent of <em>k</em>. This expression is a minimum (for real values of <em>k</em>) when $k=b+\sqrt{2bL}$. So choose <em>k</em> to be the integer just above or just below this value, whichever gives the lowest value of $kL/(k-b)+\frac{1}{2}k$. For example, if $b=1$ and $L=10$, we would choose $k\approx1+\sqrt{20}=5\;\rm or\;6$; both are equally good. For much greater detail about this problem, see <em>JACM</em> <strong>12</strong> (1965), 53–70.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_4" id="ch02ex_1_5_4a">4</a>. $\rm rI1≡\tt Q$, $\rm rI2≡\tt P$.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_4" id="ch02ex_1_5_4a">4</a>. rI1 ≡ <code>Q</code>, rI2 ≡ <code>P</code>.</p>
 
   <div class="image"><img src="../Images/607pro01.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_5" id="ch02ex_1_5_5a">5</a>. Probably not. The unavailable storage area just before location <code>P</code> will subsequently become available, and its length will be increased by the amount <code>K</code>; an increase of 99 would not be negligible.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_6" id="ch02ex_1_5_6a">6</a>. The idea is to try to search in different parts of the <code>AVAIL</code> list each time. We can use a “roving pointer,” called <code>ROVER</code> for example, which is treated as follows: In step A1, set $\tt Q←ROVER$. After step A4, set ${\tt ROVER←LINK(Q)}$ if ${\tt LINK(Q)}\neq\varLambda$, otherwise set ${\tt ROVER←LOC(AVAIL)}$. In step A2, when ${\tt P}=\varLambda$ the first time during a particular execution of <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, set ${\tt Q←LOC(AVAIL)}$ and repeat step A2. When ${\tt P}=\varLambda$ the <em>second</em> time, the algorithm terminates unsuccessfully. In this way <code>ROVER</code> will tend to <a id="page_608"></a>point to a random spot in the <code>AVAIL</code> list, and the sizes will be more balanced. At the beginning of the program, set ${\tt ROVER←LOC(AVAIL)}$; it is <em>also</em> necessary to set <code>ROVER</code> to $\tt LOC(AVAIL)$ everywhere else in the program where the block whose address equals the current setting of <code>ROVER</code> is taken out of the <code>AVAIL</code> list. (Sometimes, however, it is useful to have small blocks at the beginning, as in the strict first-fit method; for example, we might want to keep a sequential stack at the high end of memory. In such cases we can reduce the search time by using trees as suggested in exercise 6.2.3–30.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_6" id="ch02ex_1_5_6a">6</a>. The idea is to try to search in different parts of the <code>AVAIL</code> list each time. We can use a “roving pointer,” called <code>ROVER</code> for example, which is treated as follows: In step A1, set $\tt Q←ROVER$. After step A4, set $\tt ROVER←LINK(Q)$ if $\tt LINK(Q)\neq\varLambda$, otherwise set $\tt ROVER←LOC(AVAIL)$. In step A2, when ${\tt P}=\varLambda$ the first time during a particular execution of <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, set ${\tt Q←LOC(AVAIL)}$ and repeat step A2. When ${\tt P}=\varLambda$ the <em>second</em> time, the algorithm terminates unsuccessfully. In this way <code>ROVER</code> will tend to <a id="page_608"></a>point to a random spot in the <code>AVAIL</code> list, and the sizes will be more balanced. At the beginning of the program, set $\tt ROVER←LOC(AVAIL)$; it is <em>also</em> necessary to set <code>ROVER</code> to $\tt LOC(AVAIL)$ everywhere else in the program where the block whose address equals the current setting of <code>ROVER</code> is taken out of the <code>AVAIL</code> list. (Sometimes, however, it is useful to have small blocks at the beginning, as in the strict first-fit method; for example, we might want to keep a sequential stack at the high end of memory. In such cases we can reduce the search time by using trees as suggested in exercise 6.2.3–30.)</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_7" id="ch02ex_1_5_7a">7</a>. 2000, 1000 with requests of sizes 800, 1300. [An example where worst-fit succeeds, while best-fit fails, has been constructed by R. J. Weiland.]</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_8" id="ch02ex_1_5_8a">8</a>. In step A1<em>''</em>, also set ${\tt M}←\infty$, ${\tt R}←\varLambda$. In step A2<em>''</em>, if ${\tt P}=\varLambda$ go to A6<em>''</em>. In step A3<em>''</em>, go to A5<em>''</em> instead of to A4<em>''</em>. Add new steps as follows:</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_8" id="ch02ex_1_5_8a">8</a>. In step A1′′, also set $\tt M←\infty$, $\tt R←\varLambda$. In step A2′′, if ${\tt P}=\varLambda$ go to A6′′. In step A3′′, go to A5′′ instead of to A4′′. Add new steps as follows:</p>
 
-  <p class="uln-indentC"><strong>A5<em>''</em>.</strong> [Better fit?] If ${\tt M}\gt\tt SIZE(P)$, set $\tt R←Q$ and $\tt M←SIZE(P)$. Then set $\tt Q←P$ and return to A2<em>''</em>.</p>
+  <p class="uln-indentC"><strong>A5′′.</strong> [Better fit?] If $\tt M\gt SIZE(P)$, set $\tt R←Q$ and $\tt M←SIZE(P)$. Then set $\tt Q←P$ and return to A2′′.</p>
 
-  <p class="uln-indentC"><strong>A6<em>''</em>.</strong> [Any found?] If ${\tt R}=\varLambda$, the algorithm terminates unsuccessfully. Otherwise set $\tt Q←R$, $\tt P←LINK(Q)$, and go to A4<em>''</em>. <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="uln-indentC"><strong>A6′′.</strong> [Any found?] If ${\tt R}=\varLambda$, the algorithm terminates unsuccessfully. Otherwise set $\tt Q←R$, $\tt P←LINK(Q)$, and go to A4′′. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_9" id="ch02ex_1_5_9a">9</a>. Obviously if we are so lucky as to find ${\tt SIZE(P)}=\tt N$, we have a best fit and it is not necessary to search farther. (When there are only very few different block sizes, this occurs rather often.) If a “boundary tag” method like <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a> is being used, it is possible to maintain the <code>AVAIL</code> list in sorted order by size; so the length of search could be cut down to half the length of the list or less, on the average. But the best solution is to make the <code>AVAIL</code> list into a balanced tree structure as described in Section 6.2.3, if it is expected to be long.</p>
 
@@ -1147,11 +1147,11 @@
 
   <p class="uln-indent">Step B2, for “$\tt P\gt P0$” read “$\tt P\ge P0$”.</p>
 
-  <p class="indent">At the beginning of step B3, insert “If ${\tt P0}+\tt N\gt P$ and $\tt P\neq\varLambda$, set ${\tt N}←\max({\tt N,P}+{\tt SIZE(P)-P0})$, $\tt P←LINK(P)$, and repeat step B3.”</p>
+  <p class="indent">At the beginning of step B3, insert “If ${\tt P0}+\tt N\gt P$ and $\tt P\neq\varLambda$, set ${\tt N}←\max({\tt N},{\tt P}+{\tt SIZE(P)-P0})$, $\tt P←LINK(P)$, and repeat step B3.”</p>
 
-  <p class="indent">Step B4, for “${\tt Q}+{\tt SIZE(Q)}=\tt P0$”, read “${\tt Q}+{\tt SIZE(Q)}\ge\tt P0$”; and for “${\tt SIZE(Q)←SIZE(Q)}+\tt N$” read “$\tt SIZE(Q)←\max(SIZE(Q),P0+N-Q)$”.</p>
+  <p class="indent">Step B4, for “${\tt Q}+{\tt SIZE(Q)}=\tt P0$”, read “${\tt Q}+\tt SIZE(Q)\ge P0$”; and for “${\tt SIZE(Q)←SIZE(Q)}+\tt N$” read “${\tt SIZE(Q)}←\max({\tt SIZE(Q)},{\tt P0}+{\tt N-Q})$”.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_11" id="ch02ex_1_5_11a">11</a>. If <code>P0</code> is greater than <code>ROVER</code>, we can set $\tt Q←ROVER$ instead of ${\tt Q←LOC(AVAIL)}$ in step B1. If there are <em>n</em> entries in the <code>AVAIL</code> list, the average number of iterations of step B2 is $(2n+3)(n+2)/(6n+6)=\frac13 n+\frac56+O\left(\frac1n\right)$. For example if $n=2$ we get 9 equally probable situations, where <code>P1</code> and <code>P2</code> point to the two existing available blocks:</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_11" id="ch02ex_1_5_11a">11</a>. If <code>P0</code> is greater than <code>ROVER</code>, we can set $\tt Q←ROVER$ instead of $\tt Q←LOC(AVAIL)$ in step B1. If there are <em>n</em> entries in the <code>AVAIL</code> list, the average number of iterations of step B2 is $(2n+3)(n+2)/(6n+6)=\frac13 n+\frac56+O\left(\frac1n\right)$. For example if $n=2$ we get 9 equally probable situations, where <code>P1</code> and <code>P2</code> point to the two existing available blocks:</p>
 
   <div class="image"><img src="../Images/e608_02.png" /></div>
 
@@ -1163,9 +1163,9 @@
 
   <p class="indenthangingAA1"><strong>A2*.</strong> If ${\tt P}=\tt LOC(AVAIL)$ and ${\tt F}=0$, set $\tt P←AVAIL$, ${\tt F}←1$, and repeat step A2*. If ${\tt P}=\tt LOC(AVAIL)$ and ${\tt F}\neq0$, the algorithm terminates unsuccessfully.</p>
 
-  <p class="indenthangingAA1"><strong>A3*.</strong> If ${\tt SIZE(P)}\ge\tt N$, go to A4*; otherwise set $\tt P←LINK(P)$ and return to A2*.</p>
+  <p class="indenthangingAA1"><strong>A3*.</strong> If $\tt SIZE(P)\ge N$, go to A4*; otherwise set $\tt P←LINK(P)$ and return to A2*.</p>
 
-  <p class="indenthangingAA1" id="page_609"><strong>A4*.</strong> Set $\tt ROVER←LINK(P)$, $\tt K←SIZE(P)-N$. If ${\tt K}\lt c$ (where <em>c</em> is a constant $\ge2$), set ${\tt LINK(LINK(P}+1\tt))←ROVER$, ${\tt LINK(ROVER}+1{\tt)←LINK(P}+1\tt)$, $\tt L←P$; otherwise set ${\tt L←P}+\tt K$, ${\tt SIZE(P)←SIZE(L-1)←K}$, $\tt TAG(L-1)←“-”$, $\tt SIZE(L)←N$. Finally set ${\tt TAG(L)←TAG(L}+{\tt SIZE(L)-1)}←“+”$. <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="indenthangingAA1" id="page_609"><strong>A4*.</strong> Set $\tt ROVER←LINK(P)$, $\tt K←SIZE(P)-N$. If ${\tt K}\lt c$ (where <em>c</em> is a constant $\ge2$), set ${\tt LINK(LINK(P}+1\tt))←ROVER$, ${\tt LINK(ROVER}+1{\tt)←LINK(P}+1\tt)$, $\tt L←P$; otherwise set ${\tt L←P}+\tt K$, $\tt SIZE(P)←SIZE(L-1)←K$, $\tt TAG(L-1)←“-”$, $\tt SIZE(L)←N$. Finally set ${\tt TAG(L)←TAG(L}+{\tt SIZE(L)-1)}←“+”$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_13" id="ch02ex_1_5_13a">13</a>. rI1 ≡ <code>P</code>, rX ≡ <code>F</code>, rI2 ≡ <code>L</code>.</p>
 
@@ -1185,9 +1185,9 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_18" id="ch02ex_1_5_18a">18</a>. <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> reserves the upper end of a large block. When storage is completely available, the first-fit method actually begins by reserving the high-order locations, but once these become available again they are not re-reserved since a fit is usually found already in the lower locations; thus the initial large block at the lower end of memory quickly disappears with first-fit. A large block rarely is the best fit, however, so the best-fit method leaves a large block at the beginning of memory.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_19" id="ch02ex_1_5_19a">19</a>. Use the algorithm of <a href="../Text/ch02c.html#ch02ex_1_5_12">exercise 12</a>, except delete the references to $\tt SIZE(L-1)$, $\tt TAG(L-1)$, and ${\tt TAG(L+SIZE(L)-1)}$ from step A4*; also insert the following new step between steps A2* and A3*:</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_19" id="ch02ex_1_5_19a">19</a>. Use the algorithm of <a href="../Text/ch02c.html#ch02ex_1_5_12">exercise 12</a>, except delete the references to $\tt SIZE(L-1)$, $\tt TAG(L-1)$, and ${\tt TAG(L}+\tt SIZE(L)-1)$ from step A4*; also insert the following new step between steps A2* and A3*:</p>
 
-  <p class="uln-indentCC"><strong>A2.5*.</strong> Set ${\tt P1←P}+\tt SIZE(P)$. If ${\tt TAG(P1)}=“+”$, proceed to step A3. Otherwise set ${\tt P2←LINK(P1)}$, ${\tt LINK(P2+1)←LINK(P1+1)}$, ${\tt LINK(LINK(P1}+1{\tt))←P2}$, ${\tt SIZE(P)←SIZE(P)}+\tt SIZE(P1)$. If ${\tt ROVER}=\tt P1$, set $\tt ROVER←P2$. Repeat step A2.5*.</p>
+  <p class="uln-indentCC"><strong>A2.5*.</strong> Set ${\tt P1←P}+\tt SIZE(P)$. If ${\tt TAG(P1)}=“+”$, proceed to step A3. Otherwise set ${\tt P2←LINK(P1)}$, ${\tt LINK(P2}+1{\tt)←LINK(P1}+1\tt)$, ${\tt LINK(LINK(P1}+1\tt))←P2$, ${\tt SIZE(P)←SIZE(P)}+\tt SIZE(P1)$. If ${\tt ROVER}=\tt P1$, set $\tt ROVER←P2$. Repeat step A2.5*.</p>
 
   <p class="indent" id="page_611">Clearly the situation of (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-2">2</a></em>), (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-3">3</a></em>), (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-4">4</a></em>) can’t occur here; the only real effect on storage allocation is that the search here will tend to be longer than in <a href="../Text/ch02c.html#ch02ex_1_5_12">exercise 12</a>, and sometimes <code>K</code> will be less than <em>c</em> although there is really another available block preceding this one that we do not know about.</p>
 
@@ -1195,7 +1195,7 @@
 
   <p class="indent">[This method, with a few refinements, has proved to be quite satisfactory in the implementations of $\rm\TeX$ and $\tt METAFONT$. See <em>$\TeX$: The Program</em> (Addison–Wesley, 1986), §125.]</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_20" id="ch02ex_1_5_20a">20</a>. When a buddy is found to be available, during the collapsing loop, we want to remove that block from its ${\tt AVAIL[}k{\tt]}$ list, but we do not know which links to update unless (i) we do a possibly long search, or (ii) the list is doubly linked.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_20" id="ch02ex_1_5_20a">20</a>. When a buddy is found to be available, during the collapsing loop, we want to remove that block from its ${\tt AVAIL[}k\tt]$ list, but we do not know which links to update unless (i) we do a possibly long search, or (ii) the list is doubly linked.</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_21" id="ch02ex_1_5_21a">21</a>. If $n=2^k\alpha$, where $1≤\alpha≤2$, $a_n$ is $2^{2k+1}\left(\alpha-\frac23\right)+\frac13$, and $b_n$ is $2^{2k-1}\alpha^2+2^{k-1}\alpha$. The ratio $a_n/b_n$ for large <em>n</em> is essentially ${4\left(\alpha-\frac23\right)}/\alpha^2$, which takes its minimum value $\frac43$ when $\alpha=1\;\rm and\;2$, and its maximum value $\frac32$ when $\alpha=1\frac13$. So $a_n/b_n$ approaches no limit; it oscillates between these two extremes. The averaging methods of Section 4.2.4 do, however, yield an average ratio of $4(\ln2)^{-1}\int_1^2\left(\alpha-\frac23\right)d\alpha/\alpha^3=(\ln2)^{-1}\approx1.44$.</p>
 
@@ -1205,7 +1205,7 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_24" id="ch02ex_1_5_24a">24</a>. This would introduce a bug in the program; we may get to step S1 when ${\tt TAG(}0{\tt)}=1$, since S2 may return to S1. To make it work, add “${\tt TAG(L)}←0$” after “$\tt L←P$” in step S2. (It is easier to assume instead that ${\tt TAG(}2^m{\tt)}=0$.)</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_25" id="ch02ex_1_5_25a">25</a>. The idea is absolutely correct. (Criticism need not be negative.) The list heads ${\tt AVAIL[}k{\tt]}$ may be eliminated for $n\lt k≤m$; the algorithms of the text may be used if “<em>m</em>” is changed to “<em>n</em>” in steps R1, S1. The initial conditions (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-13">13</a></em>) and (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-14">14</a></em>) should be changed to indicate $2^{m-n}$ blocks of size $2^n$ instead of one block of size $2^m$.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_25" id="ch02ex_1_5_25a">25</a>. The idea is absolutely correct. (Criticism need not be negative.) The list heads ${\tt AVAIL[}k\tt]$ may be eliminated for $n\lt k≤m$; the algorithms of the text may be used if “<em>m</em>” is changed to “<em>n</em>” in steps R1, S1. The initial conditions (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-13">13</a></em>) and (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-14">14</a></em>) should be changed to indicate $2^{m-n}$ blocks of size $2^n$ instead of one block of size $2^m$.</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_26" id="ch02ex_1_5_26a">26</a>. Using the binary representation of <code>M</code>, we can easily modify the initial conditions (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-13">13</a></em>), (<em><a href="../Text/ch02c.html#ch02eq-lev1sec5-14">14</a></em>) so that all memory locations are divided into blocks whose size is a power of two, with blocks in decreasing order of size. In <a href="../Text/ch02c.html#ch02alg-lev1sec5-S">Algorithm S</a>, $\tt TAG(P)$ should be regarded as 0 whenever ${\tt P}\ge{\tt M}-2^k$.</p>
 
@@ -1229,13 +1229,13 @@
 
   <p>therefore $x_{k+1}-k_{k}≤\frac14(x_{k}-x_{k-1})$, and we must have $x_k=x_{k-1}$ before reaching time $12500+\lfloor{12500/4}\rfloor+\lfloor{12500/4^2}\rfloor+\cdots$.</p>
 
-  <p class="answer2"><strong><a href="../Text/ch02c.html#ch02ex_1_5_33" id="ch02ex_1_5_33a">33</a>. G1.</strong> [Clear $\tt LINK\rm{s}$.] Set ${\tt P}←1$, and repeat the operation ${\tt LINK(P)}←\varLambda$, ${\tt P←P}+\tt SIZE(P)$ until ${\tt P}=\tt AVAIL$. (This merely sets the <code>LINK</code> field in the first word of each node to <em>Λ</em>; we may assume in most cases that this step is unnecessary, since $\tt LINK(P)$ is set to <em>Λ</em> in step G9 below and it can be set to <em>Λ</em> by the storage allocator.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_33" id="ch02ex_1_5_33a">33</a>. <strong>G1.</strong> [Clear <code>LINK</code>s.] Set ${\tt P}←1$, and repeat the operation $\tt LINK(P)←\varLambda$, ${\tt P←P}+\tt SIZE(P)$ until ${\tt P}=\tt AVAIL$. (This merely sets the <code>LINK</code> field in the first word of each node to <em>Λ</em>; we may assume in most cases that this step is unnecessary, since $\tt LINK(P)$ is set to <em>Λ</em> in step G9 below and it can be set to <em>Λ</em> by the storage allocator.)</p>
 
-  <p class="uln-indentC"><strong>G2.</strong> [Initialize marking phase.] Set $\tt TOP←USE$, ${\tt LINK(TOP)←AVAIL}$, $\tt LINK(AVAIL)←\varLambda$. (<code>TOP</code> points to the top of a stack as in <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm 2.3.5D</a>.)</p>
+  <p class="uln-indentC"><strong>G2.</strong> [Initialize marking phase.] Set $\tt TOP←USE$, $\tt LINK(TOP)←AVAIL$, $\tt LINK(AVAIL)←\varLambda$. (<code>TOP</code> points to the top of a stack as in <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm 2.3.5D</a>.)</p>
 
-  <p class="uln-indentC"><strong>G3.</strong> [Pop up stack.] Set $\tt P←TOP$, ${\tt TOP←LINK(TOP)}$. If ${\tt TOP}=\varLambda$, go to G5.</p>
+  <p class="uln-indentC"><strong>G3.</strong> [Pop up stack.] Set $\tt P←TOP$, $\tt TOP←LINK(TOP)$. If ${\tt TOP}=\varLambda$, go to G5.</p>
 
-  <p class="uln-indentC"><strong>G4.</strong> [Put new links on stack.] For $1≤k≤\tt T(P)$, do the following operations: Set ${\tt Q←LINK(P}+k\tt)$; then if ${\tt Q}\neq\varLambda$ and ${\tt LINK(Q)}=\varLambda$, set ${\tt LINK(Q)←TOP}$, $\tt TOP←Q$. Then go back to G3.</p>
+  <p class="uln-indentC"><strong>G4.</strong> [Put new links on stack.] For $1≤k≤\tt T(P)$, do the following operations: Set ${\tt Q←LINK(P}+k\tt)$; then if $\tt Q\neq\varLambda$ and ${\tt LINK(Q)}=\varLambda$, set $\tt LINK(Q)←TOP$, $\tt TOP←Q$. Then go back to G3.</p>
 
   <p class="uln-indentC"><strong>G5.</strong> [Initialize next phase.] (Now ${\tt P}=\tt AVAIL$, and the marking phase has been completed so that the first word of each accessible node has a nonnull <code>LINK</code>. Our next goal is to combine adjacent inaccessible nodes, for speed in later steps, and to assign new addresses to the accessible nodes.) Set ${\tt Q}←1$, $\tt LINK(AVAIL)←Q$, ${\tt SIZE(AVAIL)}←0$, ${\tt P}←1$. (Location <code>AVAIL</code> is being used as a sentinel to signify the end of a loop in subsequent phases.)</p>
 
@@ -1243,13 +1243,13 @@
 
   <p class="uln-indentC"><strong>G7.</strong> [Collapse available areas.] If ${\tt LINK(P}+{\tt SIZE(P))}=\varLambda$, increase $\tt SIZE(P)$ by ${\tt SIZE(P}+\tt SIZE(P))$ and repeat this step. Otherwise set ${\tt P←P}+\tt SIZE(P)$ and return to G6.</p>
 
-  <p class="uln-indentC"><strong>G8.</strong> [Translate all links.] (Now the <code>LINK</code> field in the first word of each accessible node contains the address to which the node will be moved.) Set ${\tt USE←LINK(USE)}$, and $\tt AVAIL←Q$. Then set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: If ${\tt LINK(P)}\neq\varLambda$, set ${\tt LINK(Q)←LINK(LINK(Q))}$ for all <code>Q</code> such that ${\tt P}\lt{\tt Q}≤{\tt P}+\tt T(P)$ and ${\tt LINK(Q)}\neq\varLambda$; then regardless of the value of $\tt LINK(P)$, set ${\tt P←P}+\tt SIZE(P)$.</p>
+  <p class="uln-indentC"><strong>G8.</strong> [Translate all links.] (Now the <code>LINK</code> field in the first word of each accessible node contains the address to which the node will be moved.) Set $\tt USE←LINK(USE)$, and $\tt AVAIL←Q$. Then set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: If $\tt LINK(P)\neq\varLambda$, set $\tt LINK(Q)←LINK(LINK(Q))$ for all <code>Q</code> such that ${\tt P\lt Q≤P}+\tt T(P)$ and $\tt LINK(Q)\neq\varLambda$; then regardless of the value of $\tt LINK(P)$, set ${\tt P←P}+\tt SIZE(P)$.</p>
 
-  <p class="uln-indentC" id="page_614"><strong>G9.</strong> [Move.] Set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: Set $\tt Q←LINK(P)$, and if ${\tt Q}\neq\varLambda$ set ${\tt LINK(P)}←\varLambda$ and $\tt NODE(Q)←NODE(P)$; then whether ${\tt Q}=\varLambda$ or not, set ${\tt P←P}+\tt SIZE(P)$. (The operation ${\tt NODE(Q)←NODE(P)}$ implies the movement of $\tt SIZE(P)$ words; we always have ${\tt Q}≤\tt P$, so it is safe to move the words in order from smallest location to largest.) <span class="middle"><img src="../Images/box.png" /></span></p>
+  <p class="uln-indentC" id="page_614"><strong>G9.</strong> [Move.] Set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: Set $\tt Q←LINK(P)$, and if $\tt Q\neq\varLambda$ set $\tt LINK(P)←\varLambda$ and $\tt NODE(Q)←NODE(P)$; then whether ${\tt Q}=\varLambda$ or not, set ${\tt P←P}+\tt SIZE(P)$. (The operation $\tt NODE(Q)←NODE(P)$ implies the movement of $\tt SIZE(P)$ words; we always have $\tt Q≤P$, so it is safe to move the words in order from smallest location to largest.) <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>[This method is called the “LISP 2 garbage collector.” An interesting alternative, which does not require the <code>LINK</code> field at the beginning of a node, can be based on the idea of linking together all pointers that point to each node — see Lars-Erik Thorelli, <em>BIT</em> <strong>16</strong> (1976), 426–441; R. B. K. Dewar and A. P. McCann, <em>Software Practice &amp; Exp.</em> <strong>7</strong> (1977), 95–113; F. Lockwood Morris, <em>CACM</em> <strong>21</strong> (1978), 662–665, <strong>22</strong> (1979), 571; H. B. M. Jonkers, <em>Inf. Proc. Letters</em> <strong>9</strong> (1979), 26–30; J. J. Martin, <em>CACM</em> <strong>25</strong> (1982), 571–581; F. Lockwood Morris, <em>Inf. Proc. Letters</em> <strong>15</strong> (1982), 139–142, <strong>16</strong> (1983), 215. Other methods have been published by B. K. Haddon and W. M. Waite, <em>Comp. J.</em> <strong>10</strong> (1967), 162–165; B. Wegbreit, <em>Comp. J.</em> <strong>15</strong> (1972), 204–208; D. A. Zave, <em>Inf. Proc. Letters</em> <strong>3</strong> (1975), 167–169. Cohen and Nicolau have analyzed four of these approaches in <em>ACM Trans. Prog. Languages and Systems</em> <strong>5</strong> (1983), 532–553.]</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_5_34" id="ch02ex_1_5_34a">34</a>. Let ${\tt TOP}≡\rm rI1$, ${\tt Q}≡\rm rI2$, ${\tt P}≡\rm rI3$, $k≡\rm rI4$, ${\tt SIZE(P)}≡\rm rI5$. Assume further that $\varLambda=0$, and ${\tt LINK(}0{\tt)}\neq0$ to simplify step G4. Step G1 is omitted.</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_5_34" id="ch02ex_1_5_34a">34</a>. Let <code>TOP</code> ≡ rI1, <code>Q</code> ≡ rI2, <code>P</code> ≡ rI3, <em>k</em> ≡ rI4, ${\tt SIZE(P)}≡\rm rI5$. Assume further that $\varLambda=0$, and ${\tt LINK(}0{\tt)}\neq0$ to simplify step G4. Step G1 is omitted.</p>
 
   <div class="image"><img src="../Images/614pro01.png" /></div>
 

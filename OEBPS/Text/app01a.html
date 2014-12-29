@@ -489,23 +489,23 @@
 
   <h3 id="app01lev1sec3">Section 2.1</h3>
 
-  <p><a href="../Text/ch02.html#ch02ex_1_1_1" id="ch02ex_1_1_1a">1</a>. (a) <code>SUIT(NEXT(TOP))</code> = <code>SUIT(NEXT(242))</code> = <code>SUIT(386)</code> = 4. (b) <em>Λ</em>.</p>
+  <p><a href="../Text/ch02.html#ch02ex_1_1_1" id="ch02ex_1_1_1a">1</a>. (a) ${\tt SUIT(NEXT(TOP))}={\tt SUIT(NEXT(242))}={\tt SUIT(386)}=4$. (b) <em>Λ</em>.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_2" id="ch02ex_1_1_2a">2</a>. Whenever <code>V</code> is a link variable (else <code>CONTENTS(V)</code> makes no sense) whose value is not <em>Λ</em>. It is wise to <em>avoid</em> using <code>LOC</code> in contexts like this.</p>
 
-  <p><a id="page_535"></a><a href="../Text/ch02.html#ch02ex_1_1_3" id="ch02ex_1_1_3a">3</a>. Set $\tt NEWCARD←TOP$, and if $\tt TOP≠Λ$ set $\tt TOP←NEXT(TOP)$.</p>
+  <p><a id="page_535"></a><a href="../Text/ch02.html#ch02ex_1_1_3" id="ch02ex_1_1_3a">3</a>. Set $\tt NEWCARD←TOP$, and if $\tt TOP≠\varLambda$ set $\tt TOP←NEXT(TOP)$.</p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_4" id="ch02ex_1_1_4a">4</a>. <strong>C1.</strong> Set $\tt X←LOC(TOP)$. (For convenience we make the reasonable assumption that $\tt TOP≡NEXT(LOC(TOP))$, namely that the value of <code>TOP</code> appears in the <code>NEXT</code> field of the location where it is stored. This assumption is compatible with program (<a href="../Text/ch02a.html#ch02eq-lev1sec3-5">5</a>), and it saves us the bother of writing a special routine for the case of an empty pile.)</p>
 
-  <p class="uln-indentC"><strong>C2.</strong> If $\tt NEXT(X)≠Λ$, set $\tt X←NEXT(X)$ and repeat this step.</p>
+  <p class="uln-indentC"><strong>C2.</strong> If $\tt NEXT(X)≠\varLambda$, set $\tt X←NEXT(X)$ and repeat this step.</p>
 
   <p class="uln-indentC"><strong>C3.</strong> Set $\tt NEXT(X)←NEWCARD$, $\tt NEXT(NEWCARD)←\varLambda$, $\tt TAG(NEWCARD)←1$. <span class="middle"><img src="../Images/box.png"></span></p>
 
-  <p><a href="../Text/ch02.html#ch02ex_1_1_5" id="ch02ex_1_1_5a">5</a>. <strong>D1.</strong> Set $\tt X←LOC(TOP)$, $\tt Y←TOP$. (See step C1 above. By hypothesis, $\tt Y≠Λ$. Throughout the algorithm that follows, <code>X</code> trails one step behind <code>Y</code> in the sense that ${\tt Y}=\tt NEXT(X)$.)</p>
+  <p><a href="../Text/ch02.html#ch02ex_1_1_5" id="ch02ex_1_1_5a">5</a>. <strong>D1.</strong> Set $\tt X←LOC(TOP)$, $\tt Y←TOP$. (See step C1 above. By hypothesis, $\tt Y≠\varLambda$. Throughout the algorithm that follows, <code>X</code> trails one step behind <code>Y</code> in the sense that ${\tt Y}=\tt NEXT(X)$.)</p>
 
-  <p class="uln-indentC"><strong>D2.</strong> If $\tt NEXT(Y)≠Λ$, set $\tt X←Y$, $\tt Y←NEXT(Y)$, and repeat this step.</p>
+  <p class="uln-indentC"><strong>D2.</strong> If $\tt NEXT(Y)≠\varLambda$, set $\tt X←Y$, $\tt Y←NEXT(Y)$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>D3.</strong> (Now ${\tt NEXT(Y)}=\tt Λ$, so <code>Y</code> points to the bottom card; also <code>X</code> points to the next-to-last card.) Set $\tt NEXT(X)←\varLambda$, $\tt NEWCARD←Y$. <span class="middle"><img src="../Images/box.png"></span></p>
+  <p class="uln-indentC"><strong>D3.</strong> (Now ${\tt NEXT(Y)}=\varLambda$, so <code>Y</code> points to the bottom card; also <code>X</code> points to the next-to-last card.) Set $\tt NEXT(X)←\varLambda$, $\tt NEWCARD←Y$. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch02.html#ch02ex_1_1_6" id="ch02ex_1_1_6a">6</a>. Notations (b) and (d). <em>Not</em> (a)! <code>CARD</code> is a node, not a link to a node.</p>
 

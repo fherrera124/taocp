@@ -55,16 +55,13 @@ div.image img {
   page-break-inside: avoid;
   /*display:block;*/
 }
-p.image {
-  text-align: center;
-}
 .center {
   text-align: center;
 }
 .right {
   text-align: right;
 }
-.answer2, .answer3, .uln-indent, .uln-indent1, .indenthangingA, .indenthangingAA, .uln-indentC, .uln-indentCC, .indent, .indenthangingAA1 {
+p, .uln-indent, .uln-indent1, .indenthangingA, .indenthangingAA, .uln-indentC, .uln-indentCC, .indent, .indenthangingAA1 {
   margin-top: 2pt;
   margin-bottom: 2pt;
   text-align: left;
@@ -79,17 +76,6 @@ p.image {
   margin-left: 44pt;
   text-indent: -18pt;
 }
-/*#################Seccion respuestas##################*/
-.answer2 {
-  margin-left: 50pt;
-  text-indent: -32pt;
-}
-.answer3 {
-  margin-left: 50pt;
-  text-indent: -37pt;
-}
-
-/*#####################################################*/
 .indenthangingA {/*pendiente arreglar para ejs resueltos*/
   margin-left: 35pt;
   text-indent: -13pt;
@@ -105,14 +91,6 @@ p.image {
 .indenthangingAA1 {
   margin-left: 50pt;
   text-indent: -22pt;
-}
-sup {
-  vertical-align: 0.8ex;
-  font-size:75%;
-}
-sub {
-  vertical-align: -1ex;
-  font-size:75%;
 }
 fieldset, img {
   border: 0;
