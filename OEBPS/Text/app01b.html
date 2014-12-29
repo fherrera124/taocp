@@ -76,7 +76,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_16" id="ch02ex_2_7_16a">16</a>. If ${\tt LTAG(Q)}=0$, <code>Q*</code> is $\tt LLINK(Q)$; thus <code>Q*</code> is one step down and to the left. Otherwise <code>Q*</code> is obtained by going upwards in the tree (if necessary) repeatedly until the first time it is possible to go down to the right without retracing steps; typical examples are the trips from <code>P</code> to <code>P*</code> and from <code>Q</code> to <code>Q*</code> in the following tree:</p>
 
-  <div class="image"><img src="../Images/565fig01.gif" /></div>
+  <div class="image"><img src="../Images/565fig01.png" /></div>
 
   <p id="page_566"><a href="../Text/ch02a.html#ch02ex_2_7_17" id="ch02ex_2_7_17a">17</a>. If ${\tt LTAG(P)}=0$, set $\tt Q←LLINK(P)$ and terminate. Otherwise set $\tt Q←P$, then set $\tt Q←RLINK(Q)$ zero or more times until finding ${\tt RTAG(Q)}=0$; finally set $\tt Q←RLINK(Q)$ once more.</p>
 
@@ -94,7 +94,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_19" id="ch02ex_2_7_19a">19</a>. The basic idea is to start by finding the parent <code>Q</code> of <code>P</code>. Then if $\tt P\neq LLINK(Q)$ we have ${\tt P\sharp}=\tt Q$; otherwise we can find $\tt P\sharp$ by repeatedly setting $\tt Q←Q\$$ zero or more times until ${\tt RTAG(Q)}=1$. (See, for example, <code>P</code> and $\tt P\sharp$ in the tree shown.)</p>
 
-  <div class="image"><img src="../Images/566fig01.gif" /></div>
+  <div class="image"><img src="../Images/566fig01.png" /></div>
 
   <p class="indent">There is no efficient algorithm to find the parent of <code>P</code> in a general right-threaded tree, since a degenerate right-threaded tree in which all left links are null is essentially a circular list in which the links go the wrong way. Therefore we cannot traverse a right-threaded tree in postorder with the same efficiency as the stack method of <a href="../Text/ch02a.html#ch02ex_2_7_13">exercise 13</a>, if we keep no history of how we have reached the current node <code>P</code>.</p>
 
@@ -106,17 +106,17 @@
 
   <p class="uln-indentC"><strong>F3.</strong> Set $\tt Q←LLINK(Q)$, and terminate if $\tt P=RLINK(Q)$. Otherwise set $\tt R←RLINK(R)$ zero or more times until ${\tt RTAG(R)}=1$, then set $\tt Q←RLINK(R)$ and terminate.</p>
 
-  <p class="uln-indentC"><strong>F4.</strong> Set $\tt R←RLINK(R)$, and terminate with $\tt Q←R$ if $\tt P=LLINK(R)$. Otherwise set $\tt Q←LLINK(Q)$ zero or more times until ${\tt LTAG(Q)}=1$, then set $\tt Q←LLINK(Q)$ and terminate. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>F4.</strong> Set $\tt R←RLINK(R)$, and terminate with $\tt Q←R$ if $\tt P=LLINK(R)$. Otherwise set $\tt Q←LLINK(Q)$ zero or more times until ${\tt LTAG(Q)}=1$, then set $\tt Q←LLINK(Q)$ and terminate. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>The average running time of <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a> is $O(1)$ when <code>P</code> is a random node of the tree. For if we count only the steps $\tt Q←LLINK(Q)$ when <code>P</code> is a right child, or only the steps $\tt R←RLINK(R)$ when <code>P</code> is a left child, each link is traversed for exactly one node <code>P</code>.</p>
 
   <p id="page_567"><a href="../Text/ch02a.html#ch02ex_2_7_20" id="ch02ex_2_7_20a">20</a>.</p>
 
-  <div class="image"><img src="../Images/567pro01.gif" /></div>
+  <div class="image"><img src="../Images/567pro01.png" /></div>
 
   <p>If two more lines of code are added at line 06</p>
 
-  <div class="image"><img src="../Images/567pro02.gif" /></div>
+  <div class="image"><img src="../Images/567pro02.png" /></div>
 
   <p>with appropriate changes in lines 10 and 11, the running time goes down from $(30n+a+4)u$ to $(27a+6n-22)u$. (This same device would reduce the running time of <a href="../Text/ch02a.html#ch02a_pro_t">Program T</a> to $(12a+6n-7)u$, which is a slight improvement, if we set $a=(n+1)/2.)$</p>
 
@@ -138,7 +138,7 @@
 
   <p class="uln-indentC"><strong>U8.</strong> [Preorder visit.] Visit $\tt NODE(P)$ in preorder.</p>
 
-  <p class="uln-indentC"><strong>U9.</strong> [Go to left.] Set $\tt P←LLINK(P)$ and return to step U3. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>U9.</strong> [Go to left.] Set $\tt P←LLINK(P)$ and return to step U3. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>Morris also suggested a slightly more complicated way to traverse in postorder.</p>
 
@@ -154,7 +154,7 @@
 
   <p class="uln-indentC" id="page_568"><strong>W4.</strong> [Visit.] Visit $\tt NODE(P)$.</p>
 
-  <p class="uln-indentC"><strong>W5.</strong> [Rotate.] Set $\tt R←LLINK(P)$, $\tt LLINK(P)←RLINK(P)$, $\tt RLINK(P)←Q$, $\tt Q←P$, $\tt P←R$, and return to W2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>W5.</strong> [Rotate.] Set $\tt R←LLINK(P)$, $\tt LLINK(P)←RLINK(P)$, $\tt RLINK(P)←Q$, $\tt Q←P$, $\tt P←R$, and return to W2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>Correctness follows from the fact that if we start at W2 with <code>P</code> pointing to the root of a binary tree <code>T</code> and <code>Q</code> pointing to <code>X</code>, where <code>X</code> is not a link in that tree, the algorithm will traverse the tree in triple order and reach step W3 with <code>P</code> = <code>X</code> and <code>Q</code> = <code>T</code>.</p>
 
@@ -162,7 +162,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_22" id="ch02ex_2_7_22a">22</a>. This program uses the conventions of <a href="../Text/ch02a.html#ch02a_pro_t">Programs T</a> and <a href="../Text/ch02a.html#ch02a_pro_s">S</a>, with <code>Q</code> in rI6 and/or rI4. The old-fashioned <code>MIX</code> computer is not good at comparing index registers for equality, so variable <code>R</code> is omitted and the test “<code>Q</code> = <code>R</code>” is changed to “${\tt RLINK(Q)}=\tt P$”.</p>
 
-  <div class="image"><img src="../Images/e568_01.gif" /></div>
+  <div class="image"><img src="../Images/e568_01.png" /></div>
 
   <p>The total running time is $21n+6a-3-14b$, where <em>n</em> is the number of nodes, <em>a</em> is the number of null <code>RLINK</code>s (hence $a-1$ is the number of nonnull <code>LLINK</code>s), and <em>b</em> is the number of nodes on the tree’s “right spine” <code>T</code>, $\tt RLINK(T)$, $\tt RLINK(RLINK(T))$, etc.</p>
 
@@ -170,7 +170,7 @@
 
   <p class="indent">(A more efficient algorithm for the last case can be used if we know a node <code>F</code> such that $\tt P=LLINK(F)$ or $\tt P=RLINK(F)$; assuming the latter, for example, we could set $\tt INFO(P)\leftrightarrow INFO(Q)$, $\tt RLINK(F)←Q$, $\tt LLINK(Q)←P$, $\tt RLINKT(Q)←RLINKT(P)$, $\tt RLINK(P)←Q$, ${\tt RTAG(P)}←1$. This takes a fixed amount of time, but it is generally not recommended because it switches nodes around in memory.)</p>
 
-  <p id="page_569"><a href="../Text/ch02a.html#ch02ex_2_7_24" id="ch02ex_2_7_24a">24</a>. No: <span class="top"><img src="../Images/569pro01.gif" /></span></p>
+  <p id="page_569"><a href="../Text/ch02a.html#ch02ex_2_7_24" id="ch02ex_2_7_24a">24</a>. No: <span class="top"><img src="../Images/569pro01.png" /></span></p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_7_25" id="ch02ex_2_7_25a">25</a>. We first prove (b), by induction on the number of nodes in <em>T</em>, and similarly (c). Now (a) breaks into several cases; write $T\preceq_1T'$ if (i) holds, $T\preceq_2T'$ if (ii) holds, etc. Then $T\preceq_1T'$ and $T'\preceq T''$ implies $T\preceq_1T''$; $T\preceq_2T'$ and $T'\preceq T''$ implies $T\preceq_2T''$; and the remaining two cases are treated by proving (a) by induction on the number of nodes in <em>T</em>.</p>
 
@@ -184,7 +184,7 @@
 
   <p class="uln-indentC"><strong>R4.</strong> [End of tree?] If $\tt P=HEAD$ (or, equivalently, if $\tt P'=HEAD'$), terminate (<em>T</em> is equivalent to $T'$).</p>
 
-  <p class="uln-indentC"><strong>R5.</strong> [Go to right.] If ${\tt RTAG(P)}=1={\tt RTAG(P')}$, set $\tt P←RLINK(P)$, $\tt P'←RLINK(P')$, and go to R4. If ${\tt RTAG(P)}=1\neq\tt RTAG(P')$, terminate $(T\prec T')$. If ${\tt RTAG(P)}\neq1={\tt RTAG(P')}$, terminate $(T\succ T')$. Otherwise, set $\tt P←RLINK(P)$, $\tt P'←RLINK(P')$, and go to R2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>R5.</strong> [Go to right.] If ${\tt RTAG(P)}=1={\tt RTAG(P')}$, set $\tt P←RLINK(P)$, $\tt P'←RLINK(P')$, and go to R4. If ${\tt RTAG(P)}=1\neq\tt RTAG(P')$, terminate $(T\prec T')$. If ${\tt RTAG(P)}\neq1={\tt RTAG(P')}$, terminate $(T\succ T')$. Otherwise, set $\tt P←RLINK(P)$, $\tt P'←RLINK(P')$, and go to R2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p class="indent">To prove the validity of this algorithm (and therefore to understand how it works), one may show by induction on the size of the tree $T_0$ that the following statement is valid: <em>Starting at step R2 with <code>P</code> and $\tt P'$ pointing to the roots of two nonempty right-threaded binary trees $T_0$ and $T'_0$, the algorithm will terminate if $T_0$ and $T'_0$ are not equivalent, indicating whether $T_0\prec T'_0$ or $T_0\succ T'_0$; the algorithm will reach step R4 if $T_0$ and $T'_0$ are equivalent, with <code>P</code> and $\tt P'$ then pointing respectively to the successor nodes of $T_0$ and $T'_0$ in symmetric order.</em></p>
 
@@ -200,7 +200,7 @@
 
   <p class="uln-indentC"><strong>L3.</strong> [Thread.] If ${\tt RLINK(Q)}=\varLambda$, set $\tt RLINK(Q)←P$, $\tt RTAG(Q)←1$; otherwise set ${\tt RTAG(Q)}←0$. If ${\tt LLINK(P)}=\varLambda$, set $\tt LLINK(P)←Q$, ${\tt LTAG(P)}←1$; otherwise set ${\tt LTAG(P)}←0$.</p>
 
-  <p class="uln-indentC"><strong>L4.</strong> [Done?] If $\tt P\neq HEAD$, set $\tt Q←P$ and return to L2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>L4.</strong> [Done?] If $\tt P\neq HEAD$, set $\tt Q←P$ and return to L2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p class="indent">Step L2 of this algorithm implies the activation of an inorder traversal coroutine like <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a>, with the additional proviso that <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> visits <code>HEAD</code> after it has fully traversed the tree. This notation is a convenient simplification in the description of tree algorithms, since we need not repeat the stack mechanisms of <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> over and over again. Of course <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a> cannot be used during step L2, since the tree hasn’t been threaded yet. But Algorithm U in <a href="../Text/app01b.html#ch02ex_2_7_21a">answer 21</a> <em>can</em> be used in step L2; it provides us with a very pretty method that threads a tree without using any auxiliary stack.</p>
 
@@ -212,7 +212,7 @@
 
   <p class="uln-indentC"><strong>X4.</strong> If $\tt Q\neq HEAD$, set $\tt P←Q$ and go back to X2.</p>
 
-  <p class="uln-indentC"><strong>X5.</strong> Set $\tt LLINK(HEAD)←\varLambda$. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>X5.</strong> Set $\tt LLINK(HEAD)←\varLambda$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>Other solutions that decrease the length of the inner loop are clearly possible, although the order of the basic steps is somewhat critical. The stated procedure works because we never return a node to available storage until after <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a> has looked at both its <code>LLINK</code> and its <code>RLINK</code>; as observed in the text, each of these links is used precisely once during a complete tree traversal.</p>
 
@@ -230,7 +230,7 @@
 
   <p class="uln-indentC"><strong>C5.</strong> Set $\tt P←LLINK(P)$, $\tt Q←LLINK(Q)$.</p>
 
-  <p class="uln-indentC"><strong>C6.</strong> If $\tt P\neq HEAD$, go to C2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>C6.</strong> If $\tt P\neq HEAD$, go to C2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>The algorithm now seems almost too simple to be correct!</p>
 
@@ -242,7 +242,7 @@
 
   <p class="uln-indentC"><strong>A2.</strong> Set $\tt R←RLINK(Q)$. If ${\tt LLINK(R)}=\tt P$, set $\tt LLINK(R)←\varLambda$. Otherwise set $\tt R←LLINK(R)$, then repeatedly set $\tt R←RLINK(R)$ zero or more times until ${\tt RLINK(R)}=\tt P$; then finally set $\tt RLINKT(R)←RLINKT(Q)$. (This step has removed $\tt NODE(P)$ and its subtrees from the original tree.)</p>
 
-  <p class="uln-indentC"><strong>A3.</strong> Set $\tt RLINK(Q)←HEAD$, $\tt LLINK(HEAD)←P$. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>A3.</strong> Set $\tt RLINK(Q)←HEAD$, $\tt LLINK(HEAD)←P$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>(The key to inventing and/or understanding this algorithm is the construction of good “before and after” diagrams.)</p>
 
@@ -276,7 +276,7 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_10" id="ch02ex_2_8_10a">10</a>. The forests are similar if and only if $n=n'$ and $d(u_j)=d(u'_j)$, for $1≤j≤n$; they are equivalent if and only if in addition ${\rm info}(u_j)={\rm info}(u'_j)$, $1≤j≤n$. The proof is similar to the previous proof, by generalizing <a href="../Text/ch02a.html#ch02aLemma-p">Lemma 2.3.1P</a>; let $f(u)=d(u)-1$.</p>
 
-  <p><a href="../Text/ch02a.html#ch02ex_2_8_11" id="ch02ex_2_8_11a">11</a>.<span class="top"><img src="../Images/572fig01.gif" /></span></p>
+  <p><a href="../Text/ch02a.html#ch02ex_2_8_11" id="ch02ex_2_8_11a">11</a>.<span class="top"><img src="../Images/572fig01.png" /></span></p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_12" id="ch02ex_2_8_12a">12</a>. If ${\tt INFO(Q1)}\neq0$: Set $\tt R←COPY(P1)$; then if ${\tt TYPE(P2)}=0$ and ${\tt INFO(P2)}\neq2$, set ${\tt R←TREE(“\uparrow”,R,TREE(INFO(P2)}-1\tt))$; if ${\tt TYPE(P2)}\neq0$, set ${\tt R←TREE(“\uparrow”,R,TREE(“-”,COPY(P2),TREE(}1\tt)))$; then set ${\tt Q1←MULT(Q1,MULT(COPY(P2),R))}$.</p>
 
@@ -286,19 +286,19 @@
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_13" id="ch02ex_2_8_13a">13</a>. The following program implements <a href="../Text/ch02a.html#ch02alg-lev2sec7-C">Algorithm 2.3.1C</a> with $\rm rI1≡\tt P$, $\rm rI2≡\tt Q$, $\rm rI3≡\tt R$, and with appropriate changes to the initialization and termination conditions:</p>
 
-  <div class="image"><img src="../Images/572pro01.gif" /></div>
+  <div class="image"><img src="../Images/572pro01.png" /></div>
 
-  <div class="image"><img src="../Images/572pro01a.gif" /></div>
+  <div class="image"><img src="../Images/572pro01a.png" /></div>
 
   <p id="page_573"><a href="../Text/ch02a.html#ch02ex_2_8_14" id="ch02ex_2_8_14a">14</a>. Let <em>a</em> be the number of nonterminal (operator) nodes copied. The number of executions of the various lines in the previous program is as follows: $064{-}067,1$; $069,a$; $070{-}079,a+1$; $080{-}081,n-1$; $082{-}088,n-1-a$; $089{-}094,n$; $095,n-a$; $096{-}098,n+1$; $099{-}100,n-a$; $101{-}103,1$. The total time is $(36n+22)u$; we use about 20% of the time to get available nodes, 40% to traverse, and 40% to copy the <code>INFO</code> and <code>LINK</code> information.</p>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_15" id="ch02ex_2_8_15a">15</a>. Comments are left to the reader.</p>
 
-  <div class="image"><img src="../Images/573pro01.gif" /></div>
+  <div class="image"><img src="../Images/573pro01.png" /></div>
 
   <p id="page_574"><a href="../Text/ch02a.html#ch02ex_2_8_16" id="ch02ex_2_8_16a">16</a>. Comments are left to the reader.</p>
 
-  <div class="image"><img src="../Images/574pro01.gif" /></div>
+  <div class="image"><img src="../Images/574pro01.png" /></div>
 
   <p><a href="../Text/ch02a.html#ch02ex_2_8_17" id="ch02ex_2_8_17a">17</a>. References to early work on such problems can be found in a survey article by J. Sammet, <em>CACM</em> <strong>9</strong> (1966), 555–569.</p>
 
@@ -332,13 +332,13 @@
 
   <p class="uln-indentC"><strong>L3.</strong> If ${\tt PARENT(P)}=\varLambda$, set $\tt RLINK(P)←FIRST$, $\tt FIRST←P$; otherwise set $\tt R←PARENT(P)$, $\tt RLINK(P)←LCHILD(R)$, $\tt LCHILD(R)←P$.</p>
 
-  <p class="uln-indentC"><strong>L4.</strong> Set $\tt P←Q$ and return to L2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>L4.</strong> Set $\tt P←Q$ and return to L2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p id="page_576"><a href="../Text/ch02b.html#ch02ex_2_9_7" id="ch02ex_2_9_7a">7</a>. $\{1,5\}\{2,3,4,7\}\{6,8,9\}$.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_8" id="ch02ex_2_9_8a">8</a>. Perform step E3 of <a href="../Text/ch02a.html#ch02alg-lev2sec9-E">Algorithm E</a>, then test if $j=k$.</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_2_9_9" id="ch02ex_2_9_9a">9</a>. <span class="top"><img src="../Images/576pro01.gif" /></span></p>
+  <p><a href="../Text/ch02b.html#ch02ex_2_9_9" id="ch02ex_2_9_9a">9</a>. <span class="top"><img src="../Images/576pro01.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_10" id="ch02ex_2_9_10a">10</a>. One idea is to set $\tt PARENT$ of each <em>root</em> node to the negative of the number of nodes in its tree (these values being easily kept up to date); then if $|{\tt PARENT[}j{\tt]}|\gt |{\tt PARENT[}k{\tt]}|$ in step E4, the roles of <em>j</em> and <em>k</em> are interchanged. This technique (due to M. D. McIlroy) ensures that each operation takes $O(\log n)$ steps.</p>
 
@@ -350,7 +350,7 @@
 
   <p class="uln-indentC"><strong>T2.</strong> If $\tt PARENT(Q)\neq\varLambda$, set $k←k+\tt DELTA(Q)$, $\tt Q←PARENT(Q)$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>T3.</strong> If <code>P</code> = <code>Q</code>, check that $j=k$ (otherwise the input erroneously contains contradictory equivalences). If $\tt P\neq Q$, set ${\tt DELTA(Q)}←j-k$, $\tt PARENT(Q)←P$, ${\tt LBD(P)←\min(LBD(P),LBD(Q)+DELTA(Q))}$, and ${\tt UBD(P)←\max(UBD(P),UBD(Q)+DELTA(Q))}$. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>T3.</strong> If <code>P</code> = <code>Q</code>, check that $j=k$ (otherwise the input erroneously contains contradictory equivalences). If $\tt P\neq Q$, set ${\tt DELTA(Q)}←j-k$, $\tt PARENT(Q)←P$, ${\tt LBD(P)←\min(LBD(P),LBD(Q)+DELTA(Q))}$, and ${\tt UBD(P)←\max(UBD(P),UBD(Q)+DELTA(Q))}$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><em>Note:</em> It is possible to allow the ${\tt ARRAY\;X[}l:u\tt]$ declarations to occur intermixed with equivalences, or to allow assignment of certain addresses of variables before others are equivalenced to them, etc., under suitable conditions that are not difficult to understand. For further development of this algorithm, see <em>CACM</em> <strong>7</strong> (1964), 301–303, 506.</p>
 
@@ -368,7 +368,7 @@
 
   <p class="uln-indentC"><strong>G3.</strong> If <code>P</code> is the first node in postorder, terminate the algorithm. Otherwise set <code>P</code> to its predecessor in postorder (this would be simply ${\tt P←P}-c$ in (<a href="../Text/ch02.html#ch02eq-lev2sec3-9">9</a>)).</p>
 
-  <p class="uln-indentC"><strong>G4.</strong> Evaluate $f({\tt NODE(P)})$ using the value at the top of the stack, which is equal to $f({\tt NODE(PARENT(P))})$. Pop this value off the stack, and return to G2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>G4.</strong> Evaluate $f({\tt NODE(P)})$ using the value at the top of the stack, which is equal to $f({\tt NODE(PARENT(P))})$. Pop this value off the stack, and return to G2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><em>Note:</em> An algorithm analogous to this one can be based on preorder instead of postorder as in <a href="../Text/ch02b.html#ch02ex_2_9_2">exercise 2</a>. In fact, family order or level order could be used; in the latter case we would use a queue instead of a stack.</p>
 
@@ -382,7 +382,7 @@
 
   <p class="uln-indentC"><strong>P4.</strong> If ${\tt RLINK[}i{\tt]}=0$, go to P3; otherwise delete the top of <code>R</code> (which will equal ${\tt RLINK[}i{\tt]}$).</p>
 
-  <p class="uln-indentC"><strong>P5.</strong> Set ${\rm top}({\tt D})←{\rm top}({\tt D})+1$, $j←j+1$, ${\tt I}\Leftarrow j$, ${\tt D}\Leftarrow 0$, and if ${\tt RLINK[}j{\tt]}\neq0$ set ${\tt R}\Leftarrow{\tt RLINK[}j{\tt]}$. Go to P2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>P5.</strong> Set ${\rm top}({\tt D})←{\rm top}({\tt D})+1$, $j←j+1$, ${\tt I}\Leftarrow j$, ${\tt D}\Leftarrow 0$, and if ${\tt RLINK[}j{\tt]}\neq0$ set ${\tt R}\Leftarrow{\tt RLINK[}j{\tt]}$. Go to P2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_2_9_19" id="ch02ex_2_9_19a">19</a>. (a) This property is equivalent to saying that <code>SCOPE</code> links do not cross each other.</p>
 
@@ -419,7 +419,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_1_8" id="ch02ex_3_1_8a">8</a>. Each step in the reduction process combines two arrows $e_i$ and $e_j$ that start at the same box, and it suffices to prove that such steps can be reversed. Thus we are given the value of $e_i+e_j$ after combination, and we must assign consistent values to $e_i$ and $e_j$ before the combination. There are three essentially different situations:</p>
 
-  <div class="image"><img src="../Images/e578_05.gif" /></div>
+  <div class="image"><img src="../Images/e578_05.png" /></div>
 
   <p id="page_579">Here <em>A</em>, <em>B</em>, and <em>C</em> stand for vertices or supervertices, and the $\alpha\rm\unicode{39}s$ and $\beta\rm\unicode{39}s$ stand for the other given flows besides $e_i+e_j$; these flows may each be distributed among several edges, although only one is shown. In Case 1 ($e_i$ and $e_j$ lead to the same box), we may choose $e_i$ arbitrarily, then $e_j←(e_i+e_j)-e_i$. In Case 2 ($e_i$ and $e_j$ lead to different boxes), we must set $e_i←\beta'-\alpha'$, $e_j←\beta''-\alpha''$. In Case 3 ($e_i$ is a loop but $e_j$ is not), we must set $e_j←\beta'-\alpha'$, $e_i←(e_i+e_j)-e_j$. In each case we have reversed the combination step as desired.</p>
 
@@ -463,11 +463,11 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_2_9" id="ch02ex_3_2_9a">9</a>. All arcs point upward.</p>
 
-  <div class="image"><img src="../Images/580fig01.gif" /></div>
+  <div class="image"><img src="../Images/580fig01.png" /></div>
 
   <p id="page_581"><a href="../Text/ch02b.html#ch02ex_3_2_10" id="ch02ex_3_2_10a">10</a>. <strong>G1.</strong> Set $k←P[j]$, $P[j]←0$.</p>
 
-  <p class="uln-indentC"><strong>G2.</strong> If $k=0$, stop; otherwise set $m←P[k]$, $P[k]←j$, $j←k$, $k←m$, and repeat step G2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>G2.</strong> If $k=0$, stop; otherwise set $m←P[k]$, $P[k]←j$, $j←k$, $k←m$, and repeat step G2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_2_11" id="ch02ex_3_2_11a">11</a>. This algorithm combines <a href="../Text/ch02a.html#ch02alg-lev2sec9-E">Algorithm 2.3.3E</a> with the method of the preceding exercise, so that all oriented trees have arcs that correspond to actual arcs in the directed graph; $S[j]$ is an auxiliary table that tells whether an arc goes from <em>j</em> to $P[j] (S[j]=+1)$ or from $P[j]$ to $j (S[j]=-1)$. Initially $P[1]=\cdots=P[n]=0$. The following steps may be used to process each arc $(a,b)$:</p>
 
@@ -481,7 +481,7 @@
 
   <p class="uln-indentC"><strong>C5.</strong> Print “<code>CYCLE</code>” followed by “$(a,b)$”.</p>
 
-  <p class="uln-indentC"><strong>C6.</strong> If $P[b]=0$ terminate. Otherwise if $S[b]=+1$, print “$+(b,P[b])$”, else print “$-(P[b],b)$”; set $b←P[b]$ and repeat step C6. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>C6.</strong> If $P[b]=0$ terminate. Otherwise if $S[b]=+1$, print “$+(b,P[b])$”, else print “$-(P[b],b)$”; set $b←P[b]$ and repeat step C6. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><em>Note:</em> This algorithm will take at most $O(m \log n)$ steps if we incorporate the suggestion of McIlroy in <a href="../Text/ch02b.html#ch02ex_2_9_10">answer 2.3.3–10</a>. But there is a much better solution that needs only $O(m)$ steps: Use depth-first search to construct a “palm tree,” with one fundamental cycle for each “frond” [R. E. Tarjan, <em>SICOMP</em> <strong>1</strong> (1972), 146–150].</p>
 
@@ -489,7 +489,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_2_13" id="ch02ex_3_2_13a">13</a>. Define a sequence of oriented subtrees of <em>G</em> as follows: $G_0$ is the vertex <em>R</em> alone. $G_{k+1}$ is $G_k$, plus any vertex <em>V</em> of <em>G</em> that is not in $G_k$ but for which there is an arc from <em>V</em> to $V'$ where $V'$ <em>is</em> in $G_k$, plus one such arc $e[V]$ for each such vertex. It is immediate by induction that $G_k$ is an oriented tree for all $k\ge0$, and that if there is an oriented path of length <em>k</em> from <em>V</em> to <em>R</em> in <em>G</em> then <em>V</em> is in $G_k$. Therefore $G_\infty$, the set of all <em>V</em> and $e[V]$ in any of the $G_k$, is the desired oriented subtree of <em>G</em>.</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_3_2_14" id="ch02ex_3_2_14a">14</a>. <span class="top"><img src="../Images/e581_01.gif" /></span></p>
+  <p><a href="../Text/ch02b.html#ch02ex_3_2_14" id="ch02ex_3_2_14a">14</a>. <span class="top"><img src="../Images/e581_01.png" /></span></p>
 
   <p>in lexicographic order; the eight possibilities come from the independent choices of which of $e_{00}$ or $e'_{01}$, $e_{10}$ or $e'_{12}$, $e_{20}$ or $e_{22}$, should precede the other.</p>
 
@@ -505,7 +505,7 @@
 
   <p class="indent">(b) By the Binet–Cauchy formula (<a href="../Text/ch01.html#ch01ex_2_3_46">exercise 1.2.3–46</a>) we have</p>
 
-  <div class="image"><img src="../Images/e582_03.gif" /></div>
+  <div class="image"><img src="../Images/e582_03.png" /></div>
 
   <p>where $A_{\large i_1\ldots i_n}$ represents a matrix consisting of rows $i_1,\ldots,i_n$ of $A_0$ (thus corresponding to a choice of <em>n</em> edges of <em>G</em>). The result now follows from (a).</p>
 
@@ -513,7 +513,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_2_19" id="ch02ex_3_2_19a">19</a>. (a) The conditions $a_{00}=0$ and $a_{jj}=1$ are just conditions (a), (b) of the definition of oriented tree. If <em>G</em> is not an oriented tree there is an oriented cycle (by <a href="../Text/ch02b.html#ch02ex_3_2_7">exercise 7</a>), and the rows of $A_0$ corresponding to the vertices in this oriented cycle will sum to a row of zeros; hence $\det A_0=0$. If <em>G</em> is an oriented tree, assign an arbitrary order to the children of each family and regard <em>G</em> as an ordered tree. Now permute rows and columns of $A_0$ until they correspond to preorder of the vertices. Since the same permutation has been applied to the rows as to the columns, the determinant is unchanged; and the resulting matrix is triangular with $+1$ in every diagonal position.</p>
 
-  <p class="indent">(b) We may assume that $a_{0j}=0$ for all <em>j</em>, since no arc emanating from $V_0$ can participate in an oriented subtree. We may also assume that $a_{jj}\gt0$ for all $j\ge1$ since otherwise the whole <em>j</em>th row is zero and there obviously are no oriented subtrees. Now use induction on the number of arcs: If $a_{jj}\gt1$ let <em>e</em> be some arc leading from $V_j$; let $B_0$ be a matrix like $A_0$ but with arc <em>e</em> deleted, and let $C_0$ be the matrix like $A_0$ but with all arcs <em>except</em> <em>e</em> that lead from $V_j$ deleted. <em>Example:</em> If <span class="middle"><img src="../Images/e582_04.gif" /></span>, $j=1$, and <em>e</em> is an arc from $V_1$ to $V_0$, then <span class="middle"><img src="../Images/e582_05.gif" /></span>, <span class="middle"><img src="../Images/e582_06.gif" /></span>. In general we have $\det A_0=\det B_0+det C_0$, since the matrices agree in all rows except row <em>j</em>, and $A_0$ is the sum of $B_0$ and $C_0$ in that row. Moreover, the number of oriented subtrees of <em>G</em> is the number of subtrees that do <em>not</em> use <em>e</em> (namely, $\det B_0$, by induction) plus the number that <em>do</em> use <em>e</em> (namely, $\det C_0$).</p>
+  <p class="indent">(b) We may assume that $a_{0j}=0$ for all <em>j</em>, since no arc emanating from $V_0$ can participate in an oriented subtree. We may also assume that $a_{jj}\gt0$ for all $j\ge1$ since otherwise the whole <em>j</em>th row is zero and there obviously are no oriented subtrees. Now use induction on the number of arcs: If $a_{jj}\gt1$ let <em>e</em> be some arc leading from $V_j$; let $B_0$ be a matrix like $A_0$ but with arc <em>e</em> deleted, and let $C_0$ be the matrix like $A_0$ but with all arcs <em>except</em> <em>e</em> that lead from $V_j$ deleted. <em>Example:</em> If <span class="middle"><img src="../Images/e582_04.png" /></span>, $j=1$, and <em>e</em> is an arc from $V_1$ to $V_0$, then <span class="middle"><img src="../Images/e582_05.png" /></span>, <span class="middle"><img src="../Images/e582_06.png" /></span>. In general we have $\det A_0=\det B_0+det C_0$, since the matrices agree in all rows except row <em>j</em>, and $A_0$ is the sum of $B_0$ and $C_0$ in that row. Moreover, the number of oriented subtrees of <em>G</em> is the number of subtrees that do <em>not</em> use <em>e</em> (namely, $\det B_0$, by induction) plus the number that <em>do</em> use <em>e</em> (namely, $\det C_0$).</p>
 
   <p class="indent" id="page_583"><em>Notes:</em> The matrix <em>A</em> is often called the <em>Laplacian</em> of the graph, by analogy with a similar concept in the theory of partial differential equations. If we delete any set <em>S</em> of rows from the matrix <em>A</em>, and the same set of columns, the determinant of the resulting matrix is the number of oriented forests whose roots are the vertices $\{V_k\mid k\in S\}$ and whose arcs belong to the given digraph. The matrix tree theorem for oriented trees was stated without proof by J. J. Sylvester in 1857 (see <a href="../Text/ch02b.html#ch02ex_3_2_28">exercise 28</a>), then forgotten for many years until it was independently rediscovered by W. T. Tutte [<em>Proc. Cambridge Phil. Soc.</em> <strong>44</strong> (1948), 463–482, §3]. The first published proof in the special case of <em>undirected</em> graphs, when the matrix <em>A</em> is symmetric, was given by C. W. Borchardt [<em>Crelle</em> <strong>57</strong> (1860), 111–121]. Several authors have ascribed the theorem to Kirchhoff, but Kirchhoff proved a quite different (though related) result.</p>
 
@@ -521,17 +521,17 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_2_21" id="ch02ex_3_2_21a">21</a>. Construct the matrices <em>A</em> and $A^*$ as in <a href="../Text/ch02b.html#ch02ex_3_2_19">exercise 19</a>. For the example graphs <em>G</em> and $G^*$ in <a href="../Text/ch02b.html#ch02fig36">Figs. 36</a> and <a href="../Text/ch02b.html#ch02fig37">37</a>,</p>
 
-  <div class="image"><img src="../Images/e583_02.gif" /></div>
+  <div class="image"><img src="../Images/e583_02.png" /></div>
 
   <p>Add the indeterminate λ to every diagonal element of <em>A</em> and $A^*$. If $t(G)$ and $t(G^*)$ are the numbers of oriented subtrees of <em>G</em> and $G^*$, we then have $\det A=\lambda t(G)+O(\lambda^2)$, $\det A^*=\lambda t(G^*)+O(\lambda^2)$. (The number of oriented subtrees of a balanced graph is the same for any given root, by <a href="../Text/ch02b.html#ch02ex_3_2_22">exercise 22</a>, but we do not need that fact.)</p>
 
   <p class="indent">If we group vertices $V_{jk}$ for equal <em>k</em> the matrix $A^*$ can be partitioned as shown above. Let $B_{kk'}$ be the submatrix of $A^*$ consisting of the rows for $V_{jk}$ and the columns for $V_{j'k'}$, for all <em>j</em> and $j'$ such that $V_{jk}$ and $V_{j'k'}$ are in $G^*$. By adding the $2nd,\ldots,mth$ columns of each submatrix to the first column and then subtracting the first row of each submatrix from the $2nd,\ldots,mth$ rows, the matrix $A^*$ is transformed so that</p>
 
-  <div class="image"><img src="../Images/e583_03.gif" /></div>
+  <div class="image"><img src="../Images/e583_03.png" /></div>
 
   <p>The asterisks in the top rows of the transformed submatrices turn out to be irrelevant, because the determinant of $A^*$ is now seen to be $(\lambda+m)^{(m-1)n}$ times</p>
 
-  <div class="image"><img src="../Images/e583_04.gif" /></div>
+  <div class="image"><img src="../Images/e583_04.png" /></div>
 
   <p class="indent" id="page_584">Notice that when $n=1$ and there are <em>m</em> arcs from $V_0$ to itself, we find in particular that exactly $m^{m-1}$ oriented trees are possible on <em>m</em> labeled nodes. This result will be obtained by quite different methods in <a href="../Text/ch02b.html#ch02lev3sec4">Section 2.3.4.4</a>.</p>
 
@@ -547,7 +547,7 @@
 
   <p><em>Examples</em> (using alphabetic order in each set of arcs):</p>
 
-  <div class="image"><img src="../Images/e584_02.gif" /></div>
+  <div class="image"><img src="../Images/e584_02.png" /></div>
 
   <p class="indent" id="page_585"><em>Note:</em> If in the oriented tree representation we add another arc from <em>H</em> to itself, we get an interesting situation: Either we get the standard conventions <a href="../Text/ch02a.html#ch02lev2sec7">2.3.1</a>–(<a href="../Text/ch02a.html#ch02eq-lev2sec7-8">8</a>) with <code>LLINK</code>, <code>LTAG</code>, <code>RLINK</code>, <code>RTAG</code> <em>interchanged</em> in the list head, or (if the new arc is placed last in the ordering) we get the standard conventions except ${\tt RTAG}=0$ in the node associated with the root of the tree.</p>
 
@@ -561,7 +561,7 @@
 
   <p class="indent">If the digraph contains a cycle, the integer coefficient is zero. For each cycle corresponds to a factor of the form</p>
 
-  <p class="image"><img src="../Images/e585_01.gif" /></p>
+  <p class="image"><img src="../Images/e585_01.png" /></p>
 
   <p>where the indices $(i_0,i_1,\ldots,i_{k-1})$ are distinct and so are the indices $(j_0,j_1,\ldots,j_{k-1})$. The sum of all terms containing $(*)$ as a factor is $(*)$ times the determinant obtained by setting $\large a_{i_lj}←[j=j_l]$ for $0≤j≤n$ and $\large b_{j_li}←[i=i_{(l+1)\bmod k}]$ for $0≤i≤m$, for $0≤l\lt k$, leaving the variables in the other $m+n-2k$ rows unchanged. This determinant is identically zero, because the sum of rows $i_0,i_1,\ldots,i_{k-1}$ in the top section equals the sum of rows $j_0,j_1,\ldots,j_{k-1}$ in the bottom section.</p>
 
@@ -569,13 +569,13 @@
 
   <p class="indent">Thus the coefficient is $+1$ if and only if the corresponding digraph is an oriented tree with root 0. The number of such terms (hence the number of such oriented trees) is obtained by setting each $a_{ij}$ and $b_{ji}$ to 1; for example,</p>
 
-  <div class="image"><img src="../Images/e585_02.gif" /></div>
+  <div class="image"><img src="../Images/e585_02.png" /></div>
 
   <p>In general we obtain $\det\left(\small{\matrix{n+1&amp;n\cr m&amp;m+1}}\right)\cdot\large(n+1)^{m-1}\cdot(m+1)^{n-1}$.</p>
 
   <p class="indent" id="page_586"><em>Notes:</em> J. J. Sylvester considered the special case $m=n$ and $a_{10}=a_{20}=\cdots=a_{m0}=0$ in <em>Quarterly J. of Pure and Applied Math.</em> <strong>1</strong> (1857), 42–56, where he conjectured (correctly) that the total number of terms is then $n^n(n+1)^{n-1}$. He also stated without proof that the $(n+1)^{n-1}$ nonzero terms present when $a_{ij}=\delta_{ij}$ correspond to all connected cycle-free graphs on $\{0,1,\ldots,n\}$. In that special case, he reduced the determinant to the form in the matrix tree theorem of <a href="../Text/ch02b.html#ch02ex_3_2_19">exercise 19</a>, e.g.,</p>
 
-  <div class="image"><img src="../Images/e586_01.gif" /></div>
+  <div class="image"><img src="../Images/e586_01.png" /></div>
 
   <p>Cayley quoted this result in <em>Crelle</em> <strong>52</strong> (1856), 279, ascribing it to Sylvester; thus it is ironic that the theorem about the number of such graphs is often attributed to Cayley.</p>
 
@@ -589,7 +589,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_3_2" id="ch02ex_3_3_2a">2</a>. Take one tetrad type and rotate it $180^\circ$ to get another tetrad type; these two types clearly tile the plane (without further rotations), by repeating a $2\times2$ pattern.</p>
 
-  <p><a href="../Text/ch02b.html#ch02ex_3_3_3" id="ch02ex_3_3_3a">3</a>. Consider the set of tetrad types <span class="baseline"><img src="../Images/e586_02.gif" /></span> for all positive integers <em>j</em>. The right half plane can be tiled in uncountably many ways; but whatever square is placed in the center of the plane puts a finite limit on the distance it can be continued to the left.</p>
+  <p><a href="../Text/ch02b.html#ch02ex_3_3_3" id="ch02ex_3_3_3a">3</a>. Consider the set of tetrad types <span class="baseline"><img src="../Images/e586_02.png" /></span> for all positive integers <em>j</em>. The right half plane can be tiled in uncountably many ways; but whatever square is placed in the center of the plane puts a finite limit on the distance it can be continued to the left.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_3_4" id="ch02ex_3_3_4a">4</a>. Systematically enumerate all possible ways to tile an $n\times n$ block, for $n=1,2,\ldots$, looking for toroidal solutions within these blocks. If there is no way to tile the plane, the infinity lemma tells us there is an <em>n</em> with no $n\times n$ solutions. If there <em>is</em> a way to tile the plane, the assumption tells us that there is an <em>n</em> with an $n\times n$ solution containing a rectangle that yields a toroidal solution. Hence in either case the algorithm will terminate.</p>
 
@@ -599,7 +599,7 @@
 
   <p class="indent">For example, after step 3 we will know the contents of $7\times7$ blocks throughout the plane, separated by unit length strips, every eight units. The $7\times7$ blocks that are of <a id="page_587"></a>class $Na$ in the center have the form</p>
 
-  <div class="image"><img src="../Images/e587_01.gif" /></div>
+  <div class="image"><img src="../Images/e587_01.png" /></div>
 
   <p>The middle column and the middle row is the “cross” just filled in during step 3; the other four $3\times3$ squares were filled in after step 2; the squares just to the right and below this $7\times7$ square are part of a $15\times15$ cross to be filled in at step 4.</p>
 
@@ -617,7 +617,7 @@
 
   <p class="indent">(c) Now by the result of <a href="../Text/ch02a.html#ch02ex_2_8_22">exercise 2.3.2–22</a>, $r(T_{n_j})$ cannot be embedded in $r(T_{n_k})$ for any $k\gt j$, else $T_{n_j}\subseteq T_{n_k}$. Therefore $T_1,\ldots,T_{n_1-1},r(T_{n_1}),r(T_{n_2}),\ldots$ is a counterexample sequence. But this contradicts the definition of $T_{n_1}$.</p>
 
-  <p class="indent"><em>Notes:</em> Kruskal, in <em>Trans. Amer. Math. Soc.</em> <strong>95</strong> (1960), 210–225, actually proved a stronger result, using a weaker notion of embedding. His theorem does not follow directly from the infinity lemma, although the results are vaguely similar. Indeed, K<span class="baseline"><img src="../Images/oprime.gif" /></span>nig himself proved a special case of Kruskal’s theorem, showing that there is no infinite sequence of pairwise incomparable <em>n</em>-tuples of nonnegative integers, where comparability means that all components of one <em>n</em>-tuple are $≤$ the corresponding components of the other [<em>Matematikai és Fizikai Lapok</em> <strong>39</strong> (1932), 27–29]. For further developments, see <em>J. Combinatorial Theory</em> <strong>A13</strong> (1972), 297–305. See also N. Dershowitz, <em>Inf. Proc. Letters</em> <strong>9</strong> (1979), 212–215, for applications to termination of algorithms.</p>
+  <p class="indent"><em>Notes:</em> Kruskal, in <em>Trans. Amer. Math. Soc.</em> <strong>95</strong> (1960), 210–225, actually proved a stronger result, using a weaker notion of embedding. His theorem does not follow directly from the infinity lemma, although the results are vaguely similar. Indeed, K<span class="baseline"><img src="../Images/oprime.png" /></span>nig himself proved a special case of Kruskal’s theorem, showing that there is no infinite sequence of pairwise incomparable <em>n</em>-tuples of nonnegative integers, where comparability means that all components of one <em>n</em>-tuple are $≤$ the corresponding components of the other [<em>Matematikai és Fizikai Lapok</em> <strong>39</strong> (1932), 27–29]. For further developments, see <em>J. Combinatorial Theory</em> <strong>A13</strong> (1972), 297–305. See also N. Dershowitz, <em>Inf. Proc. Letters</em> <strong>9</strong> (1979), 212–215, for applications to termination of algorithms.</p>
 
   <h5 id="app01lev3sec9">Section 2.3.4.4</h5>
 
@@ -625,7 +625,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_2" id="ch02ex_3_4_2a">2</a>. By differentiation, and equating the coefficients of $z^n$, we obtain the identity</p>
 
-  <div class="image"><img src="../Images/e588_02.gif" /></div>
+  <div class="image"><img src="../Images/e588_02.png" /></div>
 
   <p>Now interchange the order of summation.</p>
 
@@ -645,17 +645,17 @@
 
   <p>Note that</p>
 
-  <div class="image"><img src="../Images/e588_09.gif" /></div>
+  <div class="image"><img src="../Images/e588_09.png" /></div>
 
   <p id="page_589">For further details, and asymptotic values of the number of free trees, see R. Otter, <em>Ann. Math.</em> (2) <strong>49</strong> (1948), 583–599.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_5" id="ch02ex_3_4_5a">5</a>.</p>
 
-  <div class="image"><img src="../Images/e589_01.gif" /></div>
+  <div class="image"><img src="../Images/e589_01.png" /></div>
 
   <p>Therefore</p>
 
-  <div class="image"><img src="../Images/e589_02.gif" /></div>
+  <div class="image"><img src="../Images/e589_02.png" /></div>
 
   <p>We find $C(z)=z+z^2+2z^3+5z^4+12z^5+33z^6+90z^7+261z^8+766z^9+\cdots$. When $n\gt1$, the number of series-parallel networks with <em>n</em> edges is $2c_n$ [see P. A. MacMahon, <em>Proc. London Math. Soc.</em> <strong>22</strong> (1891), 330–339].</p>
 
@@ -665,7 +665,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_8" id="ch02ex_3_4_8a">8</a>.</p>
 
-  <div class="image"><img src="../Images/589fig01.gif" /></div>
+  <div class="image"><img src="../Images/589fig01.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_9" id="ch02ex_3_4_9a">9</a>. If there are two centroids, by considering a path from one to the other we find that there can’t be intermediate points, so any two centroids are adjacent. A tree cannot contain three mutually adjacent vertices, so there are at most two.</p>
 
@@ -677,7 +677,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_11" id="ch02ex_3_4_11a">11</a>. $zT(z)^t=T(z)-1$; thus $z+T(z)^{-t}=T(z)^{1-t}$. By Eq. <a href="../Text/ch01a.html#ch01lev2sec9">1.2.9</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec9-21">21</a>), $T(z)=∑_nA_n(1,-t)z^n$, so the number of <em>t</em>-ary trees is</p>
 
-  <div class="image"><img src="../Images/e589_04.gif" /></div>
+  <div class="image"><img src="../Images/e589_04.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_12" id="ch02ex_3_4_12a">12</a>. Consider the directed graph that has one arc from $V_i$ to $V_j$ for all $i\neq j$. The matrix $A_0$ of <a href="../Text/ch02b.html#ch02ex_3_2_19">exercise 2.3.4.2–19</a> is a combinatorial $(n-1)\times(n-1)$ matrix with $n-1$ on the diagonal and $-1$ off the diagonal. So its determinant is</p>
 
@@ -687,7 +687,7 @@
 
   <p id="page_590"><a href="../Text/ch02b.html#ch02ex_3_4_13" id="ch02ex_3_4_13a">13</a>.</p>
 
-  <div class="image"><img src="../Images/590fig01.gif" /></div>
+  <div class="image"><img src="../Images/590fig01.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_14" id="ch02ex_3_4_14a">14</a>. True, since the root will not become a leaf until all other branches have been removed.</p>
 
@@ -703,23 +703,23 @@
 
   <p class="uln-indentC"><strong>D4.</strong> If $j=n$, set ${\tt PARENT[}l{\tt]}←0$ and terminate the algorithm.</p>
 
-  <p class="uln-indentC"><strong>D5.</strong> If ${\tt C[}l{\tt]}=0$ and $l\lt k$, go to D3; otherwise go back to D2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>D5.</strong> If ${\tt C[}l{\tt]}=0$ and $l\lt k$, go to D3; otherwise go back to D2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_17" id="ch02ex_3_4_17a">17</a>. There must be exactly one cycle $x_1,x_2,\ldots,x_k$ where $f(x_j)=x_{j+1}$ and $f(x_k)=x_1$. We will enumerate all <em>f</em> having a cycle of length <em>k</em> such that the iterates of each <em>x</em> ultimately come into this cycle. Define the canonical representation $f(V_1),f(V_2),\ldots,f(V_{m-k})$ as in the text; now $f(V_{m-k})$ is in the cycle, so we continue to get a “canonical representation” by writing down the rest of the cycle $f(f(V_{m-k}))$, $f(f(f(V_{m-k})))$, etc. For example, the function with $m=13$ whose graph is shown here leads to the representation 3, 1, 8, 8, 1, 12, 12, 2, 3, 4, 5, 1. We obtain a sequence of $m-1$ numbers in which the last <em>k</em> are distinct. Conversely, from any such sequence we can reverse the construction (assuming that <em>k</em> is known); hence there are precisely $m^{\underline{k}}m^{m-k-1}$ such functions having a <em>k</em>-cycle. (For related results, see exercise 3.1–14. The formula $m^{m-1}Q(m)$ was first obtained by L. Katz, <em>Annals of Math. Statistics</em> <strong>26</strong> (1955), 512–517.)</p>
 
-  <div class="image"><img src="../Images/590fig02.gif" /></div>
+  <div class="image"><img src="../Images/590fig02.png" /></div>
 
   <p id="page_591"><a href="../Text/ch02b.html#ch02ex_3_4_18" id="ch02ex_3_4_18a">18</a>. To reconstruct the tree from a sequence $s_1,s_2,\ldots,s_{n-1}$, begin with $s_1$ as the root and successively attach arcs to the tree that point to $s_1,s_2,\ldots$; if vertex $s_k$ has appeared earlier, leave the initial vertex of the arc leading to $s_{k-1}$ nameless, otherwise give this vertex the name $s_k$. After all $n-1$ arcs have been placed, give names to all vertices that remain nameless by using the numbers that have not yet appeared, assigning names in increasing order to nameless vertices in the order of their creation.</p>
 
   <p class="indent">For example, from 3, 1, 4, 1, 5, 9, 2, 6, 5 we would construct the tree shown on the right. There is no simple connection between this method and the one in the text. Several more representations are possible; see the article by E. H. Neville, <em>Proc. Cambridge Phil. Soc.</em> <strong>49</strong> (1953), 381–385.</p>
 
-  <div class="image"><img src="../Images/591fig01.gif" /></div>
+  <div class="image"><img src="../Images/591fig01.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_19" id="ch02ex_3_4_19a">19</a>. The canonical representation will have precisely $n-k$ different values, so we enumerate the sequences of $n-1$ numbers with this property. The answer is $n^{\underline{n-k}}{n-1\brace n-k}$.</p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_20" id="ch02ex_3_4_20a">20</a>. Consider the canonical representation of such trees. We are asking how many terms of $(x_1+\cdots+x_n)^{n-1}$ have $k_0$ exponents zero, $k_1$ exponents one, etc. This is plainly the coefficient of such a term times the number of such terms, namely</p>
 
-  <div class="image"><img src="../Images/e591_02.gif" /></div>
+  <div class="image"><img src="../Images/e591_02.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_21" id="ch02ex_3_4_21a">21</a>. There are none with $2m$ vertices; if there are $n=2m+1$ vertices, the answer is obtained from <a href="../Text/ch02b.html#ch02ex_3_4_20">exercise 20</a> with $k_0=m+1,k_2=m$, namely ${\small \binom{2m+1}{m}}\large(2m)!/2^m$.</p>
 
@@ -733,7 +733,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_26" id="ch02ex_3_4_26a">26</a>. $(k=7)$</p>
 
-  <div class="image"><img src="../Images/591fig02.gif" /></div>
+  <div class="image"><img src="../Images/591fig02.png" /></div>
 
   <p id="page_592"><a href="../Text/ch02b.html#ch02ex_3_4_27" id="ch02ex_3_4_27a">27</a>. Given a function <em>g</em> from $\{1,2,\ldots,r\}$ to $\{1,2,\ldots,q\}$ such that adding arcs from $V_k$ to $U_{g(k)}$ introduces no oriented cycles, construct a sequence $a_1,\ldots,a_r$ as follows: Call vertex $V_k$ “free” if there is no oriented path from $V_j$ to $V_k$ for any $j\neq k$. Since there are no oriented cycles, there must be at least one free vertex. Let $b_1$ be the smallest integer for which $V_{b_1}$ is free; and assuming that $b_1,\ldots,b_t$ have been chosen, let $b_{t+1}$ be the smallest integer different from $b_1,\ldots,b_t$ for which $V_{\large b_{t+1}}$ is free in the graph obtained by deleting the arcs from $V_{\large b_k}$ to $U_{\large g(b_k)}$ for $1≤k≤t$. This rule defines a permutation $b_1b_2\ldots b_r$ of the integers $\{1,2,\ldots,r\}$. Let $a_k=g(b_k)$ for $1≤k≤r$; this defines a sequence such that $1≤a_k≤q$ for $1≤k\lt r$, and $1≤a_r≤p$.</p>
 
@@ -743,7 +743,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_29" id="ch02ex_3_4_29a">29</a>. If $y=x^t$, then $(tz)y=\ln y$, and we see that it is sufficient to prove the identity for $t=1$. Now if $zx=\ln x$ we know by <a href="../Text/ch02b.html#ch02ex_3_4_25">exercise 25</a> that $x^m=∑_kE_k(m,1)z^k$ for nonnegative integers <em>m</em>. Hence</p>
 
-  <div class="image"><img src="../Images/e592_01.gif" /></div>
+  <div class="image"><img src="../Images/e592_01.png" /></div>
 
   <p>[Exercise 4.7–22 derives considerably more general results.]</p>
 
@@ -757,21 +757,21 @@
 
   <p class="indent">To prove this result we recall that an unlabeled tree with $n=n_0+n_1+\cdots+n_m$ nodes is characterized by the sequence $d_1d_2\ldots d_n$ of the degrees of the nodes in postorder (<a href="../Text/ch02a.html#ch02lev2sec9">Section 2.3.3</a>). Furthermore such a sequence of degrees corresponds to a tree if and only if $∑_{j=1}^k(1-d_j)\gt0$ for $0\lt k≤n$. (This important property of Polish postfix notation is readily proved by induction; see <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm 2.3.3F</a> with <em>f</em> a function that creates a tree, like the <code>TREE</code> function of <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>.) In particular, $d_1$ must be 0. The answer to our problem is therefore the number of sequences $d_2\ldots d_n$ with $n_j$ occurrences of <em>j</em> for $j\gt0$, namely the multinomial coefficient</p>
 
-  <div class="image"><img src="../Images/e593_02.gif" /></div>
+  <div class="image"><img src="../Images/e593_02.png" /></div>
 
   <p>minus the number of such sequences $d_2\ldots d_n$ for which $∑_{j=2}^k(1-d_j)\lt0$ for some $k\ge2$.</p>
 
   <p class="indent">We may enumerate the latter sequences as follows: Let <em>t</em> be minimal such that $∑_{j=2}^t(1-d_j)\lt0$; then $∑_{j=2}^t(1-d_j)=-s$ where $1≤s\lt d_t$, and we may form the subsequence $d'_2\ldots d'_n=d_{t-1}\ldots d_20d_{t+1}\ldots d_n$, which has $n_j$ occurrences of <em>j</em> for $j\neq d_t$, $n_j-1$ occurrences of <em>j</em> for $j=d_t$. Now $∑_{j=2}^k(1-d'_j)$ is equal to $d_t$ when $k=n$, and equal to $d_t-s$ when $k=t$; when $k\lt t$, it is</p>
 
-  <div class="image"><img src="../Images/e593_08.gif" /></div>
+  <div class="image"><img src="../Images/e593_08.png" /></div>
 
   <p>It follows that, given <em>s</em> and any sequence $d'_2\ldots d'_n$, the construction can be reversed; hence the number of sequences $d_2\ldots d_n$ that have a given value of $d_t$ and <em>s</em> is the multinomial coefficient</p>
 
-  <div class="image"><img src="../Images/e593_10.gif" /></div>
+  <div class="image"><img src="../Images/e593_10.png" /></div>
 
   <p>The number of sequences $d_2\ldots d_n$ that correspond to trees is therefore obtained by summing over the possible values of $d_t$ and <em>s</em>:</p>
 
-  <div class="image"><img src="../Images/e593_11.gif" /></div>
+  <div class="image"><img src="../Images/e593_11.png" /></div>
 
   <p>and the latter sum is 1.</p>
 
@@ -783,11 +783,11 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_33" id="ch02ex_3_4_33a">33</a>. Consider the number of trees with $n_1$ nodes labeled 1, $n_2$ nodes labeled 2, $\ldots$, and such that each node labeled <em>j</em> has degree $e_j$. Let this number be $c(n_1,n_2,\ldots)$, with the specified degrees $e_1,e_2,\ldots$ regarded as fixed. The generating function $\large G(z_1,z_2,\ldots)=∑c(n_1,n_2,\ldots)z_1^{n_1}z_2^{n_2}\ldots$ satisfies the identity $\large G=z_1G^{e_1}+\cdots+z_rG^{e_r}$, since $\large z_jG^{e_j}$ enumerates the trees whose root is labeled <em>j</em>. And by the result of the previous exercise,</p>
 
-  <div class="image"><img src="../Images/e594_01.gif" /></div>
+  <div class="image"><img src="../Images/e594_01.png" /></div>
 
   <p class="indent">More generally, since $G^f$ enumerates the number of ordered forests having such labels, we have for integer $f\gt0$</p>
 
-  <div class="image"><img src="../Images/e594_02.gif" /></div>
+  <div class="image"><img src="../Images/e594_02.png" /></div>
 
   <p>These formulas are meaningful when $r=\infty$, and they are essentially equivalent to Lagrange’s inversion formula.</p>
 
@@ -797,13 +797,13 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_5_2" id="ch02ex_3_5_2a">2</a>.</p>
 
-  <div class="image"><img src="../Images/e594_04.gif" /></div>
+  <div class="image"><img src="../Images/e594_04.png" /></div>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_5_3" id="ch02ex_3_5_3a">3</a>. By induction on <em>m</em>, the condition is necessary. Conversely if $∑_{j=1}^{m}\large 2^{-l_j}=1$, we want to construct an extended binary tree with path lengths $l_1,\ldots,l_m$. When $m=1$, we have $l_1=0$ and the construction is trivial. Otherwise we may assume that the $l\rm\unicode{39}s$ are ordered so that $l_1=l_2=\cdots=l_q\gt l_{q+1}\ge l_{q+2}\ge\cdots\ge l_m\gt0$ for some <em>q</em> with $1≤q≤m$. Now ${\large 2^{l_1 -1}}=∑_{j=1}^m{\large 2^{l_1-l_j-1}}=\frac12 q +$ integer, hence <em>q</em> is even. By induction on <em>m</em> there is a tree with path lengths $l_1-1,l_3,l_4,\ldots,l_m$; take such a tree and replace one of the external nodes at level $l_1-1$ by an internal node whose children are at level $l_1=l_2$.</p>
 
   <p id="page_595"><a href="../Text/ch02b.html#ch02ex_3_5_4" id="ch02ex_3_5_4a">4</a>. First, find a tree by Huffman’s method. If $w_j\lt w_{j+1}$, then $l_j\ge l_{j+1}$, since the tree is optimal. The construction in the answer to <a href="../Text/ch02b.html#ch02ex_3_5_3">exercise 3</a> now gives us another tree with these same path lengths and with the weights in the proper sequence. For example, the tree (<a href="../Text/ch02b.html#ch02eq-lev3sec5-11">11</a>) becomes</p>
 
-  <div class="image"><img src="../Images/595fig01.gif" /></div>
+  <div class="image"><img src="../Images/595fig01.png" /></div>
 
   <p class="right"><em>Reference: CACM</em> <strong>7</strong> (1964), 166–169.</p>
 
@@ -815,7 +815,7 @@
 
   <p>Therefore if $H(z)=B_w(1,z)=∑_nh_nz^n$, we find $H(z)=2zB(z)(H(z)+zB'(z))$; and the known formula for $B(z)$ implies</p>
 
-  <div class="image"><img src="../Images/e595_02.gif" /></div>
+  <div class="image"><img src="../Images/e595_02.png" /></div>
 
   <p>The average value is $h_n/b_n$. (c) Asymptotically, this comes to $n\sqrt{\pi n}-3n+O(\sqrt{n})$.</p>
 
@@ -831,7 +831,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_5_10" id="ch02ex_3_5_10a">10</a>. By adding extra <em>zero</em> weights, if necessary, we may assume that $m\bmod(t-1)=1$. To obtain a <em>t</em>-ary tree with minimum weighted path length, combine the smallest <em>t</em> values at each step and replace them by their sum. The proof is essentially the same as the binary case. The desired ternary tree is shown.</p>
 
-  <div class="image"><img src="../Images/595fig02.gif" /></div>
+  <div class="image"><img src="../Images/595fig02.png" /></div>
 
   <p class="indent">F. K. Hwang has observed [<em>SIAM J. Appl. Math.</em> <strong>37</strong> (1979), 124–127] that a similar procedure is valid for minimum weighted path length trees having any prescribed multiset of degrees: Combine the smallest <em>t</em> weights at each step, where <em>t</em> is as small as possible.</p>
 
@@ -849,7 +849,7 @@
 
   <p class="uln-indentC"><strong>H4.</strong> [Done?] Terminate the algorithm if $k=1$.</p>
 
-  <p class="uln-indentC"><strong>H5.</strong> [Find left pointer.] (At this point $j\ge k$ and the queues contain a total of <em>k</em> unused weights. If $A[y]\lt0$ we have $j=k$, $i=y+1$, and $A[i]\gt A[j]$.) If $A[i]≤A[j]$, set $x←i$ and $i←i+1$; otherwise set $x←j$ and $j←j-1$. Return to step H2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>H5.</strong> [Find left pointer.] (At this point $j\ge k$ and the queues contain a total of <em>k</em> unused weights. If $A[y]\lt0$ we have $j=k$, $i=y+1$, and $A[i]\gt A[j]$.) If $A[i]≤A[j]$, set $x←i$ and $i←i+1$; otherwise set $x←j$ and $j←j-1$. Return to step H2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02b.html#ch02ex_3_5_14" id="ch02ex_3_5_14a">14</a>. The proof for $k=m-1$ applies with little change. [See <em>SIAM J. Appl. Math.</em> <strong>21</strong> (1971), 518.]</p>
 
@@ -859,7 +859,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_5_16" id="ch02ex_3_5_16a">16</a>. Let $l_{m+1}=l'_{m+1}=0$. Then</p>
 
-  <div class="image"><img src="../Images/e596_02.gif" /></div>
+  <div class="image"><img src="../Images/e596_02.png" /></div>
 
   <p>since $l'_j\ge l'_{j+1}$ as in <a href="../Text/ch02b.html#ch02ex_3_5_4">exercise 4</a>. The same proof holds for many other kinds of optimum trees, including those of <a href="../Text/ch02b.html#ch02ex_3_5_10">exercise 10</a>.</p>
 
@@ -871,7 +871,7 @@
 
   <p class="indent">Stating this correspondence another way, we can label the non-base edges of a triangulated polygon with the integers $0,\ldots,n$; and when two adjacent sides of a triangle are labeled <em>α</em> and <em>β</em> in clockwise order, we can label the third side $(\alpha\beta)$. The label of the base then characterizes the binary tree and the triangulation. For example,</p>
 
-  <div class="image"><img src="../Images/597fig01.gif" /></div>
+  <div class="image"><img src="../Images/597fig01.png" /></div>
 
   <p>corresponds to the binary tree shown in <a href="../Text/ch02a.html#ch02lev2sec7">2.3.1</a>–(<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>). [See H. G. Forder, <em>Mathematical Gazette</em> <strong>45</strong> (1961), 199–201.]</p>
 
@@ -899,7 +899,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_6_4" id="ch02ex_3_6_4a">4</a>. Let $m=n+2$; by <a href="../Text/ch02b.html#ch02ex_3_6_1">exercise 1</a>, we want a correspondence between triangulated <em>m</em>-gons and $(m-1)\unicode{45}\rm rowed$ friezes. First let’s look more closely at the previous correspondence, by giving a “top-down” labeling to the edges of a triangulation instead of the “bottom-up” one considered earlier: Assign the empty label $\epsilon$ to the base, then recursively give the labels $\alpha L$ and $\alpha R$ to the opposite edges of a triangle whose base is labeled <em>α</em>. For example, the previous diagram becomes</p>
 
-  <div class="image"><img src="../Images/598fig01.gif" /></div>
+  <div class="image"><img src="../Images/598fig01.png" /></div>
 
   <p>under these new conventions. If the base edge in this example is called 10, while the other edges are 0 to 9 as before, we can write $0=10LLL$, $1=10LLR$, $2=10LR$, <a id="page_599"></a>$3=10RLL$, etc. Any of the other edges can also be chosen as the base; thus, if 0 is chosen we have $1=0L$, $2=0RL$, $3=0RRLLL$, etc. It is not difficult to verify that if $u=v\alpha$ we have $v=u\alpha^T$, where $\alpha^T$ is obtained by reading <em>α</em> from right to left and interchanging <em>L</em> with <em>R</em>. For example, $10=0RRR=1LRR=2LR=3RRL$, etc. If <em>u</em>, <em>υ</em>, and <em>w</em> are edges of the polygon with $w=u\alpha L\gamma$ and $w=v\beta R\gamma$, then $u=v\beta L\alpha^T$ and $v=u\alpha R\beta^T$.</p>
 
@@ -907,21 +907,21 @@
 
   <p class="indent">Let $(u,u)=0$ for all polygon edges <em>u</em>. We can now prove that $v=u\alpha$ implies</p>
 
-  <div class="image"><img src="../Images/e599_03.gif" /></div>
+  <div class="image"><img src="../Images/e599_03.png" /></div>
 
   <p>where $u+1$ and $v+1$ are the clockwise successors of <em>u</em> and <em>υ</em>. The proof is by induction on <em>m</em>: Eq. $(*)$ is trivial when $m=2$, since the two parallel edges <em>u</em> and <em>υ</em> are then related by $u=v\epsilon$, and $\alpha=\epsilon$ is the identity matrix. If any triangulation is augmented by extending some edge <em>υ</em> with a triangle $v\;v'\;v''$, then $v=u\alpha$ implies $v'=u\alpha L$ and $v''=u\alpha R$; hence $(u,v')$ and $(u,v'')$ in the extended polygon are respectively equal to $(u,v)$ and $(u,v)+(u,v+1)$ in the original one. It follows that</p>
 
-  <div class="image"><img src="../Images/e599_04.gif" /></div>
+  <div class="image"><img src="../Images/e599_04.png" /></div>
 
   <p>and $(*)$ remains true in the extended polygon.</p>
 
   <p class="indent">The frieze pattern corresponding to the given triangulation is now defined to be the periodic sequence</p>
 
-  <div class="image"><img src="../Images/e599_05.gif" /></div>
+  <div class="image"><img src="../Images/e599_05.png" /></div>
 
   <p>and so on until $m-1$ rows have been defined; the final row begins with $(\lceil{m/2}\rceil+1,\lceil{m/2}\rceil)$ when $m\gt3$. Condition $(*)$ proves that this pattern is a frieze, namely that</p>
 
-  <div class="image"><img src="../Images/e599_06.gif" /></div>
+  <div class="image"><img src="../Images/e599_06.png" /></div>
 
   <p>because $\det L=\det R=1$ implies $\det\alpha=1$. Our example triangulation yields</p>
 
@@ -940,7 +940,7 @@
 
   <p class="indent">Given any frieze of $m-1$ rows, extend it by putting a new row 0 at the top and a new row <em>m</em> at the bottom, both consisting entirely of zeros. Now let the elements of row 0 be called $(0,0)$, $(1,1)$, $(2,2)$, etc., and for all nonnegative integers $u\lt v≤u+m$ let $(u,v)$ be the element in the diagonal southeast of $(u,u)$ and in the diagonal southwest of $(v,v)$. By assumption, condition $(**)$ holds for all $u\lt v\lt u+m$. We can in fact extend $(**)$ to the considerably more general relation</p>
 
-  <div class="image"><img src="../Images/e600_01.gif" /></div>
+  <div class="image"><img src="../Images/e600_01.png" /></div>
 
   <p>For if $(***)$ is false, let $(t,u,v,w)$ be a counterexample with the smallest value of $(w-t)m+u-t+w-v$. Clearly $t\neq u$ and $v\neq w$. <em>Case 1:</em> $t+1\lt u$. Then $(***)$ holds for $(t,t+1,v,w)$, $(t,t+1,u,v)$, and $(t+1,u,v,w)$, so we find $((t,u)(v,w)+(t,w)(u,v))(t+1,v)=(t,v)(u,w)(t+1,v)$; this implies $(t+1,v)=0$, a contradiction. <em>Case 2:</em> $v+1\lt w$. Then $(***)$ holds for $(t,u,w-1,w)$, $(u,v,w-1,w)$, and $(t,u,v,w-1)$; we obtain a similar contradiction $(u,w-1)=0$. <em>Case 3:</em> $u=t+1$ and $w=v+1$. In this case $(***)$ reduces to $(**)$.</p>
 
@@ -950,7 +950,7 @@
 
   <p class="indent">Finally, if $m\gt3$ we cannot have two consecutive 1s in row 2, because $(u,u+2)=(u+1,u+3)=1$ implies $(u,u+3)=0$. Therefore we can reduce the frieze to another one with <em>m</em> reduced by 1, as illustrated here for 7 rows reduced to 6:</p>
 
-  <div class="image"><img src="../Images/e600_02.gif" /></div>
+  <div class="image"><img src="../Images/e600_02.png" /></div>
 
   <p>The reduced frieze corresponds to a triangulation, by induction, and the unreduced frieze corresponds to attaching one more triangle. [<em>Math. Gazette</em> <strong>57</strong> (1974), 87–94, 175–183; Conway and Guy, <em>The Book of Numbers</em> (New York: Copernicus, 1996), 74–76, 96–97, 101–102.]</p>
 
@@ -974,9 +974,9 @@
 
   <p class="indent">$\rm rI1≡\tt P$, $\rm rI2≡\tt T$, $\rm rI3≡\tt Q$, and $rX≡-1$ (for setting $\tt MARK\rm{s}$).</p>
 
-  <div class="image"><img src="../Images/601pro01.gif" /></div>
+  <div class="image"><img src="../Images/601pro01.png" /></div>
 
-  <div class="image" id="page_602"><img src="../Images/601pro01a.gif" /></div>
+  <div class="image" id="page_602"><img src="../Images/601pro01a.png" /></div>
 
   <p>By Kirchhoff’s law, $t_1+t_2+1=n$. The total time is $(34n+4t_1+3a-5b-8)u$, where <em>n</em> is the number of nonatomic nodes marked, <em>a</em> is the number of atoms marked, <em>b</em> is the number of <em>Λ</em> links encountered in marked nonatomic nodes, and $t_1$ is the number of times we went down an <code>ALINK</code> $(0≤t_1\lt n)$.</p>
 
@@ -994,7 +994,7 @@
 
   <p class="uln-indentC"><strong>S6.</strong> Set $\tt Q←BLINK(P)$. If ${\tt Q}=\varLambda$ or ${\tt MARK(Q)}=1$, go to S7; otherwise set ${\tt MARK(Q)}←1$. Now if ${\tt ATOM(Q)}=1$, go to S7; otherwise set $\tt BLINK(P)←T$, $\tt T←P$, $\tt P←Q$, go to S5.</p>
 
-  <p class="uln-indentC"><strong>S7.</strong> If ${\tt T}=\varLambda$, go to S3. Otherwise set $\tt Q←T$. If ${\tt ATOM(Q)}=1$, set ${\tt ATOM(Q)}←0$, $\tt T←ALINK(Q)$, $\tt ALINK(Q)←P$, $\tt P←Q$, and return to S6. If ${\tt ATOM(Q)}=0$, set $\tt T←BLINK(Q)$, $\tt BLINK(Q)←P$, $\tt P←Q$, and return to S7. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>S7.</strong> If ${\tt T}=\varLambda$, go to S3. Otherwise set $\tt Q←T$. If ${\tt ATOM(Q)}=1$, set ${\tt ATOM(Q)}←0$, $\tt T←ALINK(Q)$, $\tt ALINK(Q)←P$, $\tt P←Q$, and return to S6. If ${\tt ATOM(Q)}=0$, set $\tt T←BLINK(Q)$, $\tt BLINK(Q)←P$, $\tt P←Q$, and return to S7. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><em>Reference: CACM</em> <strong>10</strong> (1967), 501–506.</p>
 
@@ -1012,7 +1012,7 @@
 
   <p class="uln-indentC"><strong>F4.</strong> Set $\tt Q←LINK(P)$. If ${\tt Q}\neq\varLambda$ and ${\tt MARK(Q)}=0$, set $\tt LINK(P)←T$, $\tt T←P$, $\tt P←Q$ and go to F2. Otherwise set ${\tt P←P}-1$ and return to F3.</p>
 
-  <p class="uln-indentC"><strong>F5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt Q←T$, $\tt T←LINK(Q)$, $\tt LINK(Q)←P$, ${\tt P←Q}-1$, and return to F3. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>F5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt Q←T$, $\tt T←LINK(Q)$, $\tt LINK(Q)←P$, ${\tt P←Q}-1$, and return to F3. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p class="indent">A similar algorithm, which sometimes decreases the storage overhead and which avoids all pointers into the middle of nodes, has been suggested by Lars-Erik Thorelli, <em>BIT</em> <strong>12</strong> (1972), 555–568.</p>
 
@@ -1026,7 +1026,7 @@
 
   <p class="uln-indentC"><strong>G4.</strong> If ${\tt Q}\neq\varLambda$ and ${\tt MARK(Q)}=0$, set ${\tt MARK(Q)}←1$, $\tt S←SIZE(Q)$, $\tt SIZE(Q)←T$, ${\tt T←Q}+\tt S$. Go back to G2.</p>
 
-  <p class="uln-indentC" id="page_604"><strong>G5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt P←T$ and find the first value of ${\tt Q}={\tt P},{\tt P}-1,{\tt P}-2,\ldots$ for which ${\tt MARK(Q)}=1$; set $\tt T←SIZE(Q)$ and ${\tt SIZE(Q)←P}-\tt Q$. Go back to G2. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC" id="page_604"><strong>G5.</strong> If ${\tt T}=\varLambda$, stop. Otherwise set $\tt P←T$ and find the first value of ${\tt Q}={\tt P},{\tt P}-1,{\tt P}-2,\ldots$ for which ${\tt MARK(Q)}=1$; set $\tt T←SIZE(Q)$ and ${\tt SIZE(Q)←P}-\tt Q$. Go back to G2. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p class="answer2"><strong><a href="../Text/ch02c.html#ch02ex_2_11_9" id="ch02ex_2_11_9a">9</a>. H1.</strong> Set ${\tt L}←0$, ${\tt K←M}+1$, ${\tt MARK(0)}←1$, ${\tt MARK(M}+1{\tt)}←0$.</p>
 
@@ -1036,7 +1036,7 @@
 
   <p class="uln-indentC"><strong>H4.</strong> If ${\tt L}\gt\tt K$, go to step H5; otherwise set ${\tt NODE(L)←NODE(K)}$, $\tt ALINK(K)←L$, ${\tt MARK(K)}←0$, and return to H2.</p>
 
-  <p class="uln-indentC"><strong>H5.</strong> For ${\tt L}=1,2,\ldots,\tt K$ do the following: Set ${\tt MARK(L)}←0$. If ${\tt ATOM(L)}=0$ and $\tt ALINK(L)\gt K$, set $\tt ALINK(L)←ALINK(ALINK(L))$. If ${\tt ATOM(L)}=0$ and $\tt BLINK(L)\gt K$, set $\tt BLINK(L)←ALINK(BLINK(L))$. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>H5.</strong> For ${\tt L}=1,2,\ldots,\tt K$ do the following: Set ${\tt MARK(L)}←0$. If ${\tt ATOM(L)}=0$ and $\tt ALINK(L)\gt K$, set $\tt ALINK(L)←ALINK(ALINK(L))$. If ${\tt ATOM(L)}=0$ and $\tt BLINK(L)\gt K$, set $\tt BLINK(L)←ALINK(BLINK(L))$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>See also <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 2.5–33</a>.</p>
 
@@ -1052,7 +1052,7 @@
 
   <p class="uln-indentC"><strong>Z6.</strong> [Move to next List.] Set $\tt RLINK(Q)←\varLambda$. If $\tt REF(F)\neq R$, set $\tt F←REF(REF(F))$ and return to Z2. Otherwise set $\tt REF(R)←\varLambda$, $\tt P←P0$.</p>
 
-  <p class="uln-indentC"><strong>Z7.</strong> [Final cleanup.] Set $\tt Q←REF(P)$. If $\tt Q\neq\varLambda$, set $\tt REF(P)←\varLambda$ and $\tt P←Q$ and repeat step Z7. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>Z7.</strong> [Final cleanup.] Set $\tt Q←REF(P)$. If $\tt Q\neq\varLambda$, set $\tt REF(P)←\varLambda$ and $\tt P←Q$ and repeat step Z7. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>Of course, this use of the <code>REF</code> fields makes it impossible to do garbage collection with <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a>; moreover, <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a> is ruled out by the fact that the Lists aren’t well-formed during the copying.</p>
 
@@ -1080,7 +1080,7 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_5" id="ch02ex_1_4_5a">5</a>. Make these changes:</p>
 
-  <div class="image"><img src="../Images/605pro01.gif" /></div>
+  <div class="image"><img src="../Images/605pro01.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_6" id="ch02ex_1_4_6a">6</a>. A simple modification of <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> makes it search only for complete references (if $k=n$ and ${\tt PARENT(S)}\neq\varLambda$ in step B3, or if ${\tt NAME(S)}\neq P_k$ in step B6, set $\tt P←PREV(P)$ and go to B2). The idea is to run through this modified <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> first; then, if <code>Q</code> is <em>still</em> <em>Λ</em>, to perform the unmodified algorithm.</p>
 
@@ -1098,7 +1098,7 @@
 
   <p class="indenthangingAA1"><strong>B4′.</strong> Set $k←k+1$, ${\tt R←LINK(}P_k\tt)$.</p>
 
-  <p class="indenthangingAA1"><strong>B5′.</strong> If ${\tt R}=\varLambda$, set $\tt P←PREV(P)$ and go to B2′ (we haven’t found a match). If $R\lt{\tt S}≤\tt SCOPE(R)$, set $\tt S←R$ and go to B3′. Otherwise set $\tt R←PREV(R)$ and repeat step B5′. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="indenthangingAA1"><strong>B5′.</strong> If ${\tt R}=\varLambda$, set $\tt P←PREV(P)$ and go to B2′ (we haven’t found a match). If $R\lt{\tt S}≤\tt SCOPE(R)$, set $\tt S←R$ and go to B3′. Otherwise set $\tt R←PREV(R)$ and repeat step B5′. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>This algorithm does <em>not</em> adapt to the PL/I convention of <a href="../Text/ch02c.html#ch02ex_1_4_6">exercise 6</a>.</p>
 
@@ -1114,7 +1114,7 @@
 
   <p class="indenthangingAA1"><strong>C4′.</strong> Let $({\tt P1},{\tt Q1})$ be the entry at the top of the stack. If ${\tt SCOPE(P)}\lt\tt SCOPE(P1)$, set ${\tt P←SCOPE(P)}+1$, ${\tt Q←Q1}+1$, and go back to C3′. If ${\tt SCOPE(P)}=\tt SCOPE(P1)$, set $\tt P←P1$, $\tt Q←Q1$ and remove the top entry of the stack.</p>
 
-  <p class="indenthangingAA1"><strong>C5′.</strong> If the stack is empty, the algorithm terminates. Otherwise go to C4′. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="indenthangingAA1"><strong>C5′.</strong> If the stack is empty, the algorithm terminates. Otherwise go to C4′. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <h3 id="app01lev1sec6">Section 2.5</h3>
 
@@ -1127,7 +1127,7 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_4" id="ch02ex_1_5_4a">4</a>. $\rm rI1≡\tt Q$, $\rm rI2≡\tt P$.</p>
 
-  <div class="image"><img src="../Images/607pro01.gif" /></div>
+  <div class="image"><img src="../Images/607pro01.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_5" id="ch02ex_1_5_5a">5</a>. Probably not. The unavailable storage area just before location <code>P</code> will subsequently become available, and its length will be increased by the amount <code>K</code>; an increase of 99 would not be negligible.</p>
 
@@ -1139,7 +1139,7 @@
 
   <p class="uln-indentC"><strong>A5<em>''</em>.</strong> [Better fit?] If ${\tt M}\gt\tt SIZE(P)$, set $\tt R←Q$ and $\tt M←SIZE(P)$. Then set $\tt Q←P$ and return to A2<em>''</em>.</p>
 
-  <p class="uln-indentC"><strong>A6<em>''</em>.</strong> [Any found?] If ${\tt R}=\varLambda$, the algorithm terminates unsuccessfully. Otherwise set $\tt Q←R$, $\tt P←LINK(Q)$, and go to A4<em>''</em>. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC"><strong>A6<em>''</em>.</strong> [Any found?] If ${\tt R}=\varLambda$, the algorithm terminates unsuccessfully. Otherwise set $\tt Q←R$, $\tt P←LINK(Q)$, and go to A4<em>''</em>. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_9" id="ch02ex_1_5_9a">9</a>. Obviously if we are so lucky as to find ${\tt SIZE(P)}=\tt N$, we have a best fit and it is not necessary to search farther. (When there are only very few different block sizes, this occurs rather often.) If a “boundary tag” method like <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a> is being used, it is possible to maintain the <code>AVAIL</code> list in sorted order by size; so the length of search could be cut down to half the length of the list or less, on the average. But the best solution is to make the <code>AVAIL</code> list into a balanced tree structure as described in Section 6.2.3, if it is expected to be long.</p>
 
@@ -1153,11 +1153,11 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_11" id="ch02ex_1_5_11a">11</a>. If <code>P0</code> is greater than <code>ROVER</code>, we can set $\tt Q←ROVER$ instead of ${\tt Q←LOC(AVAIL)}$ in step B1. If there are <em>n</em> entries in the <code>AVAIL</code> list, the average number of iterations of step B2 is $(2n+3)(n+2)/(6n+6)=\frac13 n+\frac56+O\left(\frac1n\right)$. For example if $n=2$ we get 9 equally probable situations, where <code>P1</code> and <code>P2</code> point to the two existing available blocks:</p>
 
-  <div class="image"><img src="../Images/e608_02.gif" /></div>
+  <div class="image"><img src="../Images/e608_02.png" /></div>
 
   <p>This chart shows the number of iterations needed in each case. The average is</p>
 
-  <div class="image"><img src="../Images/e608_03.gif" /></div>
+  <div class="image"><img src="../Images/e608_03.png" /></div>
 
   <p><strong><a href="../Text/ch02c.html#ch02ex_1_5_12" id="ch02ex_1_5_12a">12</a></strong>. <strong>A1*.</strong> Set $\tt P←ROVER$, ${\tt F}←0$.</p>
 
@@ -1165,21 +1165,21 @@
 
   <p class="indenthangingAA1"><strong>A3*.</strong> If ${\tt SIZE(P)}\ge\tt N$, go to A4*; otherwise set $\tt P←LINK(P)$ and return to A2*.</p>
 
-  <p class="indenthangingAA1" id="page_609"><strong>A4*.</strong> Set $\tt ROVER←LINK(P)$, $\tt K←SIZE(P)-N$. If ${\tt K}\lt c$ (where <em>c</em> is a constant $\ge2$), set ${\tt LINK(LINK(P}+1\tt))←ROVER$, ${\tt LINK(ROVER}+1{\tt)←LINK(P}+1\tt)$, $\tt L←P$; otherwise set ${\tt L←P}+\tt K$, ${\tt SIZE(P)←SIZE(L-1)←K}$, $\tt TAG(L-1)←“-”$, $\tt SIZE(L)←N$. Finally set ${\tt TAG(L)←TAG(L}+{\tt SIZE(L)-1)}←“+”$. <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="indenthangingAA1" id="page_609"><strong>A4*.</strong> Set $\tt ROVER←LINK(P)$, $\tt K←SIZE(P)-N$. If ${\tt K}\lt c$ (where <em>c</em> is a constant $\ge2$), set ${\tt LINK(LINK(P}+1\tt))←ROVER$, ${\tt LINK(ROVER}+1{\tt)←LINK(P}+1\tt)$, $\tt L←P$; otherwise set ${\tt L←P}+\tt K$, ${\tt SIZE(P)←SIZE(L-1)←K}$, $\tt TAG(L-1)←“-”$, $\tt SIZE(L)←N$. Finally set ${\tt TAG(L)←TAG(L}+{\tt SIZE(L)-1)}←“+”$. <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_13" id="ch02ex_1_5_13a">13</a>. rI1 ≡ <code>P</code>, rX ≡ <code>F</code>, rI2 ≡ <code>L</code>.</p>
 
-  <div class="image"><img src="../Images/609pro01.gif" /></div>
+  <div class="image"><img src="../Images/609pro01.png" /></div>
 
-  <div class="image"><img src="../Images/609pro01a.gif" /></div>
+  <div class="image"><img src="../Images/609pro01a.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_14" id="ch02ex_1_5_14a">14</a>. (a) This field is needed to locate the beginning of the block, in step C2. It could be replaced (perhaps to advantage) by a link to the first word of the block. See also <a href="../Text/ch02c.html#ch02ex_1_5_19">exercise 19</a>. (b) This field is needed because we sometimes need to reserve more than <code>N</code> words (for example if ${\tt K}=1$), and the amount reserved must be known when the block is subsequently freed.</p>
 
   <p id="page_610"><a href="../Text/ch02c.html#ch02ex_1_5_15" id="ch02ex_1_5_15a">15</a>, <a href="../Text/ch02c.html#ch02ex_1_5_16" id="ch02ex_1_5_16a">16</a>. $\rm rI1≡\tt P0$, $\rm rI2≡\tt P1$, $\rm rI3≡\tt F$, $\rm rI4≡\rm B$, $\rm rI6≡\tt-N$.</p>
 
-  <div class="image"><img src="../Images/610pro01.gif" /></div>
+  <div class="image"><img src="../Images/610pro01.png" /></div>
 
-  <div class="image"><img src="../Images/610pro01a.gif" /></div>
+  <div class="image"><img src="../Images/610pro01a.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_17" id="ch02ex_1_5_17a">17</a>. Both <code>LINK</code> fields equal to $\tt LOC(AVAIL)$.</p>
 
@@ -1211,13 +1211,13 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_27" id="ch02ex_1_5_27a">27</a>. ${\rm rI1}≡k$, ${\rm rI2}≡j$, ${\rm rI3}≡j-k$, $\rm rI4≡\tt L$, ${\tt LOC(AVAIL[}j{\tt])}={\tt AVAIL}+j$; assume that there is an auxiliary table ${\tt TWO[}j{\tt]}=2^j$, stored in location ${\tt TWO}+j$, for $0≤j≤m$. Assume further that “+” and “−” represent tags of 0 and 1, and that ${\tt TAG(LOC(AVAIL[}j{\tt]))}=“-”$; but ${\tt TAG(LOC(AVAIL[}m+1{\tt]))}=“+”$ is a sentinel.</p>
 
-  <div class="image"><img src="../Images/611pro01.gif" /></div>
+  <div class="image"><img src="../Images/611pro01.png" /></div>
 
-  <div class="image" id="page_612"><img src="../Images/611pro01a.gif" /></div>
+  <div class="image" id="page_612"><img src="../Images/611pro01a.png" /></div>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_28" id="ch02ex_1_5_28a">28</a>. ${\rm rI1}≡k$, $\rm rI5≡\tt P$, $\rm rI4≡\tt L$; assume ${\tt TAG(}2^m{\tt)}=“+”$.</p>
 
-  <div class="image"><img src="../Images/612pro01.gif" /></div>
+  <div class="image"><img src="../Images/612pro01.png" /></div>
 
   <p id="page_613"><a href="../Text/ch02c.html#ch02ex_1_5_29" id="ch02ex_1_5_29a">29</a>. Yes, but only at the expense of some searching, or (better) an additional table of <code>TAG</code> bits packed somehow. (It is tempting to suggest that buddies not be joined together during <a href="../Text/ch02c.html#ch02alg-lev1sec5-S">Algorithm S</a>, but only in <a href="../Text/ch02c.html#ch02alg-lev1sec5-R">Algorithm R</a> if there is no block large enough to meet the request; but that would probably lead to a badly fragmented memory.)</p>
 
@@ -1225,7 +1225,7 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_32" id="ch02ex_1_5_32a">32</a>. Steven Crain points out that the method always frees all blocks and starts afresh before 16667 units of time have elapsed; hence the stated limit certainly exists. <em>Proof:</em> Let $u_n=n+t_n$, so that $g_n=\left\lfloor\frac54\min(10000,f(u_{n-1}-n),f(u_{n-2}-n),\ldots,f(u_0-n))\right\rfloor$. Let $x_0=0$ and $x_1=u_0$, and $x_{k+1}=\max(u_0\ldots,u_{x_{k-1}})$ for $k\ge1$. If $x_k\gt x_{k-1}$ then</p>
 
-  <div class="image"><img src="../Images/e613_02.gif" /></div>
+  <div class="image"><img src="../Images/e613_02.png" /></div>
 
   <p>therefore $x_{k+1}-k_{k}≤\frac14(x_{k}-x_{k-1})$, and we must have $x_k=x_{k-1}$ before reaching time $12500+\lfloor{12500/4}\rfloor+\lfloor{12500/4^2}\rfloor+\cdots$.</p>
 
@@ -1245,19 +1245,19 @@
 
   <p class="uln-indentC"><strong>G8.</strong> [Translate all links.] (Now the <code>LINK</code> field in the first word of each accessible node contains the address to which the node will be moved.) Set ${\tt USE←LINK(USE)}$, and $\tt AVAIL←Q$. Then set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: If ${\tt LINK(P)}\neq\varLambda$, set ${\tt LINK(Q)←LINK(LINK(Q))}$ for all <code>Q</code> such that ${\tt P}\lt{\tt Q}≤{\tt P}+\tt T(P)$ and ${\tt LINK(Q)}\neq\varLambda$; then regardless of the value of $\tt LINK(P)$, set ${\tt P←P}+\tt SIZE(P)$.</p>
 
-  <p class="uln-indentC" id="page_614"><strong>G9.</strong> [Move.] Set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: Set $\tt Q←LINK(P)$, and if ${\tt Q}\neq\varLambda$ set ${\tt LINK(P)}←\varLambda$ and $\tt NODE(Q)←NODE(P)$; then whether ${\tt Q}=\varLambda$ or not, set ${\tt P←P}+\tt SIZE(P)$. (The operation ${\tt NODE(Q)←NODE(P)}$ implies the movement of $\tt SIZE(P)$ words; we always have ${\tt Q}≤\tt P$, so it is safe to move the words in order from smallest location to largest.) <span class="middle"><img src="../Images/box.gif" /></span></p>
+  <p class="uln-indentC" id="page_614"><strong>G9.</strong> [Move.] Set ${\tt P}←1$, and repeat the following operation until ${\tt SIZE(P)}=0$: Set $\tt Q←LINK(P)$, and if ${\tt Q}\neq\varLambda$ set ${\tt LINK(P)}←\varLambda$ and $\tt NODE(Q)←NODE(P)$; then whether ${\tt Q}=\varLambda$ or not, set ${\tt P←P}+\tt SIZE(P)$. (The operation ${\tt NODE(Q)←NODE(P)}$ implies the movement of $\tt SIZE(P)$ words; we always have ${\tt Q}≤\tt P$, so it is safe to move the words in order from smallest location to largest.) <span class="middle"><img src="../Images/box.png" /></span></p>
 
   <p>[This method is called the “LISP 2 garbage collector.” An interesting alternative, which does not require the <code>LINK</code> field at the beginning of a node, can be based on the idea of linking together all pointers that point to each node — see Lars-Erik Thorelli, <em>BIT</em> <strong>16</strong> (1976), 426–441; R. B. K. Dewar and A. P. McCann, <em>Software Practice &amp; Exp.</em> <strong>7</strong> (1977), 95–113; F. Lockwood Morris, <em>CACM</em> <strong>21</strong> (1978), 662–665, <strong>22</strong> (1979), 571; H. B. M. Jonkers, <em>Inf. Proc. Letters</em> <strong>9</strong> (1979), 26–30; J. J. Martin, <em>CACM</em> <strong>25</strong> (1982), 571–581; F. Lockwood Morris, <em>Inf. Proc. Letters</em> <strong>15</strong> (1982), 139–142, <strong>16</strong> (1983), 215. Other methods have been published by B. K. Haddon and W. M. Waite, <em>Comp. J.</em> <strong>10</strong> (1967), 162–165; B. Wegbreit, <em>Comp. J.</em> <strong>15</strong> (1972), 204–208; D. A. Zave, <em>Inf. Proc. Letters</em> <strong>3</strong> (1975), 167–169. Cohen and Nicolau have analyzed four of these approaches in <em>ACM Trans. Prog. Languages and Systems</em> <strong>5</strong> (1983), 532–553.]</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_34" id="ch02ex_1_5_34a">34</a>. Let ${\tt TOP}≡\rm rI1$, ${\tt Q}≡\rm rI2$, ${\tt P}≡\rm rI3$, $k≡\rm rI4$, ${\tt SIZE(P)}≡\rm rI5$. Assume further that $\varLambda=0$, and ${\tt LINK(}0{\tt)}\neq0$ to simplify step G4. Step G1 is omitted.</p>
 
-  <div class="image"><img src="../Images/614pro01.gif" /></div>
+  <div class="image"><img src="../Images/614pro01.png" /></div>
 
-  <div class="image"><img src="../Images/614pro01_a.gif" /></div>
+  <div class="image"><img src="../Images/614pro01_a.png" /></div>
 
-  <div class="image" id="page_615"><img src="../Images/614pro01a.gif" /></div>
+  <div class="image" id="page_615"><img src="../Images/614pro01a.png" /></div>
 
-  <div class="image"><img src="../Images/614pro01b.gif" /></div>
+  <div class="image"><img src="../Images/614pro01b.png" /></div>
 
   <p>In line 66 we are assuming that the size of each node is sufficiently small that it can be moved with a single <code>MOVE</code> instruction; this seems a fair assumption for most cases when this kind of garbage collection is applicable.</p>
 
@@ -1283,25 +1283,25 @@
 
   <p class="indent">This argument can be strengthened to show that $a_rn$ cells suffice, where $a_0=1$ and $a_k=1+a_{k-1}(1-2^{-k})$; we have</p>
 
-  <div class="image"><img src="../Images/e617_01.gif" /></div>
+  <div class="image"><img src="../Images/e617_01.png" /></div>
 
   <p>Conversely for $r≤5$ it can be shown that a buddy system sometimes <em>requires</em> as many as $a_rn$ cells, if the mechanism of steps R1 and R2 is modified to choose the worst possible available $2^j\unicode{45}\rm block$ to split instead of the first such block.</p>
 
   <p class="indent">Robson’s proof that $N(2^r)≤1+r$ (see <a href="../Text/ch02c.html#ch02ex_1_5_40">exercise 40</a>) is easily modified to show that such a “leftmost” strategy will never need more than $\left(1+\frac12r\right)n$ cells to allocate space for blocks of sizes $1,2,4,\ldots,2^r$, since blocks of size $2^k$ will never be placed in locations $\ge\left(1+\frac12k\right)$. Although his algorithm seems very much like the buddy system, it turns out that no buddy system will be this good, even if we modify steps R1 and R2 to choose the best possible available $2^j\unicode{45}\rm block$ to split. For example, consider the following sequence of “snapshots” of the memory, for $n=16$ and $r=3$:</p>
 
-  <div class="image"><img src="../Images/e617_04.gif" /></div>
+  <div class="image"><img src="../Images/e617_04.png" /></div>
 
   <p>Here 0 denotes an available location and <em>k</em> denotes the beginning of a <em>k</em>-block. In a similar way there is a sequence of operations, whenever <em>n</em> is a multiple of 16, that forces $\frac{3}{16}n$ blocks of size 8 to be $\frac18$ full, and another $\frac{1}{16}n$ to be $\frac12$ full. If <em>n</em> is a multiple of 128, a subsequent request for $\frac{9}{128}n$ blocks of size 8 will require more than $2.5n$ memory cells. (The buddy system allows unwanted 1s to creep into $\frac{3}{16}n$ of the 8-blocks, since there are no other available 2s to be split at a crucial time; the “leftmost” algorithm keeps all 1s confined.)</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_42" id="ch02ex_1_5_42a">42</a>. We can assume that $m\ge6$. The main idea is to establish the occupancy pattern $R_{m-2}(F_{m-3}R_1)^k$ at the beginning of the memory, for $k=0,1,\ldots$, where $R_j$ and $F_j$ denote reserved and free blocks of size <em>j</em>. The transition from <em>k</em> to $k+1$ begins with</p>
 
-  <div class="image"><img src="../Images/e617_08.gif" /></div>
+  <div class="image"><img src="../Images/e617_08.png" /></div>
 
   <p>then the commutation sequence $F_{m-3}R_1F_mR_{m-5}R_1→F_{m-3}R_1R_{m-2}R_2R_{m-5}R_1→$ $F_{2m-4}R_2R_{m-5}R_1→R_mR_{m-5}R_1R_2R_{m-5}R_1→$ $F_mR_{m-5}R_1F_{m-3}R_1$ is used <em>k</em> times until we get $F_mR_{m-5}R_1(F_{m-3}R_1)^k→F_{2m-5}R_1(F_{m-3}R_1)^k→R_{m-2}(F_{m-3}R_1)^{k+1}$. Finally, when <em>k</em> gets large enough, there is an endgame that forces overflow unless the memory size is at least $(n-4m+11)(m-2)$; details appear in <em>Comp. J.</em> <strong>20</strong> (1977), <a id="page_618"></a>242–244. [Notice that the worst conceivable worst case, which begins with the pattern $F_{m-1}R_1F_{m-1}R_1F_{m-1}R_1\ldots$, is only slightly worse than this; the next-fit strategy of <a href="../Text/ch02c.html#ch02ex_1_5_6">exercise 6</a> can produce this pessimal pattern.]</p>
 
   <p><a href="../Text/ch02c.html#ch02ex_1_5_43" id="ch02ex_1_5_43a">43</a>. We will show that if $D_1,D_2,\ldots$ is any sequence of numbers such that $D_1/m+D_2/(m+1)+\cdots+D_m/(2m-1)\ge1$ for all $m\ge1$, and if $C_m=D_1/1+D_2/2+\cdots+D_m/m$, then $N_{FF}(n,m)≤nC_m$. In particular, since</p>
 
-  <div class="image"><img src="../Images/e618_01.gif" /></div>
+  <div class="image"><img src="../Images/e618_01.png" /></div>
 
   <p>the constant sequence $D_m=1/\ln2$ satisfies the necessary conditions. The proof is by induction on <em>m</em>. Let $N_j=nC_j$ for $j\ge1$, and suppose that some request for a block of size <em>m</em> cannot be allocated in the leftmost $N_m$ cells of memory. Then $m\gt1$. For $0≤j\lt m$, we let $N'_j$ denote the rightmost position allocated to blocks of sizes $≤j$, or 0 if all reserved blocks are larger than <em>j</em>; by induction we have $N'_j≤N_j$. Furthermore we let $N'_m$ be the rightmost occupied position $≤N_m$, so that $N'_m\ge N_m-m+1$. Then the interval $\left(N'_{j-1}..N'_j\right]$ contains at least $\left\lceil j(N'_j-N'_{j-1})/(m+j-1)\right\rceil$ occupied cells, since its free blocks are of size $\lt m$ and its reserved blocks are of size $\ge j$. It follows that $n-m\ge$ number of occupied cells ≥ $∑_{j=1}^mj(N'_j-N'_{j-1})/(m+j-1)=mN'_m/(2m-1)-(m-1)$ $∑_{j=1}^{m-1}N'_j/(m+j)(m+j-1)\gt$ $mN_m/(2m-1)-m-(m-1)$ $∑_{j=1}^{m-1}N_j(1/(m+j-1)-1/(m+j))=$ $∑_{j=1}^mnD_j/(m+j-1)-m\ge n-m$, a contradiction.</p>
 
