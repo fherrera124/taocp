@@ -31,4 +31,4 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: $6\sqrt{2}/5\approx1.697$
     - Actual: $\ln(q+pe^{t})=\ln\left(1+pt+\frac{pt^{2}}{2}+\frac{pt^{3}}{6}+\cdots\right)=pt+p(1-p)\frac{t^{2}}{2}+p(1-p)(1-2p)\frac{t^{3}}{6}+\cdots$
 
- [note]: There was more errors, related with subscript and superscript, style,etc.. but I would waste a lot of time listing these errors.
+ [#note]: There was more errors, related with subscript and superscript, style,etc.. but I would waste a lot of time listing these errors.
