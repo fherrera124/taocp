@@ -566,13 +566,13 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_17" id="ch01ex_2_5_17a">17</a>. Express the gamma functions as limits by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_18" id="ch01ex_2_5_18a">18</a>. $\large\prod_{n≥1}\frac{n}{n-\frac12}\frac{n}{n+\frac12}=\frac{\varGamma(\frac12)\varGamma(\frac32)}{\varGamma(1)\varGamma(1)}=2\varGamma(\frac32)^{2}$</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_18" id="ch01ex_2_5_18a">18</a>. $\large\prod_{n≥1}\frac{n}{n-\frac12}\frac{n}{n+\frac12}=\frac{\varGamma(\frac12)\varGamma(\frac32)}{\varGamma(1)\varGamma(1)}=2\varGamma(\frac32)^{2}$.</p>
 
   <p>[Wallis’s own heuristic “proof” can be found in D. J. Struik’s <em>Source Book in Mathematics</em> (Harvard University Press, 1969), 244–253.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_19" id="ch01ex_2_5_19a">19</a>. Change of variable <em>t</em> = <em>mt</em>, integration by parts, and induction.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_20" id="ch01ex_2_5_20a">20</a>. [For completeness, we prove the stated inequality. Start with the easily verified inequality $1+x≤e^{x}$; set $x=±t/n$ and raise to the <em>n</em>th power to get $(1±t/n)^{n}≤e^{±t}$. Hence $e^{-t}≥(1-t/n)^{n}=e^{-t}(1-t/n)^{n}e^{t}≥e^{-t}(1-t/n)^{n}(1+t/n)^{n}=e^{-t}(1-t^{2}/n^{2})^{n}≥e^{-t}(1-t^{2}/n)$ by <a href="../Text/ch01.html#ch01ex_2_1_09">exercise 1.2.1–9</a>.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_20" id="ch01ex_2_5_20a">20</a>. [For completeness, we prove the stated inequality. Start with the easily verified inequality $1+x≤e^{x}$; set $x=±t/n$ and raise to the <em>n</em>th power to get $(1±t/n)^{n}≤e^{±t}$. Hence $e^{-t}≥(1-t/n)^{n}=e^{-t}(1-t/n)^{n}e^{t}≥$ $e^{-t}(1-t/n)^{n}(1+t/n)^{n}=$ $e^{-t}(1-t^{2}/n^{2})^{n}≥e^{-t}(1-t^{2}/n)$ by <a href="../Text/ch01.html#ch01ex_2_1_09">exercise 1.2.1–9</a>.]</p>
 
   <p class="indent">Now the given integral minus $\varGamma_{m}(x)$ is</p>
 
@@ -604,11 +604,11 @@
 
   <p>This rule is an exact parallel of the rule</p>
 
-  <p class="center">$D_{x}(w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}})=w_{j+1}u_{1}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}+w_{j}u_{r_{1}+1}u_{r_{2}}\ldots u_{r_{j}}+w_{j}u_{r_{1}}u_{r_{2}+1}\ldots u_{r_{j}}+\cdots+w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}+1}$,</p>
+  <p class="center">$D_{x}(w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}})=w_{j+1}u_{1}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}+$ $w_{j}u_{r_{1}+1}u_{r_{2}}\ldots u_{r_{j}}+$ $w_{j}u_{r_{1}}u_{r_{2}+1}\ldots u_{r_{j}}+\cdots+w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}+1}$,</p>
 
   <p>if we let the term $w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}$ correspond to a partition $a_{1}a_{2}\ldots a_{j}$ with $r_{t}$ elements in $a_{t}$, 1 ≤ <em>t</em> ≤ <em>j</em>. So there is a natural mapping from ${\cal D}^{n}$ onto $D_{x}^{n}w$, and furthermore it is easy to see that ${\cal D}^{n}$ includes each partition of the set $\{1,2,\ldots,n\}$ exactly once. (See <a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 1.2.6–64</a>.)</p>
 
-  <p class="indent">From these observations we find that if we collect like terms in $D_{x}^{n}w$, we obtain a sum of terms <span class="middle"><img src="../Images/e482_05.png"></span>, where $j=k_{1}+k_{2}+\cdots$ and $n=k_{1}+2k_{2}+\cdots$, and where $c(k_{1},k_{2},\ldots)$ is <em>the number of partitions of $\{1,2,\ldots,n\}$ into j subsets such that there are $k_{t}$ subsets having t elements</em>.</p>
+  <p class="indent">From these observations we find that if we collect like terms in $D_{x}^{n}w$, we obtain a sum of terms $c(k_{1},k_{2},\ldots)w_{j}u_{1}^{k_1}u_{2}^{k_2}\ldots$, where $j=k_{1}+k_{2}+\cdots$ and $n=k_{1}+2k_{2}+\cdots$, and where $c(k_{1},k_{2},\ldots)$ is <em>the number of partitions of $\{1,2,\ldots,n\}$ into j subsets such that there are $k_{t}$ subsets having t elements</em>.</p>
 
   <p class="indent">It remains to count these partitions. Consider an array of $k_{t}$ boxes of capacity <em>t</em>:</p>
 
@@ -620,7 +620,7 @@
 
   <p>To get $c(k_{1},k_{2},k_{3},\ldots)$ we should divide this by $k_{1}!k_{2}!k_{3}!\ldots$, since the boxes in each group of $k_{t}$ are indistinguishable from each other; they may be permuted in $k_{t}!$ ways without affecting the set partition.</p>
 
-  <p class="indent">Arbogast’s original proof [<em>Du Calcul des Dérivations</em> (Strasbourg: 1800), §52] was based on the fact that <span class="middle"><img src="../Images/e482_08.png"></span> is the coefficient of $z^{k}$ in $u(x+z)$ and <span class="middle"><img src="../Images/e482_09.png"></span> is the <a id="page_483"></a>coefficient of $y^{j}$ in $w(u+y)$, hence the coefficient of $z^{n}$ in $w(u(x+z))$ is</p>
+  <p class="indent">Arbogast’s original proof [<em>Du Calcul des Dérivations</em> (Strasbourg: 1800), §52] was based on the fact that $D_{x}^{k}u/k!$ is the coefficient of $z^{k}$ in $u(x+z)$ and $D_{u}^{j}w/j!$ is the <a id="page_483"></a>coefficient of $y^{j}$ in $w(u+y)$, hence the coefficient of $z^{n}$ in $w(u(x+z))$ is</p>
 
   <div class="image"><img src="../Images/e483_01.png"></div>
 
@@ -628,19 +628,19 @@
 
   <div class="image"><img src="../Images/e483_02.png"></div>
 
-  <p>where <span class="middle"><img src="../Images/e483_03.png"></span>; both sides of this equation are differential operators to be applied to <em>w</em>. For a generalization of Arbogast’s formula to functions of several variables, and a list of references to other related work, see the paper by I. J. Good, <em>Annals of Mathematical Statistics</em> <strong>32</strong> (1961), 540–541.</p>
+  <p>where $u_j=(D_{x}^{j}u)D_{u}$; both sides of this equation are differential operators to be applied to <em>w</em>. For a generalization of Arbogast’s formula to functions of several variables, and a list of references to other related work, see the paper by I. J. Good, <em>Annals of Mathematical Statistics</em> <strong>32</strong> (1961), 540–541.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_22" id="ch01ex_2_5_22a">22</a>. The hypothesis that $\lim_{n→∞}(n+x)!/(n!n^{x})=1$ is valid for integers <em>x</em>; for example, if <em>x</em> is positive, the quantity is $(1+1/n)(1+2/n)\ldots(1+x/n)$, which certainly approaches unity. If we also assume that $x!=x(x-1)!$, the hypothesis leads us to conclude immediately that</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_22" id="ch01ex_2_5_22a">22</a>. The hypothesis that $\lim_{n→∞}(n+x)!/(n!\,n^{x})=1$ is valid for integers <em>x</em>; for example, if <em>x</em> is positive, the quantity is $(1+1/n)(1+2/n)\ldots(1+x/n)$, which certainly approaches unity. If we also assume that $x!=x(x-1)!$, the hypothesis leads us to conclude immediately that</p>
 
   <div class="image"><img src="../Images/e483_04.png"></div>
 
   <p>which is equivalent to the definition given in the text.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_23" id="ch01ex_2_5_23a">23</a>. <span class="middle"><img src="../Images/e483_05.png"></span> by (<a href="../Text/ch01.html#ch01eq-lev2sec5-13">13</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_23" id="ch01ex_2_5_23a">23</a>. $z(-z)!\,\varGamma(z)=\lim_{m→∞}\prod_{n=1}^{m}(1-z/n)^{-1}(1+z/n)^{-1}$ by (<a href="../Text/ch01.html#ch01eq-lev2sec5-13">13</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_24" id="ch01ex_2_5_24a">24</a>. <span class="middle"><img src="../Images/e483_06.png"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_24" id="ch01ex_2_5_24a">24</a>. $n^{n}/n!=\prod_{k=1}^{n-1}(k+1)^{k}/k^{k}\le\prod_{k=1}^{n-1}e$; $n!/n^{n+1}=\prod_{k=1}^{n-1}k^{k+1}/(k+1)^{k+1}\le\prod_{k=1}^{n-1}e^{-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_25" id="ch01ex_2_5_25a">25</a>. <span class="middle"><img src="../Images/e483_07.png"></span>;<span class="middle"><img src="../Images/e483_08.png"></span>. These laws hold also when <em>m</em> and <em>n</em> are nonintegers, by (<a href="../Text/ch01.html#ch01eq-lev2sec5-21">21</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_25" id="ch01ex_2_5_25a">25</a>. $x^{\underline{m+n}}=x^{\underline m}(x-m)^{\underline n}$; $x^{\overline{m+n}}=x^{\overline m}(x+m)^{\overline n}$. These laws hold also when <em>m</em> and <em>n</em> are nonintegers, by (<a href="../Text/ch01.html#ch01eq-lev2sec5-21">21</a>).</p>
 
   <h4 id="app01lev2sec6">Section 1.2.6</h4>
 
@@ -648,7 +648,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_2" id="ch01ex_2_6_2a">2</a>. 1. There’s exactly one way to choose nothing from the empty set.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_3" id="ch01ex_2_6_3a">3</a>. <span class="middle"><img src="../Images/52by13.png"></span>. The actual number is 635013559600.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_3" id="ch01ex_2_6_3a">3</a>. $\binom{52}{13}$. The actual number is 635013559600.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_4" id="ch01ex_2_6_4a">4</a>. $2^{4}·5^{2}·7^{2}·17·23·41·43·47$.</p>
 
@@ -662,11 +662,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_9" id="ch01ex_2_6_9a">9</a>. One if <em>n</em> is positive or zero; zero if <em>n</em> is negative.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_10" id="ch01ex_2_6_10a">10</a>. (a), (b) and (f) follow immediately from (e); (c) and (d) follow from (a), (b), and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>). Thus it suffices to prove (e). Consider <span class="middle"><img src="../Images/nbyk.png"></span> as a fraction, given by Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) with factors in numerator and denominator. The first <em>k</em> mod <em>p</em> factors have no <em>p</em>’s in the denominator, and in the numerator and denominator these terms are clearly congruent to the corresponding terms of</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_10" id="ch01ex_2_6_10a">10</a>. (a), (b) and (f) follow immediately from (e); (c) and (d) follow from (a), (b), and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>). Thus it suffices to prove (e). Consider $\binom{n}{k}$ as a fraction, given by Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) with factors in numerator and denominator. The first $k\bmod p$ factors have no <em>p</em>’s in the denominator, and in the numerator and denominator these terms are clearly congruent to the corresponding terms of</p>
 
   <div class="image"><img src="../Images/e484_01.png"></div>
 
-  <p>which differ by multiples of <em>p</em>. (When dealing with non-multiples of <em>p</em> we may work $modulo p$ in both numerator and denominator, since if <em>a</em> ≡ <em>c</em> and <em>b</em> ≡ <em>d</em> and $a/b$, $c/d$ are integers, then $a/b≡c/d$.) There remain $k-k\bmod p$ factors, which fall into $\lfloor k/p\rfloor$ groups of <em>p</em> consecutive values each. Each group contains exactly one multiple of <em>p</em>; the other <em>p</em> − 1 factors in a group are congruent $(modulo p)$ to $(p-1)!$ so they cancel in numerator and denominator. It remains to investigate the $\lfloor k/p\rfloor$ multiples of <em>p</em> in numerator and denominator; we divide each of them by <em>p</em> and are left with the binomial coefficient</p>
+  <p>which differ by multiples of <em>p</em>. (When dealing with non-multiples of <em>p</em> we may work modulo <em>p</em> in both numerator and denominator, since if <em>a</em> ≡ <em>c</em> and <em>b</em> ≡ <em>d</em> and $a/b$, $c/d$ are integers, then $a/b≡c/d$.) There remain $k-k\bmod p$ factors, which fall into $\lfloor k/p\rfloor$ groups of <em>p</em> consecutive values each. Each group contains exactly one multiple of <em>p</em>; the other <em>p</em> − 1 factors in a group are congruent $(\text{modulo }p)$ to $(p-1)!$ so they cancel in numerator and denominator. It remains to investigate the $\lfloor k/p\rfloor$ multiples of <em>p</em> in numerator and denominator; we divide each of them by <em>p</em> and are left with the binomial coefficient</p>
 
   <div class="image"><img src="../Images/e484_02.png"></div>
 
@@ -674,7 +674,7 @@
 
   <div class="image"><img src="../Images/e484_03.png"></div>
 
-  <p>as desired; and if $k\bmod p\gt n\bmod p$, the other factor <span class="middle"><img src="../Images/e484_04.png"></span> is zero, so the formula holds in general. [<em>American J. Math.</em> <strong>1</strong> (1878), 229–230; see also L. E. Dickson, <em>Quart. J. Math.</em> <strong>33</strong> (1902), 383–384; N. J. Fine, <em>AMM</em> <strong>54</strong> (1947), 589–592.]</p>
+  <p>as desired; and if $k\bmod p\gt n\bmod p$, the other factor $\binom{n\bmod p}{k\bmod p}$ is zero, so the formula holds in general. [<em>American J. Math.</em> <strong>1</strong> (1878), 229–230; see also L. E. Dickson, <em>Quart. J. Math.</em> <strong>33</strong> (1902), 383–384; N. J. Fine, <em>AMM</em> <strong>54</strong> (1947), 589–592.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_11" id="ch01ex_2_6_11a">11</a>. If $a=a_{r}p^{r}+\cdots+a_{0}$, $b=b_{r}p^{r}+\cdots+b_{0}$, and $a+b=c_{r}p^{r}+\cdots+c_{0}$, the value of <em>n</em> (according to <a href="../Text/ch01a.html#ch01ex_2_5_12">exercise 1.2.5–12</a> and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-5">5</a>)) is</p>
 
@@ -682,7 +682,7 @@
 
   <p>A carry decreases $c_{j}$ by <em>p</em> and increases $c_{j+1}$ by 1, giving a net change of +1 in this formula. [Similar results hold for <em>q</em>-nomial and Fibonomial coefficients; see Knuth and Wilf, <em>Crelle</em> <strong>396</strong> (1989), 212–219.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_12" id="ch01ex_2_6_12a">12</a>. By either of the two previous exercises, <em>n</em> must be one less than a power of 2. More generally, <span class="middle"><img src="../Images/nbyk.png"></span> is never divisible by the prime <em>p</em>, 0 ≤ <em>k</em> ≤ <em>n</em>, if and only if $n=ap^{m}-1$, 1 ≤ <em>a</em> &lt; <em>p</em>, <em>m</em> ≥ 0.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_12" id="ch01ex_2_6_12a">12</a>. By either of the two previous exercises, <em>n</em> must be one less than a power of 2. More generally, $\binom{n}{k}$ is never divisible by the prime <em>p</em>, 0 ≤ <em>k</em> ≤ <em>n</em>, if and only if $n=ap^{m}-1$, 1 ≤ <em>a</em> &lt; <em>p</em>, <em>m</em> ≥ 0.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_14" id="ch01ex_2_6_14a">14</a>. <span class="middle"><img src="../Images/e484_05.png"></span></p>
 
