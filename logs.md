@@ -36,4 +36,4 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: [...] it is $1/2$.
     - Actual: [...] it is $\lt 1/2$.
 
- <a id="note"></a> There was more errors, related with subscript and superscript, style, etc.. but I would waste a lot of time listing all the errors founded.
+ <a id="note">*</a> There was more errors, related with subscript and superscript, style, etc.. but I would waste a lot of time listing all the errors founded.
