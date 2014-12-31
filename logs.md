@@ -7,7 +7,7 @@
     - Before: **4.** $x-1\lt\lfloor{x}\rfloor≤x$; so $-x+1\gt-\lfloor{x}\rfloor≥-x$; hence the result.
     - Actual: **4.** By part (f), $x\le\lceil{x}\rceil\lt x+1$; hence $-x-1\lt\lceil{x}\rceil\le-x$; use part (e).
 
-###Some of the most important errors of the digital edition I have fixed [*](#note):
+###Some of the most important errors of the digital edition I have fixed [*](#note1):<a id="title"></a>
 
 The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
 
@@ -36,4 +36,4 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: [...] it is $1/2$.
     - Actual: [...] it is $\lt 1/2$.
 
- <a id="note">*</a> There was more errors, related with subscript and superscript, style, etc.. but I would waste a lot of time listing all the errors founded.
+ <a id="note1"></a>[*](#title) There was more errors, related with subscript and superscript, style, etc.. but I would waste a lot of time listing all the errors founded.
