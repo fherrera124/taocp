@@ -736,7 +736,7 @@
 
   <div class="image"><img src="../Images/e486_02.png"></div>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_29" id="ch01ex_2_6_29a">29</a>. $\left.{{(-1)^{k}}{\binom{n}{k}}}\middle/{n!}\right.=(-1)^{k}/(k!(n-k)!)=\left.{(-1)^{n}}\middle/{\vphantom{\prod}}\right.{\prod\limits_{\begin{gather}{0\le j\le n\\j\ne k}\end{gather}}}(k-j)$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_29" id="ch01ex_2_6_29a">29</a>. $\left.{{(-1)^{k}}{\binom{n}{k}}}\middle/{n!}=(-1)^{k}/(k!(n-k)!)={(-1)^{n}}\middle/\right.{\prod\limits_{\begin{gather}{0\le j\le n\\j\ne k}\end{gather}}}(k-j)$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_30" id="ch01ex_2_6_30a">30</a>. Apply (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>), (<a href="../Text/ch02a.html#ch02eq-lev2sec6-6">6</a>), and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-19">19</a>) to get</p>
 
@@ -798,11 +798,11 @@
 
   <p>Now use (b).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_41" id="ch01ex_2_6_41a">41</a>. $m^{x}{\rm B}(x,m+1)→\varGamma(x)$ as $m→∞$, regardless of whether <em>m</em> runs through integer values or not (by monotonicity). Hence, $(m+y)^{x}{\rm B}x,m+y+1)→\varGamma(x)$, and $(m/(m+y))^{x}→1$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_41" id="ch01ex_2_6_41a">41</a>. $m^{x}{\rm B}(x,m+1)→\varGamma(x)$ as $m→∞$, regardless of whether <em>m</em> runs through integer values or not (by monotonicity). Hence, $(m+y)^{x}{\rm B}(x,m+y+1)→\varGamma(x)$, and $(m/(m+y))^{x}→1$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_42" id="ch01ex_2_6_42a">42</a>. $1/((r+1){\rm B}k+1,r-k+1))$, if this is defined according to <a href="../Text/ch01a.html#ch01ex_2_6_41">exercise 41</a>(b). In general when <em>z</em> and <em>w</em> are arbitrary complex numbers we define</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_42" id="ch01ex_2_6_42a">42</a>. $1/((r+1){\rm B}(k+1,r-k+1))$, if this is defined according to <a href="../Text/ch01a.html#ch01ex_2_6_41">exercise 41</a>(b). In general when <em>z</em> and <em>w</em> are arbitrary complex numbers we define</p>
 
-  <p class="center"><span class="middle"><img src="../Images/e487_07.png"></span>;</p>
+  <p class="center"><span class="middle"><img src="../Images/e487_07.png"></span></p>
 
   <p>the value is infinite when <em>z</em> is a negative integer and <em>w</em> is not an integer.</p>
 
@@ -810,15 +810,15 @@
 
   <div class="image"><img src="../Images/e487_08.png"></div>
 
-  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining <span class="middle"><img src="../Images/e487_09.png"></span> and <span class="middle"><img src="../Images/e487_10.png"></span>; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
+  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining $\sum_{k}\binom{r}{\alpha+k}z^{\alpha+k}=(1+z)^{r}$ and $\sum_{k}{\binom{r}{\alpha+k}}{\binom{s}{\beta-k}}={\binom{r+s}{\alpha+\beta}}$; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
 
-  <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. <span class="middle"><img src="../Images/e488_01.png"></span>.</p>
+  <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. $\int_{0}^{1}dt/(t^{1/2}(1-t)^{1/2})=2\int_{0}^{1}du/(1-u^{2})^{1/2}=2\arcsin u{\atopwithdelims.|}_0^1=\pi$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_45" id="ch01ex_2_6_45a">45</a>. For large <em>r</em>, <span class="middle"><img src="../Images/e488_02.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_45" id="ch01ex_2_6_45a">45</a>. For large <em>r</em>, $\frac{1}{k\varGamma(k)}\sqrt{\frac{r}{r-k}}\frac{1}{e^k}\frac{(1-k/r)^k}{(1-k/r)^r}\to\frac{1}{\varGamma(k+1)}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. <span class="middle"><img src="../Images/e488_03.png"></span>, and <span class="middle"><img src="../Images/e488_04.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. $\sqrt{\frac{1}{2\pi}\left(\frac{1}{x}+\frac{1}{y}\right)}\left(1+\frac{y}{x}\right)^{x}\left(1+\frac{x}{y}\right)^{y}$, and $\binom{2n}{n}\approx4^{n}/\sqrt{\pi n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when <em>k</em> ≤ 0, and is multiplied by <span class="middle"><img src="../Images/e488_05.png"></span> when <em>k</em> is replaced by <em>k</em> + 1. When <span class="middle"><img src="../Images/e488_06.png"></span> this implies <span class="middle"><img src="../Images/e488_07.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when <em>k</em> ≤ 0, and is multiplied by $(r-k)(r-\frac12-k)/(k+1)^2$ when <em>k</em> is replaced by <em>k</em> + 1. When $r=-\frac12$ this implies $\binom{-1/2}{k}=(-1/4)^{k}\binom{2k}{k}$</span>.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_48" id="ch01ex_2_6_48a">48</a>. This can be proved by induction, using the fact that</p>
 
@@ -830,9 +830,9 @@
 
   <p>(In fact, the stated sum equals ${\rm B}(x,n+1)$ for noninteger <em>n</em> also, when the series converges.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_49" id="ch01ex_2_6_49a">49</a>. <span class="middle"><img src="../Images/e488_10.png"></span>, integer <em>m</em>. (See <a href="../Text/ch01a.html#ch01ex_2_6_17">exercise 17</a>.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_49" id="ch01ex_2_6_49a">49</a>. $\binom{r}{m}=\sum\limits_{k}{\binom{r}{k}}{\binom{-r}{m-2k}}(-1)^{m+k}$, integer <em>m</em>. (See <a href="../Text/ch01a.html#ch01ex_2_6_17">exercise 17</a>.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_50" id="ch01ex_2_6_50a">50</a>. The <em>k</em>th summand is <span class="middle"><img src="../Images/e488_11.png"></span>. Apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_50" id="ch01ex_2_6_50a">50</a>. The <em>k</em>th summand is ${\binom{n}{k}}(-1)^{n-k}(x-kz)^{n-1}x$. Apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_51" id="ch01ex_2_6_51a">51</a>. The right-hand side is</p>
 
@@ -848,11 +848,11 @@
 
   <div class="image"><img src="../Images/e488_14.png"></div>
 
-  <p>where the sum is over all $2^{n}$ choices of $\epsilon_{1},\ldots,\epsilon_{n}=0 or 1$ independently. This is an identity in $x,y,z_{1},\ldots,z_{n}$, and Abel’s formula is the special case $z_{1}=z_{2}=\cdots=z_{n}$. Hurwitz’s formula follows from the result in <a href="../Text/ch02b.html#ch02ex_3_4_30">exercise 2.3.4.4–30</a>.</p>
+  <p>where the sum is over all $2^{n}$ choices of $\epsilon_{1},\ldots,\epsilon_{n}=\rm0\;or\;1$ independently. This is an identity in $x,y,z_{1},\ldots,z_{n}$, and Abel’s formula is the special case $z_{1}=z_{2}=\cdots=z_{n}$. Hurwitz’s formula follows from the result in <a href="../Text/ch02b.html#ch02ex_3_4_30">exercise 2.3.4.4–30</a>.</p>
 
   <p><a id="page_489"></a><a href="../Text/ch01a.html#ch01ex_2_6_52" id="ch01ex_2_6_52a">52</a>. $∑_{k≥0}(k+1)^{-2}=π^{2}/6$. [M. L. J. Hautus observes that the sum is absolutely convergent for all complex <em>x</em>, <em>y</em>, <em>z</em>, <em>n</em> whenever <em>z</em> ≠ 0, since the terms for large <em>k</em> are always of order $1/k^{2}$. This convergence is uniform in bounded regions, so we may differentiate the series term by term. If $f(x,y,n)$ is the value of the sum when <em>z</em> = 1, we find $(∂/∂y)f(x,y,n)=nf(x,y,n-1)$ and $(∂/∂x)f(x,y,n)=nf(x-1,y+1,n-1)$. These formulas are consistent with $f(x,y,n)=(x+y)^{n}$; but actually the latter equality seems to hold rarely, if ever, unless the sum is finite. Furthermore the derivative with respect to <em>z</em> is almost always nonzero.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_53" id="ch01ex_2_6_53a">53</a>. For (b), set <span class="middle"><img src="../Images/e489_01.png"></span> and <span class="middle"><img src="../Images/e489_02.png"></span> in the result of (a).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_53" id="ch01ex_2_6_53a">53</a>. For (b), set $r=\frac12$ and $s=-\frac12$ in the result of (a).</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_54" id="ch01ex_2_6_54a">54</a>. Insert minus signs in a checkerboard pattern as shown.</p>
 
@@ -864,7 +864,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_56" id="ch01ex_2_6_56a">56</a>. 210 310 320 321 410 420 421 430 431 432 510 520 521 530 531 532 540 541 542 543 610. With <em>a</em> fixed, <em>b</em> and <em>c</em> run through the combinations of <em>a</em> things two at a time; with <em>a</em> and <em>b</em> fixed, <em>c</em> runs through the combinations of <em>b</em> things one at a time.</p>
 
-  <p class="indent">Similarly, we could express all numbers in the form <span class="middle"><img src="../Images/e489_04.png"></span> with <em>a</em> &gt; <em>b</em> &gt; <em>c</em> &gt; <em>d</em> ≥ 0; the sequence begins 3210 4210 4310 4320 4321 5210 5310 5320 ... . We can find the combinatorial representation by a “greedy” method, first choosing the largest possible <em>a</em>, then the largest possible <em>b</em> for <span class="middle"><img src="../Images/e489_05.png"></span>, etc. [Section 7.2.1.3 discusses further properties of this representation.]</p>
+  <p class="indent">Similarly, we could express all numbers in the form $n=\binom{a}{4}+\binom{b}{3}+\binom{c}{2}+\binom{d}{1}$ with <em>a</em> &gt; <em>b</em> &gt; <em>c</em> &gt; <em>d</em> ≥ 0; the sequence begins 3210 4210 4310 4320 4321 5210 5310 5320 ... . We can find the combinatorial representation by a “greedy” method, first choosing the largest possible <em>a</em>, then the largest possible <em>b</em> for $n-{\binom{a}{4}}$, etc. [Section 7.2.1.3 discusses further properties of this representation.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_58" id="ch01ex_2_6_58a">58</a>. [<em>Systematisches Lehrbuch der Arithmetik</em> (Leipzig: 1811), xxix.] Use induction and</p>
 
@@ -880,7 +880,7 @@
 
   <p>The <em>q</em>-nomial coefficients arise in many diverse applications; see, for example, Section 5.1.2, and the author’s note in <em>J. Combinatorial Theory</em> <strong>A10</strong> (1971), 178–180.</p>
 
-  <p class="indent"><em>Useful facts:</em> When <em>n</em> is a nonnegative integer, <span class="middle"><img src="../Images/nbykq.png"></span> is a polynomial of degree $k(n-k)$ in <em>q</em> with nonnegative integer coefficients, and it satisfies the reflective laws</p>
+  <p class="indent"><em>Useful facts:</em> When <em>n</em> is a nonnegative integer, $\binom{n}{k}_q$ is a polynomial of degree $k(n-k)$ in <em>q</em> with nonnegative integer coefficients, and it satisfies the reflective laws</p>
 
   <div class="image"><img src="../Images/e489_09.png"></div>
 
@@ -890,9 +890,9 @@
 
   <p>For further information, see G. Gasper and M. Rahman, <em>Basic Hypergeometric Series</em> (Cambridge Univ. Press, 1990). The <em>q</em>-nomial coefficients were introduced by Gauss in <em>Commentationes societatis regiæ scientiarum Gottingensis recentiores</em> <strong>1</strong> (1808), 147– 186; see also Cauchy [<em>Comptes Rendus Acad. Sci.</em> <strong>17</strong> (Paris, 1843), 523–531], Jacobi [<em>Crelle</em> <strong>32</strong> (1846), 197–204], Heine [<em>Crelle</em> <strong>34</strong> (1847), 285–328], and Section 7.2.1.4.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. <span class="middle"><img src="../Images/e490_02.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. $(n+1){\binom{n}{k}}-{\binom{n}{k+1}}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. <span class="middle"><img src="../Images/e490_03.png"></span>. This formula can be remembered easily, since it is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. $\binom{n+k-1}{k}$. This formula can be remembered easily, since it is</p>
 
   <div class="image"><img src="../Images/e490_04.png"></div>
 
@@ -902,7 +902,7 @@
 
   <p>is the number of choices of <em>k</em> distinct things from the set $\{1,2,\ldots,n+k-1\}$. (This trick is due to H. F. Scherk, <em>Crelle</em> <strong>3</strong> (1828), 97; curiously it was also given by W. A. Förstemann in the same journal, <strong>13</strong> (1835), 237, who said “One would almost believe this must have been known long ago, but I have found it nowhere, even though I have consulted many works in this regard.”)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_61" id="ch01ex_2_6_61a">61</a>. If $a_{mn}$ is the desired quantity, we have $a_{mn}=na_{m(n-1)}+δ_{mn}$ by (<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-47">47</a>). Hence the answer is $[n≥m]n!/m!$. The same formula is also easily obtained by inversion of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-56">56</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_61" id="ch01ex_2_6_61a">61</a>. If $a_{mn}$ is the desired quantity, we have $a_{mn}=na_{m(n-1)}+δ_{mn}$ by (<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-47">47</a>). Hence the answer is $[n≥m]\,n!/m!$. The same formula is also easily obtained by inversion of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-56">56</a>).</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_62" id="ch01ex_2_6_62a">62</a>. Use the identity of <a href="../Text/ch01a.html#ch01ex_2_6_31">exercise 31</a>, with $(m,n,r,s,k)←(m+k,l-k,m+n,n+l,j)$:</p>
 
@@ -914,11 +914,11 @@
 
   <div class="image"><img src="../Images/e491_01.png"></div>
 
-  <p>where <span class="middle"><img src="../Images/e491_02.png"></span>.</p>
+  <p>where $n!_q=\prod_{k=1}^{n}(1+q+\cdots+q^{k-1})$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_63" id="ch01ex_2_6_63a">63</a>. See <em>CMath</em>, exercises 5.83 and 5.106.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_64" id="ch01ex_2_6_64a">64</a>. Let $f(n,m)$ be the number of partitions of $\{1,2,\ldots,n\}$ into <em>m</em> parts. Clearly $f(1,m)=δ_{1m}$. If <em>n</em> &gt; 1, the partitionings are of two varieties: (a) The element <em>n</em> alone forms a set of the partition; there are $f(n-1,m-1)$ ways to construct partitions like this. (b) The element <em>n</em> appears together with another element; there are <em>m</em> ways to insert <em>n</em> into any <em>m</em>-partition of $\{1,2,\ldots,n-1\}$, hence there are $mf(n-1,m)$ ways to construct partitions like this. We conclude that $f(n,m)=f(n-1,m-1)+mf(n-1,m)$, and <span class="middle"><img src="../Images/e491_03.png"></span> by induction.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_64" id="ch01ex_2_6_64a">64</a>. Let $f(n,m)$ be the number of partitions of $\{1,2,\ldots,n\}$ into <em>m</em> parts. Clearly $f(1,m)=δ_{1m}$. If <em>n</em> &gt; 1, the partitionings are of two varieties: (a) The element <em>n</em> alone forms a set of the partition; there are $f(n-1,m-1)$ ways to construct partitions like this. (b) The element <em>n</em> appears together with another element; there are <em>m</em> ways to insert <em>n</em> into any <em>m</em>-partition of $\{1,2,\ldots,n-1\}$, hence there are $mf(n-1,m)$ ways to construct partitions like this. We conclude that $f(n,m)=f(n-1,m-1)+mf(n-1,m)$, and $f(n,m)={n\brace m}$ by induction.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_65" id="ch01ex_2_6_65a">65</a>. See <em>AMM</em> <strong>99</strong> (1992), 410–422.</p>
 
