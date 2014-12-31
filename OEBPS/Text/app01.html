@@ -922,23 +922,23 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_65" id="ch01ex_2_6_65a">65</a>. See <em>AMM</em> <strong>99</strong> (1992), 410–422.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let <span class="middle"><img src="../Images/e491_04.png"></span>, <span class="middle"><img src="../Images/e491_05.png"></span>, <span class="middle"><img src="../Images/e491_06.png"></span>, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that <em>y</em> &gt; <em>n</em> − 1 is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let $X=\binom{x}{n}$, $\underline{X}=\binom{x}{n-1}=\frac{n}{x-n+1}X$, $\overline{X}=\binom{x}{n+1}=\frac{x-n}{n+1}X$, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that <em>y</em> &gt; <em>n</em> − 1 is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
 
-  <p class="indent">Let <span class="middle"><img src="../Images/e491_07.png"></span>, and suppose that $F(z)=0$ for some <em>z</em> &gt; <em>n</em> − 2. We will prove that $F'(z)$ &lt; 0; therefore <em>z</em> = <em>y</em> must be the only root &gt; <em>n</em> − 2, proving the second inequality. Since <span class="middle"><img src="../Images/e491_08.png"></span> and <em>x</em> &gt; <em>y</em> and <em>Y</em>, <em>Z</em> &gt; 0, we must have <span class="middle"><img src="../Images/e491_09.png"></span>. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
+  <p class="indent">Let $F(z)=\overline{X}-\overline{Y}-\overline{Z}$, and suppose that $F(z)=0$ for some <em>z</em> &gt; <em>n</em> − 2. We will prove that $F'(z)\lt0$; therefore <em>z</em> = <em>y</em> must be the only root &gt; <em>n</em> − 2, proving the second inequality. Since $F(z)=\frac{x-n}{n+1}(Y+Z)-\frac{y-n}{n+1}Y-\frac{z-n+1}{n}Z=0$ and <em>x</em> &gt; <em>y</em> and <em>Y</em>, <em>Z</em> &gt; 0, we must have $\frac{x-n}{n+1}\lt\frac{z-n+1}{n}$. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
 
   <div class="image"><img src="../Images/e491_10.png"></div>
 
-  <p>since <span class="middle"><img src="../Images/e491_11.png"></span>. Thus <span class="middle"><img src="../Images/e491_12.png"></span>, and</p>
+  <p>since $\frac{x-n+1}{n+1}\lt\frac{z-n+2}{n},\cdots,\frac{x-1}{n+1}\lt\frac{z}{n}$. Thus $dx/dz=Z'/X'\lt\frac{n+1}{n}(Z/X)$, and</p>
 
   <div class="image"><img src="../Images/e491_13.png"></div>
 
-  <p class="indent">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if <span class="middle"><img src="../Images/e491_14.png"></span> for some <em>z</em> &gt; <em>n</em> − 2, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
+  <p class="indent">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if $\underline{X}=\underline{Y}+\underline{Z}$ for some <em>z</em> &gt; <em>n</em> − 2, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
 
   <p class="indent"><em>References:</em> L. Lovász, <em>Combinatorial Problems and Exercises</em> (1993), Problem 13.31(a); R. M. Redheffer, <em>AMM</em> <strong>103</strong> (1996), 62–64.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_67" id="ch01ex_2_6_67a">67</a>. If <em>k</em> &gt; 0, <a href="../Text/ch01a.html#ch01ex_2_5_24">exercise 1.2.5–24</a> gives the slightly sharper (but less memorable) upper bounds <span class="middle"><img src="../Images/e491_15.png"></span>. The corresponding lower bound is <span class="middle"><img src="../Images/e491_16.png"></span>, which is less memorable (but often sharper) than <span class="middle"><img src="../Images/e491_20.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_67" id="ch01ex_2_6_67a">67</a>. If <em>k</em> &gt; 0, <a href="../Text/ch01a.html#ch01ex_2_5_24">exercise 1.2.5–24</a> gives the slightly sharper (but less memorable) upper bounds $\binom{n}{k}=n^{\underline{k}}/k!\le n^{k}/k!\le\frac{1}{e}(\frac{ne}{k})^{k}\le(\frac{ne}{k+1})^{k}$. The corresponding lower bound is $\binom{n}{k}\ge\left(\frac{(n-k+1)e}{k}\right)^{k}\frac{1}{ek}$, which is less memorable (but often sharper) than $\binom{n}{k}\ge(\frac{n}{k})^{k}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_68" id="ch01ex_2_6_68a">68</a>. Let <span class="middle"><img src="../Images/e491_17.png"></span>; then <span class="middle"><img src="../Images/e491_18.png"></span>. So the stated sum is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_68" id="ch01ex_2_6_68a">68</a>. Let $t_k=k\binom{n}{k}p^{k}(1-p)^{n+1-k}$; then $t_{k}-t_{k+1}=\binom{n}{k}p^{k}(1-p)^{n-k}(k-np)$. So the stated sum is</p>
 
   <div class="image"><img src="../Images/e491_19.png"></div>
 
@@ -1048,7 +1048,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. $F_{m+2n}$; set <em>t</em> = 2 in the next exercise.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. <span class="middle"><img src="../Images/e494_02.png"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. <span class="top"><img src="../Images/e494_02.png"></span></p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_24" id="ch01ex_2_8_24a">24</a>. $F_{n+1}$ (expand by cofactors in the first row).</p>
 
@@ -1062,7 +1062,7 @@
 
   <p class="center">$a_{n}=(A^{n}-B^{n})/(A-B)$ if <em>A</em>≠ <em>B,</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$a_{n}=nA^{n-1}$ if <em>A</em> = <em>B.</em></p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_29" id="ch01ex_2_8_29a">29</a>. (a) <span class="middle"><img src="../Images/e494_06.png"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_29" id="ch01ex_2_8_29a">29</a>. (a) <span class="top"><img src="../Images/e494_06.png"></span></p>
 
   <p class="indent">(b) follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec8-6">6</a>). [É. Lucas, <em>Amer. J. Math.</em> <strong>1</strong> (1878), 201–204.]</p>
 
@@ -1070,7 +1070,7 @@
 
   <p class="exercises2I">(a) <span class="middle"><img src="../Images/e494_07.png"></span>.</p>
 
-  <p class="exercises2I">(b) <span class="middle"><img src="../Images/e494_08.png"></span>.</p>
+  <p class="exercises2I">(b) <span class="top"><img src="../Images/e494_08.png"></span>.</p>
 
   <p class="exercises2I">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠ 0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
 
