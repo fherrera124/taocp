@@ -26,6 +26,16 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: By exercise 4.6.2–6, we have ${p\brack k}\equiv\delta_{kp}-\delta_{k1}\text{ (modulo }p)$
     - Actual: By exercise 4.6.2–6, we have $x^{\overline p}\equiv x^{p}-x\text{ (modulo }p)$
 
+  - Answer **36** of **Section 1.2.8**:
+
+    - Before: [...] if and only if $\lfloor(k+1)\phi^{-1}\rfloor=1$
+    - Actual: [...] if and only if $\lfloor(k+1)\phi^{-1}\rfloor-\lfloor k\phi^{-1}\rfloor=1$
+
+  - Answer **37** of **Section 1.2.8**:
+
+    - Before: <em>Proof:</em> Let $μ$
+    - Actual: <em>Proof:</em> Let $μ(m)=F_j$;
+
   - Answer **6** of **Section 1.2.10**:
 
     - Before: $6\sqrt{2}/5\approx1.697$
