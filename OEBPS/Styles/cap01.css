@@ -2,14 +2,26 @@
   font-family:"RotisSansSerif-Bold";
   src:url(fonts/RotisSansSerif-Bold.ttf)
 }
-
 @font-face {
   font-family:"RotisSansSerif-Italic";
   src:url(fonts/RotisSansSerif-Italic.ttf)
 }
-
-@page {
-  margin:1em 2em
+@font-face {
+  font-family: 'MathJax_Typewriter';
+  src:url('../Fonts/MathJax_Typewriter-Regular.otf');
+  font-style: normal;
+}
+body {
+  margin: 70px;
+  padding: 0;
+  font-family: Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6em;
+  text-align: left;
+  font-size: 100%;
+  text-indent: 0.002pt;
+  background-color: #F8F4E7;
 }
 
 h1 {
@@ -76,42 +88,9 @@ h6 {
   text-align:left
 }
 
-.cover {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  text-align:center
-}
-
-.subtitle {
-  margin-top:5pt;
-  text-align:center;
-  margin-bottom:20pt;
-  font-weight:700;
-  page-break-after:avoid;
-  font-size:140%
-}
-
 .indent {
   margin-top:4pt;
   margin-bottom:4pt;
-  text-indent:25pt
-}
-
-.indentsub {
-  margin-top:8pt;
-  margin-bottom:2pt;
-  text-indent:25pt
-}
-
-.indentsub1 {
-  margin-top:2pt;
-  margin-bottom:8pt;
-  text-indent:25pt
-}
-
-.indentsub2 {
-  margin-top:1pt;
-  margin-bottom:8pt;
   text-indent:25pt
 }
 
@@ -119,37 +98,6 @@ h6 {
   margin-top:4pt;
   margin-bottom:4pt;
   text-indent:.002pt
-}
-
-.publisher {
-  margin-top:80pt;
-  margin-bottom:2pt;
-  text-align:center
-}
-
-.address {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  text-align:center
-}
-
-.edition {
-  margin-top:15pt;
-  margin-bottom:15pt;
-  text-align:center;
-  font-weight:700
-}
-
-.copy {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  text-indent:.024pt
-}
-
-.author {
-  margin-top:80pt;
-  font-weight:700;
-  text-align:center
 }
 
 .attribution {
@@ -178,12 +126,6 @@ h6 {
   font-style:italic
 }
 
-.ded {
-  margin-top:35pt;
-  margin-bottom:15pt;
-  text-align:right
-}
-
 div.image img {
   max-width:99%;
   max-height:99%
@@ -206,100 +148,11 @@ div.equation img {
   text-align:right
 }
 
-.toc-chapter {
-  margin-top:10pt;
-  margin-bottom:5pt;
-  text-indent:.002pt;
-  text-align:left
-}
-
-.toc-section {
-  margin-top:5pt;
-  margin-bottom:4pt;
-  text-indent:.002pt;
-  text-align:left
-}
-
-.toc-section1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:20pt;
-  text-align:left
-}
-
-.toc-section11 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:14pt;
-  text-align:left
-}
-
-.toc-section2 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:52pt;
-  text-align:left
-}
-
-.toc-section21 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:46pt;
-  text-align:left
-}
-
-.indenthangingB {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:10pt;
-  text-indent:-7.5pt;
-  text-align:left
-}
-
-.indenthangingN {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:35pt;
-  text-indent:-12pt;
-  text-align:left
-}
-
-.indenthangingN1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:35pt;
-  text-indent:-18pt;
-  text-align:left
-}
-
 .indenthangingNP {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:40pt;
   text-align:left
-}
-
-.indenthangingNPI {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:35pt;
-  text-indent:15pt;
-  text-align:left
-}
-
-.indenthangingNa {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:45pt;
-  text-indent:-12pt;
-  text-align:left
-}
-
-.tab-caption {
-  margin-bottom:8pt;
-  text-align:center;
-  page-break-before:avoid;
-  page-break-inside:avoid
 }
 
 .fig-caption {
@@ -309,45 +162,12 @@ div.equation img {
   page-break-inside:avoid
 }
 
-.caption {
-  margin-bottom:8pt;
-  text-align:center;
-  page-break-before:avoid;
-  page-break-inside:avoid
-}
-
-.pre {
-  font-family:Courier New,monospace;
-  margin-top:10pt;
-  margin-bottom:10pt;
-  margin-left:20pt;
-  text-align:left
-}
-
-.EmpStrong {
-  font-family:Courier New Bold,monospace;
-  font-weight:700
-}
-
-.EmpItalic {
-  font-family:Courier New italic,monospace;
-  font-style:italic
-}
-
 code {
   font-family:Courier New,monospace
 }
 
-.underline {
-  text-decoration:underline
-}
-
 .center {
   text-align:center
-}
-
-.right {
-  text-align:right
 }
 
 .footnote {
@@ -359,80 +179,15 @@ code {
   font-size:.88em
 }
 
-.answer {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:10pt;
-  text-indent:10pt;
-  text-align:left
-}
-
-.answer1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:13pt;
-  text-indent:-.5pt;
-  text-align:left
-}
-
-.answerNP {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:14pt;
-  text-align:left
-}
-
-.answerp {
-  margin-top:4pt;
-  margin-bottom:5pt;
-  text-indent:15pt;
-  margin-left:15pt;
-  text-align:left
-}
-
-.answer-a {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:48pt;
-  text-indent:-13pt
-}
-
 .uln-indent {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:25pt
 }
 
-.uln-indent1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:45pt
-}
-
 .ent {
   font-family:"Arial Unicode MS";
   src:url(fonts/ARIALUNI.TTF)
-}
-
-.indexmain {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  text-align:left;
-  text-indent:.024pt
-}
-
-.indexmain1 {
-  margin-top:14pt;
-  margin-bottom:2pt;
-  text-align:left;
-  text-indent:.024pt
-}
-
-.indexsub {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  margin-left:25pt;
-  text-align:left
 }
 
 .heading {
@@ -486,56 +241,11 @@ code {
   text-align:left
 }
 
-.indenthangingAA {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:50pt;
-  text-indent:-20.5pt;
-  text-align:left
-}
-
-.indenthangingAP {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:24pt;
-  text-align:left
-}
-
-.indenthangingAPP {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:30pt;
-  text-align:left
-}
-
 .indenthanging {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:25pt;
   text-indent:-19pt;
-  text-align:left
-}
-
-.indenthanging1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:28pt;
-  text-indent:-30pt;
-  text-align:left
-}
-
-.indenthangingP {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:25pt;
-  text-align:left
-}
-
-.indenthangingP1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:25pt;
-  text-indent:15pt;
   text-align:left
 }
 
@@ -546,80 +256,11 @@ code {
   text-align:left
 }
 
-.number1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  text-indent:21pt;
-  text-align:left
-}
-
-.indenthanging-A {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:40pt;
-  text-indent:-13pt;
-  text-align:left
-}
-
-.uln-indenta {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:60pt;
-  text-indent:-35pt;
-  text-align:left
-}
-
-.uln-indent2 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:60pt;
-  text-indent:-50pt;
-  text-align:left
-}
-
-.left {
-  text-align:left;
-  margin-left:50pt
-}
-
-.pre1 {
-  font-family:Courier New,monospace;
-  margin-top:2pt;
-  margin-bottom:2pt;
-  text-align:left
-}
-
-div.image2 img {
-  max-width:99%;
-  max-height:99%
-}
-
-.image2 {
-  margin-top:5pt;
-  margin-bottom:30pt;
-  text-align:center
-}
-
 .exercises1N {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:10pt;
   text-indent:15pt;
-  text-align:left
-}
-
-.exercises1I {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:17pt;
-  text-indent:15pt;
-  text-align:left
-}
-
-.indenthangingAAP {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:39pt;
   text-align:left
 }
 
@@ -644,161 +285,6 @@ div.image2 img {
   margin-bottom:4pt;
   margin-left:48pt;
   text-indent:-18.5pt
-}
-
-.uln-indentCC {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:48pt;
-  text-indent:-25pt
-}
-
-.blockquote1 {
-  font-family:"Arial Unicode MS";
-  src:url(fonts/ARIALUNI.TTF);
-  margin-top:20pt;
-  margin-bottom:10pt;
-  margin-right:25pt;
-  margin-left:25pt;
-  text-align:right
-}
-
-.indentii {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:40pt;
-  text-indent:-14pt;
-  text-align:left
-}
-
-.indentiii {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:55pt;
-  text-indent:-14pt;
-  text-align:left
-}
-
-div.imageL img {
-  max-width:99%;
-  max-height:99%
-}
-
-.imageL {
-  margin-top:5pt;
-  text-align:left;
-  margin-left:28pt
-}
-
-.indentB {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:26pt;
-  text-indent:-13pt;
-  text-align:left
-}
-
-.indenthangingAB {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:25pt;
-  text-indent:-12pt;
-  text-align:left
-}
-
-.Rotsan_italic {
-  font-family:"RotisSansSerif-Italic";
-  src:url(fonts/RotisSansSerif-Italic.ttf);
-  font-weight:400;
-  font-style:italic
-}
-
-.indent-1 {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  margin-left:45pt;
-  text-indent:-21pt;
-  text-align:left
-}
-
-.indent-2 {
-  margin-top:2pt;
-  margin-bottom:2pt;
-  margin-left:51pt;
-  text-indent:-25pt;
-  text-align:left
-}
-
-.uln-indent4 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:85pt;
-  text-indent:-25pt;
-  text-align:left
-}
-
-div.image3 img {
-  max-width:99%;
-  max-height:99%
-}
-
-.image3 {
-  text-align:left;
-  margin-left:30pt
-}
-
-.indenthangingE {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:35pt;
-  text-indent:-19pt;
-  text-align:left
-}
-
-.answer2 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:50pt;
-  text-indent:-32pt;
-  text-align:left
-}
-
-.exercises2I {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:21pt;
-  text-indent:28pt;
-  text-align:left
-}
-
-.answer3 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:50pt;
-  text-indent:-37pt;
-  text-align:left
-}
-
-.indenthangingAA1 {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:50pt;
-  text-indent:-22pt;
-  text-align:left
-}
-
-.uln-indent3a {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:105pt
-}
-
-.indentab {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:45pt;
-  text-indent:-13.5pt;
-  text-align:left
 }
 
 div.image4 img.img1 {

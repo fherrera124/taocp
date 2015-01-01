@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="charset=utf-8">
   <meta charset="utf-8">
-  <link href="../Styles/cap01.css" rel="stylesheet" type="text/css">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$","$"]],
+        displayMath: [["$$","$$"]],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+  </script>
+
+  <script src="MathJax-2.4-latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
   <title></title>
+  <link href="../Styles/cap01.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -43,11 +58,11 @@
 
   <p class="noindent"><a id="ch01alg-lev1sec1-E"></a><strong>Algorithm E</strong> (<em>Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, find their <em>greatest common divisor</em>, that is, the largest positive integer that evenly divides both <em>m</em> and <em>n</em>.</p>
 
-  <p class="indenthanging"><strong>E1.</strong> [Find remainder.] Divide <em>m</em> by <em>n</em> and let <em>r</em> be the remainder. (We will have 0 ≤ <em>r &lt; n</em>.)</p>
+  <p class="indenthanging"><strong>E1.</strong> [Find remainder.] Divide <em>m</em> by <em>n</em> and let <em>r</em> be the remainder. (We will have 0 ≤ <em>r</em> &lt; <em>n</em>.)</p>
 
   <p class="indenthanging"><strong>E2.</strong> [Is it zero?] If <em>r</em> = 0, the algorithm terminates; <em>n</em> is the answer.</p>
 
-  <p class="indenthanging"><strong>E3.</strong> [Reduce.] Set $m←n$, <em>n</em> ← r, and go back to step E1. <span class="middle"><img src="../Images/common-01.png"></span></p>
+  <p class="indenthanging"><strong>E3.</strong> [Reduce.] Set $m←n$, $n←r$, and go back to step E1. <span class="middle"><img src="../Images/common-01.png"></span></p>
 
   <p class="indent">Of course, Euclid did not present his algorithm in just this manner. The format above illustrates the style in which all of the algorithms throughout this book will be presented.</p>
 
@@ -65,13 +80,13 @@
 
   <p class="indent">The arrow “←” in step E3 is the all-important <em>replacement</em> operation, sometimes called <em>assignment</em> or <em>substitution</em>: “$m←n$” means that the value of variable <em>m</em> is to be replaced by the current value of variable <em>n</em>. When <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> begins, the values of <em>m</em> and <em>n</em> are the originally given numbers; but when it ends, those variables will have, in general, different values. An arrow is used to distinguish the replacement operation from the equality relation: We will not say, “Set <em>m</em> = <em>n</em>,” but we will perhaps ask, “Does <em>m</em> = <em>n</em>?” The “=” sign denotes a condition that can be tested, the “←” sign denotes an action that can be performed. The operation of <em>increasing <em>n</em> by one</em> is denoted by “$n←n + 1$” (read “<em>n</em> is replaced by <em>n</em> + 1” or “<em>n</em> gets <em>n</em> + 1”). In general, “variable ← formula” means that the formula is to be computed using the present values of any variables appearing within it; then the result should replace the previous value of the variable at the left of the arrow. Persons untrained in computer work sometimes have a tendency to say “<em>n</em> becomes <em>n</em> + 1” and to write “<em>n</em> → <em>n</em> + 1” for the operation of increasing <em>n</em> by one; this symbolism can only lead to confusion because of its conflict with standard conventions, and it should be avoided.</p>
 
-  <p class="indent">Notice that the order of actions in step E3 is important: “Set $m←n$, $n←r$” is quite different from “Set $n←r$, $m←n$,” since the latter would imply that the previous value of <em>n</em> is lost before it can be used to set <em>m</em>. Thus the latter sequence is equivalent to “Set $n←r$, $m←r$.” When several variables are all to be set equal to the same quantity, we can use multiple arrows; for example, “$n←r$, $m←r$” may be written “$n←m←r$.” To interchange the values of two variables, we can write “Exchange <em>m</em> ↔ <em>n</em>”; this action could also be specified by using a new variable <em>t</em> and writing “Set $t←m$, $m←n$, $n←t$.”</p>
+  <p class="indent">Notice that the order of actions in step E3 is important: “Set $m←n$, $n←r$” is quite different from “Set $n←r$, $m←n$,” since the latter would imply that the previous value of <em>n</em> is lost before it can be used to set <em>m</em>. Thus the latter sequence is equivalent to “Set $n←r$, $m←r$.” When several variables are all to be set equal to the same quantity, we can use multiple arrows; for example, “$n←r$, $m←r$” may be written “$n←m←r$.” To interchange the values of two variables, we can write “Exchange $m ↔ n$”; this action could also be specified by using a new variable <em>t</em> and writing “Set $t←m$, $m←n$, $n←t$.”</p>
 
   <p class="indent">An algorithm starts at the lowest-numbered step, usually step 1, and it performs subsequent steps in sequential order unless otherwise specified. In step E3, the imperative “go back to step E1” specifies the computational order in an obvious fashion. In step E2, the action is prefaced by the condition “If <em>r</em> = 0”; so if <em>r</em> ≠ 0, the rest of that sentence does not apply and no action is specified. We might have added the redundant sentence, “If <em>r</em> ≠ 0, go on to step E3.”</p>
 
   <p class="indent">The heavy vertical line “<span class="middle"><img src="../Images/common-01.png"></span>” appearing at the end of step E3 is used to indicate the end of an algorithm and the resumption of text.</p>
 
-  <p class="indent">We have now discussed virtually all the notational conventions used in the algorithms of this book, except for a notation used to denote “subscripted” or <a id="page_4"></a>“indexed” items that are elements of an ordered array. Suppose we have <em>n</em> quantities, v_{1}, v_{2}, ..., v_{n}; instead of writing v_{j} for the <em>j</em> th element, the notation <em>v</em>[<em>j</em>] is often used. Similarly, <em>a</em>[<em>i, j</em>] is sometimes used in preference to a doubly subscripted notation like a_{ij} . Sometimes multiple-letter names are used for variables, usually set in capital letters; thus <code>TEMP</code> might be the name of a variable used for temporarily holding a computed value, <code>PRIME[K]</code> might denote the <code>K</code>th prime number, and so on.</p>
+  <p class="indent">We have now discussed virtually all the notational conventions used in the algorithms of this book, except for a notation used to denote “subscripted” or <a id="page_4"></a>“indexed” items that are elements of an ordered array. Suppose we have <em>n</em> quantities, $v_{1}, v_{2}, ..., v_{n}$; instead of writing $v_{j}$ for the <em>j</em> th element, the notation $v[j]$ is often used. Similarly, $a[i, j]$ is sometimes used in preference to a doubly subscripted notation like $a_{ij}$. Sometimes multiple-letter names are used for variables, usually set in capital letters; thus <code>TEMP</code> might be the name of a variable used for temporarily holding a computed value, <code>PRIME[K]</code> might denote the <code>K</code>th prime number, and so on.</p>
 
   <p class="indent">So much for the <em>form</em> of algorithms; now let us <em>perform</em> one. It should be mentioned immediately that the reader should <em>not</em> expect to read an algorithm as if it were part of a novel; such an attempt would make it pretty difficult to understand what is going on. An algorithm must be seen to be believed, and the best way to learn what an algorithm is all about is to try it. The reader should always take pencil and paper and work through an example of each algorithm immediately upon encountering it in the text. Usually the outline of a worked example will be given, or else the reader can easily conjure one up. This is a simple and painless way to gain an understanding of a given algorithm, and all other approaches are generally unsuccessful.</p>
 
@@ -81,7 +96,7 @@
 
   <p class="noindent">This would make no essential change in the algorithm, except to increase its length slightly, and to decrease its running time in about one half of all cases.</p>
 
-  <p class="indent">Back at step E1, we find that 544<em>/</em>119 = 4 + 68<em>/</em>119, so $r←68$. Again E2 is inapplicable, and at E3 we set $m←119$, $n←68$. The next round sets $r←51$, and ultimately $m←68$, $n←51$. Next $r←17$, and $m←51$, $n←17$. Finally, when 51 is divided by 17, we set $r←0$, so at step E2 the algorithm terminates. The greatest common divisor of 119 and 544 is 17.</p>
+  <p class="indent">Back at step E1, we find that $544/119=4 + 68/119$, so $r←68$. Again E2 is inapplicable, and at E3 we set $m←119$, $n←68$. The next round sets $r←51$, and ultimately $m←68$, $n←51$. Next $r←17$, and $m←51$, $n←17$. Finally, when 51 is divided by 17, we set $r←0$, so at step E2 the algorithm terminates. The greatest common divisor of 119 and 544 is 17.</p>
 
   <p class="indent">So this is an algorithm. The modern meaning for algorithm is quite similar to that of <em>recipe, process, method, technique, procedure, routine, rigmarole,</em> except that the word “algorithm” connotes something just a little different. Besides merely being a finite set of rules that gives a sequence of operations for solving a specific type of problem, an algorithm has five important features:</p>
 
@@ -91,7 +106,7 @@
 
   <p class="number">2) <em>Definiteness.</em> Each step of an algorithm must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case. The algorithms of this book will hopefully meet this criterion, but they are specified in the English language, so there is a possibility that the reader might not understand exactly what the author intended. To get around this difficulty, formally defined <em>programming languages</em> or <em>computer languages</em> are designed for specifying algorithms, in which every statement has a very definite meaning. Many of the algorithms of this book will be given both in English and in a computer language. An expression of a computational method in a computer language is called a <em>program</em>.</p>
 
-  <p class="indent">In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, the criterion of definiteness as applied to step E1 means that the reader is supposed to understand exactly what it means to divide <em>m</em> by <em>n</em> and what the remainder is. In actual fact, there is no universal agreement about what this means if <em>m</em> and <em>n</em> are not positive integers; what is the remainder of −8 divided by −π? What is the remainder of 59<em>/</em>13 divided by zero? Therefore the criterion of definiteness means we must make sure that the values of <em>m</em> and <em>n</em> are always positive integers whenever step E1 is to be executed. This is initially true, by hypothesis; and after step E1, <em>r</em> is a nonnegative integer that must be nonzero if we get to step E3. So <em>m</em> and <em>n</em> are indeed positive integers as required.</p>
+  <p class="indent">In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, the criterion of definiteness as applied to step E1 means that the reader is supposed to understand exactly what it means to divide <em>m</em> by <em>n</em> and what the remainder is. In actual fact, there is no universal agreement about what this means if <em>m</em> and <em>n</em> are not positive integers; what is the remainder of −8 divided by −π? What is the remainder of $59/13$ divided by zero? Therefore the criterion of definiteness means we must make sure that the values of <em>m</em> and <em>n</em> are always positive integers whenever step E1 is to be executed. This is initially true, by hypothesis; and after step E1, <em>r</em> is a nonnegative integer that must be nonzero if we get to step E3. So <em>m</em> and <em>n</em> are indeed positive integers as required.</p>
 
   <p class="number">3) <em>Input.</em> An algorithm has zero or more <em>inputs</em>: quantities that are given to it initially before the algorithm begins, or dynamically as the algorithm runs. These inputs are taken from specified sets of objects. In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, for example, there are two inputs, namely <em>m</em> and <em>n</em>, both taken from the set of <em>positive integers</em>.</p>
 
@@ -99,11 +114,11 @@
 
   <p class="indent">(We can easily <em>prove</em> that this number is indeed the greatest common divisor, as follows. After step E1, we have</p>
 
-  <p class="center"><em>m</em> = <em>qn</em> + <em>r</em>,</p>
+  <p class="center">$m=qn + r$,</p>
 
-  <p class="noindent">for some integer <em>q</em>. If <em>r</em> = 0, then <em>m</em> is a multiple of <em>n</em>, and clearly in such a case <em>n</em> is the greatest common divisor of <em>m</em> and <em>n</em>. If <em>r</em> ≠ 0, note that any number that divides both <em>m</em> and <em>n</em> must divide <em>m</em> − <em>qn</em> = <em>r</em>, and any number that divides <a id="page_6"></a>both <em>n</em> and <em>r</em> must divide <em>qn</em> + <em>r</em> = <em>m</em>; so the set of common divisors of <em>m</em> and <em>n</em> is the same as the set of common divisors of <em>n</em> and <em>r</em>. In particular, the <em>greatest</em> common divisor of <em>m</em> and <em>n</em> is the same as the greatest common divisor of <em>n</em> and <em>r</em>. Therefore step E3 does not change the answer to the original problem.)</p>
+  <p class="noindent">for some integer <em>q</em>. If <em>r</em> = 0, then <em>m</em> is a multiple of <em>n</em>, and clearly in such a case <em>n</em> is the greatest common divisor of <em>m</em> and <em>n</em>. If <em>r</em> ≠ 0, note that any number that divides both <em>m</em> and <em>n</em> must divide $m-qn=r$, and any number that divides <a id="page_6"></a>both <em>n</em> and <em>r</em> must divide $qn + r=m$; so the set of common divisors of <em>m</em> and <em>n</em> is the same as the set of common divisors of <em>n</em> and <em>r</em>. In particular, the <em>greatest</em> common divisor of <em>m</em> and <em>n</em> is the same as the greatest common divisor of <em>n</em> and <em>r</em>. Therefore step E3 does not change the answer to the original problem.)</p>
 
-  <p class="number">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n} + x^{n} + y^{n} = z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
+  <p class="number">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n} + x^{n} + y^{n}=z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
 
   <p class="indent">Let us try to compare the concept of an algorithm with that of a cookbook recipe. A recipe presumably has the qualities of finiteness (although it is said that a watched pot never boils), input (eggs, flour, etc.), and output (TV dinner, etc.), but it notoriously lacks definiteness. There are frequent cases in which a cook’s instructions are indefinite: “Add a dash of salt.” A “dash” is defined to be “less than ⅛ teaspoon,” and salt is perhaps well enough defined; but where should the salt be added — on top? on the side? Instructions like “toss lightly until mixture is crumbly” or “warm cognac in small saucepan” are quite adequate as explanations to a trained chef, but an algorithm must be specified to such a degree that even a computer can follow the directions. Nevertheless, a computer programmer can learn much by studying a good recipe book. (The author has in fact barely resisted the temptation to name the present volume “The Programmer’s Cookbook.” Perhaps someday he will attempt a book called “Algorithms for the Kitchen.”)</p>
 
@@ -113,9 +128,9 @@
 
   <p class="indent">We often are faced with several algorithms for the same problem, and we must decide which is best. This leads us to the extremely interesting and all-important field of <em>algorithmic analysis</em>: Given an algorithm, we want to determine its performance characteristics.</p>
 
-  <p class="indent">For example, let’s consider Euclid’s algorithm from this point of view. Suppose we ask the question, “Assuming that the value of <em>n</em> is known but <em>m</em> is allowed to range over all positive integers, what is the <em>average</em> number of times, T_{n}, that step E1 of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> will be performed?” In the first place, we need to check that this question does have a meaningful answer, since we are trying to take an average over infinitely many choices for <em>m</em>. But it is evident that after the first execution of step E1 only the remainder of <em>m</em> after division by <em>n</em> is relevant. So all we must do to find T_{n} is to try the algorithm for <em>m</em> = 1, <em>m</em> = 2, ..., <em>m</em> = <em>n</em>, count the total number of times step E1 has been executed, and divide by <em>n</em>.</p>
+  <p class="indent">For example, let’s consider Euclid’s algorithm from this point of view. Suppose we ask the question, “Assuming that the value of <em>n</em> is known but <em>m</em> is allowed to range over all positive integers, what is the <em>average</em> number of times, $T_{n}$, that step E1 of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> will be performed?” In the first place, we need to check that this question does have a meaningful answer, since we are trying to take an average over infinitely many choices for <em>m</em>. But it is evident that after the first execution of step E1 only the remainder of <em>m</em> after division by <em>n</em> is relevant. So all we must do to find $T_{n}$ is to try the algorithm for <em>m</em> = 1, <em>m</em> = 2, ..., <em>m</em> = <em>n</em>, count the total number of times step E1 has been executed, and divide by <em>n</em>.</p>
 
-  <p class="indent">Now the important question is to determine the <em>nature</em> of T_{n}; is it approximately equal to <span class="middle"><img src="../Images/1by3.png"><em>n</em></span>, or <span class="middle"><img src="../Images/root-n.png"></span>, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that T_{n} is approximately (12(ln 2)<em>/</em>π^{2}) ln <em>n</em>, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
+  <p class="indent">Now the important question is to determine the <em>nature</em> of $T_{n}$; is it approximately equal to <span class="middle"><img src="../Images/1by3.png"><em>n</em></span>, or <span class="middle"><img src="../Images/root-n.png"></span>, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that $T_{n}$ is approximately $(12(ln 2)/π^{2}) ln n$, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
 
   <p class="indent"><em>Analysis of algorithms</em> is the name the author likes to use to describe investigations such as this. The general idea is to take a particular algorithm and to determine its quantitative behavior; occasionally we also study whether or not an algorithm is optimal in some sense. The <em>theory of algorithms</em> is another subject entirely, dealing primarily with the existence or nonexistence of effective algorithms to compute particular quantities.</p>
 
@@ -123,15 +138,15 @@
 
   <div class="equation"><a id="ch01eq-lev1sec1-1"></a><img src="../Images/008equ01.png"></div>
 
-  <p class="noindent">The computational sequence is said to <em>terminate in k steps</em> if <em>k</em> is the smallest integer for which x_{k} is in Ω, and in this case it is said to produce the output x_{k} from <em>x</em>. (Notice that if x_{k} is in Ω, so is x_{k+1}, because x_{k+1} = x_{k} in such a case.) Some computational sequences may never terminate; an <em>algorithm</em> is a computational method that terminates in finitely many steps for all <em>x</em> in <em>I</em>.</p>
+  <p class="noindent">The computational sequence is said to <em>terminate in k steps</em> if <em>k</em> is the smallest integer for which $x_{k}$ is in Ω, and in this case it is said to produce the output $x_{k}$ from <em>x</em>. (Notice that if $x_{k}$ is in Ω, so is $x_{k+1}$, because $x_{k+1}=x_{k}$ in such a case.) Some computational sequences may never terminate; an <em>algorithm</em> is a computational method that terminates in finitely many steps for all <em>x</em> in <em>I</em>.</p>
 
-  <p class="indent"><a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> may, for example, be formalized in these terms as follows: Let <em>Q</em> be the set of all singletons (<em>n</em>), all ordered pairs (<em>m, n</em>), and all ordered quadruples (<em>m, <em>n</em>, <em>r</em>,</em> 1), (<em>m, <em>n</em>, <em>r</em>,</em> 2), and (<em>m, <em>n</em>, p,</em> 3), where <em>m</em>, <em>n</em>, and <em>p</em> are positive integers and <em>r</em> is a nonnegative integer. Let <em>I</em> be the subset of all pairs (<em>m, n</em>) and let Ω be the subset of all singletons (<em>n</em>). Let <em>f</em> be defined as follows:</p>
+  <p class="indent"><a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> may, for example, be formalized in these terms as follows: Let <em>Q</em> be the set of all singletons $(n)$, all ordered pairs $(m, n)$, and all ordered quadruples $(m, n, r, 1)$, $(m, n, r, 2)$, and $(m, n, p, 3)$, where <em>m</em>, <em>n</em>, and <em>p</em> are positive integers and <em>r</em> is a nonnegative integer. Let <em>I</em> be the subset of all pairs $(m, n)$ and let Ω be the subset of all singletons $(n)$. Let <em>f</em> be defined as follows:</p>
 
   <div class="equation"><a id="ch01eq-lev1sec1-2"></a><img src="../Images/008equ02.png"></div>
 
   <p class="noindent">The correspondence between this notation and <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> is evident.</p>
 
-  <p class="indent">This formulation of the concept of an algorithm does not include the restriction of effectiveness mentioned earlier. For example, <em>Q</em> might denote infinite sequences that are not computable by pencil and paper methods, or <em>f</em> might involve operations that mere mortals cannot always perform. If we wish to restrict the notion of algorithm so that only elementary operations are involved, we can place restrictions on <em>Q</em>, <em>I</em>, Ω, and <em>f</em>, for example as follows: Let <em>A</em> be a finite set of letters, and let A^{*} be the set of all strings on <em>A</em> (the set of all ordered sequences x_{1}x_{2} ... x_{n}, where <em>n</em> ≥ 0 and x_{j} is in <em>A</em> for 1 ≤ <em>j</em> ≤ <em>n</em>). The idea is to encode the states of the computation so that they are represented by strings of A^{*}. Now let <em>N</em> be a nonnegative integer and let <em>Q</em> be the set of all (σ, <em>j</em>), where σ is in A^{*} and <em>j</em> is an integer, 0 ≤ <em>j</em> ≤ <em>N</em>; let <em>I</em> be the subset of <em>Q</em> with <em>j</em> = 0 and let Ω be the subset with <em>j</em> = <em>N</em>. If θ and σ are strings in A^{*}, we say that θ occurs in σ if σ has the form <em>α</em>θω for strings <em>α</em> and ω. To complete our definition, let <em>f</em> be a function of the following type, defined by the strings θ_{j}, φ_{j} and the integers a_{j}, b_{j} for 0 ≤ <em>j</em> &lt; <em>N</em>:</p>
+  <p class="indent">This formulation of the concept of an algorithm does not include the restriction of effectiveness mentioned earlier. For example, <em>Q</em> might denote infinite sequences that are not computable by pencil and paper methods, or <em>f</em> might involve operations that mere mortals cannot always perform. If we wish to restrict the notion of algorithm so that only elementary operations are involved, we can place restrictions on <em>Q</em>, <em>I</em>, Ω, and <em>f</em>, for example as follows: Let <em>A</em> be a finite set of letters, and let $A^{*}$ be the set of all strings on <em>A</em> (the set of all ordered sequences $x_{1}x_{2} ... x_{n}$, where <em>n</em> ≥ 0 and $x_{j}$ is in <em>A</em> for 1 ≤ <em>j</em> ≤ <em>n</em>). The idea is to encode the states of the computation so that they are represented by strings of $A^{*}$. Now let <em>N</em> be a nonnegative integer and let <em>Q</em> be the set of all $(σ, j)$, where σ is in $A^{*}$ and <em>j</em> is an integer, 0 ≤ <em>j</em> ≤ <em>N</em>; let <em>I</em> be the subset of <em>Q</em> with <em>j</em> = 0 and let Ω be the subset with <em>j</em> = <em>N</em>. If θ and σ are strings in $A^{*}$, we say that θ occurs in σ if σ has the form $αθω$ for strings <em>α</em> and ω. To complete our definition, let <em>f</em> be a function of the following type, defined by the strings $θ_{j}$, $φ_{j}$ and the integers $a_{j}$, $b_{j}$ for 0 ≤ <em>j</em> &lt; <em>N</em>:</p>
 
   <div class="equation"><a id="ch01eq-lev1sec1-3"></a><img src="../Images/008equ03.png"></div>
 
@@ -139,7 +154,7 @@
 
   <p class="ex-title">Exercises</p>
 
-  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_1a" id="ch01ex_1_1_1">1</a>.</strong> [<em>10</em>] The text showed how to interchange the values of variables <em>m</em> and <em>n</em>, using the replacement notation, by setting $t←m$, $m←n$, $n←t$. Show how the values of <em>four</em> variables (<em>a, b, c, d</em>) can be rearranged to (<em>b, c, d, a</em>) by a sequence of replacements. In other words, the new value of <em>a</em> is to be the original value of <em>b</em>, etc. Try to use the minimum number of replacements.</p>
+  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_1a" id="ch01ex_1_1_1">1</a>.</strong> [<em>10</em>] The text showed how to interchange the values of variables <em>m</em> and <em>n</em>, using the replacement notation, by setting $t←m$, $m←n$, $n←t$. Show how the values of <em>four</em> variables $(a, b, c, d)$ can be rearranged to $(b, c, d, a)$ by a sequence of replacements. In other words, the new value of <em>a</em> is to be the original value of <em>b</em>, etc. Try to use the minimum number of replacements.</p>
 
   <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_2a" id="ch01ex_1_1_2">2</a>.</strong> [<em>15</em>] Prove that <em>m</em> is always greater than <em>n</em> at the beginning of step E1, except possibly the first time this step occurs.</p>
 
@@ -151,13 +166,13 @@
 
   <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_6a" id="ch01ex_1_1_6">6</a>.</strong> [<em>20</em>] What is T_{5}, the average number of times step E1 is performed when <em>n</em> = 5?</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_7a" id="ch01ex_1_1_7">7</a>.</strong> [<em>M21</em>] Suppose that <em>m</em> is known and <em>n</em> is allowed to range over all positive integers; let U_{m} be the average number of times that step E1 is executed in <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. Show that U_{m} is well defined. Is U_{m} in any way related to T_{m}?</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_7a" id="ch01ex_1_1_7">7</a>.</strong> [<em>M21</em>] Suppose that <em>m</em> is known and <em>n</em> is allowed to range over all positive integers; let $U_{m}$ be the average number of times that step E1 is executed in <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. Show that $U_{m}$ is well defined. Is $U_{m}$ in any way related to $T_{m}$?</p>
 
-  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_8a" id="ch01ex_1_1_8">8</a>.</strong> [<em>M25</em>] Give an “effective” formal algorithm for computing the greatest common divisor of positive integers <em>m</em> and <em>n</em>, by specifying θ_{j}, φ_{j}, a_{j}, b_{j} as in Eqs. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev1sec1-3">3</a>). Let the input be represented by the string a^{m}b^{n}, that is, <em>m a</em>’s followed by <em>n b</em>’s. Try to make your solution as simple as possible. [<em>Hint:</em> Use <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, but instead of division in step E1, set $r←|m-n|$, $n←\min(m,n)$.]</p>
+  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_8a" id="ch01ex_1_1_8">8</a>.</strong> [<em>M25</em>] Give an “effective” formal algorithm for computing the greatest common divisor of positive integers <em>m</em> and <em>n</em>, by specifying $θ_{j}$, $φ_{j}$, $a_{j}$, $b_{j}$ as in Eqs. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev1sec1-3">3</a>). Let the input be represented by the string $a^{m}b^{n}$, that is, <em>m a</em>’s followed by <em>n b</em>’s. Try to make your solution as simple as possible. [<em>Hint:</em> Use <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, but instead of division in step E1, set $r←|m-n|$, $n←\min(m,n)$.]</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_9a" id="ch01ex_1_1_9">9</a>.</strong> [<em>M30</em>] Suppose that C_{1} = (Q_{1}, I_{1}, Ω_{1}, f_{1}) and C_{2} = (Q_{2}, I_{2}, Ω_{2}, f_{2}) are computational methods. For example, C_{1} might stand for <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> as in Eqs. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>), except that <em>m</em> and <em>n</em> are restricted in magnitude, and C_{2} might stand for a computer program implementation of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. (Thus Q_{2} might be the set of all states of the machine, i.e., all possible configurations of its memory and registers; f_{2} might be the definition of single machine actions; and I_{2} might be the set of initial states, each including the program that determines the greatest common divisor as well as the particular values of <em>m</em> and <em>n</em>.)</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_1_1_9a" id="ch01ex_1_1_9">9</a>.</strong> [<em>M30</em>] Suppose that $C_{1}=(Q_{1}, I_{1}, Ω_{1}, f_{1})$ and $C_{2}=(Q_{2}, I_{2}, Ω_{2}, f_{2})$ are computational methods. For example, $C_{1}$ might stand for <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> as in Eqs. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>), except that <em>m</em> and <em>n</em> are restricted in magnitude, and $C_{2}$ might stand for a computer program implementation of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. (Thus $Q_{2}$ might be the set of all states of the machine, i.e., all possible configurations of its memory and registers; $f_{2}$ might be the definition of single machine actions; and $I_{2}$ might be the set of initial states, each including the program that determines the greatest common divisor as well as the particular values of <em>m</em> and <em>n</em>.)</p>
 
-  <p class="exercises1N">Formulate a set-theoretic definition for the concept “C_{2} is a representation of C_{1}” or “C_{2} simulates C_{1}.” This is to mean intuitively that any computation sequence of C_{1} is mimicked by C_{2}, except that C_{2} might take more steps in which to do the computation and it might retain more information in its states. (We thereby obtain a rigorous interpretation of the statement, “Program <em>X</em> is an implementation of Algorithm <em>Y</em>.”)</p>
+  <p class="exercises1N">Formulate a set-theoretic definition for the concept “$C_{2}$ is a representation of $C_{1}$” or “$C_{2}$ simulates $C_{1}$.” This is to mean intuitively that any computation sequence of $C_{1}$ is mimicked by $C_{2}$, except that $C_{2}$ might take more steps in which to do the computation and it might retain more information in its states. (We thereby obtain a rigorous interpretation of the statement, “Program <em>X</em> is an implementation of Algorithm <em>Y</em>.”)</p>
 
   <div class="heading">
     <h3 id="ch01lev1sec2"><a id="page_10"></a>1.2. Mathematical Preliminaries</h3>
@@ -178,12 +193,12 @@
   <div class="heading">
     <h4 id="ch01lev2sec1">1.2.1. Mathematical Induction</h4>
 
-    <p class="noindent">Let $P(n)$ be some statement about the integer <em>n</em>; for example, $P(n)$ might be “<em>n</em> times (<em>n</em> + 3) is an even number,” or “if <em>n</em> ≥ 10, then 2^{n}<em>&gt; n</em>^{3}.” Suppose we want <em>to prove that P</em> (<em>n</em>) <em>is true for all positive integers n</em>. An important way to do this is:</p>
+    <p class="noindent">Let $P(n)$ be some statement about the integer <em>n</em>; for example, $P(n)$ might be “<em>n</em> times $(n + 3)$ is an even number,” or “if <em>n</em> ≥ 10, then $2^{n}\gt n^{3}$.” Suppose we want <em>to prove that $P (n)$ is true for all positive integers n</em>. An important way to do this is:</p>
   </div>
 
   <p class="indenthangingA">a) Give a proof that $P(1)$ is true.</p>
 
-  <p class="indenthangingA">b) Give a proof that “if all of P(1)<em>, P</em> (2)<em>, ..., <em>P</em></em> (<em>n</em>) are true, then <em>P</em>(<em>n</em> + 1) is also true”; this proof should be valid for any positive integer <em>n</em>.</p>
+  <p class="indenthangingA">b) Give a proof that “if all of $P(1), P(2), ..., P(n)$ are true, then $P(n + 1)$ is also true”; this proof should be valid for any positive integer <em>n</em>.</p>
 
   <p class="indent">As an example, consider the following series of equations, which many people have discovered independently since ancient times:</p>
 
@@ -195,13 +210,13 @@
 
   <p class="noindent">Let us, for the moment, call this equation $P(n)$; we wish to prove that $P(n)$ is true for all positive <em>n</em>. Following the procedure outlined above, we have:</p>
 
-  <p class="indenthangingA">a) “<em>P</em> (1) is true, since 1 = 1^{2}.”</p>
+  <p class="indenthangingA">a) “$P(1)$ is true, since $1=1^{2}$.”</p>
 
-  <p class="indenthangingA">b) “If all of P(1)<em>, ..., P</em> (<em>n</em>) are true, then, in particular, $P(n)$ is true, so Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) holds; adding 2<em>n</em> + 1 to both sides we obtain</p>
+  <p class="indenthangingA">b) “If all of $P(1), ..., P(n)$ are true, then, in particular, $P(n)$ is true, so Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) holds; adding 2<em>n</em> + 1 to both sides we obtain</p>
 
-  <p class="center">1 + 3 + · · · + (2<em>n</em> − 1) + (2<em>n</em> + 1) = n^{2} + 2<em>n</em> + 1 = (<em>n</em> + 1)^{2},</p>
+  <p class="center">$1 + 3 + ··· + (2n-1) + (2n + 1)=n^{2} + 2n + 1=(n + 1)^{2}$,</p>
 
-  <p class="indent">which proves that <em>P</em>(<em>n</em> + 1) is also true.”</p>
+  <p class="indent">which proves that $P(n + 1)$ is also true.”</p>
 
   <p class="indent">We can regard this method as an <em>algorithmic proof procedure.</em> In fact, the following algorithm produces a proof of $P(n)$ for any positive integer <em>n</em>, assuming that steps (a) and (b) above have been worked out:</p>
 
@@ -211,7 +226,7 @@
 
   <p class="indenthanging"><a id="page_12"></a><strong>I2.</strong> [<em>k</em> = <em>n</em>?] If <em>k</em> = <em>n</em>, terminate the algorithm; the required proof has been output.</p>
 
-  <p class="indenthanging"><strong>I3.</strong> [Prove <em>P</em>(<em>k</em> + 1).] According to (b), output a proof that “If all of P(1)<em>, ..., P</em> (<em>k</em>) are true, then <em>P</em>(<em>k</em> + 1) is true.” Also output “We have already proved P(1)<em>, ..., P</em> (<em>k</em>); hence <em>P</em>(<em>k</em> + 1) is true.”</p>
+  <p class="indenthanging"><strong>I3.</strong> [Prove $P(k + 1)$.] According to (b), output a proof that “If all of $P(1), ..., P (k)$ are true, then $P(k + 1)$ is true.” Also output “We have already proved $P(1), ..., P (k)$; hence $P(k + 1)$ is true.”</p>
 
   <p class="indenthanging"><strong>I4.</strong> [Increase <em>k</em>.] Increase <em>k</em> by 1 and go to step I2. <span class="middle"><img src="../Images/common-01.png"></span></p>
 
@@ -229,17 +244,17 @@
 
   <p class="center">1 + 1 + 1 + 1 + 1 = 2 + 1 + 1 + 1 = 2 + 2 + 1 = 3 + 1 + 1 = 3 + 2 = 4 + 1 = 5,</p>
 
-  <p class="noindent">we have p(5) = 7. In fact, it is easy to establish the first few values,</p>
+  <p class="noindent">we have $p(5)=7$. In fact, it is easy to establish the first few values,</p>
 
-  <p class="center">p(1) = 1,&nbsp;&nbsp;&nbsp;p(2) = 2,&nbsp;&nbsp;&nbsp;p(3) = 3,&nbsp;&nbsp;&nbsp;p(4) = 5,&nbsp;&nbsp;&nbsp;p(5) = 7.</p>
+  <p class="center">$p(1)=1$,&nbsp;&nbsp;&nbsp;$p(2)=2$,&nbsp;&nbsp;&nbsp;$p(3)=3$,&nbsp;&nbsp;&nbsp;$p(4)=5$,&nbsp;&nbsp;&nbsp;$p(5)=7$.</p>
 
-  <p class="noindent">At this point we might tentatively formulate, by induction, the hypothesis that the sequence p(2), p(3), ... runs through the <em>prime numbers</em>. To test this hypothesis, we proceed to calculate $p(6)$ and behold! p(6) = 11, confirming our conjecture.</p>
+  <p class="noindent">At this point we might tentatively formulate, by induction, the hypothesis that the sequence $p(2), p(3), ...$ runs through the <em>prime numbers</em>. To test this hypothesis, we proceed to calculate $p(6)$ and behold! $p(6)=11$, confirming our conjecture.</p>
 
   <p class="indent">[Unfortunately, $p(7)$ turns out to be 15, spoiling everything, and we must try again. The numbers $p(n)$ are known to be quite complicated, although S. Ramanujan succeeded in guessing and proving many remarkable things about them. For further information, see G. H. Hardy, <em>Ramanujan</em> (London: Cambridge University Press, 1940), Chapters 6 and 8. See also Section 7.2.1.4.]</p>
 
   <p class="indent">Mathematical induction is quite different from induction in the sense just explained. It is not just guesswork, but a conclusive proof of a statement; indeed, it is a proof of infinitely many statements, one for each <em>n</em>. It has been called “induction” only because one must first decide somehow <em>what</em> is to be proved, <a id="page_13"></a><em>before</em> one can apply the technique of mathematical induction. Henceforth in this book we shall use the word induction only when we wish to imply proof by mathematical induction.</p>
 
-  <p class="indent">There is a geometrical way to prove Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>). <a href="../Text/ch01.html#ch01fig03">Figure 3</a> shows, for <em>n</em> = 6, n^{2} cells broken into groups of 1 + 3 + · · · + (2<em>n</em> − 1) cells. However, in the final analysis, this picture can be regarded as a “proof” only if we show that the construction can be carried out for all <em>n</em>, and such a demonstration is essentially the same as a proof by induction.</p>
+  <p class="indent">There is a geometrical way to prove Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>). <a href="../Text/ch01.html#ch01fig03">Figure 3</a> shows, for <em>n</em> = 6, $n^{2}$ cells broken into groups of $1 + 3 + ··· + (2n-1)$ cells. However, in the final analysis, this picture can be regarded as a “proof” only if we show that the construction can be carried out for all <em>n</em>, and such a demonstration is essentially the same as a proof by induction.</p>
 
   <div class="image">
     <a id="ch01fig03"></a><img src="../Images/01fig03.png">
@@ -247,13 +262,13 @@
     <p class="fig-caption"><strong>Fig. 3.</strong> The sum of odd numbers is a square.</p>
   </div>
 
-  <p class="indent">Our proof of Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) used only a special case of (b); we merely showed that the truth of $P(n)$ implies the truth of <em>P</em>(<em>n</em> + 1). This is an important simple case that arises frequently, but our next example illustrates the power of the method a little more. We define the <em>Fibonacci sequence</em> F_{0}, F_{1}, F_{2}, ... by the rule that F_{0} = 0, F_{1} = 1, and every further term is the sum of the preceding two. Thus the sequence begins 0, 1, 1, 2, 3, 5, 8, 13, ...; we will investigate it in detail in <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>. We will now prove that if <em>φ</em> is the number (1 + <span class="middle"><img src="../Images/root-5.png"></span>)<em>/</em>2 we have</p>
+  <p class="indent">Our proof of Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) used only a special case of (b); we merely showed that the truth of $P(n)$ implies the truth of $P(n + 1)$. This is an important simple case that arises frequently, but our next example illustrates the power of the method a little more. We define the <em>Fibonacci sequence</em> $F_{0}, F_{1}, F_{2}, ...$ by the rule that $F_{0}=0$, $F_{1}=1$, and every further term is the sum of the preceding two. Thus the sequence begins 0, 1, 1, 2, 3, 5, 8, 13, ...; we will investigate it in detail in <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>. We will now prove that if <em>φ</em> is the number $(1 + <span class="middle"><img src="../Images/root-5.png"></span>)/2$ we have</p>
 
   <div class="equation"><a id="ch01eq-lev2sec1-3"></a><img src="../Images/013equ01.png"></div>
 
   <p class="noindent">for all positive integers <em>n</em>. Call this formula $P(n)$.</p>
 
-  <p class="indent">If <em>n</em> = 1, then F_{1} = 1 = φ^{0} = <em>φ</em><sup>1−1</sup>, so step (a) has been done. For step (b) we notice first that $P(2)$ is also true, since F_{2} = 1 &lt; 1.6 &lt; φ^{1} = <em>φ</em><sup>2−1</sup>. Now, if all of $P(1), P(2), ..., P(n)$ are true and <em>n</em> &gt; 1, we know in particular that <em>P</em>(<em>n</em> − 1) and P(<em>n</em>) are true; so F_{n−1} ≤ <em>φ</em> <sup><em>n</em>−</sup><sup>2</sup> and F<sub><em>n</em></sub> ≤ <em>φ</em> <sup><em>n</em>−</sup><sup>1</sup>. Adding these inequalities, we get</p>
+  <p class="indent">If <em>n</em> = 1, then $F_{1}=1=φ^{0}=φ^{1-1}$, so step (a) has been done. For step (b) we notice first that $P(2)$ is also true, since $F_{2}=1 \lt 1.6 \lt φ^{1}=φ^{2-1}$. Now, if all of $P(1), P(2), ..., P(n)$ are true and <em>n</em> &gt; 1, we know in particular that $P(n-1)$ and $P(n)$ are true; so $F_{n-1} ≤ φ^{n-2}$ and $F_{n} ≤ φ^{n-1}$. Adding these inequalities, we get</p>
 
   <div class="equation"><a id="ch01eq-lev2sec1-4"></a><img src="../Images/013equ02.png"></div>
 
@@ -261,17 +276,17 @@
 
   <div class="equation"><a id="ch01eq-lev2sec1-5"></a><img src="../Images/013equ03.png"></div>
 
-  <p class="noindent">Plugging (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-5">5</a>) into (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-4">4</a>) gives F_{n+1} ≤ φ^{n}, which is <em>P</em>(<em>n</em> + 1). So step (b) has been done, and (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>) has been proved by mathematical induction. Notice that we approached step (b) in two different ways here: We proved <em>P</em>(<em>n</em>+1) <em>directly</em> when <em>n</em> = 1, and we used an inductive method when <em>n</em> &gt; 1. This was necessary, since when <em>n</em> = 1 our reference to <em>P</em>(<em>n</em> − 1) = P(0) would not have been legitimate.</p>
+  <p class="noindent">Plugging (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-5">5</a>) into (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-4">4</a>) gives $F_{n+1} ≤ φ^{n}$, which is $P(n + 1)$. So step (b) has been done, and (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>) has been proved by mathematical induction. Notice that we approached step (b) in two different ways here: We proved $P(n+1)$ <em>directly</em> when <em>n</em> = 1, and we used an inductive method when <em>n</em> &gt; 1. This was necessary, since when <em>n</em> = 1 our reference to $P(n-1)=P(0)$ would not have been legitimate.</p>
 
   <p class="indent">Mathematical induction can also be used to prove things about <em>algorithms</em>. Consider the following generalization of Euclid’s algorithm.</p>
 
-  <p class="noindent"><a id="ch01alg-lev2sec1-E"></a><strong>Algorithm E</strong> (<em>Extended Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, we compute their greatest common divisor <em>d</em>, and we also compute two not-necessarily-positive integers <em>a</em> and <em>b</em> such that <em>am</em> + <em>bn</em> = <em>d</em>.</p>
+  <p class="noindent"><a id="ch01alg-lev2sec1-E"></a><strong>Algorithm E</strong> (<em>Extended Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, we compute their greatest common divisor <em>d</em>, and we also compute two not-necessarily-positive integers <em>a</em> and <em>b</em> such that $am + bn=d$.</p>
 
   <p class="indenthanging"><strong>E1.</strong> [Initialize.] Set $a'←b←1$, $a←b'←0$, $c←m$, $d←n$.</p>
 
-  <p class="indenthanging"><a id="page_14"></a><strong>E2.</strong> [Divide.] Let <em>q</em> and <em>r</em> be the quotient and remainder, respectively, of <em>c</em> divided by <em>d</em>. (We have <em>c</em> = <em>qd</em> + <em>r</em> and 0 ≤ <em>r &lt; d</em>.)</p>
+  <p class="indenthanging"><a id="page_14"></a><strong>E2.</strong> [Divide.] Let <em>q</em> and <em>r</em> be the quotient and remainder, respectively, of <em>c</em> divided by <em>d</em>. (We have $c=qd + r$ and 0 ≤ <em>r</em> &lt; <em>d</em>.)</p>
 
-  <p class="indenthanging"><strong>E3.</strong> [Remainder zero?] If <em>r</em> = 0, the algorithm terminates; we have in this case <em>am</em> + <em>bn</em> = <em>d</em> as desired.</p>
+  <p class="indenthanging"><strong>E3.</strong> [Remainder zero?] If <em>r</em> = 0, the algorithm terminates; we have in this case $am + bn=d$ as desired.</p>
 
   <p class="indenthanging"><strong>E4.</strong> [Recycle.] Set $c←d$, $d←r$, $t←a'$, $a'←a$, $a←t-qa$, $t←b'$, $b'←b$, $b←t-qb$, and go back to E2. <span class="middle"><img src="../Images/common-01.png"></span></p>
 
@@ -279,7 +294,7 @@
 
   <div class="image"><img src="../Images/e014_01.png"></div>
 
-  <p class="noindent">The answer is correct: 5 × 1769 − 16 × 551 = 8845 − 8816 = 29, the greatest common divisor of 1769 and 551.</p>
+  <p class="noindent">The answer is correct: $5 × 1769-16 × 551=8845-8816=29$, the greatest common divisor of 1769 and 551.</p>
 
   <p class="indent">The problem is to <em>prove</em> that this algorithm works properly, for all <em>m</em> and <em>n</em>. We can try to apply the method of mathematical induction by letting $P(n)$ be the statement “<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> works for <em>n</em> and all integers <em>m</em>.” However, that approach doesn’t work out so easily, and we need to prove some extra facts. After a little study, we find that something must be proved about <em>a</em>, <em>b</em>, <em>a</em>′, and <em>b</em>′, and the appropriate fact is that the equalities</p>
 
@@ -287,14 +302,14 @@
 
   <p class="noindent">always hold whenever step E2 is executed. We may prove these equalities directly by observing that they are certainly true the first time we get to E2, and that step E4 does not change their validity. (See <a href="../Text/ch01.html#ch01ex_2_1_6">exercise 6</a>.)</p>
 
-  <p class="indent">Now we are ready to show that <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> is valid, by induction on <em>n</em>: If <em>m</em> is a multiple of <em>n</em>, the algorithm obviously works properly, since we are done immediately at E3 the first time. This case always occurs when <em>n</em> = 1. The only case remaining is when <em>n</em> &gt; 1 and <em>m</em> is not a multiple of <em>n</em>. In such a case, the algorithm proceeds to set $c←n$, $d←r$ after the first execution, and since <em>r &lt; n</em>, <em>we may assume by induction</em> that the final value of <em>d</em> is the gcd of <em>n</em> and <em>r</em>. By the argument given in <a href="../Text/ch01.html#ch01lev1sec1">Section 1.1</a>, the pairs \{<em>m, n</em>\} and \{<em>n, r</em>\} have the same common divisors, and, in particular, they have the same greatest common divisor. Hence <em>d</em> is the gcd of <em>m</em> and <em>n</em>, and <em>am</em> + <em>bn</em> = <em>d</em> by (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>).</p>
+  <p class="indent">Now we are ready to show that <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> is valid, by induction on <em>n</em>: If <em>m</em> is a multiple of <em>n</em>, the algorithm obviously works properly, since we are done immediately at E3 the first time. This case always occurs when <em>n</em> = 1. The only case remaining is when <em>n</em> &gt; 1 and <em>m</em> is not a multiple of <em>n</em>. In such a case, the algorithm proceeds to set $c←n$, $d←r$ after the first execution, and since <em>r &lt; n</em>, <em>we may assume by induction</em> that the final value of <em>d</em> is the gcd of <em>n</em> and <em>r</em>. By the argument given in <a href="../Text/ch01.html#ch01lev1sec1">Section 1.1</a>, the pairs $\{m, n\}$ and $\{n, r\}$ have the same common divisors, and, in particular, they have the same greatest common divisor. Hence <em>d</em> is the gcd of <em>m</em> and <em>n</em>, and $am + bn=d$ by (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>).</p>
 
-  <p class="indent">The italicized phrase in the proof above illustrates the conventional language that is so often used in an inductive proof: When doing part (b) of the construction, rather than saying “We will now assume P(1)<em>, P</em>(2)<em>, ..., P</em>(<em>n</em>), and with this assumption we will prove <em>P</em>(<em>n</em> + 1),” we often say simply “We will now prove $P(n)$; <em>we may assume by induction</em> that $P(k)$ is true whenever 1 ≤ <em>k &lt; n</em>.”</p>
+  <p class="indent">The italicized phrase in the proof above illustrates the conventional language that is so often used in an inductive proof: When doing part (b) of the construction, rather than saying “We will now assume $P(1), P(2), ..., P(n)$, and with this assumption we will prove $P(n + 1)$,” we often say simply “We will now prove $P(n)$; <em>we may assume by induction</em> that $P(k)$ is true whenever 1 ≤ <em>k</em> &lt; <em>n</em>.”</p>
 
-  <p class="indent"><a id="page_15"></a>If we examine this argument very closely and change our viewpoint slightly, we can envision a general method applicable to proving the validity of <em>any</em> algorithm. The idea is to take a flow chart for some algorithm and to label each of the arrows with an assertion about the current state of affairs at the time the computation traverses that arrow. See <a href="../Text/ch01.html#ch01fig04">Fig. 4</a>, where the assertions have been labeled <em>A1, A2,</em> ..., <em>A6.</em> (All of these assertions have the additional stipulation that the variables are integers; this stipulation has been omitted to save space.) <em>A1</em> gives the initial assumptions upon entry to the algorithm, and <em>A4</em> states what we hope to prove about the output values <em>a</em>, <em>b</em>, and <em>d.</em></p>
+  <p class="indent"><a id="page_15"></a>If we examine this argument very closely and change our viewpoint slightly, we can envision a general method applicable to proving the validity of <em>any</em> algorithm. The idea is to take a flow chart for some algorithm and to label each of the arrows with an assertion about the current state of affairs at the time the computation traverses that arrow. See <a href="../Text/ch01.html#ch01fig04">Fig. 4</a>, where the assertions have been labeled <em>A1</em>, <em>A2</em>, ..., <em>A6</em>. (All of these assertions have the additional stipulation that the variables are integers; this stipulation has been omitted to save space.) <em>A1</em> gives the initial assumptions upon entry to the algorithm, and <em>A4</em> states what we hope to prove about the output values <em>a</em>, <em>b</em>, and <em>d.</em></p>
 
   <div class="image4">
-    <a id="ch01fig04"></a><img alt="Image" class="img1" data-mfp-src="/library/view/the-art-of/9780321635754/graphics/01fig04.jpg" height="625" src="./ch01_files/01fig04.jpg" width="962">
+    <a id="ch01fig04"></a><img class="img1" src="../Images/01fig04.png">
 
     <p class="fig-caption"><strong>Fig. 4.</strong> Flow chart for <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a>, labeled with assertions that prove the validity of the algorithm.</p>
   </div>
@@ -342,9 +357,9 @@
 
   <p class="ex-title">Exercises</p>
 
-  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_1a" id="ch01ex_2_1_1">1</a>.</strong> [<em>05</em>] Explain how to modify the idea of proof by mathematical induction, in case we want to prove some statement $P(n)$ for all <em>nonnegative</em> integers — that is, for <em>n</em> = 0, 1, 2, ... instead of for <em>n</em> = 1, 2, 3, ....</p>
+  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_1a" id="ch01ex_2_1_1">1</a>.</strong> [<em>05</em>] Explain how to modify the idea of proof by mathematical induction, in case we want to prove some statement $P(n)$ for all <em>nonnegative</em> integers — that is, for $n=0, 1, 2, ...$ instead of for $n=1, 2, 3, ...$.</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_2a" id="ch01ex_2_1_2">2</a>.</strong> [<em>15</em>] There must be something wrong with the following proof. What is it? “<strong>Theorem.</strong> Let <em>a</em> be any positive number. For all positive integers <em>n</em> we have <em>a</em><sup><em>n</em>−1</sup> = 1. <em>Proof.</em> If <em>n</em> = 1, <em>a</em><sup><em>n</em>−1</sup> = <em>a</em><sup>1−1</sup> = a^{0} = 1. And by induction, assuming that the theorem is true for 1, 2, ..., <em>n</em>, we have</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_2a" id="ch01ex_2_1_2">2</a>.</strong> [<em>15</em>] There must be something wrong with the following proof. What is it? “<strong>Theorem.</strong> Let <em>a</em> be any positive number. For all positive integers <em>n</em> we have $a^{n-1}=1$. <em>Proof.</em> If <em>n</em> = 1, $a^{n-1}=a^{1-1}=a^{0}=1$. And by induction, assuming that the theorem is true for $1, 2, ..., n,$ we have</p>
 
   <div class="image"><img src="../Images/e018_01.png"></div>
 
@@ -354,19 +369,19 @@
 
   <div class="image"><img src="../Images/e018_04.png"></div>
 
-  <p class="exercisesp"><em>Proof.</em> We use induction on <em>n</em>. For <em>n</em> = 1, clearly 3<em>/</em>2 − 1<em>/n</em> = 1<em>/</em>(1 × 2); and, assuming that the theorem is true for <em>n</em>,</p>
+  <p class="exercisesp"><em>Proof.</em> We use induction on <em>n</em>. For <em>n</em> = 1, clearly $3/2-1/n=1/(1 × 2)$; and, assuming that the theorem is true for <em>n</em>,</p>
 
   <div class="image"><img src="../Images/e018_05.png"></div>
 
-  <p class="exercises"><strong>4.</strong> [<em>20</em>] Prove that, in addition to Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>), Fibonacci numbers satisfy F_{n} ≥ <em>φ</em><sup><em>n</em>−2</sup> for all positive integers <em>n</em>.</p>
+  <p class="exercises"><strong>4.</strong> [<em>20</em>] Prove that, in addition to Eq. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>), Fibonacci numbers satisfy $F_{n} ≥ φ^{n-2}$ for all positive integers <em>n</em>.</p>
 
   <p class="exercises"><a id="page_19"></a><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_5a" id="ch01ex_2_1_5">5</a>.</strong> [<em>21</em>] A <em>prime number</em> is an integer &gt; 1 that has no positive integer divisors other than 1 and itself. Using this definition and mathematical induction, prove that every integer &gt; 1 may be written as a product of one or more prime numbers. (A prime number is considered to be the “product” of a single prime, namely itself.)</p>
 
   <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_6a" id="ch01ex_2_1_6">6</a>.</strong> [<em>20</em>] Prove that if Eqs. (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>) hold just before step E4, they hold afterwards also.</p>
 
-  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_7a" id="ch01ex_2_1_7">7</a>.</strong> [<em>23</em>] Formulate and prove by induction a rule for the sums 1^{2}, 2^{2} − 1^{2}, 3^{2} − 2^{2} + 1^{2}, 4^{2} − 3^{2} + 2^{2} − 1^{2}, 5^{2} − 4^{2} + 3^{2} − 2^{2} + 1^{2}, etc.</p>
+  <p class="exercises"><strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_7a" id="ch01ex_2_1_7">7</a>.</strong> [<em>23</em>] Formulate and prove by induction a rule for the sums $1^{2}$, $2^{2}-1^{2}$, $3^{2}-2^{2} + 1^{2}$, $4^{2}-3^{2} + 2^{2}-1^{2}$, $5^{2}-4^{2} + 3^{2}-2^{2} + 1^{2}$, etc.</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_8a" id="ch01ex_2_1_8">8</a>.</strong> [<em>25</em>] (a) Prove the following theorem of Nicomachus (<small>A.D</small>. c. 100) by induction: 1^{3} = 1, 2^{3} = 3 + 5, 3^{3} = 7 + 9 + 11, 4^{3} = 13 + 15 + 17 + 19, etc. (b) Use this result to prove the remarkable formula 1^{3} + 2^{3} + · · · + n^{3} = (1 + 2 + · · · + <em>n</em>)^{2}.</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a class="totri-footnote" href="../Text/app01.html#ch01ex_2_1_8a" id="ch01ex_2_1_8">8</a>.</strong> [<em>25</em>] (a) Prove the following theorem of Nicomachus (<small>A.D</small>. c. 100) by induction: $1^{3}=1$, $2^{3}=3 + 5$, $3^{3}=7 + 9 + 11$, $4^{3}=13 + 15 + 17 + 19$, etc. (b) Use this result to prove the remarkable formula $1^{3} + 2^{3} + ··· + n^{3}=(1 + 2 + ··· + n)^{2}$.</p>
 
   <p class="exercisesp">[<em>Note:</em> An attractive geometric interpretation of this formula, suggested by Warren Lushbaugh, is shown in <a href="../Text/ch01.html#ch01fig05">Fig. 5</a>; see <em>Math. Gazette</em> <strong>49</strong> (1965), 200. The idea is related to Nicomachus’s theorem and <a href="../Text/ch01.html#ch01fig03">Fig. 3</a>. Other “look-see” proofs can be found in books by Martin Gardner, <em>Knotted Doughnuts</em> (New York: Freeman, 1986), Chapter 16; J. H. Conway and R. K. Guy, <em>The Book of Numbers</em> (New York: Copernicus, 1996), <a href="../Text/ch02.html#ch02">Chapter 2</a>.]</p>
 
@@ -376,9 +391,9 @@
     <p class="fig-caption"><strong>Fig. 5.</strong> Geometric version of <a href="../Text/ch01.html#ch01ex_2_1_8">exercise 8</a>(b).</p>
   </div>
 
-  <p class="exercises"><a id="ch01ex_2_1_09"></a><strong>9.</strong> [<em>20</em>] Prove by induction that if 0 <em>&lt; a</em> &lt; 1, then (1 − <em>a</em>)^{n} ≥ 1 − <em>na</em>.</p>
+  <p class="exercises"><a id="ch01ex_2_1_09"></a><strong>9.</strong> [<em>20</em>] Prove by induction that if 0 &lt; <em>a</em> &lt; 1, then $(1-a)^{n} ≥ 1-na$.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_10a" id="ch01ex_2_1_10">10</a>.</strong> [<em>M22</em>] Prove by induction that if <em>n</em> ≥ 10, then 2^{n}<em>&gt; n</em>^{3}.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_10a" id="ch01ex_2_1_10">10</a>.</strong> [<em>M22</em>] Prove by induction that if <em>n</em> ≥ 10, then $2^{n}\gt n^{3}$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_11a" id="ch01ex_2_1_11">11</a>.</strong> [<em>M30</em>] Find and prove a simple formula for the sum</p>
 
@@ -386,7 +401,7 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_12a" id="ch01ex_2_1_12">12</a>.</strong> [<em>M25</em>] Show how <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> can be generalized as stated in the text so that it will accept input values of the form <em>u</em> + <em>v</em> <span class="middle"><img src="../Images/root-2.png"></span>, where <em>u</em> and <em>v</em> are integers, and the computations can still be done in an elementary way (that is, without using the infinite decimal expansion of <span class="middle"><img src="../Images/root-2.png"></span>). Prove that the computation will not terminate, however, if <em>m</em> = 1 and <em>n</em> = <span class="middle"><img src="../Images/root-2.png"></span>.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_13a" id="ch01ex_2_1_13">13</a>.</strong> [<em>M23</em>] Extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> by adding a new variable <em>T</em> and adding the operation “<em>T ← T</em> +1” at the beginning of each step. (Thus, <em>T</em> is like a clock, counting the number of steps executed.) Assume that <em>T</em> is initially zero, so that assertion <em>A1</em> in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a> becomes “<em>m</em> &gt; 0, <em>n</em> &gt; 0, <em>T</em> = 0.” The additional condition “<em>T</em> = 1” should similarly be appended to <em>A2</em>. Show how to append additional conditions to the assertions in such a way that any one of <em>A1</em>, <em>A2</em>, ..., <em>A6</em> implies <em>T</em> ≤ 3<em>n</em>, and such that the inductive proof can still be carried out. (Hence the computation must terminate in at most 3<em>n</em> steps.)</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_13a" id="ch01ex_2_1_13">13</a>.</strong> [<em>M23</em>] Extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> by adding a new variable <em>T</em> and adding the operation “$T ← T +1$” at the beginning of each step. (Thus, <em>T</em> is like a clock, counting the number of steps executed.) Assume that <em>T</em> is initially zero, so that assertion <em>A1</em> in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a> becomes “<em>m</em> &gt; 0, <em>n</em> &gt; 0, <em>T</em> = 0.” The additional condition “<em>T</em> = 1” should similarly be appended to <em>A2</em>. Show how to append additional conditions to the assertions in such a way that any one of <em>A1</em>, <em>A2</em>, ..., <em>A6</em> implies <em>T</em> ≤ 3<em>n</em>, and such that the inductive proof can still be carried out. (Hence the computation must terminate in at most 3<em>n</em> steps.)</p>
 
   <p class="exercises1"><a id="page_20"></a><strong>14.</strong> [<em>50</em>] (R. W. Floyd.) Prepare a computer program that accepts, as input, programs in some programming language together with optional assertions, and that attempts to fill in the remaining assertions necessary to make a proof that the computer program is valid. (For example, strive to get a program that is able to prove the validity of <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a>, given only assertions <em>A1</em>, <em>A4</em>, and <em>A6</em>. See the papers by R. W. Floyd and J. C. King in the IFIP Congress proceedings, 1971, for further discussion.)</p>
 
@@ -626,7 +641,7 @@
 
   <p class="uln-indentC"><strong>L3.</strong> [Compare.] If <em>x</em> − <em>z</em> &lt; 1, set $z←z$ shifted right 1, $k←k + 1$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>L4.</strong> [Reduce values.] Set $x←x-z$, $z←x$ shifted right <em>k</em>, $y←y+\log_{b} (2^{k}/(2^{k} -1))$, and go to L2. <span class="middle"><img src="../Images/box.png"></span></p>
+  <p class="uln-indentC"><strong>L4.</strong> [Reduce values.] Set $x←x-z$, $z←x$ shifted right <em>k</em>, $y←y+\log_{b} (2^{k}/(2^{k}-1))$, and go to L2. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p class="exercisesp">[<em>Notes:</em> This method is very similar to the method used for division in computer hardware. The idea goes back in essence to Henry Briggs, who used it (in decimal rather than binary form) to compute logarithm tables, published in 1624. We need an auxiliary table of the constants log_{b} 2, log_{b} (4<em>/</em>3), log_{b} (8<em>/</em>7), etc., to as many values as the precision of the computer. The algorithm involves intentional computational errors, as numbers are shifted to the right, so that eventually <em>x</em> will be reduced to 1 and the algorithm will terminate. The purpose of this exercise is to explain why it will terminate and why it computes an approximation to log_{b}<em>x</em>. ]</p>
 
@@ -688,13 +703,13 @@
 
   <div class="equation"><a id="ch01eq-lev2sec3-5"></a><img src="../Images/028equ03.png"></div>
 
-  <p class="noindent">This equation represents two kinds of transformations. In the first case we are simply changing the name of the index variable from <em>i</em> to <em>j</em>. The second case is more interesting: Here $p(j)$ is a function of <em>j</em> that represents a <em>permutation</em> of the relevant values; more precisely, for each integer <em>i</em> satisfying the relation $R(i)$, there must be exactly one integer <em>j</em> satisfying the relation $p(j) = i$. This condition is always satisfied in the important cases $p(j) = c + j$ and $p(j) = c-j$, where <em>c</em> is an integer not depending on <em>j</em>, and these are the cases used most frequently in applications. For example,</p>
+  <p class="noindent">This equation represents two kinds of transformations. In the first case we are simply changing the name of the index variable from <em>i</em> to <em>j</em>. The second case is more interesting: Here $p(j)$ is a function of <em>j</em> that represents a <em>permutation</em> of the relevant values; more precisely, for each integer <em>i</em> satisfying the relation $R(i)$, there must be exactly one integer <em>j</em> satisfying the relation $p(j)=i$. This condition is always satisfied in the important cases $p(j)=c + j$ and $p(j)=c-j$, where <em>c</em> is an integer not depending on <em>j</em>, and these are the cases used most frequently in applications. For example,</p>
 
   <div class="equation"><a id="ch01eq-lev2sec3-6"></a><img src="../Images/028equ04.png"></div>
 
   <p class="noindent">The reader should study this example carefully.</p>
 
-  <p class="indent">The replacement of <em>j</em> by $p(j)$ cannot be done for all <em>infinite</em> sums. The operation is always valid if $p(j) = c ± j$, as above, but in other cases some care must be used. [For example, see T. M. Apostol, <em>Mathematical Analysis</em> (Reading, Mass.: Addison–Wesley, 1957), Chapter 12. A sufficient condition to <a id="page_29"></a>guarantee the validity of (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>) for any permutation of the integers, $p(j)$, is that $∑_{R(j)}∣aj∣$<!--mal--> exists.]</p>
+  <p class="indent">The replacement of <em>j</em> by $p(j)$ cannot be done for all <em>infinite</em> sums. The operation is always valid if $p(j)=c ± j$, as above, but in other cases some care must be used. [For example, see T. M. Apostol, <em>Mathematical Analysis</em> (Reading, Mass.: Addison–Wesley, 1957), Chapter 12. A sufficient condition to <a id="page_29"></a>guarantee the validity of (<a class="totri-footnote" href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>) for any permutation of the integers, $p(j)$, is that $∑_{R(j)}∣aj∣$<!--mal--> exists.]</p>
 
   <p class="indenthangingA">c) <em>Interchanging order of summation:</em></p>
 
@@ -1158,7 +1173,7 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_26a" id="ch01ex_2_4_26">26</a>.</strong> [<em>M15</em>] Let <em>p</em> be an odd prime number, let <em>a</em> be any integer, and let <em>b</em> = <em>a</em><sup>(<em>p</em>−1)/2</sup>. Show that <em>b</em> mod <em>p</em> is either 0 or 1 or <em>p</em> − 1. [<em>Hint:</em> Consider (<em>b</em> + 1)(<em>b</em> − 1).]</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_27a" id="ch01ex_2_4_27">27</a>.</strong> [<em>M15</em>] Given that <em>n</em> is a positive integer, let $φ(n)$ be the number of values among \{0, 1<em>, ..., n</em> − 1\} that are relatively prime to <em>n</em>. Thus φ(1) = 1, φ(2) = 1, φ(3) = 2, φ(4) = 2, etc. Show that $φ(p) = p - 1$ if <em>p</em> is a prime number; and evaluate <em>φ</em>(p^{e}), when <em>e</em> is a positive integer.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_27a" id="ch01ex_2_4_27">27</a>.</strong> [<em>M15</em>] Given that <em>n</em> is a positive integer, let $φ(n)$ be the number of values among \{0, 1<em>, ..., n</em> − 1\} that are relatively prime to <em>n</em>. Thus φ(1) = 1, φ(2) = 1, φ(3) = 2, φ(4) = 2, etc. Show that $φ(p)=p-1$ if <em>p</em> is a prime number; and evaluate <em>φ</em>(p^{e}), when <em>e</em> is a positive integer.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_28a" id="ch01ex_2_4_28">28</a>.</strong> [<em>M25</em>] Show that the method used to prove <a href="../Text/ch01.html#ch01the01_F">Theorem F</a> can be used to prove the following extension, called <em>Euler’s theorem</em>: a^{φ(m)} ≡ 1 (modulo m), for <em>any</em> positive integer <em>m</em>, when $a⊥m$. (In particular, the number <em>n</em>′ in <a href="../Text/ch01.html#ch01ex_2_2_19">exercise 19</a> may be taken to be <em>n^{φ}</em><sup>(<em>m</em>)−1</sup> mod <em>m</em>.)</p>
 
@@ -1166,7 +1181,7 @@
 
   <p class="exercises1"><a id="page_43"></a><strong><a href="../Text/app01.html#ch01ex_2_4_30a" id="ch01ex_2_4_30">30</a>.</strong> [<em>M30</em>] Prove that the function $φ(n)$ of <a href="../Text/ch01.html#ch01ex_2_4_27">exercise 27</a> is multiplicative. Using this fact, evaluate <em>φ</em>(1000000), and give a method for evaluating $φ(n)$ in a simple way once <em>n</em> has been factored into primes.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_31a" id="ch01ex_2_4_31">31</a>.</strong> [<em>M22</em>] Prove that if <em>f</em> (<em>n</em>) is multiplicative, so is $g(n) = ∑_{d\minus n}f(d)$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_31a" id="ch01ex_2_4_31">31</a>.</strong> [<em>M22</em>] Prove that if <em>f</em> (<em>n</em>) is multiplicative, so is $g(n)=∑_{d\minus n}f(d)$.</p>
 
   <p class="exercises1"><strong>32.</strong> [<em>M18</em>] Prove the double-summation identity</p>
 
@@ -1413,7 +1428,7 @@
   <p class="noindent">A graph of $Γ(x)$ is shown in <a href="../Text/ch01.html#ch01fig07">Fig. 7</a>.</p>
 
   <div class="image4">
-    <a id="ch01fig07"></a><img alt="Image" class="img1" data-mfp-src="/library/view/the-art-of/9780321635754/graphics/01fig07.jpg" height="631" src="./ch01_files/01fig07.jpg" width="443">
+    <a id="ch01fig07"></a><img class="img1" src="../Images/01fig07.png">
 
     <p class="fig-caption"><strong>Fig. 7.</strong> The function <em>Γ</em> (<em>x</em>) = (<em>x</em> - 1)!. The local minimum at <em>X</em> has the coordinates (1.46163 21449 68362 34126 26595, 0.88560 31944 10888 70027 88159).</p>
   </div>
