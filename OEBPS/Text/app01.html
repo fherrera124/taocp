@@ -600,7 +600,7 @@
 
   <p>Formally, if $a_{1}a_{2}\ldots a_{j}$ is a partition of the set $\{1,2,\ldots,n-1\}$, define</p>
 
-  <p class="center">$\cal{D}a_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪\{n\})a_{2}\ldots a_{j}+$ $a_{1}(a_{2}∪\{n\})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪\{n\})$.</p>
+  <p class="center">${\cal D}a_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪\{n\})a_{2}\ldots a_{j}+$ $a_{1}(a_{2}∪\{n\})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪\{n\})$.</p>
 
   <p>This rule is an exact parallel of the rule</p>
 
@@ -950,7 +950,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_2" id="ch01ex_2_7_2a">2</a>. Replace each term $1/(2^{m}+k)$ by the upper bound $1/2^{m}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_3" id="ch01ex_2_7_3a">3</a>. <span class="middle"><img src="../Images/e492_01.png"></span> is an upper bound.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_3" id="ch01ex_2_7_3a">3</a>. $H_{2^{m}-1}^{(r)}\le\sum_{0\le k\lt m}2^{k}/2^{kr}$; $2^{r-1}/(2^{r-1}-1)$ is an upper bound.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_4" id="ch01ex_2_7_4a">4</a>. (b) and (c).</p>
 
@@ -978,7 +978,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_16" id="ch01ex_2_7_16a">16</a>. $H_{2n-1}-\frac{1}{2}H_{n-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be $(p-1)!$, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, $(p-1)!/1+(p-1)!/2+\cdots+(p-1)!/(p-1)$, <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, $(p-1)!/k≡(p-1)!k'$, where <em>k</em>′ can be determined by the relation $kk'\bmod p=1$. The set $\{1',2',\ldots,(p-1)'\}$ is just the set $\{1,2,\ldots,p-1\}$; so the numerator is congruent to $(p-1)!(1+2+\cdots+p-1)≡ 0$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be $(p-1)!$, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, $(p-1)!/1+(p-1)!/2+\cdots+(p-1)!/(p-1)$, <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, $(p-1)!/k≡(p-1)!\,k'$, where <em>k</em>′ can be determined by the relation $kk'\bmod p=1$. The set $\{1',2',\ldots,(p-1)'\}$ is just the set $\{1,2,\ldots,p-1\}$; so the numerator is congruent to $(p-1)!\,(1+2+\cdots+p-1)≡0$.</p>
 
   <p class="indent"><em>Second solution</em> (advanced): By exercise 4.6.2–6, we have $x^{\overline p}\equiv x^{p}-x\text{ (modulo }p)$; hence ${p\brack k}\equiv\delta_{kp}-\delta_{k1}$, by <a href="../Text/ch01a.html#ch01ex_2_6_32">exercise 1.2.6–32</a>. Now apply <a href="../Text/ch01a.html#ch01ex_2_7_6">exercise 6</a>.</p>
 
@@ -986,13 +986,13 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_18" id="ch01ex_2_7_18a">18</a>. If $n=2^{k}m$ where <em>m</em> is odd, the sum equals $2^{2k}m_{1}/m_{2}$ where $m_{1}$ and $m_{2}$ are both odd. [<em>AMM</em> <strong>67</strong> (1960), 924–925.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only <em>n</em> = 0, <em>n</em> = 1. For <em>n</em> ≥ 2, let $k=\lfloor\lg n\rfloor$. There is precisely one term whose denominator is $2^{k}$, so <span class="middle"><img src="../Images/e492_13.png"></span> is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, <span class="middle"><img src="../Images/e492_14.png"></span> would have a denominator equal to 2.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only <em>n</em> = 0, <em>n</em> = 1. For <em>n</em> ≥ 2, let $k=\lfloor\lg n\rfloor$. There is precisely one term whose denominator is $2^{k}$, so $2^{k-1}H_{n}-\frac12$ is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, $2^{k-1}H_{n}-\frac12$ would have a denominator equal to 2.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_20" id="ch01ex_2_7_20a">20</a>. Expand the integrand term by term. See also <em>AMM</em> <strong>69</strong> (1962), 239, and an article by H. W. Gould, <em>Mathematics Magazine</em> <strong>34</strong> (1961), 317–321.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_21" id="ch01ex_2_7_21a">21</a>. <span class="middle"><img src="../Images/e492_15.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_21" id="ch01ex_2_7_21a">21</a>. $H_{n+1}^{2}-H_{n+1}^{(2)}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_22" id="ch01ex_2_7_22a">22</a>. <span class="middle"><img src="../Images/e492_16.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_22" id="ch01ex_2_7_22a">22</a>. $(n+1)(H_n^{2}-H_n^{(2)})-2n(H_{n}-1)$.</p>
 
   <p><a id="page_493"></a><a href="../Text/ch01a.html#ch01ex_2_7_23" id="ch01ex_2_7_23a">23</a>. $\varGamma'(n+1)/\varGamma(n+1)=1/n+\varGamma'(n)/\varGamma(n)$, since $\varGamma(x+1)=x\varGamma(x)$. Hence $H_{n}=γ+\varGamma'(n+1)/\varGamma(n+1)$. The function $\psi(x)=\varGamma'(x)/\varGamma(x)=H_{x-1}-γ$ is called the <em>psi function</em> or the <em>digamma function</em>. Some values for rational <em>x</em> appear in <a href="../Text/app02.html#app02">Appendix A</a>.</p>
 
@@ -1000,21 +1000,21 @@
 
   <div class="image"><img src="../Images/e493_01.png"></div>
 
-  <p><em>Note:</em> The generalization of $H_{n}$ considered in the previous exercise is therefore equal to <span class="middle"><img src="../Images/e493_02.png"></span>, when <em>r</em> = 1; the same idea can be used for larger values of <em>r</em>. The infinite product converges for all complex <em>x</em>.</p>
+  <p><em>Note:</em> The generalization of $H_{n}$ considered in the previous exercise is therefore equal to $H_{x}^{(r)}=\sum_{k\ge0}(1/(k+1)^{r}-1/(k+1+x)^{r})$, when <em>r</em> = 1; the same idea can be used for larger values of <em>r</em>. The infinite product converges for all complex <em>x</em>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_25" id="ch01ex_2_7_25a">25</a>. <span class="middle"><img src="../Images/e493_03.png"></span> and <span class="middle"><img src="../Images/e493_04.png"></span>; so the identity generalizes (<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>). [See L. Euler, <em>Novi Comment. Acad. Sci. Pet.</em> <strong>20</strong> (1775), 140–186,§2.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_25" id="ch01ex_2_7_25a">25</a>. $H_{n}^{(0,v)}=\sum_{k=1}^{n}H_{n}^{(v)}$ and $H_{n}^{(u,0)}=H_{n}^{(u-1)}$; so the identity generalizes (<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>). [See L. Euler, <em>Novi Comment. Acad. Sci. Pet.</em> <strong>20</strong> (1775), 140–186,§2.]</p>
 
   <h4 id="app01lev2sec8">Section 1.2.8</h4>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_1" id="ch01ex_2_8_1a">1</a>. After <em>k</em> months there are $F_{k+2}$ pairs, so the answer is $F_{14}=377$ pairs.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_2" id="ch01ex_2_8_2a">2</a>. <span class="middle"><img src="../Images/e493_05.png"></span>; $\log_{10}F_{1000}$ is $1/(\ln 10)$ times this, or 208.64; $F_{1000}$ is therefore a 209-digit number whose leading digit is 4.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_2" id="ch01ex_2_8_2a">2</a>. $\ln(\phi^{1000}/\sqrt{5})=1000\ln\phi-\frac{1}{2}\ln 5=480.40711$; $\log_{10}F_{1000}$ is $1/(\ln 10)$ times this, or 208.64; $F_{1000}$ is therefore a 209-digit number whose leading digit is 4.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_4" id="ch01ex_2_8_4a">4</a>. 0, 1, 5; afterwards $F_{n}$ increases too fast.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_5" id="ch01ex_2_8_5a">5</a>. 0, 1, 12.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_6" id="ch01ex_2_8_6a">6</a>. Induction. (The equation holds for <em>negative n</em> also; see <a href="../Text/ch01a.html#ch01ex_2_8_8">exercise 8</a>.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_6" id="ch01ex_2_8_6a">6</a>. Induction. (The equation holds for <em>negative</em> <em>n</em> also; see <a href="../Text/ch01a.html#ch01ex_2_8_8">exercise 8</a>.)</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_7" id="ch01ex_2_8_7a">7</a>. If <em>d</em> is a proper divisor of <em>n</em>, $F_{d}$ divides $F_{n}$. Now $F_{d}$ is greater than one and less than $F_{n}$ provided <em>d</em> is greater than 2. The only nonprime number that has no proper factor greater than 2 is <em>n</em> = 4; $F_{4}=3$ is the only exception.</p>
 
@@ -1024,57 +1024,57 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_10" id="ch01ex_2_8_10a">10</a>. When <em>n</em> is even, it is greater; when <em>n</em> is odd, it is less. (See Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-14">14</a>).)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_11" id="ch01ex_2_8_11a">11</a>.. Induction; see <a href="../Text/ch01a.html#ch01ex_2_8_9">exercise 9</a>. This is a special case of <a href="../Text/ch01a.html#ch01ex_2_8_13">exercise 13</a>(a).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_11" id="ch01ex_2_8_11a">11</a>. Induction; see <a href="../Text/ch01a.html#ch01ex_2_8_9">exercise 9</a>. This is a special case of <a href="../Text/ch01a.html#ch01ex_2_8_13">exercise 13</a>(a).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_12" id="ch01ex_2_8_12a">12</a>. If <span class="middle"><img src="../Images/e493_16.png"></span>, <span class="middle"><img src="../Images/e493_17.png"></span>. Hence <span class="middle"><img src="../Images/e493_18.png"></span>; from Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-17">17</a>) we find <span class="middle"><img src="../Images/e493_19.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_12" id="ch01ex_2_8_12a">12</a>. If ${\cal G}(z)=\sum{\cal F}_{n}z^{n}$, $(1-z-z^{2}){\cal G}(z)=z+F_{0}z^{2}+F_{1}z^{3}+\cdots=z+z^{2}G(z)$. Hence ${\cal G}(z)=G(z)+zG(z)^{2}$; from Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-17">17</a>) we find ${\cal F}_n=((3n+3)/5)F_{n}-(n/5)F_{n+1}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_13" id="ch01ex_2_8_13a">13</a>. (a) $a_{n}=rF_{n-1}+sF_{n}$. (b) Since $(b_{n+2}+c)=(b_{n+1}+c)+(b_{n}+c)$, we may consider the new sequence $b'_{n}=b_{n}+c$. Applying part (a) to $b'_{n}$, we obtain the answer $cF_{n-1}+(c+1)F_{n}-c$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. <span class="middle"><img src="../Images/e493_08.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. $a_n=F_{m+n+1}+F_{n}-\binom{n}{m}-\binom{n+1}{m-1}-\cdots-\binom{n+m}{0}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_15" id="ch01ex_2_8_15a">15</a>. $c_{n}=xa_{n}+yb_{n}+(1-x-y)F_{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. $F_{n+1}$. Induction, and <span class="middle"><img src="../Images/e493_09.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. $F_{n+1}$. Induction, and $\binom{n+1-k}{k}=\binom{n-k}{k}+\binom{(n-1)-(k-1)}{k-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity $(x^{n+k}-y^{n+k})(x^{m-k}-y^{m-k})-(x^{n}-y^{n})(x^{m}-y^{m})$ is equal to $(xy)^{n}(x^{m-n-k}-y^{m-n-k})(x^{k}-y^{k})$. Set $x=\phi$, $y=<span class="middle"><img src="../Images/pi-circ.png"></span>$, and divide by <span class="middle"><img src="../Images/e493_10.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity $(x^{n+k}-y^{n+k})(x^{m-k}-y^{m-k})-(x^{n}-y^{n})(x^{m}-y^{m})$ is equal to $(xy)^{n}(x^{m-n-k}-y^{m-n-k})(x^{k}-y^{k})$. Set $x=\phi$, $y=\widehat\phi$, and divide by $(\sqrt{5})^{2}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_18" id="ch01ex_2_8_18a">18</a>. It is $F_{2n+1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_19" id="ch01ex_2_8_19a">19</a>. Let $u=\cos 72^{°}$, $v=\cos 36^{°}$. We have $u=2v^{2}-1$; $v=1-2\sin^{2}18^{°}=1-2u^{2}$. Hence $u+v=2(v^{2}-u^{2})$, i.e., $1=2(v-u)=2v-4v^{2}+2$. We conclude that <span class="middle"><img src="../Images/e493_11.png"></span>. (Also <span class="middle"><img src="../Images/e493_12.png"></span>, $\sin 36^{°}=\frac12 5^{1/4}\phi^{-1/2}$, $\sin 72^{°}=\frac12 5^{1/4}\phi^{1/2}$. Another interesting angle is $α=\arctan\phi=\frac{\pi}{4}+\frac12\arctan\frac12$, for which we have $\sin α=5^{-1/4}\phi^{1/2}$, $\cos α=5^{-1/4}\phi^{-1/2}$.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_19" id="ch01ex_2_8_19a">19</a>. Let $u=\cos 72^{°}$, $v=\cos 36^{°}$. We have $u=2v^{2}-1$; $v=1-2\sin^{2}18^{°}=1-2u^{2}$. Hence $u+v=2(v^{2}-u^{2})$, i.e., $1=2(v-u)=2v-4v^{2}+2$. We conclude that $v=\frac{1}{2}\phi$. (Also $u=\frac{1}{2}\phi^{-1}$, $\sin 36^{°}=\frac12 5^{1/4}\phi^{-1/2}$, $\sin 72^{°}=\frac12 5^{1/4}\phi^{1/2}$. Another interesting angle is $α=\arctan\phi=\frac{\pi}{4}+\frac12\arctan\frac12$, for which we have $\sin α=5^{-1/4}\phi^{1/2}$, $\cos α=5^{-1/4}\phi^{-1/2}$.)</p>
 
   <p><a id="page_494"></a><a href="../Text/ch01a.html#ch01ex_2_8_20" id="ch01ex_2_8_20a">20</a>. $F_{n+2}-1$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_21" id="ch01ex_2_8_21a">21</a>. Multiply by $x^{2}+x-1$; the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n-x})/(x^{2}+x-1)$. If the denominator is zero, <em>x</em> is $1/\phi$ or <span class="middle"><img src="../Images/e494_01.png"></span>; then the solution is $(n+1-x^{n}F_{n+1})/(2x+1)$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_21" id="ch01ex_2_8_21a">21</a>. Multiply by $x^{2}+x-1$; the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n}-x)/(x^{2}+x-1)$. If the denominator is zero, <em>x</em> is $1/\phi$ or $1/\widehat\phi$; then the solution is $(n+1-x^{n}F_{n+1})/(2x+1)$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. $F_{m+2n}$; set <em>t</em> = 2 in the next exercise.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. <span class="top"><img src="../Images/e494_02.png"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. $\frac{1}{\sqrt{5}}\sum\limits_{k}{\binom{n}{k}}(\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\phi^{m}-\widehat\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\widehat\phi^{m})=$ $\frac{1}{\sqrt{5}}(\phi^{m}(\phi F_{t}+F_{t-1})^{n}-\widehat\phi^{m}(\widehat\phi F_{t}+F_{t-1})^{n})=$ $F_{m+tn}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_24" id="ch01ex_2_8_24a">24</a>. $F_{n+1}$ (expand by cofactors in the first row).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_25" id="ch01ex_2_8_25a">25</a>. <span class="middle"><img src="../Images/e494_03.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_25" id="ch01ex_2_8_25a">25</a>. $2^{n}\sqrt{5}F_{n}=(1+\sqrt{5})^{n}-(1-\sqrt{5})^{n}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_26" id="ch01ex_2_8_26a">26</a>. By Fermat’s theorem, $2^{p-1}≡1$; now apply the previous exercise and <a href="../Text/ch01a.html#ch01ex_2_6_10">exercise 1.2.6–10</a>(b).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_27" id="ch01ex_2_8_27a">27</a>. The statement is true if <em>p</em> = 2. Otherwise <span class="middle"><img src="../Images/e494_04.png"></span>; hence, from the previous exercise and Fermat’s theorem, $F_{p-1}F_{p+1}≡0\text{ (modulo }p)$. Only one of these factors can be a multiple of <em>p</em>, since $F_{p+1}=F_{p}+F_{p-1}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_27" id="ch01ex_2_8_27a">27</a>. The statement is true if <em>p</em> = 2. Otherwise $F_{p-1}F_{p+1}-F_{p}^{2}=-1$; hence, from the previous exercise and Fermat’s theorem, $F_{p-1}F_{p+1}≡0\text{ (modulo }p)$. Only one of these factors can be a multiple of <em>p</em>, since $F_{p+1}=F_{p}+F_{p-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_28" id="ch01ex_2_8_28a">28</a>. <span class="middle"><img src="../Images/e494_05.png"></span>. <em>Note:</em> The solution to the recurrence $a_{n+1}=Aa_{n}+B^{n}$, $a_{0}=0$, is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_28" id="ch01ex_2_8_28a">28</a>. $\widehat\phi^{n}$. <em>Note:</em> The solution to the recurrence $a_{n+1}=Aa_{n}+B^{n}$, $a_{0}=0$, is</p>
 
-  <p class="center">$a_{n}=(A^{n}-B^{n})/(A-B)$ if <em>A</em>≠ <em>B,</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$a_{n}=nA^{n-1}$ if <em>A</em> = <em>B.</em></p>
+  <p class="center">$a_{n}=(A^{n}-B^{n})/(A-B){\rm\;if}\;A≠B,$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$a_{n}=nA^{n-1}{\rm\;if}\;A=B$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_29" id="ch01ex_2_8_29a">29</a>. (a) <span class="top"><img src="../Images/e494_06.png"></span></p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_29" id="ch01ex_2_8_29a">29</a>. (a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="top"><img src="../Images/e494_06.png"></span></p>
 
   <p class="indent">(b) follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec8-6">6</a>). [É. Lucas, <em>Amer. J. Math.</em> <strong>1</strong> (1878), 201–204.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_30" id="ch01ex_2_8_30a">30</a>. We argue by induction on <em>m</em>, the statement being obvious when <em>m</em> = 1:</p>
 
-  <p class="exercises2I">(a) <span class="middle"><img src="../Images/e494_07.png"></span>.</p>
+  <p class="indent">(a) <span class="middle"><img src="../Images/e494_07.png"></span>.</p>
 
-  <p class="exercises2I">(b) <span class="top"><img src="../Images/e494_08.png"></span>.</p>
+  <p class="indent">(b) <span class="top"><img src="../Images/e494_08.png"></span>.</p>
 
-  <p class="exercises2I">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠ 0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
+  <p class="indent">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠ 0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
 
-  <p class="exercises2I">(d) Since $F_{n+k}=F_{k-1}F_{n}+F_{k}F_{n+1}$ the result follows from (a) and (c). This result may also be proved in slightly more general form by using the <em>q</em>-nomial theorem of <a href="../Text/ch01a.html#ch01ex_2_6_58">exercise 1.2.6–58</a>. <em>References:</em> Dov Jarden, <em>Recurring Sequences</em>, 2nd ed. (Jerusalem, 1966), 30–33; J. Riordan, <em>Duke Math. J.</em> <strong>29</strong> (1962), 5–12.</p>
+  <p class="indent">(d) Since $F_{n+k}=F_{k-1}F_{n}+F_{k}F_{n+1}$ the result follows from (a) and (c). This result may also be proved in slightly more general form by using the <em>q</em>-nomial theorem of <a href="../Text/ch01a.html#ch01ex_2_6_58">exercise 1.2.6–58</a>. <em>References:</em> Dov Jarden, <em>Recurring Sequences</em>, 2nd ed. (Jerusalem, 1966), 30–33; J. Riordan, <em>Duke Math. J.</em> <strong>29</strong> (1962), 5–12.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_31" id="ch01ex_2_8_31a">31</a>. Use <a href="../Text/ch01a.html#ch01ex_2_8_8">exercises 8</a> and <a href="../Text/ch01a.html#ch01ex_2_8_11">11</a>.</p>
 

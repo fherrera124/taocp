@@ -46,4 +46,9 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: [...] it is $1/2$.
     - Actual: [...] it is $\lt 1/2$.
 
+  - Answer **21** of **Section 1.2.8**:
+
+    - Before: [...] the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n-x})/(x^{2}+x-1)$
+    - Actual: [...] the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n}-x)/(x^{2}+x-1)$
+
  <a id="note1"></a>[*](#title) The list does not include all errors found, only those in which I'm not entirely sure if the correction is correct.
