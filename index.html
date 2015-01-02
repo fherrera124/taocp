@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>The Art of Computer Programming: Volume 1 / Fundamental Algorithms, Third Edition</title>
   <meta content="charset=utf-8">
   <meta charset="utf-8">
-
-  <title>Cover Page</title>
   <style type="text/css">
-
-  .cover {
-  margin-top: 2pt;
-  margin-bottom: 2pt;
-  text-align: center;
+html {
+  height: 100%;
+  }
+  /* This is taken from:
+  http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
+  http://coding.smashingmagazine.com/2013/05/22/centering-elements-with-flexbox/
+  */
+  body {
+  background-color: #f0f0f0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  ebkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+  width: 100%
+  }
+  section {
+  max-width: 94%;
+  }
+  @media (max-width: 480px) {
+  section {
+  max-width: 97%;
+  }
+  }
+  a.cover {
+  position: relative;
+  z-index: 1;
   }
 
+  a.cover figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  -webkit-box-shadow: 2px 3px 20px rgba(0,0,0,0.5);
+  box-shadow: 2px 3px 20px rgba(0,0,0,0.5);
+  display: inline-block;
+  }
+
+  a.cover object {
+  position: relative;
+  z-index: -1;
+  width: 100%; 
+  height: auto;
+  background-color: #fbfbfb;
+  }
+  figure {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 1.2em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  }
   </style>
 </head>
 
 <body>
-  <p class="cover"><a href="./OEBPS/Text/toc.html" id="cover"><img src="./OEBPS/Images/cover.jpeg"/></a></p>
+  <section>
+    <a class="cover" href="./OEBPS/Text/toc.html" id="cover">
+    <figure>
+      <object data="./OEBPS/Images/cover.jpeg">
+        </object>
+    </figure></a>
+  </section>
+
+  <section>
+    <a href="https://github.com/elganzua124/taocp"><img alt="Fork me on GitHub" src="./OEBPS/Images/right-red@2x.png" style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index: 10; opacity: 0.5;"></a>
+  </section>
 </body>
 </html>
