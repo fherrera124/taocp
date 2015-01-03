@@ -61,4 +61,5 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: [...] it is $1/2$.
     - Actual: [...] it is $\lt 1/2$.
 
- <a id="note1"></a>[*](#title) The list does not include all errors found, only those in which I'm not entirely sure if the correction is correct.
+
+<a id="note1"></a>[*](#title) The list does not include all errors found, only those in which I'm not entirely sure if the correction is correct.
