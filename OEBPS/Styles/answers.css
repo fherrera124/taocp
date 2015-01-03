@@ -16,10 +16,8 @@ body {
   background-color: #F8F4E7;
 }
 h1, h2, h3, h4, h5 {
-  font-family: "source sans pro", sans-serif, "AvenirNextCondensed-Medium", "HelveticaNeue-CondensedBold", "Droid Sans", Helvetica, Arial, sans-serif !important;
+  font-family: "source sans pro", sans-serif, "Droid Sans", Helvetica, Arial;
   line-height: 1.1;
-  font-style: normal;
-  font-weight: 700;
   page-break-after: avoid;
 }
 h1 {

@@ -1,12 +1,4 @@
 @font-face {
-  font-family:"RotisSansSerif-Bold";
-  src:url(fonts/RotisSansSerif-Bold.ttf)
-}
-@font-face {
-  font-family:"RotisSansSerif-Italic";
-  src:url(fonts/RotisSansSerif-Italic.ttf)
-}
-@font-face {
   font-family: 'MathJax_Typewriter';
   src:url('../Fonts/MathJax_Typewriter-Regular.otf');
   font-style: normal;
@@ -23,7 +15,12 @@ body {
   text-indent: 0.002pt;
   background-color: #F8F4E7;
 }
-
+h2, h3, h4, h5, h6 {
+  font-family: "source sans pro", sans-serif, "Droid Sans", Helvetica, Arial;
+  page-break-after:avoid;
+  text-align:left;
+  line-height: 1.1;
+}
 h1 {
   margin-top:15pt;
   margin-bottom:12pt;
@@ -31,55 +28,34 @@ h1 {
   font-weight:700;
   page-break-after:avoid
 }
-
 h2 {
-  font-family:"RotisSansSerif-Bold";
   margin-top:7pt;
   margin-bottom:25pt;
   font-weight:700;
-  page-break-after:avoid;
-  text-align:left
 }
-
 h3 {
-  font-family:"RotisSansSerif-Bold";
   margin-top:9pt;
   margin-bottom:8pt;
   font-weight:700;
-  page-break-after:avoid;
-  text-align:left
 }
-
 h4 {
-  font-family:"RotisSansSerif-Bold";
   margin-top:9pt;
   margin-bottom:6pt;
   font-weight:700;
   font-size:110%;
-  page-break-after:avoid;
-  text-align:left
 }
-
 h5 {
-  font-family:"RotisSansSerif-Bold";
   margin-top:9pt;
   margin-bottom:6pt;
   font-weight:700;
   font-size:105%;
-  page-break-after:avoid;
-  text-align:left
 }
-
 h6 {
-  font-family:"RotisSansSerif-Bold";
   margin-top:9pt;
   margin-bottom:6pt;
   font-weight:700;
   font-size:100%;
-  page-break-after:avoid;
-  text-align:left
 }
-
 .ex-title {
   margin-top:9pt;
   margin-bottom:8pt;
@@ -87,19 +63,16 @@ h6 {
   page-break-after:avoid;
   text-align:left
 }
-
 .indent {
   margin-top:4pt;
   margin-bottom:4pt;
   text-indent:25pt
 }
-
 .noindent {
   margin-top:4pt;
   margin-bottom:4pt;
   text-indent:.002pt
 }
-
 .attribution {
   font-family:"Arial Unicode MS";
   src:url(fonts/ARIALUNI.TTF);
@@ -108,68 +81,57 @@ h6 {
   margin-right:25pt;
   text-align:right
 }
-
 .blockquote {
   font-family:"Arial Unicode MS";
   src:url(fonts/ARIALUNI.TTF);
   margin-top:20pt;
   margin-bottom:4pt;
-  margin-right:25pt;
-  margin-left:25pt;
+  margin-left:200pt;
   text-align:right
 }
-
 .roman_italic {
   font-family:"Arial_Italic";
   src:url(fonts/Arial_Italic.ttf);
   font-weight:400;
   font-style:italic
 }
-
 div.image img {
   max-width:99%;
   max-height:99%
 }
-
 .image {
   margin-top:5pt;
   text-align:center;
   page-break-inside:avoid
 }
-
 div.equation img {
   max-width:99%;
   max-height:99%
 }
-
 .equation {
   margin-top:4pt;
   margin-bottom:4pt;
   text-align:right
 }
-
 .indenthangingNP {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:40pt;
   text-align:left
 }
-
 .fig-caption {
   margin-bottom:8pt;
   text-align:center;
   page-break-before:avoid;
   page-break-inside:avoid
 }
-
 code {
-  font-family:Courier New,monospace
+  font-family: 'MathJax_Typewriter';
+  font-size: inherit;
 }
-
 .center {
   text-align:center
 }
-
 .footnote {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -178,22 +140,14 @@ code {
   text-align:left;
   font-size:.88em
 }
-
 .uln-indent {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:25pt
 }
-
-.ent {
-  font-family:"Arial Unicode MS";
-  src:url(fonts/ARIALUNI.TTF)
-}
-
 .heading {
   page-break-inside:avoid
 }
-
 .exercises {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -201,14 +155,12 @@ code {
   text-indent:15pt;
   text-align:left
 }
-
 .exercisesp {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:10pt;
   text-align:left
 }
-
 .exercises2 {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -216,7 +168,6 @@ code {
   text-indent:-10pt;
   text-align:left
 }
-
 .exercises3 {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -224,7 +175,6 @@ code {
   text-indent:-15pt;
   text-align:left
 }
-
 .exercises1 {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -232,7 +182,6 @@ code {
   text-indent:-.5pt;
   text-align:left
 }
-
 .indenthangingA {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -240,7 +189,6 @@ code {
   text-indent:-13pt;
   text-align:left
 }
-
 .indenthanging {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -248,14 +196,12 @@ code {
   text-indent:-19pt;
   text-align:left
 }
-
 .number {
   margin-top:4pt;
   margin-bottom:4pt;
   text-indent:25pt;
   text-align:left
 }
-
 .exercises1N {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -263,7 +209,6 @@ code {
   text-indent:15pt;
   text-align:left
 }
-
 .indenti {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -271,7 +216,6 @@ code {
   text-indent:-12pt;
   text-align:left
 }
-
 .indenta {
   margin-top:4pt;
   margin-bottom:4pt;
@@ -279,19 +223,16 @@ code {
   text-indent:-13.5pt;
   text-align:left
 }
-
 .uln-indentC {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:48pt;
   text-indent:-18.5pt
 }
-
 div.image4 img.img1 {
   width:95%;
   height:95%
 }
-
 .image4 {
   margin-top:5pt;
   text-align:center;

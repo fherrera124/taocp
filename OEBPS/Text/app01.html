@@ -1486,13 +1486,21 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_5" id="ch01ex_2_12_5a">5</a>. ‘<code>DIV -80,3(0:5)</code>’ or simply ‘<code>DIV -80,3</code>’.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_12_6" id="ch01ex_2_12_6a">6</a>. (a) <span class="middle"><img src="../Images/e507_07.png"></span>. (b) ${\rm rI2}←-200$. (c) <span class="middle"><img src="../Images/e507_08.png"></span>. (d) Undefined; we can’t load such a big value into an index register. (e) <span class="middle"><img src="../Images/e507_09.png"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_6" id="ch01ex_2_12_6a">6</a>.&nbsp;&nbsp;&nbsp;(a) <span class="middle"><img src="../Images/e507_07.png"></span>.</p>
+
+  <p class="indent">(b) ${\rm rI2}←-200$.</p>
+
+  <p class="indent">(c) <span class="middle"><img src="../Images/e507_08.png"></span>.</p>
+
+  <p class="indent">(d) Undefined; we can’t load such a big value into an index register.</p>
+
+  <p class="indent">(e) <span class="middle"><img src="../Images/e507_09.png"></span>.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_7" id="ch01ex_2_12_7a">7</a>. Let $n=\rm|rAX|$ be the magnitude of registers A and X before the operation, and let $d=\rm|V|$ be the magnitude of the divisor. After the operation the magnitude of rA is $\lfloor n/d\rfloor$, and the magnitude of rX is $n\bmod d$. The sign of rX afterwards is the previous sign of rA; the sign of rA afterwards is + if the previous signs of rA and V were the same, otherwise it is −.</p>
 
   <p class="indent">Stating this another way: If the signs of rA and V are the same, $\rm rA←\lfloor rAX/V\rfloor$ and $\rm rX←rAX\bmod V$. Otherwise $\rm rA←\lceil rAX/V\rceil$ and $\rm rX←rAX\bmod-V$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_12_8" id="ch01ex_2_12_8a">8</a>. <span class="middle"><img src="../Images/e507_10.png"></span> <span class="middle"><img src="../Images/e507_11.png"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_8" id="ch01ex_2_12_8a">8</a>. <span class="middle"><img src="../Images/e507_10.png"></span>; <span class="middle"><img src="../Images/e507_11.png"></span>.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_9" id="ch01ex_2_12_9a">9</a>. <code>ADD</code>, <code>SUB</code>, <code>DIV</code>, <code>NUM</code>, <code>JOV</code>, <code>JNOV</code>, <code>INCA</code>, <code>DECA</code>, <code>INCX</code>, <code>DECX</code>.</p>
 
@@ -1512,9 +1520,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_17" id="ch01ex_2_12_17a">17</a>. (a) <code>STZ 0,2</code>; <code>DEC2 1</code>; <code>J2NN 3000</code>.</p>
 
-  <p class="answerp">(b)</p>
-
-  <div class="image"><img src="../Images/508fig01.png"></div>
+  <p class="indent">(b) <span class="top"><img src="../Images/508fig01.png"></span></p>
 
   <p>(A slightly faster, but quite preposterous, program uses 993 <code>STZ</code>’s: <code>JMP 3995</code>; <code>STZ 1,2</code>; <code>STZ 2,2</code>; ...; <code>STZ 993,2</code>; <code>J2N 3999</code>; <code>DEC2 993</code>; <code>J2NN 3001</code>; <code>ENN1 0,2</code>; <code>JMP 3000,1</code>.)</p>
 
@@ -1554,7 +1560,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_24" id="ch01ex_2_12_24a">24</a>. (a) <code>DIV 3500</code>, where <span class="middle"><img src="../Images/e509_05.png"></span>.</p>
 
-  <p class="answerp">(b) <code>SRC 4</code>; <code>SRA 1</code>; <code>SLC 5</code>.</p>
+  <p class="indent">(b) <code>SRC 4</code>; <code>SRA 1</code>; <code>SLC 5</code>.</p>
 
   <p><a id="page_510"></a><a href="../Text/ch01b.html#ch01ex_2_12_25" id="ch01ex_2_12_25a">25</a>. Some ideas: (a) Obvious things like faster memory, more input-output devices. (b) The I field could be used for J-register indexing, and/or multiple indexing (to specify two different index registers) and/or “indirect addressing” (<a href="../Text/ch01c.html#ch01ex_2_18_3">exercise 1.4.4–4</a>. (e) A “real time clock” could be added, in a negative memory address. (f) Bitwise operations, jumps on register even or odd, and binary shifts could be added to binary versions of <code>MIX</code> (see, for example, exercises 2.5–28, 5.2.2–12, and 6.3–9; also Program 4.5.2B, 6.4–(24), and Section 7.1). (g) An “execute” command, meaning to perform the instruction at location M, could be another variant of C = 5. (h) Another variant of $\rm C=48,\ldots,55$ could set $\rm CI←register: M$.</p>
 

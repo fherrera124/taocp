@@ -28,18 +28,11 @@
 
   <div class="image"><img src="../Images/c01/xx-fig01.png"></div>
 
-  <p class="blockquote"><a id="page_1"></a><span class="roman_italic">Many persons who are not conversant with mathematical studies<br>
-  imagine that because the business of [Babbage’s Analytical Engine] is to<br>
-  give its results in numerical notation, the nature of its processes must<br>
-  consequently be arithmetical and numerical, rather than algebraical and<br>
-  analytical. This is an error. The engine can arrange and combine its<br>
-  numerical quantities exactly as if they were letters or any other general<br>
-  symbols; and in fact it might bring out its results in algebraical notation,<br>
-  were provisions made accordingly.</span></p>
+  <p class="blockquote"><a id="page_1"></a><span class="roman_italic">Many persons who are not conversant with mathematical studies imagine that because the business of [Babbage’s Analytical Engine] is to give its results in numerical notation, the nature of its processes must consequently be arithmetical and numerical, rather than algebraical and analytical. This is an error. The engine can arrange and combine its numerical quantities exactly as if they were letters or any other general symbols; and in fact it might bring out its results in algebraical notation, were provisions made accordingly.</span></p>
 
   <p class="attribution">— AUGUSTA ADA, Countess of Lovelace (1843)</p>
 
-  <p class="blockquote"><span class="roman_italic">Practice yourself, for heaven’s sake, in little things;<br>
+  <p class="blockquote"><span class="roman_italic">Practice yourself, for heaven’s sake, in little things;
   and thence proceed to greater</span>.</p>
 
   <p class="attribution">— EPICTETUS (<span class="roman_italic">Discourses</span> IV.i)</p>
@@ -130,7 +123,7 @@
 
   <p class="indent">For example, let’s consider Euclid’s algorithm from this point of view. Suppose we ask the question, “Assuming that the value of <em>n</em> is known but <em>m</em> is allowed to range over all positive integers, what is the <em>average</em> number of times, $T_{n}$, that step E1 of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> will be performed?” In the first place, we need to check that this question does have a meaningful answer, since we are trying to take an average over infinitely many choices for <em>m</em>. But it is evident that after the first execution of step E1 only the remainder of <em>m</em> after division by <em>n</em> is relevant. So all we must do to find $T_{n}$ is to try the algorithm for <em>m</em> = 1, <em>m</em> = 2, ..., <em>m</em> = <em>n</em>, count the total number of times step E1 has been executed, and divide by <em>n</em>.</p>
 
-  <p class="indent">Now the important question is to determine the <em>nature</em> of $T_{n}$; is it approximately equal to $\frac{1}{3}n$, or $\sqrt{n}$, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that $T_{n}$ is approximately $(12(ln 2)/π^{2}) ln n$, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
+  <p class="indent">Now the important question is to determine the <em>nature</em> of $T_{n}$; is it approximately equal to $\frac{1}{3}n$, or $\sqrt{n}$, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that $T_{n}$ is approximately $(12(\ln 2)/π^{2}) \ln n$, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
 
   <p class="indent"><em>Analysis of algorithms</em> is the name the author likes to use to describe investigations such as this. The general idea is to take a particular algorithm and to determine its quantitative behavior; occasionally we also study whether or not an algorithm is optimal in some sense. The <em>theory of algorithms</em> is another subject entirely, dealing primarily with the existence or nonexistence of effective algorithms to compute particular quantities.</p>
 
@@ -399,7 +392,7 @@
 
   <div class="image"><img src="../Images/c01/e019_01.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_12a" id="ch01ex_2_1_12">12</a>.</strong> [<em>M25</em>] Show how <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> can be generalized as stated in the text so that it will accept input values of the form <em>u</em> + <em>v</em> \sqrt{2}, where <em>u</em> and <em>v</em> are integers, and the computations can still be done in an elementary way (that is, without using the infinite decimal expansion of \sqrt{2}). Prove that the computation will not terminate, however, if <em>m</em> = 1 and <em>n</em> = \sqrt{2}.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_12a" id="ch01ex_2_1_12">12</a>.</strong> [<em>M25</em>] Show how <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> can be generalized as stated in the text so that it will accept input values of the form $u + v \sqrt{2}$, where <em>u</em> and <em>v</em> are integers, and the computations can still be done in an elementary way (that is, without using the infinite decimal expansion of $\sqrt{2}$). Prove that the computation will not terminate, however, if <em>m</em> = 1 and $n=\sqrt{2}$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_13a" id="ch01ex_2_1_13">13</a>.</strong> [<em>M23</em>] Extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> by adding a new variable <em>T</em> and adding the operation “$T ← T +1$” at the beginning of each step. (Thus, <em>T</em> is like a clock, counting the number of steps executed.) Assume that <em>T</em> is initially zero, so that assertion <em>A1</em> in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a> becomes “<em>m</em> &gt; 0, <em>n</em> &gt; 0, <em>T</em> = 0.” The additional condition “<em>T</em> = 1” should similarly be appended to <em>A2</em>. Show how to append additional conditions to the assertions in such a way that any one of <em>A1</em>, <em>A2</em>, ..., <em>A6</em> implies <em>T</em> ≤ 3<em>n</em>, and such that the inductive proof can still be carried out. (Hence the computation must terminate in at most 3<em>n</em> steps.)</p>
 
@@ -409,11 +402,11 @@
 
   <p class="indent">Let “≺” be a relation on a set <em>S</em>, satisfying the following properties:</p>
 
-  <p class="indenti">i) Given <em>x, y</em>, and <em>z</em> in <em>S</em>, if <em>x</em> ≺ <em>y</em> and <em>y</em> ≺ z, then <em>x</em> ≺ z.</p>
+  <p class="indenti">i) Given <em>x</em>, <em>y</em>, and <em>z</em> in <em>S</em>, if $x ≺ y$ and $y ≺ z$, then $x ≺ z$.</p>
 
-  <p class="indenti">ii) Given <em>x</em> and <em>y</em> in <em>S</em>, exactly one of the following three possibilities is true: <em>x</em> ≺ <em>y</em>, <em>x</em> = <em>y</em>, or <em>y</em> ≺ <em>x</em>.</p>
+  <p class="indenti">ii) Given <em>x</em> and <em>y</em> in <em>S</em>, exactly one of the following three possibilities is true: $x ≺ y$, <em>x</em> = <em>y</em>, or $y ≺ x$.</p>
 
-  <p class="indenti">iii) If <em>A</em> is any nonempty subset of <em>S</em>, there is an element <em>x</em> in <em>A</em> with <em>x</em> <span class="ent">≼</span> <em>y</em> (that is, <em>x</em> ≺ <em>y</em> or <em>x</em> = <em>y</em>) for all <em>y</em> in <em>A</em>.</p>
+  <p class="indenti">iii) If <em>A</em> is any nonempty subset of <em>S</em>, there is an element <em>x</em> in <em>A</em> with $x ≼ y$ (that is, $x ≺ y$ or <em>x</em> = <em>y</em>) for all <em>y</em> in <em>A</em>.</p>
 
   <p class="exercisesp">This relation is said to be a well-ordering of <em>S</em>. For example, it is clear that the positive integers are well-ordered by the ordinary “less than” relation, &lt;.</p>
 
@@ -423,17 +416,17 @@
 
   <p class="indenta">c) Is the set of all nonnegative real numbers well-ordered by &lt;?</p>
 
-  <p class="indenta">d) (<em>Lexicographic order</em>.) Let <em>S</em> be well-ordered by ≺, and for <em>n</em> &gt; 0 let T_{n} be the set of all <em>n</em>-tuples (x_{1}, x_{2}, ..., x_{n}) of elements x_{j} in S. Define (x_{1}, x_{2}, ..., x_{n}) ≺ (y_{1}, y_{2}, ..., y_{n}) if there is some <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>, such that x_{j} = y_{j} for 1 ≤ <em>j</em> &lt; <em>k</em>, but x_{k}≺ y_{k} in S. Is ≺ a well-ordering of T_{n}?</p>
+  <p class="indenta">d) (<em>Lexicographic order</em>.) Let <em>S</em> be well-ordered by ≺, and for <em>n</em> &gt; 0 let $T_{n}$ be the set of all <em>n</em>-tuples $(x_{1}, x_{2}, ..., x_{n})$ of elements $x_{j}$ in S. Define $(x_{1}, x_{2}, ..., x_{n}) ≺ (y_{1}, y_{2}, ..., y_{n})$ if there is some <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>, such that $x_{j}=y_{j}$ for 1 ≤ <em>j</em> &lt; <em>k</em>, but $x_{k} ≺ y_{k}$ in S. Is ≺ a well-ordering of $T_{n}$?</p>
 
-  <p class="indenta">e) Continuing part (d), let T = ∪_{n ≥ 1}T_{n}; define (x_{1}, x_{2}, ..., x_{m}) ≺ (y_{1}, y_{2}, ..., y_{n}) if x_{j} = y_{j} for 1 ≤ j &lt; <em>k</em> and x_{k}≺ y_{k}, for some <em>k</em> ≤ min(<em>m, n</em>), or if <em>m</em> &lt; <em>n</em> and x<sub><em>j</em></sub> = y<sub><em>j</em></sub> for 1 ≤ <em>j</em> ≤ <em>m</em>. Is ≺ a well-ordering of <em>T</em>?</p>
+  <p class="indenta">e) Continuing part (d), let $T=\bigcup_{n ≥ 1}T_{n}$; define $(x_{1}, x_{2}, ..., x_{m}) ≺ (y_{1}, y_{2}, ..., y_{n})$ if $x_{j}=y_{j}$ for 1 ≤ j &lt; <em>k</em> and $x_{k} ≺ y_{k}$, for some $k ≤ min(m, n)$, or if <em>m</em> &lt; <em>n</em> and $x_{j}=y_{j}$ for 1 ≤ <em>j</em> ≤ <em>m</em>. Is ≺ a well-ordering of <em>T</em>?</p>
 
-  <p class="indenta">f) Show that ≺ is a well-ordering of <em>S</em> if and only if it satisfies (i) and (ii) above and there is no infinite sequence x_{1}, x_{2}, x_{3}, ... with x_{j+1}≺ x_{j} for all <em>j</em> ≥ 1.</p>
+  <p class="indenta">f) Show that ≺ is a well-ordering of <em>S</em> if and only if it satisfies (i) and (ii) above and there is no infinite sequence $x_{1}, x_{2}, x_{3}, ...$ with $x_{j+1}≺ x_{j}$ for all <em>j</em> ≥ 1.</p>
 
-  <p class="indenta">g) Let <em>S</em> be well-ordered by ≺, and let $P(x)$ be a statement about the element <em>x</em> of <em>S</em>. Show that if $P(x)$ can be proved under the assumption that $P(y)$ is true for all <em>y</em> ≺ <em>x</em>, then <em>P</em> (<em>x</em>) is true for all <em>x</em> in <em>S</em>.</p>
+  <p class="indenta">g) Let <em>S</em> be well-ordered by ≺, and let $P(x)$ be a statement about the element <em>x</em> of <em>S</em>. Show that if $P(x)$ can be proved under the assumption that $P(y)$ is true for all $y ≺ x$, then $P (x)$ is true for all <em>x</em> in <em>S</em>.</p>
 
   <p class="exercisesp">[<em>Notes:</em> Part (g) is the generalization of simple induction that was promised; in the case <em>S</em> = positive integers, it is just the simple case of mathematical induction treated in the text. In that case we are asked to prove that $P(1)$ is true if $P(y)$ is true for all positive integers <em>y</em> &lt; 1; this is the same as saying we should prove $P(1)$, since $P(y)$ certainly is (vacuously) true for all such <em>y</em>. Consequently, one finds that in many situations $P(1)$ need not be proved using a special argument.</p>
 
-  <p class="exercises1N">Part (d), in connection with part (g), gives us a powerful method of <em>n</em>-tuple induction for proving statements <em>P</em> (m_{1}, ..., m_{n}) about <em>n</em> positive integers m_{1}, ..., m_{n}.</p>
+  <p class="exercises1N">Part (d), in connection with part (g), gives us a powerful method of <em>n</em>-tuple induction for proving statements $P (m_{1}, ..., m_{n})$ about <em>n</em> positive integers $m_{1}, ..., m_{n}$.</p>
 
   <p class="exercises1N">Part (f) has further application to computer algorithms: If we can map each state <em>x</em> of a computation into an element $f(x)$ belonging to a well-ordered set <em>S</em>, in such a way that every step of the computation takes a state <em>x</em> into a state <em>y</em> with $f(y) ≺ f(x)$, then <a id="page_21"></a>the algorithm must terminate. This principle generalizes the argument about strictly decreasing values of <em>n</em>, by which we proved the termination of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm 1.1E</a>.]</p>
 
@@ -443,65 +436,65 @@
     <p class="noindent">Let us now begin our study of numerical mathematics by taking a good look at the numbers we are dealing with. The <em>integers</em> are the whole numbers</p>
   </div>
 
-  <p class="center">..., −3, −2, −1, 0, 1, 2, 3, . ..</p>
+  <p class="center">$..., -3, -2, -1, 0, 1, 2, 3, ...$</p>
 
-  <p class="noindent">(negative, zero, or positive). A <em>rational number</em> is the ratio (quotient) of two integers, <em>p/q</em>, where <em>q</em> is positive. A <em>real number</em> is a quantity <em>x</em> that has a <em>decimal expansion</em></p>
+  <p class="noindent">(negative, zero, or positive). A <em>rational number</em> is the ratio (quotient) of two integers, $p/q$, where <em>q</em> is positive. A <em>real number</em> is a quantity <em>x</em> that has a <em>decimal expansion</em></p>
 
   <div class="equation" id="ch01eq-lev2sec2-1"><img src="../Images/c01/021equ01.png"></div>
 
-  <p class="noindent">where <em>n</em> is an integer, each d_{i} is a digit between 0 and 9, and the sequence of digits doesn’t end with infinitely many 9s. The representation (<a href="../Text/ch01.html#ch01eq-lev2sec2-1">1</a>) means that</p>
+  <p class="noindent">where <em>n</em> is an integer, each $d_{i}$ is a digit between 0 and 9, and the sequence of digits doesn’t end with infinitely many 9s. The representation (<a href="../Text/ch01.html#ch01eq-lev2sec2-1">1</a>) means that</p>
 
   <div class="equation" id="ch01eq-lev2sec2-2"><img src="../Images/c01/021equ02.png"></div>
 
   <p class="noindent">for all positive integers <em>k</em>. Examples of real numbers that are not rational are</p>
 
-  <p class="indent">π = 3.14159265358979 ..., the ratio of circumference to diameter in a circle;</p>
+  <p class="indent">$π=3.14159265358979 ...$, the ratio of circumference to diameter in a circle;</p>
 
-  <p class="indent">φ = 1.61803398874989 <em>...,</em> the <em>golden ratio</em> (1 + \sqrt{5})<em>/</em>2 (see <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>).</p>
+  <p class="indent">$φ=1.61803398874989 ...$, the <em>golden ratio</em> $(1 + \sqrt{5})/2$ (see <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>).</p>
 
   <p class="noindent">A table of important constants, to forty decimal places of accuracy, appears in <a href="../Text/app02.html#app02">Appendix A</a>. We need not discuss the familiar properties of addition, subtraction, multiplication, division, and comparison of real numbers.</p>
 
-  <p class="indent">Difficult problems about integers are often solved by working with real numbers, and difficult problems about real numbers are often solved by working with a still more general class of values called complex numbers. A <em>complex number</em> is a quantity <em>z</em> of the form <em>z</em> = <em>x</em> + <em>iy</em>, where <em>x</em> and <em>y</em> are real and <em>i</em> is a special quantity that satisfies the equation i^{2} = −1. We call <em>x</em> and <em>y</em> the <em>real part</em> and <em>imaginary part</em> of z, and we define the absolute value of <em>z</em> to be</p>
+  <p class="indent">Difficult problems about integers are often solved by working with real numbers, and difficult problems about real numbers are often solved by working with a still more general class of values called complex numbers. A <em>complex number</em> is a quantity <em>z</em> of the form $z=x + iy$, where <em>x</em> and <em>y</em> are real and <em>i</em> is a special quantity that satisfies the equation $i^{2}=-1$. We call <em>x</em> and <em>y</em> the <em>real part</em> and <em>imaginary part</em> of z, and we define the absolute value of <em>z</em> to be</p>
 
   <div class="equation" id="ch01eq-lev2sec2-3"><img src="../Images/c01/021equ03.png"></div>
 
-  <p class="noindent">The <em>complex conjugate</em> of <em>z</em> is \overline{z} = <em>x</em> − <em>iy</em>, and we have <em>z\overline{z}</em> = x^{2} + y^{2} = <em>|z|</em>^{2} . The theory of complex numbers is in many ways simpler and more beautiful than the theory of real numbers, but it is usually considered to be an advanced topic. Therefore we shall concentrate on real numbers in this book, except when real numbers turn out to be unnecessarily complicated.</p>
+  <p class="noindent">The <em>complex conjugate</em> of <em>z</em> is $\overline{z}=x - iy$, and we have $z\overline{z}=x^{2} + y^{2}=|z|^{2}$. The theory of complex numbers is in many ways simpler and more beautiful than the theory of real numbers, but it is usually considered to be an advanced topic. Therefore we shall concentrate on real numbers in this book, except when real numbers turn out to be unnecessarily complicated.</p>
 
-  <p class="indent">If <em>u</em> and <em>v</em> are real numbers with <em>u</em> ≤ <em>v</em>, the <em>closed interval</em> [<em>u</em> . . <em>v</em>] is the set of real numbers <em>x</em> such that <em>u</em> ≤ <em>x</em> ≤ <em>v</em>. The <em>open interval</em> (<em>u . . v</em>) is, similarly, the set of <em>x</em> such that <em>u</em> &lt; <em>x &lt; v</em>. And <em>half-open intervals</em> [<em>u . . v</em>) or (<em>u . . v</em>] are defined in an analogous way. We also allow <em>u</em> to be −∞ or <em>v</em> to be ∞ at an open endpoint, meaning that there is no lower or upper bound; thus (-∞ <em>. .</em> ∞) stands for the set of all real numbers, and [0 <em>. .</em> ∞) denotes the nonnegative reals.</p>
+  <p class="indent">If <em>u</em> and <em>v</em> are real numbers with <em>u</em> ≤ <em>v</em>, the <em>closed interval</em> $[u . . v]$ is the set of real numbers <em>x</em> such that <em>u</em> ≤ <em>x</em> ≤ <em>v</em>. The <em>open interval</em> $(u . . v)$ is, similarly, the set of <em>x</em> such that <em>u</em> &lt; <em>x</em> &lt; <em>v</em>. And <em>half-open intervals</em> $[u . . v)$ or $(u . . v]$ are defined in an analogous way. We also allow <em>u</em> to be $-∞$ or <em>v</em> to be ∞ at an open endpoint, meaning that there is no lower or upper bound; thus $(-∞ . . ∞)$ stands for the set of all real numbers, and $[0 . . ∞)$ denotes the nonnegative reals.</p>
 
   <p class="indent"><a id="page_22"></a>Throughout this section, let the letter <em>b</em> stand for a positive real number. If <em>n</em> is an integer, then b^{n} is defined by the familiar rules</p>
 
-  <div class="equation" id="ch01eq-lev2sec2-4"><img src="../Images/c01/c01/022equ01.png"></div>
+  <div class="equation" id="ch01eq-lev2sec2-4"><img src="../Images/c01/022equ01.png"></div>
 
   <p class="noindent">It is easy to prove by induction that the <em>laws of exponents</em> are valid:</p>
 
-  <div class="equation" id="ch01eq-lev2sec2-5"><img src="../Images/c01/c01/022equ02.png"></div>
+  <div class="equation" id="ch01eq-lev2sec2-5"><img src="../Images/c01/022equ02.png"></div>
 
   <p class="noindent">whenever <em>x</em> and <em>y</em> are integers.</p>
 
-  <p class="indent">If <em>u</em> is a positive real number and if <em>m</em> is a positive integer, there is always a unique positive real number <em>v</em> such that v^{m} = <em>u</em>; it is called the <em>mth root</em> of <em>u</em>, and denoted <span class="middle"><img src="../Images/c01/c01/e022_01.png"></span>.</p>
+  <p class="indent">If <em>u</em> is a positive real number and if <em>m</em> is a positive integer, there is always a unique positive real number <em>v</em> such that $v^{m}=u$; it is called the <em>mth root</em> of <em>u</em>, and denoted <span class="middle"><img src="../Images/c01/e022_01.png"></span>.</p>
 
-  <p class="indent">We now define b^{r} for rational numbers <em>r</em> = <em>p/q</em> as follows:</p>
+  <p class="indent">We now define $b^{r}$ for rational numbers $r=p/q$ as follows:</p>
 
-  <div class="equation" id="ch01eq-lev2sec2-6"><img src="../Images/c01/c01/022equ03.png"></div>
+  <div class="equation" id="ch01eq-lev2sec2-6"><img src="../Images/c01/022equ03.png"></div>
 
-  <p class="noindent">This definition, due to Oresme (c. 1360), is a good one, since <em>b</em><sup><em>ap/aq</em></sup> = <em>b</em><sup><em>p/q</em></sup>, and since the laws of exponents are still correct even when <em>x</em> and <em>y</em> are arbitrary rational numbers (see <a href="../Text/ch01.html#ch01ex_2_2_9">exercise 9</a>).</p>
+  <p class="noindent">This definition, due to Oresme (c. 1360), is a good one, since $b^{ap/aq}=b^{p/q}$, and since the laws of exponents are still correct even when <em>x</em> and <em>y</em> are arbitrary rational numbers (see <a href="../Text/ch01.html#ch01ex_2_2_9">exercise 9</a>).</p>
 
-  <p class="indent">Finally, we define b^{x} for all real values of <em>x</em>. Suppose first that <em>b</em> &gt; 1; if <em>x</em> is given by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-1">1</a>), we want</p>
+  <p class="indent">Finally, we define $b^{x}$ for all real values of <em>x</em>. Suppose first that <em>b</em> &gt; 1; if <em>x</em> is given by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-1">1</a>), we want</p>
 
-  <div class="equation" id="ch01eq-lev2sec2-7"><img src="../Images/c01/c01/022equ04.png"></div>
+  <div class="equation" id="ch01eq-lev2sec2-7"><img src="../Images/c01/022equ04.png"></div>
 
-  <p class="noindent">This <em>defines</em> b^{x} as a unique positive real number, since the difference between the right and left extremes in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) is <em>b</em><sup><em>n</em>+d_{1}/10+···+d_{k}/10^{k}</sup> (<em>b</em><sup>1/10^{k}</sup>–1); by <a href="../Text/ch01.html#ch01ex_2_2_13">exercise 13</a> below, this difference is less than <em>b</em><sup><em>n</em>+1</sup> (<em>b</em> − 1)<em>/</em>10^{k}, and if we take <em>k</em> large enough, we can therefore get any desired accuracy for b^{x}.</p>
+  <p class="noindent">This <em>defines</em> $b^{x}$ as a unique positive real number, since the difference between the right and left extremes in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) is $b^{n+d_{1}/10+···+d_{k}/10^{k}}(b^{1/10^{k}}–1)$; by <a href="../Text/ch01.html#ch01ex_2_2_13">exercise 13</a> below, this difference is less than $b^{n+1}(b - 1)/10^{k}$, and if we take <em>k</em> large enough, we can therefore get any desired accuracy for $b^{x}$.</p>
 
   <p class="indent">For example, we find that</p>
 
   <div class="equation" id="ch01eq-lev2sec2-8"><img src="../Images/c01/022equ05.png"></div>
 
-  <p class="noindent">therefore if <em>b</em> = 10 and <em>x</em> = 0.30102999 ..., we know the value of b^{x} with an accuracy of better than one part in 10 million (although we still don’t even know whether the decimal expansion of b^{x} is 1.999 ... or 2.000 ...).</p>
+  <p class="noindent">therefore if <em>b</em> = 10 and $x=0.30102999 ...$, we know the value of $b^{x}$ with an accuracy of better than one part in 10 million (although we still don’t even know whether the decimal expansion of $b^{x}$ is $1.999 ...$ or $2.000 ...$).</p>
 
-  <p class="indent">When <em>b</em> &lt; 1, we define b^{x} = (1<em>/b</em>)<sup>−<em>x</em></sup>; and when <em>b</em> = 1, b^{x} = 1. With these definitions, it can be proved that the laws of exponents (<a href="../Text/ch01.html#ch01eq-lev2sec2-5">5</a>) hold for any <em>real</em> values of <em>x</em> and <em>y</em>. These ideas for defining b^{x} were first formulated by John Wallis (1655) and Isaac Newton (1669).</p>
+  <p class="indent">When <em>b</em> &lt; 1, we define $b^{x}=(1/b)^{-x}$; and when <em>b</em> = 1, b^{x} = 1. With these definitions, it can be proved that the laws of exponents (<a href="../Text/ch01.html#ch01eq-lev2sec2-5">5</a>) hold for any <em>real</em> values of <em>x</em> and <em>y</em>. These ideas for defining b^{x} were first formulated by John Wallis (1655) and Isaac Newton (1669).</p>
 
-  <p class="indent">Now we come to an important question. Suppose that a positive real number <em>y</em> is given; can we find a real number <em>x</em> such that <em>y</em> = b^{x} ? The answer is “yes” (provided that <em>b</em> ≠ 1), for we simply use Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) <em>in reverse</em> to determine <em>n</em> and d_{1}, d_{2}, ... when b^{x} = <em>y</em> is given. The resulting number <em>x</em> is called the <em>logarithm</em> of <em>y</em> <em>to the base b</em>, and we write this as <em>x</em> = log_{b}<em>y</em>. By this definition we have</p>
+  <p class="indent">Now we come to an important question. Suppose that a positive real number <em>y</em> is given; can we find a real number <em>x</em> such that $y=b^{x}$? The answer is “yes” (provided that <em>b</em> ≠ 1), for we simply use Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) <em>in reverse</em> to determine <em>n</em> and $d_{1}, d_{2}, ...$ when $b^{x}=y$ is given. The resulting number <em>x</em> is called the <em>logarithm</em> of <em>y</em> <em>to the base</em> <em>b</em>, and we write this as $x=\log_{b}y$. By this definition we have</p>
 
   <div class="equation" id="ch01eq-lev2sec2-9"><img src="../Images/c01/022equ06.png"></div>
 
@@ -523,21 +516,21 @@
 
   <p class="noindent">following a suggestion of Edward M. Reingold.</p>
 
-  <p class="indent">The question now arises as to whether or not there is any relationship between lg <em>x</em> and log_{10}<em>x</em>; fortunately there is,</p>
+  <p class="indent">The question now arises as to whether or not there is any relationship between $\lg x$ and $\log_{10}x$; fortunately there is,</p>
 
-  <p class="center">log_{10}<em>x</em> = log_{10} (2<sup>lg <em>x</em></sup>) = (lg <em>x</em>)(log_{10} 2),</p>
+  <p class="center">$\log_{10}x=\log_{10} (2^{\lg x})=(\lg x)(\log_{10} 2)$,</p>
 
-  <p class="noindent">by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-9">9</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>). Hence lg <em>x</em> = log_{10}<em>x/</em>log_{10} 2, and in general we find that</p>
+  <p class="noindent">by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-9">9</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>). Hence $\lg x=\log_{10}x/\log_{10} 2$, and in general we find that</p>
 
   <div class="equation" id="ch01eq-lev2sec2-14"><img src="../Images/c01/023equ04.png"></div>
 
   <p class="noindent">Equations (<a href="../Text/ch01.html#ch01eq-lev2sec2-11">11</a>), (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>), and (<a href="../Text/ch01.html#ch01eq-lev2sec2-14">14</a>) are the fundamental rules for manipulating logarithms.</p>
 
-  <p class="indent">It turns out that neither base 10 nor base 2 is really the most convenient base to work with in most cases. There is a real number, denoted by <em>e</em> = 2.718281828459045 ..., for which the logarithms have simpler properties. Logarithms to the base <em>e</em> are conventionally called <em>natural logarithms</em>, and we write</p>
+  <p class="indent">It turns out that neither base 10 nor base 2 is really the most convenient base to work with in most cases. There is a real number, denoted by $e=2.718281828459045 ...$, for which the logarithms have simpler properties. Logarithms to the base <em>e</em> are conventionally called <em>natural logarithms</em>, and we write</p>
 
   <div class="equation" id="ch01eq-lev2sec2-15"><img src="../Images/c01/023equ05.png"></div>
 
-  <p class="noindent">This rather arbitrary definition (in fact, we haven’t really defined <em>e</em>) probably doesn’t strike the reader as being a very “natural” logarithm; yet we’ll find that ln <em>x</em> seems more and more natural, the more we work with it. John Napier actually discovered natural logarithms (with slight modifications, and without connecting them with powers) before the year 1590, many years before any other kind of logarithm was known. The following two examples, proved in every calculus text, shed some light on why Napier’s logarithms deserve to be called “natural”: (a) In <a href="../Text/ch01.html#ch01fig06">Fig. 6</a> the area of the shaded portion is ln <em>x</em>. (b) If a bank pays compound interest at rate <em>r</em>, compounded semiannually, the annual return on each dollar is (1 + <em>r/</em>2)^{2} dollars; if it is compounded quarterly, you get (1 + <em>r/</em>4)^{4} dollars; and if it is compounded daily you probably get (1 + <em>r/</em>365)<sup>365</sup> dollars. Now if the interest were compounded <em>continuously</em>, you would get exactly e^{r} dollars for every dollar (ignoring roundoff error). In this age of computers, many bankers have now actually reached the limiting formula.</p>
+  <p class="noindent">This rather arbitrary definition (in fact, we haven’t really defined <em>e</em>) probably doesn’t strike the reader as being a very “natural” logarithm; yet we’ll find that ln <em>x</em> seems more and more natural, the more we work with it. John Napier actually discovered natural logarithms (with slight modifications, and without connecting them with powers) before the year 1590, many years before any other kind of logarithm was known. The following two examples, proved in every calculus text, shed some light on why Napier’s logarithms deserve to be called “natural”: (a) In <a href="../Text/ch01.html#ch01fig06">Fig. 6</a> the area of the shaded portion is ln <em>x</em>. (b) If a bank pays compound interest at rate <em>r</em>, compounded semiannually, the annual return on each dollar is $(1 + r/2)^{2}$ dollars; if it is compounded quarterly, you get $(1 + r/4)^{4}$ dollars; and if it is compounded daily you probably get $(1 + r/365)^{365}$ dollars. Now if the interest were compounded <em>continuously</em>, you would get exactly $e^{r}$ dollars for every dollar (ignoring roundoff error). In this age of computers, many bankers have now actually reached the limiting formula.</p>
 
   <div class="image">
     <a id="ch01fig06"></a><img src="../Images/c01/01fig06.png">
@@ -547,17 +540,17 @@
 
   <p class="indent"><a id="page_24"></a>The interesting history of the concepts of logarithm and exponential has been told in a series of articles by F. Cajori, <em>AMM</em> <strong>20</strong> (1913), 5–14, 35–47, 75–84, 107–117, 148–151, 173–182, 205–210.</p>
 
-  <p class="indent">We conclude this section by considering how to <em>compute</em> logarithms. One method is suggested immediately by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>): If we let b^{x} = <em>y</em> and raise all parts of that equation to the 10^{k}-th power, we find that</p>
+  <p class="indent">We conclude this section by considering how to <em>compute</em> logarithms. One method is suggested immediately by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>): If we let $b^{x}=y$ and raise all parts of that equation to the $10^{k}\rm\unicode{45}th$ power, we find that</p>
 
   <div class="equation" id="ch01eq-lev2sec2-16"><img src="../Images/c01/024equ01.png"></div>
 
-  <p class="noindent">for some integer <em>m</em>. All we have to do to get the logarithm of <em>y</em> is to raise <em>y</em> to this huge power and find which powers (<em>m</em>, <em>m</em> + 1) of <em>b</em> the result lies between; then <em>m/</em>10^{k} is the answer to <em>k</em> decimal places.</p>
+  <p class="noindent">for some integer <em>m</em>. All we have to do to get the logarithm of <em>y</em> is to raise <em>y</em> to this huge power and find which powers $(m, m + 1)$ of <em>b</em> the result lies between; then $m/10^{k}$ is the answer to <em>k</em> decimal places.</p>
 
   <p class="indent">A slight modification of this apparently impractical method leads to a simple and reasonable procedure. We will show how to calculate log_{10}<em>x</em> and to express the answer in the <em>binary</em> system, as</p>
 
   <div class="equation" id="ch01eq-lev2sec2-17"><img src="../Images/c01/024equ02.png"></div>
 
-  <p class="noindent">First we shift the decimal point of <em>x</em> to the left or to the right so that we have 1 ≤ <em>x/</em>10^{n} &lt; 10; this determines the integer part, <em>n</em>. To obtain b_{1}, b_{2}, ..., we now set x_{0} = <em>x/</em>10^{n} and, for <em>k</em> ≥ 1,</p>
+  <p class="noindent">First we shift the decimal point of <em>x</em> to the left or to the right so that we have $1 ≤ x/10^{n} \lt 10$; this determines the integer part, <em>n</em>. To obtain $b_{1}, b_{2}, ...$, we now set $x_{0}=x/10^{n}$ and, for <em>k</em> ≥ 1,</p>
 
   <div class="equation" id="ch01eq-lev2sec2-18"><img src="../Images/c01/024equ03.png"></div>
 
@@ -565,15 +558,15 @@
 
   <div class="equation" id="ch01eq-lev2sec2-19"><img src="../Images/c01/024equ04.png"></div>
 
-  <p class="noindent">for <em>k</em> = 0, 1, 2<em>, ...</em>, as is easily proved by induction.</p>
+  <p class="noindent">for $k=0, 1, 2, ...$, as is easily proved by induction.</p>
 
-  <p class="indent">In practice, of course, we must work with only finite accuracy, so we cannot set <span class="middle"><img src="../Images/c01/e024_01.png"></span> exactly. Instead, we set <span class="middle"><img src="../Images/c01/e024_02.png"></span> <em>rounded</em> or <em>truncated</em> to a certain number of decimal places. For example, here is the evaluation of log_{10} 2 rounded to four significant figures:</p>
+  <p class="indent">In practice, of course, we must work with only finite accuracy, so we cannot set <span class="middle"><img src="../Images/c01/e024_01.png"></span> exactly. Instead, we set <span class="middle"><img src="../Images/c01/e024_02.png"></span> <em>rounded</em> or <em>truncated</em> to a certain number of decimal places. For example, here is the evaluation of $\log_{10} 2$ rounded to four significant figures:</p>
 
   <div class="image"><img src="../Images/c01/e024_05.png"></div>
 
-  <p class="noindent">Computational error has caused errors to propagate; the true rounded value of x_{10} is 1.798. This will eventually cause b_{19} to be computed incorrectly, and <a id="page_25"></a>we get the binary value (0.0100110100010000011 ...)_{2}, which corresponds to the decimal equivalent 0.301031 ... rather than the true value given in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>).</p>
+  <p class="noindent">Computational error has caused errors to propagate; the true rounded value of $x_{10}$ is 1.798. This will eventually cause $b_{19}$ to be computed incorrectly, and <a id="page_25"></a>we get the binary value $(0.0100110100010000011 ...)_{2}$, which corresponds to the decimal equivalent $0.301031 ...$ rather than the true value given in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>).</p>
 
-  <p class="indent">With any method such as this it is necessary to examine the amount of computational error due to the limitations imposed. <a href="../Text/ch01.html#ch01ex_2_2_27">Exercise 27</a> derives an upper bound for the error; working to four figures as above, we find that the error in the value of the logarithm is guaranteed to be less than 0.00044. Our answer above was more accurate than this primarily because x_{0}, x_{1}, x_{2}, and x_{3} were obtained <em>exactly</em>.</p>
+  <p class="indent">With any method such as this it is necessary to examine the amount of computational error due to the limitations imposed. <a href="../Text/ch01.html#ch01ex_2_2_27">Exercise 27</a> derives an upper bound for the error; working to four figures as above, we find that the error in the value of the logarithm is guaranteed to be less than 0.00044. Our answer above was more accurate than this primarily because $x_{0}$, $x_{1}$, $x_{2}$, and vx_{3}$ were obtained <em>exactly</em>.</p>
 
   <p class="indent">This method is simple and quite interesting, but it is probably not the best way to calculate logarithms on a computer. Another method is given in <a href="../Text/ch01.html#ch01ex_2_2_25">exercise 25</a>.</p>
 
@@ -581,25 +574,25 @@
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_1a" id="ch01ex_2_2_1">1</a>.</strong> [<em>00</em>] What is the smallest positive rational number?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_2a" id="ch01ex_2_2_2">2</a>.</strong> [<em>00</em>] Is 1 + 0.239999999 ... a decimal expansion?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_2a" id="ch01ex_2_2_2">2</a>.</strong> [<em>00</em>] Is $1 + 0.239999999 ...$ a decimal expansion?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_3a" id="ch01ex_2_2_3">3</a>.</strong> [<em>02</em>] What is (−3)<sup>−3</sup>?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_3a" id="ch01ex_2_2_3">3</a>.</strong> [<em>02</em>] What is $(-3)^{-3}$?</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_4a" id="ch01ex_2_2_4">4</a>.</strong> [<em>05</em>] What is (0.125)<sup>−2/3</sup>?</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_4a" id="ch01ex_2_2_4">4</a>.</strong> [<em>05</em>] What is $(0.125)^{-2/3}$?</p>
 
   <p class="exercises"><strong>5.</strong> [<em>05</em>] We defined real numbers in terms of a decimal expansion. Discuss how we could have defined them in terms of a binary expansion instead, and give a definition to replace Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-2">2</a>).</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_6a" id="ch01ex_2_2_6">6</a>.</strong> [<em>10</em>] Let <em>x</em> = <em>m</em> + 0.d_{1}d_{2} ... and <em>y</em> = <em>n</em> + 0.e_{1}e_{2} ... be real numbers. Give a rule for determining whether <em>x</em> = <em>y</em>, <em>x</em> &lt; <em>y</em>, or <em>x</em> &gt; <em>y</em>, based on the decimal representation.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_6a" id="ch01ex_2_2_6">6</a>.</strong> [<em>10</em>] Let $x=m + 0.d_{1}d_{2} ...$ and $y=n + 0.e_{1}e_{2} ...$ be real numbers. Give a rule for determining whether <em>x</em> = <em>y</em>, <em>x</em> &lt; <em>y</em>, or <em>x</em> &gt; <em>y</em>, based on the decimal representation.</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_7a" id="ch01ex_2_2_7">7</a>.</strong> [<em>M23</em>] Given that <em>x</em> and <em>y</em> are integers, prove the laws of exponents, starting from the definition given by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-4">4</a>).</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_8a" id="ch01ex_2_2_8">8</a>.</strong> [<em>25</em>] Let <em>m</em> be a positive integer. <em>Prove</em> that every positive real number <em>u</em> has a unique positive <em>m</em>th root, by giving a method to construct successively the values <em>n</em>, d_{1}, d_{2}, ... in the decimal expansion of the root.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_8a" id="ch01ex_2_2_8">8</a>.</strong> [<em>25</em>] Let <em>m</em> be a positive integer. <em>Prove</em> that every positive real number <em>u</em> has a unique positive <em>m</em>th root, by giving a method to construct successively the values $n, d_{1}, d_{2}, ...$ in the decimal expansion of the root.</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_9a" id="ch01ex_2_2_9">9</a>.</strong> [<em>M23</em>] Given that <em>x</em> and <em>y</em> are rational, prove the laws of exponents under the assumption that the laws hold when <em>x</em> and <em>y</em> are integers.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_10a" id="ch01ex_2_2_10">10</a>.</strong> [<em>18</em>] Prove that log_{10} 2 is not a rational number.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_10a" id="ch01ex_2_2_10">10</a>.</strong> [<em>18</em>] Prove that $\log_{10} 2$ is not a rational number.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_11a" id="ch01ex_2_2_11">11</a>.</strong> [<em>10</em>] If <em>b</em> = 10 and <em>x</em> ≈ log_{10} 2, to how many decimal places of accuracy will we need to know the value of <em>x</em> in order to determine the first three decimal places of the decimal expansion of b^{x} ? [<em>Note:</em> You may use the result of <a href="../Text/ch01.html#ch01ex_2_2_10">exercise 10</a> in your discussion.]</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_11a" id="ch01ex_2_2_11">11</a>.</strong> [<em>10</em>] If <em>b</em> = 10 and $x ≈ \log_{10} 2$, to how many decimal places of accuracy will we need to know the value of <em>x</em> in order to determine the first three decimal places of the decimal expansion of $b^{x}$? [<em>Note:</em> You may use the result of <a href="../Text/ch01.html#ch01ex_2_2_10">exercise 10</a> in your discussion.]</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_12a" id="ch01ex_2_2_12">12</a>.</strong> [<em>02</em>] Explain why Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>) follows from Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-8">8</a>).</p>
 
@@ -609,51 +602,51 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_15a" id="ch01ex_2_2_15">15</a>.</strong> [<em>10</em>] Prove or disprove:</p>
 
-  <p class="center">log_{b}<em>x/y</em> = log_{b}<em>x</em> − log_{b}<em>y,</em>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;<em>x, y</em> &gt; 0.</p>
+  <p class="center">$\log_{b}x/y=\log_{b}x - \log_{b}y$,&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;$x, y \gt 0$.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_16a" id="ch01ex_2_2_16">16</a>.</strong> [<em>00</em>] How can log_{10}<em>x</em> be expressed in terms of ln <em>x</em> and ln 10?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_16a" id="ch01ex_2_2_16">16</a>.</strong> [<em>00</em>] How can $\log_{10}x$ be expressed in terms of $\ln x$ and $\ln 10$?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_17a" id="ch01ex_2_2_17">17</a>.</strong> [<em>05</em>] What is lg 32? log_{π} π? ln <em>e</em>? log_{b} 1? log_{b} (−1)?</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_17a" id="ch01ex_2_2_17">17</a>.</strong> [<em>05</em>] What is $\lg 32$? $\log_{π} π$? $\ln e$? $\log_{b} 1$? $\log_{b} (-1)$?</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_18a" id="ch01ex_2_2_18">18</a>.</strong> [<em>10</em>] Prove or disprove: <span class="middle"><img src="../Images/c01/e025_02.png"></span></p>
 
   <p class="exercises3"><a id="page_26"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_19a" id="ch01ex_2_2_19">19</a>.</strong> [<em>20</em>] If <em>n</em> is an integer whose decimal representation is 14 digits long, will the value of <em>n</em> fit in a computer word with a capacity of 47 bits and a sign bit?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_20a" id="ch01ex_2_2_20">20</a>.</strong> [<em>10</em>] Is there any simple relation between log_{10} 2 and log_{2} 10?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_20a" id="ch01ex_2_2_20">20</a>.</strong> [<em>10</em>] Is there any simple relation between $\log_{10} 2$ and $\log_{2} 10$?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_21a" id="ch01ex_2_2_21">21</a>.</strong> [<em>15</em>] (<em>Logs of logs</em>.) Express log_{b} log_{b}<em>x</em> in terms of ln ln <em>x</em>, ln ln <em>b</em>, and ln <em>b</em>.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_21a" id="ch01ex_2_2_21">21</a>.</strong> [<em>15</em>] (<em>Logs of logs</em>.) Express $\log_{b} \log_{b}x$ in terms of $\ln \ln x$, $\ln \ln b$, and $\ln b$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_22a" id="ch01ex_2_2_22">22</a>.</strong> [<em>20</em>] (R. W. Hamming.) Prove that</p>
 
-  <p class="center">lg <em>x</em> ≈ ln <em>x</em> + log_{10}<em>x,</em></p>
+  <p class="center">$\lg x ≈ \ln x + \log_{10}x$,</p>
 
   <p class="exercisesp">with less than 1% error! (Thus a table of natural logarithms and of common logarithms can be used to get approximate values of binary logarithms as well.)</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_23a" id="ch01ex_2_2_23">23</a>.</strong> [<em>M25</em>] Give a <em>geometric</em> proof that ln <em>xy</em> = ln <em>x</em> + ln <em>y</em>, based on <a href="../Text/ch01.html#ch01fig06">Fig. 6</a>.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_23a" id="ch01ex_2_2_23">23</a>.</strong> [<em>M25</em>] Give a <em>geometric</em> proof that $\ln xy=\ln x + \ln y$, based on <a href="../Text/ch01.html#ch01fig06">Fig. 6</a>.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_24a" id="ch01ex_2_2_24">24</a>.</strong> [<em>15</em>] Explain how the method used for calculating logarithms to the base 10 at the end of this section can be modified to produce logarithms to base 2.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_25a" id="ch01ex_2_2_25">25</a>.</strong> [<em>22</em>] Suppose that we have a binary computer and a number <em>x</em>, 1 ≤ <em>x</em> &lt; 2. Show that the following algorithm, which uses only shifting, addition, and subtraction operations proportional to the number of places of accuracy desired, may be used to calculate an approximation to <em>y</em> = log_{b}<em>x</em>:</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_25a" id="ch01ex_2_2_25">25</a>.</strong> [<em>22</em>] Suppose that we have a binary computer and a number <em>x</em>, 1 ≤ <em>x</em> &lt; 2. Show that the following algorithm, which uses only shifting, addition, and subtraction operations proportional to the number of places of accuracy desired, may be used to calculate an approximation to $y=\log_{b}x$:</p>
 
   <p class="uln-indentC"><strong>L1.</strong> [Initialize.] Set $y←0$, $z←x$ shifted right 1, $k←1$.</p>
 
   <p class="uln-indentC"><strong>L2.</strong> [Test for end.] If <em>x</em> = 1, stop.</p>
 
-  <p class="uln-indentC"><strong>L3.</strong> [Compare.] If <em>x</em> − <em>z</em> &lt; 1, set $z←z$ shifted right 1, $k←k + 1$, and repeat this step.</p>
+  <p class="uln-indentC"><strong>L3.</strong> [Compare.] If $x - z \lt 1$, set $z←z$ shifted right 1, $k←k + 1$, and repeat this step.</p>
 
   <p class="uln-indentC"><strong>L4.</strong> [Reduce values.] Set $x←x-z$, $z←x$ shifted right <em>k</em>, $y←y+\log_{b} (2^{k}/(2^{k}-1))$, and go to L2. <span class="middle"><img src="../Images/c01/box.png"></span></p>
 
-  <p class="exercisesp">[<em>Notes:</em> This method is very similar to the method used for division in computer hardware. The idea goes back in essence to Henry Briggs, who used it (in decimal rather than binary form) to compute logarithm tables, published in 1624. We need an auxiliary table of the constants log_{b} 2, log_{b} (4<em>/</em>3), log_{b} (8<em>/</em>7), etc., to as many values as the precision of the computer. The algorithm involves intentional computational errors, as numbers are shifted to the right, so that eventually <em>x</em> will be reduced to 1 and the algorithm will terminate. The purpose of this exercise is to explain why it will terminate and why it computes an approximation to log_{b}<em>x</em>. ]</p>
+  <p class="exercisesp">[<em>Notes:</em> This method is very similar to the method used for division in computer hardware. The idea goes back in essence to Henry Briggs, who used it (in decimal rather than binary form) to compute logarithm tables, published in 1624. We need an auxiliary table of the constants $\log_{b} 2$, $\log_{b} (4/3)$, $\log_{b} (8/7)$, etc., to as many values as the precision of the computer. The algorithm involves intentional computational errors, as numbers are shifted to the right, so that eventually <em>x</em> will be reduced to 1 and the algorithm will terminate. The purpose of this exercise is to explain why it will terminate and why it computes an approximation to $\log_{b}x$. ]</p>
 
   <p class="exercises1"><a id="ch01ex_2_2_26"></a><strong>26.</strong> [<em>M27</em>] Find a rigorous upper bound on the error made by the algorithm in the previous exercise, based on the precision used in the arithmetic operations.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_27a" id="ch01ex_2_2_27">27</a>.</strong> [<em>M25</em>] Consider the method for calculating log_{10}<em>x</em> discussed in the text. Let <span class="middle"><img src="../Images/c01/e026_01.png"></span> denote the computed approximation to x_{k}, determined as follows: <img src="../Images/c01/e026_02.png">; and in the determination of <span class="middle"><img src="../Images/c01/e026_03.png"></span> by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-18">18</a>), the quantity y_{k} is used in place of (<em>x</em>′_{k-1})^{2}, where <span class="middle"><img src="../Images/c01/e026_05.png"></span> and 1 ≤ y_{k} &lt; 100. Here <em>δ</em> and <span class="ent"><em><span class="ent">∊</span></em></span> are small constants that reflect the upper and lower errors due to rounding or truncation. If log′ <em>x</em> denotes the result of the calculations, show that after <em>k</em> steps we have</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_27a" id="ch01ex_2_2_27">27</a>.</strong> [<em>M25</em>] Consider the method for calculating $\log_{10}x$ discussed in the text. Let <span class="middle"><img src="../Images/c01/e026_01.png"></span> denote the computed approximation to $x_{k}$, determined as follows: <img src="../Images/c01/e026_02.png">; and in the determination of <span class="middle"><img src="../Images/c01/e026_03.png"></span> by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-18">18</a>), the quantity $y_{k}$ is used in place of $(x'_{k-1})^{2}$, where <span class="middle"><img src="../Images/c01/e026_05.png"></span> and $1 ≤ y_{k} \lt 100$. Here <em>δ</em> and $\epsilon$ are small constants that reflect the upper and lower errors due to rounding or truncation. If $\log' x$ denotes the result of the calculations, show that after <em>k</em> steps we have</p>
 
-  <p class="center">log_{10}<em>x</em> + 2 log_{10}(1 − <em>δ</em>) − 1/2^{k} &lt; log′ <em>x</em> ≤ log_{10}<em>x</em> + 2 log_{10}(1 + <span class="ent">∊</span>).</p>
+  <p class="center">$\log_{10}x + 2 \log_{10}(1 - δ) - 1/2^{k} \lt \log'x ≤ \log_{10}x + 2 \log_{10}(1 + \epsilon)$.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_28a" id="ch01ex_2_2_28">28</a>.</strong> [<em>M30</em>] (R. Feynman.) Develop a method for computing b^{x} when 0 ≤ <em>x</em> &lt; 1, using only shifting, addition, and subtraction (similar to the algorithm in <a href="../Text/ch01.html#ch01ex_2_2_25">exercise 25</a>), and analyze its accuracy.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_28a" id="ch01ex_2_2_28">28</a>.</strong> [<em>M30</em>] (R. Feynman.) Develop a method for computing $b^{x}$ when 0 ≤ <em>x</em> &lt; 1, using only shifting, addition, and subtraction (similar to the algorithm in <a href="../Text/ch01.html#ch01ex_2_2_25">exercise 25</a>), and analyze its accuracy.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_29a" id="ch01ex_2_2_29">29</a>.</strong> [<em>HM20</em>] Let <em>x</em> be a real number greater than 1. (a) For what real number <em>b</em> &gt; 1 is <em>b</em> log_{b}<em>x</em> a minimum? (b) For what <em>integer b</em> &gt; 1 is it a minimum? (c) For what integer <em>b</em> &gt; 1 is (<em>b</em> + 1) log_{b}<em>x</em> a minimum?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_29a" id="ch01ex_2_2_29">29</a>.</strong> [<em>HM20</em>] Let <em>x</em> be a real number greater than 1. (a) For what real number <em>b</em> &gt; 1 is $b \log_{b}x$ a minimum? (b) For what <em>integer</em> <em>b</em> &gt; 1 is it a minimum? (c) For what integer <em>b</em> &gt; 1 is $(b + 1) \log_{b}x$ a minimum?</p>
 
   <p class="exercises1"><a id="page_27"></a><strong><a href="../Text/app01.html#ch01ex_2_2_30a" id="ch01ex_2_2_30">30</a>.</strong> [<em>12</em>] Simplify the expression (ln <em>x</em>)<sup>ln <em>x</em>/ln ln <em>x</em></sup>, assuming that <em>x</em> &gt; 1 and <em>x</em> ≠ <em>e</em>.</p>
 
@@ -709,7 +702,7 @@
 
   <p class="noindent">The reader should study this example carefully.</p>
 
-  <p class="indent">The replacement of <em>j</em> by $p(j)$ cannot be done for all <em>infinite</em> sums. The operation is always valid if $p(j)=c ± j$, as above, but in other cases some care must be used. [For example, see T. M. Apostol, <em>Mathematical Analysis</em> (Reading, Mass.: Addison–Wesley, 1957), Chapter 12. A sufficient condition to <a id="page_29"></a>guarantee the validity of (<a href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>) for any permutation of the integers, $p(j)$, is that $∑_{R(j)}∣aj∣$<!--mal--> exists.]</p>
+  <p class="indent">The replacement of <em>j</em> by $p(j)$ cannot be done for all <em>infinite</em> sums. The operation is always valid if $p(j)=c ± j$, as above, but in other cases some care must be used. [For example, see T. M. Apostol, <em>Mathematical Analysis</em> (Reading, Mass.: Addison–Wesley, 1957), Chapter 12. A sufficient condition to <a id="page_29"></a>guarantee the validity of (<a href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>) for any permutation of the integers, $p(j)$, is that $∑_{R(j)}|a_{j}|$ exists.]</p>
 
   <p class="indenthangingA">c) <em>Interchanging order of summation:</em></p>
 
@@ -733,7 +726,7 @@
 
   <div class="equation" id="ch01eq-lev2sec3-10"><img src="../Images/c01/029equ04.png"></div>
 
-  <p class="noindent">[<em>Note:</em> As in case (b), the operation of interchanging order of summation is <em>not always valid for infinite series.</em> If the series is <em>absolutely convergent</em> — that is, if $∑_{R(i)} ∑_{S(j)}∣aj∣$<!--mal--> exists — it can be shown that Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) are valid. Also if <em>either one</em> of $R(i)$ or $S(j)$ specifies a <em>finite</em> sum in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), and if each infinite sum that appears is convergent, then the interchange is justified. In particular, Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>) is always true for convergent infinite sums.]</p>
+  <p class="noindent">[<em>Note:</em> As in case (b), the operation of interchanging order of summation is <em>not always valid for infinite series.</em> If the series is <em>absolutely convergent</em> — that is, if $∑_{R(i)} ∑_{S(j)}|a_{ij}|$ exists — it can be shown that Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) are valid. Also if <em>either one</em> of $R(i)$ or $S(j)$ specifies a <em>finite</em> sum in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), and if each infinite sum that appears is convergent, then the interchange is justified. In particular, Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>) is always true for convergent infinite sums.]</p>
 
   <p class="indenthangingA"><a id="page_30"></a>d) <em>Manipulating the domain.</em> If $R(j)$ and $S(j)$ are arbitrary relations, we have</p>
 
@@ -969,7 +962,7 @@
 
   <p class="ex-title">Exercises — Second Set</p>
 
-  <p class="noindent"><em>Determinants and matrices</em>. The following interesting problems are for the reader who has experienced at least an introduction to determinants and elementary matrix theory. A determinant may be evaluated by astutely combining the operations of: (a) factoring a quantity out of a row or column; (b) adding a multiple of one row (or column) to another row (or column); (c) expanding by cofactors. The simplest and most often used version of operation (c) is to simply delete the entire first row and column, provided that the element in the upper left corner is +1 and the remaining elements in either the entire first row or the entire first column are zero; then evaluate the resulting smaller determinant. In general, the cofactor of an element a_{ij} in an $n×n$ determinant is $(−1)^{i+j}$ times the (<em>n</em> − 1) × (<em>n</em> − 1) determinant obtained by deleting the row and column in which a_{ij} appeared. The value of a determinant is equal to ∑ a_{ij} · cofactor(a_{ij}) summed with either <em>i</em> or <em>j</em> held constant and with the other subscript varying from 1 to <em>n</em>.</p>
+  <p class="noindent"><em>Determinants and matrices</em>. The following interesting problems are for the reader who has experienced at least an introduction to determinants and elementary matrix theory. A determinant may be evaluated by astutely combining the operations of: (a) factoring a quantity out of a row or column; (b) adding a multiple of one row (or column) to another row (or column); (c) expanding by cofactors. The simplest and most often used version of operation (c) is to simply delete the entire first row and column, provided that the element in the upper left corner is +1 and the remaining elements in either the entire first row or the entire first column are zero; then evaluate the resulting smaller determinant. In general, the cofactor of an element a_{ij} in an $n×n$ determinant is $(-1)^{i+j}$ times the (<em>n</em> − 1) × (<em>n</em> − 1) determinant obtained by deleting the row and column in which a_{ij} appeared. The value of a determinant is equal to ∑ a_{ij} · cofactor(a_{ij}) summed with either <em>i</em> or <em>j</em> held constant and with the other subscript varying from 1 to <em>n</em>.</p>
 
   <p class="indent">If (b_{ij}) is the <em>inverse</em> of matrix (a_{ij}), then b_{ij} equals the cofactor of a_{ji} (<em>not</em> a_{ij}), divided by the determinant of the whole matrix.</p>
 
@@ -987,13 +980,13 @@
 
   <div class="image"><img src="../Images/c01/e038_02.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_39a" id="ch01ex_2_3_39">39</a>.</strong> [<em>M23</em>] Show that the inverse of a combinatorial matrix is a combinatorial matrix with the entries $b_{ij} = (−y + δ_{ij} (x + ny))/x(x + ny)$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_39a" id="ch01ex_2_3_39">39</a>.</strong> [<em>M23</em>] Show that the inverse of a combinatorial matrix is a combinatorial matrix with the entries $b_{ij}=(-y + δ_{ij} (x + ny))/x(x + ny)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_40a" id="ch01ex_2_3_40">40</a>.</strong> [<em>M24</em>] Show that the inverse of Vandermonde’s matrix is given by</p>
 
   <div class="image"><img src="../Images/c01/e038_03.png"></div>
 
-  <p class="exercisesp">Don’t be dismayed by the complicated sum in the numerator — it is just the coefficient of $x^{j−1}$ in the polynomial $(x_{1} − x) ... (x_{n} − x)/(x_{i} − x)$.</p>
+  <p class="exercisesp">Don’t be dismayed by the complicated sum in the numerator — it is just the coefficient of $x^{j-1}$ in the polynomial $(x_{1} - x) ... (x_{n} - x)/(x_{i} - x)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_41a" id="ch01ex_2_3_41">41</a>.</strong> [<em>M26</em>] Show that the inverse of Cauchy’s matrix is given by</p>
 
@@ -1005,7 +998,7 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_44a" id="ch01ex_2_3_44">44</a>.</strong> [<em>M26</em>] What is the sum of all n^{2} elements in the inverse of Cauchy’s matrix?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_45a" id="ch01ex_2_3_45">45</a>.</strong> [<em>M25</em>] A <em>Hilbert matrix</em>, sometimes called an $n×n$ segment of <em>the</em> (infinite) Hilbert matrix, is a matrix for which $a_{ij} = 1/(i + j − 1)$. Show that this is a special case of Cauchy’s matrix, find its inverse, show that each element of the inverse is an integer, and show that the sum of all elements of the inverse is $n^{2}$. [<em>Note:</em> Hilbert matrices have often been used to test various matrix manipulation algorithms, because they are numerically unstable, and they have known inverses. However, it is a mistake to compare the <em>known</em> inverse, given in this exercise, to the <em>computed</em> inverse of a Hilbert matrix, since the matrix to be inverted must be expressed in rounded numbers beforehand; the inverse of an approximate Hilbert matrix will be somewhat different from the inverse of an exact one, due to the instability present. Since the elements of the inverse are integers, and since the inverse matrix is just as unstable as the original, the inverse can be specified exactly, and one could try to invert the inverse. The integers that appear in the inverse are, however, quite large.] The solution to this problem requires an elementary knowledge of factorials and binomial coefficients, which are discussed in <a href="../Text/ch01.html#ch01lev2sec5">Sections 1.2.5</a> and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>.</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_45a" id="ch01ex_2_3_45">45</a>.</strong> [<em>M25</em>] A <em>Hilbert matrix</em>, sometimes called an $n×n$ segment of <em>the</em> (infinite) Hilbert matrix, is a matrix for which $a_{ij}=1/(i + j - 1)$. Show that this is a special case of Cauchy’s matrix, find its inverse, show that each element of the inverse is an integer, and show that the sum of all elements of the inverse is $n^{2}$. [<em>Note:</em> Hilbert matrices have often been used to test various matrix manipulation algorithms, because they are numerically unstable, and they have known inverses. However, it is a mistake to compare the <em>known</em> inverse, given in this exercise, to the <em>computed</em> inverse of a Hilbert matrix, since the matrix to be inverted must be expressed in rounded numbers beforehand; the inverse of an approximate Hilbert matrix will be somewhat different from the inverse of an exact one, due to the instability present. Since the elements of the inverse are integers, and since the inverse matrix is just as unstable as the original, the inverse can be specified exactly, and one could try to invert the inverse. The integers that appear in the inverse are, however, quite large.] The solution to this problem requires an elementary knowledge of factorials and binomial coefficients, which are discussed in <a href="../Text/ch01.html#ch01lev2sec5">Sections 1.2.5</a> and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_46a" id="ch01ex_2_3_46">46</a>.</strong> [<em>M30</em>] Let <em>A</em> be an $m × n$ matrix, and let <em>B</em> be an $n × m$ matrix. Given that $1 ≤ j_{1}, j_{2},..., j_{m} ≤ n$, let $A_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of columns <a id="page_39"></a>$j_{1},..., j_{m}$ of <em>A</em>, and let $B_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of rows $j_{1},..., j_{m}$ of <em>B</em>. Prove the <em>Binet–Cauchy identity</em></p>
 
@@ -1095,7 +1088,7 @@
 
   <div class="equation" id="ch01eq-lev2sec4-6"><img src="../Images/c01/041equ01.png"></div>
 
-  <p class="noindent">These <em>p</em> numbers are all <em>distinct</em>, for if $ax mod p = ay mod p$, then by definition (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) $ax ≡ ay (modulo p)$; hence by <a href="../Text/ch01.html#law_b">Law B</a>, $x ≡ y (modulo p)$.</p>
+  <p class="noindent">These <em>p</em> numbers are all <em>distinct</em>, for if $ax mod p=ay mod p$, then by definition (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) $ax ≡ ay (modulo p)$; hence by <a href="../Text/ch01.html#law_b">Law B</a>, $x ≡ y (modulo p)$.</p>
 
   <p class="indent">Since (<a href="../Text/ch01.html#ch01eq-lev2sec4-6">6</a>) gives <em>p</em> distinct numbers, all nonnegative and less than <em>p</em>, we see that the first number is zero and the rest are the integers $1, 2, ..., p-1$ in some order. Therefore by <a href="../Text/ch01.html#law_a">Law A</a>,</p>
 
