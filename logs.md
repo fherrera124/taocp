@@ -23,8 +23,8 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 
   - Answer **5** of **Section 1.2.4**:
 
-    - Before: &lt;em&gt;except</em> when $1=\frac12$.
-    - Actual: &lt;em&gt;except</em> when $x\bmod1=\frac12$.
+    - Before: &lt;em&gt;except&lt;/em&gt; when $1=\frac12$.
+    - Actual: &lt;em&gt;except&lt;/em&gt; when $x\bmod1=\frac12$.
 
   - Answer **6** of **Section 1.2.4**:
 
@@ -48,8 +48,8 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 
   - Answer **37** of **Section 1.2.8**:
 
-    - Before: &lt;em&gt;Proof:</em> Let $μ$
-    - Actual: &lt;em&gt;Proof:</em> Let $μ(m)=F\_j$;
+    - Before: &lt;em&gt;Proof:&lt;/em&gt; Let $μ$
+    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let $μ(m)=F\_j$;
 
   - Answer **6** of **Section 1.2.10**:
 
