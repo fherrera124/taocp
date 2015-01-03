@@ -11,15 +11,15 @@
 
 The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
 
-  - On id="page_29":
+  - On id="page\_29":
 
-    - Before: [...] is that $∑_{R(j)}∣aj∣$ exists.]
-    - Actual: [...] is that $∑_{R(j)}|a_{j}|$ exists.]
+    - Before: [...] is that $∑\_{R(j)}∣aj∣$ exists.]
+    - Actual: [...] is that $∑\_{R(j)}|a\_{j}|$ exists.]
 
-  - On id="page_29":
+  - On id="page\_29":
 
-    - Before: — that is, if $∑_{R(i)} ∑_{S(j)}∣aj∣$ exists —
-    - Actual: — that is, if $∑_{R(i)} ∑_{S(j)}|a_{ij}|$ exists —
+    - Before: — that is, if $∑\_{R(i)} ∑\_{S(j)}∣aj∣$ exists —
+    - Actual: — that is, if $∑\_{R(i)} ∑\_{S(j)}|a\_{ij}|$ exists —
 
   - Answer **5** of **Section 1.2.4**:
 
@@ -33,13 +33,13 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 
   - Answer **17** of **Section 1.2.7**:
 
-    - Before: By exercise 4.6.2–6, we have ${p\brack k}\equiv\delta_{kp}-\delta_{k1}\text{ (modulo }p)$
+    - Before: By exercise 4.6.2–6, we have ${p\brack k}\equiv\delta\_{kp}-\delta\_{k1}\text{ (modulo }p)$
     - Actual: By exercise 4.6.2–6, we have $x^{\overline p}\equiv x^{p}-x\text{ (modulo }p)$
 
   - Answer **21** of **Section 1.2.8**:
 
-    - Before: [...] the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n-x})/(x^{2}+x-1)$
-    - Actual: [...] the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n}-x)/(x^{2}+x-1)$
+    - Before: [...] the solution is $(x^{n+1}F\_{n+1}+x^{n+2}F\_{n-x})/(x^{2}+x-1)$
+    - Actual: [...] the solution is $(x^{n+1}F\_{n+1}+x^{n+2}F\_{n}-x)/(x^{2}+x-1)$
 
   - Answer **36** of **Section 1.2.8**:
 
@@ -49,7 +49,7 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
   - Answer **37** of **Section 1.2.8**:
 
     - Before: <em>Proof:</em> Let $μ$
-    - Actual: <em>Proof:</em> Let $μ(m)=F_j$;
+    - Actual: <em>Proof:</em> Let $μ(m)=F\_j$;
 
   - Answer **6** of **Section 1.2.10**:
 
