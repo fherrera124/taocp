@@ -1072,7 +1072,7 @@
 
   <p class="indent">(b) <span class="top"><img src="../Images/e494_08.png"></span>.</p>
 
-  <p class="indent">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠ 0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
+  <p class="indent">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
 
   <p class="indent">(d) Since $F_{n+k}=F_{k-1}F_{n}+F_{k}F_{n+1}$ the result follows from (a) and (c). This result may also be proved in slightly more general form by using the <em>q</em>-nomial theorem of <a href="../Text/ch01a.html#ch01ex_2_6_58">exercise 1.2.6–58</a>. <em>References:</em> Dov Jarden, <em>Recurring Sequences</em>, 2nd ed. (Jerusalem, 1966), 30–33; J. Riordan, <em>Duke Math. J.</em> <strong>29</strong> (1962), 5–12.</p>
 
@@ -1352,7 +1352,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_2_3" id="ch01ex_3_2_3a">3</a>. $|R_{mn}|\le|B_m/(m)!|\int_{1}^{n}|f^{(m)}(x)|dx$. [<em>Notes:</em> We have $B_{m}(x)=(-1)^{m}B_{m}(1-x)$, and $B_{m}(x)$ is $m!$ times the coefficient of $z^{m}$ in $ze^{xz}/(e^{z}-1)$. In particular, since $e^{z/2}/(e^{z}-1)=1/(e^{z/2}-1)-1/(e^{z}-1)$ we have $B_{m}(\frac12)=(2^{1-m}-1)B_{m}$. It is not difficult to prove that the maximum of $|B_{m}-B_{m}(x)|$ for 0 ≤ <em>x</em> ≤ 1 occurs at $x=\frac12$ when <em>m</em> is even. Now when $m=2k≥4$, let us write simply $R_{m}$ and $C_{m}$ for the quantities $R_{mn}$ and $C_{mn}$. We have $R_{m-2}=C_{m}+R_{m}=\int_{1}^{n}(B_{m}-B_{m}(\{x\}))f^{(m)}(x)dx/m!$, and $B_{m}-B_{m}(\{x\})$ is between 0 and $(2-2^{1-m})B_{m}$; hence $R_{m-2}$ lies between 0 and $(2-2^{1-m})C_{m}$. It follows that $R_{m}$ lies between $-C_{m}$ and $(1-2^{1-m})C_{m}$, a slightly stronger result. According to this argument we see that if $f^{(m+2)}(x) f^{(m+4)}(x)\gt 0$ for 1 &lt; <em>x</em> &lt; <em>n</em>, the quantities $C_{m+2}$ and $C_{m+4}$ have opposite signs, while $R_{m}$ has the sign of $C_{m+2}$ and $R_{m+2}$ has the sign of $C_{m+4}$ and $|R_{m+2}|≤|C_{m+2}|$; this proves (<a href="../Text/ch01b.html#ch01eq-lev3sec2-13">13</a>). See J. F. Steffensen, <em>Interpolation</em> (Baltimore: 1927),§14.]</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_4" id="ch01ex_3_2_4a">4</a>. <span class="middle"><img src="../Images/e503_08.png"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_4" id="ch01ex_3_2_4a">4</a>. $\sum\limits_{0\le k\lt n}k^{m}=\frac{n^{m+1}}{1+m}+\sum\limits_{k=1}^{m}\frac{B_k}{k!}\frac{m!}{(m-k+1)!}n^{m-k+1}=\frac{1}{m+1}B_{m+1}(n)-\frac{1}{m+1}B_{m+1}$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_2_5" id="ch01ex_3_2_5a">5</a>. It follows that</p>
 
@@ -1372,19 +1372,19 @@
 
   <p>This shows that $\varGamma(c+1)=ce^{\ln \varGamma(c)}$ has the same expansion we derived for <em>c</em>!.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_7" id="ch01ex_3_2_7a">7</a>. $An^{n^{2}/2+n/2+1/12}e^{-n^{2}/4}$ where <em>A</em> is a constant. To obtain this result, apply Euler’s summation formula to <span class="middle"><img src="../Images/e504_03.png"></span> ln <em>k</em>. A more accurate formula is obtained if we multiply the answer above by</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_7" id="ch01ex_3_2_7a">7</a>. $A\,n^{n^{2}/2+n/2+1/12}e^{-n^{2}/4}$ where <em>A</em> is a constant. To obtain this result, apply Euler’s summation formula to $\sum_{k=1}^{n-1}k\ln k$. A more accurate formula is obtained if we multiply the answer above by</p>
 
   <p class="center">$\exp(-B_{4}/(2·3·4n^{2})-\cdots-B_{2t}/((2t-2)(2t-1)(2t)n^{2t-2})+O(1/n^{2t}))$.</p>
 
-  <p>In these formulas, <em>A</em> is the “Kinkelin–Glaisher constant” 1.2824271 ... [<em>Crelle</em> <strong>57</strong> (1860), 122–158; <em>Messenger of Math.</em> <strong>7</strong> (1877), 43–47], which can be shown to equal $e^{1/12-ζ'(-1)}=(2πe^{γ-ζ'(2)/ζ(2)})^{1/12}$ [de Bruijn, <em>Asymptotic Methods in Analysis</em>,§3.7].</p>
+  <p>In these formulas, <em>A</em> is the “Kinkelin–Glaisher constant” 1.2824271 ... [<em>Crelle</em> <strong>57</strong> (1860), 122–158; <em>Messenger of Math.</em> <strong>7</strong> (1877), 43–47], which can be shown to equal $e^{1/12-\zeta'(-1)}=(2πe^{γ-\zeta'(2)/\zeta(2)})^{1/12}$ [de Bruijn, <em>Asymptotic Methods in Analysis</em>,§3.7].</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_2_8" id="ch01ex_3_2_8a">8</a>. We have, for example, $\ln(an^{2}+bn)=2\ln n+\ln a+\ln(1+b/(an))$. Thus the answer to the first question is found to be $2an^{2}\ln n+a(\ln a-1)n^{2}+2bn\ln n+bn\ln a+\ln n+b^{2}/(2a)+\frac12\ln a+σ+(3a-b^{2})b/(6a^{2}n)+O(n^{-2})$. Massive cancellation occurs when we compute the quantity $\ln (cn^{2})!-\ln (cn^{2}-n)!-n\ln c-\ln n^{2}!+\ln (n^{2}-n)!=(c-1)/(2c)-(c-1)(2c-1)/(6c^{2}n)+O(n^{-2})$. The answer is therefore</p>
 
   <div class="image"><img src="../Images/e504_05.png"></div>
 
-  <p>Incidentally, <span class="middle"><img src="../Images/e504_06.png"></span> can be written <span class="middle"><img src="../Images/e504_07.png"></span> where $α=1-1/c$.</p>
+  <p>Incidentally, $\binom{\smash{cn^{2}}\vphantom n}{n}/\left(c^{n}\binom{\smash{n^{2}}\vphantom n}{n}\right)$ can be written $\prod_{j=1}^{n-1}(1+\alpha j/(n^{2}-j))$ where $α=1-1/c$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln(2n)!=\left(2n+\frac12\right)\ln 2n-2n+\sigma+\frac{1}{24n}+O(n^{-3})$, and $\ln(n!)^{2}=(2n+1)\ln n-2n+2\sigma+\frac{1}{6n}+O(n^{-3})$; hence <span class="middle"><img src="../Images/e504_11.png"></span>. (b) Since <span class="middle"><img src="../Images/e504_12a.png"></span> and <span class="middle"><img src="../Images/e504_12.png"></span>, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln(2n)!=(2n+\frac12)\ln 2n-2n+\sigma+\frac{1}{24n}+O(n^{-3})$, and $\ln(n!)^{2}=(2n+1)\ln n-2n+2\sigma+\frac{1}{6n}+O(n^{-3})$; hence $\binom{2n}{n}=\exp(2n\ln 2-\frac12\ln\pi n-\frac{1}{8n}+O(n^{-3}))=$ $2^{2n}(\pi n)^{-1/2}(1-\frac{1}{8}n^{-1}+\frac{1}{128}n^{-2}+O(n^{-3}))$. (b) Since $\binom{2n}{n}=2^{2n}\binom{n-1/2}{n}$ and $\binom{n-1/2}{n}=\varGamma(n+1/2)/(n\varGamma(n)\varGamma(1/2))=$ $n^{-1}n^{\overline{1/2}}/\sqrt{\pi}$, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
 
   <div class="image"><img src="../Images/e504_13.png"></div>
 
@@ -1404,7 +1404,7 @@
 
   <p><a id="page_505"></a><a href="../Text/ch01b.html#ch01ex_3_3_4" id="ch01ex_3_3_4a">4</a>. $1+1/u$ is bounded as a function of <em>v</em>, since it goes to zero as <em>v</em> goes from <em>r</em> to infinity. Replace it by <em>M</em> and the resulting integral is $Me^{-rx}$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_5" id="ch01ex_3_3_5a">5</a>. $f''(x)=f(x)((n+1/2)(n-1/2)/x^{2}-(2n+1)/x+1)$ changes sign at the point <span class="middle"><img src="../Images/e505_01.png"></span>.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_5" id="ch01ex_3_3_5a">5</a>. $f''(x)=f(x)((n+1/2)(n-1/2)/x^{2}-(2n+1)/x+1)$ changes sign at the point $r=n+1/2-\sqrt{n+1/2}$, so $|R|=O(\int_{0}^{n}|f''(x)|dx)=$ $O(\int_{0}^{r}f''(x)dx-\int_{r}^{n}f''(x)dx)=$ $O(f'(n)-2f'(r)+f'(0))=$ $O(f(n)/\sqrt{n})$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_6" id="ch01ex_3_3_6a">6</a>. It is $n^{n+β}\exp((n+β)(α/n-α^{2}/2n^{2}+O(n^{-3})))$, etc.</p>
 
@@ -1412,7 +1412,7 @@
 
   <div class="image"><img src="../Images/e505_02.png"></div>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_8" id="ch01ex_3_3_8a">8</a>. (Solution by Miklós Simonovits.) We have $|f(x)|\lt x$ if <em>x</em> is large enough. Let <span class="middle"><img src="../Images/e505_03.png"></span> be the difference between the two given integrals, where $g(u,x)=u-x\ln(1+u/x)$ and $h(u,x)=u^{2}/2x-u^{3}/3x^{2}+\cdots+(-1)^{m}u^{m}/mx^{m-1}$. Notice that $g(u,x)≥0$ and $h(u,x)≥0$ when $|u|\lt x$; also $g(u,x)=h(u,x)+O(u^{m+1}/x^{m})$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_8" id="ch01ex_3_3_8a">8</a>. (Solution by Miklós Simonovits.) We have $|f(x)|\lt x$ if <em>x</em> is large enough. Let $R(x)=\int_{0}^{f(x)}(e^{-g(u,x)}-e^{-h(u,x)})du$ be the difference between the two given integrals, where $g(u,x)=u-x\ln(1+u/x)$ and $h(u,x)=u^{2}/2x-u^{3}/3x^{2}+\cdots+(-1)^{m}u^{m}/mx^{m-1}$. Notice that $g(u,x)≥0$ and $h(u,x)≥0$ when $|u|\lt x$; also $g(u,x)=h(u,x)+O(u^{m+1}/x^{m})$.</p>
 
   <p class="indent">According to the mean value theorem, $e^{a}-e^{b}=(a-b) e^{c}$ for some <em>c</em> between <em>a</em> and <em>b</em>. Therefore $|e^{a}-e^{b}|≤|a-b|$ when <em>a</em>, <em>b</em> ≤ 0. It follows that</p>
 
@@ -1420,7 +1420,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_9" id="ch01ex_3_3_9a">9</a>. We may assume that <em>p</em> ≠ 1, since <em>p</em> = 1 is given by <a href="../Text/ch02b.html#ch02b_the_a">Theorem A</a>. We also assume that <em>p</em> ≠ 0, since the case <em>p</em> = 0 is trivial.</p>
 
-  <p class="indent"><em>Case 1: p</em> &lt; 1. Substitute $t=px(1-u)$ and then $v=-\ln(1-u)-pu$. We have $dv=((1-p+pu)/(1-u))du$, so the transformation is monotone for 0 ≤ <em>u</em> ≤ 1, and we obtain an integral of the form</p>
+  <p class="indent"><em>Case 1:</em> <em>p</em> &lt; 1. Substitute $t=px(1-u)$ and then $v=-\ln(1-u)-pu$. We have $dv=((1-p+pu)/(1-u))du$, so the transformation is monotone for 0 ≤ <em>u</em> ≤ 1, and we obtain an integral of the form</p>
 
   <div class="image"><img src="../Images/e505_05.png"></div>
 
@@ -1428,11 +1428,11 @@
 
   <div class="image"><img src="../Images/e505_06.png"></div>
 
-  <p class="indent"><em>Case 2:</em> <em>p</em> &gt; 1. This is $1-\int_{px}^{\infty}()$. In the latter integral, substitute $t=px(1+u)$, then $v=pu-\ln(1+u)$, and proceed as in Case 1. The answer turns out to be the same formula as Case 1, plus one. Notice that $pe^{1-p}\lt 1$, so $(pe^{1-p})^{x}$ is <em>very</em> small.</p>
+  <p class="indent"><em>Case 2:</em> <em>p</em> &gt; 1. This is $1-\int_{px}^{\infty}(\;)$. In the latter integral, substitute $t=px(1+u)$, then $v=pu-\ln(1+u)$, and proceed as in Case 1. The answer turns out to be the same formula as Case 1, plus one. Notice that $pe^{1-p}\lt 1$, so $(pe^{1-p})^{x}$ is <em>very</em> small.</p>
 
   <p class="indent">The answer to <a href="../Text/ch01b.html#ch01ex_3_3_11">exercise 11</a> gives another way to solve this problem.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_10" id="ch01ex_3_3_10a">10</a>. <span class="middle"><img src="../Images/e505_08.png"></span></p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_10" id="ch01ex_3_3_10a">10</a>. $\frac{p}{p-1}(pe^{1-p})^{x}e^{-x}x^{x}\left(1-e^{-y}-\frac{e^{-y}(e^{y}-1-y-y^{2}/2)}{x(p-1)^{2}}+O(x^{-2})\right)$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_11" id="ch01ex_3_3_11a">11</a>. First, $xQ_{x}(n)+R_{1/x}(n)=n!(x/n)^{n}e^{n/x}$ generalizes (<a href="../Text/ch01b.html#ch01eq-lev3sec3-4">4</a>). Next, we have $R_{x}(n)=n!(e^{x}/nx)^{n}γ(n,nx)/(n-1)!$, generalizing (<a href="../Text/ch01b.html#ch01eq-lev3sec3-9">9</a>). Since $aγ(a,x)=γ(a+1,x)+e^{-x}x^{a}$ we can also write $R_{x}(n)=1+(e^{x}/nx)^{n}γ(n+1,nx)$, relating this problem to <a href="../Text/ch01b.html#ch01ex_3_3_9">exercise 9</a>.</p>
 

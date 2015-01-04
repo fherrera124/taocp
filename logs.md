@@ -1,13 +1,21 @@
 ###According to **ERRATA TO VOLUME 1 (AFTER 2010)**:
 
-  - (Amendment):
+  - Amendments:
 
-    **Page 476** replacement for answer 4 (22 Dec 2013)
+    **Page 476** replacement for answer **4** (22 Dec 2013):
 
     - Before: **4.** $x-1\\lt\\lfloor\{x\}\\rfloor≤x$; so $-x+1\\gt-\\lfloor\{x\}\\rfloor≥-x$; hence the result.
     - Actual: **4.** By part (f), $x\\le\\lceil\{x\}\\rceil\\lt x+1$; hence $-x-1\\lt\\lceil\{x\}\\rceil\\le-x$; use part (e).
 
-###Some of the most important errors of the digital edition I have fixed [*](#note1):<a id="title"></a>
+  - Errors:
+
+    **Page 505** second display in answer **9** (17 Oct 2007) [*](#note1):<a id="err1"></a>
+
+    - Before: x^\{z\}
+    - (Not modified yet) Should be: x^\{x\}
+
+
+###Some of the most important errors of the digital edition I have fixed [**](#note2):<a id="title"></a>
 
 The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
 
@@ -66,6 +74,13 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: \[...\] we have $B\_\{m\}(\\frac12)=(2^\{1-m\}-1)$.
     - Actual: \[...\] we have $B\_\{m\}(\\frac12)=(2^\{1-m\}-1)B\_\{m\}$.
 
+  - Answer **8** of **Section 1.2.11.3**:
+
+    - Before: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})$
+    - Actual: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})du$
 
 
-<a id="note1"></a>[*](#title) The list does not include all errors I fixed, only those in which I'm not entirely sure if the correction is correct.
+<a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
+This force me to check all the erratas. Later I will.
+
+<a id="note2"></a>[**](#title) The list does not include all errors I fixed, only those in which I'm not entirely sure if the correction is correct.

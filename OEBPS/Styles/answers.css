@@ -46,14 +46,9 @@ div.image img {
   max-width: 99%;
   max-height: 99%;
 }
-.image {
+.image,.center {
   margin-top: 5pt;
   margin-bottom: 5pt;
-  text-align: center;
-  page-break-inside: avoid;
-  /*display:block;*/
-}
-.center {
   text-align: center;
 }
 .right {
