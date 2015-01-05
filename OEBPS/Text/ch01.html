@@ -71,15 +71,15 @@
 
   <p class="indent">After the summarizing phrase comes a description in words and symbols of some <em>action</em> to be performed or some decision to be made. Parenthesized <em>comments</em>, like the second sentence in step E1, may also appear. Comments are included as explanatory information about that step, often indicating certain invariant characteristics of the variables or the current goals. They do not specify <a id="page_3"></a>actions that belong to the algorithm, but are meant only for the reader’s benefit as possible aids to comprehension.</p>
 
-  <p class="indent">The arrow “←” in step E3 is the all-important <em>replacement</em> operation, sometimes called <em>assignment</em> or <em>substitution</em>: “$m←n$” means that the value of variable <em>m</em> is to be replaced by the current value of variable <em>n</em>. When <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> begins, the values of <em>m</em> and <em>n</em> are the originally given numbers; but when it ends, those variables will have, in general, different values. An arrow is used to distinguish the replacement operation from the equality relation: We will not say, “Set <em>m</em> = <em>n</em>,” but we will perhaps ask, “Does <em>m</em> = <em>n</em>?” The “=” sign denotes a condition that can be tested, the “←” sign denotes an action that can be performed. The operation of <em>increasing <em>n</em> by one</em> is denoted by “$n←n + 1$” (read “<em>n</em> is replaced by <em>n</em> + 1” or “<em>n</em> gets <em>n</em> + 1”). In general, “variable ← formula” means that the formula is to be computed using the present values of any variables appearing within it; then the result should replace the previous value of the variable at the left of the arrow. Persons untrained in computer work sometimes have a tendency to say “<em>n</em> becomes <em>n</em> + 1” and to write “<em>n</em> → <em>n</em> + 1” for the operation of increasing <em>n</em> by one; this symbolism can only lead to confusion because of its conflict with standard conventions, and it should be avoided.</p>
+  <p class="indent">The arrow “←” in step E3 is the all-important <em>replacement</em> operation, sometimes called <em>assignment</em> or <em>substitution</em>: “$m←n$” means that the value of variable <em>m</em> is to be replaced by the current value of variable <em>n</em>. When <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> begins, the values of <em>m</em> and <em>n</em> are the originally given numbers; but when it ends, those variables will have, in general, different values. An arrow is used to distinguish the replacement operation from the equality relation: We will not say, “Set <em>m</em> = <em>n</em>,” but we will perhaps ask, “Does <em>m</em> = <em>n</em>?” The “=” sign denotes a condition that can be tested, the “←” sign denotes an action that can be performed. The operation of <em>increasing <em>n</em> by one</em> is denoted by “$n←n+1$” (read “<em>n</em> is replaced by <em>n</em> + 1” or “<em>n</em> gets <em>n</em> + 1”). In general, “variable ← formula” means that the formula is to be computed using the present values of any variables appearing within it; then the result should replace the previous value of the variable at the left of the arrow. Persons untrained in computer work sometimes have a tendency to say “<em>n</em> becomes <em>n</em> + 1” and to write “$n→n+1$” for the operation of increasing <em>n</em> by one; this symbolism can only lead to confusion because of its conflict with standard conventions, and it should be avoided.</p>
 
-  <p class="indent">Notice that the order of actions in step E3 is important: “Set $m←n$, $n←r$” is quite different from “Set $n←r$, $m←n$,” since the latter would imply that the previous value of <em>n</em> is lost before it can be used to set <em>m</em>. Thus the latter sequence is equivalent to “Set $n←r$, $m←r$.” When several variables are all to be set equal to the same quantity, we can use multiple arrows; for example, “$n←r$, $m←r$” may be written “$n←m←r$.” To interchange the values of two variables, we can write “Exchange $m ↔ n$”; this action could also be specified by using a new variable <em>t</em> and writing “Set $t←m$, $m←n$, $n←t$.”</p>
+  <p class="indent">Notice that the order of actions in step E3 is important: “Set $m←n$, $n←r$” is quite different from “Set $n←r$, $m←n$,” since the latter would imply that the previous value of <em>n</em> is lost before it can be used to set <em>m</em>. Thus the latter sequence is equivalent to “Set $n←r$, $m←r$.” When several variables are all to be set equal to the same quantity, we can use multiple arrows; for example, “$n←r$, $m←r$” may be written “$n←m←r$.” To interchange the values of two variables, we can write “Exchange $m↔n$”; this action could also be specified by using a new variable <em>t</em> and writing “Set $t←m$, $m←n$, $n←t$.”</p>
 
   <p class="indent">An algorithm starts at the lowest-numbered step, usually step 1, and it performs subsequent steps in sequential order unless otherwise specified. In step E3, the imperative “go back to step E1” specifies the computational order in an obvious fashion. In step E2, the action is prefaced by the condition “If <em>r</em> = 0”; so if <em>r</em> ≠ 0, the rest of that sentence does not apply and no action is specified. We might have added the redundant sentence, “If <em>r</em> ≠ 0, go on to step E3.”</p>
 
   <p class="indent">The heavy vertical line “<span class="middle"><img src="../Images/c01/common-01.png"></span>” appearing at the end of step E3 is used to indicate the end of an algorithm and the resumption of text.</p>
 
-  <p class="indent">We have now discussed virtually all the notational conventions used in the algorithms of this book, except for a notation used to denote “subscripted” or <a id="page_4"></a>“indexed” items that are elements of an ordered array. Suppose we have <em>n</em> quantities, $v_{1}, v_{2}, ..., v_{n}$; instead of writing $v_{j}$ for the <em>j</em> th element, the notation $v[j]$ is often used. Similarly, $a[i, j]$ is sometimes used in preference to a doubly subscripted notation like $a_{ij}$. Sometimes multiple-letter names are used for variables, usually set in capital letters; thus <code>TEMP</code> might be the name of a variable used for temporarily holding a computed value, <code>PRIME[K]</code> might denote the <code>K</code>th prime number, and so on.</p>
+  <p class="indent">We have now discussed virtually all the notational conventions used in the algorithms of this book, except for a notation used to denote “subscripted” or <a id="page_4"></a>“indexed” items that are elements of an ordered array. Suppose we have <em>n</em> quantities, $v_{1},v_{2},...,v_{n}$; instead of writing $v_{j}$ for the <em>j</em> th element, the notation $v[j]$ is often used. Similarly, $a[i,j]$ is sometimes used in preference to a doubly subscripted notation like $a_{ij}$. Sometimes multiple-letter names are used for variables, usually set in capital letters; thus <code>TEMP</code> might be the name of a variable used for temporarily holding a computed value, <code>PRIME[K]</code> might denote the <code>K</code>th prime number, and so on.</p>
 
   <p class="indent">So much for the <em>form</em> of algorithms; now let us <em>perform</em> one. It should be mentioned immediately that the reader should <em>not</em> expect to read an algorithm as if it were part of a novel; such an attempt would make it pretty difficult to understand what is going on. An algorithm must be seen to be believed, and the best way to learn what an algorithm is all about is to try it. The reader should always take pencil and paper and work through an example of each algorithm immediately upon encountering it in the text. Usually the outline of a worked example will be given, or else the reader can easily conjure one up. This is a simple and painless way to gain an understanding of a given algorithm, and all other approaches are generally unsuccessful.</p>
 
@@ -89,7 +89,7 @@
 
   <p class="noindent">This would make no essential change in the algorithm, except to increase its length slightly, and to decrease its running time in about one half of all cases.</p>
 
-  <p class="indent">Back at step E1, we find that $544/119=4 + 68/119$, so $r←68$. Again E2 is inapplicable, and at E3 we set $m←119$, $n←68$. The next round sets $r←51$, and ultimately $m←68$, $n←51$. Next $r←17$, and $m←51$, $n←17$. Finally, when 51 is divided by 17, we set $r←0$, so at step E2 the algorithm terminates. The greatest common divisor of 119 and 544 is 17.</p>
+  <p class="indent">Back at step E1, we find that $544/119=4+68/119$, so $r←68$. Again E2 is inapplicable, and at E3 we set $m←119$, $n←68$. The next round sets $r←51$, and ultimately $m←68$, $n←51$. Next $r←17$, and $m←51$, $n←17$. Finally, when 51 is divided by 17, we set $r←0$, so at step E2 the algorithm terminates. The greatest common divisor of 119 and 544 is 17.</p>
 
   <p class="indent">So this is an algorithm. The modern meaning for algorithm is quite similar to that of <em>recipe, process, method, technique, procedure, routine, rigmarole,</em> except that the word “algorithm” connotes something just a little different. Besides merely being a finite set of rules that gives a sequence of operations for solving a specific type of problem, an algorithm has five important features:</p>
 
@@ -107,11 +107,11 @@
 
   <p class="indent">(We can easily <em>prove</em> that this number is indeed the greatest common divisor, as follows. After step E1, we have</p>
 
-  <p class="center">$m=qn + r$,</p>
+  <p class="center">$m=qn+r$,</p>
 
-  <p class="noindent">for some integer <em>q</em>. If <em>r</em> = 0, then <em>m</em> is a multiple of <em>n</em>, and clearly in such a case <em>n</em> is the greatest common divisor of <em>m</em> and <em>n</em>. If <em>r</em> ≠ 0, note that any number that divides both <em>m</em> and <em>n</em> must divide $m-qn=r$, and any number that divides <a id="page_6"></a>both <em>n</em> and <em>r</em> must divide $qn + r=m$; so the set of common divisors of <em>m</em> and <em>n</em> is the same as the set of common divisors of <em>n</em> and <em>r</em>. In particular, the <em>greatest</em> common divisor of <em>m</em> and <em>n</em> is the same as the greatest common divisor of <em>n</em> and <em>r</em>. Therefore step E3 does not change the answer to the original problem.)</p>
+  <p class="noindent">for some integer <em>q</em>. If <em>r</em> = 0, then <em>m</em> is a multiple of <em>n</em>, and clearly in such a case <em>n</em> is the greatest common divisor of <em>m</em> and <em>n</em>. If <em>r</em> ≠ 0, note that any number that divides both <em>m</em> and <em>n</em> must divide $m-qn=r$, and any number that divides <a id="page_6"></a>both <em>n</em> and <em>r</em> must divide $qn+r=m$; so the set of common divisors of <em>m</em> and <em>n</em> is the same as the set of common divisors of <em>n</em> and <em>r</em>. In particular, the <em>greatest</em> common divisor of <em>m</em> and <em>n</em> is the same as the greatest common divisor of <em>n</em> and <em>r</em>. Therefore step E3 does not change the answer to the original problem.)</p>
 
-  <p class="number">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n} + x^{n} + y^{n}=z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
+  <p class="number">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n}+x^{n}+y^{n}=z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
 
   <p class="indent">Let us try to compare the concept of an algorithm with that of a cookbook recipe. A recipe presumably has the qualities of finiteness (although it is said that a watched pot never boils), input (eggs, flour, etc.), and output (TV dinner, etc.), but it notoriously lacks definiteness. There are frequent cases in which a cook’s instructions are indefinite: “Add a dash of salt.” A “dash” is defined to be “less than ⅛ teaspoon,” and salt is perhaps well enough defined; but where should the salt be added — on top? on the side? Instructions like “toss lightly until mixture is crumbly” or “warm cognac in small saucepan” are quite adequate as explanations to a trained chef, but an algorithm must be specified to such a degree that even a computer can follow the directions. Nevertheless, a computer programmer can learn much by studying a good recipe book. (The author has in fact barely resisted the temptation to name the present volume “The Programmer’s Cookbook.” Perhaps someday he will attempt a book called “Algorithms for the Kitchen.”)</p>
 
@@ -127,19 +127,19 @@
 
   <p class="indent"><em>Analysis of algorithms</em> is the name the author likes to use to describe investigations such as this. The general idea is to take a particular algorithm and to determine its quantitative behavior; occasionally we also study whether or not an algorithm is optimal in some sense. The <em>theory of algorithms</em> is another subject entirely, dealing primarily with the existence or nonexistence of effective algorithms to compute particular quantities.</p>
 
-  <p class="indent">So far our discussion of algorithms has been rather imprecise, and a mathematically oriented reader is justified in thinking that the preceding commentary makes a very shaky foundation on which to erect any theory about algorithms. We therefore close this section with a brief indication of one method by which the concept of algorithm can be firmly grounded in terms of mathematical set theory. Let us formally define a <em>computational method</em> to be a quadruple (<em>Q, I, Ω, f</em>), in which <em>Q</em> is a set containing subsets <em>I</em> and <em>Ω</em>, and <em>f</em> is a function from <em>Q</em> into itself. Furthermore <em>f</em> should leave Ω pointwise fixed; that is, $f(q)$ should equal <em>q</em> for all elements <em>q</em> of Ω. The four quantities <em>Q</em>, <em>I</em>, Ω, <em>f</em> are intended to represent respectively the states of the computation, the input, the output, and the computational rule. Each input <em>x</em> in the set <em>I</em> defines a <em>computational <a id="page_8"></a>sequence</em>, $x_{0}, x_{1}, x_{2}, ...$, as follows:</p>
+  <p class="indent">So far our discussion of algorithms has been rather imprecise, and a mathematically oriented reader is justified in thinking that the preceding commentary makes a very shaky foundation on which to erect any theory about algorithms. We therefore close this section with a brief indication of one method by which the concept of algorithm can be firmly grounded in terms of mathematical set theory. Let us formally define a <em>computational method</em> to be a quadruple (<em>Q, I, Ω, f</em>), in which <em>Q</em> is a set containing subsets <em>I</em> and <em>Ω</em>, and <em>f</em> is a function from <em>Q</em> into itself. Furthermore <em>f</em> should leave Ω pointwise fixed; that is, $f(q)$ should equal <em>q</em> for all elements <em>q</em> of Ω. The four quantities <em>Q</em>, <em>I</em>, Ω, <em>f</em> are intended to represent respectively the states of the computation, the input, the output, and the computational rule. Each input <em>x</em> in the set <em>I</em> defines a <em>computational <a id="page_8"></a>sequence</em>, $x_{0},x_{1},x_{2},...$, as follows:</p>
 
   <div class="equation" id="ch01eq-lev1sec1-1"><img src="../Images/c01/008equ01.png"></div>
 
   <p class="noindent">The computational sequence is said to <em>terminate in k steps</em> if <em>k</em> is the smallest integer for which $x_{k}$ is in Ω, and in this case it is said to produce the output $x_{k}$ from <em>x</em>. (Notice that if $x_{k}$ is in Ω, so is $x_{k+1}$, because $x_{k+1}=x_{k}$ in such a case.) Some computational sequences may never terminate; an <em>algorithm</em> is a computational method that terminates in finitely many steps for all <em>x</em> in <em>I</em>.</p>
 
-  <p class="indent"><a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> may, for example, be formalized in these terms as follows: Let <em>Q</em> be the set of all singletons $(n)$, all ordered pairs $(m, n)$, and all ordered quadruples $(m, n, r, 1)$, $(m, n, r, 2)$, and $(m, n, p, 3)$, where <em>m</em>, <em>n</em>, and <em>p</em> are positive integers and <em>r</em> is a nonnegative integer. Let <em>I</em> be the subset of all pairs $(m, n)$ and let Ω be the subset of all singletons $(n)$. Let <em>f</em> be defined as follows:</p>
+  <p class="indent"><a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> may, for example, be formalized in these terms as follows: Let <em>Q</em> be the set of all singletons $(n)$, all ordered pairs $(m,n)$, and all ordered quadruples $(m,n,r,1)$, $(m,n,r,2)$, and $(m,n,p,3)$, where <em>m</em>, <em>n</em>, and <em>p</em> are positive integers and <em>r</em> is a nonnegative integer. Let <em>I</em> be the subset of all pairs $(m,n)$ and let Ω be the subset of all singletons $(n)$. Let <em>f</em> be defined as follows:</p>
 
   <div class="equation" id="ch01eq-lev1sec1-2"><img src="../Images/c01/008equ02.png"></div>
 
   <p class="noindent">The correspondence between this notation and <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> is evident.</p>
 
-  <p class="indent">This formulation of the concept of an algorithm does not include the restriction of effectiveness mentioned earlier. For example, <em>Q</em> might denote infinite sequences that are not computable by pencil and paper methods, or <em>f</em> might involve operations that mere mortals cannot always perform. If we wish to restrict the notion of algorithm so that only elementary operations are involved, we can place restrictions on <em>Q</em>, <em>I</em>, Ω, and <em>f</em>, for example as follows: Let <em>A</em> be a finite set of letters, and let $A^{*}$ be the set of all strings on <em>A</em> (the set of all ordered sequences $x_{1}x_{2} ... x_{n}$, where <em>n</em> ≥ 0 and $x_{j}$ is in <em>A</em> for 1 ≤ <em>j</em> ≤ <em>n</em>). The idea is to encode the states of the computation so that they are represented by strings of $A^{*}$. Now let <em>N</em> be a nonnegative integer and let <em>Q</em> be the set of all $(σ, j)$, where σ is in $A^{*}$ and <em>j</em> is an integer, 0 ≤ <em>j</em> ≤ <em>N</em>; let <em>I</em> be the subset of <em>Q</em> with <em>j</em> = 0 and let Ω be the subset with <em>j</em> = <em>N</em>. If θ and σ are strings in $A^{*}$, we say that θ occurs in σ if σ has the form $αθω$ for strings <em>α</em> and ω. To complete our definition, let <em>f</em> be a function of the following type, defined by the strings $θ_{j}$, $φ_{j}$ and the integers $a_{j}$, $b_{j}$ for 0 ≤ <em>j</em> &lt; <em>N</em>:</p>
+  <p class="indent">This formulation of the concept of an algorithm does not include the restriction of effectiveness mentioned earlier. For example, <em>Q</em> might denote infinite sequences that are not computable by pencil and paper methods, or <em>f</em> might involve operations that mere mortals cannot always perform. If we wish to restrict the notion of algorithm so that only elementary operations are involved, we can place restrictions on <em>Q</em>, <em>I</em>, Ω, and <em>f</em>, for example as follows: Let <em>A</em> be a finite set of letters, and let $A^{*}$ be the set of all strings on <em>A</em> (the set of all ordered sequences $x_{1}x_{2}...x_{n}$, where <em>n</em> ≥ 0 and $x_{j}$ is in <em>A</em> for 1 ≤ <em>j</em> ≤ <em>n</em>). The idea is to encode the states of the computation so that they are represented by strings of $A^{*}$. Now let <em>N</em> be a nonnegative integer and let <em>Q</em> be the set of all $(σ,j)$, where σ is in $A^{*}$ and <em>j</em> is an integer, 0 ≤ <em>j</em> ≤ <em>N</em>; let <em>I</em> be the subset of <em>Q</em> with <em>j</em> = 0 and let Ω be the subset with <em>j</em> = <em>N</em>. If θ and σ are strings in $A^{*}$, we say that θ occurs in σ if σ has the form $αθω$ for strings <em>α</em> and ω. To complete our definition, let <em>f</em> be a function of the following type, defined by the strings $θ_{j}$, $φ_{j}$ and the integers $a_{j}$, $b_{j}$ for 0 ≤ <em>j</em> &lt; <em>N</em>:</p>
 
   <div class="equation" id="ch01eq-lev1sec1-3"><img src="../Images/c01/008equ03.png"></div>
 
@@ -147,7 +147,7 @@
 
   <p class="ex-title">Exercises</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_1_1_1a" id="ch01ex_1_1_1">1</a>.</strong> [<em>10</em>] The text showed how to interchange the values of variables <em>m</em> and <em>n</em>, using the replacement notation, by setting $t←m$, $m←n$, $n←t$. Show how the values of <em>four</em> variables $(a, b, c, d)$ can be rearranged to $(b, c, d, a)$ by a sequence of replacements. In other words, the new value of <em>a</em> is to be the original value of <em>b</em>, etc. Try to use the minimum number of replacements.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_1_1_1a" id="ch01ex_1_1_1">1</a>.</strong> [<em>10</em>] The text showed how to interchange the values of variables <em>m</em> and <em>n</em>, using the replacement notation, by setting $t←m$, $m←n$, $n←t$. Show how the values of <em>four</em> variables $(a,b,c,d)$ can be rearranged to $(b,c,d,a)$ by a sequence of replacements. In other words, the new value of <em>a</em> is to be the original value of <em>b</em>, etc. Try to use the minimum number of replacements.</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_1_1_2a" id="ch01ex_1_1_2">2</a>.</strong> [<em>15</em>] Prove that <em>m</em> is always greater than <em>n</em> at the beginning of step E1, except possibly the first time this step occurs.</p>
 
@@ -163,7 +163,7 @@
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_1_1_8a" id="ch01ex_1_1_8">8</a>.</strong> [<em>M25</em>] Give an “effective” formal algorithm for computing the greatest common divisor of positive integers <em>m</em> and <em>n</em>, by specifying $θ_{j}$, $φ_{j}$, $a_{j}$, $b_{j}$ as in Eqs. (<a href="../Text/ch01.html#ch01eq-lev1sec1-3">3</a>). Let the input be represented by the string $a^{m}b^{n}$, that is, <em>m a</em>’s followed by <em>n b</em>’s. Try to make your solution as simple as possible. [<em>Hint:</em> Use <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, but instead of division in step E1, set $r←|m-n|$, $n←\min(m,n)$.]</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_1_1_9a" id="ch01ex_1_1_9">9</a>.</strong> [<em>M30</em>] Suppose that $C_{1}=(Q_{1}, I_{1}, Ω_{1}, f_{1})$ and $C_{2}=(Q_{2}, I_{2}, Ω_{2}, f_{2})$ are computational methods. For example, $C_{1}$ might stand for <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> as in Eqs. (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>), except that <em>m</em> and <em>n</em> are restricted in magnitude, and $C_{2}$ might stand for a computer program implementation of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. (Thus $Q_{2}$ might be the set of all states of the machine, i.e., all possible configurations of its memory and registers; $f_{2}$ might be the definition of single machine actions; and $I_{2}$ might be the set of initial states, each including the program that determines the greatest common divisor as well as the particular values of <em>m</em> and <em>n</em>.)</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_1_1_9a" id="ch01ex_1_1_9">9</a>.</strong> [<em>M30</em>] Suppose that $C_{1}=(Q_{1},I_{1},Ω_{1},f_{1})$ and $C_{2}=(Q_{2},I_{2},Ω_{2},f_{2})$ are computational methods. For example, $C_{1}$ might stand for <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> as in Eqs. (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>), except that <em>m</em> and <em>n</em> are restricted in magnitude, and $C_{2}$ might stand for a computer program implementation of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>. (Thus $Q_{2}$ might be the set of all states of the machine, i.e., all possible configurations of its memory and registers; $f_{2}$ might be the definition of single machine actions; and $I_{2}$ might be the set of initial states, each including the program that determines the greatest common divisor as well as the particular values of <em>m</em> and <em>n</em>.)</p>
 
   <p class="exercises1N">Formulate a set-theoretic definition for the concept “$C_{2}$ is a representation of $C_{1}$” or “$C_{2}$ simulates $C_{1}$.” This is to mean intuitively that any computation sequence of $C_{1}$ is mimicked by $C_{2}$, except that $C_{2}$ might take more steps in which to do the computation and it might retain more information in its states. (We thereby obtain a rigorous interpretation of the statement, “Program <em>X</em> is an implementation of Algorithm <em>Y</em>.”)</p>
 
@@ -186,12 +186,12 @@
   <div class="heading">
     <h4 id="ch01lev2sec1">1.2.1. Mathematical Induction</h4>
 
-    <p class="noindent">Let $P(n)$ be some statement about the integer <em>n</em>; for example, $P(n)$ might be “<em>n</em> times $(n + 3)$ is an even number,” or “if <em>n</em> ≥ 10, then $2^{n}\gt n^{3}$.” Suppose we want <em>to prove that $P (n)$ is true for all positive integers n</em>. An important way to do this is:</p>
+    <p class="noindent">Let $P(n)$ be some statement about the integer <em>n</em>; for example, $P(n)$ might be “<em>n</em> times $(n+3)$ is an even number,” or “if <em>n</em> ≥ 10, then $2^{n}\gt n^{3}$.” Suppose we want <em>to prove that $P(n)$ is true for all positive integers n</em>. An important way to do this is:</p>
   </div>
 
   <p class="indenthangingA">a) Give a proof that $P(1)$ is true.</p>
 
-  <p class="indenthangingA">b) Give a proof that “if all of $P(1), P(2), ..., P(n)$ are true, then $P(n + 1)$ is also true”; this proof should be valid for any positive integer <em>n</em>.</p>
+  <p class="indenthangingA">b) Give a proof that “if all of $P(1),P(2),...,P(n)$ are true, then $P(n+1)$ is also true”; this proof should be valid for any positive integer <em>n</em>.</p>
 
   <p class="indent">As an example, consider the following series of equations, which many people have discovered independently since ancient times:</p>
 
@@ -205,11 +205,11 @@
 
   <p class="indenthangingA">a) “$P(1)$ is true, since $1=1^{2}$.”</p>
 
-  <p class="indenthangingA">b) “If all of $P(1), ..., P(n)$ are true, then, in particular, $P(n)$ is true, so Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) holds; adding 2<em>n</em> + 1 to both sides we obtain</p>
+  <p class="indenthangingA">b) “If all of $P(1),...,P(n)$ are true, then, in particular, $P(n)$ is true, so Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) holds; adding 2<em>n</em> + 1 to both sides we obtain</p>
 
-  <p class="center">$1 + 3 + ··· + (2n-1) + (2n + 1)=n^{2} + 2n + 1=(n + 1)^{2}$,</p>
+  <p class="center">$1+3+···+(2n-1)+(2n+1)=n^{2}+2n+1=(n+1)^{2}$,</p>
 
-  <p class="indent">which proves that $P(n + 1)$ is also true.”</p>
+  <p class="indent">which proves that $P(n+1)$ is also true.”</p>
 
   <p class="indent">We can regard this method as an <em>algorithmic proof procedure.</em> In fact, the following algorithm produces a proof of $P(n)$ for any positive integer <em>n</em>, assuming that steps (a) and (b) above have been worked out:</p>
 
@@ -219,7 +219,7 @@
 
   <p class="indenthanging"><a id="page_12"></a><strong>I2.</strong> [<em>k</em> = <em>n</em>?] If <em>k</em> = <em>n</em>, terminate the algorithm; the required proof has been output.</p>
 
-  <p class="indenthanging"><strong>I3.</strong> [Prove $P(k + 1)$.] According to (b), output a proof that “If all of $P(1), ..., P (k)$ are true, then $P(k + 1)$ is true.” Also output “We have already proved $P(1), ..., P (k)$; hence $P(k + 1)$ is true.”</p>
+  <p class="indenthanging"><strong>I3.</strong> [Prove $P(k+1)$.] According to (b), output a proof that “If all of $P(1),...,P (k)$ are true, then $P(k+1)$ is true.” Also output “We have already proved $P(1),...,P (k)$; hence $P(k+1)$ is true.”</p>
 
   <p class="indenthanging"><strong>I4.</strong> [Increase <em>k</em>.] Increase <em>k</em> by 1 and go to step I2. <span class="middle"><img src="../Images/c01/common-01.png"></span></p>
 
@@ -241,13 +241,13 @@
 
   <p class="center">$p(1)=1$,&nbsp;&nbsp;&nbsp;$p(2)=2$,&nbsp;&nbsp;&nbsp;$p(3)=3$,&nbsp;&nbsp;&nbsp;$p(4)=5$,&nbsp;&nbsp;&nbsp;$p(5)=7$.</p>
 
-  <p class="noindent">At this point we might tentatively formulate, by induction, the hypothesis that the sequence $p(2), p(3), ...$ runs through the <em>prime numbers</em>. To test this hypothesis, we proceed to calculate $p(6)$ and behold! $p(6)=11$, confirming our conjecture.</p>
+  <p class="noindent">At this point we might tentatively formulate, by induction, the hypothesis that the sequence $p(2),p(3),...$ runs through the <em>prime numbers</em>. To test this hypothesis, we proceed to calculate $p(6)$ and behold! $p(6)=11$, confirming our conjecture.</p>
 
   <p class="indent">[Unfortunately, $p(7)$ turns out to be 15, spoiling everything, and we must try again. The numbers $p(n)$ are known to be quite complicated, although S. Ramanujan succeeded in guessing and proving many remarkable things about them. For further information, see G. H. Hardy, <em>Ramanujan</em> (London: Cambridge University Press, 1940), Chapters 6 and 8. See also Section 7.2.1.4.]</p>
 
   <p class="indent">Mathematical induction is quite different from induction in the sense just explained. It is not just guesswork, but a conclusive proof of a statement; indeed, it is a proof of infinitely many statements, one for each <em>n</em>. It has been called “induction” only because one must first decide somehow <em>what</em> is to be proved, <a id="page_13"></a><em>before</em> one can apply the technique of mathematical induction. Henceforth in this book we shall use the word induction only when we wish to imply proof by mathematical induction.</p>
 
-  <p class="indent">There is a geometrical way to prove Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>). <a href="../Text/ch01.html#ch01fig03">Figure 3</a> shows, for <em>n</em> = 6, $n^{2}$ cells broken into groups of $1 + 3 + ··· + (2n-1)$ cells. However, in the final analysis, this picture can be regarded as a “proof” only if we show that the construction can be carried out for all <em>n</em>, and such a demonstration is essentially the same as a proof by induction.</p>
+  <p class="indent">There is a geometrical way to prove Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>). <a href="../Text/ch01.html#ch01fig03">Figure 3</a> shows, for <em>n</em> = 6, $n^{2}$ cells broken into groups of $1+3+···+(2n-1)$ cells. However, in the final analysis, this picture can be regarded as a “proof” only if we show that the construction can be carried out for all <em>n</em>, and such a demonstration is essentially the same as a proof by induction.</p>
 
   <div class="image">
     <a id="ch01fig03"></a><img src="../Images/c01/01fig03.png">
@@ -255,13 +255,13 @@
     <p class="fig-caption"><strong>Fig. 3.</strong> The sum of odd numbers is a square.</p>
   </div>
 
-  <p class="indent">Our proof of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) used only a special case of (b); we merely showed that the truth of $P(n)$ implies the truth of $P(n + 1)$. This is an important simple case that arises frequently, but our next example illustrates the power of the method a little more. We define the <em>Fibonacci sequence</em> $F_{0}, F_{1}, F_{2}, ...$ by the rule that $F_{0}=0$, $F_{1}=1$, and every further term is the sum of the preceding two. Thus the sequence begins 0, 1, 1, 2, 3, 5, 8, 13, ...; we will investigate it in detail in <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>. We will now prove that if <em>φ</em> is the number $(1 +\sqrt{5})/2$ we have</p>
+  <p class="indent">Our proof of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-2">2</a>) used only a special case of (b); we merely showed that the truth of $P(n)$ implies the truth of $P(n+1)$. This is an important simple case that arises frequently, but our next example illustrates the power of the method a little more. We define the <em>Fibonacci sequence</em> $F_{0},F_{1},F_{2},...$ by the rule that $F_{0}=0$, $F_{1}=1$, and every further term is the sum of the preceding two. Thus the sequence begins 0, 1, 1, 2, 3, 5, 8, 13, ...; we will investigate it in detail in <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>. We will now prove that if <em>φ</em> is the number $(1+\sqrt{5})/2$ we have</p>
 
   <div class="equation" id="ch01eq-lev2sec1-3"><img src="../Images/c01/013equ01.png"></div>
 
   <p class="noindent">for all positive integers <em>n</em>. Call this formula $P(n)$.</p>
 
-  <p class="indent">If <em>n</em> = 1, then $F_{1}=1=φ^{0}=φ^{1-1}$, so step (a) has been done. For step (b) we notice first that $P(2)$ is also true, since $F_{2}=1\lt 1.6\lt φ^{1}=φ^{2-1}$. Now, if all of $P(1), P(2), ..., P(n)$ are true and <em>n</em> &gt; 1, we know in particular that $P(n-1)$ and $P(n)$ are true; so $F_{n-1} ≤ φ^{n-2}$ and $F_{n} ≤ φ^{n-1}$. Adding these inequalities, we get</p>
+  <p class="indent">If <em>n</em> = 1, then $F_{1}=1=φ^{0}=φ^{1-1}$, so step (a) has been done. For step (b) we notice first that $P(2)$ is also true, since $F_{2}=1\lt 1.6\lt φ^{1}=φ^{2-1}$. Now, if all of $P(1),P(2),...,P(n)$ are true and <em>n</em> &gt; 1, we know in particular that $P(n-1)$ and $P(n)$ are true; so $F_{n-1}≤φ^{n-2}$ and $F_{n}≤φ^{n-1}$. Adding these inequalities, we get</p>
 
   <div class="equation" id="ch01eq-lev2sec1-4"><img src="../Images/c01/013equ02.png"></div>
 
@@ -269,17 +269,17 @@
 
   <div class="equation" id="ch01eq-lev2sec1-5"><img src="../Images/c01/013equ03.png"></div>
 
-  <p class="noindent">Plugging (<a href="../Text/ch01.html#ch01eq-lev2sec1-5">5</a>) into (<a href="../Text/ch01.html#ch01eq-lev2sec1-4">4</a>) gives $F_{n+1} ≤ φ^{n}$, which is $P(n + 1)$. So step (b) has been done, and (<a href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>) has been proved by mathematical induction. Notice that we approached step (b) in two different ways here: We proved $P(n+1)$ <em>directly</em> when <em>n</em> = 1, and we used an inductive method when <em>n</em> &gt; 1. This was necessary, since when <em>n</em> = 1 our reference to $P(n-1)=P(0)$ would not have been legitimate.</p>
+  <p class="noindent">Plugging (<a href="../Text/ch01.html#ch01eq-lev2sec1-5">5</a>) into (<a href="../Text/ch01.html#ch01eq-lev2sec1-4">4</a>) gives $F_{n+1}≤φ^{n}$, which is $P(n+1)$. So step (b) has been done, and (<a href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>) has been proved by mathematical induction. Notice that we approached step (b) in two different ways here: We proved $P(n+1)$ <em>directly</em> when <em>n</em> = 1, and we used an inductive method when <em>n</em> &gt; 1. This was necessary, since when <em>n</em> = 1 our reference to $P(n-1)=P(0)$ would not have been legitimate.</p>
 
   <p class="indent">Mathematical induction can also be used to prove things about <em>algorithms</em>. Consider the following generalization of Euclid’s algorithm.</p>
 
-  <p class="noindent"><a id="ch01alg-lev2sec1-E"></a><strong>Algorithm E</strong> (<em>Extended Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, we compute their greatest common divisor <em>d</em>, and we also compute two not-necessarily-positive integers <em>a</em> and <em>b</em> such that $am + bn=d$.</p>
+  <p class="noindent"><a id="ch01alg-lev2sec1-E"></a><strong>Algorithm E</strong> (<em>Extended Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, we compute their greatest common divisor <em>d</em>, and we also compute two not-necessarily-positive integers <em>a</em> and <em>b</em> such that $am+bn=d$.</p>
 
   <p class="indenthanging"><strong>E1.</strong> [Initialize.] Set $a'←b←1$, $a←b'←0$, $c←m$, $d←n$.</p>
 
-  <p class="indenthanging"><a id="page_14"></a><strong>E2.</strong> [Divide.] Let <em>q</em> and <em>r</em> be the quotient and remainder, respectively, of <em>c</em> divided by <em>d</em>. (We have $c=qd + r$ and 0 ≤ <em>r</em> &lt; <em>d</em>.)</p>
+  <p class="indenthanging"><a id="page_14"></a><strong>E2.</strong> [Divide.] Let <em>q</em> and <em>r</em> be the quotient and remainder, respectively, of <em>c</em> divided by <em>d</em>. (We have $c=qd+r$ and 0 ≤ <em>r</em> &lt; <em>d</em>.)</p>
 
-  <p class="indenthanging"><strong>E3.</strong> [Remainder zero?] If <em>r</em> = 0, the algorithm terminates; we have in this case $am + bn=d$ as desired.</p>
+  <p class="indenthanging"><strong>E3.</strong> [Remainder zero?] If <em>r</em> = 0, the algorithm terminates; we have in this case $am+bn=d$ as desired.</p>
 
   <p class="indenthanging"><strong>E4.</strong> [Recycle.] Set $c←d$, $d←r$, $t←a'$, $a'←a$, $a←t-qa$, $t←b'$, $b'←b$, $b←t-qb$, and go back to E2. <span class="middle"><img src="../Images/c01/common-01.png"></span></p>
 
@@ -287,7 +287,7 @@
 
   <div class="image"><img src="../Images/c01/e014_01.png"></div>
 
-  <p class="noindent">The answer is correct: $5 × 1769-16 × 551=8845-8816=29$, the greatest common divisor of 1769 and 551.</p>
+  <p class="noindent">The answer is correct: $5×1769-16×551=8845-8816=29$, the greatest common divisor of 1769 and 551.</p>
 
   <p class="indent">The problem is to <em>prove</em> that this algorithm works properly, for all <em>m</em> and <em>n</em>. We can try to apply the method of mathematical induction by letting $P(n)$ be the statement “<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> works for <em>n</em> and all integers <em>m</em>.” However, that approach doesn’t work out so easily, and we need to prove some extra facts. After a little study, we find that something must be proved about <em>a</em>, <em>b</em>, <em>a</em>′, and <em>b</em>′, and the appropriate fact is that the equalities</p>
 
@@ -295,9 +295,9 @@
 
   <p class="noindent">always hold whenever step E2 is executed. We may prove these equalities directly by observing that they are certainly true the first time we get to E2, and that step E4 does not change their validity. (See <a href="../Text/ch01.html#ch01ex_2_1_6">exercise 6</a>.)</p>
 
-  <p class="indent">Now we are ready to show that <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> is valid, by induction on <em>n</em>: If <em>m</em> is a multiple of <em>n</em>, the algorithm obviously works properly, since we are done immediately at E3 the first time. This case always occurs when <em>n</em> = 1. The only case remaining is when <em>n</em> &gt; 1 and <em>m</em> is not a multiple of <em>n</em>. In such a case, the algorithm proceeds to set $c←n$, $d←r$ after the first execution, and since <em>r &lt; n</em>, <em>we may assume by induction</em> that the final value of <em>d</em> is the gcd of <em>n</em> and <em>r</em>. By the argument given in <a href="../Text/ch01.html#ch01lev1sec1">Section 1.1</a>, the pairs $\{m, n\}$ and $\{n, r\}$ have the same common divisors, and, in particular, they have the same greatest common divisor. Hence <em>d</em> is the gcd of <em>m</em> and <em>n</em>, and $am + bn=d$ by (<a href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>).</p>
+  <p class="indent">Now we are ready to show that <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> is valid, by induction on <em>n</em>: If <em>m</em> is a multiple of <em>n</em>, the algorithm obviously works properly, since we are done immediately at E3 the first time. This case always occurs when <em>n</em> = 1. The only case remaining is when <em>n</em> &gt; 1 and <em>m</em> is not a multiple of <em>n</em>. In such a case, the algorithm proceeds to set $c←n$, $d←r$ after the first execution, and since <em>r</em> &lt; <em>n</em>, <em>we may assume by induction</em> that the final value of <em>d</em> is the gcd of <em>n</em> and <em>r</em>. By the argument given in <a href="../Text/ch01.html#ch01lev1sec1">Section 1.1</a>, the pairs $\{m,n\}$ and $\{n,r\}$ have the same common divisors, and, in particular, they have the same greatest common divisor. Hence <em>d</em> is the gcd of <em>m</em> and <em>n</em>, and $am+bn=d$ by (<a href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>).</p>
 
-  <p class="indent">The italicized phrase in the proof above illustrates the conventional language that is so often used in an inductive proof: When doing part (b) of the construction, rather than saying “We will now assume $P(1), P(2), ..., P(n)$, and with this assumption we will prove $P(n + 1)$,” we often say simply “We will now prove $P(n)$; <em>we may assume by induction</em> that $P(k)$ is true whenever 1 ≤ <em>k</em> &lt; <em>n</em>.”</p>
+  <p class="indent">The italicized phrase in the proof above illustrates the conventional language that is so often used in an inductive proof: When doing part (b) of the construction, rather than saying “We will now assume $P(1),P(2),...,P(n)$, and with this assumption we will prove $P(n+1)$,” we often say simply “We will now prove $P(n)$; <em>we may assume by induction</em> that $P(k)$ is true whenever 1 ≤ <em>k</em> &lt; <em>n</em>.”</p>
 
   <p class="indent"><a id="page_15"></a>If we examine this argument very closely and change our viewpoint slightly, we can envision a general method applicable to proving the validity of <em>any</em> algorithm. The idea is to take a flow chart for some algorithm and to label each of the arrows with an assertion about the current state of affairs at the time the computation traverses that arrow. See <a href="../Text/ch01.html#ch01fig04">Fig. 4</a>, where the assertions have been labeled <em>A1</em>, <em>A2</em>, ..., <em>A6</em>. (All of these assertions have the additional stipulation that the variables are integers; this stipulation has been omitted to save space.) <em>A1</em> gives the initial assumptions upon entry to the algorithm, and <em>A4</em> states what we hope to prove about the output values <em>a</em>, <em>b</em>, and <em>d</em>.</p>
 
@@ -350,9 +350,9 @@
 
   <p class="ex-title">Exercises</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_1_1a" id="ch01ex_2_1_1">1</a>.</strong> [<em>05</em>] Explain how to modify the idea of proof by mathematical induction, in case we want to prove some statement $P(n)$ for all <em>nonnegative</em> integers — that is, for $n=0, 1, 2, ...$ instead of for $n=1, 2, 3, ...$.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_1_1a" id="ch01ex_2_1_1">1</a>.</strong> [<em>05</em>] Explain how to modify the idea of proof by mathematical induction, in case we want to prove some statement $P(n)$ for all <em>nonnegative</em> integers — that is, for $n=0,1,2,...$ instead of for $n=1,2,3,...$.</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_2a" id="ch01ex_2_1_2">2</a>.</strong> [<em>15</em>] There must be something wrong with the following proof. What is it? “<strong>Theorem.</strong> Let <em>a</em> be any positive number. For all positive integers <em>n</em> we have $a^{n-1}=1$. <em>Proof.</em> If <em>n</em> = 1, $a^{n-1}=a^{1-1}=a^{0}=1$. And by induction, assuming that the theorem is true for $1, 2, ..., n,$ we have</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_2a" id="ch01ex_2_1_2">2</a>.</strong> [<em>15</em>] There must be something wrong with the following proof. What is it? “<strong>Theorem.</strong> Let <em>a</em> be any positive number. For all positive integers <em>n</em> we have $a^{n-1}=1$. <em>Proof.</em> If <em>n</em> = 1, $a^{n-1}=a^{1-1}=a^{0}=1$. And by induction, assuming that the theorem is true for $1,2,...,n,$ we have</p>
 
   <div class="image"><img src="../Images/c01/e018_01.png"></div>
 
@@ -362,19 +362,19 @@
 
   <div class="image"><img src="../Images/c01/e018_04.png"></div>
 
-  <p class="exercisesp"><em>Proof.</em> We use induction on <em>n</em>. For <em>n</em> = 1, clearly $3/2-1/n=1/(1 × 2)$; and, assuming that the theorem is true for <em>n</em>,</p>
+  <p class="exercisesp"><em>Proof.</em> We use induction on <em>n</em>. For <em>n</em> = 1, clearly $3/2-1/n=1/(1×2)$; and, assuming that the theorem is true for <em>n</em>,</p>
 
   <div class="image"><img src="../Images/c01/e018_05.png"></div>
 
-  <p class="exercises"><strong>4.</strong> [<em>20</em>] Prove that, in addition to Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>), Fibonacci numbers satisfy $F_{n} ≥ φ^{n-2}$ for all positive integers <em>n</em>.</p>
+  <p class="exercises"><strong>4.</strong> [<em>20</em>] Prove that, in addition to Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec1-3">3</a>), Fibonacci numbers satisfy $F_{n}≥ φ^{n-2}$ for all positive integers <em>n</em>.</p>
 
   <p class="exercises"><a id="page_19"></a><strong><a href="../Text/app01.html#ch01ex_2_1_5a" id="ch01ex_2_1_5">5</a>.</strong> [<em>21</em>] A <em>prime number</em> is an integer &gt; 1 that has no positive integer divisors other than 1 and itself. Using this definition and mathematical induction, prove that every integer &gt; 1 may be written as a product of one or more prime numbers. (A prime number is considered to be the “product” of a single prime, namely itself.)</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_1_6a" id="ch01ex_2_1_6">6</a>.</strong> [<em>20</em>] Prove that if Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec1-6">6</a>) hold just before step E4, they hold afterwards also.</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_1_7a" id="ch01ex_2_1_7">7</a>.</strong> [<em>23</em>] Formulate and prove by induction a rule for the sums $1^{2}$, $2^{2}-1^{2}$, $3^{2}-2^{2} + 1^{2}$, $4^{2}-3^{2} + 2^{2}-1^{2}$, $5^{2}-4^{2} + 3^{2}-2^{2} + 1^{2}$, etc.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_1_7a" id="ch01ex_2_1_7">7</a>.</strong> [<em>23</em>] Formulate and prove by induction a rule for the sums $1^{2}$, $2^{2}-1^{2}$, $3^{2}-2^{2}+1^{2}$, $4^{2}-3^{2}+2^{2}-1^{2}$, $5^{2}-4^{2}+3^{2}-2^{2}+1^{2}$, etc.</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_8a" id="ch01ex_2_1_8">8</a>.</strong> [<em>25</em>] (a) Prove the following theorem of Nicomachus (<small>A.D</small>. c. 100) by induction: $1^{3}=1$, $2^{3}=3 + 5$, $3^{3}=7 + 9 + 11$, $4^{3}=13 + 15 + 17 + 19$, etc. (b) Use this result to prove the remarkable formula $1^{3} + 2^{3} + ··· + n^{3}=(1 + 2 + ··· + n)^{2}$.</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_8a" id="ch01ex_2_1_8">8</a>.</strong> [<em>25</em>] (a) Prove the following theorem of Nicomachus (<small>A.D</small>. c. 100) by induction: $1^{3}=1$, $2^{3}=3+5$, $3^{3}=7+9+11$, $4^{3}=13+15+17+19$, etc. (b) Use this result to prove the remarkable formula $1^{3}+2^{3}+···+n^{3}=(1+2+···+n)^{2}$.</p>
 
   <p class="exercisesp">[<em>Note:</em> An attractive geometric interpretation of this formula, suggested by Warren Lushbaugh, is shown in <a href="../Text/ch01.html#ch01fig05">Fig. 5</a>; see <em>Math. Gazette</em> <strong>49</strong> (1965), 200. The idea is related to Nicomachus’s theorem and <a href="../Text/ch01.html#ch01fig03">Fig. 3</a>. Other “look-see” proofs can be found in books by Martin Gardner, <em>Knotted Doughnuts</em> (New York: Freeman, 1986), Chapter 16; J. H. Conway and R. K. Guy, <em>The Book of Numbers</em> (New York: Copernicus, 1996), <a href="../Text/ch02.html#ch02">Chapter 2</a>.]</p>
 
@@ -384,7 +384,7 @@
     <p class="fig-caption"><strong>Fig. 5.</strong> Geometric version of <a href="../Text/ch01.html#ch01ex_2_1_8">exercise 8</a>(b).</p>
   </div>
 
-  <p class="exercises"><a id="ch01ex_2_1_09"></a><strong>9.</strong> [<em>20</em>] Prove by induction that if 0 &lt; <em>a</em> &lt; 1, then $(1-a)^{n} ≥ 1-na$.</p>
+  <p class="exercises"><a id="ch01ex_2_1_09"></a><strong>9.</strong> [<em>20</em>] Prove by induction that if 0 &lt; <em>a</em> &lt; 1, then $(1-a)^{n}≥ 1-na$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_10a" id="ch01ex_2_1_10">10</a>.</strong> [<em>M22</em>] Prove by induction that if <em>n</em> ≥ 10, then $2^{n}\gt n^{3}$.</p>
 
@@ -392,21 +392,21 @@
 
   <div class="image"><img src="../Images/c01/e019_01.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_12a" id="ch01ex_2_1_12">12</a>.</strong> [<em>M25</em>] Show how <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> can be generalized as stated in the text so that it will accept input values of the form $u + v\sqrt{2}$, where <em>u</em> and <em>v</em> are integers, and the computations can still be done in an elementary way (that is, without using the infinite decimal expansion of $\sqrt{2}$). Prove that the computation will not terminate, however, if <em>m</em> = 1 and $n=\sqrt{2}$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_1_12a" id="ch01ex_2_1_12">12</a>.</strong> [<em>M25</em>] Show how <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> can be generalized as stated in the text so that it will accept input values of the form $u+v\sqrt{2}$, where <em>u</em> and <em>v</em> are integers, and the computations can still be done in an elementary way (that is, without using the infinite decimal expansion of $\sqrt{2}$). Prove that the computation will not terminate, however, if <em>m</em> = 1 and $n=\sqrt{2}$.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_13a" id="ch01ex_2_1_13">13</a>.</strong> [<em>M23</em>] Extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> by adding a new variable <em>T</em> and adding the operation “$T ← T +1$” at the beginning of each step. (Thus, <em>T</em> is like a clock, counting the number of steps executed.) Assume that <em>T</em> is initially zero, so that assertion <em>A1</em> in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a> becomes “<em>m</em> &gt; 0, <em>n</em> &gt; 0, <em>T</em> = 0.” The additional condition “<em>T</em> = 1” should similarly be appended to <em>A2</em>. Show how to append additional conditions to the assertions in such a way that any one of <em>A1</em>, <em>A2</em>, ..., <em>A6</em> implies <em>T</em> ≤ 3<em>n</em>, and such that the inductive proof can still be carried out. (Hence the computation must terminate in at most 3<em>n</em> steps.)</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_13a" id="ch01ex_2_1_13">13</a>.</strong> [<em>M23</em>] Extend <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a> by adding a new variable <em>T</em> and adding the operation “$T←T+1$” at the beginning of each step. (Thus, <em>T</em> is like a clock, counting the number of steps executed.) Assume that <em>T</em> is initially zero, so that assertion <em>A1</em> in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a> becomes “<em>m</em> &gt; 0, <em>n</em> &gt; 0, <em>T</em> = 0.” The additional condition “<em>T</em> = 1” should similarly be appended to <em>A2</em>. Show how to append additional conditions to the assertions in such a way that any one of <em>A1</em>, <em>A2</em>, ..., <em>A6</em> implies <em>T</em> ≤ 3<em>n</em>, and such that the inductive proof can still be carried out. (Hence the computation must terminate in at most 3<em>n</em> steps.)</p>
 
   <p class="exercises1"><a id="page_20"></a><strong>14.</strong> [<em>50</em>] (R. W. Floyd.) Prepare a computer program that accepts, as input, programs in some programming language together with optional assertions, and that attempts to fill in the remaining assertions necessary to make a proof that the computer program is valid. (For example, strive to get a program that is able to prove the validity of <a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm E</a>, given only assertions <em>A1</em>, <em>A4</em>, and <em>A6</em>. See the papers by R. W. Floyd and J. C. King in the IFIP Congress proceedings, 1971, for further discussion.)</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_15a" id="ch01ex_2_1_15">15</a>.</strong> [<em>HM28</em>] (<em>Generalized induction.</em>) The text shows how to prove statements $P(n)$ that depend on a single integer <em>n</em>, but it does not describe how to prove statements $P(m, n)$ depending on two integers. In these circumstances a proof is often given by some sort of “double induction,” which frequently seems confusing. Actually, there is an important principle more general than simple induction that applies not only to this case but also to situations in which statements are to be proved about uncountable sets — for example, $P(x)$ for all real <em>x</em>. This general principle is called <em>well-ordering</em>.</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_1_15a" id="ch01ex_2_1_15">15</a>.</strong> [<em>HM28</em>] (<em>Generalized induction.</em>) The text shows how to prove statements $P(n)$ that depend on a single integer <em>n</em>, but it does not describe how to prove statements $P(m,n)$ depending on two integers. In these circumstances a proof is often given by some sort of “double induction,” which frequently seems confusing. Actually, there is an important principle more general than simple induction that applies not only to this case but also to situations in which statements are to be proved about uncountable sets — for example, $P(x)$ for all real <em>x</em>. This general principle is called <em>well-ordering</em>.</p>
 
   <p class="indent">Let “≺” be a relation on a set <em>S</em>, satisfying the following properties:</p>
 
-  <p class="indenti">i) Given <em>x</em>, <em>y</em>, and <em>z</em> in <em>S</em>, if $x ≺ y$ and $y ≺ z$, then $x ≺ z$.</p>
+  <p class="indenti">i) Given <em>x</em>, <em>y</em>, and <em>z</em> in <em>S</em>, if $x≺y$ and $y≺z$, then $x≺z$.</p>
 
-  <p class="indenti">ii) Given <em>x</em> and <em>y</em> in <em>S</em>, exactly one of the following three possibilities is true: $x ≺ y$, <em>x</em> = <em>y</em>, or $y ≺ x$.</p>
+  <p class="indenti">ii) Given <em>x</em> and <em>y</em> in <em>S</em>, exactly one of the following three possibilities is true: $x≺y$, <em>x</em> = <em>y</em>, or $y≺x$.</p>
 
-  <p class="indenti">iii) If <em>A</em> is any nonempty subset of <em>S</em>, there is an element <em>x</em> in <em>A</em> with $x ≼ y$ (that is, $x ≺ y$ or <em>x</em> = <em>y</em>) for all <em>y</em> in <em>A</em>.</p>
+  <p class="indenti">iii) If <em>A</em> is any nonempty subset of <em>S</em>, there is an element <em>x</em> in <em>A</em> with $x≼y$ (that is, $x≺y$ or <em>x</em> = <em>y</em>) for all <em>y</em> in <em>A</em>.</p>
 
   <p class="exercisesp">This relation is said to be a well-ordering of <em>S</em>. For example, it is clear that the positive integers are well-ordered by the ordinary “less than” relation, &lt;.</p>
 
@@ -416,19 +416,19 @@
 
   <p class="indenta">c) Is the set of all nonnegative real numbers well-ordered by &lt;?</p>
 
-  <p class="indenta">d) (<em>Lexicographic order</em>.) Let <em>S</em> be well-ordered by ≺, and for <em>n</em> &gt; 0 let $T_{n}$ be the set of all <em>n</em>-tuples $(x_{1}, x_{2}, ..., x_{n})$ of elements $x_{j}$ in S. Define $(x_{1}, x_{2}, ..., x_{n}) ≺ (y_{1}, y_{2}, ..., y_{n})$ if there is some <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>, such that $x_{j}=y_{j}$ for 1 ≤ <em>j</em> &lt; <em>k</em>, but $x_{k} ≺ y_{k}$ in S. Is ≺ a well-ordering of $T_{n}$?</p>
+  <p class="indenta">d) (<em>Lexicographic order</em>.) Let <em>S</em> be well-ordered by ≺, and for <em>n</em> &gt; 0 let $T_{n}$ be the set of all <em>n</em>-tuples $(x_{1},x_{2},...,x_{n})$ of elements $x_{j}$ in S. Define $(x_{1},x_{2},...,x_{n})≺(y_{1},y_{2},...,y_{n})$ if there is some <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>, such that $x_{j}=y_{j}$ for 1 ≤ <em>j</em> &lt; <em>k</em>, but $x_{k}≺y_{k}$ in S. Is ≺ a well-ordering of $T_{n}$?</p>
 
-  <p class="indenta">e) Continuing part (d), let $T=\bigcup_{n ≥ 1}T_{n}$; define $(x_{1}, x_{2}, ..., x_{m}) ≺ (y_{1}, y_{2}, ..., y_{n})$ if $x_{j}=y_{j}$ for 1 ≤ j &lt; <em>k</em> and $x_{k} ≺ y_{k}$, for some $k ≤ min(m, n)$, or if <em>m</em> &lt; <em>n</em> and $x_{j}=y_{j}$ for 1 ≤ <em>j</em> ≤ <em>m</em>. Is ≺ a well-ordering of <em>T</em>?</p>
+  <p class="indenta">e) Continuing part (d), let $T=\bigcup_{n ≥ 1}T_{n}$; define $(x_{1},x_{2},...,x_{m})≺(y_{1},y_{2},...,y_{n})$ if $x_{j}=y_{j}$ for 1 ≤ j &lt; <em>k</em> and $x_{k}≺y_{k}$, for some $k≤\min(m,n)$, or if <em>m</em> &lt; <em>n</em> and $x_{j}=y_{j}$ for 1 ≤ <em>j</em> ≤ <em>m</em>. Is ≺ a well-ordering of <em>T</em>?</p>
 
-  <p class="indenta">f) Show that ≺ is a well-ordering of <em>S</em> if and only if it satisfies (i) and (ii) above and there is no infinite sequence $x_{1}, x_{2}, x_{3}, ...$ with $x_{j+1}≺ x_{j}$ for all <em>j</em> ≥ 1.</p>
+  <p class="indenta">f) Show that ≺ is a well-ordering of <em>S</em> if and only if it satisfies (i) and (ii) above and there is no infinite sequence $x_{1},x_{2},x_{3},...$ with $x_{j+1}≺x_{j}$ for all <em>j</em> ≥ 1.</p>
 
-  <p class="indenta">g) Let <em>S</em> be well-ordered by ≺, and let $P(x)$ be a statement about the element <em>x</em> of <em>S</em>. Show that if $P(x)$ can be proved under the assumption that $P(y)$ is true for all $y ≺ x$, then $P (x)$ is true for all <em>x</em> in <em>S</em>.</p>
+  <p class="indenta">g) Let <em>S</em> be well-ordered by ≺, and let $P(x)$ be a statement about the element <em>x</em> of <em>S</em>. Show that if $P(x)$ can be proved under the assumption that $P(y)$ is true for all $y≺x$, then $P(x)$ is true for all <em>x</em> in <em>S</em>.</p>
 
   <p class="exercisesp">[<em>Notes:</em> Part (g) is the generalization of simple induction that was promised; in the case <em>S</em> = positive integers, it is just the simple case of mathematical induction treated in the text. In that case we are asked to prove that $P(1)$ is true if $P(y)$ is true for all positive integers <em>y</em> &lt; 1; this is the same as saying we should prove $P(1)$, since $P(y)$ certainly is (vacuously) true for all such <em>y</em>. Consequently, one finds that in many situations $P(1)$ need not be proved using a special argument.</p>
 
-  <p class="exercises1N">Part (d), in connection with part (g), gives us a powerful method of <em>n</em>-tuple induction for proving statements $P (m_{1}, ..., m_{n})$ about <em>n</em> positive integers $m_{1}, ..., m_{n}$.</p>
+  <p class="exercises1N">Part (d), in connection with part (g), gives us a powerful method of <em>n</em>-tuple induction for proving statements $P(m_{1},...,m_{n})$ about <em>n</em> positive integers $m_{1},...,m_{n}$.</p>
 
-  <p class="exercises1N">Part (f) has further application to computer algorithms: If we can map each state <em>x</em> of a computation into an element $f(x)$ belonging to a well-ordered set <em>S</em>, in such a way that every step of the computation takes a state <em>x</em> into a state <em>y</em> with $f(y) ≺ f(x)$, then <a id="page_21"></a>the algorithm must terminate. This principle generalizes the argument about strictly decreasing values of <em>n</em>, by which we proved the termination of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm 1.1E</a>.]</p>
+  <p class="exercises1N">Part (f) has further application to computer algorithms: If we can map each state <em>x</em> of a computation into an element $f(x)$ belonging to a well-ordered set <em>S</em>, in such a way that every step of the computation takes a state <em>x</em> into a state <em>y</em> with $f(y)≺f(x)$, then <a id="page_21"></a>the algorithm must terminate. This principle generalizes the argument about strictly decreasing values of <em>n</em>, by which we proved the termination of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm 1.1E</a>.]</p>
 
   <div class="heading">
     <h4 id="ch01lev2sec2">1.2.2. Numbers, Powers, and Logarithms</h4>
@@ -436,7 +436,7 @@
     <p class="noindent">Let us now begin our study of numerical mathematics by taking a good look at the numbers we are dealing with. The <em>integers</em> are the whole numbers</p>
   </div>
 
-  <p class="center">$...,-3,-2,-1, 0, 1, 2, 3, ...$</p>
+  <p class="center">$...,-3,-2,-1,0,1,2,3,...$</p>
 
   <p class="noindent">(negative, zero, or positive). A <em>rational number</em> is the ratio (quotient) of two integers, $p/q$, where <em>q</em> is positive. A <em>real number</em> is a quantity <em>x</em> that has a <em>decimal expansion</em></p>
 
@@ -448,19 +448,19 @@
 
   <p class="noindent">for all positive integers <em>k</em>. Examples of real numbers that are not rational are</p>
 
-  <p class="indent">$π=3.14159265358979 ...$, the ratio of circumference to diameter in a circle;</p>
+  <p class="indent">$π=3.14159265358979...$, the ratio of circumference to diameter in a circle;</p>
 
-  <p class="indent">$φ=1.61803398874989 ...$, the <em>golden ratio</em> $(1 +\sqrt{5})/2$ (see <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>).</p>
+  <p class="indent">$φ=1.61803398874989...$, the <em>golden ratio</em> $(1+\sqrt{5})/2$ (see <a href="../Text/ch01a.html#ch01lev2sec8">Section 1.2.8</a>).</p>
 
   <p class="noindent">A table of important constants, to forty decimal places of accuracy, appears in <a href="../Text/app02.html#app02">Appendix A</a>. We need not discuss the familiar properties of addition, subtraction, multiplication, division, and comparison of real numbers.</p>
 
-  <p class="indent">Difficult problems about integers are often solved by working with real numbers, and difficult problems about real numbers are often solved by working with a still more general class of values called complex numbers. A <em>complex number</em> is a quantity <em>z</em> of the form $z=x + iy$, where <em>x</em> and <em>y</em> are real and <em>i</em> is a special quantity that satisfies the equation $i^{2}=-1$. We call <em>x</em> and <em>y</em> the <em>real part</em> and <em>imaginary part</em> of z, and we define the absolute value of <em>z</em> to be</p>
+  <p class="indent">Difficult problems about integers are often solved by working with real numbers, and difficult problems about real numbers are often solved by working with a still more general class of values called complex numbers. A <em>complex number</em> is a quantity <em>z</em> of the form $z=x+iy$, where <em>x</em> and <em>y</em> are real and <em>i</em> is a special quantity that satisfies the equation $i^{2}=-1$. We call <em>x</em> and <em>y</em> the <em>real part</em> and <em>imaginary part</em> of z, and we define the absolute value of <em>z</em> to be</p>
 
   <div class="equation" id="ch01eq-lev2sec2-3"><img src="../Images/c01/021equ03.png"></div>
 
-  <p class="noindent">The <em>complex conjugate</em> of <em>z</em> is $\overline{z}=x-iy$, and we have $z\overline{z}=x^{2} + y^{2}=|z|^{2}$. The theory of complex numbers is in many ways simpler and more beautiful than the theory of real numbers, but it is usually considered to be an advanced topic. Therefore we shall concentrate on real numbers in this book, except when real numbers turn out to be unnecessarily complicated.</p>
+  <p class="noindent">The <em>complex conjugate</em> of <em>z</em> is $\overline{z}=x-iy$, and we have $z\overline{z}=x^{2}+y^{2}=|z|^{2}$. The theory of complex numbers is in many ways simpler and more beautiful than the theory of real numbers, but it is usually considered to be an advanced topic. Therefore we shall concentrate on real numbers in this book, except when real numbers turn out to be unnecessarily complicated.</p>
 
-  <p class="indent">If <em>u</em> and <em>v</em> are real numbers with <em>u</em> ≤ <em>v</em>, the <em>closed interval</em> $[u . . v]$ is the set of real numbers <em>x</em> such that <em>u</em> ≤ <em>x</em> ≤ <em>v</em>. The <em>open interval</em> $(u . . v)$ is, similarly, the set of <em>x</em> such that <em>u</em> &lt; <em>x</em> &lt; <em>v</em>. And <em>half-open intervals</em> $[u . . v)$ or $(u . . v]$ are defined in an analogous way. We also allow <em>u</em> to be $-∞$ or <em>v</em> to be ∞ at an open endpoint, meaning that there is no lower or upper bound; thus $(-∞ . . ∞)$ stands for the set of all real numbers, and $[0 . . ∞)$ denotes the nonnegative reals.</p>
+  <p class="indent">If <em>u</em> and <em>v</em> are real numbers with <em>u</em> ≤ <em>v</em>, the <em>closed interval</em> $[u..v]$ is the set of real numbers <em>x</em> such that <em>u</em> ≤ <em>x</em> ≤ <em>v</em>. The <em>open interval</em> $(u..v)$ is, similarly, the set of <em>x</em> such that <em>u</em> &lt; <em>x</em> &lt; <em>v</em>. And <em>half-open intervals</em> $[u..v)$ or $(u..v]$ are defined in an analogous way. We also allow <em>u</em> to be $-∞$ or <em>v</em> to be ∞ at an open endpoint, meaning that there is no lower or upper bound; thus $(-∞..∞)$ stands for the set of all real numbers, and $[0..∞)$ denotes the nonnegative reals.</p>
 
   <p class="indent"><a id="page_22"></a>Throughout this section, let the letter <em>b</em> stand for a positive real number. If <em>n</em> is an integer, then $b^{n}$ is defined by the familiar rules</p>
 
@@ -490,11 +490,11 @@
 
   <div class="equation" id="ch01eq-lev2sec2-8"><img src="../Images/c01/022equ05.png"></div>
 
-  <p class="noindent">therefore if <em>b</em> = 10 and $x=0.30102999 ...$, we know the value of $b^{x}$ with an accuracy of better than one part in 10 million (although we still don’t even know whether the decimal expansion of $b^{x}$ is $1.999 ...$ or $2.000 ...$).</p>
+  <p class="noindent">therefore if <em>b</em> = 10 and $x=0.30102999...$, we know the value of $b^{x}$ with an accuracy of better than one part in 10 million (although we still don’t even know whether the decimal expansion of $b^{x}$ is $1.999...$ or $2.000...$).</p>
 
   <p class="indent">When <em>b</em> &lt; 1, we define $b^{x}=(1/b)^{-x}$; and when <em>b</em> = 1, $b^{x}=1$. With these definitions, it can be proved that the laws of exponents (<a href="../Text/ch01.html#ch01eq-lev2sec2-5">5</a>) hold for any <em>real</em> values of <em>x</em> and <em>y</em>. These ideas for defining $b^{x}$ were first formulated by John Wallis (1655) and Isaac Newton (1669).</p>
 
-  <p class="indent">Now we come to an important question. Suppose that a positive real number <em>y</em> is given; can we find a real number <em>x</em> such that $y=b^{x}$? The answer is “yes” (provided that <em>b</em> ≠ 1), for we simply use Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) <em>in reverse</em> to determine <em>n</em> and $d_{1}, d_{2}, ...$ when $b^{x}=y$ is given. The resulting number <em>x</em> is called the <em>logarithm</em> of <em>y</em> <em>to the base</em> <em>b</em>, and we write this as $x=\log_{b}y$. By this definition we have</p>
+  <p class="indent">Now we come to an important question. Suppose that a positive real number <em>y</em> is given; can we find a real number <em>x</em> such that $y=b^{x}$? The answer is “yes” (provided that <em>b</em> ≠ 1), for we simply use Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-7">7</a>) <em>in reverse</em> to determine <em>n</em> and $d_{1},d_{2},...$ when $b^{x}=y$ is given. The resulting number <em>x</em> is called the <em>logarithm</em> of <em>y</em> <em>to the base</em> <em>b</em>, and we write this as $x=\log_{b}y$. By this definition we have</p>
 
   <div class="equation" id="ch01eq-lev2sec2-9"><img src="../Images/c01/022equ06.png"></div>
 
@@ -518,19 +518,19 @@
 
   <p class="indent">The question now arises as to whether or not there is any relationship between $\lg x$ and $\log_{10}x$; fortunately there is,</p>
 
-  <p class="center">$\log_{10}x=\log_{10} (2^{\lg x})=(\lg x)(\log_{10} 2)$,</p>
+  <p class="center">$\log_{10}x=\log_{10}(2^{\lg x})=(\lg x)(\log_{10}2)$,</p>
 
-  <p class="noindent">by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-9">9</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>). Hence $\lg x=\log_{10}x/\log_{10} 2$, and in general we find that</p>
+  <p class="noindent">by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-9">9</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>). Hence $\lg x=\log_{10}x/\log_{10}2$, and in general we find that</p>
 
   <div class="equation" id="ch01eq-lev2sec2-14"><img src="../Images/c01/023equ04.png"></div>
 
   <p class="noindent">Equations (<a href="../Text/ch01.html#ch01eq-lev2sec2-11">11</a>), (<a href="../Text/ch01.html#ch01eq-lev2sec2-12">12</a>), and (<a href="../Text/ch01.html#ch01eq-lev2sec2-14">14</a>) are the fundamental rules for manipulating logarithms.</p>
 
-  <p class="indent">It turns out that neither base 10 nor base 2 is really the most convenient base to work with in most cases. There is a real number, denoted by $e=2.718281828459045 ...$, for which the logarithms have simpler properties. Logarithms to the base <em>e</em> are conventionally called <em>natural logarithms</em>, and we write</p>
+  <p class="indent">It turns out that neither base 10 nor base 2 is really the most convenient base to work with in most cases. There is a real number, denoted by $e=2.718281828459045...$, for which the logarithms have simpler properties. Logarithms to the base <em>e</em> are conventionally called <em>natural logarithms</em>, and we write</p>
 
   <div class="equation" id="ch01eq-lev2sec2-15"><img src="../Images/c01/023equ05.png"></div>
 
-  <p class="noindent">This rather arbitrary definition (in fact, we haven’t really defined <em>e</em>) probably doesn’t strike the reader as being a very “natural” logarithm; yet we’ll find that ln <em>x</em> seems more and more natural, the more we work with it. John Napier actually discovered natural logarithms (with slight modifications, and without connecting them with powers) before the year 1590, many years before any other kind of logarithm was known. The following two examples, proved in every calculus text, shed some light on why Napier’s logarithms deserve to be called “natural”: (a) In <a href="../Text/ch01.html#ch01fig06">Fig. 6</a> the area of the shaded portion is ln <em>x</em>. (b) If a bank pays compound interest at rate <em>r</em>, compounded semiannually, the annual return on each dollar is $(1 + r/2)^{2}$ dollars; if it is compounded quarterly, you get $(1 + r/4)^{4}$ dollars; and if it is compounded daily you probably get $(1 + r/365)^{365}$ dollars. Now if the interest were compounded <em>continuously</em>, you would get exactly $e^{r}$ dollars for every dollar (ignoring roundoff error). In this age of computers, many bankers have now actually reached the limiting formula.</p>
+  <p class="noindent">This rather arbitrary definition (in fact, we haven’t really defined <em>e</em>) probably doesn’t strike the reader as being a very “natural” logarithm; yet we’ll find that ln <em>x</em> seems more and more natural, the more we work with it. John Napier actually discovered natural logarithms (with slight modifications, and without connecting them with powers) before the year 1590, many years before any other kind of logarithm was known. The following two examples, proved in every calculus text, shed some light on why Napier’s logarithms deserve to be called “natural”: (a) In <a href="../Text/ch01.html#ch01fig06">Fig. 6</a> the area of the shaded portion is ln <em>x</em>. (b) If a bank pays compound interest at rate <em>r</em>, compounded semiannually, the annual return on each dollar is $(1+r/2)^{2}$ dollars; if it is compounded quarterly, you get $(1+r/4)^{4}$ dollars; and if it is compounded daily you probably get $(1+r/365)^{365}$ dollars. Now if the interest were compounded <em>continuously</em>, you would get exactly $e^{r}$ dollars for every dollar (ignoring roundoff error). In this age of computers, many bankers have now actually reached the limiting formula.</p>
 
   <div class="image">
     <a id="ch01fig06"></a><img src="../Images/c01/01fig06.png">
@@ -544,13 +544,13 @@
 
   <div class="equation" id="ch01eq-lev2sec2-16"><img src="../Images/c01/024equ01.png"></div>
 
-  <p class="noindent">for some integer <em>m</em>. All we have to do to get the logarithm of <em>y</em> is to raise <em>y</em> to this huge power and find which powers $(m, m + 1)$ of <em>b</em> the result lies between; then $m/10^{k}$ is the answer to <em>k</em> decimal places.</p>
+  <p class="noindent">for some integer <em>m</em>. All we have to do to get the logarithm of <em>y</em> is to raise <em>y</em> to this huge power and find which powers $(m,m+1)$ of <em>b</em> the result lies between; then $m/10^{k}$ is the answer to <em>k</em> decimal places.</p>
 
-  <p class="indent">A slight modification of this apparently impractical method leads to a simple and reasonable procedure. We will show how to calculate log_{10}<em>x</em> and to express the answer in the <em>binary</em> system, as</p>
+  <p class="indent">A slight modification of this apparently impractical method leads to a simple and reasonable procedure. We will show how to calculate $log_{10}x$ and to express the answer in the <em>binary</em> system, as</p>
 
   <div class="equation" id="ch01eq-lev2sec2-17"><img src="../Images/c01/024equ02.png"></div>
 
-  <p class="noindent">First we shift the decimal point of <em>x</em> to the left or to the right so that we have $1 ≤ x/10^{n}\lt 10$; this determines the integer part, <em>n</em>. To obtain $b_{1}, b_{2}, ...$, we now set $x_{0}=x/10^{n}$ and, for <em>k</em> ≥ 1,</p>
+  <p class="noindent">First we shift the decimal point of <em>x</em> to the left or to the right so that we have $1≤x/10^{n}\lt 10$; this determines the integer part, <em>n</em>. To obtain $b_{1},b_{2},...$, we now set $x_{0}=x/10^{n}$ and, for <em>k</em> ≥ 1,</p>
 
   <div class="equation" id="ch01eq-lev2sec2-18"><img src="../Images/c01/024equ03.png"></div>
 
@@ -558,13 +558,13 @@
 
   <div class="equation" id="ch01eq-lev2sec2-19"><img src="../Images/c01/024equ04.png"></div>
 
-  <p class="noindent">for $k=0, 1, 2, ...$, as is easily proved by induction.</p>
+  <p class="noindent">for $k=0,1,2,...$, as is easily proved by induction.</p>
 
-  <p class="indent">In practice, of course, we must work with only finite accuracy, so we cannot set <span class="middle"><img src="../Images/c01/e024_01.png"></span> exactly. Instead, we set <span class="middle"><img src="../Images/c01/e024_02.png"></span> <em>rounded</em> or <em>truncated</em> to a certain number of decimal places. For example, here is the evaluation of $\log_{10} 2$ rounded to four significant figures:</p>
+  <p class="indent">In practice, of course, we must work with only finite accuracy, so we cannot set <span class="middle"><img src="../Images/c01/e024_01.png"></span> exactly. Instead, we set <span class="middle"><img src="../Images/c01/e024_02.png"></span> <em>rounded</em> or <em>truncated</em> to a certain number of decimal places. For example, here is the evaluation of $\log_{10}2$ rounded to four significant figures:</p>
 
   <div class="image"><img src="../Images/c01/e024_05.png"></div>
 
-  <p class="noindent">Computational error has caused errors to propagate; the true rounded value of $x_{10}$ is 1.798. This will eventually cause $b_{19}$ to be computed incorrectly, and <a id="page_25"></a>we get the binary value $(0.0100110100010000011 ...)_{2}$, which corresponds to the decimal equivalent $0.301031 ...$ rather than the true value given in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>).</p>
+  <p class="noindent">Computational error has caused errors to propagate; the true rounded value of $x_{10}$ is 1.798. This will eventually cause $b_{19}$ to be computed incorrectly, and <a id="page_25"></a>we get the binary value $(0.0100110100010000011...)_{2}$, which corresponds to the decimal equivalent $0.301031...$ rather than the true value given in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>).</p>
 
   <p class="indent">With any method such as this it is necessary to examine the amount of computational error due to the limitations imposed. <a href="../Text/ch01.html#ch01ex_2_2_27">Exercise 27</a> derives an upper bound for the error; working to four figures as above, we find that the error in the value of the logarithm is guaranteed to be less than 0.00044. Our answer above was more accurate than this primarily because $x_{0}$, $x_{1}$, $x_{2}$, and $x_{3}$ were obtained <em>exactly</em>.</p>
 
@@ -574,7 +574,7 @@
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_1a" id="ch01ex_2_2_1">1</a>.</strong> [<em>00</em>] What is the smallest positive rational number?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_2a" id="ch01ex_2_2_2">2</a>.</strong> [<em>00</em>] Is $1 + 0.239999999 ...$ a decimal expansion?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_2a" id="ch01ex_2_2_2">2</a>.</strong> [<em>00</em>] Is $1+0.239999999...$ a decimal expansion?</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_3a" id="ch01ex_2_2_3">3</a>.</strong> [<em>02</em>] What is $(-3)^{-3}$?</p>
 
@@ -582,17 +582,17 @@
 
   <p class="exercises"><strong>5.</strong> [<em>05</em>] We defined real numbers in terms of a decimal expansion. Discuss how we could have defined them in terms of a binary expansion instead, and give a definition to replace Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-2">2</a>).</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_6a" id="ch01ex_2_2_6">6</a>.</strong> [<em>10</em>] Let $x=m + 0.d_{1}d_{2} ...$ and $y=n + 0.e_{1}e_{2} ...$ be real numbers. Give a rule for determining whether <em>x</em> = <em>y</em>, <em>x</em> &lt; <em>y</em>, or <em>x</em> &gt; <em>y</em>, based on the decimal representation.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_6a" id="ch01ex_2_2_6">6</a>.</strong> [<em>10</em>] Let $x=m+0.d_{1}d_{2}...$ and $y=n+0.e_{1}e_{2}...$ be real numbers. Give a rule for determining whether <em>x</em> = <em>y</em>, <em>x</em> &lt; <em>y</em>, or <em>x</em> &gt; <em>y</em>, based on the decimal representation.</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_7a" id="ch01ex_2_2_7">7</a>.</strong> [<em>M23</em>] Given that <em>x</em> and <em>y</em> are integers, prove the laws of exponents, starting from the definition given by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-4">4</a>).</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_8a" id="ch01ex_2_2_8">8</a>.</strong> [<em>25</em>] Let <em>m</em> be a positive integer. <em>Prove</em> that every positive real number <em>u</em> has a unique positive <em>m</em>th root, by giving a method to construct successively the values $n, d_{1}, d_{2}, ...$ in the decimal expansion of the root.</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_8a" id="ch01ex_2_2_8">8</a>.</strong> [<em>25</em>] Let <em>m</em> be a positive integer. <em>Prove</em> that every positive real number <em>u</em> has a unique positive <em>m</em>th root, by giving a method to construct successively the values $n,d_{1},d_{2},...$ in the decimal expansion of the root.</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_2_9a" id="ch01ex_2_2_9">9</a>.</strong> [<em>M23</em>] Given that <em>x</em> and <em>y</em> are rational, prove the laws of exponents under the assumption that the laws hold when <em>x</em> and <em>y</em> are integers.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_10a" id="ch01ex_2_2_10">10</a>.</strong> [<em>18</em>] Prove that $\log_{10} 2$ is not a rational number.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_10a" id="ch01ex_2_2_10">10</a>.</strong> [<em>18</em>] Prove that $\log_{10}2$ is not a rational number.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_11a" id="ch01ex_2_2_11">11</a>.</strong> [<em>10</em>] If <em>b</em> = 10 and $x ≈\log_{10} 2$, to how many decimal places of accuracy will we need to know the value of <em>x</em> in order to determine the first three decimal places of the decimal expansion of $b^{x}$? [<em>Note:</em> You may use the result of <a href="../Text/ch01.html#ch01ex_2_2_10">exercise 10</a> in your discussion.]</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_11a" id="ch01ex_2_2_11">11</a>.</strong> [<em>10</em>] If <em>b</em> = 10 and $x ≈\log_{10}2$, to how many decimal places of accuracy will we need to know the value of <em>x</em> in order to determine the first three decimal places of the decimal expansion of $b^{x}$? [<em>Note:</em> You may use the result of <a href="../Text/ch01.html#ch01ex_2_2_10">exercise 10</a> in your discussion.]</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_12a" id="ch01ex_2_2_12">12</a>.</strong> [<em>02</em>] Explain why Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec2-10">10</a>) follows from Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-8">8</a>).</p>
 
@@ -602,27 +602,27 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_15a" id="ch01ex_2_2_15">15</a>.</strong> [<em>10</em>] Prove or disprove:</p>
 
-  <p class="center">$\log_{b}x/y=\log_{b}x-\log_{b}y$,&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;$x, y\gt 0$.</p>
+  <p class="center">$\log_{b}x/y=\log_{b}x-\log_{b}y$,&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;$x,y\gt 0$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_16a" id="ch01ex_2_2_16">16</a>.</strong> [<em>00</em>] How can $\log_{10}x$ be expressed in terms of $\ln x$ and $\ln 10$?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_17a" id="ch01ex_2_2_17">17</a>.</strong> [<em>05</em>] What is $\lg 32$? $\log_{π} π$? $\ln e$? $\log_{b} 1$? $\log_{b} (-1)$?</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_17a" id="ch01ex_2_2_17">17</a>.</strong> [<em>05</em>] What is $\lg 32$? $\log_{π}π$? $\ln e$? $\log_{b}1$? $\log_{b}(-1)$?</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_18a" id="ch01ex_2_2_18">18</a>.</strong> [<em>10</em>] Prove or disprove: <span class="middle"><img src="../Images/c01/e025_02.png"></span></p>
 
   <p class="exercises3"><a id="page_26"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_19a" id="ch01ex_2_2_19">19</a>.</strong> [<em>20</em>] If <em>n</em> is an integer whose decimal representation is 14 digits long, will the value of <em>n</em> fit in a computer word with a capacity of 47 bits and a sign bit?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_20a" id="ch01ex_2_2_20">20</a>.</strong> [<em>10</em>] Is there any simple relation between $\log_{10} 2$ and $\log_{2} 10$?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_20a" id="ch01ex_2_2_20">20</a>.</strong> [<em>10</em>] Is there any simple relation between $\log_{10}2$ and $\log_{2}10$?</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_21a" id="ch01ex_2_2_21">21</a>.</strong> [<em>15</em>] (<em>Logs of logs</em>.) Express $\log_{b}\log_{b}x$ in terms of $\ln\ln x$, $\ln\ln b$, and $\ln b$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_22a" id="ch01ex_2_2_22">22</a>.</strong> [<em>20</em>] (R. W. Hamming.) Prove that</p>
 
-  <p class="center">$\lg x ≈\ln x +\log_{10}x$,</p>
+  <p class="center">$\lg x ≈\ln x+\log_{10}x$,</p>
 
   <p class="exercisesp">with less than 1% error! (Thus a table of natural logarithms and of common logarithms can be used to get approximate values of binary logarithms as well.)</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_23a" id="ch01ex_2_2_23">23</a>.</strong> [<em>M25</em>] Give a <em>geometric</em> proof that $\ln xy=\ln x +\ln y$, based on <a href="../Text/ch01.html#ch01fig06">Fig. 6</a>.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_23a" id="ch01ex_2_2_23">23</a>.</strong> [<em>M25</em>] Give a <em>geometric</em> proof that $\ln xy=\ln x+\ln y$, based on <a href="../Text/ch01.html#ch01fig06">Fig. 6</a>.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_24a" id="ch01ex_2_2_24">24</a>.</strong> [<em>15</em>] Explain how the method used for calculating logarithms to the base 10 at the end of this section can be modified to produce logarithms to base 2.</p>
 
@@ -632,33 +632,33 @@
 
   <p class="uln-indentC"><strong>L2.</strong> [Test for end.] If <em>x</em> = 1, stop.</p>
 
-  <p class="uln-indentC"><strong>L3.</strong> [Compare.] If $x-z\lt 1$, set $z←z$ shifted right 1, $k←k + 1$, and repeat this step.</p>
+  <p class="uln-indentC"><strong>L3.</strong> [Compare.] If $x-z\lt 1$, set $z←z$ shifted right 1, $k←k+1$, and repeat this step.</p>
 
-  <p class="uln-indentC"><strong>L4.</strong> [Reduce values.] Set $x←x-z$, $z←x$ shifted right <em>k</em>, $y←y+\log_{b} (2^{k}/(2^{k}-1))$, and go to L2. <span class="middle"><img src="../Images/c01/box.png"></span></p>
+  <p class="uln-indentC"><strong>L4.</strong> [Reduce values.] Set $x←x-z$, $z←x$ shifted right <em>k</em>, $y←y+\log_{b}(2^{k}/(2^{k}-1))$, and go to L2. <span class="middle"><img src="../Images/c01/box.png"></span></p>
 
-  <p class="exercisesp">[<em>Notes:</em> This method is very similar to the method used for division in computer hardware. The idea goes back in essence to Henry Briggs, who used it (in decimal rather than binary form) to compute logarithm tables, published in 1624. We need an auxiliary table of the constants $\log_{b} 2$, $\log_{b} (4/3)$, $\log_{b} (8/7)$, etc., to as many values as the precision of the computer. The algorithm involves intentional computational errors, as numbers are shifted to the right, so that eventually <em>x</em> will be reduced to 1 and the algorithm will terminate. The purpose of this exercise is to explain why it will terminate and why it computes an approximation to $\log_{b}x$. ]</p>
+  <p class="exercisesp">[<em>Notes:</em> This method is very similar to the method used for division in computer hardware. The idea goes back in essence to Henry Briggs, who used it (in decimal rather than binary form) to compute logarithm tables, published in 1624. We need an auxiliary table of the constants $\log_{b}2$, $\log_{b}(4/3)$, $\log_{b}(8/7)$, etc., to as many values as the precision of the computer. The algorithm involves intentional computational errors, as numbers are shifted to the right, so that eventually <em>x</em> will be reduced to 1 and the algorithm will terminate. The purpose of this exercise is to explain why it will terminate and why it computes an approximation to $\log_{b}x$. ]</p>
 
   <p class="exercises1"><a id="ch01ex_2_2_26"></a><strong>26.</strong> [<em>M27</em>] Find a rigorous upper bound on the error made by the algorithm in the previous exercise, based on the precision used in the arithmetic operations.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_27a" id="ch01ex_2_2_27">27</a>.</strong> [<em>M25</em>] Consider the method for calculating $\log_{10}x$ discussed in the text. Let <span class="middle"><img src="../Images/c01/e026_01.png"></span> denote the computed approximation to $x_{k}$, determined as follows: <img src="../Images/c01/e026_02.png">; and in the determination of <span class="middle"><img src="../Images/c01/e026_03.png"></span> by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-18">18</a>), the quantity $y_{k}$ is used in place of $(x'_{k-1})^{2}$, where <span class="middle"><img src="../Images/c01/e026_05.png"></span> and $1 ≤ y_{k}\lt 100$. Here <em>δ</em> and $\epsilon$ are small constants that reflect the upper and lower errors due to rounding or truncation. If $\log' x$ denotes the result of the calculations, show that after <em>k</em> steps we have</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_2_27a" id="ch01ex_2_2_27">27</a>.</strong> [<em>M25</em>] Consider the method for calculating $\log_{10}x$ discussed in the text. Let <span class="middle"><img src="../Images/c01/e026_01.png"></span> denote the computed approximation to $x_{k}$, determined as follows: <img src="../Images/c01/e026_02.png">; and in the determination of <span class="middle"><img src="../Images/c01/e026_03.png"></span> by Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec2-18">18</a>), the quantity $y_{k}$ is used in place of $(x'_{k-1})^{2}$, where <span class="middle"><img src="../Images/c01/e026_05.png"></span> and $1≤y_{k}\lt 100$. Here <em>δ</em> and $\epsilon$ are small constants that reflect the upper and lower errors due to rounding or truncation. If $\log' x$ denotes the result of the calculations, show that after <em>k</em> steps we have</p>
 
-  <p class="center">$\log_{10}x + 2\log_{10}(1-δ)-1/2^{k}\lt\log'x ≤\log_{10}x + 2\log_{10}(1 +\epsilon)$.</p>
+  <p class="center">$\log_{10}x+2\log_{10}(1-δ)-1/2^{k}\lt\log'x≤\log_{10}x+2\log_{10}(1+\epsilon)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_28a" id="ch01ex_2_2_28">28</a>.</strong> [<em>M30</em>] (R. Feynman.) Develop a method for computing $b^{x}$ when 0 ≤ <em>x</em> &lt; 1, using only shifting, addition, and subtraction (similar to the algorithm in <a href="../Text/ch01.html#ch01ex_2_2_25">exercise 25</a>), and analyze its accuracy.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_29a" id="ch01ex_2_2_29">29</a>.</strong> [<em>HM20</em>] Let <em>x</em> be a real number greater than 1. (a) For what real number <em>b</em> &gt; 1 is $b\log_{b}x$ a minimum? (b) For what <em>integer</em> <em>b</em> &gt; 1 is it a minimum? (c) For what integer <em>b</em> &gt; 1 is $(b + 1)\log_{b}x$ a minimum?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_2_29a" id="ch01ex_2_2_29">29</a>.</strong> [<em>HM20</em>] Let <em>x</em> be a real number greater than 1. (a) For what real number <em>b</em> &gt; 1 is $b\log_{b}x$ a minimum? (b) For what <em>integer</em> <em>b</em> &gt; 1 is it a minimum? (c) For what integer <em>b</em> &gt; 1 is $(b+1)\log_{b}x$ a minimum?</p>
 
   <p class="exercises1"><a id="page_27"></a><strong><a href="../Text/app01.html#ch01ex_2_2_30a" id="ch01ex_2_2_30">30</a>.</strong> [<em>12</em>] Simplify the expression $(\ln x)^{\ln x/\ln\ln x}$, assuming that <em>x</em> &gt; 1 and <em>x</em> ≠ <em>e</em>.</p>
 
   <div class="heading">
     <h4 id="ch01lev2sec3">1.2.3. Sums and Products</h4>
 
-    <p class="noindent">Let $a_{1}, a_{2}, ...$ be any sequence of numbers. We are often interested in sums such as $a_{1} + a_{2} + · · · + a_{n}$, and this sum is more compactly written using either of the following equivalent notations:</p>
+    <p class="noindent">Let $a_{1},a_{2},...$ be any sequence of numbers. We are often interested in sums such as $a_{1}+a_{2}+···+a_{n}$, and this sum is more compactly written using either of the following equivalent notations:</p>
   </div>
 
   <div class="equation" id="ch01eq-lev2sec3-1"><img src="../Images/c01/027equ01.png"></div>
 
-  <p class="noindent">If <em>n</em> is zero, the value of <span class="middle"><img src="../Images/c01/e027_01.png"></span> is defined to be zero. Our convention of using “three dots” in sums such as $a_{1} + a_{2} + · · · + a_{n}$ therefore has some slightly peculiar, but sensible, behavior in borderline cases (see <a href="../Text/ch01.html#ch01ex_2_3_1">exercise 1</a>).</p>
+  <p class="noindent">If <em>n</em> is zero, the value of <span class="middle"><img src="../Images/c01/e027_01.png"></span> is defined to be zero. Our convention of using “three dots” in sums such as $a_{1}+a_{2}+···+a_{n}$ therefore has some slightly peculiar, but sensible, behavior in borderline cases (see <a href="../Text/ch01.html#ch01ex_2_3_1">exercise 1</a>).</p>
 
   <p class="indent">In general, if $R(j)$ is any relation involving <em>j</em>, the symbol</p>
 
@@ -666,9 +666,9 @@
 
   <p class="noindent">means the sum of all $a_{j}$ where <em>j</em> is an integer satisfying the condition $R(j)$. If no such integers exist, notation (<a href="../Text/ch01.html#ch01eq-lev2sec3-2">2</a>) denotes zero. The letter <em>j</em> in (<a href="../Text/ch01.html#ch01eq-lev2sec3-1">1</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-2">2</a>) is a <em>dummy index</em> or <em>index variable</em>, introduced just for the purposes of the notation. Symbols used as index variables are usually the letters <em>i</em>, <em>j</em>, <em>k</em>, <em>m</em>, <em>n</em>, <em>r</em>, <em>s</em>, <em>t</em> (occasionally with subscripts or accent marks). Large summation signs like those in (<a href="../Text/ch01.html#ch01eq-lev2sec3-1">1</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-2">2</a>) can also be rendered more compactly as <span class="middle"><img src="../Images/c01/e027_02.png"></span> or $∑_{R(j)}^{a}j$. The use of a ∑ and index variables to indicate summation with definite limits was introduced by J. Fourier in 1820.</p>
 
-  <p class="indent">Strictly speaking, the notation $∑_{1 ≤ j ≤ n}a_{j}$ is ambiguous, since it does not clarify whether the summation is taken with respect to <em>j</em> or to <em>n</em>. In this particular case it would be rather silly to interpret it as a sum on values of <em>n</em> ≥ <em>j</em>; but meaningful examples can be constructed in which the index variable is not clearly specified, as in <span class="middle"><img src="../Images/c01/e027_03.png"></span>. In such cases the context must make clear which variable is a dummy variable and which variable has a significance that extends beyond its appearance in the sum. A sum such as <span class="middle"><img src="../Images/c01/e027_04.png"></span> would presumably be used only if either <em>j</em> or <em>k</em> (not both) has exterior significance.</p>
+  <p class="indent">Strictly speaking, the notation $∑_{1≤j≤n}a_{j}$ is ambiguous, since it does not clarify whether the summation is taken with respect to <em>j</em> or to <em>n</em>. In this particular case it would be rather silly to interpret it as a sum on values of <em>n</em> ≥ <em>j</em>; but meaningful examples can be constructed in which the index variable is not clearly specified, as in <span class="middle"><img src="../Images/c01/e027_03.png"></span>. In such cases the context must make clear which variable is a dummy variable and which variable has a significance that extends beyond its appearance in the sum. A sum such as <span class="middle"><img src="../Images/c01/e027_04.png"></span> would presumably be used only if either <em>j</em> or <em>k</em> (not both) has exterior significance.</p>
 
-  <p class="indent">In most cases we will use notation (<a href="../Text/ch01.html#ch01eq-lev2sec3-2">2</a>) only when the sum is <em>finite</em> — that is, when only a finite number of values <em>j</em> satisfy $R(j)$ and have $a_{j} ≠ 0$. If an infinite sum is required, for example</p>
+  <p class="indent">In most cases we will use notation (<a href="../Text/ch01.html#ch01eq-lev2sec3-2">2</a>) only when the sum is <em>finite</em> — that is, when only a finite number of values <em>j</em> satisfy $R(j)$ and have $a_{j}≠0$. If an infinite sum is required, for example</p>
 
   <div class="image"><img src="../Images/c01/e027_05.png"></div>
 
@@ -690,13 +690,13 @@
 
   <div class="image"><img src="../Images/c01/e028_02.png"></div>
 
-  <p class="noindent">It is customary to drop the parentheses on the right-hand side of (<a href="../Text/ch01.html#ch01eq-lev2sec3-4">4</a>); a double summation such as <span class="middle"><img src="../Images/c01/e028_01.png"></span> (is written simply ∑_{R(i)} ∑_{S(i)}<sup><em>aij</em></sup>.</p>
+  <p class="noindent">It is customary to drop the parentheses on the right-hand side of (<a href="../Text/ch01.html#ch01eq-lev2sec3-4">4</a>); a double summation such as <span class="middle"><img src="../Images/c01/e028_01.png"></span> is written simply $∑_{R(i)}∑_{S(i)}a_{ij}$.</p>
 
   <p class="indenthangingA">b) <em>Change of variable:</em></p>
 
   <div class="equation" id="ch01eq-lev2sec3-5"><img src="../Images/c01/028equ03.png"></div>
 
-  <p class="noindent">This equation represents two kinds of transformations. In the first case we are simply changing the name of the index variable from <em>i</em> to <em>j</em>. The second case is more interesting: Here $p(j)$ is a function of <em>j</em> that represents a <em>permutation</em> of the relevant values; more precisely, for each integer <em>i</em> satisfying the relation $R(i)$, there must be exactly one integer <em>j</em> satisfying the relation $p(j)=i$. This condition is always satisfied in the important cases $p(j)=c + j$ and $p(j)=c-j$, where <em>c</em> is an integer not depending on <em>j</em>, and these are the cases used most frequently in applications. For example,</p>
+  <p class="noindent">This equation represents two kinds of transformations. In the first case we are simply changing the name of the index variable from <em>i</em> to <em>j</em>. The second case is more interesting: Here $p(j)$ is a function of <em>j</em> that represents a <em>permutation</em> of the relevant values; more precisely, for each integer <em>i</em> satisfying the relation $R(i)$, there must be exactly one integer <em>j</em> satisfying the relation $p(j)=i$. This condition is always satisfied in the important cases $p(j)=c+j$ and $p(j)=c-j$, where <em>c</em> is an integer not depending on <em>j</em>, and these are the cases used most frequently in applications. For example,</p>
 
   <div class="equation" id="ch01eq-lev2sec3-6"><img src="../Images/c01/028equ04.png"></div>
 
@@ -716,17 +716,17 @@
 
   <div class="equation" id="ch01eq-lev2sec3-8"><img src="../Images/c01/029equ02.png"></div>
 
-  <p class="noindent">where we let b_{i} = <em>a<sub><em>i</em></sub></em><sub>1</sub> and <em>c<sub><em>i</em></sub></em> = <em>a<sub><em>i</em></sub></em><sub>2</sub>.</p>
+  <p class="noindent">where we let $b_{i}=a_{i1}$ and $c_{i}=a_{i2}$.</p>
 
-  <p class="indent">The operation of interchanging the order of summation is extremely useful, since it often happens that we know a simple form for ∑<sub><em>R(i)</em></sub> a<sub><em>ij</em></sub>, but not for ∑<sub><em>S(j)</em></sub> a<sub><em>ij</em></sub>. We frequently need to interchange the summation order also in a more general situation, where the relation $S(j)$ depends on <em>i</em> as well as <em>j</em>. In such a case we can denote the relation by “$S(i, j)$.” The interchange of summation can always be carried out, in theory at least, as follows:</p>
+  <p class="indent">The operation of interchanging the order of summation is extremely useful, since it often happens that we know a simple form for $∑_{R(i)}a_{ij}$, but not for $∑_{S(j)}a_{ij}$. We frequently need to interchange the summation order also in a more general situation, where the relation $S(j)$ depends on <em>i</em> as well as <em>j</em>. In such a case we can denote the relation by “$S(i,j)$.” The interchange of summation can always be carried out, in theory at least, as follows:</p>
 
   <div class="equation" id="ch01eq-lev2sec3-9"><img src="../Images/c01/029equ03.png"></div>
 
-  <p class="noindent">where $S'(j)$ is the relation “there is an integer <em>i</em> such that both $R(i)$ and $S(i, j)$ are true”; and $R'(i, j)$ is the relation “both $R(i)$ and $S(i, j)$ are true.” For example, if the summation is <span class="middle"><img src="../Images/c01/e029_02.png"></span>, then $S'(j)$ is the relation “there is an integer <em>i</em> such that 1 ≤ <em>i</em> ≤ <em>n</em> and 1 ≤ <em>j</em> ≤ <em>i</em>,” that is, 1 ≤ <em>j</em> ≤ <em>n</em>; and $R'(i, j)$ is the relation “1 ≤ <em>i</em> ≤ <em>n</em> and 1 ≤ <em>j</em> ≤ <em>i</em>,” that is, <em>j</em> ≤ <em>i</em> ≤ <em>n</em>. Thus,</p>
+  <p class="noindent">where $S'(j)$ is the relation “there is an integer <em>i</em> such that both $R(i)$ and $S(i,j)$ are true”; and $R'(i,j)$ is the relation “both $R(i)$ and $S(i,j)$ are true.” For example, if the summation is <span class="middle"><img src="../Images/c01/e029_02.png"></span>, then $S'(j)$ is the relation “there is an integer <em>i</em> such that 1 ≤ <em>i</em> ≤ <em>n</em> and 1 ≤ <em>j</em> ≤ <em>i</em>,” that is, 1 ≤ <em>j</em> ≤ <em>n</em>; and $R'(i,j)$ is the relation “1 ≤ <em>i</em> ≤ <em>n</em> and 1 ≤ <em>j</em> ≤ <em>i</em>,” that is, <em>j</em> ≤ <em>i</em> ≤ <em>n</em>. Thus,</p>
 
   <div class="equation" id="ch01eq-lev2sec3-10"><img src="../Images/c01/029equ04.png"></div>
 
-  <p class="noindent">[<em>Note:</em> As in case (b), the operation of interchanging order of summation is <em>not always valid for infinite series.</em> If the series is <em>absolutely convergent</em> — that is, if $∑_{R(i)} ∑_{S(j)}|a_{ij}|$ exists — it can be shown that Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) are valid. Also if <em>either one</em> of $R(i)$ or $S(j)$ specifies a <em>finite</em> sum in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), and if each infinite sum that appears is convergent, then the interchange is justified. In particular, Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>) is always true for convergent infinite sums.]</p>
+  <p class="noindent">[<em>Note:</em> As in case (b), the operation of interchanging order of summation is <em>not always valid for infinite series.</em> If the series is <em>absolutely convergent</em> — that is, if $∑_{R(i)}∑_{S(j)}|a_{ij}|$ exists — it can be shown that Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) are valid. Also if <em>either one</em> of $R(i)$ or $S(j)$ specifies a <em>finite</em> sum in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), and if each infinite sum that appears is convergent, then the interchange is justified. In particular, Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>) is always true for convergent infinite sums.]</p>
 
   <p class="indenthangingA"><a id="page_30"></a>d) <em>Manipulating the domain.</em> If $R(j)$ and $S(j)$ are arbitrary relations, we have</p>
 
@@ -736,7 +736,7 @@
 
   <div class="equation" id="ch01eq-lev2sec3-12"><img src="../Images/c01/030equ02.png"></div>
 
-  <p class="noindent">assuming that 1 ≤ <em>m</em> ≤ <em>n</em>. In this case “$R(j)$ and $S(j)$” is simply “<em>j</em> = <em>m</em>,” so we have reduced the second sum to simply “a_{m}.” In most applications of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-11">11</a>), either $R(j)$ and $S(j)$ are simultaneously satisfied for only one or two values of <em>j</em>, or else it is impossible to have both $R(j)$ and $S(j)$ true for the same <em>j</em>. In the latter case, the second sum on the right-hand side of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-11">11</a>) simply disappears.</p>
+  <p class="noindent">assuming that 1 ≤ <em>m</em> ≤ <em>n</em>. In this case “$R(j)$ and $S(j)$” is simply “<em>j</em> = <em>m</em>,” so we have reduced the second sum to simply “$a_{m}$.” In most applications of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-11">11</a>), either $R(j)$ and $S(j)$ are simultaneously satisfied for only one or two values of <em>j</em>, or else it is impossible to have both $R(j)$ and $S(j)$ true for the same <em>j</em>. In the latter case, the second sum on the right-hand side of Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-11">11</a>) simply disappears.</p>
 
   <p class="indent">Now that we have seen the four basic rules for manipulating sums, let’s study some further illustrations of how to apply these techniques.</p>
 
@@ -774,7 +774,7 @@
 
   <div class="image"><a id="page_32"></a><img src="../Images/c01/e031_03.png"></div>
 
-  <p class="noindent">since the first sum simply adds together $(n + 1)$ terms that do not depend on <em>j</em>. Now by equating the first and last expressions and dividing by 2, we obtain</p>
+  <p class="noindent">since the first sum simply adds together $(n+1)$ terms that do not depend on <em>j</em>. Now by equating the first and last expressions and dividing by 2, we obtain</p>
 
   <div class="equation" id="ch01eq-lev2sec3-15"><img src="../Images/c01/032equ01.png"></div>
 
@@ -820,7 +820,7 @@
 
   <div class="image"><img src="../Images/c01/e033_02.png"></div>
 
-  <p class="noindent">using the fact that $[1 ≤ i ≤ n][1 ≤ j ≤ i]=[1 ≤ j ≤ i ≤ n]=[1 ≤ j ≤ n][j ≤ i ≤ n]$. The more general equation (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) follows in a similar way from the identity</p>
+  <p class="noindent">using the fact that $[1≤i≤n][1≤j≤i]=[1≤j≤i≤n]=[1≤j≤n][j≤i≤n]$. The more general equation (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) follows in a similar way from the identity</p>
 
   <div class="equation" id="ch01eq-lev2sec3-21"><img src="../Images/c01/033equ03.png"></div>
 
@@ -830,15 +830,15 @@
 
   <p class="noindent">where <em>a</em> is an <em>n</em>-tuply subscripted variable; for example, if <em>n</em> = 5 this notation stands for</p>
 
-  <p class="center">$a_{11111} + a_{21110} + a_{22100} + a_{31100} + a_{32000} + a_{41000} + a_{50000}$.</p>
+  <p class="center">$a_{11111}+a_{21110}+a_{22100}+a_{31100}+a_{32000}+a_{41000}+a_{50000}$.</p>
 
   <p class="noindent">(See the remarks on partitions of a number in <a href="../Text/ch01.html#ch01lev2sec1">Section 1.2.1</a>.)</p>
 
   <p class="ex-title">Exercises — First Set</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_1a" id="ch01ex_2_3_1">1</a>.</strong> [<em>10</em>] The text says that $a_{1} + a_{2} + · · · + a_{0}=0$. What, then, is $a_{2} + · · · + a_{0}$?</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_1a" id="ch01ex_2_3_1">1</a>.</strong> [<em>10</em>] The text says that $a_{1}+a_{2}+···+a_{0}=0$. What, then, is $a_{2}+···+a_{0}$?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_3_2a" id="ch01ex_2_3_2">2</a>.</strong> [<em>01</em>] What does the notation $∑_{1 ≤ j ≤ n}a_{j}$ mean, if $n=3.14$?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_3_2a" id="ch01ex_2_3_2">2</a>.</strong> [<em>01</em>] What does the notation $∑_{1≤j≤n}a_{j}$ mean, if $n=3.14$?</p>
 
   <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_3a" id="ch01ex_2_3_3">3</a>.</strong> [<em>13</em>] Without using the ∑-notation, write out the equivalent of</p>
 
@@ -872,7 +872,7 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_14a" id="ch01ex_2_3_14">14</a>.</strong> [<em>11</em>] Using the result of the previous exercise, evaluate <span class="middle"><img src="../Images/c01/e034_05.png"></span> <em>jk</em>.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_15a" id="ch01ex_2_3_15">15</a>.</strong> [<em>M22</em>] Compute the sum $1×2+2×2^{2}+3×2^{3}+· · ·+n×2^{n}$ for small values of <em>n</em>. Do you see the pattern developing in these numbers? If not, discover it by manipulations similar to those leading up to Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-14">14</a>).</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_15a" id="ch01ex_2_3_15">15</a>.</strong> [<em>M22</em>] Compute the sum $1×2+2×2^{2}+3×2^{3}+···+n×2^{n}$ for small values of <em>n</em>. Do you see the pattern developing in these numbers? If not, discover it by manipulations similar to those leading up to Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-14">14</a>).</p>
 
   <p class="exercises1"><a id="page_35"></a><strong><a href="../Text/app01.html#ch01ex_2_3_16a" id="ch01ex_2_3_16">16</a>.</strong> [<em>M22</em>] Prove that</p>
 
@@ -882,7 +882,7 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_17a" id="ch01ex_2_3_17">17</a>.</strong> [<em>M00</em>] Let <em>S</em> be a set of integers. What is <span class="middle"><img src="../Images/c01/e035_01a.png"></span></p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_18a" id="ch01ex_2_3_18">18</a>.</strong> [<em>M20</em>] Show how to interchange the order of summation as in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) given that $R(i)$ is the relation “<em>n</em> is a multiple of <em>i</em>” and $S(i, j)$ is the relation “1 ≤ <em>j</em> &lt; <em>i</em>.”</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_18a" id="ch01ex_2_3_18">18</a>.</strong> [<em>M20</em>] Show how to interchange the order of summation as in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec3-9">9</a>) given that $R(i)$ is the relation “<em>n</em> is a multiple of <em>i</em>” and $S(i,j)$ is the relation “1 ≤ <em>j</em> &lt; <em>i</em>.”</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_19a" id="ch01ex_2_3_19">19</a>.</strong> [<em>20</em>] What is <span class="middle"><img src="../Images/c01/e035_02.png"></span></p>
 
@@ -898,9 +898,9 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_22a" id="ch01ex_2_3_22">22</a>.</strong> [<em>20</em>] State the appropriate analogs of Eqs. (<a href="../Text/ch01.html#ch01eq-lev2sec3-5">5</a>), (<a href="../Text/ch01.html#ch01eq-lev2sec3-7">7</a>), (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>), and (<a href="../Text/ch01.html#ch01eq-lev2sec3-11">11</a>) for <em>products</em> instead of sums.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_23a" id="ch01ex_2_3_23">23</a>.</strong> [<em>10</em>] Explain why it is a good idea to define ∑_{R(j)}a_{j} and ∏_{R(j)}a_{j} as zero and one, respectively, when no integers satisfy $R(j)$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_23a" id="ch01ex_2_3_23">23</a>.</strong> [<em>10</em>] Explain why it is a good idea to define $∑_{R(j)}a_{j}$ and $∏_{R(j)}a_{j}$ as zero and one, respectively, when no integers satisfy $R(j)$.</p>
 
-  <p class="exercises1"><strong>24.</strong> [<em>20</em>] Suppose that $R(j)$ is true for only finitely many <em>j</em>. By induction on the number of integers satisfying $R(j)$, prove that <span class="middle"><img src="../Images/c01/e035_02a.png"></span>, assuming that all a<sub><em>j</em></sub> &gt; 0.</p>
+  <p class="exercises1"><strong>24.</strong> [<em>20</em>] Suppose that $R(j)$ is true for only finitely many <em>j</em>. By induction on the number of integers satisfying $R(j)$, prove that <span class="middle"><img src="../Images/c01/e035_02a.png"></span>, assuming that all $a_{j}\gt0$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_25a" id="ch01ex_2_3_25">25</a>.</strong> [<em>15</em>] Consider the following derivation; is anything amiss?</p>
 
@@ -912,7 +912,7 @@
 
   <div class="image"><img src="../Images/c01/e035_06.png"></div>
 
-  <p class="exercisesp">assuming that 0 &lt; a_{j} &lt; 1.</p>
+  <p class="exercisesp">assuming that $0 \lt a_{j}\lt 1$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_28a" id="ch01ex_2_3_28">28</a>.</strong> [<em>M22</em>] Find a simple formula for <span class="middle"><img src="../Images/c01/e035_07.png"></span>.</p>
 
@@ -922,7 +922,7 @@
 
   <div class="image"><img src="../Images/c01/e036_01.png"></div>
 
-  <p class="exercisesp">[An important special case arises when w_{1}, ..., w_{n}, z_{1}, ..., z_{n} are arbitrary complex numbers and we set a_{j} = w_{j}, <span class="middle"><img src="../Images/c01/e036_02.png"></span>, <span class="middle"><img src="../Images/c01/e036_03.png"></span>, y_{j} = z_{j} :</p>
+  <p class="exercisesp">[An important special case arises when $w_{1},...,w_{n}$, $z_{1},...,z_{n}$ are arbitrary complex numbers and we set $a_{j}=w_{j}$, <span class="middle"><img src="../Images/c01/e036_02.png"></span>, <span class="middle"><img src="../Images/c01/e036_03.png"></span>, $y_{j}=z_{j}$:</p>
 
   <div class="image"><img src="../Images/c01/e036_04.png"></div>
 
@@ -942,7 +942,7 @@
 
   <div class="image"><img src="../Images/c01/e036_11.png"></div>
 
-  <p class="exercisesp">Prove that these formulas are a special case of a general law; let x_{1}, x_{2}, ..., x_{n} be distinct numbers, and show that</p>
+  <p class="exercisesp">Prove that these formulas are a special case of a general law; let $x_{1},x_{2},...,x_{n}$ be distinct numbers, and show that</p>
 
   <div class="image"><img src="../Images/c01/e036_12.png"></div>
 
@@ -954,23 +954,23 @@
 
   <div class="image"><img src="../Images/c01/e037_01.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_35a" id="ch01ex_2_3_35">35</a>.</strong> [<em>HM20</em>] The notation sup_{R(j)}a_{j} is used to denote the least upper bound of the elements a_{j}, in a manner exactly analogous to the ∑- and ∏-notations. (When $R(j)$ is satisfied for only finitely many <em>j</em>, the notation max_{R(j)}a_{j} is often used to denote the same quantity.) Show how rules (a), (b), (c), and (d) can be adapted for manipulation of <em>this</em> notation. In particular discuss the following analog of rule (a):</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_35a" id="ch01ex_2_3_35">35</a>.</strong> [<em>HM20</em>] The notation $\sup_{R(j)}a_{j}$ is used to denote the least upper bound of the elements $a_{j}$, in a manner exactly analogous to the ∑- and ∏-notations. (When $R(j)$ is satisfied for only finitely many <em>j</em>, the notation $\max_{R(j)}a_{j}$ is often used to denote the same quantity.) Show how rules (a), (b), (c), and (d) can be adapted for manipulation of <em>this</em> notation. In particular discuss the following analog of rule (a):</p>
 
   <div class="image"><img src="../Images/c01/e037_01a.png"></div>
 
-  <p class="exercisesp">and give a suitable definition for the notation when $R(j)$ is satisfied for <em>no j</em>.</p>
+  <p class="exercisesp">and give a suitable definition for the notation when $R(j)$ is satisfied for <em>no</em> <em>j</em>.</p>
 
   <p class="ex-title">Exercises — Second Set</p>
 
-  <p class="noindent"><em>Determinants and matrices</em>. The following interesting problems are for the reader who has experienced at least an introduction to determinants and elementary matrix theory. A determinant may be evaluated by astutely combining the operations of: (a) factoring a quantity out of a row or column; (b) adding a multiple of one row (or column) to another row (or column); (c) expanding by cofactors. The simplest and most often used version of operation (c) is to simply delete the entire first row and column, provided that the element in the upper left corner is +1 and the remaining elements in either the entire first row or the entire first column are zero; then evaluate the resulting smaller determinant. In general, the cofactor of an element a_{ij} in an $n×n$ determinant is $(-1)^{i+j}$ times the (<em>n</em> − 1) × (<em>n</em> − 1) determinant obtained by deleting the row and column in which a_{ij} appeared. The value of a determinant is equal to ∑ a_{ij} · cofactor(a_{ij}) summed with either <em>i</em> or <em>j</em> held constant and with the other subscript varying from 1 to <em>n</em>.</p>
+  <p class="noindent"><em>Determinants and matrices</em>. The following interesting problems are for the reader who has experienced at least an introduction to determinants and elementary matrix theory. A determinant may be evaluated by astutely combining the operations of: (a) factoring a quantity out of a row or column; (b) adding a multiple of one row (or column) to another row (or column); (c) expanding by cofactors. The simplest and most often used version of operation (c) is to simply delete the entire first row and column, provided that the element in the upper left corner is +1 and the remaining elements in either the entire first row or the entire first column are zero; then evaluate the resulting smaller determinant. In general, the cofactor of an element $a_{ij}$ in an $n×n$ determinant is $(-1)^{i+j}$ times the $(n-1)×(n-1)$ determinant obtained by deleting the row and column in which $a_{ij}$ appeared. The value of a determinant is equal to $∑ a_{ij}·cofactor(a_{ij})$ summed with either <em>i</em> or <em>j</em> held constant and with the other subscript varying from 1 to <em>n</em>.</p>
 
-  <p class="indent">If (b_{ij}) is the <em>inverse</em> of matrix (a_{ij}), then b_{ij} equals the cofactor of a_{ji} (<em>not</em> a_{ij}), divided by the determinant of the whole matrix.</p>
+  <p class="indent">If $(b_{ij})$ is the <em>inverse</em> of matrix $(a_{ij})$, then $b_{ij}$ equals the cofactor of $a_{ji}$ (<em>not</em> $a_{ij}$), divided by the determinant of the whole matrix.</p>
 
   <p class="indent">The following types of matrices are of special importance:</p>
 
   <div class="image"><img src="../Images/c01/e037_02.png"></div>
 
-  <p class="exercises1"><a id="page_38"></a><strong><a href="../Text/app01.html#ch01ex_2_3_36a" id="ch01ex_2_3_36">36</a>.</strong> [<em>M23</em>] Show that the determinant of the combinatorial matrix is <em>x</em><sup><em>n</em>−1</sup> (<em>x</em> + <em>ny</em>).</p>
+  <p class="exercises1"><a id="page_38"></a><strong><a href="../Text/app01.html#ch01ex_2_3_36a" id="ch01ex_2_3_36">36</a>.</strong> [<em>M23</em>] Show that the determinant of the combinatorial matrix is $x^{n−1}(x+ny)$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_37a" id="ch01ex_2_3_37">37</a>.</strong> [<em>M24</em>] Show that the determinant of Vandermonde’s matrix is</p>
 
@@ -980,13 +980,13 @@
 
   <div class="image"><img src="../Images/c01/e038_02.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_39a" id="ch01ex_2_3_39">39</a>.</strong> [<em>M23</em>] Show that the inverse of a combinatorial matrix is a combinatorial matrix with the entries $b_{ij}=(-y + δ_{ij} (x + ny))/x(x + ny)$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_39a" id="ch01ex_2_3_39">39</a>.</strong> [<em>M23</em>] Show that the inverse of a combinatorial matrix is a combinatorial matrix with the entries $b_{ij}=(-y+δ_{ij}(x+ny))/x(x+ny)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_40a" id="ch01ex_2_3_40">40</a>.</strong> [<em>M24</em>] Show that the inverse of Vandermonde’s matrix is given by</p>
 
   <div class="image"><img src="../Images/c01/e038_03.png"></div>
 
-  <p class="exercisesp">Don’t be dismayed by the complicated sum in the numerator — it is just the coefficient of $x^{j-1}$ in the polynomial $(x_{1}-x) ... (x_{n}-x)/(x_{i}-x)$.</p>
+  <p class="exercisesp">Don’t be dismayed by the complicated sum in the numerator — it is just the coefficient of $x^{j-1}$ in the polynomial $(x_{1}-x)...(x_{n}-x)/(x_{i}-x)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_41a" id="ch01ex_2_3_41">41</a>.</strong> [<em>M26</em>] Show that the inverse of Cauchy’s matrix is given by</p>
 
@@ -996,21 +996,21 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_43a" id="ch01ex_2_3_43">43</a>.</strong> [<em>M24</em>] What is the sum of all $n^{2}$ elements in the inverse of Vandermonde’s matrix? [<em>Hint:</em> Use <a href="../Text/ch01.html#ch01ex_2_3_33">exercise 33</a>.]</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_44a" id="ch01ex_2_3_44">44</a>.</strong> [<em>M26</em>] What is the sum of all n^{2} elements in the inverse of Cauchy’s matrix?</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_44a" id="ch01ex_2_3_44">44</a>.</strong> [<em>M26</em>] What is the sum of all $n^{2}$ elements in the inverse of Cauchy’s matrix?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_45a" id="ch01ex_2_3_45">45</a>.</strong> [<em>M25</em>] A <em>Hilbert matrix</em>, sometimes called an $n×n$ segment of <em>the</em> (infinite) Hilbert matrix, is a matrix for which $a_{ij}=1/(i + j-1)$. Show that this is a special case of Cauchy’s matrix, find its inverse, show that each element of the inverse is an integer, and show that the sum of all elements of the inverse is $n^{2}$. [<em>Note:</em> Hilbert matrices have often been used to test various matrix manipulation algorithms, because they are numerically unstable, and they have known inverses. However, it is a mistake to compare the <em>known</em> inverse, given in this exercise, to the <em>computed</em> inverse of a Hilbert matrix, since the matrix to be inverted must be expressed in rounded numbers beforehand; the inverse of an approximate Hilbert matrix will be somewhat different from the inverse of an exact one, due to the instability present. Since the elements of the inverse are integers, and since the inverse matrix is just as unstable as the original, the inverse can be specified exactly, and one could try to invert the inverse. The integers that appear in the inverse are, however, quite large.] The solution to this problem requires an elementary knowledge of factorials and binomial coefficients, which are discussed in <a href="../Text/ch01.html#ch01lev2sec5">Sections 1.2.5</a> and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>.</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_45a" id="ch01ex_2_3_45">45</a>.</strong> [<em>M25</em>] A <em>Hilbert matrix</em>, sometimes called an $n×n$ segment of <em>the</em> (infinite) Hilbert matrix, is a matrix for which $a_{ij}=1/(i+j-1)$. Show that this is a special case of Cauchy’s matrix, find its inverse, show that each element of the inverse is an integer, and show that the sum of all elements of the inverse is $n^{2}$. [<em>Note:</em> Hilbert matrices have often been used to test various matrix manipulation algorithms, because they are numerically unstable, and they have known inverses. However, it is a mistake to compare the <em>known</em> inverse, given in this exercise, to the <em>computed</em> inverse of a Hilbert matrix, since the matrix to be inverted must be expressed in rounded numbers beforehand; the inverse of an approximate Hilbert matrix will be somewhat different from the inverse of an exact one, due to the instability present. Since the elements of the inverse are integers, and since the inverse matrix is just as unstable as the original, the inverse can be specified exactly, and one could try to invert the inverse. The integers that appear in the inverse are, however, quite large.] The solution to this problem requires an elementary knowledge of factorials and binomial coefficients, which are discussed in <a href="../Text/ch01.html#ch01lev2sec5">Sections 1.2.5</a> and <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_46a" id="ch01ex_2_3_46">46</a>.</strong> [<em>M30</em>] Let <em>A</em> be an $m × n$ matrix, and let <em>B</em> be an $n × m$ matrix. Given that $1 ≤ j_{1}, j_{2},..., j_{m} ≤ n$, let $A_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of columns <a id="page_39"></a>$j_{1},..., j_{m}$ of <em>A</em>, and let $B_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of rows $j_{1},..., j_{m}$ of <em>B</em>. Prove the <em>Binet–Cauchy identity</em></p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_46a" id="ch01ex_2_3_46">46</a>.</strong> [<em>M30</em>] Let <em>A</em> be an $m×n$ matrix, and let <em>B</em> be an $n×m$ matrix. Given that $1≤j_{1},j_{2},...,j_{m}≤n$, let $A_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of columns <a id="page_39"></a>$j_{1},...,j_{m}$ of <em>A</em>, and let $B_{j_{1}j_{2}...j_{m}}$ denote the $m×m$ matrix consisting of rows $j_{1},...,j_{m}$ of <em>B</em>. Prove the <em>Binet–Cauchy identity</em></p>
 
   <div class="image"><img src="../Images/c01/e039_01.png"></div>
 
-  <p class="exercisesp">(Note the special cases: (i) <em>m</em> = <em>n</em>, (ii) <em>m</em> = 1, (iii) <em>B</em> = A^{T}, (iv) <em>m &gt; n</em>, (v) <em>m</em> = 2.)</p>
+  <p class="exercisesp">(Note the special cases: (i) <em>m</em> = <em>n</em>, (ii) <em>m</em> = 1, (iii) $B=A^{T}$, (iv) <em>m</em> &gt; <em>n</em>, (v) <em>m</em> = 2.)</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_3_47a" id="ch01ex_2_3_47">47</a>.</strong> [<em>M27</em>] (C. Krattenthaler.) Prove that</p>
 
   <div class="image"><img src="../Images/c01/e039_02.png"></div>
 
-  <p class="exercisesp">and generalize this equation to an identity for an $n×n$ determinant in 3<em>n</em> − 2 variables x_{1}, ..., x_{n}, p_{1}, ..., p_{n−1}, q_{2}, ..., q_{n} . Compare your formula to the result of <a href="../Text/ch01.html#ch01ex_2_3_38">exercise 38</a>.</p>
+  <p class="exercisesp">and generalize this equation to an identity for an $n×n$ determinant in $3n-2$ variables $x_{1},...,x_{n}$, $p_{1},...,p_{n−1}$, $q_{2},...,q_{n}$. Compare your formula to the result of <a href="../Text/ch01.html#ch01ex_2_3_38">exercise 38</a>.</p>
 
   <div class="heading">
     <h4 id="ch01lev2sec4">1.2.4. Integer Functions and Elementary Number Theory</h4>
@@ -1018,11 +1018,11 @@
     <p class="noindent">If <em>x</em> is any real number, we write</p>
   </div>
 
-  <p class="uln-indent">\lfloor{<em>x</em>}\rfloor= the greatest integer less than or equal to <em>x</em> (the <em>floor</em> of <em>x</em>);</p>
+  <p class="uln-indent">$\lfloor{x}\rfloor=$ the greatest integer less than or equal to <em>x</em> (the <em>floor</em> of <em>x</em>);</p>
 
-  <p class="uln-indent">\lceil{x}\rceil= the least integer greater than or equal to <em>x</em> (the <em>ceiling</em> of <em>x</em>).</p>
+  <p class="uln-indent">$\lceil{x}\rceil=$ the least integer greater than or equal to <em>x</em> (the <em>ceiling</em> of <em>x</em>).</p>
 
-  <p class="noindent">The notation [<em>x</em>] was often used before 1970 for one or the other of these functions, usually the former; but the notations above, introduced by K. E. Iverson in the 1960s, are more useful, because \lfloor{<em>x</em>}\rfloor  and \lceil{<em>x</em>}\rceil  occur about equally often in practice. The function \lfloor{<em>x</em>}\rfloor  is sometimes called the <em>entier</em> function, from the French word for “integer.”.</p>
+  <p class="noindent">The notation [<em>x</em>] was often used before 1970 for one or the other of these functions, usually the former; but the notations above, introduced by K. E. Iverson in the 1960s, are more useful, because $\lfloor{x}\rfloor$ and $\lceil{x}\rceil$ occur about equally often in practice. The function $\lfloor{x}\rfloor$ is sometimes called the <em>entier</em> function, from the French word for “integer.”.</p>
 
   <p class="indent">The following formulas and examples are easily verified:</p>
 
@@ -1040,25 +1040,25 @@
 
   <p class="noindent">Consequently</p>
 
-  <p class="indenthangingA">a) if <em>y</em> &gt; 0, then 0 ≤ <em>x</em> mod <em>y &lt; y</em>;</p>
+  <p class="indenthangingA">a) if <em>y</em> &gt; 0, then $0≤x\bmod y\lt y$;</p>
 
-  <p class="indenthangingA">b) if <em>y</em> &lt; 0, then 0 ≥ <em>x</em> mod <em>y &gt; y</em>;</p>
+  <p class="indenthangingA">b) if <em>y</em> &lt; 0, then $0≥x\bmod y\gt y$;</p>
 
-  <p class="indenthangingA"><a id="page_40"></a>c) the quantity <em>x</em> − (<em>x</em> mod <em>y</em>) is an integral multiple of <em>y</em>.</p>
+  <p class="indenthangingA"><a id="page_40"></a>c) the quantity $x-(x\bmod y)$ is an integral multiple of <em>y</em>.</p>
 
-  <p class="noindent">We call <em>x</em> mod <em>y</em> the <em>remainder</em> when <em>x</em> is divided by <em>y</em>; similarly, we call \lfloor{<em>x/y</em>}\rfloor  the <em>quotient</em>.</p>
+  <p class="noindent">We call $x\bmod y$ the <em>remainder</em> when <em>x</em> is divided by <em>y</em>; similarly, we call $\lfloor{x/y}\rfloor$ the <em>quotient</em>.</p>
 
   <p class="indent">When <em>x</em> and <em>y</em> are integers, “mod” is therefore a familiar operation:</p>
 
   <div class="equation" id="ch01eq-lev2sec4-3"><img src="../Images/c01/040equ01.png"></div>
 
-  <p class="noindent">We have <em>x</em> mod <em>y</em> = 0 if and only if <em>x</em> is a multiple of <em>y</em>, that is, if and only if <em>x</em> is divisible by <em>y</em>. The notation <em>y</em>\minus<em>x</em>, read “<em>y</em> divides <em>x</em>,” means that <em>y</em> is a positive integer and <em>x</em> mod <em>y</em> = 0.</p>
+  <p class="noindent">We have <em>x</em> mod <em>y</em> = 0 if and only if <em>x</em> is a multiple of <em>y</em>, that is, if and only if <em>x</em> is divisible by <em>y</em>. The notation $y\minus x$, read “<em>y</em> divides <em>x</em>,” means that <em>y</em> is a positive integer and $x\bmod y=0$.</p>
 
   <p class="indent">The “mod” operation is useful also when <em>x</em> and <em>y</em> take arbitrary real values. For example, with trigonometric functions we can write</p>
 
-  <p class="center">tan <em>x</em> = tan (<em>x</em> mod π).</p>
+  <p class="center">$\tan x=\tan(x\bmod π)$.</p>
 
-  <p class="indent">The quantity <em>x</em> mod 1 is the <em>fractional part</em> of <em>x</em>; we have, by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec4-1">1</a>),</p>
+  <p class="indent">The quantity $x\bmod 1$ is the <em>fractional part</em> of <em>x</em>; we have, by Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec4-1">1</a>),</p>
 
   <div class="equation" id="ch01eq-lev2sec4-4"><img src="../Images/c01/040equ02.png"></div>
 
@@ -1066,7 +1066,7 @@
 
   <div class="equation" id="ch01eq-lev2sec4-5"><img src="../Images/c01/040equ03.png"></div>
 
-  <p class="noindent">means that <em>x</em> mod <em>z</em> = <em>y</em> mod <em>z</em>; it is the same as saying that <em>x</em> − <em>y</em> is an integral multiple of <em>z</em>. Expression (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) is read, “<em>x</em> is congruent to <em>y</em> modulo <em>z</em>.”</p>
+  <p class="noindent">means that $x\bmod z=y\bmod z$; it is the same as saying that $x-y$ is an integral multiple of <em>z</em>. Expression (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) is read, “<em>x</em> is congruent to <em>y</em> modulo <em>z</em>.”</p>
 
   <p class="indent">Let’s turn now to the basic elementary properties of congruences that will be used in the number-theoretical arguments of this book. All variables in the following formulas are assumed to be integers. Two integers <em>x</em> and <em>y</em> are said to be <em>relatively prime</em> if they have no common factor, that is, if their greatest common divisor is 1; in such a case we write $x⊥y$. The concept of relatively prime integers is a familiar one, since it is customary to say that a fraction is in “lowest terms” when the numerator is relatively prime to the denominator.</p>
 
@@ -1074,7 +1074,7 @@
 
   <p class="noindent"><a id="law_b"></a><strong>Law B.</strong> If $ax≡by$ and $a≡b$, and if $a⊥m$, then $x≡y (modulo m)$.</p>
 
-  <p class="noindent"><a id="law_c"></a><strong>Law C.</strong> <em>a</em> ≡ <em>b</em> (modulo <em>m</em>) if and only if <em>an</em> ≡ <em>bn</em> (modulo <em>mn</em>), when <em>n</em> ≠ 0.</p>
+  <p class="noindent"><a id="law_c"></a><strong>Law C.</strong> $a≡b (modulo m)$ if and only if $an≡bn (modulo mn)$, when <em>n</em> ≠ 0.</p>
 
   <p class="noindent"><a id="law_d"></a><strong>Law D.</strong> If $r⊥s$, then $a≡b (modulo rs)$ if and only if $a≡b (modulo r)$ and $a≡b (modulo s)$.</p>
 
@@ -1084,13 +1084,13 @@
 
   <p class="noindent"><a id="page_41"></a><a id="ch01the01_F"></a><strong>Theorem F</strong> <em>(Fermat’s theorem</em>, 1640). <em>If p is a prime number, then $a^{p}≡a (modulo p)$ for all integers a.</em></p>
 
-  <p class="noindent"><em>Proof</em>. If <em>a</em> is a multiple of <em>p</em>, obviously $a^{p}≡0≡a (modulo p)$. So we need only consider the case $a\bmod p ≠ 0$. Since <em>p</em> is a prime number, this means that $a⊥p$. Consider the numbers</p>
+  <p class="noindent"><em>Proof</em>. If <em>a</em> is a multiple of <em>p</em>, obviously $a^{p}≡0≡a (modulo p)$. So we need only consider the case $a\bmod p≠0$. Since <em>p</em> is a prime number, this means that $a⊥p$. Consider the numbers</p>
 
   <div class="equation" id="ch01eq-lev2sec4-6"><img src="../Images/c01/041equ01.png"></div>
 
   <p class="noindent">These <em>p</em> numbers are all <em>distinct</em>, for if $ax\bmod p=ay\bmod p$, then by definition (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) $ax≡ay (modulo p)$; hence by <a href="../Text/ch01.html#law_b">Law B</a>, $x≡y (modulo p)$.</p>
 
-  <p class="indent">Since (<a href="../Text/ch01.html#ch01eq-lev2sec4-6">6</a>) gives <em>p</em> distinct numbers, all nonnegative and less than <em>p</em>, we see that the first number is zero and the rest are the integers $1, 2, ..., p-1$ in some order. Therefore by <a href="../Text/ch01.html#law_a">Law A</a>,</p>
+  <p class="indent">Since (<a href="../Text/ch01.html#ch01eq-lev2sec4-6">6</a>) gives <em>p</em> distinct numbers, all nonnegative and less than <em>p</em>, we see that the first number is zero and the rest are the integers $1,2,...,p-1$ in some order. Therefore by <a href="../Text/ch01.html#law_a">Law A</a>,</p>
 
   <div class="equation" id="ch01eq-lev2sec4-7"><img src="../Images/c01/041equ02.png"></div>
 
@@ -1102,59 +1102,63 @@
 
   <p class="ex-title">Exercises</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_1a" id="ch01ex_2_4_1">1</a>.</strong> [<em>00</em>] What are \lfloor{1.1}\rfloor, \lfloor{−1.1}\rfloor, \lceil{−1.1}\rceil, \lfloor{0.99999}\rfloor, and \lfloor{lg 35}\rfloor ?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_1a" id="ch01ex_2_4_1">1</a>.</strong> [<em>00</em>] What are $\lfloor{1.1}\rfloor$, $\lfloor{−1.1}\rfloor$, $\lceil{−1.1}\rceil$, $\lfloor{0.99999}\rfloor$, and $\lfloor{\lg 35}\rfloor$?</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_2a" id="ch01ex_2_4_2">2</a>.</strong> [<em>01</em>] What is \lceil{\lfloor{<em>x</em>}\rfloor }\rceil ?</p>
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_2a" id="ch01ex_2_4_2">2</a>.</strong> [<em>01</em>] What is $\lceil{\lfloor{x}\rfloor}\rceil$?</p>
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_3a" id="ch01ex_2_4_3">3</a>.</strong> [<em>M10</em>] Let <em>n</em> be an integer, and let <em>x</em> be a real number. Prove that</p>
 
-  <p class="indenthangingA">a) \lfloor{<em>x</em>}\rfloor  &lt; <em>n</em> if and only if <em>x</em> &lt; n;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b) <em>n</em> ≤ \lfloor{<em>x</em>}\rfloor  if and only if <em>n</em> ≤ <em>x</em>;</p>
+  <p class="indenthangingA">a) $\lfloor{x}\rfloor\lt n$ if and only if <em>x</em> &lt; n;
 
-  <p class="indenthangingA">c) \lceil{<em>x</em>}\rceil  ≤ <em>n</em> if and only if <em>x</em> ≤ n;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d) <em>n</em> &lt; \lceil{<em>x</em>}\rceil  if and only if <em>n</em> &lt; <em>x</em>;</p>
+  <p class="indenthangingA">b) $n≤\lfloor{x}\rfloor$ if and only if <em>n</em> ≤ <em>x</em>;</p>
 
-  <p class="indenthangingA">e) \lfloor{<em>x</em>}\rfloor= <em>n</em> if and only if <em>x</em> − 1 &lt; <em>n</em> ≤ <em>x</em>, and if and only if $n ≤ x\lt n+1$;</p>
+  <p class="indenthangingA">c) $\lceil{x}\rceil≤n$ if and only if <em>x</em> ≤ n;
 
-  <p class="indenthangingA">f) \lceil{x}\rceil= <em>n</em> if and only if <em>x</em> ≤ <em>n</em> &lt; <em>x</em> + 1, and if and only if <em>n</em> − 1 &lt; <em>x</em> ≤ <em>n</em>.</p>
+  <p class="indenthangingA">d) $n\lt\lceil{x}\rceil$ if and only if <em>n</em> &lt; <em>x</em>;</p>
 
-  <p class="exercisesp">[<em>These formulas are the most important tools for proving facts about</em> \lfloor{<em>x</em>}\rfloor  <em>and</em> \lceil{<em>x</em>}\rceil.]</p>
+  <p class="indenthangingA">e) $\lfloor{x}\rfloor=n$ if and only if $x-1\lt n≤x$, and if and only if $n≤x\lt n+1$;</p>
 
-  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_4a" id="ch01ex_2_4_4">4</a>.</strong> [<em>M10</em>] Using the previous exercise, prove that \lfloor{−<em>x</em>}\rfloor= −\lceil{<em>x</em>}\rceil.</p>
+  <p class="indenthangingA">f) $\lceil{x}\rceil=n$ if and only if $x≤n\lt x+1$, and if and only if $n-1\lt x≤n$.</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_5a" id="ch01ex_2_4_5">5</a>.</strong> [<em>16</em>] Given that <em>x</em> is a positive real number, state a simple formula that expresses <em>x</em> <em>rounded to the nearest integer</em>. The desired rounding rule is to produce \lfloor{<em>x</em>}\rfloor  when <em>x</em> mod <span class="middle"><img src="../Images/c01/e041_01.png"></span>, and to produce \lceil{<em>x</em>}\rceil  when <em>x</em> mod <span class="middle"><img src="../Images/c01/e041_02.png"></span>. Your answer should be a single formula that covers both cases. Discuss the rounding that would be obtained by your formula when <em>x</em> is negative.</p>
+  <p class="exercisesp">[<em>These formulas are the most important tools for proving facts about $\lfloor{x}\rfloor$ and $\lceil{x}\rceil$</em>.]</p>
+
+  <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_4a" id="ch01ex_2_4_4">4</a>.</strong> [<em>M10</em>] Using the previous exercise, prove that $\lfloor{−x}\rfloor=-\lceil{x}\rceil$.</p>
+
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_5a" id="ch01ex_2_4_5">5</a>.</strong> [<em>16</em>] Given that <em>x</em> is a positive real number, state a simple formula that expresses <em>x</em> <em>rounded to the nearest integer</em>. The desired rounding rule is to produce $\lfloor{x}\rfloor$ when $x\bmod <span class="middle"><img src="../Images/c01/e041_01.png"></span>$, and to produce $\lceil{x}\rceil$ when $x\bmod <span class="middle"><img src="../Images/c01/e041_02.png"></span>$. Your answer should be a single formula that covers both cases. Discuss the rounding that would be obtained by your formula when <em>x</em> is negative.</p>
 
   <p class="exercises2"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_6a" id="ch01ex_2_4_6">6</a>.</strong> [<em>20</em>] Which of the following equations are true for all positive real numbers <em>x</em>?</p>
 
   <div class="image"><img src="../Images/c01/e041_03.png"></div>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_7a" id="ch01ex_2_4_7">7</a>.</strong> [<em>M15</em>] Show that \lfloor{<em>x</em>}\rfloor  + \lfloor{y}\rfloor  ≤ \lfloor{<em>x</em> + y}\rfloor  and that equality holds if and only if <em>x</em> mod 1 + y mod 1 &lt; 1. Does a similar formula hold for ceilings?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_7a" id="ch01ex_2_4_7">7</a>.</strong> [<em>M15</em>] Show that $\lfloor{x}\rfloor+\lfloor{y}\rfloor≤\lfloor{x+y}\rfloor$ and that equality holds if and only if $x\bmod 1 + y\bmod 1 \lt 1$. Does a similar formula hold for ceilings?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_8a" id="ch01ex_2_4_8">8</a>.</strong> [<em>00</em>] What are 100 mod 3, 100 mod 7, −100 mod 7, −100 mod 0?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_8a" id="ch01ex_2_4_8">8</a>.</strong> [<em>00</em>] What are $100\bmod 3$, $100\bmod 7$, $-100\bmod 7$, $-100\bmod 0$?</p>
 
-  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_9a" id="ch01ex_2_4_9">9</a>.</strong> [<em>05</em>] What are 5 mod −3, 18 mod −3, −2 mod −3?</p>
+  <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_9a" id="ch01ex_2_4_9">9</a>.</strong> [<em>05</em>] What are $5\bmod -3$, $18\bmod -3, $-2\bmod -3$?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_10a" id="ch01ex_2_4_10">10</a>.</strong> [<em>10</em>] What are 1.1 mod 1, 0.11 mod .1, 0.11 mod −.1?</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_10a" id="ch01ex_2_4_10">10</a>.</strong> [<em>10</em>] What are $1.1\bmod 1$, $0.11\bmod .1$, $0.11\bmod -.1$?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_11a" id="ch01ex_2_4_11">11</a>.</strong> [<em>00</em>] What does “<em>x</em> ≡ <em>y</em> (modulo 0)” mean by our conventions?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_11a" id="ch01ex_2_4_11">11</a>.</strong> [<em>00</em>] What does “$x≡y (modulo 0)$” mean by our conventions?</p>
 
   <p class="exercises1"><a id="page_42"></a><strong><a href="../Text/app01.html#ch01ex_2_4_12a" id="ch01ex_2_4_12">12</a>.</strong> [<em>00</em>] What integers are relatively prime to 1?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_13a" id="ch01ex_2_4_13">13</a>.</strong> [<em>M00</em>] By convention, we say that the greatest common divisor of 0 and <em>n</em> is |<em>n</em>|. What integers are relatively prime to 0?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_13a" id="ch01ex_2_4_13">13</a>.</strong> [<em>M00</em>] By convention, we say that the greatest common divisor of 0 and <em>n</em> is $|n|$. What integers are relatively prime to 0?</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_14a" id="ch01ex_2_4_14">14</a>.</strong> [<em>12</em>] If <em>x</em> mod 3 = 2 and <em>x</em> mod 5 = 3, what is <em>x</em> mod 15?</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_14a" id="ch01ex_2_4_14">14</a>.</strong> [<em>12</em>] If $x\bmod 3=2$ and $x\bmod 5=3$, what is $x\bmod 15$?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_15a" id="ch01ex_2_4_15">15</a>.</strong> [<em>10</em>] Prove that <em>z</em>(<em>x</em> mod <em>y</em>) = (<em>zx</em>) mod (<em>zy</em>). [<a href="../Text/ch01.html#law_c">Law C</a> is an immediate consequence of this distributive law.]</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_15a" id="ch01ex_2_4_15">15</a>.</strong> [<em>10</em>] Prove that $z(x\bmod y)=(zx)\bmod (zy)$. [<a href="../Text/ch01.html#law_c">Law C</a> is an immediate consequence of this distributive law.]</p>
 
-  <p class="exercises1"><strong>16.</strong> [<em>M10</em>] Assume that <em>y</em> &gt; 0. Show that if (<em>x</em> − <em>z</em>)/<em>y</em> is an integer and if 0 ≤ <em>z &lt; y</em>, then <em>z</em> = <em>x</em> mod <em>y</em>.</p>
+  <p class="exercises1"><strong>16.</strong> [<em>M10</em>] Assume that <em>y</em> &gt; 0. Show that if $(x-z)/y$ is an integer and if 0 ≤ <em>z</em> &lt; <em>y</em>, then $z=x\bmod y$.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_17a" id="ch01ex_2_4_17">17</a>.</strong> [<em>M15</em>] Prove <a href="../Text/ch01.html#law_a">Law A</a> directly from the definition of congruence, and also prove half of <a href="../Text/ch01.html#law_d">Law D</a>: If <em>a</em> ≡ <em>b</em> (modulo <em>rs</em>), then <em>a</em> ≡ <em>b</em> (modulo <em>r</em>) and <em>a</em> ≡ <em>b</em> (modulo <em>s</em>). (Here <em>r</em> and <em>s</em> are arbitrary integers.)</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_17a" id="ch01ex_2_4_17">17</a>.</strong> [<em>M15</em>] Prove <a href="../Text/ch01.html#law_a">Law A</a> directly from the definition of congruence, and also prove half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡b (modulo rs)$, then $a≡b (modulo r)$ and $a≡b (modulo s)$. (Here <em>r</em> and <em>s</em> are arbitrary integers.)</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_18a" id="ch01ex_2_4_18">18</a>.</strong> [<em>M15</em>] Using <a href="../Text/ch01.html#law_b">Law B</a>, prove the other half of <a href="../Text/ch01.html#law_d">Law D</a>: If <em>a</em> ≡ <em>b</em> (modulo <em>r</em>) and <em>a</em> ≡ <em>b</em> (modulo <em>s</em>), then <em>a</em> ≡ <em>b</em> (modulo <em>rs</em>), provided that $r⊥s$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_18a" id="ch01ex_2_4_18">18</a>.</strong> [<em>M15</em>] Using <a href="../Text/ch01.html#law_b">Law B</a>, prove the other half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡b (modulo r)$ and $a≡b (modulo s)$, then $a≡b (modulo rs)$, provided that $r⊥s$.</p>
 
-  <p class="exercises3"><a id="ch01ex_2_4_19"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong>19.</strong> [<em>M10</em>] (<em>Law of inverses</em>.) If $n⊥m$, there is an integer <em>n</em>′ such that <em>nn</em>′ ≡ 1 (modulo <em>m</em>). Prove this, using the extension of Euclid’s algorithm (<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm 1.2.1E</a>).</p>
+  <p class="exercises3"><a id="ch01ex_2_4_19"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong>19.</strong> [<em>M10</em>] (<em>Law of inverses</em>.) If $n⊥m$, there is an integer <em>n</em>′ such that $nn'≡ 1 (modulo m)$. Prove this, using the extension of Euclid’s algorithm (<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm 1.2.1E</a>).</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_20a" id="ch01ex_2_4_20">20</a>.</strong> [<em>M15</em>] Use the law of inverses and <a href="../Text/ch01.html#law_a">Law A</a> to prove <a href="../Text/ch01.html#law_b">Law B</a>.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_21a" id="ch01ex_2_4_21">21</a>.</strong> [<em>M22</em>] (<em>Fundamental theorem of arithmetic</em>.) Use <a href="../Text/ch01.html#law_b">Law B</a> and exercise <a href="../Text/ch01.html#ch01lev2sec1">1.2.1</a>–<a href="../Text/ch01.html#ch01ex_2_1_5">5</a> to prove that every integer <em>n</em> &gt; 1 has a <em>unique</em> representation as a product of primes (except for the order of the factors). In other words, show that there is exactly one way to write <em>n</em> = p_{1}p_{2} ... p_{k}, where each p_{j} is prime and p_{1} ≤ p_{2} ≤ · · · ≤ p_{k}.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_21a" id="ch01ex_2_4_21">21</a>.</strong> [<em>M22</em>] (<em>Fundamental theorem of arithmetic</em>.) Use <a href="../Text/ch01.html#law_b">Law B</a> and exercise <a href="../Text/ch01.html#ch01lev2sec1">1.2.1</a>–<a href="../Text/ch01.html#ch01ex_2_1_5">5</a> to prove that every integer <em>n</em> &gt; 1 has a <em>unique</em> representation as a product of primes (except for the order of the factors). In other words, show that there is exactly one way to write $n=p_{1}p_{2}...p_{k}$, where each $p_{j}$ is prime and $p_{1}≤p_{2}≤···≤p_{k}$.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_22a" id="ch01ex_2_4_22">22</a>.</strong> [<em>M10</em>] Give an example to show that <a href="../Text/ch01.html#law_b">Law B</a> is not always true if <em>a</em> is not relatively prime to <em>m</em>.</p>
 
@@ -1162,15 +1166,15 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_24a" id="ch01ex_2_4_24">24</a>.</strong> [<em>M20</em>] To what extent can Laws A, B, C, and D be generalized to apply to arbitrary real numbers instead of integers?</p>
 
-  <p class="exercises1"><strong>25.</strong> [<em>M02</em>] Show that, according to <a href="../Text/ch01.html#ch01the01_F">Theorem F</a>, $a^{p-1}\bmod p =$ [<em>a</em> is not a multiple of <em>p</em>], whenever <em>p</em> is a prime number.</p>
+  <p class="exercises1"><strong>25.</strong> [<em>M02</em>] Show that, according to <a href="../Text/ch01.html#ch01the01_F">Theorem F</a>, $a^{p-1}\bmod p=$ [<em>a</em> is not a multiple of <em>p</em>], whenever <em>p</em> is a prime number.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_26a" id="ch01ex_2_4_26">26</a>.</strong> [<em>M15</em>] Let <em>p</em> be an odd prime number, let <em>a</em> be any integer, and let $b=a^{(p-1)/2}$. Show that $b\bmod p$ is either 0 or 1 or $p-1$. [<em>Hint:</em> Consider $(b + 1)(b-1)$.]</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_26a" id="ch01ex_2_4_26">26</a>.</strong> [<em>M15</em>] Let <em>p</em> be an odd prime number, let <em>a</em> be any integer, and let $b=a^{(p-1)/2}$. Show that $b\bmod p$ is either 0 or 1 or $p-1$. [<em>Hint:</em> Consider $(b+1)(b-1)$.]</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_27a" id="ch01ex_2_4_27">27</a>.</strong> [<em>M15</em>] Given that <em>n</em> is a positive integer, let $φ(n)$ be the number of values among $\{0, 1, ..., n-1\}$ that are relatively prime to <em>n</em>. Thus $φ(1)=1$, $φ(2)=1$, $φ(3)=2$, $φ(4)=2$, etc. Show that $φ(p)=p-1$ if <em>p</em> is a prime number; and evaluate $φ(p^{e})$, when <em>e</em> is a positive integer.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_27a" id="ch01ex_2_4_27">27</a>.</strong> [<em>M15</em>] Given that <em>n</em> is a positive integer, let $φ(n)$ be the number of values among $\{0,1,...,n-1\}$ that are relatively prime to <em>n</em>. Thus $φ(1)=1$, $φ(2)=1$, $φ(3)=2$, $φ(4)=2$, etc. Show that $φ(p)=p-1$ if <em>p</em> is a prime number; and evaluate $φ(p^{e})$, when <em>e</em> is a positive integer.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_28a" id="ch01ex_2_4_28">28</a>.</strong> [<em>M25</em>] Show that the method used to prove <a href="../Text/ch01.html#ch01the01_F">Theorem F</a> can be used to prove the following extension, called <em>Euler’s theorem</em>: $a^{φ(m)}≡1 (modulo m)$, for <em>any</em> positive integer <em>m</em>, when $a⊥m$. (In particular, the number <em>n</em>′ in <a href="../Text/ch01.html#ch01ex_2_2_19">exercise 19</a> may be taken to be $n^{φ}<sup>(m)-1</sup>\bmod m$.)</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_28a" id="ch01ex_2_4_28">28</a>.</strong> [<em>M25</em>] Show that the method used to prove <a href="../Text/ch01.html#ch01the01_F">Theorem F</a> can be used to prove the following extension, called <em>Euler’s theorem</em>: $a^{φ(m)}≡1 (modulo m)$, for <em>any</em> positive integer <em>m</em>, when $a⊥m$. (In particular, the number <em>n</em>′ in <a href="../Text/ch01.html#ch01ex_2_2_19">exercise 19</a> may be taken to be $n^{φ(m)-1}\bmod m$.)</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_29a" id="ch01ex_2_4_29">29</a>.</strong> [<em>M22</em>] A function $f(n)$ of positive integers <em>n</em> is called <em>multiplicative</em> if $f(rs)=f(r)f(s)$ whenever $r⊥s$. Show that each of the following functions is multiplicative: (a) $f(n)=n^{c}$, where <em>c</em> is any constant; (b) $f(n) =$ [<em>n</em> is not divisible by $k^{2}$ for any integer <em>k</em> &gt; 1]; (c) $f(n)=c^{k}$, where <em>k</em> is the number of distinct primes that divide <em>n</em>; (d) the product of any two multiplicative functions.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_29a" id="ch01ex_2_4_29">29</a>.</strong> [<em>M22</em>] A function $f(n)$ of positive integers <em>n</em> is called <em>multiplicative</em> if $f(rs)=f(r)f(s)$ whenever $r⊥s$. Show that each of the following functions is multiplicative: (a) $f(n)=n^{c}$, where <em>c</em> is any constant; (b) $f(n)=$ [<em>n</em> is not divisible by $k^{2}$ for any integer <em>k</em> &gt; 1]; (c) $f(n)=c^{k}$, where <em>k</em> is the number of distinct primes that divide <em>n</em>; (d) the product of any two multiplicative functions.</p>
 
   <p class="exercises1"><a id="page_43"></a><strong><a href="../Text/app01.html#ch01ex_2_4_30a" id="ch01ex_2_4_30">30</a>.</strong> [<em>M30</em>] Prove that the function $φ(n)$ of <a href="../Text/ch01.html#ch01ex_2_4_27">exercise 27</a> is multiplicative. Using this fact, evaluate <em>φ</em>(1000000), and give a method for evaluating $φ(n)$ in a simple way once <em>n</em> has been factored into primes.</p>
 
@@ -1180,7 +1184,7 @@
 
   <div class="image"><img src="../Images/c01/e043_01.png"></div>
 
-  <p class="exercisesp">for any function $f(x, y)$.</p>
+  <p class="exercisesp">for any function $f(x,y)$.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_33a" id="ch01ex_2_4_33">33</a>.</strong> [<em>M18</em>] Given that <em>m</em> and <em>n</em> are integers, evaluate (a) <span class="middle"><img src="../Images/c01/e043_02.png"></span>; (b) <span class="middle"><img src="../Images/c01/e043_03.png"></span>. (The special case <em>m</em> = 0 is worth noting.)</p>
 
@@ -1188,7 +1192,7 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_35a" id="ch01ex_2_4_35">35</a>.</strong> [<em>M20</em>] Given that <em>m</em> and <em>n</em> are integers and <em>n</em> &gt; 0, prove that</p>
 
-  <p class="center">$\lfloor{(x + m)/n}\rfloor=\lfloor{(\lfloor{x}\rfloor + m)/n}\rfloor$</p>
+  <p class="center">$\lfloor{(x+m)/n}\rfloor=\lfloor{(\lfloor{x}\rfloor+m)/n}\rfloor$</p>
 
   <p class="exercisesp">for all real <em>x</em>. (When <em>m</em> = 0, we have an important special case.) Does an analogous result hold for the ceiling function?</p>
 
@@ -1212,15 +1216,15 @@
 
   <p class="indenthangingA">a) <span class="middle"><img src="../Images/c01/e043_10.png"></span>;</p>
 
-  <p class="indenthangingA">b) $f(x) =$ [<em>x</em> is an integer];</p>
+  <p class="indenthangingA">b) $f(x)=$ [<em>x</em> is an integer];</p>
 
-  <p class="indenthangingA">c) $f(x) =$ [<em>x</em> is a positive integer];</p>
+  <p class="indenthangingA">c) $f(x)=$ [<em>x</em> is a positive integer];</p>
 
-  <p class="indenthangingA">d) $f(x) =$ [there exists a rational number <em>r</em> and an integer <em>m</em> such that $x=rπ +m$];</p>
+  <p class="indenthangingA">d) $f(x)=$ [there exists a rational number <em>r</em> and an integer <em>m</em> such that $x=rπ+m$];</p>
 
   <p class="indenthangingA">e) three other functions like the one in (d), with <em>r</em> and/or <em>m</em> restricted to positive values;</p>
 
-  <p class="indenthangingA">f) $f(x)=\log |2\sin πx|$, if the value $f(x) =-∞$ is allowed;</p>
+  <p class="indenthangingA">f) $f(x)=\log|2\sin πx|$, if the value $f(x)=-∞$ is allowed;</p>
 
   <p class="indenthangingA">g) the sum of any two replicative functions;</p>
 
@@ -1232,9 +1236,9 @@
 
   <div class="image"><img src="../Images/c01/e044_01.png"></div>
 
-  <p class="exercisesp">Here $a_{n}$ and $b_{n}$ are numbers that depend on <em>n</em> but not on <em>x</em>. Derivatives and (if $b_{n}=0$) integrals of these functions are of the same type. If we require that $b_{n}=0$, we have, for example, the Bernoulli polynomials, the trigonometric functions $\cot πx$ and $\csc^{2}πx$, as well as Hurwitz’s generalized zeta function <span class="middle"><img src="../Images/c01/e044_01a.png"></span> for fixed <em>s</em>. With $b_{n} ≠ 0$ we have still other well-known functions, such as the psi function.</p>
+  <p class="exercisesp">Here $a_{n}$ and $b_{n}$ are numbers that depend on <em>n</em> but not on <em>x</em>. Derivatives and (if $b_{n}=0$) integrals of these functions are of the same type. If we require that $b_{n}=0$, we have, for example, the Bernoulli polynomials, the trigonometric functions $\cot πx$ and $\csc^{2}πx$, as well as Hurwitz’s generalized zeta function <span class="middle"><img src="../Images/c01/e044_01a.png"></span> for fixed <em>s</em>. With $b_{n}≠0$ we have still other well-known functions, such as the psi function.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_41a" id="ch01ex_2_4_41">41</a>.</strong> [<em>M23</em>] Let $a_{1}, a_{2}, a_{3}, ...$ be the sequence 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ...; find an expression for $a_{n}$ in terms of <em>n</em>, using the floor and/or ceiling function.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_41a" id="ch01ex_2_4_41">41</a>.</strong> [<em>M23</em>] Let $a_{1},a_{2},a_{3},...$ be the sequence 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ...; find an expression for $a_{n}$ in terms of <em>n</em>, using the floor and/or ceiling function.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_42a" id="ch01ex_2_4_42">42</a>.</strong> [<em>M24</em>] (a) Prove that</p>
 
@@ -1270,7 +1274,7 @@
 
   <p class="center">$(-1)^{\lfloor{2kq/p}\rfloor}(2kq\bmod p)$,&nbsp;&nbsp;&nbsp;&nbsp;$0\lt k\lt p/2$,</p>
 
-  <p class="indenthangingNP">are congruent in some order to the numbers $2, 4, ..., p-1 (modulo p)$. Hence <span class="middle"><img src="../Images/c01/e045_03.png"></span> where <span class="middle"><img src="../Images/c01/e045_03a.png"></span>.</p>
+  <p class="indenthangingNP">are congruent in some order to the numbers $2,4,...,p-1 (modulo p)$. Hence <span class="middle"><img src="../Images/c01/e045_03.png"></span> where <span class="middle"><img src="../Images/c01/e045_03a.png"></span>.</p>
 
   <p class="indenthangingA">b) Use the result of (a) to calculate <span class="middle"><img src="../Images/c01/e045_04.png"></span>.</p>
 
@@ -1282,12 +1286,12 @@
 
   <div class="image"><img src="../Images/c01/e045_06.png"></div>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_49a" id="ch01ex_2_4_49">49</a>.</strong> [<em>M30</em>] Suppose the integer-valued function $f(x)$ satisfies the two simple laws (i) $f(x + 1)=f(x) + 1$; (ii) $f(x)=f(f(nx)/n)$ for all positive integers <em>n</em>. Prove that either $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>, or $f(x)=\lceil{x}\rceil$ for all rational <em>x</em>.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_49a" id="ch01ex_2_4_49">49</a>.</strong> [<em>M30</em>] Suppose the integer-valued function $f(x)$ satisfies the two simple laws (i) $f(x+1)=f(x)+1$; (ii) $f(x)=f(f(nx)/n)$ for all positive integers <em>n</em>. Prove that either $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>, or $f(x)=\lceil{x}\rceil$ for all rational <em>x</em>.</p>
 
   <div class="heading">
     <h4 id="ch01lev2sec5">1.2.5. Permutations and Factorials</h4>
 
-    <p class="noindent">A <em>permutation of <em>n</em> objects</em> is an arrangement of <em>n</em> distinct objects in a row. There are six permutations of three objects $\{a, b, c\}$:</p>
+    <p class="noindent">A <em>permutation of <em>n</em> objects</em> is an arrangement of <em>n</em> distinct objects in a row. There are six permutations of three objects $\{a,b,c\}$:</p>
   </div>
 
   <div class="equation" id="ch01eq-lev2sec5-1"><img src="../Images/c01/045equ01.png"></div>
@@ -1296,27 +1300,27 @@
 
   <div class="equation" id="ch01eq-lev2sec5-2"><img src="../Images/c01/045equ02.png"></div>
 
-  <p class="noindent">The total number of permutations is therefore $p_{nn}=n(n-1) ... (1)$.</p>
+  <p class="noindent">The total number of permutations is therefore $p_{nn}=n(n-1)...(1)$.</p>
 
   <p class="footnote"><a href="../Text/ch01.html#ch01afn01a" id="ch01afn01">*</a> In fact, permutations are so important, Vaughan Pratt has suggested calling them “perms.” As soon as Pratt’s convention is established, textbooks of computer science will be somewhat shorter (and perhaps less expensive).</p>
 
-  <p class="indent">The process of <em>constructing</em> all permutations of <em>n</em> objects in an inductive manner, assuming that all permutations of <em>n</em> − 1 objects have been constructed, is very important in our applications. Let us rewrite (<a href="../Text/ch01.html#ch01eq-lev2sec5-1">1</a>) using the numbers $\{1, 2, 3\}$ instead of the letters $\{a, b, c\}$; the permutations are then</p>
+  <p class="indent">The process of <em>constructing</em> all permutations of <em>n</em> objects in an inductive manner, assuming that all permutations of <em>n</em> − 1 objects have been constructed, is very important in our applications. Let us rewrite (<a href="../Text/ch01.html#ch01eq-lev2sec5-1">1</a>) using the numbers $\{1,2,3\}$ instead of the letters $\{a,b,c\}$; the permutations are then</p>
 
   <div class="equation" id="page_46"></a><a id="ch01eq-lev2sec5-3"><img src="../Images/c01/046equ01.png"></div>
 
-  <p class="noindent">Consider how to get from this array to the permutations of $\{1, 2, 3, 4\}$. There are two principal ways to go from <em>n</em> − 1 objects to <em>n</em> objects.</p>
+  <p class="noindent">Consider how to get from this array to the permutations of $\{1,2,3,4\}$. There are two principal ways to go from <em>n</em> − 1 objects to <em>n</em> objects.</p>
 
-  <p class="noindent"><strong>Method 1.</strong> For each permutation $a_{1}a_{2}...a_{n-1}$ of $\{1, 2, ..., n-1\}$, form <em>n</em> others by inserting the number <em>n</em> in all possible places, obtaining</p>
+  <p class="noindent"><strong>Method 1.</strong> For each permutation $a_{1}a_{2}...a_{n-1}$ of $\{1,2,...,n-1\}$, form <em>n</em> others by inserting the number <em>n</em> in all possible places, obtaining</p>
 
-  <p class="center">$n a_{1}a_{2} ... a_{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}n a_{2} ... a+{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$...,$&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}a_{2} ... n a_{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}a_{2} ... a_{n-1}n$.</p>
+  <p class="center">$n a_{1}a_{2}...a_{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}n a_{2}...a+{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$...,$&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}a_{2}...n a_{n-1}$,&nbsp;&nbsp;&nbsp;&nbsp;$a_{1}a_{2}...a_{n-1}n$.</p>
 
   <p class="noindent">For example, from the permutation 2 3 1 in (<a href="../Text/ch01.html#ch01eq-lev2sec5-3">3</a>), we get 4 2 3 1, 2 4 3 1, 2 3 4 1, 2 3 1 4. It is clear that all permutations of <em>n</em> objects are obtained in this manner and that no permutation is obtained more than once.</p>
 
-  <p class="noindent"><strong>Method 2.</strong> For each permutation $a_{1}a_{2}... a_{n-1}$ of $\{1, 2, ..., n-1\}$, form <em>n</em> others as follows: First construct the array</p>
+  <p class="noindent"><strong>Method 2.</strong> For each permutation $a_{1}a_{2}...a_{n-1}$ of $\{1,2,...,n-1\}$, form <em>n</em> others as follows: First construct the array</p>
 
   <div class="image"><img src="../Images/c01/e046_01.png"></div>
 
-  <p class="noindent">Then rename the elements of each permutation using the numbers \{1, 2, ..., n\}, <em>preserving order</em>. For example, from the permutation 2 3 1 in (<a href="../Text/ch01.html#ch01eq-lev2sec5-3">3</a>) we get</p>
+  <p class="noindent">Then rename the elements of each permutation using the numbers $\{1,2,...,n\}$, <em>preserving order</em>. For example, from the permutation 2 3 1 in (<a href="../Text/ch01.html#ch01eq-lev2sec5-3">3</a>) we get</p>
 
   <div class="image"><img src="../Images/c01/e046_02.png"></div>
 
@@ -1324,11 +1328,11 @@
 
   <p class="center">3 4 2 1,&nbsp;&nbsp;&nbsp;&nbsp;3 4 1 2,&nbsp;&nbsp;&nbsp;&nbsp;2 4 1 3,&nbsp;&nbsp;&nbsp;&nbsp;2 3 1 4.</p>
 
-  <p class="indent">Another way to describe this process is to take the permutation $a_{1}a_{2} ... a_{n-1}$ and a number <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>; add one to each $a_{j}$ whose value is ≥ <em>k</em>, thus obtaining a permutation $b_{1}b_{2} ... b_{n-1}$ of the elements $\{1, ..., k-1, k + 1, ..., n\}$; then $b_{1}b_{2} ... b_{n-1}k$ is a permutation of $\{1, ..., n\}$.</p>
+  <p class="indent">Another way to describe this process is to take the permutation $a_{1}a_{2}...a_{n-1}$ and a number <em>k</em>, 1 ≤ <em>k</em> ≤ <em>n</em>; add one to each $a_{j}$ whose value is ≥ <em>k</em>, thus obtaining a permutation $b_{1}b_{2}...b_{n-1}$ of the elements $\{1,...,k-1,k+1,...,n\}$; then $b_{1}b_{2}...b_{n-1}k$ is a permutation of $\{1,...,n\}$.</p>
 
   <p class="indent">Again it is clear that we obtain each permutation of <em>n</em> elements exactly once by this construction. Putting <em>k</em> at the left instead of the right, or putting <em>k</em> in any other fixed position, would obviously work just as well.</p>
 
-  <p class="indent">If $p_{n}$ is the number of permutations of <em>n</em> objects, both of these methods show that $p_{n}=np_{n-1}$; this offers us two further proofs that $p_{n}=n(n-1) ... (1)$, as we already established in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-2">2</a>).</p>
+  <p class="indent">If $p_{n}$ is the number of permutations of <em>n</em> objects, both of these methods show that $p_{n}=np_{n-1}$; this offers us two further proofs that $p_{n}=n(n-1)...(1)$, as we already established in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-2">2</a>).</p>
 
   <p class="indent">The important quantity $p_{n}$ is called <em>n factorial</em> and it is written</p>
 
@@ -1372,9 +1376,9 @@
 
   <div class="image"><img src="../Images/c01/e047_02.png"></div>
 
-  <p class="noindent">so $1000!$ is divisible by $3^{498}$ but not by $3^{499}$. Although formula (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) is written as an infinite sum, it is really finite for any particular values of <em>n</em> and <em>p</em>, because all of <a id="page_48"></a>the terms are eventually zero. It follows from <a href="../Text/ch01.html#ch01lev2sec4">exercise 1.2.4</a>–<a href="../Text/ch01.html#ch01ex_2_4_35">35</a> that $\lfloor{n/p^{k+1}}\rfloor=\lfloor{\lfloor{n/p^{k}}\rfloor /p}\rfloor$; this fact facilitates the calculation in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>), since we can just divide the value of the previous term by <em>p</em> and discard the remainder.</p>
+  <p class="noindent">so $1000!$ is divisible by $3^{498}$ but not by $3^{499}$. Although formula (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) is written as an infinite sum, it is really finite for any particular values of <em>n</em> and <em>p</em>, because all of <a id="page_48"></a>the terms are eventually zero. It follows from <a href="../Text/ch01.html#ch01lev2sec4">exercise 1.2.4</a>–<a href="../Text/ch01.html#ch01ex_2_4_35">35</a> that $\lfloor{n/p^{k+1}}\rfloor=\lfloor{\lfloor{n/p^{k}}\rfloor/p}\rfloor$; this fact facilitates the calculation in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>), since we can just divide the value of the previous term by <em>p</em> and discard the remainder.</p>
 
-  <p class="indent">Equation (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) follows from the fact that $\lfloor{n/p^{k}}\rfloor$ is the number of integers among $\{1, 2, ..., n\}$ that are multiples of $p^{k}$. If we study the integers in the product (<a href="../Text/ch01.html#ch01eq-lev2sec5-4">4</a>), any integer that is divisible by $p^{j}$ but not by $p^{j+1}$ is counted exactly <em>j</em> times: once in $\lfloor{n/p}\rfloor$, once in $\lfloor{n/p^{2}}\rfloor, ...,$ once in $\lfloor{n/p^{j}}\rfloor$. This accounts for all occurrences of <em>p</em> as a factor of $n!$. [See A. M. Legendre, <em>Essai sur la Théorie des Nombres</em>, second edition (Paris: 1808), page 8.]</p>
+  <p class="indent">Equation (<a href="../Text/ch01.html#ch01eq-lev2sec5-8">8</a>) follows from the fact that $\lfloor{n/p^{k}}\rfloor$ is the number of integers among $\{1,2,...,n\}$ that are multiples of $p^{k}$. If we study the integers in the product (<a href="../Text/ch01.html#ch01eq-lev2sec5-4">4</a>), any integer that is divisible by $p^{j}$ but not by $p^{j+1}$ is counted exactly <em>j</em> times: once in $\lfloor{n/p}\rfloor$, once in $\lfloor{n/p^{2}}\rfloor,...,$ once in $\lfloor{n/p^{j}}\rfloor$. This accounts for all occurrences of <em>p</em> as a factor of $n!$. [See A. M. Legendre, <em>Essai sur la Théorie des Nombres</em>, second edition (Paris: 1808), page 8.]</p>
 
   <p class="indent">Another natural question arises: Now that we have defined <em>n</em>! for non-negative integers <em>n</em>, perhaps the factorial function is meaningful also for rational values of <em>n</em>, and even for real values. What is <span class="middle"><img src="../Images/c01/e048_01a.png"></span>, for example? Let us illustrate this point by introducing the “termial” function</p>
 
@@ -1394,7 +1398,7 @@
 
   <p class="noindent">(We will prove this formula in the next section.) The apparently infinite sum in Eq. (<a href="../Text/ch01.html#ch01eq-lev2sec5-11">11</a>) is in reality finite for any nonnegative integer <em>n</em>; however, it does not provide the desired generalization of <em>n</em>!, since the infinite sum does not exist <em>except</em> when <em>n</em> is a nonnegative integer. (See <a href="../Text/ch01a.html#ch01ex_2_5_16">exercise 16</a>.)</p>
 
-  <p class="indent">Still undaunted, Stirling found a sequence $a_{1}, a_{2}, ...$ such that</p>
+  <p class="indent">Still undaunted, Stirling found a sequence $a_{1},a_{2},...$ such that</p>
 
   <div class="equation" id="ch01eq-lev2sec5-12"><img src="../Images/c01/048equ04.png"></div>
 
@@ -1426,7 +1430,7 @@
     <p class="fig-caption"><strong>Fig. 7.</strong> The function <em>Γ</em> (<em>x</em>) = (<em>x</em> - 1)!. The local minimum at <em>X</em> has the coordinates (1.46163 21449 68362 34126 26595, 0.88560 31944 10888 70027 88159).</p>
   </div>
 
-  <p class="indent">Equations (<a href="../Text/ch01.html#ch01eq-lev2sec5-13">13</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>) define factorials and the gamma function for complex values as well as real values; but we generally use the letter <em>z</em>, instead of <em>n</em> or <em>x</em>, when thinking of a variable that has both real and imaginary parts. The factorial and gamma functions are related not only by the rule $z! = Γ(z+1)$ but also by</p>
+  <p class="indent">Equations (<a href="../Text/ch01.html#ch01eq-lev2sec5-13">13</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec5-15">15</a>) define factorials and the gamma function for complex values as well as real values; but we generally use the letter <em>z</em>, instead of <em>n</em> or <em>x</em>, when thinking of a variable that has both real and imaginary parts. The factorial and gamma functions are related not only by the rule $z!=Γ(z+1)$ but also by</p>
 
   <div class="equation" id="ch01eq-lev2sec5-16"><img src="../Images/c01/049equ04.png"></div>
 
@@ -1444,7 +1448,7 @@
 
   <div class="equation" id="ch01eq-lev2sec5-19"><img src="../Images/c01/050equ02.png"></div>
 
-  <p class="noindent">Thus, for example, the number p_{nk} of (<a href="../Text/ch01.html#ch01eq-lev2sec5-2">2</a>) is just <span class="middle"><img src="../Images/c01/e050_03.png"></span>. Notice that we have</p>
+  <p class="noindent">Thus, for example, the number $p_{nk}$ of (<a href="../Text/ch01.html#ch01eq-lev2sec5-2">2</a>) is just <span class="middle"><img src="../Images/c01/e050_03.png"></span>. Notice that we have</p>
 
   <div class="equation" id="ch01eq-lev2sec5-20"><img src="../Images/c01/050equ03.png"></div>
 
