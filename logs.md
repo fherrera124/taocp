@@ -1,11 +1,4 @@
-###According to **ERRATA TO VOLUME 1 (AFTER 2010)**:
-
-  - Amendments:
-
-    **Page 476** replacement for answer **4** (22 Dec 2013):
-
-    - Before: **4.** $x-1\\lt\\lfloor\{x\}\\rfloor≤x$; so $-x+1\\gt-\\lfloor\{x\}\\rfloor≥-x$; hence the result.
-    - Actual: **4.** By part (f), $x\\le\\lceil\{x\}\\rceil\\lt x+1$; hence $-x-1\\lt\\lceil\{x\}\\rceil\\le-x$; use part (e).
+####According to **ERRATA TO VOLUME 1 (UNTIL 2010)**:
 
   - Errors:
 
@@ -14,8 +7,16 @@
     - Before: x^\{z\}
     - (Not modified yet) Should be: x^\{x\}
 
+####According to **ERRATA TO VOLUME 1 (AFTER 2010)**:
 
-###Some of the most important errors of the digital edition I have fixed [**](#note2):<a id="title"></a>
+  - Amendments:
+
+    **Page 476** replacement for answer **4** (22 Dec 2013):
+
+    - Before: **4.** $x-1\\lt\\lfloor\{x\}\\rfloor≤x$; so $-x+1\\gt-\\lfloor\{x\}\\rfloor≥-x$; hence the result.
+    - Actual: **4.** By part (f), $x\\le\\lceil\{x\}\\rceil\\lt x+1$; hence $-x-1\\lt\\lceil\{x\}\\rceil\\le-x$; use part (e).
+
+####Errata to the digital edition [**](#note2):<a id="title"></a>
 
 The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
 
