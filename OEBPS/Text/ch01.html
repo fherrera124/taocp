@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  <div style="display:none">$\newcommand{\md}[2][\!\!]{#1\;({\rm modulo}\;#2)}$<!-- #1 optional arg, #2 mandatory arg, [\!\!] optional arg. If not second arg is given, optional arg will be used (canceling the space produced by the first "\;")--></div>
+
   <h2 id="ch01"><a id="page_xx"></a>Chapter One. Basic Concepts</h2>
 
   <div class="image"><img src="../Images/c01/xx-fig01.png"></div>
@@ -1070,25 +1072,25 @@
 
   <p class="indent">Let’s turn now to the basic elementary properties of congruences that will be used in the number-theoretical arguments of this book. All variables in the following formulas are assumed to be integers. Two integers <em>x</em> and <em>y</em> are said to be <em>relatively prime</em> if they have no common factor, that is, if their greatest common divisor is 1; in such a case we write $x⊥y$. The concept of relatively prime integers is a familiar one, since it is customary to say that a fraction is in “lowest terms” when the numerator is relatively prime to the denominator.</p>
 
-  <p class="noindent"><a id="law_a"></a><strong>Law A.</strong> If $a≡b$ and $x≡y$, then $a ± x≡b ± y$ and $ax≡by (modulo m)$.</p>
+  <p class="noindent"><a id="law_a"></a><strong>Law A.</strong> If $a≡b$ and $x≡y$, then $a ± x≡b ± y$ and $ax≡\md[by]{m}$.</p>
 
-  <p class="noindent"><a id="law_b"></a><strong>Law B.</strong> If $ax≡by$ and $a≡b$, and if $a⊥m$, then $x≡y (modulo m)$.</p>
+  <p class="noindent"><a id="law_b"></a><strong>Law B.</strong> If $ax≡by$ and $a≡b$, and if $a⊥m$, then $x≡\md[y]{m}$.</p>
 
-  <p class="noindent"><a id="law_c"></a><strong>Law C.</strong> $a≡b (modulo m)$ if and only if $an≡bn (modulo mn)$, when <em>n</em> ≠ 0.</p>
+  <p class="noindent"><a id="law_c"></a><strong>Law C.</strong> $a≡\md[b]{m}$ if and only if $an≡\md[bn]{mn}$, when <em>n</em> ≠ 0.</p>
 
-  <p class="noindent"><a id="law_d"></a><strong>Law D.</strong> If $r⊥s$, then $a≡b (modulo rs)$ if and only if $a≡b (modulo r)$ and $a≡b (modulo s)$.</p>
+  <p class="noindent"><a id="law_d"></a><strong>Law D.</strong> If $r⊥s$, then $a≡\md[b]{rs}$ if and only if $a≡\md[b]{r}$ and $a≡\md[b]{s}$.</p>
 
   <p class="indent"><a href="../Text/ch01.html#law_a">Law A</a> states that we can do addition, subtraction, and multiplication modulo <em>m</em> just as we do ordinary addition, subtraction, and multiplication. <a href="../Text/ch01.html#law_b">Law B</a> considers the operation of division and shows that, when the divisor is relatively prime to the modulus, we can also divide out common factors. <a href="../Text/ch01.html#law_c">Laws C</a> and <a href="../Text/ch01.html#law_d">D</a> consider what happens when the modulus is changed. These laws are proved in the exercises below.</p>
 
   <p class="indent">The following important theorem is a consequence of Laws A and B.</p>
 
-  <p class="noindent"><a id="page_41"></a><a id="ch01the01_F"></a><strong>Theorem F</strong> <em>(Fermat’s theorem</em>, 1640). <em>If p is a prime number, then $a^{p}≡a (modulo p)$ for all integers a.</em></p>
+  <p class="noindent"><a id="page_41"></a><a id="ch01the01_F"></a><strong>Theorem F</strong> <em>(Fermat’s theorem</em>, 1640). <em>If p is a prime number, then $a^{p}≡\md[a]{p}$ for all integers a.</em></p>
 
-  <p class="noindent"><em>Proof</em>. If <em>a</em> is a multiple of <em>p</em>, obviously $a^{p}≡0≡a (modulo p)$. So we need only consider the case $a\bmod p≠0$. Since <em>p</em> is a prime number, this means that $a⊥p$. Consider the numbers</p>
+  <p class="noindent"><em>Proof</em>. If <em>a</em> is a multiple of <em>p</em>, obviously $a^{p}≡0≡\md[a]{p}$. So we need only consider the case $a\bmod p≠0$. Since <em>p</em> is a prime number, this means that $a⊥p$. Consider the numbers</p>
 
   <div class="equation" id="ch01eq-lev2sec4-6"><img src="../Images/c01/041equ01.png"></div>
 
-  <p class="noindent">These <em>p</em> numbers are all <em>distinct</em>, for if $ax\bmod p=ay\bmod p$, then by definition (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) $ax≡ay (modulo p)$; hence by <a href="../Text/ch01.html#law_b">Law B</a>, $x≡y (modulo p)$.</p>
+  <p class="noindent">These <em>p</em> numbers are all <em>distinct</em>, for if $ax\bmod p=ay\bmod p$, then by definition (<a href="../Text/ch01.html#ch01eq-lev2sec4-5">5</a>) $ax≡\md[ay]{p}$; hence by <a href="../Text/ch01.html#law_b">Law B</a>, $x≡\md[y]{p}$.</p>
 
   <p class="indent">Since (<a href="../Text/ch01.html#ch01eq-lev2sec4-6">6</a>) gives <em>p</em> distinct numbers, all nonnegative and less than <em>p</em>, we see that the first number is zero and the rest are the integers $1,2,...,p-1$ in some order. Therefore by <a href="../Text/ch01.html#law_a">Law A</a>,</p>
 
@@ -1138,7 +1140,7 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_10a" id="ch01ex_2_4_10">10</a>.</strong> [<em>10</em>] What are $1.1\bmod 1$, $0.11\bmod .1$, $0.11\bmod -.1$?</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_11a" id="ch01ex_2_4_11">11</a>.</strong> [<em>00</em>] What does “$x≡y (modulo 0)$” mean by our conventions?</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_11a" id="ch01ex_2_4_11">11</a>.</strong> [<em>00</em>] What does “$x≡\md[y]{0}$” mean by our conventions?</p>
 
   <p class="exercises1"><a id="page_42"></a><strong><a href="../Text/app01.html#ch01ex_2_4_12a" id="ch01ex_2_4_12">12</a>.</strong> [<em>00</em>] What integers are relatively prime to 1?</p>
 
@@ -1150,11 +1152,11 @@
 
   <p class="exercises1"><strong>16.</strong> [<em>M10</em>] Assume that <em>y</em> &gt; 0. Show that if $(x-z)/y$ is an integer and if 0 ≤ <em>z</em> &lt; <em>y</em>, then $z=x\bmod y$.</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_17a" id="ch01ex_2_4_17">17</a>.</strong> [<em>M15</em>] Prove <a href="../Text/ch01.html#law_a">Law A</a> directly from the definition of congruence, and also prove half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡b (modulo rs)$, then $a≡b (modulo r)$ and $a≡b (modulo s)$. (Here <em>r</em> and <em>s</em> are arbitrary integers.)</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_17a" id="ch01ex_2_4_17">17</a>.</strong> [<em>M15</em>] Prove <a href="../Text/ch01.html#law_a">Law A</a> directly from the definition of congruence, and also prove half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡\md[b]{rs}$, then $a≡\md[b]{r}$ and $a≡\md[b]{s}$. (Here <em>r</em> and <em>s</em> are arbitrary integers.)</p>
 
-  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_18a" id="ch01ex_2_4_18">18</a>.</strong> [<em>M15</em>] Using <a href="../Text/ch01.html#law_b">Law B</a>, prove the other half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡b (modulo r)$ and $a≡b (modulo s)$, then $a≡b (modulo rs)$, provided that $r⊥s$.</p>
+  <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_18a" id="ch01ex_2_4_18">18</a>.</strong> [<em>M15</em>] Using <a href="../Text/ch01.html#law_b">Law B</a>, prove the other half of <a href="../Text/ch01.html#law_d">Law D</a>: If $a≡\md[b]{r}$ and $a≡\md[b]{s}$, then $a≡\md[b]{rs}$, provided that $r⊥s$.</p>
 
-  <p class="exercises3"><a id="ch01ex_2_4_19"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong>19.</strong> [<em>M10</em>] (<em>Law of inverses</em>.) If $n⊥m$, there is an integer <em>n</em>′ such that $nn'≡ 1 (modulo m)$. Prove this, using the extension of Euclid’s algorithm (<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm 1.2.1E</a>).</p>
+  <p class="exercises3"><a id="ch01ex_2_4_19"></a><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong>19.</strong> [<em>M10</em>] (<em>Law of inverses</em>.) If $n⊥m$, there is an integer <em>n</em>′ such that $nn'≡\md[ 1]{m}$. Prove this, using the extension of Euclid’s algorithm (<a href="../Text/ch01.html#ch01alg-lev2sec1-E">Algorithm 1.2.1E</a>).</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_20a" id="ch01ex_2_4_20">20</a>.</strong> [<em>M15</em>] Use the law of inverses and <a href="../Text/ch01.html#law_a">Law A</a> to prove <a href="../Text/ch01.html#law_b">Law B</a>.</p>
 
@@ -1172,7 +1174,7 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_27a" id="ch01ex_2_4_27">27</a>.</strong> [<em>M15</em>] Given that <em>n</em> is a positive integer, let $φ(n)$ be the number of values among $\{0,1,...,n-1\}$ that are relatively prime to <em>n</em>. Thus $φ(1)=1$, $φ(2)=1$, $φ(3)=2$, $φ(4)=2$, etc. Show that $φ(p)=p-1$ if <em>p</em> is a prime number; and evaluate $φ(p^{e})$, when <em>e</em> is a positive integer.</p>
 
-  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_28a" id="ch01ex_2_4_28">28</a>.</strong> [<em>M25</em>] Show that the method used to prove <a href="../Text/ch01.html#ch01the01_F">Theorem F</a> can be used to prove the following extension, called <em>Euler’s theorem</em>: $a^{φ(m)}≡1 (modulo m)$, for <em>any</em> positive integer <em>m</em>, when $a⊥m$. (In particular, the number <em>n</em>′ in <a href="../Text/ch01.html#ch01ex_2_2_19">exercise 19</a> may be taken to be $n^{φ(m)-1}\bmod m$.)</p>
+  <p class="exercises3"><span class="middle"><img src="../Images/c01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_28a" id="ch01ex_2_4_28">28</a>.</strong> [<em>M25</em>] Show that the method used to prove <a href="../Text/ch01.html#ch01the01_F">Theorem F</a> can be used to prove the following extension, called <em>Euler’s theorem</em>: $a^{φ(m)}≡\md[1]{m}$, for <em>any</em> positive integer <em>m</em>, when $a⊥m$. (In particular, the number <em>n</em>′ in <a href="../Text/ch01.html#ch01ex_2_2_19">exercise 19</a> may be taken to be $n^{φ(m)-1}\bmod m$.)</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_29a" id="ch01ex_2_4_29">29</a>.</strong> [<em>M22</em>] A function $f(n)$ of positive integers <em>n</em> is called <em>multiplicative</em> if $f(rs)=f(r)f(s)$ whenever $r⊥s$. Show that each of the following functions is multiplicative: (a) $f(n)=n^{c}$, where <em>c</em> is any constant; (b) $f(n)=$ [<em>n</em> is not divisible by $k^{2}$ for any integer <em>k</em> &gt; 1]; (c) $f(n)=c^{k}$, where <em>k</em> is the number of distinct primes that divide <em>n</em>; (d) the product of any two multiplicative functions.</p>
 
@@ -1274,7 +1276,7 @@
 
   <p class="center">$(-1)^{\lfloor{2kq/p}\rfloor}(2kq\bmod p)$,&nbsp;&nbsp;&nbsp;&nbsp;$0\lt k\lt p/2$,</p>
 
-  <p class="indenthangingNP">are congruent in some order to the numbers $2,4,...,p-1 (modulo p)$. Hence <span class="middle"><img src="../Images/c01/e045_03.png"></span> where <span class="middle"><img src="../Images/c01/e045_03a.png"></span>.</p>
+  <p class="indenthangingNP">are congruent in some order to the numbers $2,4,...,p-\md[1]{p}$. Hence <span class="middle"><img src="../Images/c01/e045_03.png"></span> where <span class="middle"><img src="../Images/c01/e045_03a.png"></span>.</p>
 
   <p class="indenthangingA">b) Use the result of (a) to calculate <span class="middle"><img src="../Images/c01/e045_04.png"></span>.</p>
 

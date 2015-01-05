@@ -238,3 +238,6 @@ div.image4 img.img1 {
   text-align:center;
   page-break-inside:avoid
 }
+.middle img {
+  vertical-align: middle;
+}
