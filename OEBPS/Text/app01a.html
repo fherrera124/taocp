@@ -120,15 +120,15 @@
 
   <p class="exercisesp">in 65595<em>u</em> plus output time. (It would be faster to calculate $R_{n} (1/m)$ directly when $m\lt{10^{n/2}\sqrt{2}}$, and then to apply the suggested procedure.)</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then $S_{n}=H_{N}+O(N/10^{n})+∑_{k=1}^{m}(\lfloor2·10^{n}/(2k-1)\rfloor-\lfloor2·10^{n}/(2k+1)\rfloor)k/10^{n}=$ $H_{N}+O(m^{-1})+O(m/10^{n})-1+2H_{2m}-H_{m}=$ $n\ln{10}+2\gamma-1+2\ln{2}+O(10^{-n/2})$ if we sum by parts and set $m ≈ 10^{n/2}$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_13_17" id="ch01ex_2_13_17a">17</a>. Let $N=\lfloor 2·10^{n}/(2m+1)\rfloor$. Then $S_{n}=H_{N}+O(N/10^{n})+∑_{k=1}^{m}(\lfloor2·10^{n}/(2k-1)\rfloor-\lfloor2·10^{n}/(2k+1)\rfloor)k/10^{n}=$<!---->$H_{N}+O(m^{-1})+O(m/10^{n})-1+2H_{2m}-H_{m}=$<!---->$n\ln{10}+2\gamma-1+2\ln{2}+O(10^{-n/2})$ if we sum by parts and set $m ≈ 10^{n/2}$.</p>
 
-  <p class="indent">Incidentally, the next several values are $S_{6}=15.356262$, $S_{7}=17.6588276$, $S_{8}=19.96140690$, $S_{9}=22.263991779$, and $S_{10}=24.5665766353$; our approximation to $S_{10}$ is $≈ 24.566576621$, which is closer than predicted.</p>
+  <p class="indent">Incidentally, the next several values are $S_{6}=15.356262$, $S_{7}=17.6588276$, $S_{8}=19.96140690$, $S_{9}=22.263991779$, and $S_{10}=24.5665766353$; our approximation to $S_{10}$ is $≈24.566576621$, which is closer than predicted.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_13_18" id="ch01ex_2_13_18a">18</a>.</p>
 
   <div class="image"><img src="../Images/519pro02.png"></div>
 
-  <p><a id="page_520"></a><a href="../Text/ch01b.html#ch01ex_2_13_19" id="ch01ex_2_13_19a">19</a>. (a) Induction. (b) Let <em>k</em> ≥ 0 and $X=ax_{k+1}-x_{k}$, $Y=ay_{k+1}-y_{k}$, where $a=\left\lfloor (y_{k}+n)/y_{k+1}\right\rfloor$. By part (a) and the fact that 0 &lt; <em>Y</em> ≤ <em>n</em>, we have $X⊥Y$ and $X/Y\gt x_{k+1}/y_{k+1}$. So if $X/Y≠x_{k+2}/y_{k+2}$ we have, by definition, $X/Y\gt x_{k+2}/y_{k+2}$. But this implies that</p>
+  <p><a id="page_520"></a><a href="../Text/ch01b.html#ch01ex_2_13_19" id="ch01ex_2_13_19a">19</a>. (a) Induction. (b) Let <em>k</em> ≥ 0 and $X=ax_{k+1}-x_{k}$, $Y=ay_{k+1}-y_{k}$, where $a=\lfloor(y_{k}+n)/y_{k+1}\rfloor$. By part (a) and the fact that 0 &lt; <em>Y</em> ≤ <em>n</em>, we have $X⊥Y$ and $X/Y\gt x_{k+1}/y_{k+1}$. So if $X/Y≠x_{k+2}/y_{k+2}$ we have, by definition, $X/Y\gt x_{k+2}/y_{k+2}$. But this implies that</p>
 
   <div class="image"><img src="../Images/e520_01.png"></div>
 

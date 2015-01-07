@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready",function () {
+      MathJax.InputJax.TeX.Definitions.environment["myarray1"] =
+        ['Array',true,true,true,".5em",".1em"];
+      MathJax.InputJax.TeX.Definitions.environment["myarray2"] = 
+        ['Array',null,true,true,'c',".4em",".1em"];
+    });
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$","$"]],
+        displayMath: [["$$","$$"]],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+  </script>
+
+  <script src="MathJax-2.4-latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+  <title></title>
+  <link href="../Styles/answers.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <p><a href="../Text/ch02b.html#ch02ex_3_3_5" id="ch02ex_3_3_5a">5</a>. Start by noticing that we need classes $\scriptstyle\begin{myarray1}\alpha&amp;\beta\\\gamma&amp;\delta\end{myarray1}$ replicated in $2\times2$ groups in any solution. Then, step 1: Considering just the <em>α</em> squares, show that the pattern $\scriptstyle\begin{myarray1}{r}a&amp;b\\c&amp;d\end{myarray1}$ must be replicated in $2\times2$ groups of <em>α</em> squares. Step $n\gt1$: Determine a pattern that must appear in a cross-shaped region of height and width $2^{n}-1$. The middle of the crosses has the pattern $\scriptstyle\begin{myarray1}Na&amp;Nb\\ Nc&amp;Nd\end{myarray1}$ replicated throughout the plane.</p>
+</body>
+</html>
