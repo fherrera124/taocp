@@ -1,9 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="charset=utf-8">
   <meta charset="utf-8">
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       extensions: ["tex2jax.js"],
@@ -123,9 +122,9 @@
 
   <p class="indent">We often are faced with several algorithms for the same problem, and we must decide which is best. This leads us to the extremely interesting and all-important field of <em>algorithmic analysis</em>: Given an algorithm, we want to determine its performance characteristics.</p>
 
-  <p class="indent">For example, let’s consider Euclid’s algorithm from this point of view. Suppose we ask the question, “Assuming that the value of <em>n</em> is known but <em>m</em> is allowed to range over all positive integers, what is the <em>average</em> number of times, $T_{n}$, that step E1 of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> will be performed?” In the first place, we need to check that this question does have a meaningful answer, since we are trying to take an average over infinitely many choices for <em>m</em>. But it is evident that after the first execution of step E1 only the remainder of <em>m</em> after division by <em>n</em> is relevant. So all we must do to find $T_{n}$ is to try the algorithm for <em>m</em> = 1, <em>m</em> = 2, ..., <em>m</em> = <em>n</em>, count the total number of times step E1 has been executed, and divide by <em>n</em>.</p>
+  <p class="indent">For example, let’s consider Euclid’s algorithm from this point of view. Suppose we ask the question, “Assuming that the value of <em>n</em> is known but <em>m</em> is allowed to range over all positive integers, what is the <em>average</em> number of times, $T_{n}$, that step E1 of <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> will be performed?” In the first place, we need to check that this question does have a meaningful answer, since we are trying to take an average over infinitely many choices for <em>m</em>. But it is evident that after the first execution of step E1 only the remainder of <em>m</em> after division by <em>n</em> is relevant. So all we must do to find $T_{n}$ is to try the algorithm for $m=1,m=2,...,m=n$, count the total number of times step E1 has been executed, and divide by <em>n</em>.</p>
 
-  <p class="indent">Now the important question is to determine the <em>nature</em> of $T_{n}$; is it approximately equal to $\frac{1}{3}n$, or $\sqrt{n}$, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that $T_{n}$ is approximately $(12(\ln 2)/π^{2})\ln n$, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
+  <p class="indent">Now the important question is to determine the <em>nature</em> of $T_{n}$; is it approximately equal to ${\frac{1}{3}}n$, or $\sqrt{n}$, for instance? As a matter of fact, the answer to this question is an extremely difficult and fascinating mathematical problem, not yet completely resolved, which is examined in more detail in Section 4.5.3. For large values of <em>n</em> it is possible to prove that $T_{n}$ is approximately $(12(\ln 2)/π^{2})\ln n$, that is, proportional to the <em>natural logarithm</em> of <em>n</em>, with a constant of proportionality that might not have been guessed offhand! For further details about Euclid’s algorithm, and other ways to calculate the greatest common divisor, see Section 4.5.2.</p>
 
   <p class="indent"><em>Analysis of algorithms</em> is the name the author likes to use to describe investigations such as this. The general idea is to take a particular algorithm and to determine its quantitative behavior; occasionally we also study whether or not an algorithm is optimal in some sense. The <em>theory of algorithms</em> is another subject entirely, dealing primarily with the existence or nonexistence of effective algorithms to compute particular quantities.</p>
 

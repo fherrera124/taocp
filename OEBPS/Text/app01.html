@@ -4,7 +4,13 @@
 <head>
   <meta charset="utf-8">
   <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready",function () {
+      MathJax.InputJax.TeX.Definitions.environment["myarray1"] =
+        ['Array',null,true,true,'r',".5em",".1em"];
+      MathJax.InputJax.TeX.Definitions.environment["myarray2"] = 
+        ['Array',null,true,true,'c',".4em",".1em"];
+    });
+    MathJax.Hub.Config({
       extensions: ["tex2jax.js"],
       jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
@@ -22,8 +28,12 @@
 </head>
 
 <body>
-  <div style="display:none">$\newcommand{\md}[2][\!\!]{#1\;({\rm modulo}\;#2)}$<!-- #1 optional arg, #2 mandatory arg, [\!\!] optional arg. If not second arg is given, optional arg will be used (canceling the space produced by the first "\;")-->
-  $\newcommand{\phihat}{\skew{3}\widehat{\smash{\phi}\vphantom{a}}}$</div>
+  <div style="display:none">
+    $\newcommand{\md}[2][\!\!]{#1\;({\rm modulo}\;#2)}$<!-- #1 optional arg, #2 mandatory arg, [\!\!] optional arg. If not second arg is given, optional arg will be used (canceling the space produced by the first "\;")-->
+    $\newcommand{\phihat}{\skew{3}\widehat{\smash{\phi}\vphantom{a}}}$
+    $\newcommand{\mybinom}[2]{{\scriptstyle{\big(}\begin{myarray1}#1\\#2\end{myarray1}{\big)}}}$
+    $\newcommand{\mybinomf}[2]{{\scriptstyle{\big(}\begin{myarray2}#1\\#2\end{myarray2}{\big)}}}$
+  </div>
 
   <h2 id="app01"><a id="page_466"></a>Answers to Exercises</h2>
 
@@ -75,7 +85,7 @@
 
   <p class="uln-indentC">c) If <em>q</em> is in $Q_{2}$ then $h(q)$ is in $Ω_{1}$ if and only if <em>q</em> is in $Ω_{2}$.</p>
 
-  <p class="indent">For example, let $C_{1}$ be as in (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>) and let $C_{2}$ have $I_{2}=\{(m,n)\}$, $Ω_{2}=\{(m,n,d)\}$, $Q_{2}=I_{2}∪Ω_{2}∪\{(m,n,a,b,1)\}∪$<!---->$\{(m,n,a,b,r,2)\}∪\{(m,n,a,b,r,3)\}∪$<!---->$\{(m,n,a,b,r,4)\}∪\{(m,n,a,b,5)\}$. Let $f_{2}((m,n))=(m,n,m,n,1)$; $f_{2}((m,n,d))=(m,n,d)$; $f_{2}((m,n,a,b,1))=(m,n,a,b,a\bmod b,2)$; $f_{2}((m,n,a,b,r,2))=(m,n,b)$ if <em>r</em> = 0, otherwise $(m,n,a,b,r,3)$; $f_{2}((m,n,a,b,r,3))=(m,n,b,b,r,4)$; $f_{2}((m,n,a,b,r,4))=(m,n,a,r,5)$; $f_{2}((m,n,a,b,5))=f_{2}((m,n,a,b,1))$.</p>
+  <p class="indent">For example, let $C_{1}$ be as in (<a href="../Text/ch01.html#ch01eq-lev1sec1-2">2</a>) and let $C_{2}$ have $I_{2}=\{(m,n)\}$, $Ω_{2}=\{(m,n,d)\}$, $Q_{2}=I_{2}∪Ω_{2}∪\{(m,n,a,b,1)\}∪$ $\{(m,n,a,b,r,2)\}∪\{(m,n,a,b,r,3)\}∪$ $\{(m,n,a,b,r,4)\}∪\{(m,n,a,b,5)\}$. Let $f_{2}((m,n))=(m,n,m,n,1)$; $f_{2}((m,n,d))=(m,n,d)$; $f_{2}((m,n,a,b,1))=(m,n,a,b,a\bmod b,2)$; $f_{2}((m,n,a,b,r,2))=(m,n,b)$ if <em>r</em> = 0, otherwise $(m,n,a,b,r,3)$; $f_{2}((m,n,a,b,r,3))=(m,n,b,b,r,4)$; $f_{2}((m,n,a,b,r,4))=(m,n,a,r,5)$; $f_{2}((m,n,a,b,5))=f_{2}((m,n,a,b,1))$.</p>
 
   <p class="indent">Now let $h((m,n))=g((m,n))=(m,n)$; $h((m,n,d))=(d)$; $h((m,n,a,b,1))=(a,b,0,1)$; $h((m,n,a,b,r,2))=(a,b,r,2)$; $h((m,n,a,b,r,3))=(a,b,r,3)$; $h((m,n,a,b,r,4))=h(f_{2}((m,n,a,b,r,4)))$; $h((m,n,a,b,5))=(a,b,b,1)$; $j((m,n,a,b,r,3))=j((m,n,a,b,r,4))=2$, otherwise $j(q)=1$. Then $C_{2}$ represents $C_{1}$.</p>
 
@@ -319,7 +329,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_37" id="ch01ex_2_3_37a">37</a>. Subtract column one from columns $2,\ldots,n$. Then subtract $x_{1}$ times row <em>k</em> − 1 from row <em>k</em>, for $k=n,n-1,\ldots,2$ (in that order). Now factor $x_{1}$ out of the first column and factor $x_{k}-x_{1}$ out of columns $k=2,\ldots,n$, obtaining $x_{1}(x_{2}-x_{1})\ldots(x_{n}-x_{1})$ times a Vandermonde determinant of order <em>n</em> − 1. The process continues by induction.</p>
 
-  <p class="answerp">Alternative proof, using “higher” mathematics: The determinant is a polynomial in the variables $x_{1},\ldots,x_{n}$ of total degree $1+2+\cdots+n$. It vanishes if $x_{j}=0$ or if $x_{i}=x_{j}$<!---->$(i\lt j)$, and the coefficient of $x_{1}^{1}x_{2}^{2}\ldots x_{n}^{n}$ is +1. These facts characterize its value. In general, if two rows of a matrix become equal for $x_{i}=x_{j}$, their difference is usually divisible by $x_{i}-x_{j}$, and this observation often speeds the evaluation of determinants.</p>
+  <p class="answerp">Alternative proof, using “higher” mathematics: The determinant is a polynomial in the variables $x_{1},\ldots,x_{n}$ of total degree $1+2+\cdots+n$. It vanishes if $x_{j}=0$ or if $x_{i}=x_{j}$ $(i\lt j)$, and the coefficient of $x_{1}^{1}x_{2}^{2}\ldots x_{n}^{n}$ is +1. These facts characterize its value. In general, if two rows of a matrix become equal for $x_{i}=x_{j}$, their difference is usually divisible by $x_{i}-x_{j}$, and this observation often speeds the evaluation of determinants.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_3_38" id="ch01ex_2_3_38a">38</a>. Subtract column one from columns $2,\ldots,n$, and factor out</p>
 
@@ -529,7 +539,7 @@
 
   <p>Hence we may replace the last terms $\lfloor(p-1)q/p\rfloor,\lfloor(p-3)q/p\rfloor,\ldots$ by $\lfloor q/p\rfloor,\lfloor 3q/p\rfloor$, etc. (d) $∑_{0≤k\lt p/2}\lfloor kq/p\rfloor+∑_{0≤r\lt q/2}\lceil rp/q\rceil=\lceil p/2\rceil(\lceil q/2\rceil-1)=(p+1)(q-1)/4$. Also $∑_{0≤r\lt q/2}\lceil rp/q\rceil=∑_{0≤r\lt q/2}\lfloor rp/q\rfloor+(q-1)/2$. The idea of this proof goes back to G. Eisenstein, <em>Crelle</em> <strong>28</strong> (1844), 246–248; Eisenstein also gave several other proofs of this and other reciprocity laws in the same volume.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when <em>n</em> &lt; 0; when <em>n</em> &gt; 0 it is easy to verify. (b) $\lfloor(n+2-\lfloor n/25\rfloor)/3\rfloor=\lceil(n-\lfloor n/25\rfloor)/3\rceil=$<!---->$\lceil(n+\lceil-n/25\rceil)/3\rceil=\lceil\lceil 24n/25\rceil /3\rceil=$<!---->$\lceil 8n/25\rceil=\lfloor(8n+24)/25\rfloor$. The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when <em>n</em> &lt; 0; when <em>n</em> &gt; 0 it is easy to verify. (b) $\lfloor(n+2-\lfloor n/25\rfloor)/3\rfloor=\lceil(n-\lfloor n/25\rfloor)/3\rceil=$ $\lceil(n+\lceil-n/25\rceil)/3\rceil=\lceil\lceil 24n/25\rceil /3\rceil=$ $\lceil 8n/25\rceil=\lfloor(8n+24)/25\rfloor$. The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
 
   <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since $f(0)=f(f(0))=f(f(0)+0)=f(0)+f(0)$, we have $f(n)=n$ for all integers <em>n</em>. If ${\large f}{\left(\frac12\right)}=k≤0$, we have $k={\large f}{\left(\frac{1}{1-2k}{\large f}{\left(\frac{1}{2}-k\right)}\right)}={\large f}{\left(\frac{1}{1-2k}\left({\large f}{\left(\frac{1}{2}\right)}-k\right)\right)}=f(0)=0$. And if ${\large f}{\left(\frac{1}{n-1}\right)}=0$ we have ${\large f}{\left(\frac{1}{n}\right)}={\large f}{\left(\frac{1}{n}{\large f}{\left(1+\frac{1}{n-1}\right)}\right)}={\large f}{\left(\frac{1}{n-1}\right)}=0$; furthermore 1 ≤ <em>m</em> &lt; <em>n</em> implies ${\large f}{\left(\frac{m}{n}\right)}={\large f}{\left(\frac{1}{a}{\large f}{\left(\frac{am}{n}\right)}\right)}={\large f}{\left(\frac{1}{a}\right)}=0$, for $a=\lceil n/m\rceil$, by induction on <em>m</em>. Thus ${\large f}{\left(\frac12\right)}≤0$ implies $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>. On the other hand, if ${\large f}{\left(\frac12\right)}\gt0$ the function $g(x)=-f(-x)$ satisfies (i) and (ii) and has ${\large g}{\left(\frac12\right)}=1-{\large f}{\left(\frac12\right)}≤0$; hence $f(x)=-g(-x)=-\lfloor-x\rfloor=\lceil x\rceil$  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
 
@@ -575,7 +585,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_19" id="ch01ex_2_5_19a">19</a>. Change of variable <em>t</em> = <em>mt</em>, integration by parts, and induction.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_20" id="ch01ex_2_5_20a">20</a>. [For completeness, we prove the stated inequality. Start with the easily verified inequality $1+x≤e^{x}$; set $x=±t/n$ and raise to the <em>n</em>th power to get $(1±t/n)^{n}≤e^{±t}$. Hence $e^{-t}≥(1-t/n)^{n}=e^{-t}(1-t/n)^{n}e^{t}≥$<!---->$e^{-t}(1-t/n)^{n}(1+t/n)^{n}=$<!---->$e^{-t}(1-t^{2}/n^{2})^{n}≥e^{-t}(1-t^{2}/n)$ by <a href="../Text/ch01.html#ch01ex_2_1_09">exercise 1.2.1–9</a>.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_20" id="ch01ex_2_5_20a">20</a>. [For completeness, we prove the stated inequality. Start with the easily verified inequality $1+x≤e^{x}$; set $x=±t/n$ and raise to the <em>n</em>th power to get $(1±t/n)^{n}≤e^{±t}$. Hence $e^{-t}≥(1-t/n)^{n}=e^{-t}(1-t/n)^{n}e^{t}≥$ $e^{-t}(1-t/n)^{n}(1+t/n)^{n}=$ $e^{-t}(1-t^{2}/n^{2})^{n}≥e^{-t}(1-t^{2}/n)$ by <a href="../Text/ch01.html#ch01ex_2_1_09">exercise 1.2.1–9</a>.]</p>
 
   <p class="indent">Now the given integral minus $\varGamma_{m}(x)$ is</p>
 
@@ -587,7 +597,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_21" id="ch01ex_2_5_21a">21</a>. If $c(n,j,k_{1},k_{2},\ldots)$ denotes the appropriate coefficient, we find</p>
 
-  <p class="center">$c(n+1,j,k_{1},\ldots)=c(n,j-1,k_{1}-1,k_{2},\ldots)+$<!---->$(k_{1}+1)c(n,j,k_{1}+1,k_{2}-1,k_{3},\ldots)+$<!---->$(k_{2}+1)c(n,j,k_{1},k_{2}+1,k_{3}-1,k_{4},\ldots)+\cdots$,</p>
+  <p class="center">$c(n+1,j,k_{1},\ldots)=c(n,j-1,k_{1}-1,k_{2},\ldots)+$ $(k_{1}+1)c(n,j,k_{1}+1,k_{2}-1,k_{3},\ldots)+$ $(k_{2}+1)c(n,j,k_{1},k_{2}+1,k_{3}-1,k_{4},\ldots)+\cdots$,</p>
 
   <p>by differentiation. The equations $k_{1}+k_{2}+\cdots= j$ and $k_{1}+2k_{2}+\cdots= n$ are preserved in this induction relationship. We can easily factor $n!/(k_{1}!(1!)^{k_{1}}k_{2}!(2!)^{k_{2}}\ldots)$ out of each term appearing on the right-hand side of the equation for $c(n+1,j,k_{1},\ldots)$, and we are left with $k_{1}+2k_{2}+3k_{3}+\cdots= n+1$. (In the proof it is convenient to assume that there are infinitely many <em>k</em>’s, although clearly $k_{n+1}=k_{n+2}=\cdots=0$.)</p>
 
@@ -603,11 +613,11 @@
 
   <p>Formally, if $a_{1}a_{2}\ldots a_{j}$ is a partition of the set $\{1,2,\ldots,n-1\}$, define</p>
 
-  <p class="center">${\cal D}a_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪\{n\})a_{2}\ldots a_{j}+$<!---->$a_{1}(a_{2}∪\{n\})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪\{n\})$.</p>
+  <p class="center">${\cal D}a_{1}a_{2}\ldots a_{j}=\{n\}a_{1}a_{2}\ldots a_{j}+(a_{1}∪\{n\})a_{2}\ldots a_{j}+$ $a_{1}(a_{2}∪\{n\})\ldots a_{j}+\cdots+a_{1}a_{2}\ldots(a_{j}∪\{n\})$.</p>
 
   <p>This rule is an exact parallel of the rule</p>
 
-  <p class="center">$D_{x}(w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}})=w_{j+1}u_{1}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}+$<!---->$w_{j}u_{r_{1}+1}u_{r_{2}}\ldots u_{r_{j}}+$<!---->$w_{j}u_{r_{1}}u_{r_{2}+1}\ldots u_{r_{j}}+\cdots+w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}+1}$,</p>
+  <p class="center">$D_{x}(w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}})=w_{j+1}u_{1}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}+$ $w_{j}u_{r_{1}+1}u_{r_{2}}\ldots u_{r_{j}}+$ $w_{j}u_{r_{1}}u_{r_{2}+1}\ldots u_{r_{j}}+\cdots+w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}+1}$,</p>
 
   <p>if we let the term $w_{j}u_{r_{1}}u_{r_{2}}\ldots u_{r_{j}}$ correspond to a partition $a_{1}a_{2}\ldots a_{j}$ with $r_{t}$ elements in $a_{t}$, 1 ≤ <em>t</em> ≤ <em>j</em>. So there is a natural mapping from ${\cal D}^{n}$ onto $D_{x}^{n}w$, and furthermore it is easy to see that ${\cal D}^{n}$ includes each partition of the set $\{1,2,\ldots,n\}$ exactly once. (See <a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 1.2.6–64</a>.)</p>
 
@@ -651,7 +661,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_2" id="ch01ex_2_6_2a">2</a>. 1. There’s exactly one way to choose nothing from the empty set.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_3" id="ch01ex_2_6_3a">3</a>. $\binom{52}{13}$. The actual number is 635013559600.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_3" id="ch01ex_2_6_3a">3</a>. $\mybinomf{52}{13}$. The actual number is 635013559600.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_4" id="ch01ex_2_6_4a">4</a>. $2^{4}·5^{2}·7^{2}·17·23·41·43·47$.</p>
 
@@ -665,7 +675,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_9" id="ch01ex_2_6_9a">9</a>. One if <em>n</em> is positive or zero; zero if <em>n</em> is negative.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_10" id="ch01ex_2_6_10a">10</a>. (a), (b) and (f) follow immediately from (e); (c) and (d) follow from (a), (b), and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>). Thus it suffices to prove (e). Consider $\binom{n}{k}$ as a fraction, given by Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) with factors in numerator and denominator. The first $k\bmod p$ factors have no <em>p</em>’s in the denominator, and in the numerator and denominator these terms are clearly congruent to the corresponding terms of</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_10" id="ch01ex_2_6_10a">10</a>. (a), (b) and (f) follow immediately from (e); (c) and (d) follow from (a), (b), and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>). Thus it suffices to prove (e). Consider $\mybinomf{n}{k}$ as a fraction, given by Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) with factors in numerator and denominator. The first $k\bmod p$ factors have no <em>p</em>’s in the denominator, and in the numerator and denominator these terms are clearly congruent to the corresponding terms of</p>
 
   <div class="image"><img src="../Images/e484_01.png"></div>
 
@@ -677,7 +687,7 @@
 
   <div class="image"><img src="../Images/e484_03.png"></div>
 
-  <p>as desired; and if $k\bmod p\gt n\bmod p$, the other factor $\binom{n\bmod p}{k\bmod p}$ is zero, so the formula holds in general. [<em>American J. Math.</em> <strong>1</strong> (1878), 229–230; see also L. E. Dickson, <em>Quart. J. Math.</em> <strong>33</strong> (1902), 383–384; N. J. Fine, <em>AMM</em> <strong>54</strong> (1947), 589–592.]</p>
+  <p>as desired; and if $k\bmod p\gt n\bmod p$, the other factor $\mybinomf{n\bmod p}{k\bmod p}$ is zero, so the formula holds in general. [<em>American J. Math.</em> <strong>1</strong> (1878), 229–230; see also L. E. Dickson, <em>Quart. J. Math.</em> <strong>33</strong> (1902), 383–384; N. J. Fine, <em>AMM</em> <strong>54</strong> (1947), 589–592.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_11" id="ch01ex_2_6_11a">11</a>. If $a=a_{r}p^{r}+\cdots+a_{0}$, $b=b_{r}p^{r}+\cdots+b_{0}$, and $a+b=c_{r}p^{r}+\cdots+c_{0}$, the value of <em>n</em> (according to <a href="../Text/ch01a.html#ch01ex_2_5_12">exercise 1.2.5–12</a> and Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-5">5</a>)) is</p>
 
@@ -685,9 +695,9 @@
 
   <p>A carry decreases $c_{j}$ by <em>p</em> and increases $c_{j+1}$ by 1, giving a net change of +1 in this formula. [Similar results hold for <em>q</em>-nomial and Fibonomial coefficients; see Knuth and Wilf, <em>Crelle</em> <strong>396</strong> (1989), 212–219.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_12" id="ch01ex_2_6_12a">12</a>. By either of the two previous exercises, <em>n</em> must be one less than a power of 2. More generally, $\binom{n}{k}$ is never divisible by the prime <em>p</em>, 0 ≤ <em>k</em> ≤ <em>n</em>, if and only if $n=ap^{m}-1$, 1 ≤ <em>a</em> &lt; <em>p</em>, <em>m</em> ≥ 0.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_12" id="ch01ex_2_6_12a">12</a>. By either of the two previous exercises, <em>n</em> must be one less than a power of 2. More generally, $\mybinomf{n}{k}$ is never divisible by the prime <em>p</em>, 0 ≤ <em>k</em> ≤ <em>n</em>, if and only if $n=ap^{m}-1$, 1 ≤ <em>a</em> &lt; <em>p</em>, <em>m</em> ≥ 0.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_14" id="ch01ex_2_6_14a">14</a>. $24\binom{n+1}{5}+36\binom{n+1}{4}+14\binom{n+1}{3}+\binom{n+1}{2}=$<!---->$\frac{n^{5}}{5}+\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}=$<!---->$\frac{n(n+1)(n+\frac12)(3n^{2}+3n-1)}{15}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_14" id="ch01ex_2_6_14a">14</a>. $24\mybinomf{n+1}{5}+36\mybinomf{n+1}{4}+14\mybinomf{n+1}{3}+\mybinomf{n+1}{2}=$ $\frac{n^{5}}{5}+\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}=$ $\frac{n(n+1)(n+\frac12)(3n^{2}+3n-1)}{15}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_15" id="ch01ex_2_6_15a">15</a>. Induction and (<a href="../Text/ch02a.html#ch02eq-lev2sec6-9">9</a>).</p>
 
@@ -739,7 +749,7 @@
 
   <div class="image"><img src="../Images/e486_02.png"></div>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_29" id="ch01ex_2_6_29a">29</a>. $\left.{{(-1)^{k}}{\binom{n}{k}}}\middle/{n!}=(-1)^{k}/(k!(n-k)!)={(-1)^{n}}\middle/\right.{\prod\limits_{\begin{gather}{0\le j\le n\\j\ne k}\end{gather}}}(k-j)$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_29" id="ch01ex_2_6_29a">29</a>. $\displaystyle\left.{(-1)^{k}\binom{n}{k}}\middle/{n!}=(-1)^{k}/(k!\,(n-k)!)={(-1)^{n}}\middle/\right.{\prod_{\begin{myarray2}{0\le j\le n\\j\ne k}\end{myarray2}}}(k-j)$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_30" id="ch01ex_2_6_30a">30</a>. Apply (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>), (<a href="../Text/ch02a.html#ch02eq-lev2sec6-6">6</a>), and (<a href="../Text/ch01a.html#ch01eq-lev2sec6-19">19</a>) to get</p>
 
@@ -749,23 +759,23 @@
 
   <div class="image"><img src="../Images/e486_05.png"></div>
 
-  <p>This result is the same as our previous formula, when <em>n</em> is positive, but when <em>n</em> = 0 the answer we have obtained is correct while $\binom{n-1}{m-1}$ is not. Our derivation has a further bonus, since the answer $\binom{n-1}{n-m}$ is valid for <em>n</em> ≥ 0 and <em>all</em> integers <em>m</em>.</p>
+  <p>This result is the same as our previous formula, when <em>n</em> is positive, but when <em>n</em> = 0 the answer we have obtained is correct while $\mybinomf{n-1}{m-1}$ is not. Our derivation has a further bonus, since the answer $\mybinomf{n-1}{n-m}$ is valid for <em>n</em> ≥ 0 and <em>all</em> integers <em>m</em>.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_31" id="ch01ex_2_6_31a">31</a>. [This sum was first obtained in closed form by J. F. Pfaff, <em>Nova Acta Acad. Scient. Petr.</em> <strong>11</strong> (1797), 38–57.] We have</p>
 
   <div class="image"><img src="../Images/e486_08.png"></div>
 
-  <p>Changing $\binom{m+n-j}{n-j}$ to $\binom{m+n-j}{m}$ and applying (<a href="../Text/ch01a.html#ch01eq-lev2sec6-20">20</a>) again, we get</p>
+  <p>Changing $\mybinomf{m+n-j}{n-j}$ to $\mybinomf{m+n-j}{m}$ and applying (<a href="../Text/ch01a.html#ch01eq-lev2sec6-20">20</a>) again, we get</p>
 
   <div class="image"><img src="../Images/e486_11.png"></div>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_32" id="ch01ex_2_6_32a">32</a>. Replace <em>x</em> by <em>−x</em> in (<a href="../Text/ch01a.html#ch01eq-lev2sec6-44">44</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_33" id="ch01ex_2_6_33a">33</a>, <a href="../Text/ch01a.html#ch01ex_2_6_34" id="ch01ex_2_6_34a">34</a>. [<em>Mém. Acad. Roy. Sci.</em> (Paris, 1772), part 1, 492; C. Kramp, <em>Élémens d’Arithmétique Universelle</em> (Cologne: 1808), 359; <em>Giornale di Mat. Battaglini</em> <strong>33</strong> (1895), 179–182.] Since $x^{\overline n}=n!\binom{x+n-1}{n}$, the equation may be transformed into</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_33" id="ch01ex_2_6_33a">33</a>, <a href="../Text/ch01a.html#ch01ex_2_6_34" id="ch01ex_2_6_34a">34</a>. [<em>Mém. Acad. Roy. Sci.</em> (Paris, 1772), part 1, 492; C. Kramp, <em>Élémens d’Arithmétique Universelle</em> (Cologne: 1808), 359; <em>Giornale di Mat. Battaglini</em> <strong>33</strong> (1895), 179–182.] Since $x^{\overline n}=n!\,\mybinomf{x+n-1}{n}$, the equation may be transformed into</p>
 
   <div class="image"><img src="../Images/e486_13.png"></div>
 
-  <p>which is a case of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-26">26</a>). Similarly, $(x+y)^{\underline n}=\sum_{k}\binom{n}{k}x(x-kz-1)^{\underline{k-1}}(y+kz)^{\underline{n-k}}$, an equivalent formula of Rothe [<em>Formulæ de Serierum Reversione</em> (Leipzig: 1793), 18].</p>
+  <p>which is a case of (<a href="../Text/ch01a.html#ch01eq-lev2sec6-26">26</a>). Similarly, $(x+y)^{\underline n}=\sum_{k}\mybinomf{n}{k}x(x-kz-1)^{\underline{k-1}}(y+kz)^{\underline{n-k}}$, an equivalent formula of Rothe [<em>Formulæ de Serierum Reversione</em> (Leipzig: 1793), 18].</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_35" id="ch01ex_2_6_35a">35</a>. For example, we prove the first formula:</p>
 
@@ -783,7 +793,7 @@
 
   <div class="image"><img src="../Images/e487_02.png"></div>
 
-  <p>(it is the sum of a geometric progression), so the right-hand sum is $m\sum\limits_{t\bmod m=k}\binom{n}{t}$.</p>
+  <p>(it is the sum of a geometric progression), so the right-hand sum is $m\sum\limits_{t\bmod m=k}\mybinomf{n}{t}$.</p>
 
   <p>The original sum on the left is</p>
 
@@ -813,7 +823,7 @@
 
   <div class="image"><img src="../Images/e487_08.png"></div>
 
-  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining $\sum_{k}\binom{r}{\alpha+k}z^{\alpha+k}=(1+z)^{r}$ and $\sum_{k}{\binom{r}{\alpha+k}}{\binom{s}{\beta-k}}={\binom{r+s}{\alpha+\beta}}$; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
+  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining $\sum_{k}\mybinomf{r}{\alpha+k}z^{\alpha+k}=(1+z)^{r}$ and $\sum_{k}\mybinomf{r}{\alpha+k}\mybinomf{s}{\beta-k}=\mybinomf{r+s}{\alpha+\beta}$; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
 
   <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. $\int_{0}^{1}dt/(t^{1/2}(1-t)^{1/2})=2\int_{0}^{1}du/(1-u^{2})^{1/2}=2\arcsin u{\atopwithdelims.|}_0^1=\pi$.</p>
 
@@ -821,7 +831,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. $\sqrt{\frac{1}{2\pi}\left(\frac{1}{x}+\frac{1}{y}\right)}\left(1+\frac{y}{x}\right)^{x}\left(1+\frac{x}{y}\right)^{y}$, and $\binom{2n}{n}\approx4^{n}/\sqrt{\pi n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when <em>k</em> ≤ 0, and is multiplied by $(r-k)(r-\frac12-k)/(k+1)^2$ when <em>k</em> is replaced by <em>k</em> + 1. When $r=-\frac12$ this implies $\binom{-1/2}{k}=(-1/4)^{k}\binom{2k}{k}$</span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when <em>k</em> ≤ 0, and is multiplied by $(r-k)(r-\frac12-k)/(k+1)^2$ when <em>k</em> is replaced by <em>k</em> + 1. When $r=-\frac12$ this implies $\mybinomf{-1/2}{k}=(-1/4)^{k}\mybinomf{2k}{k}$</span>.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_48" id="ch01ex_2_6_48a">48</a>. This can be proved by induction, using the fact that</p>
 
@@ -833,9 +843,9 @@
 
   <p>(In fact, the stated sum equals ${\rm B}(x,n+1)$ for noninteger <em>n</em> also, when the series converges.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_49" id="ch01ex_2_6_49a">49</a>. $\binom{r}{m}=\sum\limits_{k}{\binom{r}{k}}{\binom{-r}{m-2k}}(-1)^{m+k}$, integer <em>m</em>. (See <a href="../Text/ch01a.html#ch01ex_2_6_17">exercise 17</a>.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_49" id="ch01ex_2_6_49a">49</a>. $\displaystyle\binom{r}{m}=\sum_{k}{\binom{r}{k}}{\binom{-r}{m-2k}}(-1)^{m+k}$, integer <em>m</em>. (See <a href="../Text/ch01a.html#ch01ex_2_6_17">exercise 17</a>.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_50" id="ch01ex_2_6_50a">50</a>. The <em>k</em>th summand is ${\binom{n}{k}}(-1)^{n-k}(x-kz)^{n-1}x$. Apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_50" id="ch01ex_2_6_50a">50</a>. The <em>k</em>th summand is $\mybinomf{n}{k}(-1)^{n-k}(x-kz)^{n-1}x$. Apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-34">34</a>).</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_51" id="ch01ex_2_6_51a">51</a>. The right-hand side is</p>
 
@@ -867,7 +877,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_56" id="ch01ex_2_6_56a">56</a>. 210 310 320 321 410 420 421 430 431 432 510 520 521 530 531 532 540 541 542 543 610. With <em>a</em> fixed, <em>b</em> and <em>c</em> run through the combinations of <em>a</em> things two at a time; with <em>a</em> and <em>b</em> fixed, <em>c</em> runs through the combinations of <em>b</em> things one at a time.</p>
 
-  <p class="indent">Similarly, we could express all numbers in the form $n=\binom{a}{4}+\binom{b}{3}+\binom{c}{2}+\binom{d}{1}$ with <em>a</em> &gt; <em>b</em> &gt; <em>c</em> &gt; <em>d</em> ≥ 0; the sequence begins 3210 4210 4310 4320 4321 5210 5310 5320 ... . We can find the combinatorial representation by a “greedy” method, first choosing the largest possible <em>a</em>, then the largest possible <em>b</em> for $n-{\binom{a}{4}}$, etc. [Section 7.2.1.3 discusses further properties of this representation.]</p>
+  <p class="indent">Similarly, we could express all numbers in the form $n=\mybinomf{a}{4}+\mybinomf{b}{3}+\mybinomf{c}{2}+\mybinomf{d}{1}$ with <em>a</em> &gt; <em>b</em> &gt; <em>c</em> &gt; <em>d</em> ≥ 0; the sequence begins 3210 4210 4310 4320 4321 5210 5310 5320 ... . We can find the combinatorial representation by a “greedy” method, first choosing the largest possible <em>a</em>, then the largest possible <em>b</em> for $n-\mybinomf{a}{4}$, etc. [Section 7.2.1.3 discusses further properties of this representation.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_58" id="ch01ex_2_6_58a">58</a>. [<em>Systematisches Lehrbuch der Arithmetik</em> (Leipzig: 1811), xxix.] Use induction and</p>
 
@@ -883,7 +893,7 @@
 
   <p>The <em>q</em>-nomial coefficients arise in many diverse applications; see, for example, Section 5.1.2, and the author’s note in <em>J. Combinatorial Theory</em> <strong>A10</strong> (1971), 178–180.</p>
 
-  <p class="indent"><em>Useful facts:</em> When <em>n</em> is a nonnegative integer, $\binom{n}{k}_q$ is a polynomial of degree $k(n-k)$ in <em>q</em> with nonnegative integer coefficients, and it satisfies the reflective laws</p>
+  <p class="indent"><em>Useful facts:</em> When <em>n</em> is a nonnegative integer, $\mybinomf{n}{k}_q$ is a polynomial of degree $k(n-k)$ in <em>q</em> with nonnegative integer coefficients, and it satisfies the reflective laws</p>
 
   <div class="image"><img src="../Images/e489_09.png"></div>
 
@@ -893,9 +903,9 @@
 
   <p>For further information, see G. Gasper and M. Rahman, <em>Basic Hypergeometric Series</em> (Cambridge Univ. Press, 1990). The <em>q</em>-nomial coefficients were introduced by Gauss in <em>Commentationes societatis regiæ scientiarum Gottingensis recentiores</em> <strong>1</strong> (1808), 147– 186; see also Cauchy [<em>Comptes Rendus Acad. Sci.</em> <strong>17</strong> (Paris, 1843), 523–531], Jacobi [<em>Crelle</em> <strong>32</strong> (1846), 197–204], Heine [<em>Crelle</em> <strong>34</strong> (1847), 285–328], and Section 7.2.1.4.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. $(n+1){\binom{n}{k}}-{\binom{n}{k+1}}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. $(n+1)\mybinomf{n}{k}-\mybinomf{n}{k+1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. $\binom{n+k-1}{k}$. This formula can be remembered easily, since it is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. $\mybinomf{n+k-1}{k}$. This formula can be remembered easily, since it is</p>
 
   <div class="image"><img src="../Images/e490_04.png"></div>
 
@@ -925,9 +935,9 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_65" id="ch01ex_2_6_65a">65</a>. See <em>AMM</em> <strong>99</strong> (1992), 410–422.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let $X=\binom{x}{n}$, $\underline{X}=\binom{x}{n-1}=\frac{n}{x-n+1}X$, $\overline{X}=\binom{x}{n+1}=\frac{x-n}{n+1}X$, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that <em>y</em> &gt; <em>n</em> − 1 is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let $X=\mybinomf{x}{n}$, $\underline{X}=\mybinomf{x}{n-1}=\frac{n}{x-n+1}X$, $\overline{X}=\mybinomf{x}{n+1}=\frac{x-n}{n+1}X$, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that $y\gt n-1$ is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
 
-  <p class="indent">Let $F(z)=\overline{X}-\overline{Y}-\overline{Z}$, and suppose that $F(z)=0$ for some <em>z</em> &gt; <em>n</em> − 2. We will prove that $F'(z)\lt0$; therefore <em>z</em> = <em>y</em> must be the only root &gt; <em>n</em> − 2, proving the second inequality. Since $F(z)=\frac{x-n}{n+1}(Y+Z)-\frac{y-n}{n+1}Y-\frac{z-n+1}{n}Z=0$ and <em>x</em> &gt; <em>y</em> and <em>Y</em>, <em>Z</em> &gt; 0, we must have $\frac{x-n}{n+1}\lt\frac{z-n+1}{n}$. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
+  <p class="indent">Let $F(z)=\overline{X}-\overline{Y}-\overline{Z}$, and suppose that $F(z)=0$ for some $z\gt n-2$. We will prove that $F'(z)\lt0$; therefore <em>z</em> = <em>y</em> must be the only root &gt; <em>n</em> − 2, proving the second inequality. Since $F(z)=\frac{x-n}{n+1}(Y+Z)-\frac{y-n}{n+1}Y-\frac{z-n+1}{n}Z=0$ and <em>x</em> &gt; <em>y</em> and <em>Y</em>, <em>Z</em> &gt; 0, we must have $\frac{x-n}{n+1}\lt\frac{z-n+1}{n}$. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
 
   <div class="image"><img src="../Images/e491_10.png"></div>
 
@@ -935,13 +945,13 @@
 
   <div class="image"><img src="../Images/e491_13.png"></div>
 
-  <p class="indent">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if $\underline{X}=\underline{Y}+\underline{Z}$ for some <em>z</em> &gt; <em>n</em> − 2, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
+  <p class="indent">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if $\underline{X}=\underline{Y}+\underline{Z}$ for some $z\gt n-2$, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
 
   <p class="indent"><em>References:</em> L. Lovász, <em>Combinatorial Problems and Exercises</em> (1993), Problem 13.31(a); R. M. Redheffer, <em>AMM</em> <strong>103</strong> (1996), 62–64.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_67" id="ch01ex_2_6_67a">67</a>. If <em>k</em> &gt; 0, <a href="../Text/ch01a.html#ch01ex_2_5_24">exercise 1.2.5–24</a> gives the slightly sharper (but less memorable) upper bounds $\binom{n}{k}=n^{\underline{k}}/k!\le n^{k}/k!\le\frac{1}{e}(\frac{ne}{k})^{k}\le(\frac{ne}{k+1})^{k}$. The corresponding lower bound is $\binom{n}{k}\ge\left(\frac{(n-k+1)e}{k}\right)^{k}\frac{1}{ek}$, which is less memorable (but often sharper) than $\binom{n}{k}\ge(\frac{n}{k})^{k}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_67" id="ch01ex_2_6_67a">67</a>. If <em>k</em> &gt; 0, <a href="../Text/ch01a.html#ch01ex_2_5_24">exercise 1.2.5–24</a> gives the slightly sharper (but less memorable) upper bounds $\mybinomf{n}{k}=n^{\underline{k}}/k!\le n^{k}/k!\le\frac{1}{e}(\frac{ne}{k})^{k}\le(\frac{ne}{k+1})^{k}$. The corresponding lower bound is $\mybinomf{n}{k}\ge{\big(}\frac{(n-k+1)e}{k}{\big)}^{k}\frac{1}{ek}$, which is less memorable (but often sharper) than $\mybinomf{n}{k}\ge(\frac{n}{k})^{k}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_68" id="ch01ex_2_6_68a">68</a>. Let $t_k=k\binom{n}{k}p^{k}(1-p)^{n+1-k}$; then $t_{k}-t_{k+1}=\binom{n}{k}p^{k}(1-p)^{n-k}(k-np)$. So the stated sum is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_68" id="ch01ex_2_6_68a">68</a>. Let $t_k=k\mybinomf{n}{k}p^{k}(1-p)^{n+1-k}$; then $t_{k}-t_{k+1}=\mybinomf{n}{k}p^{k}(1-p)^{n-k}(k-np)$. So the stated sum is</p>
 
   <div class="image"><img src="../Images/e491_19.png"></div>
 
@@ -961,7 +971,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_6" id="ch01ex_2_7_6a">6</a>. Induction and Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤$<!---->$1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=$<!---->$1/(m+1)-n/(mn+n)=0$. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤$ $1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=$ $1/(m+1)-n/(mn+n)=0$. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_8" id="ch01ex_2_7_8a">8</a>. By Stirling’s approximation, $\ln n!$ is approximately $(n+\frac12)\ln n-n+\ln\sqrt{2\pi}$; also $\sum_{k=1}^{n}H_{k}$ is approximately $(n+1)\ln n-n(1-\gamma)+(\gamma+\frac12)$; the difference is approximately $\gamma n+\frac{1}{2}\ln n+.158$.</p>
 
@@ -1033,11 +1043,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_13" id="ch01ex_2_8_13a">13</a>. (a) $a_{n}=rF_{n-1}+sF_{n}$. (b) Since $(b_{n+2}+c)=(b_{n+1}+c)+(b_{n}+c)$, we may consider the new sequence $b'_{n}=b_{n}+c$. Applying part (a) to $b'_{n}$, we obtain the answer $cF_{n-1}+(c+1)F_{n}-c$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. $a_n=F_{m+n+1}+F_{n}-\binom{n}{m}-\binom{n+1}{m-1}-\cdots-\binom{n+m}{0}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. $a_n=F_{m+n+1}+F_{n}-\mybinomf{n}{m}-\mybinomf{n+1}{m-1}-\cdots-\mybinomf{n+m}{0}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_15" id="ch01ex_2_8_15a">15</a>. $c_{n}=xa_{n}+yb_{n}+(1-x-y)F_{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. $F_{n+1}$. Induction, and $\binom{n+1-k}{k}=\binom{n-k}{k}+\binom{(n-1)-(k-1)}{k-1}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. $F_{n+1}$. Induction, and $\mybinomf{n+1-k}{k}=\mybinomf{n-k}{k}+\mybinomf{(n-1)-(k-1)}{k-1}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity $(x^{n+k}-y^{n+k})(x^{m-k}-y^{m-k})-(x^{n}-y^{n})(x^{m}-y^{m})$ is equal to $(xy)^{n}(x^{m-n-k}-y^{m-n-k})(x^{k}-y^{k})$. Set $x=\phi$, $y=\phihat$, and divide by $(\sqrt{5})^{2}$.</p>
 
@@ -1051,7 +1061,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. $F_{m+2n}$; set <em>t</em> = 2 in the next exercise.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. $\frac{1}{\sqrt{5}}\sum\limits_{k}{\binom{n}{k}}(\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\phi^{m}-\phihat^{\,k}F_{t}^{k}F_{t-1}^{n-k}\phihat^{\,m})=$<!---->$\frac{1}{\sqrt{5}}(\phi^{m}(\phi F_{t}+F_{t-1})^{n}-\phihat^{\,m}(\phihat F_{t}+F_{t-1})^{n})=$<!---->$F_{m+tn}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. $\frac{1}{\sqrt{5}}\sum\limits_{k}\mybinomf{n}{k}(\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\phi^{m}-\phihat^{\,k}F_{t}^{k}F_{t-1}^{n-k}\phihat^{\,m})=$ $\frac{1}{\sqrt{5}}(\phi^{m}(\phi F_{t}+F_{t-1})^{n}-\phihat^{\,m}(\phihat F_{t}+F_{t-1})^{n})=$ $F_{m+tn}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_24" id="ch01ex_2_8_24a">24</a>. $F_{n+1}$ (expand by cofactors in the first row).</p>
 
@@ -1169,7 +1179,7 @@
 
   <p>by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-28">28</a>), so the answer is ${n+r}\brace{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. $\sum_{n\ge1}(1/n-1/(n+p/q))x^{p+nq}=\sum_{k=0}^{q-1}\omega^{-kp}\ln(1-\omega^{k}x)-x^{p}\ln(1-x^{q})+\frac{q}{p}x^{p}=$<!---->$f(x)+g(x)$, where $\omega=e^{2πi/q}$ and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. $\sum_{n\ge1}(1/n-1/(n+p/q))x^{p+nq}=\sum_{k=0}^{q-1}\omega^{-kp}\ln(1-\omega^{k}x)-x^{p}\ln(1-x^{q})+\frac{q}{p}x^{p}=$ $f(x)+g(x)$, where $\omega=e^{2πi/q}$ and</p>
 
   <div class="image"><img src="../Images/e497_12.png"></div>
 
@@ -1223,7 +1233,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_24" id="ch01ex_2_9_24a">24</a>. Both sides are equal to <span class="middle"><img src="../Images/e499_11.png"></span>. When $G(z)=1/(1-z)$, the identity becomes <span class="middle"><img src="../Images/e499_12.png"></span>, a case of 1.2.6–21). When $G(z)=(e^{z}-1)/z$, it becomes <span class="middle"><img src="../Images/e499_13.png"></span>, Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">45</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_25" id="ch01ex_2_9_25a">25</a>. $Σ_{k}[w^{k}](1-2w)^{n}[z^{n}]z^{k}(1+z)^{2n-2k}=$<!---->$[z^{n}](1+z)^{2n}Σ_{k}[w^{k}](1-2w)^{n}(z/(1+z)^{2})^{k}$, which equals <span class="middle"><img src="../Images/e499_14.png"></span> [<em>n</em> even]. Similarly, we find <span class="middle"><img src="../Images/e499_15.png"></span>. Many examples of this summation technique can be found in G. P. Egorychev’s book <em>Integral Representation and the Computation of Combinatorial Sums</em> (Amer. Math. Soc., 1984), translated from the Russian edition of 1977.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_25" id="ch01ex_2_9_25a">25</a>. $Σ_{k}[w^{k}](1-2w)^{n}[z^{n}]z^{k}(1+z)^{2n-2k}=$ $[z^{n}](1+z)^{2n}Σ_{k}[w^{k}](1-2w)^{n}(z/(1+z)^{2})^{k}$, which equals <span class="middle"><img src="../Images/e499_14.png"></span> [<em>n</em> even]. Similarly, we find <span class="middle"><img src="../Images/e499_15.png"></span>. Many examples of this summation technique can be found in G. P. Egorychev’s book <em>Integral Representation and the Computation of Combinatorial Sums</em> (Amer. Math. Soc., 1984), translated from the Russian edition of 1977.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_26" id="ch01ex_2_9_26a">26</a>. $[F(z)]G(z)$ denotes the constant term of $F(z^{-1})G(z)$. See the discussion by D. E. Knuth in <em>A Classical Mind</em> (Prentice–Hall, 1994), 247–258.</p>
 
@@ -1235,7 +1245,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_3" id="ch01ex_2_10_3a">3</a>. (min 0, ave 6.49, max 999, dev 2.42). Note that $H_{n}^{(2)}$ is approximately $π^{2}/6$; see Eq. <a href="../Text/ch01a.html#ch01lev2sec7">1.2.7</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec7-7">7</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_4" id="ch01ex_2_10_4a">4</a>. $\binom{n}{k}p^{k}q^{n-k}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_4" id="ch01ex_2_10_4a">4</a>. $\mybinomf{n}{k}p^{k}q^{n-k}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_5" id="ch01ex_2_10_5a">5</a>. The mean is $36/5=7.2$; the standard deviation is $6\sqrt{2}/5\approx1.697$.</p>
 
@@ -1265,7 +1275,7 @@
 
   <p>See also <a href="../Text/ch01a.html#ch01ex_2_6_64">exercise 1.2.6–64</a>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_10" id="ch01ex_3_10_10a">10</a>. This is $q_{nm}p_{mk}$ summed over all <em>m</em>, namely $M^{-n}\sum_{m}\binom{M}{m}{n\brace m}{m\brack k+1}$. There does not appear to be a simple formula for the average, which is one less than</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_10" id="ch01ex_3_10_10a">10</a>. This is $q_{nm}p_{mk}$ summed over all <em>m</em>, namely $M^{-n}\sum_{m}\mybinomf{M}{m}{n\brace m}{m\brack k+1}$. There does not appear to be a simple formula for the average, which is one less than</p>
 
   <div class="image"><img src="../Images/e500_10.png"></div>
 
@@ -1273,7 +1283,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_12" id="ch01ex_2_10_12a">12</a>. The first identity is obvious by writing out the power series for $e^{kt}$. For the second, let $u=1+M_{1}t+M_{2}t^{2}/2!+\cdots$; when <em>t</em> = 0 we have <em>u</em> = 1 and $D_{t}^{k}u=M_{k}$. Also, $D_{u}^{j}(\ln u)=(-1)^{j-1}(j-1)!/u^{j}$. By <a href="../Text/ch01a.html#ch01ex_2_10_11">exercise 11</a>, the same formula applies for central moments except that we leave out all terms with $k_{1}\gt 0$; thus $κ_{2}=m_{2}$, $κ_{3}=m_{3}$, $κ_{4}=m_{4}-3m_{2}^{2}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_13" id="ch01ex_2_10_13a">13</a>. $\large G_{n}(z)=\frac{\varGamma(n+z)}{\varGamma(z+1)n!}=\frac{e^{-z}(n+z)^{z-1}}{\varGamma(z+1)}\left(1+\frac{z}{n}\right)^{n}(1+O(n^{-1}))=\frac{n^{z-1}}{\varGamma(z+1)}(1+O(n^{-1}))$. Let $z_{n}=e^{it/σ_{n}}$. When $n→∞$ and <em>t</em> is fixed, we have $z_{n}→1$; hence $\varGamma(z_{n}+1)→1$, and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_13" id="ch01ex_2_10_13a">13</a>. $\displaystyle G_{n}(z)=\frac{\varGamma(n+z)}{\varGamma(z+1)n!}=\frac{e^{-z}(n+z)^{z-1}}{\varGamma(z+1)}\left(1+\frac{z}{n}\right)^{n}(1+O(n^{-1}))=\frac{n^{z-1}}{\varGamma(z+1)}(1+O(n^{-1}))$. Let $z_{n}=e^{it/σ_{n}}$. When $n→∞$ and <em>t</em> is fixed, we have $z_{n}→1$; hence $\varGamma(z_{n}+1)→1$, and</p>
 
   <div class="image"><img src="../Images/e501_05.png"></div>
 
@@ -1285,7 +1295,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_14" id="ch01ex_2_10_14a">14</a>. $e^{-itpn/\sqrt{pqn}}(q+pe^{it/\sqrt{pqn}})^{n}=(qe^{-itp/\sqrt{pqn}}+pe^{itq/\sqrt{pqn}})^{n}$. Expand the exponentials in power series, to get $(1-t^{2}/2n+O(n^{-3/2}))^{n}=\exp(n\ln(1-t^{2}/2n+O(n^{-3/2})))=\exp(-t^{2}/2+O(n^{-1/2}))→\exp(-t^{2}/2)$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_10_15" id="ch01ex_2_10_15a">15</a>. (a)$\sum_{k\ge0}e^{-μ}(μz)^{k}/k!=e^{μ(z-1)}$. (b) $\ln e^{μ(e^{t}-1)}=μ(e^{t}-1)$, so all semi-invariants equal <em>μ</em>. (c) $\exp(-itnp/\sqrt{np})\exp(np(it/\sqrt{np}-t^{2}/(2np)+O(n^{-3/2})))=$<!---->$\exp(-t^{2}/2+O(n^{-1/2}))$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_10_15" id="ch01ex_2_10_15a">15</a>. (a)$\sum_{k\ge0}e^{-μ}(μz)^{k}/k!=e^{μ(z-1)}$. (b) $\ln e^{μ(e^{t}-1)}=μ(e^{t}-1)$, so all semi-invariants equal <em>μ</em>. (c) $\exp(-itnp/\sqrt{np})\exp(np(it/\sqrt{np}-t^{2}/(2np)+O(n^{-3/2})))=$ $\exp(-t^{2}/2+O(n^{-1/2}))$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_10_16" id="ch01ex_2_10_16a">16</a>. $g(z)=∑_{k}p_{k}g_{k}(z)$; ${\rm mean}(g)=∑_{k}p_{k}\,{\rm mean}(g_{k})$; and ${\rm var}(g)=∑_{k}p_{k}\,{\rm var}(g_{k})+∑_{j\lt k}p_{j}p_{k}({\rm mean}(g_{j})-{\rm mean}(g_{k}))^{2}$.</p>
 
@@ -1337,9 +1347,9 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_8" id="ch01ex_3_1_8a">8</a>. Replace <em>n</em> by $e^{n}$ and apply the method of the previous exercise.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_9" id="ch01ex_3_1_9a">9</a>. If $|f(z)|≤M|z|^{m}$ for $|z|≤r$, then $|e^{f(z)}|≤e^{M|z|^{m}}=1+|z|^{m}(M+M^{2}|z|^{m}/2!+$<!---->$M^{3}|z|^{2m}/3!+\cdots)≤$<!---->$1+|z|^{m}(M+M^{2}r^{m}/2!+M^{3}r^{2m}/3!+\cdots)$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_9" id="ch01ex_3_1_9a">9</a>. If $|f(z)|≤M|z|^{m}$ for $|z|≤r$, then $|e^{f(z)}|≤e^{M|z|^{m}}=1+|z|^{m}(M+M^{2}|z|^{m}/2!+$ $M^{3}|z|^{2m}/3!+\cdots)≤$ $1+|z|^{m}(M+M^{2}r^{m}/2!+M^{3}r^{2m}/3!+\cdots)$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_1_10" id="ch01ex_3_1_10a">10</a>. $\ln(1+O(z^{m}))=O(z^{m})$, if <em>m</em> is a positive integer. <em>Proof:</em> If $f(z)=O(z^{m})$, there exist positive numbers <em>r</em> &lt; 1, <em>r</em>′ &lt; 1, and a constant <em>M</em> such that $|f(z)|≤M|z|^{m}≤r'$ when $|z|≤r$. Then $|\ln(1+f(z))|\le|f(z)|+$<!---->$\frac12|f(z)|^{2}+\cdots\le|z|^{m}M(1+\frac{1}{2}r'+\cdots)$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_1_10" id="ch01ex_3_1_10a">10</a>. $\ln(1+O(z^{m}))=O(z^{m})$, if <em>m</em> is a positive integer. <em>Proof:</em> If $f(z)=O(z^{m})$, there exist positive numbers <em>r</em> &lt; 1, <em>r</em>′ &lt; 1, and a constant <em>M</em> such that $|f(z)|≤M|z|^{m}≤r'$ when $|z|≤r$. Then $|\ln(1+f(z))|\le|f(z)|+$ $\frac12|f(z)|^{2}+\cdots\le|z|^{m}M(1+\frac{1}{2}r'+\cdots)$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_1_11" id="ch01ex_3_1_11a">11</a>. We can apply Eq. (<a href="../Text/ch01a.html#ch01eq-lev3sec1-12">12</a>) with <em>m</em> = 1 and $z=\ln n/n$. This is justified since $\ln n/n≤r$ for any given <em>r</em> &gt; 0, when <em>n</em> is sufficiently large.</p>
 
@@ -1381,13 +1391,13 @@
 
   <p>In these formulas, <em>A</em> is the “Kinkelin–Glaisher constant” 1.2824271 ... [<em>Crelle</em> <strong>57</strong> (1860), 122–158; <em>Messenger of Math.</em> <strong>7</strong> (1877), 43–47], which can be shown to equal $e^{1/12-\zeta'(-1)}=(2πe^{γ-\zeta'(2)/\zeta(2)})^{1/12}$ [de Bruijn, <em>Asymptotic Methods in Analysis</em>,§3.7].</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_8" id="ch01ex_3_2_8a">8</a>. We have, for example, $\ln(an^{2}+bn)=2\ln n+\ln a+\ln(1+b/(an))$. Thus the answer to the first question is found to be $2an^{2}\ln n+a(\ln a-1)n^{2}+2bn\ln n+bn\ln a+\ln n+b^{2}/(2a)+\frac12\ln a+σ+(3a-b^{2})b/(6a^{2}n)+O(n^{-2})$. Massive cancellation occurs when we compute the quantity $\ln (cn^{2})!-\ln (cn^{2}-n)!-n\ln c-\ln n^{2}!+\ln (n^{2}-n)!=(c-1)/(2c)-(c-1)(2c-1)/(6c^{2}n)+O(n^{-2})$. The answer is therefore</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_8" id="ch01ex_3_2_8a">8</a>. We have, for example, $\ln(an^{2}+bn)=2\ln n+\ln a+\ln(1+b/(an))$. Thus the answer to the first question is found to be $2an^{2}\ln n+a(\ln a-1)n^{2}+2bn\ln n+bn\ln a+\ln n+b^{2}/(2a)+\frac12\ln a+σ+(3a-b^{2})b/(6a^{2}n)+O(n^{-2})$. Massive cancellation occurs when we compute the quantity $\ln(cn^{2})!-\ln (cn^{2}-n)!-n\ln c-\ln n^{2}!+\ln(n^{2}-n)!=$ $(c-1)/(2c)-(c-1)(2c-1)/(6c^{2}n)+O(n^{-2})$. The answer is therefore</p>
 
   <div class="image"><img src="../Images/e504_05.png"></div>
 
-  <p>Incidentally, $\binom{\smash{cn^{2}}\vphantom n}{n}/\left(c^{n}\binom{\smash{n^{2}}\vphantom n}{n}\right)$ can be written $\prod_{j=1}^{n-1}(1+\alpha j/(n^{2}-j))$ where $α=1-1/c$.</p>
+  <p>Incidentally, $\mybinomf{cn^{2}}{n}/{\big(}c^{n}\mybinomf{n^{2}}{n}{\big)}$ can be written $\prod_{j=1}^{n-1}(1+\alpha j/(n^{2}-j))$ where $α=1-1/c$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln(2n)!=(2n+\frac12)\ln 2n-2n+\sigma+\frac{1}{24n}+O(n^{-3})$, and $\ln(n!)^{2}=(2n+1)\ln n-2n+2\sigma+\frac{1}{6n}+O(n^{-3})$; hence $\binom{2n}{n}=\exp(2n\ln 2-\frac12\ln\pi n-\frac{1}{8n}+O(n^{-3}))=$<!---->$2^{2n}(\pi n)^{-1/2}(1-\frac{1}{8}n^{-1}+\frac{1}{128}n^{-2}+O(n^{-3}))$. (b) Since $\binom{2n}{n}=2^{2n}\binom{n-1/2}{n}$ and $\binom{n-1/2}{n}=\varGamma(n+1/2)/(n\varGamma(n)\varGamma(1/2))=$<!---->$n^{-1}n^{\overline{1/2}}/\sqrt{\pi}$, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_2_9" id="ch01ex_3_2_9a">9</a>. (a) We have $\ln(2n)!=(2n+\frac12)\ln 2n-2n+\sigma+\frac{1}{24n}+O(n^{-3})$, and $\ln(n!)^{2}=(2n+1)\ln n-2n+2\sigma+\frac{1}{6n}+O(n^{-3})$; hence $\mybinomf{2n}{n}=\exp(2n\ln 2-\frac12\ln\pi n-\frac{1}{8n}+O(n^{-3}))=$ $2^{2n}(\pi n)^{-1/2}(1-\frac{1}{8}n^{-1}+\frac{1}{128}n^{-2}+O(n^{-3}))$. (b) Since $\mybinomf{2n}{n}=2^{2n}\mybinomf{n-1/2}{n}$ and $\mybinomf{n-1/2}{n}=\varGamma(n+1/2)/(n\varGamma(n)\varGamma(1/2))=$ $n^{-1}n^{\overline{1/2}}/\sqrt{\pi}$, we obtain the same result from <a href="../Text/ch01a.html#ch01lev3sec1">1.2.11.1</a>–(<a href="../Text/ch01b.html#ch01eq-lev3sec2-16">16</a>) because</p>
 
   <div class="image"><img src="../Images/e504_13.png"></div>
 
@@ -1407,7 +1417,7 @@
 
   <p><a id="page_505"></a><a href="../Text/ch01b.html#ch01ex_3_3_4" id="ch01ex_3_3_4a">4</a>. $1+1/u$ is bounded as a function of <em>v</em>, since it goes to zero as <em>v</em> goes from <em>r</em> to infinity. Replace it by <em>M</em> and the resulting integral is $Me^{-rx}$.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_5" id="ch01ex_3_3_5a">5</a>. $f''(x)=f(x)((n+1/2)(n-1/2)/x^{2}-(2n+1)/x+1)$ changes sign at the point $r=n+1/2-\sqrt{n+1/2}$, so $|R|=O(\int_{0}^{n}|f''(x)|dx)=$<!---->$O(\int_{0}^{r}f''(x)dx-\int_{r}^{n}f''(x)dx)=$<!---->$O(f'(n)-2f'(r)+f'(0))=$<!---->$O(f(n)/\sqrt{n})$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_5" id="ch01ex_3_3_5a">5</a>. $f''(x)=f(x)((n+1/2)(n-1/2)/x^{2}-(2n+1)/x+1)$ changes sign at the point $r=n+1/2-\sqrt{n+1/2}$, so $|R|=O(\int_{0}^{n}|f''(x)|dx)=$ $O(\int_{0}^{r}f''(x)dx-\int_{r}^{n}f''(x)dx)=$ $O(f'(n)-2f'(r)+f'(0))=$ $O(f(n)/\sqrt{n})$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_6" id="ch01ex_3_3_6a">6</a>. It is $n^{n+β}\exp((n+β)(α/n-α^{2}/2n^{2}+O(n^{-3})))$, etc.</p>
 
@@ -1467,7 +1477,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_3_3_17" id="ch01ex_3_3_17a">17</a>. $S(n)=\sqrt{\pi n/2}+\frac{2}{3}-\frac{1}{24}\sqrt{\pi/2n}-\frac{4}{135}n^{-1}+\frac{49}{1152}\sqrt{\pi/2n^{3}}+O(n^{-2})$. [Note that $S(n+1)+P(n)=∑_{k≥0}k^{n-k}k!/n!$, while $Q(n)+R(n)=∑_{k≥0}n!/k!\,n^{n-k}$.]</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_18" id="ch01ex_3_3_18a">18</a>. Let $S_{n}(x,y)=∑_{k}\binom{n}{k}(x+k)^{k}(y+n-k)^{n-k}$. Then for <em>n</em> &gt; 0 we have $S_{n}(x,y)=x∑_{k}\binom{n}{k}(x+k)^{k-1}(y+n-k)^{n-k}+$<!---->$n∑_{k}\binom{n-1}{k}(x+1+k)^{k}(y+n-1-k)^{n-1-k}=$<!---->$(x+y+n)^{n}+nS_{n-1}(x+1,y)$ by Abel’s formula <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-16">16</a>); consequently $S_{n}(x,y)=∑_{k}\binom{n}{k}k!\,(x+y+n)^{n-k}$. [This formula is due to Cauchy, who proved it using the calculus of residues; see his Œuvres (2) 6, 62–73.] The stated sums are therefore equal respectively to $n^{n}(1+Q(n))$ and $(n+1)^{n}Q(n+1)$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_18" id="ch01ex_3_3_18a">18</a>. Let $S_{n}(x,y)=∑_{k}\mybinomf{n}{k}(x+k)^{k}(y+n-k)^{n-k}$. Then for <em>n</em> &gt; 0 we have $S_{n}(x,y)=x∑_{k}\mybinomf{n}{k}(x+k)^{k-1}(y+n-k)^{n-k}+$ $n∑_{k}\mybinomf{n-1}{k}(x+1+k)^{k}(y+n-1-k)^{n-1-k}=$ $(x+y+n)^{n}+nS_{n-1}(x+1,y)$ by Abel’s formula <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-16">16</a>); consequently $S_{n}(x,y)=∑_{k}\mybinomf{n}{k}k!\,(x+y+n)^{n-k}$. [This formula is due to Cauchy, who proved it using the calculus of residues; see his Œuvres (2) 6, 62–73.] The stated sums are therefore equal respectively to $n^{n}(1+Q(n))$ and $(n+1)^{n}Q(n+1)$.</p>
 
   <p><a id="page_507"></a><a href="../Text/ch01b.html#ch01ex_3_3_19" id="ch01ex_3_3_19a">19</a>. Suppose $C_{n}$ exists for all <em>n</em> ≥ <em>N</em> and $|f(x)|≤Mx^{α}$ for 0 ≤ <em>x</em> ≤ <em>r</em>. Let $F(x)=\int_{r}^{x}e^{-Nt}f(t)dt$. Then when <em>n</em> &gt; <em>N</em> we have</p>
 
@@ -1475,7 +1485,7 @@
 
   <p>[E. W. Barnes, <em>Phil. Trans.</em> <strong>A206</strong> (1906), 249–297; G. N. Watson, <em>Proc. London Math. Soc.</em> <strong>17</strong> (1918), 116–148.]</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_3_3_20" id="ch01ex_3_3_20a">20</a>. [C. C. Rousseau, <em>Applied Math. Letters</em> <strong>2</strong> (1989), 159–161.] We have $Q(n)+1=n\int_{0}^{\infty}e^{-nx}(1+x)^{n}dx=$<!---->$n\int_{0}^{\infty}e^{-n(x-\ln(1+x))}dx=n\int_{0}^{\infty}e^{-nu}g(u)\,du$, by substituting $u=x-\ln(1+x)$ and letting $g(u)=dx/du$. Notice that $x=\sum_{k=1}^{\infty}c_{k}(2u)^{k/2}$ when <em>u</em> is sufficiently small. Hence $g(u)=\sum_{k=1}^{m-1}kc_{k}(2u)^{k/2-1}+O(u^{m/2-1})$, and we can apply Watson’s lemma to $Q(n)+1-n\int_{0}^{\infty}e^{-nu}\sum_{k=1}^{m-1}kc_{k}(2u)^{k/2-1}du$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_3_3_20" id="ch01ex_3_3_20a">20</a>. [C. C. Rousseau, <em>Applied Math. Letters</em> <strong>2</strong> (1989), 159–161.] We have $Q(n)+1=n\int_{0}^{\infty}e^{-nx}(1+x)^{n}dx=$ $n\int_{0}^{\infty}e^{-n(x-\ln(1+x))}dx=n\int_{0}^{\infty}e^{-nu}g(u)\,du$, by substituting $u=x-\ln(1+x)$ and letting $g(u)=dx/du$. Notice that $x=\sum_{k=1}^{\infty}c_{k}(2u)^{k/2}$ when <em>u</em> is sufficiently small. Hence $g(u)=\sum_{k=1}^{m-1}kc_{k}(2u)^{k/2-1}+O(u^{m/2-1})$, and we can apply Watson’s lemma to $Q(n)+1-n\int_{0}^{\infty}e^{-nu}\sum_{k=1}^{m-1}kc_{k}(2u)^{k/2-1}du$.</p>
 
   <h4 id="app01lev2sec11">Section 1.3.1</h4>
 
@@ -1529,7 +1539,7 @@
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_18" id="ch01ex_2_12_18a">18</a>. (If you have correctly followed the instructions, an overflow will occur on the <code>ADD</code>, with minus zero in register A afterwards.) <em>Answer:</em> Overflow is set on, comparison is set <code>EQUAL</code>, rA is set to <span class="middle"><img src="../Images/e508_01.png"></span> , rX is set to <span class="middle"><img src="../Images/e508_02.png"></span>, rI1 is set to +3, and memory locations 0001, 0002 are set to +0. (Unless the program itself begins in location 0000.)</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_12_19" id="ch01ex_2_12_19a">19</a>. $42u=(2+1+2+2+1+1+1+$<!---->$2+2+1+2+2+3+10+10)u$.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_19" id="ch01ex_2_12_19a">19</a>. $42u=(2+1+2+2+1+1+1+$ $2+2+1+2+2+3+10+10)u$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_20" id="ch01ex_2_12_20a">20</a>. <span class="top"><img src="../Images/e508_03.png"></span></p>
 
