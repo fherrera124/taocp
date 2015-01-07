@@ -80,6 +80,11 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})$
     - Actual: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})du$
 
+  - Answer **11** of **Section 1.2.11.3**:
+
+    - Before: \[...\] to note that $Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}$
+    - Before: \[...\] to note that $R_{-1}(n)-Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}$
+
 
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
 This force me to check all the erratas. Later I will.
