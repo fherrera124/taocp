@@ -763,7 +763,7 @@
 
   <p><a href="../Text/ch02b.html#ch02ex_3_4_32" id="ch02ex_3_4_32a">32</a>. Zero if $n_{0}\neq1+n_{2}+2n_{3}+3n_{4}+\cdots$ (see <a href="../Text/ch02a.html#ch02ex_1_3_21">exercise 2.3–21</a>), otherwise</p>
 
-  <p class="center">$(n_{0}+n_{1}+\cdots+n_{m}-1)!/n_{0}!n_{1}!\ldots n_{m}!$.</p>
+  <p class="center">$(n_{0}+n_{1}+\cdots+n_{m}-1)!\,/n_{0}!\,n_{1}!\ldots n_{m}!$.</p>
 
   <p class="indent">To prove this result we recall that an unlabeled tree with $n=n_{0}+n_{1}+\cdots+n_{m}$ nodes is characterized by the sequence $d_{1}d_{2}\ldots d_{n}$ of the degrees of the nodes in postorder (<a href="../Text/ch02a.html#ch02lev2sec9">Section 2.3.3</a>). Furthermore such a sequence of degrees corresponds to a tree if and only if $∑_{j=1}^{k}(1-d_{j})\gt0$ for $0\lt k≤n$. (This important property of Polish postfix notation is readily proved by induction; see <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm 2.3.3F</a> with <em>f</em> a function that creates a tree, like the <code>TREE</code> function of <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>.) In particular, $d_{1}$ must be 0. The answer to our problem is therefore the number of sequences $d_{2}\ldots d_{n}$ with $n_{j}$ occurrences of <em>j</em> for $j\gt0$, namely the multinomial coefficient</p>
 
@@ -1082,9 +1082,9 @@
 
   <p><a href="../Text/ch02c.html#ch02ex_1_4_3" id="ch02ex_1_4_3a">3</a>. Change step A5 to:</p>
 
-  <p class="indenthangingAA"><strong>A5′.</strong> [Remove top level.] Remove the top stack entry; and if the new level number at the top of the stack is $\ge\tt L$, let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack and repeat this step. Otherwise set $\tt SIB(P1)←Q$ and then let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack.</p>
+  <p class="uln-indentC"><strong>A5′.</strong> [Remove top level.] Remove the top stack entry; and if the new level number at the top of the stack is $\ge\tt L$, let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack and repeat this step. Otherwise set $\tt SIB(P1)←Q$ and then let $({\tt L1},{\tt P1})$ be the new entry at the top of the stack.</p>
 
-  <p><a href="../Text/ch02c.html#ch02ex_1_4_4" id="ch02ex_1_4_4a">4</a>. (Solution by David S. Wise.) Rule (c) is violated if and only if there is a data item whose <em>complete qualification</em> $A_{0}{\tt OF\ldots OF}A_{n}$ is also a COBOL reference to some other data item. Since the parent $A_{1}{\tt OF\ldots OF}A_{n}$ must also satisfy rule (c), we may assume that this other data item is a descendant of the same parent. Therefore <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> would be extended to check, as each new data item is added to the Data Table, whether its parent is an ancestor of any other item of the same name, or if the parent of any other item of the same name is in the stack. (When the parent is <em>Λ</em>, it is everybody’s ancestor and always on the stack.)</p>
+  <p><a href="../Text/ch02c.html#ch02ex_1_4_4" id="ch02ex_1_4_4a">4</a>. (Solution by David S. Wise.) Rule (c) is violated if and only if there is a data item whose <em>complete qualification</em> $A_{0}\,{\tt OF\ldots OF}\,A_{n}$ is also a COBOL reference to some other data item. Since the parent $A_{1}\,{\tt OF\ldots OF}\,A_{n}$ must also satisfy rule (c), we may assume that this other data item is a descendant of the same parent. Therefore <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> would be extended to check, as each new data item is added to the Data Table, whether its parent is an ancestor of any other item of the same name, or if the parent of any other item of the same name is in the stack. (When the parent is <em>Λ</em>, it is everybody’s ancestor and always on the stack.)</p>
 
   <p class="indent">On the other hand, if we leave <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> as it stands, the COBOL programmer will get an error message from <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> when trying to use an illegal item. Only $\tt MOVE\;CORRESPONDING$ can make use of such items without error.</p>
 

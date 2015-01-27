@@ -66,8 +66,8 @@ p, .uln-indent, .uln-indent1, .indenthangingA, .indenthangingAA, .uln-indentC, .
   margin-left: 45pt;
 }
 .uln-indentC {
-  margin-left: 44pt;
-  text-indent: -18pt;
+  margin-left: 38pt;
+  text-indent: -20pt;
 }
 .indenthangingA {/*pendiente arreglar para ejs resueltos*/
   margin-left: 35pt;
