@@ -787,7 +787,7 @@
 
   <p><a id="page_487"></a><a href="../Text/ch01a.html#ch01ex_2_6_36" id="ch01ex_2_6_36a">36</a>. By (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>), assuming that <em>n</em> is a nonnegative integer, we get $2^{n}$ and $δ_{n0}$, respectively.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_37" id="ch01ex_2_6_37a">37</a>. When $n\gt 0, 2^{n-1}$. (The odd and even terms cancel, so each equals half the total sum.)</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_37" id="ch01ex_2_6_37a">37</a>. When $n\gt 0$, $2^{n-1}$. (The odd and even terms cancel, so each equals half the total sum.)</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_38" id="ch01ex_2_6_38a">38</a>. Let $ω=e^{2πi/m}$. Then</p>
 
@@ -797,7 +797,7 @@
 
   <div class="image"><img src="../Images/e487_02.png"></div>
 
-  <p>(it is the sum of a geometric progression), so the right-hand sum is $m\sum\limits_{t\bmod m=k}\mybinomf{n}{t}$.</p>
+  <p>(it is the sum of a geometric progression), so the right-hand sum is $\displaystyle m\sum\limits_{t\bmod m=k}\mybinomf{n}{t}$.</p>
 
   <p>The original sum on the left is</p>
 
@@ -827,21 +827,21 @@
 
   <div class="image"><img src="../Images/e487_08.png"></div>
 
-  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining $\sum_{k}\mybinomf{r}{\alpha+k}z^{\alpha+k}=(1+z)^{r}$ and $\sum_{k}\mybinomf{r}{\alpha+k}\mybinomf{s}{\beta-k}=\mybinomf{r+s}{\alpha+\beta}$; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, α, and β whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
+  <p>We can even extend the binomial theorem (<a href="../Text/ch01a.html#ch01eq-lev2sec6-13">13</a>) and Vandermonde’s convolution (<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>), obtaining $\sum_{k}\mybinomf{r}{\alpha+k}z^{\alpha+k}=(1+z)^{r}$ and $\sum_{k}\mybinomf{r}{\alpha+k}\mybinomf{s}{\beta-k}=\mybinomf{r+s}{\alpha+\beta}$; these formulas hold for all complex <em>r</em>, <em>s</em>, <em>z</em>, <em>α</em>, and <em>β</em> whenever the series converge, provided that complex powers are suitably defined. [See L. Ramshaw, <em>Inf. Proc. Letters</em> <strong>6</strong> (1977), 223–226.]</p>
 
-  <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. $\int_{0}^{1}dt/(t^{1/2}(1-t)^{1/2})=2\int_{0}^{1}du/(1-u^{2})^{1/2}=2\arcsin u{\atopwithdelims.|}_0^1=\pi$.</p>
+  <p><a id="page_488"></a><a href="../Text/ch01a.html#ch01ex_2_6_43" id="ch01ex_2_6_43a">43</a>. $\int_{0}^{1}dt/(t^{1/2}(1-t)^{1/2})=2\int_{0}^{1}du/(1-u^{2})^{1/2}=$ $2\arcsin u{\atopwithdelims.|}_0^1=\pi$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_45" id="ch01ex_2_6_45a">45</a>. For large <em>r</em>, $\frac{1}{k\varGamma(k)}\sqrt{\frac{r}{r-k}}\frac{1}{e^k}\frac{(1-k/r)^k}{(1-k/r)^r}\to\frac{1}{\varGamma(k+1)}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_45" id="ch01ex_2_6_45a">45</a>. For large <em>r</em>, $\displaystyle\frac{1}{k\varGamma(k)}\sqrt{\frac{r}{r-k}}\frac{1}{e^k}\frac{(1-k/r)^k}{(1-k/r)^r}\to\frac{1}{\varGamma(k+1)}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. $\sqrt{\frac{1}{2\pi}\left(\frac{1}{x}+\frac{1}{y}\right)}\left(1+\frac{y}{x}\right)^{x}\left(1+\frac{x}{y}\right)^{y}$, and $\binom{2n}{n}\approx4^{n}/\sqrt{\pi n}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_46" id="ch01ex_2_6_46a">46</a>. $\displaystyle\sqrt{\frac{1}{2\pi}\left(\frac{1}{x}+\frac{1}{y}\right)}\left(1+\frac{y}{x}\right)^{x}\left(1+\frac{x}{y}\right)^{y}$, and $\displaystyle\binom{2n}{n}\approx4^{n}/\sqrt{\pi n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when <em>k</em> ≤ 0, and is multiplied by $(r-k)(r-\frac12-k)/(k+1)^2$ when <em>k</em> is replaced by <em>k</em> + 1. When $r=-\frac12$ this implies $\mybinomf{-1/2}{k}=(-1/4)^{k}\mybinomf{2k}{k}$</span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_47" id="ch01ex_2_6_47a">47</a>. Each quantity is $δ_{k0}$ when $k≤0$, and is multiplied by $(r-k)(r-\frac12-k)/(k+1)^2$ when <em>k</em> is replaced by $k+1$. When $r=-\frac12$ this implies $\mybinomf{-1/2}{k}=(-1/4)^{k}\mybinomf{2k}{k}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_48" id="ch01ex_2_6_48a">48</a>. This can be proved by induction, using the fact that</p>
 
   <div class="image"><img src="../Images/e488_08.png"></div>
 
-  <p>when <em>n</em> &gt; 0. Alternatively, we have</p>
+  <p>when $n\gt 0$. Alternatively, we have</p>
 
   <div class="image"><img src="../Images/e488_09.png"></div>
 
@@ -867,7 +867,7 @@
 
   <p>where the sum is over all $2^{n}$ choices of $\epsilon_{1},\ldots,\epsilon_{n}=\rm0\;or\;1$ independently. This is an identity in $x,y,z_{1},\ldots,z_{n}$, and Abel’s formula is the special case $z_{1}=z_{2}=\cdots=z_{n}$. Hurwitz’s formula follows from the result in <a href="../Text/ch02b.html#ch02ex_3_4_30">exercise 2.3.4.4–30</a>.</p>
 
-  <p><a id="page_489"></a><a href="../Text/ch01a.html#ch01ex_2_6_52" id="ch01ex_2_6_52a">52</a>. $∑_{k≥0}(k+1)^{-2}=π^{2}/6$. [M. L. J. Hautus observes that the sum is absolutely convergent for all complex <em>x</em>, <em>y</em>, <em>z</em>, <em>n</em> whenever <em>z</em> ≠ 0, since the terms for large <em>k</em> are always of order $1/k^{2}$. This convergence is uniform in bounded regions, so we may differentiate the series term by term. If $f(x,y,n)$ is the value of the sum when <em>z</em> = 1, we find $(∂/∂y)f(x,y,n)=nf(x,y,n-1)$ and $(∂/∂x)f(x,y,n)=nf(x-1,y+1,n-1)$. These formulas are consistent with $f(x,y,n)=(x+y)^{n}$; but actually the latter equality seems to hold rarely, if ever, unless the sum is finite. Furthermore the derivative with respect to <em>z</em> is almost always nonzero.]</p>
+  <p><a id="page_489"></a><a href="../Text/ch01a.html#ch01ex_2_6_52" id="ch01ex_2_6_52a">52</a>. $∑_{k≥0}(k+1)^{-2}=π^{2}/6$. [M. L. J. Hautus observes that the sum is absolutely convergent for all complex <em>x</em>, <em>y</em>, <em>z</em>, <em>n</em> whenever $z≠0$, since the terms for large <em>k</em> are always of order $1/k^{2}$. This convergence is uniform in bounded regions, so we may differentiate the series term by term. If $f(x,y,n)$ is the value of the sum when $z=1$, we find $(∂/∂y)f(x,y,n)=nf(x,y,n-1)$ and $(∂/∂x)f(x,y,n)=nf(x-1,y+1,n-1)$. These formulas are consistent with $f(x,y,n)=(x+y)^{n}$; but actually the latter equality seems to hold rarely, if ever, unless the sum is finite. Furthermore the derivative with respect to <em>z</em> is almost always nonzero.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_53" id="ch01ex_2_6_53a">53</a>. For (b), set $r=\frac12$ and $s=-\frac12$ in the result of (a).</p>
 
@@ -909,7 +909,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_59" id="ch01ex_2_6_59a">59</a>. $(n+1)\mybinomf{n}{k}-\mybinomf{n}{k+1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. $\mybinomf{n+k-1}{k}$. This formula can be remembered easily, since it is</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_60" id="ch01ex_2_6_60a">60</a>. $\displaystyle\binom{n+k-1}{k}$. This formula can be remembered easily, since it is</p>
 
   <div class="image"><img src="../Images/e490_04.png"></div>
 
@@ -925,9 +925,9 @@
 
   <div class="image"><img src="../Images/e490_05.png"></div>
 
-  <p>by rearranging the factorial signs. The sum on <em>k</em> now vanishes unless <em>j</em> = <em>l</em>.</p>
+  <p>by rearranging the factorial signs. The sum on <em>k</em> now vanishes unless $j=l$.</p>
 
-  <p class="indent">The case <em>l</em> = <em>m</em> = <em>n</em> of this identity was published by A. C. Dixon [<em>Messenger of Math.</em> <strong>20</strong> (1891), 79–80], who established the general case twelve years later [<em>Proc. London Math. Soc.</em> <strong>35</strong> (1903), 285–289]. However, L. J. Rogers had already published a much more general formula in the meantime [<em>Proc. London Math. Soc.</em> <strong>26</strong> (1895), 15–32,§8]. See also papers by P. A. MacMahon, <em>Quarterly Journal of Pure and Applied Math.</em> <strong>33</strong> (1902), 274–288, and John Dougall, <em>Proc. Edinburgh Math. Society</em> <strong>25</strong> <a id="page_491"></a>(1907), 114–132. The corresponding <em>q</em>-nomial identities are</p>
+  <p class="indent">The case $l=m=n$ of this identity was published by A. C. Dixon [<em>Messenger of Math.</em> <strong>20</strong> (1891), 79–80], who established the general case twelve years later [<em>Proc. London Math. Soc.</em> <strong>35</strong> (1903), 285–289]. However, L. J. Rogers had already published a much more general formula in the meantime [<em>Proc. London Math. Soc.</em> <strong>26</strong> (1895), 15–32,§8]. See also papers by P. A. MacMahon, <em>Quarterly Journal of Pure and Applied Math.</em> <strong>33</strong> (1902), 274–288, and John Dougall, <em>Proc. Edinburgh Math. Society</em> <strong>25</strong> <a id="page_491"></a>(1907), 114–132. The corresponding <em>q</em>-nomial identities are</p>
 
   <div class="image"><img src="../Images/e491_01.png"></div>
 
@@ -935,13 +935,13 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_63" id="ch01ex_2_6_63a">63</a>. See <em>CMath</em>, exercises 5.83 and 5.106.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_64" id="ch01ex_2_6_64a">64</a>. Let $f(n,m)$ be the number of partitions of $\{1,2,\ldots,n\}$ into <em>m</em> parts. Clearly $f(1,m)=δ_{1m}$. If <em>n</em> &gt; 1, the partitionings are of two varieties: (a) The element <em>n</em> alone forms a set of the partition; there are $f(n-1,m-1)$ ways to construct partitions like this. (b) The element <em>n</em> appears together with another element; there are <em>m</em> ways to insert <em>n</em> into any <em>m</em>-partition of $\{1,2,\ldots,n-1\}$, hence there are $mf(n-1,m)$ ways to construct partitions like this. We conclude that $f(n,m)=f(n-1,m-1)+mf(n-1,m)$, and $f(n,m)={n\brace m}$ by induction.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_64" id="ch01ex_2_6_64a">64</a>. Let $f(n,m)$ be the number of partitions of $\{1,2,\ldots,n\}$ into <em>m</em> parts. Clearly $f(1,m)=δ_{1m}$. If $n\gt 1$, the partitionings are of two varieties: (a) The element <em>n</em> alone forms a set of the partition; there are $f(n-1,m-1)$ ways to construct partitions like this. (b) The element <em>n</em> appears together with another element; there are <em>m</em> ways to insert <em>n</em> into any <em>m</em>-partition of $\{1,2,\ldots,n-1\}$, hence there are $mf(n-1,m)$ ways to construct partitions like this. We conclude that $f(n,m)=f(n-1,m-1)+mf(n-1,m)$, and $f(n,m)={n\brace m}$ by induction.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_65" id="ch01ex_2_6_65a">65</a>. See <em>AMM</em> <strong>99</strong> (1992), 410–422.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_66" id="ch01ex_2_6_66a">66</a>. Let $X=\mybinomf{x}{n}$, $\underline{X}=\mybinomf{x}{n-1}=\frac{n}{x-n+1}X$, $\overline{X}=\mybinomf{x}{n+1}=\frac{x-n}{n+1}X$, with similar notations for <em>Y</em> and <em>Z</em>. We may assume that $y\gt n-1$ is fixed, so that <em>x</em> is a function of <em>z</em>.</p>
 
-  <p class="indent">Let $F(z)=\overline{X}-\overline{Y}-\overline{Z}$, and suppose that $F(z)=0$ for some $z\gt n-2$. We will prove that $F'(z)\lt0$; therefore <em>z</em> = <em>y</em> must be the only root &gt; <em>n</em> − 2, proving the second inequality. Since $F(z)=\frac{x-n}{n+1}(Y+Z)-\frac{y-n}{n+1}Y-\frac{z-n+1}{n}Z=0$ and <em>x</em> &gt; <em>y</em> and <em>Y</em>, <em>Z</em> &gt; 0, we must have $\frac{x-n}{n+1}\lt\frac{z-n+1}{n}$. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
+  <p class="indent">Let $F(z)=\overline{X}-\overline{Y}-\overline{Z}$, and suppose that $F(z)=0$ for some $z\gt n-2$. We will prove that $F'(z)\lt0$; therefore $z=y$ must be the only root $\gt n-2$, proving the second inequality. Since $F(z)=\frac{x-n}{n+1}(Y+Z)-\frac{y-n}{n+1}Y-\frac{z-n+1}{n}Z=0$ and $x\gt y$ and $Y,Z\gt 0$, we must have $\frac{x-n}{n+1}\lt\frac{z-n+1}{n}$. Setting $X'=dX/dx$ and $Z'=dZ/dz=dX/dz$, we have</p>
 
   <div class="image"><img src="../Images/e491_10.png"></div>
 
@@ -949,7 +949,7 @@
 
   <div class="image"><img src="../Images/e491_13.png"></div>
 
-  <p class="indent">To prove the first inequality, we may assume that <em>n</em> &gt; 2. Then if $\underline{X}=\underline{Y}+\underline{Z}$ for some $z\gt n-2$, the second inequality tells us that <em>z</em> = <em>y</em>.</p>
+  <p class="indent">To prove the first inequality, we may assume that $n\gt 2$. Then if $\underline{X}=\underline{Y}+\underline{Z}$ for some $z\gt n-2$, the second inequality tells us that $z=y$.</p>
 
   <p class="indent"><em>References:</em> L. Lovász, <em>Combinatorial Problems and Exercises</em> (1993), Problem 13.31(a); R. M. Redheffer, <em>AMM</em> <strong>103</strong> (1996), 62–64.</p>
 
@@ -975,7 +975,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_6" id="ch01ex_2_7_6a">6</a>. Induction and Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-46">46</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤$ $1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=$ $1/(m+1)-n/(mn+n)=0$. The maximum value occurs at <em>m</em> = <em>n</em> = 1, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_7" id="ch01ex_2_7_7a">7</a>. $T(m+1,n)-T(m,n)=$ $1/(m+1)-1/(mn+1)-\cdots-1/(mn+n)≤$ $1/(m+1)-(1/(mn+n)+\cdots+1/(mn+n))=$ $1/(m+1)-n/(mn+n)=0$. The maximum value occurs at $m=n=1$, and the minimum is approached when <em>m</em> and <em>n</em> get very large. By Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec7-3">3</a>) the greatest lower bound is γ, which is never actually attained. A generalization of this result appears in <em>AMM</em> <strong>70</strong> (1963), 575–577.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_8" id="ch01ex_2_7_8a">8</a>. By Stirling’s approximation, $\ln n!$ is approximately $(n+\frac12)\ln n-n+\ln\sqrt{2\pi}$; also $\sum_{k=1}^{n}H_{k}$ is approximately $(n+1)\ln n-n(1-\gamma)+(\gamma+\frac12)$; the difference is approximately $\gamma n+\frac{1}{2}\ln n+.158$.</p>
 
@@ -995,15 +995,15 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_16" id="ch01ex_2_7_16a">16</a>. $H_{2n-1}-\frac{1}{2}H_{n-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be $(p-1)!$, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, $(p-1)!/1+(p-1)!/2+\cdots+(p-1)!/(p-1)$, <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, $(p-1)!/k≡(p-1)!\,k'$, where $k'$ can be determined by the relation $kk'\bmod p=1$. The set $\{1',2',\ldots,(p-1)'\}$ is just the set $\{1,2,\ldots,p-1\}$; so the numerator is congruent to $(p-1)!\,(1+2+\cdots+p-1)≡0$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_17" id="ch01ex_2_7_17a">17</a>. <em>First solution</em> (elementary): Taking the denominator to be $(p-1)!$, which is a multiple of the true denominator but not a multiple of <em>p</em>, we must show only that the corresponding numerator, $(p-1)!/1+(p-1)!/2+$ $\cdots+(p-1)!/(p-1)$, <em>is</em> a multiple of <em>p</em>. Modulo <em>p</em>, $(p-1)!/k≡(p-1)!\,k'$, where $k'$ can be determined by the relation $kk'\bmod p=1$. The set $\{1',2',\ldots,(p-1)'\}$ is just the set $\{1,2,\ldots,p-1\}$; so the numerator is congruent to $(p-1)!\,(1+2+\cdots+p-1)≡0$.</p>
 
   <p class="indent"><em>Second solution</em> (advanced): By exercise 4.6.2–6, we have $x^{\overline p}≡x^{p}-\md[x]{p}$; hence ${p\brack k}\equiv\delta_{kp}-\delta_{k1}$, by <a href="../Text/ch01a.html#ch01ex_2_6_32">exercise 1.2.6–32</a>. Now apply <a href="../Text/ch01a.html#ch01ex_2_7_6">exercise 6</a>.</p>
 
-  <p class="indent">The numerator of $H_{p-1}$ is in fact known to be a multiple of $p^{2}$ when <em>p</em> &gt; 3; see Hardy and Wright, <em>An Introduction to the Theory of Numbers</em>, Section 7.8.</p>
+  <p class="indent">The numerator of $H_{p-1}$ is in fact known to be a multiple of $p^{2}$ when $p\gt 3$; see Hardy and Wright, <em>An Introduction to the Theory of Numbers</em>, Section 7.8.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_18" id="ch01ex_2_7_18a">18</a>. If $n=2^{k}m$ where <em>m</em> is odd, the sum equals $2^{2k}m_{1}/m_{2}$ where $m_{1}$ and $m_{2}$ are both odd. [<em>AMM</em> <strong>67</strong> (1960), 924–925.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only <em>n</em> = 0, <em>n</em> = 1. For <em>n</em> ≥ 2, let $k=\lfloor\lg n\rfloor$. There is precisely one term whose denominator is $2^{k}$, so $2^{k-1}H_{n}-\frac12$ is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, $2^{k-1}H_{n}-\frac12$ would have a denominator equal to 2.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only $n=0$, $n=1$. For $n≥2$, let $k=\lfloor\lg n\rfloor$. There is precisely one term whose denominator is $2^{k}$, so $2^{k-1}H_{n}-\frac12$ is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, $2^{k-1}H_{n}-\frac12$ would have a denominator equal to 2.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_20" id="ch01ex_2_7_20a">20</a>. Expand the integrand term by term. See also <em>AMM</em> <strong>69</strong> (1962), 239, and an article by H. W. Gould, <em>Mathematics Magazine</em> <strong>34</strong> (1961), 317–321.</p>
 
@@ -1017,7 +1017,7 @@
 
   <div class="image"><img src="../Images/e493_01.png"></div>
 
-  <p><em>Note:</em> The generalization of $H_{n}$ considered in the previous exercise is therefore equal to $H_{x}^{(r)}=\sum_{k\ge0}(1/(k+1)^{r}-1/(k+1+x)^{r})$, when <em>r</em> = 1; the same idea can be used for larger values of <em>r</em>. The infinite product converges for all complex <em>x</em>.</p>
+  <p><em>Note:</em> The generalization of $H_{n}$ considered in the previous exercise is therefore equal to $H_{x}^{(r)}=\sum_{k\ge0}(1/(k+1)^{r}-1/(k+1+x)^{r})$, when $r=1$; the same idea can be used for larger values of <em>r</em>. The infinite product converges for all complex <em>x</em>.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_25" id="ch01ex_2_7_25a">25</a>. $H_{n}^{(0,v)}=\sum_{k=1}^{n}H_{n}^{(v)}$ and $H_{n}^{(u,0)}=H_{n}^{(u-1)}$; so the identity generalizes (<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>). [See L. Euler, <em>Novi Comment. Acad. Sci. Pet.</em> <strong>20</strong> (1775), 140–186,§2.]</p>
 
@@ -1033,11 +1033,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_6" id="ch01ex_2_8_6a">6</a>. Induction. (The equation holds for <em>negative</em> <em>n</em> also; see <a href="../Text/ch01a.html#ch01ex_2_8_8">exercise 8</a>.)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_7" id="ch01ex_2_8_7a">7</a>. If <em>d</em> is a proper divisor of <em>n</em>, $F_{d}$ divides $F_{n}$. Now $F_{d}$ is greater than one and less than $F_{n}$ provided <em>d</em> is greater than 2. The only nonprime number that has no proper factor greater than 2 is <em>n</em> = 4; $F_{4}=3$ is the only exception.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_7" id="ch01ex_2_8_7a">7</a>. If <em>d</em> is a proper divisor of <em>n</em>, $F_{d}$ divides $F_{n}$. Now $F_{d}$ is greater than one and less than $F_{n}$ provided <em>d</em> is greater than 2. The only nonprime number that has no proper factor greater than 2 is $n=4$; $F_{4}=3$ is the only exception.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_8" id="ch01ex_2_8_8a">8</a>. $F_{-1}=1$; $F_{-2}=-1$; $F_{-n}=(-1)^{n+1}F_{n}$ by induction on <em>n</em>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_9" id="ch01ex_2_8_9a">9</a>. Not (<a href="../Text/ch01a.html#ch01eq-lev2sec8-15">15</a>). The others are valid, by an inductive argument that proves something true for <em>n</em> − 1 assuming it true for <em>n</em> and greater.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_9" id="ch01ex_2_8_9a">9</a>. Not (<a href="../Text/ch01a.html#ch01eq-lev2sec8-15">15</a>). The others are valid, by an inductive argument that proves something true for $n-1$ assuming it true for <em>n</em> and greater.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_10" id="ch01ex_2_8_10a">10</a>. When <em>n</em> is even, it is greater; when <em>n</em> is odd, it is less. (See Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-14">14</a>).)</p>
 
@@ -1045,15 +1045,17 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_12" id="ch01ex_2_8_12a">12</a>. If ${\cal G}(z)=\sum{\cal F}_{n}z^{n}$, $(1-z-z^{2}){\cal G}(z)=z+F_{0}z^{2}+F_{1}z^{3}+\cdots=z+z^{2}G(z)$. Hence ${\cal G}(z)=G(z)+zG(z)^{2}$; from Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec8-17">17</a>) we find ${\cal F}_n=((3n+3)/5)F_{n}-(n/5)F_{n+1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_13" id="ch01ex_2_8_13a">13</a>. (a) $a_{n}=rF_{n-1}+sF_{n}$. (b) Since $(b_{n+2}+c)=(b_{n+1}+c)+(b_{n}+c)$, we may consider the new sequence $b'_{n}=b_{n}+c$. Applying part (a) to $b'_{n}$, we obtain the answer $cF_{n-1}+(c+1)F_{n}-c$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_13" id="ch01ex_2_8_13a">13</a>. (a) $a_{n}=rF_{n-1}+sF_{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. $a_n=F_{m+n+1}+F_{n}-\mybinomf{n}{m}-\mybinomf{n+1}{m-1}-\cdots-\mybinomf{n+m}{0}$.</p>
+  <p class="indent">(b) Since $(b_{n+2}+c)=(b_{n+1}+c)+(b_{n}+c)$, we may consider the new sequence $b'_{n}=b_{n}+c$. Applying part (a) to $b'_{n}$, we obtain the answer $cF_{n-1}+(c+1)F_{n}-c$.</p>
+
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_14" id="ch01ex_2_8_14a">14</a>. $a_n=F_{m+n+1}+F_{n}-\mybinomf{n}{m}$ $-\mybinomf{n+1}{m-1}-\cdots-\mybinomf{n+m}{0}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_15" id="ch01ex_2_8_15a">15</a>. $c_{n}=xa_{n}+yb_{n}+(1-x-y)F_{n}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_16" id="ch01ex_2_8_16a">16</a>. $F_{n+1}$. Induction, and $\mybinomf{n+1-k}{k}=\mybinomf{n-k}{k}+\mybinomf{(n-1)-(k-1)}{k-1}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity $(x^{n+k}-y^{n+k})(x^{m-k}-y^{m-k})-(x^{n}-y^{n})(x^{m}-y^{m})$ is equal to $(xy)^{n}(x^{m-n-k}-y^{m-n-k})(x^{k}-y^{k})$. Set $x=\phi$, $y=\phihat$, and divide by $(\sqrt{5})^{2}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_17" id="ch01ex_2_8_17a">17</a>. In general, the quantity $(x^{n+k}-y^{n+k})(x^{m-k}-y^{m-k})-$ $(x^{n}-y^{n})(x^{m}-y^{m})$ is equal to $(xy)^{n}(x^{m-n-k}-y^{m-n-k})(x^{k}-y^{k})$. Set $x=\phi$, $y=\phihat$, and divide by $(\sqrt{5})^{2}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_18" id="ch01ex_2_8_18a">18</a>. It is $F_{2n+1}$.</p>
 
@@ -1063,9 +1065,9 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_21" id="ch01ex_2_8_21a">21</a>. Multiply by $x^{2}+x-1$; the solution is $(x^{n+1}F_{n+1}+x^{n+2}F_{n}-x)/(x^{2}+x-1)$. If the denominator is zero, <em>x</em> is $1/\phi$ or $1/\phihat$; then the solution is $(n+1-x^{n}F_{n+1})/(2x+1)$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. $F_{m+2n}$; set <em>t</em> = 2 in the next exercise.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_22" id="ch01ex_2_8_22a">22</a>. $F_{m+2n}$; set $t=2$ in the next exercise.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. $\frac{1}{\sqrt{5}}\sum\limits_{k}\mybinomf{n}{k}(\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\phi^{m}-\phihat^{\,k}F_{t}^{k}F_{t-1}^{n-k}\phihat^{\,m})=$ $\frac{1}{\sqrt{5}}(\phi^{m}(\phi F_{t}+F_{t-1})^{n}-\phihat^{\,m}(\phihat F_{t}+F_{t-1})^{n})=$ $F_{m+tn}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_23" id="ch01ex_2_8_23a">23</a>. $\displaystyle\frac{1}{\sqrt{5}}\sum_{k}\binom{n}{k}(\phi^{k}F_{t}^{k}F_{t-1}^{n-k}\phi^{m}-\phihat^{\,k}F_{t}^{k}F_{t-1}^{n-k}\phihat^{\,m})=$ $\displaystyle\frac{1}{\sqrt{5}}(\phi^{m}(\phi F_{t}+F_{t-1})^{n}-\phihat^{\,m}(\phihat F_{t}+F_{t-1})^{n})=$ $\displaystyle F_{m+tn}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_24" id="ch01ex_2_8_24a">24</a>. $F_{n+1}$ (expand by cofactors in the first row).</p>
 
