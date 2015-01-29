@@ -119,10 +119,11 @@ em {
   font-style: italic;
 }*/
 div.equation img{
-  max-width:99%;max-height:99%;
+  max-width:99%;
+  max-height:99%;
 }
 .equation{
   margin-top:4pt;
   margin-bottom:4pt;
-  text-align:right
+  text-align:right;
 }
