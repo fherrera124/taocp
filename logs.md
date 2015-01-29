@@ -77,13 +77,23 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 
   - Answer **8** of **Section 1.2.11.3**:
 
-    - Before: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})$
-    - Actual: $R(x)=\\int_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})du$
+    - Before: $R(x)=\\int\_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})$
+    - Actual: $R(x)=\\int\_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})du$
 
   - Answer **11** of **Section 1.2.11.3**:
 
-    - Before: \[...\] to note that $Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}$
-    - Before: \[...\] to note that $R_{-1}(n)-Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}$
+    - Before: \[...\] to note that $Q\_\{-1\}(n)=(-1)^\{n\}n!/(e^\{n\}n^\{n\})\\approx(-1)^\{n\}\\sqrt\{2\\pi n\}/e^\{2n\}$
+    - Before: \[...\] to note that $R\_\{-1\}(n)-Q\_\{-1\}(n)=(-1)^\{n\}n!/(e^\{n\}n^\{n\})\\approx(-1)^\{n\}\\sqrt\{2\\pi n\}/e^\{2n\}$
+
+  - Answer **37** of **Section 1.2.8**:
+
+    - Before: $μ(n-μ(n))=F\_\{k\_\{r-1\}\}≥F\_\{k\_\{r+2\}\}\\gt 2F\_\{k\_\{r\}\}$
+    - Actual: $μ(n-μ(n))=F\_\{k\_\{r-1\}\}≥F\_\{k\_\{r\}+2\}\\gt 2F\_\{k\_\{r\}\}$
+
+  - Answer **41** of **Section 1.2.8**:
+
+    - Before: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}$
+    - Actual: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}-1$
 
 
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.

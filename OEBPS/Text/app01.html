@@ -201,7 +201,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_24" id="ch01ex_2_2_24a">24</a>. Substitute 2 everywhere 10 appears.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_25" id="ch01ex_2_2_25a">25</a>. Note that $z=2^{-p}\lfloor 2^{p-k}x\rfloor\gt 0$, when <em>p</em> is the precision (the number of binary digits after the radix point). The quantity $y+\log_{b}x$ stays approximately constant.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_25" id="ch01ex_2_2_25a">25</a>. Note that $z=2^{-p}\lfloor{2^{p-k}x}\rfloor\gt 0$, when <em>p</em> is the precision (the number of binary digits after the radix point). The quantity $y+\log_{b}x$ stays approximately constant.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_27" id="ch01ex_2_2_27a">27</a>. Prove by induction on <em>k</em> that</p>
 
@@ -409,9 +409,9 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_5" id="ch01ex_2_4_5a">5</a>. $\lfloor{x+\frac12}\rfloor$. The value of $(-x\text{ rounded})$ will be the same as $-(x\text{ rounded})$, <em>except</em> when $x\bmod1=\frac12$. In the latter case, the negative value is rounded towards zero and the positive value is rounded away from zero.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_6" id="ch01ex_2_4_6a">6</a>. (a) is true: $\lfloor\sqrt{x}\rfloor=n⇔n^{2}≤x\lt(n+1)^{2}⇔n^{2}≤\lfloor{x}\rfloor\lt(n+1)^{2}⇔\left\lfloor\sqrt{\lfloor{x}\rfloor}\right\rfloor=n$. Similarly, (b) is true. But (c) fails when <em>x</em> is, say, 1.1.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_6" id="ch01ex_2_4_6a">6</a>. (a) is true: $\lfloor{\sqrt{x}}\rfloor=n⇔n^{2}≤x\lt(n+1)^{2}⇔$ $n^{2}≤\lfloor{x}\rfloor\lt(n+1)^{2}⇔$ $\lfloor{\sqrt{\lfloor{x}\rfloor}}\rfloor=n$. Similarly, (b) is true. But (c) fails when <em>x</em> is, say, 1.1.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_7" id="ch01ex_2_4_7a">7</a>. $\lfloor x+y\rfloor=\lfloor\lfloor{x}\rfloor+x\bmod 1+\lfloor y\rfloor+y\bmod 1\rfloor=\lfloor{x}\rfloor+\lfloor y\rfloor+\lfloor x\bmod 1+y\bmod 1\rfloor$. The inequality should be ≥ for ceilings, and then equality holds if and only if either <em>x</em> or <em>y</em> is an integer or $x\bmod 1+y\bmod 1\gt 1$; that is, if and only if $(-x)\bmod1+(-y)\bmod1\lt 1$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_7" id="ch01ex_2_4_7a">7</a>. $\lfloor{x+y}\rfloor=\lfloor{\lfloor{x}\rfloor+x\bmod 1+\lfloor{y}\rfloor+y\bmod 1}\rfloor=$ $\lfloor{x}\rfloor+\lfloor{y}\rfloor+\lfloor{x\bmod 1+y\bmod 1}\rfloor$. The inequality should be ≥ for ceilings, and then equality holds if and only if either <em>x</em> or <em>y</em> is an integer or $x\bmod 1+y\bmod 1\gt 1$; that is, if and only if $(-x)\bmod1+(-y)\bmod1\lt 1$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_8" id="ch01ex_2_4_8a">8</a>. 1, 2, 5, −100.</p>
 
@@ -457,11 +457,11 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_33" id="ch01ex_2_4_33a">33</a>. Either $n+m$ or $n-m+1$ is even, so one of the quantities inside the brackets is an integer; so equality holds in <a href="../Text/ch01.html#ch01ex_2_4_7">exercise 7</a>, and we obtain (a) <em>n</em>; (b) <em>n</em> + 1.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_34" id="ch01ex_2_4_34a">34</a>. <em>b</em> must be an integer ≥ 2. (Set <em>x</em> = <em>b</em>.) The sufficiency is proved as in <a href="../Text/ch01.html#ch01ex_2_4_6">exercise 6</a>. The same condition is necessary and sufficient for $\lceil\log_{b}x\rceil=\lceil\log_{b}\lceil x\rceil\rceil$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_34" id="ch01ex_2_4_34a">34</a>. <em>b</em> must be an integer ≥ 2. (Set $x=b$.) The sufficiency is proved as in <a href="../Text/ch01.html#ch01ex_2_4_6">exercise 6</a>. The same condition is necessary and sufficient for $\lceil{\log_{b}x}\rceil=\lceil{\log_{b}\lceil{x}\rceil}\rceil$.</p>
 
-  <p class="indent"><em>Note:</em> R. J. McEliece has pointed out the following generalization: Let $f$ be a continuous, strictly increasing function defined on an interval <em>A</em>, and assume that both $\lfloor{x}\rfloor$ and $\lceil x\rceil$ are in <em>A</em> whenever <em>x</em> is in <em>A</em>. Then the relation $\lfloor f(x)\rfloor=\lfloor f(\lfloor{x}\rfloor)\rfloor$ holds for all <em>x</em> in <em>A</em> if and only if the relation $\lceil f(x)\rceil=\lceil f(\lceil x\rceil)\rceil$ holds for all <em>x</em> in <em>A</em>, if and only if the following condition is satisfied for all <em>x</em> in <em>A</em>: “$f(x)$ is an integer implies <em>x</em> is an integer.” The condition is obviously necessary, for if $f(x)$ is an integer and it equals $\lfloor f(\lfloor{x}\rfloor)\rfloor$ or $\lceil f(\lceil x\rceil)\rceil$ then <em>x</em> must equal $\lfloor{x}\rfloor$ or $\lceil x\rceil$. Conversely if, say, $\lfloor f(\lfloor{x}\rfloor)\rfloor\lt\lfloor f(x)\rfloor$ then by continuity there is some <em>y</em> with $\lfloor{x}\rfloor\lt y≤x$ for which $f(y)$ is an integer; but <em>y</em> cannot be an integer.</p>
+  <p class="indent"><em>Note:</em> R. J. McEliece has pointed out the following generalization: Let $f$ be a continuous, strictly increasing function defined on an interval <em>A</em>, and assume that both $\lfloor{x}\rfloor$ and $\lceil{x}\rceil$ are in <em>A</em> whenever <em>x</em> is in <em>A</em>. Then the relation $\lfloor{f(x)}\rfloor=\lfloor{f(\lfloor{x}\rfloor)}\rfloor$ holds for all <em>x</em> in <em>A</em> if and only if the relation $\lceil{f(x)}\rceil=\lceil{f(\lceil{x}\rceil)}\rceil$ holds for all <em>x</em> in <em>A</em>, if and only if the following condition is satisfied for all <em>x</em> in <em>A</em>: “$f(x)$ is an integer implies <em>x</em> is an integer.” The condition is obviously necessary, for if $f(x)$ is an integer and it equals $\lfloor{f(\lfloor{x}\rfloor)}\rfloor$ or $\lceil{f(\lceil{x}\rceil)}\rceil$ then <em>x</em> must equal $\lfloor{x}\rfloor$ or $\lceil{x}\rceil$. Conversely if, say, $\lfloor{f(\lfloor{x}\rfloor)}\rfloor\lt\lfloor{f(x)}\rfloor$ then by continuity there is some <em>y</em> with $\lfloor{x}\rfloor\lt y≤x$ for which $f(y)$ is an integer; but <em>y</em> cannot be an integer.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_35" id="ch01ex_2_4_35a">35</a>. $\large\frac{x+m}{n}-1=\frac{x+m}{n}-\frac{1}{n}-\frac{n-1}{n}\lt$ $\frac{\lfloor{x}\rfloor+m}{n}-\frac{n-1}{n}≤\left\lfloor\frac{\lfloor{x}\rfloor+m}{n}\right\rfloor≤\frac{x+m}{n}$; apply <a href="../Text/ch01.html#ch01ex_2_4_3">exercise 3</a>. Use of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> gives a similar result for the ceiling function. Both identities follow as a special case of McEliece’s theorem in <a href="../Text/ch01.html#ch01ex_2_4_34">exercise 34</a>.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_35" id="ch01ex_2_4_35a">35</a>. $\large\frac{x+m}{n}-1=\frac{x+m}{n}-\frac{1}{n}-\frac{n-1}{n}\lt$ $\frac{\lfloor{x}\rfloor+m}{n}-\frac{n-1}{n}≤\left\lfloor{\frac{\lfloor{x}\rfloor+m}{n}}\right\rfloor≤\frac{x+m}{n}$; apply <a href="../Text/ch01.html#ch01ex_2_4_3">exercise 3</a>. Use of <a href="../Text/ch01.html#ch01ex_2_4_4">exercise 4</a> gives a similar result for the ceiling function. Both identities follow as a special case of McEliece’s theorem in <a href="../Text/ch01.html#ch01ex_2_4_34">exercise 34</a>.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_36" id="ch01ex_2_4_36a">36</a>. Assume first that $n=2t$. Then</p>
 
@@ -471,7 +471,7 @@
 
   <div class="image"><img src="../Images/e477_05.png"></div>
 
-  <p>by <a href="../Text/ch01.html#ch01ex_2_4_33">exercise 33</a>. And if $n=2t+1$, we have $t^{2}+\lfloor n/2\rfloor=t^{2}+t=n^{2}/4-1/4$. For the second sum we get, similarly, $\lceil n(n+2)/4\rceil$.</p>
+  <p>by <a href="../Text/ch01.html#ch01ex_2_4_33">exercise 33</a>. And if $n=2t+1$, we have $t^{2}+\lfloor{n/2}\rfloor=t^{2}+t=n^{2}/4-1/4$. For the second sum we get, similarly, $\lceil{n(n+2)/4}\rceil$.</p>
 
   <p><a id="page_478"></a><a href="../Text/ch01.html#ch01ex_2_4_37" id="ch01ex_2_4_37a">37</a>. $\large\sum\limits_{0≤k\lt n}\frac{mk+x}{n}=\frac{m(n-1)}{2}+x$. Let $\{y\}$ denote $y\bmod1$; we must subtract</p>
 
@@ -497,63 +497,69 @@
 
   <div class="image"><img src="../Images/e478_07.png"></div>
 
-  <p>This formula would become symmetric in <em>m</em> and <em>n</em> if it were extended over the range 0 &lt; <em>k</em> ≤ <em>n</em>. (The symmetry can be explained by drawing the graph of the summand as a function of <em>k</em>, then reflecting about the line <em>y</em> = <em>x</em>.)</p>
+  <p>This formula would become symmetric in <em>m</em> and <em>n</em> if it were extended over the range $0\lt k≤n$. (The symmetry can be explained by drawing the graph of the summand as a function of <em>k</em>, then reflecting about the line $y=x$.)</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_38" id="ch01ex_2_4_38a">38</a>. Both sides increase by $\lceil y\rceil$  when <em>x</em> increases by 1, so we can assume that 0 ≤ <em>x</em> &lt; 1. Then both sides are zero when <em>x</em> = 0, and both sides increase by 1 when <em>x</em> increases past the values $1-k/y$ for <em>y</em> &gt; <em>k</em> ≥ 0. [<em>Crelle</em> <strong>136</strong> (1909), 42; the case <em>y</em> = <em>n</em> is due to C. Hermite, <em>Acta Math.</em> <strong>5</strong> (1884), 315.]</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_38" id="ch01ex_2_4_38a">38</a>. Both sides increase by $\lceil{y}\rceil$  when <em>x</em> increases by 1, so we can assume that $0≤x\lt 1$. Then both sides are zero when $x=0$, and both sides increase by 1 when <em>x</em> increases past the values $1-k/y$ for $y\gt k≥0$. [<em>Crelle</em> <strong>136</strong> (1909), 42; the case $y=n$ is due to C. Hermite, <em>Acta Math.</em> <strong>5</strong> (1884), 315.]</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_39" id="ch01ex_2_4_39a">39</a>. Proof of part (f): Consider the more general identity $∏_{0≤k\lt n}2\sin π(x+k/n)=2\sin πnx$, which can be demonstrated as follows: Since $2\sinθ=(e^{iθ}-e^{-iθ})/i=(1-e^{-2iθ})e^{iθ-iπ/2}$, the identity is a consequence of the two formulas</p>
 
   <div class="image"><img src="../Images/e478_08.png"></div>
 
-  <p>The latter is true since the function $x-\frac12$ is replicative; and the former is true because we may set <em>z</em> = 1 in the factorization of the polynomial $z^{n}-α^{n}=(z-α)(z-ωα)\ldots(z-ω^{n-1}α)$, where $ω=e^{-2πi/n}$.</p>
+  <p>The latter is true since the function $x-\frac12$ is replicative; and the former is true because we may set $z=1$ in the factorization of the polynomial $z^{n}-α^{n}=(z-α)(z-ωα)\ldots(z-ω^{n-1}α)$, where $ω=e^{-2πi/n}$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_40" id="ch01ex_2_4_40a">40</a>. (Note by N. G. de Bruijn.) If $f$ is replicative, $f(nx+1)-f(nx)=f(x+1)-f(x)$ for all <em>n</em> &gt; 0. Hence if $f$ is continuous, $f(x+1)-f(x)=c$ for all <em>x</em>, and $g(x)=f(x)-c\lfloor{x}\rfloor$  is replicative and periodic. Now</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_40" id="ch01ex_2_4_40a">40</a>. (Note by N. G. de Bruijn.) If $f$ is replicative, $f(nx+1)-f(nx)=f(x+1)-f(x)$ for all $n\gt 0$. Hence if $f$ is continuous, $f(x+1)-f(x)=c$ for all <em>x</em>, and $g(x)=f(x)-c\lfloor{x}\rfloor$  is replicative and periodic. Now</p>
 
   <div class="image"><img src="../Images/e478_10.png"></div>
 
-  <p><a id="page_479"></a>expanding in Fourier series shows that $g(x)=(x-\frac12)a$ for 0 &lt; <em>x</em> &lt; 1. It follows that $f(x)=(x-\frac12)a$. In general, this argument shows that any replicative locally Riemann-integrable function has the form $(x-\frac12)a+b\max(\lfloor{x}\rfloor,0)+c\min(\lfloor{x}\rfloor,0)$ almost everywhere. For further results see L. J. Mordell, <em>J. London Math. Soc.</em> <strong>33</strong> (1958), 371–375; M. F. Yoder, <em>Æquationes Mathematic</em>æ <strong>13</strong> (1975), 251–261.</p>
+  <p><a id="page_479"></a>expanding in Fourier series shows that $g(x)=(x-\frac12)a$ for $0\lt x\lt 1$. It follows that $f(x)=(x-\frac12)a$. In general, this argument shows that any replicative locally Riemann-integrable function has the form $(x-\frac12)a+b\max(\lfloor{x}\rfloor,0)+c\min(\lfloor{x}\rfloor,0)$ almost everywhere. For further results see L. J. Mordell, <em>J. London Math. Soc.</em> <strong>33</strong> (1958), 371–375; M. F. Yoder, <em>Æquationes Mathematic</em>æ <strong>13</strong> (1975), 251–261.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_4_41" id="ch01ex_2_4_41a">41</a>. We want $a_{n}=k$ when $\frac{1}{2}k(k-1)\lt n≤\frac{1}{2}k(k+1)$. Since <em>n</em> is an integer, this is equivalent to</p>
 
   <div class="image"><img src="../Images/e479_05.png"></div>
 
-  <p>i.e., $k-\frac12\lt\sqrt{2n}\lt k+\frac12$. Hence $a_n=\lfloor\sqrt{2n}+\frac12\rfloor$, the nearest integer to $\sqrt{2n}$. Other correct answers are $\lceil\sqrt{2n}-\frac12\rceil$, $\lceil(\sqrt{8n+1}-1)/2\rceil$, $\lfloor(\sqrt{8n-7}+1)/2\rfloor$, etc.</p>
+  <p>i.e., $k-\frac12\lt\sqrt{2n}\lt k+\frac12$. Hence $a_n=\lfloor{\sqrt{2n}+\frac12}\rfloor$, the nearest integer to $\sqrt{2n}$. Other correct answers are $\lceil{\sqrt{2n}-\frac12}\rceil$, $\lceil{(\sqrt{8n+1}-1)/2}\rceil$, $\lfloor{(\sqrt{8n-7}+1)/2}\rfloor$, etc.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_42" id="ch01ex_2_4_42a">42</a>. (a) See <a href="../Text/ch01a.html#ch01ex_2_7_10">exercise 1.2.7–10</a>. (b) The given sum is $n\lfloor\log_{b}n\rfloor-S$, where</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_42" id="ch01ex_2_4_42a">42</a>. (a) See <a href="../Text/ch01a.html#ch01ex_2_7_10">exercise 1.2.7–10</a>. (b) The given sum is $n\lfloor{\log_{b}n}\rfloor-S$, where</p>
 
   <div class="image"><img src="../Images/e479_12.png"></div>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_43" id="ch01ex_2_4_43a">43</a>. $\lfloor\sqrt{n}\rfloor(n-\frac{1}{6}(2\lfloor\sqrt{n}\rfloor+5)(\lfloor\sqrt{n}\rfloor-1))$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_43" id="ch01ex_2_4_43a">43</a>. $\lfloor{\sqrt{n}}\rfloor(n-\frac{1}{6}(2\lfloor{\sqrt{n}}\rfloor+5)(\lfloor{\sqrt{n}}\rfloor-1))$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_44" id="ch01ex_2_4_44a">44</a>. The sum is <em>n</em> + 1 when <em>n</em> is negative.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_44" id="ch01ex_2_4_44a">44</a>. The sum is $n+1$ when <em>n</em> is negative.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_45" id="ch01ex_2_4_45a">45</a>. $\lfloor mj/n\rfloor=r$ if and only if $\left\lceil\frac{rn}{m}\right\rceil≤j\lt \left\lceil\frac{(r+1)n}{m}\right\rceil$, and we find that the given sum is therefore</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_45" id="ch01ex_2_4_45a">45</a>. $\lfloor{mj/n}\rfloor=r$ if and only if $\displaystyle\left\lceil\frac{rn}{m}\right\rceil≤j\lt{\left\lceil{\smash{\frac{(r+1)n}{m}}\vphantom{\frac12}}\right\rceil}$, and we find that the given sum is therefore</p>
 
   <div class="image"><img src="../Images/e479_15.png"></div>
 
-  <p>The stated result follows by rearranging the latter sum, grouping the terms with a particular value of $\lceil rn/m\rceil$. The second formula is immediate by the substitution</p>
+  <p>The stated result follows by rearranging the latter sum, grouping the terms with a particular value of $\lceil{rn/m}\rceil$. The second formula is immediate by the substitution</p>
 
   <div class="image"><img src="../Images/e479_16.png"></div>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_46" id="ch01ex_2_4_46a">46</a>. $∑_{0≤j\lt αn}f(\lfloor mj/n\rfloor)=∑_{0≤r\lt αm}\lceil rn/m\rceil(f(r-1)-f(r))+\lceil αn\rceil f(\lceil αm\rceil-1)$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_46" id="ch01ex_2_4_46a">46</a>. $∑_{0≤j\lt αn}f(\lfloor{mj/n}\rfloor)=$ $∑_{0≤r\lt αm}\lceil{rn/m}\rceil(f(r-1)-f(r))+\lceil{αn}\rceil f(\lceil{αm}\rceil-1)$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_47" id="ch01ex_2_4_47a">47</a>. (a) The numbers $2,4,\ldots,p-1$ are the even residues (modulo <em>p</em>); since $2kq=p\lfloor 2kq/p\rfloor+(2kq)\bmod p$, the number $(-1)^{\lfloor 2kq/p\rfloor}((2kq)\bmod p)$ will be an even residue or an even residue minus <em>p</em>, and each even residue clearly occurs just once. Hence $(-1)^{σ}q^{(p-1)/2}2·4\ldots(p-1)≡2·4\ldots(p-1)$. (b) Let <em>q</em> = 2. If $p=4n+1$, $σ=n$; if $p=4n+3,σ=n+1$. Hence $\left(\frac{2}{p}\right)=(1,-1,-1,1)$ according as $p\bmod 8=(1,3,5,7)$, respectively. (c) For $k\lt p/4$, we have</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_47" id="ch01ex_2_4_47a">47</a>. (a) The numbers $2,4,\ldots,p-1$ are the even residues (modulo <em>p</em>); since $2kq=p\lfloor{2kq/p}\rfloor+(2kq)\bmod p$, the number $(-1)^{\lfloor{2kq/p}\rfloor}((2kq)\bmod p)$ will be an even residue or an even residue minus <em>p</em>, and each even residue clearly occurs just once. Hence $(-1)^{σ}q^{(p-1)/2}2·4\ldots(p-1)≡2·4\ldots(p-1)$.</p>
 
-  <p class="center">$\lfloor(p-1-2k)q/p\rfloor=q-\lceil(2k+1)q/p\rceil=q-1-\lfloor(2k+1)q/p\rfloor ≡\md[\lfloor(2k+1)q/p\rfloor]{2}$.</p>
+  <p class="indent">(b) Let $q=2$. If $p=4n+1$, $σ=n$; if $p=4n+3,σ=n+1$. Hence $\left(\frac{2}{p}\right)=(1,-1,-1,1)$ according as $p\bmod 8=(1,3,5,7)$, respectively.</p>
 
-  <p>Hence we may replace the last terms $\lfloor(p-1)q/p\rfloor,\lfloor(p-3)q/p\rfloor,\ldots$ by $\lfloor q/p\rfloor,\lfloor 3q/p\rfloor$, etc. (d) $∑_{0≤k\lt p/2}\lfloor kq/p\rfloor+∑_{0≤r\lt q/2}\lceil rp/q\rceil=\lceil p/2\rceil(\lceil q/2\rceil-1)=(p+1)(q-1)/4$. Also $∑_{0≤r\lt q/2}\lceil rp/q\rceil=∑_{0≤r\lt q/2}\lfloor rp/q\rfloor+(q-1)/2$. The idea of this proof goes back to G. Eisenstein, <em>Crelle</em> <strong>28</strong> (1844), 246–248; Eisenstein also gave several other proofs of this and other reciprocity laws in the same volume.</p>
+  <p class="indent">(c) For $k\lt p/4$, we have</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when <em>n</em> &lt; 0; when <em>n</em> &gt; 0 it is easy to verify. (b) $\lfloor(n+2-\lfloor n/25\rfloor)/3\rfloor=\lceil(n-\lfloor n/25\rfloor)/3\rceil=$ $\lceil(n+\lceil-n/25\rceil)/3\rceil=\lceil\lceil 24n/25\rceil /3\rceil=$ $\lceil 8n/25\rceil=\lfloor(8n+24)/25\rfloor$. The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
+  <p class="center">$\lfloor{(p-1-2k)q/p}\rfloor=q-\lceil{(2k+1)q/p}\rceil=q-1-\lfloor{(2k+1)q/p}\rfloor≡\md[\lfloor{(2k+1)q/p}\rfloor]{2}$.</p>
 
-  <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since $f(0)=f(f(0))=f(f(0)+0)=f(0)+f(0)$, we have $f(n)=n$ for all integers <em>n</em>. If ${\large f}{\left(\frac12\right)}=k≤0$, we have $k={\large f}{\left(\frac{1}{1-2k}{\large f}{\left(\frac{1}{2}-k\right)}\right)}={\large f}{\left(\frac{1}{1-2k}\left({\large f}{\left(\frac{1}{2}\right)}-k\right)\right)}=f(0)=0$. And if ${\large f}{\left(\frac{1}{n-1}\right)}=0$ we have ${\large f}{\left(\frac{1}{n}\right)}={\large f}{\left(\frac{1}{n}{\large f}{\left(1+\frac{1}{n-1}\right)}\right)}={\large f}{\left(\frac{1}{n-1}\right)}=0$; furthermore 1 ≤ <em>m</em> &lt; <em>n</em> implies ${\large f}{\left(\frac{m}{n}\right)}={\large f}{\left(\frac{1}{a}{\large f}{\left(\frac{am}{n}\right)}\right)}={\large f}{\left(\frac{1}{a}\right)}=0$, for $a=\lceil n/m\rceil$, by induction on <em>m</em>. Thus ${\large f}{\left(\frac12\right)}≤0$ implies $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>. On the other hand, if ${\large f}{\left(\frac12\right)}\gt0$ the function $g(x)=-f(-x)$ satisfies (i) and (ii) and has ${\large g}{\left(\frac12\right)}=1-{\large f}{\left(\frac12\right)}≤0$; hence $f(x)=-g(-x)=-\lfloor-x\rfloor=\lceil x\rceil$  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
+  <p>Hence we may replace the last terms $\lfloor{(p-1)q/p}\rfloor,\lfloor{(p-3)q/p}\rfloor,\ldots$ by $\lfloor{q/p}\rfloor,\lfloor{3q/p}\rfloor$, etc. (d) $∑_{0≤k\lt p/2}\lfloor{kq/p}\rfloor+∑_{0≤r\lt q/2}\lceil{rp/q}\rceil=\lceil{p/2}\rceil(\lceil{q/2}\rceil-1)=(p+1)(q-1)/4$. Also $∑_{0≤r\lt q/2}\lceil{rp/q}\rceil=∑_{0≤r\lt q/2}\lfloor{rp/q}\rfloor+(q-1)/2$. The idea of this proof goes back to G. Eisenstein, <em>Crelle</em> <strong>28</strong> (1844), 246–248; Eisenstein also gave several other proofs of this and other reciprocity laws in the same volume.</p>
 
-  <p class="indent">It does not follow, however, that $f(x)=\lfloor{x}\rfloor$ or $\lceil x\rceil$ for all <em>real</em> values of <em>x</em>. If, for example, $h(x)$ is any function with $h(1)=1$ and $h(x+y)=h(x)+h(y)$ for all real <em>x</em> and <em>y</em>, then the function $f(x)=\lfloor h(x)\rfloor$ satisfies (i) and (ii); but $h(x)$ may be unbounded and highly erratic when 0 <em>&lt;</em> <em>x</em> &lt; 1 [G. Hamel, <em>Math. Annalen</em> <strong>60</strong> (1905), 459–462].</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_4_48" id="ch01ex_2_4_48a">48</a>. (a) This is clearly not always true when $n\lt 0$; when $n\gt 0$ it is easy to verify.</p>
+
+  <p class="indent">(b) $\lfloor{(n+2-\lfloor{n/25}\rfloor)/3}\rfloor=\lceil{(n-\lfloor{n/25}\rfloor)/3}\rceil=$ $\lceil{(n+\lceil{-n/25}\rceil)/3}\rceil=\lceil{\lceil{24n/25}\rceil/3}\rceil=$ $\lceil{8n/25}\rceil=\lfloor{(8n+24)/25}\rfloor$. The penultimate equality is justified by <a href="../Text/ch01.html#ch01ex_2_4_35">exercise 35</a>.</p>
+
+  <p><a id="page_480"></a><a href="../Text/ch01.html#ch01ex_2_4_49" id="ch01ex_2_4_49a">49</a>. Since $f(0)=f(f(0))=f(f(0)+0)=f(0)+f(0)$, we have $f(n)=n$ for all integers <em>n</em>. If ${\large f}{\left(\frac12\right)}=k≤0$, we have $k={\large f}{\left(\frac{1}{1-2k}{\large f}{\left(\frac{1}{2}-k\right)}\right)}={\large f}{\left(\frac{1}{1-2k}\left({\large f}{\left(\frac{1}{2}\right)}-k\right)\right)}=f(0)=0$. And if ${\large f}{\left(\frac{1}{n-1}\right)}=0$ we have ${\large f}{\left(\frac{1}{n}\right)}={\large f}{\left(\frac{1}{n}{\large f}{\left(1+\frac{1}{n-1}\right)}\right)}={\large f}{\left(\frac{1}{n-1}\right)}=0$; furthermore $1≤m\lt n$ implies ${\large f}{\left(\frac{m}{n}\right)}={\large f}{\left(\frac{1}{a}{\large f}{\left(\frac{am}{n}\right)}\right)}={\large f}{\left(\frac{1}{a}\right)}=0$, for $a=\lceil{n/m}\rceil$, by induction on <em>m</em>. Thus ${\large f}{\left(\frac12\right)}≤0$ implies $f(x)=\lfloor{x}\rfloor$ for all rational <em>x</em>. On the other hand, if ${\large f}{\left(\frac12\right)}\gt0$ the function $g(x)=-f(-x)$ satisfies (i) and (ii) and has ${\large g}{\left(\frac12\right)}=1-{\large f}{\left(\frac12\right)}≤0$; hence $f(x)=-g(-x)=-\lfloor{-x}\rfloor=\lceil{x}\rceil$  for all rational <em>x</em>. [P. Eisele and K. P. Hadeler, <em>AMM</em> <strong>97</strong> (1990), 475–477.]</p>
+
+  <p class="indent">It does not follow, however, that $f(x)=\lfloor{x}\rfloor$ or $\lceil{x}\rceil$ for all <em>real</em> values of <em>x</em>. If, for example, $h(x)$ is any function with $h(1)=1$ and $h(x+y)=h(x)+h(y)$ for all real <em>x</em> and <em>y</em>, then the function $f(x)=\lfloor{h(x)}\rfloor$ satisfies (i) and (ii); but $h(x)$ may be unbounded and highly erratic when $0\lt x\lt 1$ [G. Hamel, <em>Math. Annalen</em> <strong>60</strong> (1905), 459–462].</p>
 
   <h4 id="app01lev2sec5">Section 1.2.5</h4>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_1" id="ch01ex_2_5_1a">1</a>. 52!. For the curious, this number is 806 58175 17094 38785 71660 63685 64037 66975 28950 54408 83277 82400 00000 00000. (!)</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_5_2" id="ch01ex_2_5_2a">2</a>. $p_{nk}= p_{n(k-1)}(n-k+1)$. After the first <em>n</em> − 1 objects have been placed, there is only one possibility for the last object.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_5_2" id="ch01ex_2_5_2a">2</a>. $p_{nk}=p_{n(k-1)}(n-k+1)$. After the first $n-1$ objects have been placed, there is only one possibility for the last object.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_3" id="ch01ex_2_5_3a">3</a>. 5 3 1 2 4, 3 5 1 2 4, 3 1 5 2 4, 3 1 2 5 4, 3 1 2 4 5; 4 2 3 5 1, 4 1 3 5 2, 4 1 2 5 3, 3 1 2 5 4, 3 1 2 4 5.</p>
 
@@ -575,7 +581,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_13" id="ch01ex_2_5_13a">13</a>. For each <em>n</em>, $1≤n\lt p$, determine $n'$ as in <a href="../Text/ch01.html#ch01ex_2_4_19">exercise 1.2.4–19</a>. There is exactly one such $n'$, by Law 1.2.4B; and $(n')'=n$. Therefore we can pair off the numbers in groups of two, provided that $n'≠n$. If $n'=n$, we have $n^{2}≡\md[1]{p}$; hence, as in <a href="../Text/ch01.html#ch01ex_2_4_26">exercise 1.2.4–26</a>, $n=1$ or $n=p-1$. So $(p-1)!≡ 1·1\ldots1·(-1)$, since 1 and $p-1$ are the only unpaired elements.</p>
 
-  <p><a id="page_481"></a><a href="../Text/ch01a.html#ch01ex_2_5_14" id="ch01ex_2_5_14a">14</a>. Among the numbers $\{1,2,\ldots,n\}$ that are <em>not</em> multiples of <em>p</em>, there are $\lfloor{n/p}\rfloor$ complete sets of $p-1$ consecutive elements, each with a product congruent to $\md[-1]{p}$ by Wilson’s theorem. There are also $a_{0}$ left over, which are congruent to $\md[a_{0}!]{p}$; so the contribution from the factors that are not multiples of <em>p</em> is $(-1)^{\lfloor n/p\rfloor}a_{0}!$. The contribution from the factors that <em>are</em> multiples of <em>p</em> is the same as the contribution in $\lfloor{n/p}\rfloor !$; this argument can therefore be repeated to get the desired formula.</p>
+  <p><a id="page_481"></a><a href="../Text/ch01a.html#ch01ex_2_5_14" id="ch01ex_2_5_14a">14</a>. Among the numbers $\{1,2,\ldots,n\}$ that are <em>not</em> multiples of <em>p</em>, there are $\lfloor{n/p}\rfloor$ complete sets of $p-1$ consecutive elements, each with a product congruent to $\md[-1]{p}$ by Wilson’s theorem. There are also $a_{0}$ left over, which are congruent to $\md[a_{0}!]{p}$; so the contribution from the factors that are not multiples of <em>p</em> is $(-1)^{\lfloor{n/p}\rfloor}a_{0}!$. The contribution from the factors that <em>are</em> multiples of <em>p</em> is the same as the contribution in $\lfloor{n/p}\rfloor !$; this argument can therefore be repeated to get the desired formula.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_5_15" id="ch01ex_2_5_15a">15</a>. $(n!)^{3}$. There are $n!$ terms. Each term has one entry from each row and each column, so it has the value $(n!)^{2}$.</p>
 
@@ -673,7 +679,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_6" id="ch01ex_2_6_6a">6</a>. <span class="top"><img src="../Images/e483_09.png"></span></p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_6_7" id="ch01ex_2_6_7a">7</a>. $\lfloor n/2\rfloor$; or, alternatively, $\lceil n/2\rceil$. It is clear from (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) that for smaller values the binomial coefficient is strictly increasing, and afterwards it decreases to zero.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_6_7" id="ch01ex_2_6_7a">7</a>. $\lfloor{n/2}\rfloor$; or, alternatively, $\lceil{n/2}\rceil$. It is clear from (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>) that for smaller values the binomial coefficient is strictly increasing, and afterwards it decreases to zero.</p>
 
   <p><a id="page_484"></a><a href="../Text/ch01a.html#ch01ex_2_6_8" id="ch01ex_2_6_8a">8</a>. The nonzero entries in each row are the same from left to right as from right to left.</p>
 
@@ -683,7 +689,7 @@
 
   <div class="image"><img src="../Images/e484_01.png"></div>
 
-  <p>which differ by multiples of <em>p</em>. (When dealing with non-multiples of <em>p</em> we may work modulo <em>p</em> in both numerator and denominator, since if $a≡c$ and $b≡d$ and $a/b$, $c/d$ are integers, then $a/b≡c/d$.) There remain $k-k\bmod p$ factors, which fall into $\lfloor k/p\rfloor$ groups of <em>p</em> consecutive values each. Each group contains exactly one multiple of <em>p</em>; the other $p-1$ factors in a group are congruent $(\text{modulo }p)$ to $(p-1)!$ so they cancel in numerator and denominator. It remains to investigate the $\lfloor k/p\rfloor$ multiples of <em>p</em> in numerator and denominator; we divide each of them by <em>p</em> and are left with the binomial coefficient</p>
+  <p>which differ by multiples of <em>p</em>. (When dealing with non-multiples of <em>p</em> we may work modulo <em>p</em> in both numerator and denominator, since if $a≡c$ and $b≡d$ and $a/b$, $c/d$ are integers, then $a/b≡c/d$.) There remain $k-k\bmod p$ factors, which fall into $\lfloor{k/p}\rfloor$ groups of <em>p</em> consecutive values each. Each group contains exactly one multiple of <em>p</em>; the other $p-1$ factors in a group are congruent $(\text{modulo }p)$ to $(p-1)!$ so they cancel in numerator and denominator. It remains to investigate the $\lfloor{k/p}\rfloor$ multiples of <em>p</em> in numerator and denominator; we divide each of them by <em>p</em> and are left with the binomial coefficient</p>
 
   <div class="image"><img src="../Images/e484_02.png"></div>
 
@@ -1003,7 +1009,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_18" id="ch01ex_2_7_18a">18</a>. If $n=2^{k}m$ where <em>m</em> is odd, the sum equals $2^{2k}m_{1}/m_{2}$ where $m_{1}$ and $m_{2}$ are both odd. [<em>AMM</em> <strong>67</strong> (1960), 924–925.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only $n=0$, $n=1$. For $n≥2$, let $k=\lfloor\lg n\rfloor$. There is precisely one term whose denominator is $2^{k}$, so $2^{k-1}H_{n}-\frac12$ is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, $2^{k-1}H_{n}-\frac12$ would have a denominator equal to 2.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_7_19" id="ch01ex_2_7_19a">19</a>. Only $n=0$, $n=1$. For $n≥2$, let $k=\lfloor{\lg n}\rfloor$. There is precisely one term whose denominator is $2^{k}$, so $2^{k-1}H_{n}-\frac12$ is a sum of terms involving only odd primes in the denominator. If $H_{n}$ were an integer, $2^{k-1}H_{n}-\frac12$ would have a denominator equal to 2.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_7_20" id="ch01ex_2_7_20a">20</a>. Expand the integrand term by term. See also <em>AMM</em> <strong>69</strong> (1962), 239, and an article by H. W. Gould, <em>Mathematics Magazine</em> <strong>34</strong> (1961), 317–321.</p>
 
@@ -1075,7 +1081,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_26" id="ch01ex_2_8_26a">26</a>. By Fermat’s theorem, $2^{p-1}≡1$; now apply the previous exercise and <a href="../Text/ch01a.html#ch01ex_2_6_10">exercise 1.2.6–10</a>(b).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_27" id="ch01ex_2_8_27a">27</a>. The statement is true if <em>p</em> = 2. Otherwise $F_{p-1}F_{p+1}-F_{p}^{2}=-1$; hence, from the previous exercise and Fermat’s theorem, $F_{p-1}F_{p+1}≡\md[0]{p}$. Only one of these factors can be a multiple of <em>p</em>, since $F_{p+1}=F_{p}+F_{p-1}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_27" id="ch01ex_2_8_27a">27</a>. The statement is true if $p=2$. Otherwise $F_{p-1}F_{p+1}-F_{p}^{2}=-1$; hence, from the previous exercise and Fermat’s theorem, $F_{p-1}F_{p+1}≡\md[0]{p}$. Only one of these factors can be a multiple of <em>p</em>, since $F_{p+1}=F_{p}+F_{p-1}$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_28" id="ch01ex_2_8_28a">28</a>. $\phihat^{\,n}$. <em>Note:</em> The solution to the recurrence $a_{n+1}=Aa_{n}+B^{n}$, $a_{0}=0$, is</p>
 
@@ -1085,13 +1091,13 @@
 
   <p class="indent">(b) follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec8-6">6</a>). [É. Lucas, <em>Amer. J. Math.</em> <strong>1</strong> (1878), 201–204.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_30" id="ch01ex_2_8_30a">30</a>. We argue by induction on <em>m</em>, the statement being obvious when <em>m</em> = 1:</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_30" id="ch01ex_2_8_30a">30</a>. We argue by induction on <em>m</em>, the statement being obvious when $m=1$:</p>
 
-  <p class="indent">(a) <span class="middle"><img src="../Images/e494_07.png"></span>.</p>
+  <p class="indent">(a) $\displaystyle\sum_{k}\binom{m}{k}_{\!\!\cal F}(-1)^{\lceil{(m-k)/2}\rceil}F_{n+k}^{m-2}F_{k}=$ $\displaystyle F_{m}\sum_{k}\binom{m-1}{k-1}_{\!\!\cal F}(-1)^{\lceil{(m-k)/2}\rceil}F_{n+k}^{m-2}=0$.</p>
 
-  <p class="indent">(b) <span class="top"><img src="../Images/e494_08.png"></span>.</p>
+  <p class="indent">(b) $\displaystyle\sum_{k}\binom{m}{k}_{\!\!\cal F}(-1)^{\lceil{(m-k)/2}\rceil}F_{n+k}^{m-2}(-1)^{k}F_{m-k}=$ $\displaystyle(-1)^{m}F_{m}\sum_{k}\binom{m-1}{k}_{\!\!\cal F}(-1)^{\lceil{(m-1-k)/2}\rceil}F_{n+k}^{m-2}=0$.</p>
 
-  <p class="indent">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠0$, we conclude from (a) and (b) that <span class="middle"><img src="../Images/e494_09.png"></span>.</p>
+  <p class="indent">(c) Since $(-1)^{k}F_{m-k}=F_{k-1}F_{m}-F_{k}F_{m-1}$ and $F_{m}≠0$, we conclude from (a) and (b) that $\sum_{k}\mybinomf{m}{k}_{\!\cal F}(-1)^{\lceil{(m-k)/2}\rceil}F_{n+k}^{m-2}F_{k-1}=0$.</p>
 
   <p class="indent">(d) Since $F_{n+k}=F_{k-1}F_{n}+F_{k}F_{n+1}$ the result follows from (a) and (c). This result may also be proved in slightly more general form by using the <em>q</em>-nomial theorem of <a href="../Text/ch01a.html#ch01ex_2_6_58">exercise 1.2.6–58</a>. <em>References:</em> Dov Jarden, <em>Recurring Sequences</em>, 2nd ed. (Jerusalem, 1966), 30–33; J. Riordan, <em>Duke Math. J.</em> <strong>29</strong> (1962), 5–12.</p>
 
@@ -1103,15 +1109,15 @@
 
   <p><a id="page_495"></a><a href="../Text/ch01a.html#ch01ex_2_8_34" id="ch01ex_2_8_34a">34</a>. Prove that the only possible value for $F_{k_{1}}$ is the largest Fibonacci number less than or equal to <em>n</em>; hence $n-F_{k_{1}}$ is less than $F_{k_{1}-1}$, and by induction there is a unique representation of $n-F_{k_{1}}$. The outline of this proof is quite similar to the proof of the unique factorization theorem. The Fibonacci number system is due to E. Zeckendorf [see <em>Simon Stevin</em> <strong>29</strong> (1952), 190–195; <em>Bull. Soc. Royale des Sciences de Liège</em> <strong>41</strong> (1972), 179–182]; but Section 7.2.1.7 points out that it was implicitly known in 14th-century India. Generalizations are discussed in exercise 5.4.2–10 and in Section 7.1.3.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_35" id="ch01ex_2_8_35a">35</a>. See G. M. Bergman, <em>Mathematics Magazine</em> <strong>31</strong> (1957), 98–110. To represent <em>x</em> &gt; 0, find the largest <em>k</em> with $\phi^{k}≤x$ and represent <em>x</em> as $\phi^{k}$ plus the representation of $x-\phi^{k}$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_35" id="ch01ex_2_8_35a">35</a>. See G. M. Bergman, <em>Mathematics Magazine</em> <strong>31</strong> (1957), 98–110. To represent $x\gt 0$, find the largest <em>k</em> with $\phi^{k}≤x$ and represent <em>x</em> as $\phi^{k}$ plus the representation of $x-\phi^{k}$.</p>
 
-  <p class="indent">The representation of nonnegative integers can also be obtained from the following all-integer recursive rules, starting with the trivial representations of 0 and 1: Let <span class="middle"><img src="../Images/e495_01.png"></span>. The representation of $L_{2n}+m$ for $0≤m≤L_{2n-1}$ and <em>n</em> ≥ 1 is $\phi^{2n}+\phi^{-2n}$ plus the representation of <em>m</em>. The representation of $L_{2n+1}+m$ for $0\lt m\lt L_{2n}$ and <em>n</em> ≥ 0 is $\phi^{2n+1}+\phi^{-2n-2}$ plus the representation of $m-\phi^{-2n}$, where the latter is obtained by applying the rule $\phi^{k}-\phi^{k-2j}=\phi^{k-1}+\phi^{k-3}+\cdots+\phi^{k-2j+1}$. It turns out that all strings α of 0s and 1s, such that α begins with 1 and has no adjacent 1s, occur to the left of the radix point in the representation of exactly one positive integer, except for the strings that end with $10^{2k}1$; the latter strings never occur in such representations.</p>
+  <p class="indent">The representation of nonnegative integers can also be obtained from the following all-integer recursive rules, starting with the trivial representations of 0 and 1: Let $L_{n}=\phi^{n}+\phihat^{\,n}=F_{n+1}+F_{n-1}$. The representation of $L_{2n}+m$ for $0≤m≤L_{2n-1}$ and $n≥1$ is $\phi^{2n}+\phi^{-2n}$ plus the representation of <em>m</em>. The representation of $L_{2n+1}+m$ for $0\lt m\lt L_{2n}$ and $n≥0$ is $\phi^{2n+1}+\phi^{-2n-2}$ plus the representation of $m-\phi^{-2n}$, where the latter is obtained by applying the rule $\phi^{k}-\phi^{k-2j}=$ $\phi^{k-1}+\phi^{k-3}+\cdots+\phi^{k-2j+1}$. It turns out that all strings <em>α</em> of 0s and 1s, such that <em>α</em> begins with 1 and has no adjacent 1s, occur to the left of the radix point in the representation of exactly one positive integer, except for the strings that end with $10^{2k}1$; the latter strings never occur in such representations.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_36" id="ch01ex_2_8_36a">36</a>. We may consider the infinite string $S_{∞}$, since $S_{n}$ for <em>n</em> &gt; 1 consists of the first $F_{n}$ letters of $S_{∞}$. There are no double <em>a</em>’s, no triple <em>b</em>’s. The string $S_{n}$ contains $F_{n-2}$ <em>a</em>’s and $F_{n−1}$ <em>b</em>’s. If we express <em>m</em> − 1 in the Fibonacci number system as in <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>, the <em>m</em>th letter of $S_{∞}$ is <em>a</em> if and only if $k_{r}=2$. The <em>k</em>th letter of $S_{∞}$ is <em>b</em> if and only if $\lfloor(k+1)\phi^{-1}\rfloor-\lfloor k\phi^{-1}\rfloor=1$; the number of <em>b</em>’s in the first <em>k</em> letters is therefore $\lfloor(k+1)\phi^{-1}\rfloor$. Also, the <em>k</em>th letter is <em>b</em> if and only if $k=\lfloor m\phi\rfloor$ for some positive integer <em>m</em>. This sequence was studied by John Bernoulli III in the 18th century, by A. A. Markov in the 19th, and by many other mathematicians since then; see K. B. Stolarsky, <em>Canadian Math. Bull.</em> <strong>19</strong> (1976), 473–482.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_36" id="ch01ex_2_8_36a">36</a>. We may consider the infinite string $S_{∞}$, since $S_{n}$ for $n\gt 1$ consists of the first $F_{n}$ letters of $S_{∞}$. There are no double <em>a</em>’s, no triple <em>b</em>’s. The string $S_{n}$ contains $F_{n-2}$ <em>a</em>’s and $F_{n−1}$ <em>b</em>’s. If we express $m-1$ in the Fibonacci number system as in <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>, the <em>m</em>th letter of $S_{∞}$ is <em>a</em> if and only if $k_{r}=2$. The <em>k</em>th letter of $S_{∞}$ is <em>b</em> if and only if $\lfloor{(k+1)\phi^{-1}}\rfloor-\lfloor{k\phi^{-1}}\rfloor=1$; the number of <em>b</em>’s in the first <em>k</em> letters is therefore $\lfloor{(k+1)\phi^{-1}}\rfloor$. Also, the <em>k</em>th letter is <em>b</em> if and only if $k=\lfloor{m\phi}\rfloor$ for some positive integer <em>m</em>. This sequence was studied by John Bernoulli III in the 18th century, by A. A. Markov in the 19th, and by many other mathematicians since then; see K. B. Stolarsky, <em>Canadian Math. Bull.</em> <strong>19</strong> (1976), 473–482.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_37" id="ch01ex_2_8_37a">37</a>. [<em>Fibonacci Quarterly</em> <strong>1</strong> (December 1963), 9–12.] Consider the Fibonacci number system of <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>; if $n=F_{k_{1}}+\cdots+F_{k_{r}}\gt 0$ in that system, let $μ(n)=F_{k_{r}}$. Also let $μ(0)=∞$. We find that: (A) If <em>n</em> &gt; 0, $μ(n-μ(n))\gt 2μ(n)$. <em>Proof:</em> $μ(n-μ(n))=F_{k_{r-1}}≥F_{k_{r+2}}\gt 2F_{k_{r}}$ since $k_{r}≥2$. (B) If $0\lt m\lt F_{k}$, $μ(m)≤2(F_{k}-m)$. <em>Proof:</em> Let $μ(m)=F_j$; $m\le F_{k-1}+F_{k-3}+\cdots+F_{j+(k-1-j)\bmod 2}=-F_{j-1+(k-1-j)\bmod 2}+F_{k}\le-\frac{1}{2}F_{j}+F_{k}$. (C) If $0\lt m\lt μ(n)$, $μ(n-μ(n)+m)≤2(μ(n)-m)$. <em>Proof:</em> This follows from (B). (D) If $0\lt m\lt μ(n)$, $μ(n-m)≤2m$. <em>Proof:</em> Set $m=μ(n)-m$ in (C).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_37" id="ch01ex_2_8_37a">37</a>. [<em>Fibonacci Quarterly</em> <strong>1</strong> (December 1963), 9–12.] Consider the Fibonacci number system of <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>; if $n=F_{k_{1}}+\cdots+F_{k_{r}}\gt 0$ in that system, let $μ(n)=F_{k_{r}}$. Also let $μ(0)=∞$. We find that: (A) If $n\gt 0$, $μ(n-μ(n))\gt 2μ(n)$. <em>Proof:</em> $μ(n-μ(n))=F_{k_{r-1}}≥F_{k_{r}+2}\gt 2F_{k_{r}}$ since $k_{r}≥2$. (B) If $0\lt m\lt F_{k}$, $μ(m)≤2(F_{k}-m)$. <em>Proof:</em> Let $μ(m)=F_j$; $m\le F_{k-1}+F_{k-3}+\cdots+$ $F_{j+(k-1-j)\bmod 2}=-F_{j-1+(k-1-j)\bmod 2}+$ $F_{k}\le-\frac{1}{2}F_{j}+F_{k}$. (C) If $0\lt m\lt μ(n)$, $μ(n-μ(n)+m)≤2(μ(n)-m)$. <em>Proof:</em> This follows from (B). (D) If $0\lt m\lt μ(n)$, $μ(n-m)≤2m$. <em>Proof:</em> Set $m=μ(n)-m$ in (C).</p>
 
-  <p class="indent">Now we will prove that if there are <em>n</em> chips, and if at most <em>q</em> may be taken in the next turn, there is a winning move if and only if $μ(n)≤q$. <em>Proof:</em> (a) If $μ(n)\gt q$ all moves leave a position <em>n</em>′, <em>q</em>′ with $μ(n')≤q'$. [This follows from (D), above.] (b) If $μ(n)≤q$, we can either win on this move (if <em>q</em> ≥ <em>n</em>) or we can make a move that leaves a position <em>n</em>′, <em>q</em>′ with $μ(n')\gt q'$. [This follows from (A) above: Our move is to take $μ(n)$ chips.] It can be seen that the set of all winning moves, if $n=F_{k_{1}}+\cdots+F_{k_{r}}$, is to remove $F_{k_{j}}+\cdots+F_{k_{r}}$, for some <em>j</em> with 1 ≤ <em>j</em> ≤ <em>r</em>, provided that <em>j</em> = 1 or $F_{k_{j-1}}\gt 2(F_{k_{j}}+\cdots+F_{k_{r}})$.</p>
+  <p class="indent">Now we will prove that if there are <em>n</em> chips, and if at most <em>q</em> may be taken in the next turn, there is a winning move if and only if $μ(n)≤q$. <em>Proof:</em> (a) If $μ(n)\gt q$ all moves leave a position <em>n</em>′, <em>q</em>′ with $μ(n')≤q'$. [This follows from (D), above.] (b) If $μ(n)≤q$, we can either win on this move (if $q≥n$) or we can make a move that leaves a position <em>n</em>′, <em>q</em>′ with $μ(n')\gt q'$. [This follows from (A) above: Our move is to take $μ(n)$ chips.] It can be seen that the set of all winning moves, if $n=F_{k_{1}}+\cdots+F_{k_{r}}$, is to remove $F_{k_{j}}+\cdots+F_{k_{r}}$, for some <em>j</em> with $1≤j≤r$, provided that $j=1$ or $F_{k_{j-1}}\gt 2(F_{k_{j}}+\cdots+F_{k_{r}})$.</p>
 
   <p class="indent">The Fibonacci representation of 1000 is 987+13; the <em>only</em> lucky move to force a victory is to take 13 chips. The first player can always win unless <em>n</em> is a Fibonacci number.</p>
 
@@ -1119,9 +1125,9 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_39" id="ch01ex_2_8_39a">39</a>. $(3^{n}-(-2)^{n}) /5$.</p>
 
-  <p><a id="page_496"></a><a href="../Text/ch01a.html#ch01ex_2_8_40" id="ch01ex_2_8_40a">40</a>. We prove, by induction on <em>m</em>, that $f(n)=m$ for $F_{m}\lt n≤F_{m+1}$: First, $f(n)≤\max(1+f(F_{m})$, $2+f(n-F_{m}))=m$. Second, if $f(n)\lt m$ there is some <em>k</em> &lt; <em>n</em> with $1+f(k)\lt m$ (hence $k≤F_{m-1}$) and $2+f(n-k)\lt m$ (hence $n-k≤F_{m-2}$); but then $n≤F_{m-1}+F_{m-2}$. [Thus the Fibonacci trees defined in Section 6.2.1 minimize the maximum root-to-leaf cost when a right branch costs twice as much as a left branch.]</p>
+  <p><a id="page_496"></a><a href="../Text/ch01a.html#ch01ex_2_8_40" id="ch01ex_2_8_40a">40</a>. We prove, by induction on <em>m</em>, that $f(n)=m$ for $F_{m}\lt n≤F_{m+1}$: First, $f(n)≤\max(1+f(F_{m})$, $2+f(n-F_{m}))=m$. Second, if $f(n)\lt m$ there is some $k\lt n$ with $1+f(k)\lt m$ (hence $k≤F_{m-1}$) and $2+f(n-k)\lt m$ (hence $n-k≤F_{m-2}$); but then $n≤F_{m-1}+F_{m-2}$. [Thus the Fibonacci trees defined in Section 6.2.1 minimize the maximum root-to-leaf cost when a right branch costs twice as much as a left branch.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_8_41" id="ch01ex_2_8_41a">41</a>. <span class="middle"><img src="../Images/e496_01.png"></span> is an integer, and the parenthesized quantity lies between <span class="middle"><img src="../Images/e496_02.png"></span> and <span class="middle"><img src="../Images/e496_13.png"></span>. Similarly, <span class="middle"><img src="../Images/e496_03.png"></span>. [Such Fibonacci shifting is a convenient way to convert mentally between miles and kilometers; see <em>CMath</em>,§6.6.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_8_41" id="ch01ex_2_8_41a">41</a>. $F_{k_{1}+1}+\cdots+F_{k_{r}+1}=\phi n+(\phihat^{\,k_{1}}+\cdots+\phihat^{\,k_{r}})$ is an integer, and the parenthesized quantity lies between $\phihat^{\,3}+\phihat^{\,5}+\cdots=\phihat^{\,-1}-1$ and $\phihat^{\,2}+\phihat^{\,4}+\cdots=\phihat^{\,-1}$. Similarly, $F_{k_{1}-1}+\cdots+F_{k_{r}-1}=\phi^{-1}n+$ $(\phihat^{\,k_{1}}+\cdots+\phihat^{\,k_{r}})=f(\phihat^{\,-1}n)$. [Such Fibonacci shifting is a convenient way to convert mentally between miles and kilometers; see <em>CMath</em>,§6.6.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_8_42" id="ch01ex_2_8_42a">42</a>. [<em>Fibonacci Quarterly</em> <strong>6</strong> (1968), 235–244.] If such a representation exists, we have</p>
 
@@ -1129,17 +1135,17 @@
 
   <p>for all integers <em>N</em>; hence two different representations would contradict <a href="../Text/ch01a.html#ch01ex_2_8_34">exercise 34</a>.</p>
 
-  <p class="indent">Conversely, we can prove the existence of such joint representations for all nonnegative <em>m</em> and <em>n</em> by induction. But it is more interesting to use the previous exercise, and to prove that such joint representations exist for possibly negative integers <em>m</em> and <em>n</em> if and only if $m+\phi n≥0$: Let <em>N</em> be large enough so that <span class="middle"><img src="../Images/e496_04.png"></span>, and represent $mF_{N-1}+nF_{N}$ as in (<em>*</em>). Then <span class="middle"><img src="../Images/e496_05.png"></span>, and it follows that (<em>*</em>) holds for all <em>N</em>. Now set <em>N</em> = 0 and <em>N</em> = 1.</p>
+  <p class="indent">Conversely, we can prove the existence of such joint representations for all nonnegative <em>m</em> and <em>n</em> by induction. But it is more interesting to use the previous exercise, and to prove that such joint representations exist for possibly negative integers <em>m</em> and <em>n</em> if and only if $m+\phi n≥0$: Let <em>N</em> be large enough so that $|m\phihat^{\,N-1}+n\phihat^{\,N}|\lt\phi^{-2}$, and represent $mF_{N-1}+nF_{N}$ as in $(*)$. Then $mF_{N}+nF_{N+1}=\phi(mF_{N-1}+nF_{N})+(m\phihat^{\,N-1}+n\phihat^{\,N})=$ $f(\phi(mF_{N-1}+nF_{N}))=F_{k_{1}+N+1}+\cdots+F_{k_{r}+N+1}$, and it follows that $(*)$ holds for all <em>N</em>. Now set $N=0$ and $N=1$.</p>
 
   <h4 id="app01lev2sec9">Section 1.2.9</h4>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_1" id="ch01ex_2_9_1a">1</a>. $1/(1-2z)+1/(1-3z)$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_2" id="ch01ex_2_9_2a">2</a>. It follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec9-6">6</a>), since <span class="middle"><img src="../Images/e496_06.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_2" id="ch01ex_2_9_2a">2</a>. It follows from (<a href="../Text/ch01a.html#ch01eq-lev2sec9-6">6</a>), since $\mybinomf{n}{k}=n!/k!\,(n-k)!$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_3" id="ch01ex_2_9_3a">3</a>. $G'(z)=\ln(1/(1-z))/(1-z)^{2}+1/(1-z)^{2}$. From this and the significance of $G(z)/(1-z)$, we have <span class="middle"><img src="../Images/e496_07.png"></span>; this agrees with Eq. <a href="../Text/ch01a.html#ch01lev2sec7">1.2.7</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_3" id="ch01ex_2_9_3a">3</a>. $G'(z)=\ln(1/(1-z))/(1-z)^{2}+1/(1-z)^{2}$. From this and the significance of $G(z)/(1-z)$, we have $\sum_{k=1}^{n-1}H_{k}=nH_{n}-n$; this agrees with Eq. <a href="../Text/ch01a.html#ch01lev2sec7">1.2.7</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec7-8">8</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_4" id="ch01ex_2_9_4a">4</a>. Put <em>t</em> = 0.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_4" id="ch01ex_2_9_4a">4</a>. Put $t=0$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_5" id="ch01ex_2_9_5a">5</a>. The coefficient of $z^{k}$ is, by (<a href="../Text/ch01a.html#ch01eq-lev2sec9-11">11</a>) and (<a href="../Text/ch01a.html#ch01eq-lev2sec9-22">22</a>),</p>
 
@@ -1205,11 +1211,11 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_20" id="ch01ex_2_9_20a">20</a>. $c_{mk}=k!{m\brace k}$, by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">1.2.6–(45)</a>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find $z^{2}G'(z)+zG(z)=G(z)-1$. The solution to this differential equation is $G(z)=(-1/z) e^{-1/z}(E_{1}(-1/z)+C)$, where <span class="middle"><img src="../Images/e498_05.png"></span> and C is a constant. This function is very ill-behaved in the neighborhood of <em>z</em> = 0, and $G(z)$ has no power series expansion. Indeed, since <span class="middle"><img src="../Images/e498_06.png"></span> is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when <em>z</em> &lt; 0. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find $z^{2}G'(z)+zG(z)=G(z)-1$. The solution to this differential equation is $G(z)=(-1/z) e^{-1/z}(E_{1}(-1/z)+C)$, where <span class="middle"><img src="../Images/e498_05.png"></span> and C is a constant. This function is very ill-behaved in the neighborhood of <em>z</em> = 0, and $G(z)$ has no power series expansion. Indeed, since <span class="middle"><img src="../Images/e498_06.png"></span> is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when $z\lt 0$. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_22" id="ch01ex_2_9_22a">22</a>. $G(z)=(1+z)^{r}(1+z^{2})^{r}(1+z^{4})^{r}(1+z^{8})^{r}\ldots=(1-z)^{-r}$. It follows that the stated sum is <span class="middle"><img src="../Images/e498_07.png"></span>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_23" id="ch01ex_2_9_23a">23</a>. (a) When <em>m</em> = 1 this is the binomial theorem, with $f_{1}(z)=z$ and $g_{1}(z)=1+z$. When <em>m</em> ≥ 1 we can increase <em>m</em> by 1 if we replace $z_{m}$ by <span class="middle"><img src="../Images/e498_08.png"></span> and let <span class="middle"><img src="../Images/e498_09.png"></span>, <span class="middle"><img src="../Images/e498_10.png"></span>. Thus $g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}+z_{2}$ and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_23" id="ch01ex_2_9_23a">23</a>. (a) When $m=1$ this is the binomial theorem, with $f_{1}(z)=z$ and $g_{1}(z)=1+z$. When $m≥1$ we can increase <em>m</em> by 1 if we replace $z_{m}$ by <span class="middle"><img src="../Images/e498_08.png"></span> and let <span class="middle"><img src="../Images/e498_09.png"></span>, <span class="middle"><img src="../Images/e498_10.png"></span>. Thus $g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}+z_{2}$ and</p>
 
   <div class="image"><img src="../Images/e498_11.png"></div>
 
@@ -1223,7 +1229,7 @@
 
   <div class="image"><img src="../Images/e499_03.png"></div>
 
-  <p>where $1-(a+d)z+(ad-bc)z^{2}=(1-ρz)(1-σz)$. Here $a+d=h_{m}$, and <em>ad</em> − <em>bc</em> simplifies to $(-1)^{m}z_{1}\ldots z_{m}$. [We have, incidentally, established the recurrence $S_{n}=h_{m}S_{n-1}-(-1)^{m}z_{1}\ldots z_{m}S_{n-2}$, a relation that is not easy to derive without the help of generating functions.]</p>
+  <p>where $1-(a+d)z+(ad-bc)z^{2}=(1-ρz)(1-σz)$. Here $a+d=h_{m}$, and $ad-bc$ simplifies to $(-1)^{m}z_{1}\ldots z_{m}$. [We have, incidentally, established the recurrence $S_{n}=h_{m}S_{n-1}-(-1)^{m}z_{1}\ldots z_{m}S_{n-2}$, a relation that is not easy to derive without the help of generating functions.]</p>
 
   <p>(c) Let <span class="middle"><img src="../Images/e499_04.png"></span> and <span class="middle"><img src="../Images/e499_05.png"></span> be the roots when m = 1; then <span class="middle"><img src="../Images/e499_06.png"></span> and <span class="middle"><img src="../Images/e499_07.png"></span>.</p>
 
@@ -1515,9 +1521,9 @@
 
   <p class="indent">(e) <span class="middle"><img src="../Images/e507_09.png"></span>.</p>
 
-  <p><a href="../Text/ch01b.html#ch01ex_2_12_7" id="ch01ex_2_12_7a">7</a>. Let $n=\rm|rAX|$ be the magnitude of registers A and X before the operation, and let $d=\rm|V|$ be the magnitude of the divisor. After the operation the magnitude of rA is $\lfloor n/d\rfloor$, and the magnitude of rX is $n\bmod d$. The sign of rX afterwards is the previous sign of rA; the sign of rA afterwards is + if the previous signs of rA and V were the same, otherwise it is −.</p>
+  <p><a href="../Text/ch01b.html#ch01ex_2_12_7" id="ch01ex_2_12_7a">7</a>. Let $n=\rm|rAX|$ be the magnitude of registers A and X before the operation, and let $d=\rm|V|$ be the magnitude of the divisor. After the operation the magnitude of rA is $\lfloor{n/d}\rfloor$, and the magnitude of rX is $n\bmod d$. The sign of rX afterwards is the previous sign of rA; the sign of rA afterwards is + if the previous signs of rA and V were the same, otherwise it is −.</p>
 
-  <p class="indent">Stating this another way: If the signs of rA and V are the same, $\rm rA←\lfloor rAX/V\rfloor$ and $\rm rX←rAX\bmod V$. Otherwise $\rm rA←\lceil rAX/V\rceil$ and $\rm rX←rAX\bmod-V$.</p>
+  <p class="indent">Stating this another way: If the signs of rA and V are the same, $\rm rA←\lfloor{rAX/V}\rfloor$ and $\rm rX←rAX\bmod V$. Otherwise $\rm rA←\lceil{rAX/V}\rceil$ and $\rm rX←rAX\bmod-V$.</p>
 
   <p><a href="../Text/ch01b.html#ch01ex_2_12_8" id="ch01ex_2_12_8a">8</a>. <span class="middle"><img src="../Images/e507_10.png"></span>; <span class="middle"><img src="../Images/e507_11.png"></span>.</p>
 
