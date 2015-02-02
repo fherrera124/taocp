@@ -250,3 +250,19 @@ div.imageL img {
   text-align:left;
   margin-left:28pt;
 }
+div.image4 img.img1{
+  width:95%;
+  height:95%;
+}
+.image4{
+  margin-top:5pt;
+  text-align:center;
+  page-break-inside:avoid;
+}
+.indenthangingB{
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:10pt;
+  text-indent:-7.5pt;
+  text-align:left
+}
