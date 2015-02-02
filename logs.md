@@ -95,6 +95,21 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}$
     - Actual: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}-1$
 
+  - Answer **10** of **Section 1.2.9**:
+
+    - Before: **ausent**.
+    - Actual: $e\_\{1\}=S\_\{1\}$,
+
+  - Answer **23** of **Section 1.2.9**:
+
+    - Before: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}+z\_\{2\}$
+    - Actual: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}z\_\{2\}$
+
+
+####Memos:
+
+  - Replace <p class="center"><span class="middle"> for <div class="image">
+
 
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
 This force me to check all the erratas. Later I will.

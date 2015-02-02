@@ -51,17 +51,17 @@
 
   <p><a href="../Text/ch01.html#ch01ex_1_1_1" id="ch01ex_1_1_1a">1</a>. $t←a$, $a←b$, $b←c$, $c←d$, $d←t$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_1_1_2" id="ch01ex_1_1_2a">2</a>. After the first time, the values of the variables <em>m</em> and <em>n</em> are the previous values of <em>n</em> and <em>r</em>, respectively; and <em>n</em> &gt; <em>r</em>.</p>
+  <p><a href="../Text/ch01.html#ch01ex_1_1_2" id="ch01ex_1_1_2a">2</a>. After the first time, the values of the variables <em>m</em> and <em>n</em> are the previous values of <em>n</em> and <em>r</em>, respectively; and $n\gt r$.</p>
 
   <p><strong><a href="../Text/ch01.html#ch01ex_1_1_3" id="ch01ex_1_1_3a">3</a>. Algorithm F</strong> (<em>Euclid’s algorithm</em>). Given two positive integers <em>m</em> and <em>n</em>, find their greatest common divisor.</p>
 
   <p class="uln-indentCC"><strong>F1.</strong> [Remainder $m/n$.] Divide <em>m</em> by <em>n</em> and let <em>m</em> be the remainder.</p>
 
-  <p class="uln-indentCC"><strong>F2.</strong> [Is it zero?] If <em>m</em> = 0, the algorithm terminates with answer <em>n</em>.</p>
+  <p class="uln-indentCC"><strong>F2.</strong> [Is it zero?] If $m=0$, the algorithm terminates with answer <em>n</em>.</p>
 
   <p class="uln-indentCC"><strong>F3.</strong> [Remainder $n/m$.] Divide <em>n</em> by <em>m</em> and let <em>n</em> be the remainder.</p>
 
-  <p class="uln-indentCC"><strong>F4.</strong> [Is it zero?] If <em>n</em> = 0, the algorithm terminates with answer <em>m</em>; otherwise go back to step F1. <span class="middle"><img src="../Images/box.png"></span></p>
+  <p class="uln-indentCC"><strong>F4.</strong> [Is it zero?] If $n=0$, the algorithm terminates with answer <em>m</em>; otherwise go back to step F1. <span class="middle"><img src="../Images/box.png"></span></p>
 
   <p><a href="../Text/ch01.html#ch01ex_1_1_4" id="ch01ex_1_1_4a">4</a>. By <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, <em>n</em> = 6099, 2166, 1767, 399, 171, 57. Answer: 57.</p>
 
@@ -197,7 +197,7 @@
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_22" id="ch01ex_2_2_22a">22</a>. From the tables in <a href="../Text/app02.html#app02">Appendix A</a>, $\lg x≈1.442695\ln x$; $\log_{10}x≈.4342945\ln x$. The relative error is $≈(1.442695-1.4342945)/1.442695≈0.582\%$.</p>
 
-  <p><a href="../Text/ch01.html#ch01ex_2_2_23" id="ch01ex_2_2_23a">23</a>. Take the figure of area $\ln y$, and divide its height by <em>x</em> while multiplying its length by <em>x</em>. This deformation preserves its area and makes it congruent to the piece left when $\ln x$ is removed from $\ln xy$, since the height at point <em>x</em> + <em>xt</em> in the diagram for $\ln xy$ is $1/(x+xt)=(1/(1+t))/x$.</p>
+  <p><a href="../Text/ch01.html#ch01ex_2_2_23" id="ch01ex_2_2_23a">23</a>. Take the figure of area $\ln y$, and divide its height by <em>x</em> while multiplying its length by <em>x</em>. This deformation preserves its area and makes it congruent to the piece left when $\ln x$ is removed from $\ln xy$, since the height at point $x+xt$ in the diagram for $\ln xy$ is $1/(x+xt)=(1/(1+t))/x$.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_24" id="ch01ex_2_2_24a">24</a>. Substitute 2 everywhere 10 appears.</p>
 
@@ -213,7 +213,7 @@
 
   <p class="uln-indentC"><strong>E1.</strong> [Initialize.] Set $x←1-\epsilon-x$, $y←y_{0}$, and $k←1$, where $1-\epsilon$ is the largest possible value of <em>x</em>, and $y_{0}$ is the nearest approximation to $b^{1-\epsilon}$. (The quantity $yb^{-x}$ will remain approximately constant in the following steps.)</p>
 
-  <p class="uln-indentC"><strong>E2.</strong> [Test for end.] If <em>x</em> = 0, stop.</p>
+  <p class="uln-indentC"><strong>E2.</strong> [Test for end.] If $x=0$, stop.</p>
 
   <p class="uln-indentC"><strong>E3.</strong> [Compare.] If $x\lt\log_{b}(2^{k}/(2^{k}-1))$, increase <em>k</em> by 1 and repeat this step.</p>
 
@@ -221,7 +221,7 @@
 
   <p class="indent">If <em>y</em> is set to $b^{1-\epsilon}(1+\epsilon_{0})$ in step E1, the subsequent computational error arises when $x←x+\log_{b}(1-2^{-k})+δ_{j}$ and $y←y(1-2^{-k})(1+\epsilon_{j})$ during the <em>j</em>th execution of step E4, for certain small errors $δ_{j}$ and $\epsilon_{j}$. When the algorithm terminates we have computed $y=b^{x-Σδ_{j}}∏_{j}(1+\epsilon_{j})$. Further analysis depends on <em>b</em> and the computer word size. Notice that both in this case and in <a href="../Text/ch01.html#ch01ex_2_2_26">exercise 26</a>, it is possible to refine the error estimates somewhat if the base is <em>e</em>, since for most values of <em>k</em> the table entry $\ln(2^{k}/(2^{k}-1))$ can be given with high accuracy: It equals $2^{-k}+\frac{1}{2}2^{-2k}+\frac{1}{3}2^{-3k}+\cdots$.</p>
 
-  <p class="indent"><a id="page_471"></a><em>Note:</em> Similar algorithms can be given for trigonometric functions; see J. E. Meggitt, <em>IBM J. Res. and Dev.</em> <strong>6</strong> (1962), 210–226; <strong>7</strong> (1963), 237–245. See also T. C. Chen, <em>IBM J. Res. and Dev.</em> <strong>16</strong> (1972), 380–388; V. S. Linsky, <em>Vychisl. Mat.</em> <strong>2</strong> (1957), 90–119; D. E. Knuth, <span class="EmpItalic">METAFONT:</span> The Program (Reading, Mass.: Addison–Wesley, 1986), §120–§147.</p>
+  <p class="indent"><a id="page_471"></a><em>Note:</em> Similar algorithms can be given for trigonometric functions; see J. E. Meggitt, <em>IBM J. Res. and Dev.</em> <strong>6</strong> (1962), 210–226; <strong>7</strong> (1963), 237–245. See also T. C. Chen, <em>IBM J. Res. and Dev.</em> <strong>16</strong> (1972), 380–388; V. S. Linsky, <em>Vychisl. Mat.</em> <strong>2</strong> (1957), 90–119; D. E. Knuth, <em>METAFONT: The Program</em> (Reading, Mass.: Addison–Wesley, 1986), §120–§147.</p>
 
   <p><a href="../Text/ch01.html#ch01ex_2_2_29" id="ch01ex_2_2_29a">29</a>. <em>e</em>; 3; 4.</p>
 
@@ -825,7 +825,7 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_6_42" id="ch01ex_2_6_42a">42</a>. $1/((r+1){\rm B}(k+1,r-k+1))$, if this is defined according to <a href="../Text/ch01a.html#ch01ex_2_6_41">exercise 41</a>(b). In general when <em>z</em> and <em>w</em> are arbitrary complex numbers we define</p>
 
-  <p class="center"><span class="middle"><img src="../Images/e487_07.png"></span></p>
+  <div class="image"><img src="../Images/e487_07.png"></div>
 
   <p>the value is infinite when <em>z</em> is a negative integer and <em>w</em> is not an integer.</p>
 
@@ -1157,17 +1157,17 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_8" id="ch01ex_2_9_8a">8</a>. $1/((1-z)(1-z^{2})(1-z^{3})\ldots)$. [This is historically one of the first applications of generating functions. For an interesting account of L. Euler’s eighteenth-century researches concerning this generating function, see G. Pólya, <em>Induction and Analogy in Mathematics</em> (Princeton: Princeton University Press, 1954), Chapter 6.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_9" id="ch01ex_2_9_9a">9</a>. <span class="middle"><img src="../Images/e496_09.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_9" id="ch01ex_2_9_9a">9</a>. $\frac{1}{24}S_{1}^{4}+\frac{1}{4}S_{1}^{2}S_{2}+\frac{1}{8}S_{2}^{2}+\frac{1}{3}S_{1}S_{3}+\frac{1}{4}S_{4}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_10" id="ch01ex_2_9_10a">10</a>. $G(z)=(1+x_{1}z)\ldots(1+x_{n}z)$. Taking logarithms as in the derivation of Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-38">38</a>), we have the same formulas except that (<a href="../Text/ch01a.html#ch01eq-lev2sec9-24">24</a>) replaces (<a href="../Text/ch01a.html#ch01eq-lev2sec9-17">17</a>), and the answer is exactly the same except that $S_{2},S_{4},S_{6},\ldots$ are replaced by $-S_{2},-S_{4},-S_{6},\ldots$. We have <span class="middle"><img src="../Images/e496_10.png"></span>, <span class="middle"><img src="../Images/e496_11.png"></span>, <span class="middle"><img src="../Images/e496_12.png"></span>. (See <a href="../Text/ch01a.html#ch01ex_2_9_9">exercise 9</a>.) The recurrence analogous to (<a href="../Text/ch01a.html#ch01eq-lev2sec9-39">39</a>) is $ne_{n}=S_{1}e_{n-1}-S_{2}e_{n-2}+\cdots$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_10" id="ch01ex_2_9_10a">10</a>. $G(z)=(1+x_{1}z)\ldots(1+x_{n}z)$. Taking logarithms as in the derivation of Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-38">38</a>), we have the same formulas except that (<a href="../Text/ch01a.html#ch01eq-lev2sec9-24">24</a>) replaces (<a href="../Text/ch01a.html#ch01eq-lev2sec9-17">17</a>), and the answer is exactly the same except that $S_{2},S_{4},S_{6},\ldots$ are replaced by $-S_{2},-S_{4},-S_{6},\ldots$. We have $e_{1}=S_{1}$, $e_{2}=\frac{1}{2}S_{1}^{2}-\frac{1}{2}S_{2}$, $e_{3}=\frac{1}{6}S_{1}^{3}-\frac{1}{2}S_{1}S_{2}+\frac{1}{3}S_{3}$, $e_{4}=\frac{1}{24}S_{1}^{4}-\frac{1}{4}S_{1}^{2}S_{2}+\frac{1}{8}S_{2}^{2}+\frac{1}{3}S_{1}S_{3}-\frac{1}{4}S_{4}$. (See <a href="../Text/ch01a.html#ch01ex_2_9_9">exercise 9</a>.) The recurrence analogous to (<a href="../Text/ch01a.html#ch01eq-lev2sec9-39">39</a>) is $ne_{n}=S_{1}e_{n-1}-S_{2}e_{n-2}+\cdots$.</p>
 
   <p><a id="page_497"></a><em>Note:</em> The equations in this recurrence are called <em>Newton’s identities</em>, since they were first published in Isaac Newton’s <em>Arithmetica Universalis</em> (1707); see D. J. Struik’s <em>Source Book in Mathematics</em> (Harvard University Press, 1969), 94–95.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_11" id="ch01ex_2_9_11a">11</a>. Since $∑_{m≥1}S_{m}z^{m}/m=\ln G(z)=∑_{k≥1}(-1)^{k-1}(h_{1}z+h_{2}z^{2}+\cdots)^{k}/k$, the desired coefficient is $(-1)^{k_{1}+k_{2}+\cdots+k_{m}-1}m(k_{1}+k_{2}+\cdots+k_{m}-1)!/k_{1}!k_{2}!\ldots k_{m}!$. [Multiply by $(-1)^{m-1}$ to get the coefficient of <span class="middle"><img src="../Images/e497_01.png"></span> when $S_{m}$ is expressed in terms of the <em>e</em>’s of <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 10</a>. Albert Girard stated the formulas for $S_{1}$, $S_{2}$, $S_{3}$, and $S_{4}$ in terms of $e_{1}$, $e_{2}$, $e_{3}$, and $e_{4}$ near the end of his <em>Invention Nouvelle en Algébre</em> (Amsterdam: 1629); this was the birth of the theory of symmetric functions.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_11" id="ch01ex_2_9_11a">11</a>. Since $∑_{m≥1}S_{m}z^{m}/m=\ln G(z)=∑_{k≥1}(-1)^{k-1}(h_{1}z+h_{2}z^{2}+\cdots)^{k}/k$, the desired coefficient is $(-1)^{k_{1}+k_{2}+\cdots+k_{m}-1}m(k_{1}+k_{2}+\cdots+k_{m}-1)!/k_{1}!\,k_{2}!\ldots k_{m}!$. [Multiply by $(-1)^{m-1}$ to get the coefficient of $e_{1}^{k_{1}}e_{2}^{k_{2}}\ldots e_{m}^{k_{m}}$ when $S_{m}$ is expressed in terms of the <em>e</em>’s of <a href="../Text/ch01a.html#ch01ex_2_9_10">exercise 10</a>. Albert Girard stated the formulas for $S_{1}$, $S_{2}$, $S_{3}$, and $S_{4}$ in terms of $e_{1}$, $e_{2}$, $e_{3}$, and $e_{4}$ near the end of his <em>Invention Nouvelle en Algébre</em> (Amsterdam: 1629); this was the birth of the theory of symmetric functions.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_12" id="ch01ex_2_9_12a">12</a>. <span class="middle"><img src="../Images/e497_02.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_12" id="ch01ex_2_9_12a">12</a>. $\displaystyle\sum_{m,n\ge 0}a_{mn}w^{m}z^{n}=\sum_{m,n\ge 0}\binom{n}{m}w^{m}z^{n}=\sum_{n\ge 0}(1+w)^{n}z^{n}=1/(1-z-wz)$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_13" id="ch01ex_2_9_13a">13</a>. <span class="middle"><img src="../Images/e497_03.png"></span>. Adding these expressions together for all <em>n</em>, we find $\class{st}{\rm L}f(s)=G(e^{-s})/s$.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_13" id="ch01ex_2_9_13a">13</a>. $\int_{n}^{n+1}e^{-st}f(t)\,dt=(a_{0}+\cdots+a_{n})(e^{-sn}-e^{-s(n+1)})/s$. Adding these expressions together for all <em>n</em>, we find $\class{st}{\rm L}f(s)=G(e^{-s})/s$.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_14" id="ch01ex_2_9_14a">14</a>. See <a href="../Text/ch01a.html#ch01ex_2_6_2">exercise 1.2.6–38</a>.</p>
 
@@ -1175,9 +1175,9 @@
 
   <div class="image"><img src="../Images/e497_04.png"></div>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_16" id="ch01ex_2_9_16a">16</a>. <span class="middle"><img src="../Images/e497_05.png"></span> .[Note the case $r=∞$.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_16" id="ch01ex_2_9_16a">16</a>. $G_{nr}(z)=(1+z+\cdots+z^{r})=\left(\frac{1-z^{r+1}}{1-z}\right)^{n}$.[Note the case $r=∞$.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_17" id="ch01ex_2_9_17a">17</a>. <span class="middle"><img src="../Images/e497_06.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_17" id="ch01ex_2_9_17a">17</a>. $\displaystyle\sum_{k}\binom{-w}{k}(-z)^{k}=\sum_{k}\frac{w(w+1)\ldots(w+k-1)}{k(k-1)\ldots 1}z^{k}=\sum_{n,k}{k\brack n}z^{k}w^{n}/k!$.</p>
 
   <p>(Alternatively, write it as $e^{w\ln(1/(1-z))}$ and expand first by powers of <em>w</em>.)</p>
 
@@ -1185,13 +1185,15 @@
 
   <div class="image"><img src="../Images/e497_07.png"></div>
 
-  <p>by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>). Hence the answer is ${n+1}\brack{n+1-r}$. (b) Similarly, the generating function is</p>
+  <p>by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-27">27</a>). Hence the answer is ${n+1}\brack{n+1-r}$.</p>
+
+  <p class="indent">(b) Similarly, the generating function is</p>
 
   <div class="image"><img src="../Images/e497_09.png"></div>
 
   <p>by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec9-28">28</a>), so the answer is ${n+r}\brace{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. $\sum_{n\ge1}(1/n-1/(n+p/q))x^{p+nq}=\sum_{k=0}^{q-1}\omega^{-kp}\ln(1-\omega^{k}x)-x^{p}\ln(1-x^{q})+\frac{q}{p}x^{p}=$ $f(x)+g(x)$, where $\omega=e^{2πi/q}$ and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_19" id="ch01ex_2_9_19a">19</a>. $\sum_{n\ge1}(1/n-1/(n+p/q))x^{p+nq}=$ $\sum_{k=0}^{q-1}\omega^{-kp}\ln(1-\omega^{k}x)-x^{p}\ln(1-x^{q})+\frac{q}{p}x^{p}=$ $f(x)+g(x)$, where $\omega=e^{2πi/q}$ and</p>
 
   <div class="image"><img src="../Images/e497_12.png"></div>
 
@@ -1211,17 +1213,17 @@
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_20" id="ch01ex_2_9_20a">20</a>. $c_{mk}=k!{m\brace k}$, by Eq. (<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">1.2.6–(45)</a>.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find $z^{2}G'(z)+zG(z)=G(z)-1$. The solution to this differential equation is $G(z)=(-1/z) e^{-1/z}(E_{1}(-1/z)+C)$, where <span class="middle"><img src="../Images/e498_05.png"></span> and C is a constant. This function is very ill-behaved in the neighborhood of <em>z</em> = 0, and $G(z)$ has no power series expansion. Indeed, since <span class="middle"><img src="../Images/e498_06.png"></span> is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when $z\lt 0$. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_21" id="ch01ex_2_9_21a">21</a>. We find $z^{2}G'(z)+zG(z)=G(z)-1$. The solution to this differential equation is $G(z)=(-1/z) e^{-1/z}(E_{1}(-1/z)+C)$, where $E_{1}(z)=\int_{z}^{\infty}e^{-t}\,dt/t$ and C is a constant. This function is very ill-behaved in the neighborhood of $z=0$, and $G(z)$ has no power series expansion. Indeed, since $\sqrt[n]{n!}\approx n/e$ is not bounded, the generating function does not converge in this case; it is, however, an asymptotic expansion for the stated function, when $z\lt 0$. [See K. Knopp, <em>Infinite Sequences and Series</em> (Dover, 1956), Section 66.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_22" id="ch01ex_2_9_22a">22</a>. $G(z)=(1+z)^{r}(1+z^{2})^{r}(1+z^{4})^{r}(1+z^{8})^{r}\ldots=(1-z)^{-r}$. It follows that the stated sum is <span class="middle"><img src="../Images/e498_07.png"></span>.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_22" id="ch01ex_2_9_22a">22</a>. $G(z)=(1+z)^{r}(1+z^{2})^{r}(1+z^{4})^{r}(1+z^{8})^{r}\ldots=(1-z)^{-r}$. It follows that the stated sum is $\mybinomf{r+n-1}{n}$.</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_23" id="ch01ex_2_9_23a">23</a>. (a) When $m=1$ this is the binomial theorem, with $f_{1}(z)=z$ and $g_{1}(z)=1+z$. When $m≥1$ we can increase <em>m</em> by 1 if we replace $z_{m}$ by <span class="middle"><img src="../Images/e498_08.png"></span> and let <span class="middle"><img src="../Images/e498_09.png"></span>, <span class="middle"><img src="../Images/e498_10.png"></span>. Thus $g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}+z_{2}$ and</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_23" id="ch01ex_2_9_23a">23</a>. (a) When $m=1$ this is the binomial theorem, with $f_{1}(z)=z$ and $g_{1}(z)=1+z$. When $m≥1$ we can increase <em>m</em> by 1 if we replace $z_{m}$ by $z_{m}(1+z_{m+1}^{-1})$ and let $f_{m+1}(z_{1},\ldots,z_{m+1})=$ $z_{m+1}f_{m}(z_{1},\ldots,z_{m-1},z_{m}(1+z_{m+1}^{-1}))$, $g_{m+1}(z_{1},\ldots,z_{m+1})=$ $z_{m+1}g_{m}(z_{1},\ldots,z_{m-1},z_{m}(1+z_{m+1}^{-1}))$. Thus $g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}z_{2}$ and</p>
 
   <div class="image"><img src="../Images/e498_11.png"></div>
 
-  <p>Both polynomials $f_{m}$ and $g_{m}$ satisfy the same recurrence $f_{m}=z_{m}f_{m-1}+z_{m-1}f_{m-2}$, $g_{m}=z_{m}g_{m-1}+z_{m-1}g_{m-2}$, with the initial conditions $f_{-1}=0,f_{0}=g_{-1}=g_{0}=z_{0}=1$. It follows that $g_{m}$ is the sum of all terms obtainable by starting with $z_{1}\ldots z_{m}$ and striking out zero or more nonadjacent factors; there are $F_{m+2}$ ways to do this. A similar interpretation applies to $f_{m}$, except that $z_{1}$ must remain. In part (b) we will encounter the polynomial $h_{m}=z_{m}g_{m-1}+z_{m-1}f_{m-2}$; this is the sum of all terms <a id="page_499"></a>obtained from $z_{1}\ldots z_{m}$ by striking out factors that are not <em>cyclically</em> adjacent. For example, $h_{3}=z_{1}z_{2}z_{3}+z_{1}z_{2}+z_{1}z_{3}+z_{2}z_{3}$.</p>
+  <p>Both polynomials $f_{m}$ and $g_{m}$ satisfy the same recurrence $f_{m}=z_{m}f_{m-1}+z_{m-1}f_{m-2}$, $g_{m}=z_{m}g_{m-1}+z_{m-1}g_{m-2}$, with the initial conditions $f_{-1}=0,f_{0}=g_{-1}=$ $g_{0}=z_{0}=1$. It follows that $g_{m}$ is the sum of all terms obtainable by starting with $z_{1}\ldots z_{m}$ and striking out zero or more nonadjacent factors; there are $F_{m+2}$ ways to do this. A similar interpretation applies to $f_{m}$, except that $z_{1}$ must remain. In part (b) we will encounter the polynomial $h_{m}=z_{m}g_{m-1}+z_{m-1}f_{m-2}$; this is the sum of all terms <a id="page_499"></a>obtained from $z_{1}\ldots z_{m}$ by striking out factors that are not <em>cyclically</em> adjacent. For example, $h_{3}=z_{1}z_{2}z_{3}+z_{1}z_{2}+z_{1}z_{3}+z_{2}z_{3}$.</p>
 
-  <p class="indent">(b) By part (a), <span class="middle"><img src="../Images/e499_01.png"></span>; hence</p>
+  <p class="indent">(b) By part (a), $S_{n}(z_{1},\ldots,z_{m-1},z)=[z_{m}^{n}]\sum_{r=0}^{n}z^{r}z_{m}^{n-r}f_{m}^{n-r}g_{m}^{r}$; hence</p>
 
   <div class="image"><img src="../Images/e499_02.png"></div>
 
@@ -1231,21 +1233,21 @@
 
   <p>where $1-(a+d)z+(ad-bc)z^{2}=(1-ρz)(1-σz)$. Here $a+d=h_{m}$, and $ad-bc$ simplifies to $(-1)^{m}z_{1}\ldots z_{m}$. [We have, incidentally, established the recurrence $S_{n}=h_{m}S_{n-1}-(-1)^{m}z_{1}\ldots z_{m}S_{n-2}$, a relation that is not easy to derive without the help of generating functions.]</p>
 
-  <p>(c) Let <span class="middle"><img src="../Images/e499_04.png"></span> and <span class="middle"><img src="../Images/e499_05.png"></span> be the roots when m = 1; then <span class="middle"><img src="../Images/e499_06.png"></span> and <span class="middle"><img src="../Images/e499_07.png"></span>.</p>
+  <p>(c) Let $ρ_{1}=(z+\sqrt{z^{2}+4z})/2$ and $σ_{1}=(z-\sqrt{z^{2}+4z})/2$ be the roots when $m=1$; then $ρ_{m}=ρ_{1}^{m}$ and $σ_{m}=σ_{1}^{m}$.</p>
 
   <p class="indent">Carlitz used this result to deduce a surprising fact: The characteristic polynomial $\det(xI-A)$ of the $n×n$ matrix</p>
 
   <div class="image"><img src="../Images/e499_08.png"></div>
 
-  <p>of “right justified binomial coefficients” is<span class="middle"><img src="../Images/e499_09.png"></span>, with Fibonomial coefficients (see <a href="../Text/ch01a.html#ch01ex_2_8_30">exercise 1.2.8–30</a>). He also showed, using similar methods, that</p>
+  <p>of “right justified binomial coefficients” is $\sum_{k}\mybinomf{n}{k}_{\!\cal F}(-1)^{\lceil{(n-k)/2}\rceil}x^{k}$, with Fibonomial coefficients (see <a href="../Text/ch01a.html#ch01ex_2_8_30">exercise 1.2.8–30</a>). He also showed, using similar methods, that</p>
 
   <div class="image"><img src="../Images/e499_10.png"></div>
 
   <p>[<em>Collectanea Math.</em> <strong>27</strong> (1965), 281–296.]</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_24" id="ch01ex_2_9_24a">24</a>. Both sides are equal to <span class="middle"><img src="../Images/e499_11.png"></span>. When $G(z)=1/(1-z)$, the identity becomes <span class="middle"><img src="../Images/e499_12.png"></span>, a case of 1.2.6–21). When $G(z)=(e^{z}-1)/z$, it becomes <span class="middle"><img src="../Images/e499_13.png"></span>, Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">45</a>).</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_24" id="ch01ex_2_9_24a">24</a>. Both sides are equal to $\sum_{k}\mybinomf{m}{k}[z^{n}](zG(z))^{k}$. When $G(z)=1/(1-z)$, the identity becomes $\sum_{k}\mybinomf{m}{k}\mybinomf{n-1}{n-k}=\mybinomf{m+n-1}{n}$, a case of 1.2.6–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-21">21</a>). When $G(z)=(e^{z}-1)/z$, it becomes $\sum_{k}m^{\underline k}{n\brace k}=m^{n}$, Eq. <a href="../Text/ch01a.html#ch01lev2sec6">1.2.6</a>–(<a href="../Text/ch01a.html#ch01eq-lev2sec6-45">45</a>).</p>
 
-  <p><a href="../Text/ch01a.html#ch01ex_2_9_25" id="ch01ex_2_9_25a">25</a>. $Σ_{k}[w^{k}](1-2w)^{n}[z^{n}]z^{k}(1+z)^{2n-2k}=$ $[z^{n}](1+z)^{2n}Σ_{k}[w^{k}](1-2w)^{n}(z/(1+z)^{2})^{k}$, which equals <span class="middle"><img src="../Images/e499_14.png"></span> [<em>n</em> even]. Similarly, we find <span class="middle"><img src="../Images/e499_15.png"></span>. Many examples of this summation technique can be found in G. P. Egorychev’s book <em>Integral Representation and the Computation of Combinatorial Sums</em> (Amer. Math. Soc., 1984), translated from the Russian edition of 1977.</p>
+  <p><a href="../Text/ch01a.html#ch01ex_2_9_25" id="ch01ex_2_9_25a">25</a>. $Σ_{k}[w^{k}](1-2w)^{n}[z^{n}]z^{k}(1+z)^{2n-2k}=$ $[z^{n}](1+z)^{2n}Σ_{k}[w^{k}](1-2w)^{n}(z/(1+z)^{2})^{k}$, which equals $[z^{n}](1+z)^{2n}(1-2z/(1+z)^{2})^{n}=$ $[z^{n}](1+z^{2})^{n}=\mybinomf{n}{n/2}[n\rm\;even]$. Similarly, we find $\sum_{k}\mybinomf{n}{k}\mybinomf{2n-2k}{n-k}(-4)^{k}=(-1)^{n}\mybinomf{2n}{n}$. Many examples of this summation technique can be found in G. P. Egorychev’s book <em>Integral Representation and the Computation of Combinatorial Sums</em> (Amer. Math. Soc., 1984), translated from the Russian edition of 1977.</p>
 
   <p><a href="../Text/ch01a.html#ch01ex_2_9_26" id="ch01ex_2_9_26a">26</a>. $[F(z)]G(z)$ denotes the constant term of $F(z^{-1})G(z)$. See the discussion by D. E. Knuth in <em>A Classical Mind</em> (Prentice–Hall, 1994), 247–258.</p>
 
