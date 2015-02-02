@@ -127,3 +127,9 @@ div.equation img{
   margin-bottom:4pt;
   text-align:right;
 }
+.roman_italic {
+  font-family:"Arial_Italic";
+  src:url(fonts/Arial_Italic.ttf);
+  font-weight:400;
+  font-style:italic
+}
