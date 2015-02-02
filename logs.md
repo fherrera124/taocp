@@ -106,7 +106,7 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Actual: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}z\_\{2\}$
 
 
-####Memos:
+####TODO:
 
   - Replace &lt;p class="center"&gt;&lt;span class="middle"&gt; for &lt;div class="image"&gt;
 
