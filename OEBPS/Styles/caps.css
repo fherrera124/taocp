@@ -284,3 +284,10 @@ div.image2 img {
   text-align:left;
   margin-left:50pt;
 }
+.indentab {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:45pt;
+  text-indent:-13.5pt;
+  text-align:left;
+}

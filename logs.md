@@ -105,6 +105,10 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
     - Before: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}+z\_\{2\}$
     - Actual: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}z\_\{2\}$
 
+  - On id="page\_172":
+
+    - Before: "We will show below that, if the output permutation is assumed to be random, the quantities &lt;em&gt;U&lt;/em&gt; and &lt;em&gt;υ&lt;/em&gt; will be $H_{N}$ and 1, respectively, on the average."
+    - Actual: "We will show below that, if the output permutation is assumed to be random, the quantities &lt;em&gt;U&lt;/em&gt; and &lt;em&gt;V&lt;/em&gt; will be $H_{N}$ and 1, respectively, on the average."
 
 ####TODO:
 
