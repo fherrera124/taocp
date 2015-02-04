@@ -291,3 +291,35 @@ div.image2 img {
   text-indent:-13.5pt;
   text-align:left;
 }
+.uln-indent4 {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:85pt;
+  text-indent:-25pt;
+  text-align:left;
+}
+.exercises1I {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:17pt;
+  text-indent:15pt;
+  text-align:left;
+}
+.pre {
+  font-family:Courier New,monospace;
+  margin-top:10pt;
+  margin-bottom:10pt;
+  margin-left:20pt;
+  text-align:left;
+}
+div.image3 img {
+  max-width:99%;
+  max-height:99%;
+}
+.image3 {
+  text-align:left;
+  margin-left:30pt;
+}
+a {
+  text-decoration: none;
+}
