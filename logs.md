@@ -63,7 +63,7 @@
   - Answer **6** of **Section 1.2.10**:
 
     - Before: ![Alt 6\sqrt{2}/5\approx 1.697](./imgs/23.gif)
-    - Actual: ![Alt \ln(q+pe^{t})=\ln(1+pt+\frac{pt^{2}}{2}+\frac{pt^{3}}{6}+\cdots)=](./imgs/24.gif)![Alt pt+p(1-p)\frac{t^{2}}{2}+p(1-p)(1-2p)\frac{t^{3}}{6}+\cdots](./imgs/24-2.gif)
+    - Actual: ![Alt \ln(q+pe^{t})=\ln(1+pt+\frac{pt^{2}}{2}+\frac{pt^{3}}{6}+\cdots)=](./imgs/24.gif) ![Alt pt+p(1-p)\frac{t^{2}}{2}+p(1-p)(1-2p)\frac{t^{3}}{6}+\cdots](./imgs/24-2.gif)
 
   - Answer **22** of **Section 1.2.10**:
 
@@ -77,23 +77,23 @@
 
   - Answer **8** of **Section 1.2.11.3**:
 
-    - Before: ![Alt text](./imgs/29.gif)
-    - Actual: ![Alt text](./imgs/30.gif)
+    - Before: ![Alt R(x)=\int_{0}^{f(x)}(e^{-g(u,x)}-e^{-h(u,x)})](./imgs/29.gif)
+    - Actual: ![Alt R(x)=\int_{0}^{f(x)}(e^{-g(u,x)}-e^{-h(u,x)})\,du](./imgs/30.gif)
 
   - Answer **11** of **Section 1.2.11.3**:
 
-    - Before: \[...\] to note that ![Alt text](./imgs/31.gif)
-    - Before: \[...\] to note that ![Alt text](./imgs/32.gif)
+    - Before: \[...\] to note that ![Alt Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}](./imgs/31.gif)
+    - Before: \[...\] to note that ![Alt R_{-1}(n)-Q_{-1}(n)=(-1)^{n}n!/(e^{n}n^{n})\approx(-1)^{n}\sqrt{2\pi n}/e^{2n}](./imgs/32.gif)
 
   - Answer **37** of **Section 1.2.8**:
 
-    - Before: ![Alt text](./imgs/33.gif)
-    - Actual: ![Alt text](./imgs/34.gif)
+    - Before: ![Alt \mu(n-\mu(n))=F_{k_{r-1}}\ge F_{k_{r+2}}>2F_{k_{r}}](./imgs/33.gif)
+    - Actual: ![Alt \mu(n-\mu(n))=F_{k_{r-1}}\ge F_{k_{r}+2}>2F_{k_{r}}](./imgs/34.gif)
 
   - Answer **41** of **Section 1.2.8**:
 
-    - Before: ![Alt text](./imgs/35.gif)
-    - Actual: ![Alt text](./imgs/36.gif)
+    - Before: ![Alt {\skew{4}\widehat{\smash{\phi}\vphantom{a}}}^{\,3}+{\skew{4}\widehat{\smash{\phi}\vphantom{a}}}^{\,5}+\cdots={\skew{4}\widehat{\smash{\phi}\vphantom{a}}}^{\,-1}](./imgs/35.gif)
+    - Actual: ![Alt {\skew{4} \widehat{\smash{\phi}\vphantom{a}}}^{\,3}+{\skew{4}\widehat{\smash{\phi}\vphantom{a}}}^{\,5}+\cdots={\skew{4}\widehat{\smash{\phi}\vphantom{a}}}^{\,-1}-1](./imgs/36.gif)
 
   - Answer **10** of **Section 1.2.9**:
 
