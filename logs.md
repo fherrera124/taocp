@@ -4,8 +4,8 @@
 
     <a id="err1"></a>**Page 505** second display in answer **9** (17 Oct 2007) [*](#note1):
 
-    - Before: x^\{z\}
-    - (Not modified yet) Should be: x^\{x\}
+    - Before: ![Alt text](./imgs/1.gif)
+    - (Not modified yet) Should be: ![Alt text](./imgs/2.gif)
 
 ####According to **ERRATA TO VOLUME 1 (AFTER 2010)**:
 
@@ -13,8 +13,8 @@
 
     **Page 476** replacement for answer **4** (22 Dec 2013):
 
-    - Before: **4.** $x-1\\lt\\lfloor\{x\}\\rfloor≤x$; so $-x+1\\gt-\\lfloor\{x\}\\rfloor≥-x$; hence the result.
-    - Actual: **4.** By part (f), $x\\le\\lceil\{x\}\\rceil\\lt x+1$; hence $-x-1\\lt\\lceil\{x\}\\rceil\\le-x$; use part (e).
+    - Before: **4.** ![Alt text](./imgs/3.gif); so ![Alt text](./imgs/4.gif); hence the result.
+    - Actual: **4.** By part (f), ![Alt text](./imgs/5.gif); hence ![Alt text](./imgs/6.gif); use part (e).
 
 ####<a id="title"></a>Errata to the digital edition [**](#note2):
 
@@ -22,88 +22,88 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 
   - On id="page\_29":
 
-    - Before: \[...\] is that $∑\_\{R(j)\}∣aj∣$ exists.\]
-    - Actual: \[...\] is that $∑\_\{R(j)\}|a\_\{j\}|$ exists.\]
+    - Before: \[...\] is that ![Alt text](./imgs/7.gif) exists.\]
+    - Actual: \[...\] is that ![Alt text](./imgs/8.gif) exists.\]
 
   - On id="page\_29":
 
-    - Before: — that is, if $∑\_\{R(i)\} ∑\_\{S(j)\}∣aj∣$ exists —
-    - Actual: — that is, if $∑\_\{R(i)\} ∑\_\{S(j)\}|a\_\{ij\}|$ exists —
+    - Before: — that is, if ![Alt text](./imgs/9.gif) exists —
+    - Actual: — that is, if ![Alt text](./imgs/10.gif) exists —
 
   - Answer **5** of **Section 1.2.4**:
 
-    - Before: &lt;em&gt;except&lt;/em&gt; when $1=\\frac12$.
-    - Actual: &lt;em&gt;except&lt;/em&gt; when $x\\bmod1=\\frac12$.
+    - Before: &lt;em&gt;except&lt;/em&gt; when ![Alt text](./imgs/11.gif).
+    - Actual: &lt;em&gt;except&lt;/em&gt; when ![Alt text](./imgs/12.gif).
 
   - Answer **6** of **Section 1.2.4**:
 
-    - Before: $\\lfloor\\sqrt\{x\}\\rfloor=n⇔n^\{2\}≤x\\lt(n+1)^\{2\}⇔n^\{2\}≤\\lfloor\{x\}\\rfloor\\lt(n+1)^\{2\}⇔\\lfloor\\sqrt\{x\}\\rfloor=n$
-    - Actual: $\\lfloor\\sqrt\{x\}\\rfloor=n⇔n^\{2\}≤x\\lt(n+1)^\{2\}⇔n^\{2\}≤\\lfloor\{x\}\\rfloor\\lt(n+1)^\{2\}⇔\\left\\lfloor\\sqrt\{\\lfloor\{x\}\\rfloor\}\\right\\rfloor=n$
+    - Before: ![Alt text](./imgs/13.gif)
+    - Actual: ![Alt text](./imgs/14.gif)
 
   - Answer **17** of **Section 1.2.7**:
 
-    - Before: By exercise 4.6.2–6, we have $\{p\\brack k\}\\equiv\\delta\_\{kp\}-\\delta\_\{k1\}\\text\{ (modulo \}p)$
-    - Actual: By exercise 4.6.2–6, we have $x^\{\\overline p\}\\equiv x^\{p\}-x\\text\{ (modulo \}p)$
+    - Before: By exercise 4.6.2–6, we have ![Alt text](./imgs/15.gif)
+    - Actual: By exercise 4.6.2–6, we have ![Alt text](./imgs/16.gif)
 
   - Answer **21** of **Section 1.2.8**:
 
-    - Before: \[...\] the solution is $(x^\{n+1\}F\_\{n+1\}+x^\{n+2\}F\_\{n-x\})/(x^\{2\}+x-1)$
-    - Actual: \[...\] the solution is $(x^\{n+1\}F\_\{n+1\}+x^\{n+2\}F\_\{n\}-x)/(x^\{2\}+x-1)$
+    - Before: \[...\] the solution is ![Alt text](./imgs/17.gif)
+    - Actual: \[...\] the solution is ![Alt text](./imgs/18.gif)
 
   - Answer **36** of **Section 1.2.8**:
 
-    - Before: \[...\] if and only if $\\lfloor(k+1)\\phi^\{-1\}\\rfloor=1$
-    - Actual: \[...\] if and only if $\\lfloor(k+1)\\phi^\{-1\}\\rfloor-\\lfloor k\\phi^\{-1\}\\rfloor=1$
+    - Before: \[...\] if and only if ![Alt text](./imgs/19.gif)
+    - Actual: \[...\] if and only if ![Alt text](./imgs/20.gif)
 
   - Answer **37** of **Section 1.2.8**:
 
-    - Before: &lt;em&gt;Proof:&lt;/em&gt; Let $μ$
-    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let $μ(m)=F\_j$;
+    - Before: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt text](./imgs/21.gif)
+    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt text](./imgs/22.gif);
 
   - Answer **6** of **Section 1.2.10**:
 
-    - Before: $6\\sqrt\{2\}/5\\approx1.697$
-    - Actual: $\\ln(q+pe^\{t\})=\\ln\\left(1+pt+\\frac\{pt^\{2\}\}\{2\}+\\frac\{pt^\{3\}\}\{6\}+\\cdots\\right)=pt+p(1-p)\\frac\{t^\{2\}\}\{2\}+p(1-p)(1-2p)\\frac\{t^\{3\}\}\{6\}+\\cdots$
+    - Before: ![Alt text](./imgs/23.gif)
+    - Actual: ![Alt text](./imgs/24.gif)
 
   - Answer **22** of **Section 1.2.10**:
 
-    - Before: \[...\] it is $1/2$.
-    - Actual: \[...\] it is $\\lt 1/2$.
+    - Before: \[...\] it is ![Alt text](./imgs/25.gif).
+    - Actual: \[...\] it is ![Alt text](./imgs/26.gif).
 
   - Answer **3** of **Section 1.2.11.2**:
 
-    - Before: \[...\] we have $B\_\{m\}(\\frac12)=(2^\{1-m\}-1)$.
-    - Actual: \[...\] we have $B\_\{m\}(\\frac12)=(2^\{1-m\}-1)B\_\{m\}$.
+    - Before: \[...\] we have ![Alt text](./imgs/27.gif).
+    - Actual: \[...\] we have ![Alt text](./imgs/28.gif).
 
   - Answer **8** of **Section 1.2.11.3**:
 
-    - Before: $R(x)=\\int\_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})$
-    - Actual: $R(x)=\\int\_\{0\}^\{f(x)\}(e^\{-g(u,x)\}-e^\{-h(u,x)\})du$
+    - Before: ![Alt text](./imgs/29.gif)
+    - Actual: ![Alt text](./imgs/30.gif)
 
   - Answer **11** of **Section 1.2.11.3**:
 
-    - Before: \[...\] to note that $Q\_\{-1\}(n)=(-1)^\{n\}n!/(e^\{n\}n^\{n\})\\approx(-1)^\{n\}\\sqrt\{2\\pi n\}/e^\{2n\}$
-    - Before: \[...\] to note that $R\_\{-1\}(n)-Q\_\{-1\}(n)=(-1)^\{n\}n!/(e^\{n\}n^\{n\})\\approx(-1)^\{n\}\\sqrt\{2\\pi n\}/e^\{2n\}$
+    - Before: \[...\] to note that ![Alt text](./imgs/31.gif)
+    - Before: \[...\] to note that ![Alt text](./imgs/32.gif)
 
   - Answer **37** of **Section 1.2.8**:
 
-    - Before: $μ(n-μ(n))=F\_\{k\_\{r-1\}\}≥F\_\{k\_\{r+2\}\}\\gt 2F\_\{k\_\{r\}\}$
-    - Actual: $μ(n-μ(n))=F\_\{k\_\{r-1\}\}≥F\_\{k\_\{r\}+2\}\\gt 2F\_\{k\_\{r\}\}$
+    - Before: ![Alt text](./imgs/33.gif)
+    - Actual: ![Alt text](./imgs/34.gif)
 
   - Answer **41** of **Section 1.2.8**:
 
-    - Before: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}$
-    - Actual: $\\phihat^\{\\,3\}+\\phihat^\{\\,5\}+\\cdots=\\phihat^\{\\,-1\}-1$
+    - Before: ![Alt text](./imgs/35.gif)
+    - Actual: ![Alt text](./imgs/36.gif)
 
   - Answer **10** of **Section 1.2.9**:
 
     - Before: **ausent**.
-    - Actual: $e\_\{1\}=S\_\{1\}$,
+    - Actual: ![Alt text](./imgs/37.gif),
 
   - Answer **23** of **Section 1.2.9**:
 
-    - Before: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}+z\_\{2\}$
-    - Actual: $g\_\{2\}(z\_\{1\},z\_\{2\})=z\_\{1\}+z\_\{2\}+z\_\{1\}z\_\{2\}$
+    - Before: ![Alt text](./imgs/38.gif)
+    - Actual: ![Alt text](./imgs/39.gif)
 
   - On id="page\_172":
 
