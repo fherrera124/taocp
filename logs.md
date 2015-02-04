@@ -22,18 +22,18 @@
 
   - On id="page\_29":
 
-    - Before: \[...\] is that ![Alt text](./imgs/7.gif) exists.\]
-    - Actual: \[...\] is that ![Alt text](./imgs/8.gif) exists.\]
+    - Before: \[...\] is that ![Alt \sum_{R(j)}|aj|](./imgs/7.gif) exists.\]
+    - Actual: \[...\] is that ![Alt \sum_{R(j)}|a_{j}|](./imgs/8.gif) exists.\]
 
   - On id="page\_29":
 
-    - Before: — that is, if ![Alt text](./imgs/9.gif) exists —
-    - Actual: — that is, if ![Alt text](./imgs/10.gif) exists —
+    - Before: — that is, if ![Alt \sum_{R(i)}\sum_{S(j)}|aj|](./imgs/9.gif) exists —
+    - Actual: — that is, if ![Alt \sum_{R(i)}\sum_{S(j)}|a_{ij}|](./imgs/10.gif) exists —
 
   - Answer **5** of **Section 1.2.4**:
 
-    - Before: &lt;em&gt;except&lt;/em&gt; when ![Alt text](./imgs/11.gif).
-    - Actual: &lt;em&gt;except&lt;/em&gt; when ![Alt text](./imgs/12.gif).
+    - Before: &lt;em&gt;except&lt;/em&gt; when ![Alt 1=\frac12](./imgs/11.gif).
+    - Actual: &lt;em&gt;except&lt;/em&gt; when ![Alt x\bmod1=\frac12](./imgs/12.gif).
 
   - Answer **6** of **Section 1.2.4**:
 
@@ -42,8 +42,8 @@
 
   - Answer **17** of **Section 1.2.7**:
 
-    - Before: By exercise 4.6.2–6, we have ![Alt text](./imgs/15.gif)
-    - Actual: By exercise 4.6.2–6, we have ![Alt text](./imgs/16.gif)
+    - Before: By exercise 4.6.2–6, we have ![Alt {p\brack k}\equiv\delta_{kp}-\delta_{k1}\text{ (modulo }p)](./imgs/15.gif)
+    - Actual: By exercise 4.6.2–6, we have ![Alt x^{\overline p}\equiv x^{p}-x\text{ (modulo }p)](./imgs/16.gif)
 
   - Answer **21** of **Section 1.2.8**:
 
