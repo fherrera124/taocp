@@ -18,7 +18,7 @@
 
 ####<a id="title"></a>Errata to the digital edition [**](#note2):
 
-The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
+(The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect).
 
   - On id="page\_29":
 
@@ -118,4 +118,4 @@ The app01.html file was a mess, particulary with the images. Some of them incomp
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
 This force me to check all the erratas. Later I will.
 
-<a id="note2"></a>[**](#title) The list does not include all errors I fixed, only those in which I'm not entirely sure if the correction is correct.
+<a id="note2"></a>[**](#title) The list does not include all errors I fixed, only those in which I'm not entirely sure if the correction is correct. Let me know if you find one of my corrections wrong.
