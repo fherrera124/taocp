@@ -25,18 +25,18 @@
   <div class="heading">
     <h4 id="ch02lev2sec11">2.3.5. Lists and Garbage Collection</h4>
 
-    <p class="noindent">Near the beginning of <a href="../Text/ch02a.html#ch02lev1sec3">Section 2.3</a> we defined a List informally as “a finite sequence of zero or more atoms or Lists.”</p>
+    <p>Near the beginning of <a href="../Text/ch02a.html#ch02lev1sec3">Section 2.3</a> we defined a List informally as “a finite sequence of zero or more atoms or Lists.”</p>
   </div>
 
   <p class="indent">Any forest is a List; for example,</p>
 
   <div class="equation"><a id="ch02eq-lev2sec11-1"></a><img src="../Images/ch02/408equ01.jpg"></div>
 
-  <p class="noindent">may be regarded as the List</p>
+  <p>may be regarded as the List</p>
 
   <div class="equation"><a id="ch02eq-lev2sec11-2"></a><img src="../Images/ch02/408equ02.jpg"></div>
 
-  <p class="noindent">and the corresponding List diagram would be</p>
+  <p>and the corresponding List diagram would be</p>
 
   <div class="equation"><a id="ch02eq-lev2sec11-3"></a><img src="../Images/ch02/408equ03.jpg"></div>
 
@@ -46,11 +46,11 @@
 
   <div class="equation"><a id="ch02eq-lev2sec11-4"></a><img src="../Images/ch02/409equ01.jpg"></div>
 
-  <p class="noindent">which may be diagrammed as</p>
+  <p>which may be diagrammed as</p>
 
   <div class="equation"><a id="ch02eq-lev2sec11-5"></a><img src="../Images/ch02/409equ02.jpg"></div>
 
-  <p class="noindent">[Compare with the example in <a href="../Text/ch02a.html#ch02lev1sec3">2.3</a>–(<a href="../Text/ch02a.html#ch02eq-lev1sec3-7">7</a>). The form of these diagrams need not be taken too seriously.]</p>
+  <p>[Compare with the example in <a href="../Text/ch02a.html#ch02lev1sec3">2.3</a>–(<a href="../Text/ch02a.html#ch02eq-lev1sec3-7">7</a>). The form of these diagrams need not be taken too seriously.]</p>
 
   <p class="indent">As we might expect, there are many ways to represent List structures within a computer memory. These methods are usually variations on the same basic theme by which we have used binary trees to represent general forests of trees: One field, say <code>RLINK</code>, is used to point to the next element of a List, and another field <code>DLINK</code> may be used to point to the first element of a sub-List. By a natural extension of the memory representation described in <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>, we would represent the List (<a href="../Text/ch02c.html#ch02eq-lev2sec11-5">5</a>) as follows:</p>
 
@@ -70,7 +70,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec11-8"></a><img src="../Images/ch02/411equ01.jpg"></div>
 
-  <p class="noindent">Here “<code>LLINK</code>” is used for a pointer to the left in a doubly linked representation. The <code>INFO</code> and <code>DLINK</code> fields are identical in all three forms.</p>
+  <p>Here “<code>LLINK</code>” is used for a pointer to the left in a doubly linked representation. The <code>INFO</code> and <code>DLINK</code> fields are identical in all three forms.</p>
 
   <p class="indent">There is no need to repeat here the algorithms for List manipulation in any of these three forms, since we have already discussed the ideas many times. The following important points about Lists, which distinguish them from the simpler special cases treated earlier, should however be noted:</p>
 
@@ -116,7 +116,7 @@
 
   <p class="indent">The following marking algorithm is perhaps the most obvious.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec11-A"></a><strong>Algorithm A</strong> (<em>Marking</em>). Let the entire memory used for List storage be <code>NODE(1)</code>, <code>NODE(2)</code>, ..., <code>NODE(M)</code>, and suppose that these words either are atoms or contain two link fields <code>ALINK</code> and <code>BLINK</code>. Assume that all nodes are initially <em>unmarked</em>. The purpose of this algorithm is to <em>mark</em> all of the nodes that can be reached by a chain of <code>ALINK</code> and/or <code>BLINK</code> pointers in nonatomic nodes, starting from a set of “immediately accessible” nodes, that is, nodes pointed to by certain fixed locations in the main program; these fixed pointers are used as a source for all memory accesses.</p>
+  <p><a id="ch02alg-lev2sec11-A"></a><strong>Algorithm A</strong> (<em>Marking</em>). Let the entire memory used for List storage be <code>NODE(1)</code>, <code>NODE(2)</code>, ..., <code>NODE(M)</code>, and suppose that these words either are atoms or contain two link fields <code>ALINK</code> and <code>BLINK</code>. Assume that all nodes are initially <em>unmarked</em>. The purpose of this algorithm is to <em>mark</em> all of the nodes that can be reached by a chain of <code>ALINK</code> and/or <code>BLINK</code> pointers in nonatomic nodes, starting from a set of “immediately accessible” nodes, that is, nodes pointed to by certain fixed locations in the main program; these fixed pointers are used as a source for all memory accesses.</p>
 
   <p class="indenthanging"><strong>A1.</strong> [Initialize.] Mark all nodes that are immediately accessible. Set <code>K</code> ← 1.</p>
 
@@ -134,7 +134,7 @@
 
   <p class="indent">Another fairly evident marking algorithm is to follow all paths and to record branch points on a stack as we go:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec11-B"></a><strong>Algorithm B</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a>, using <code>STACK[1]</code>, <code>STACK[2]</code>, ... as auxiliary storage to keep track of all paths that have not yet been pursued to completion.</p>
+  <p><a id="ch02alg-lev2sec11-B"></a><strong>Algorithm B</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a>, using <code>STACK[1]</code>, <code>STACK[2]</code>, ... as auxiliary storage to keep track of all paths that have not yet been pursued to completion.</p>
 
   <p class="indenthanging"><strong>B1.</strong> [Initialize.] Let <code>T</code> be the number of immediately accessible nodes; mark them and place pointers to them in <code>STACK[1]</code>, ..., <code>STACK[T]</code>.</p>
 
@@ -148,7 +148,7 @@
 
   <p class="indent">A somewhat better alternative is possible, using a fixed stack size, by combining <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a>:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec11-C"></a><strong>Algorithm C</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a>, using an auxiliary table of <code>H</code> cells, <code>STACK[0], STACK[1], ..., STACK[H − 1]</code>.</p>
+  <p><a id="ch02alg-lev2sec11-C"></a><strong>Algorithm C</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a>, using an auxiliary table of <code>H</code> cells, <code>STACK[0], STACK[1], ..., STACK[H − 1]</code>.</p>
 
   <p class="indent">In this algorithm, the action “insert <code>X</code> on the stack” means the following: “Set <code>T ← (T + 1)</code> mod <code>H</code>, and <code>STACK[T] ← X</code>. If <code>T = B</code>, set <code>B ← (B + 1)</code> mod <code>H</code> and <code>K1</code> ← min(<code>K1<em>,</em> STACK[B]</code>).” (Note that <code>T</code> points to the current top of the stack, and <code>B</code> points one place below the current bottom; <code>STACK</code> essentially operates as an input-restricted deque.)</p>
 
@@ -168,7 +168,7 @@
 
   <p class="indent"><a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithms B</a> and <a href="../Text/ch02c.html#ch02alg-lev2sec11-C">C</a> use a stack kept in sequential memory locations; but we have seen earlier in this chapter that linked memory techniques are well suited to maintaining stacks that are not consecutive in memory. This suggests the idea that we might keep the stack of <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a> somehow scattered <em>through the same memory area in which we are collecting garbage</em>. This could be done easily if we were to give the garbage collection routine a little more room in which to breathe. Suppose, for example, we assume that all Lists are represented as in (<a href="../Text/ch02c.html#ch02eq-lev2sec11-9">9</a>), except that the <code>REF</code> fields of List head nodes are used for garbage collection purposes instead of as reference counts. We can then redesign <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a> so that the stack is maintained in the <code>REF</code> fields of the header nodes:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec11-D"></a><strong>Algorithm D</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a>, <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a>, and <a href="../Text/ch02c.html#ch02alg-lev2sec11-C">C</a>, but it assumes that the nodes have <code>S, T, REF</code>, and <code>RLINK</code> fields as described above, instead of <code>ALINK</code>s and <code>BLINK</code>s. The <code>S</code> field is used as the mark bit, so that <code>S(P)</code> = 1 means that <code>NODE(P)</code> is marked.</p>
+  <p><a id="ch02alg-lev2sec11-D"></a><strong>Algorithm D</strong> (<em>Marking</em>). This algorithm achieves the same effect as <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a>, <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a>, and <a href="../Text/ch02c.html#ch02alg-lev2sec11-C">C</a>, but it assumes that the nodes have <code>S, T, REF</code>, and <code>RLINK</code> fields as described above, instead of <code>ALINK</code>s and <code>BLINK</code>s. The <code>S</code> field is used as the mark bit, so that <code>S(P)</code> = 1 means that <code>NODE(P)</code> is marked.</p>
 
   <p class="indenthanging"><strong>D1.</strong> [Initialize.] Set <code>TOP</code> ← <em>Λ</em>. Then for each pointer <code>P</code> to the head of an immediately accessible List (see step A1 of <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a>), if <code>S(P)</code> = 0, set <code>S(P) ← 1, REF(P) ← TOP, TOP ← P.</code></p>
 
@@ -188,7 +188,7 @@
 
   <p class="indent">These considerations bring us to <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a>, which is an elegant marking method discovered independently by Peter Deutsch and by Herbert Schorr and W. M. Waite in 1965. The assumptions used in this algorithm are just a little different from those of <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a> through <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">D</a>.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec11-E"></a><strong>Algorithm E</strong> (<em>Marking</em>). Assume that a collection of nodes is given having the following fields:</p>
+  <p><a id="ch02alg-lev2sec11-E"></a><strong>Algorithm E</strong> (<em>Marking</em>). Assume that a collection of nodes is given having the following fields:</p>
 
   <p class="uln-indent"><code>MARK</code> (a one-bit field),</p>
 
@@ -198,7 +198,7 @@
 
   <p class="uln-indent"><code>BLINK</code> (a pointer field).</p>
 
-  <p class="noindent">When <code>ATOM</code> = 0, the <code>ALINK</code> and <code>BLINK</code> fields may contain <em>Λ</em> or a pointer to another node of the same format; when <code>ATOM</code>= <code>1</code>, the contents of the <code>ALINK</code> and <code>BLINK</code> fields are irrelevant to this algorithm.</p>
+  <p>When <code>ATOM</code> = 0, the <code>ALINK</code> and <code>BLINK</code> fields may contain <em>Λ</em> or a pointer to another node of the same format; when <code>ATOM</code>= <code>1</code>, the contents of the <code>ALINK</code> and <code>BLINK</code> fields are irrelevant to this algorithm.</p>
 
   <p class="indent">Given a nonnull pointer <code>PO,</code> this algorithm sets the <code>MARK</code> field equal to 1 in <code>NODE(PO)</code> and in every other node that can be reached from <code>NODE(PO)</code> by a chain of <code>ALINK</code> and <code>BLINK</code> pointers in nodes with <code>ATOM = MARK =</code> 0. The algorithm uses three pointer variables, <code>T, Q,</code> and <code>P.</code> It modifies the links and control bits in such a way that all <code>ATOM, ALINK,</code> and <code>BLINK</code> fields are restored to their original settings after completion, although they may be changed temporarily.</p>
 
@@ -300,7 +300,7 @@
   <div class="heading">
     <h3 id="ch02lev1sec4"><a id="page_424"></a>2.4. Multilinked Structures</h3>
 
-    <p class="noindent">Now that we have examined linear lists and tree structures in detail, the principles of representing structural information within a computer should be evident. In this section we will look at another application of these techniques, this time for the typical case in which the structural information is slightly more complicated: In higher-level applications, several types of structure are usually present simultaneously.</p>
+    <p>Now that we have examined linear lists and tree structures in detail, the principles of representing structural information within a computer should be evident. In this section we will look at another application of these techniques, this time for the typical case in which the structural information is slightly more complicated: In higher-level applications, several types of structure are usually present simultaneously.</p>
   </div>
 
   <p class="indent">A “multilinked structure” involves nodes with several link fields in each node, not just one or two as in most of our previous examples. We have already seen some examples of multiple linkage, such as the simulated elevator system in <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a> and the multivariate polynomials in <a href="../Text/ch02a.html#ch02lev2sec9">Section 2.3.3</a>.</p>
@@ -311,21 +311,21 @@
 
   <div class="equation"><a id="ch02eq-lev1sec4-1"></a><img src="../Images/ch02/424equ01.jpg"></div>
 
-  <p class="noindent">This configuration indicates that each item in <code>SALES</code> consists of two parts, the <code>DATE</code> and the <code>TRANSACTION</code>; the <code>DATE</code> is further divided into three parts, and the <code>TRANSACTION</code> likewise has five subdivisions. Similar remarks apply to <code>PURCHASES</code>. The relative order of these names indicates the order in which the quantities appear in external representations of the file (for example, magnetic tape or printed forms); notice that in this example “<code>DAY</code>” and “<code>MONTH</code>” appear in opposite order in the two files. The programmer also gives further information, not shown in this illustration, that tells how much space each item of information occupies and in what format it appears; such considerations are not relevant to us in this section, so they will not be mentioned further.</p>
+  <p>This configuration indicates that each item in <code>SALES</code> consists of two parts, the <code>DATE</code> and the <code>TRANSACTION</code>; the <code>DATE</code> is further divided into three parts, and the <code>TRANSACTION</code> likewise has five subdivisions. Similar remarks apply to <code>PURCHASES</code>. The relative order of these names indicates the order in which the quantities appear in external representations of the file (for example, magnetic tape or printed forms); notice that in this example “<code>DAY</code>” and “<code>MONTH</code>” appear in opposite order in the two files. The programmer also gives further information, not shown in this illustration, that tells how much space each item of information occupies and in what format it appears; such considerations are not relevant to us in this section, so they will not be mentioned further.</p>
 
   <p class="indent"><a id="page_425"></a>A COBOL programmer first describes the file layout and the other program variables, then specifies the algorithms that manipulate those quantities. To refer to an individual variable in the example above, it would not be sufficient merely to give the name <code>DAY</code>, since there is no way of telling if the variable called <code>DAY</code> is in the <code>SALES</code> file or in the <code>PURCHASES</code> file. Therefore a COBOL programmer is given the ability to write “<code>DAY OF SALES</code>” to refer to the <code>DAY</code> part of a <code>SALES</code> item. The programmer could also write, more completely,</p>
 
   <p class="center">“<code>DAY OF DATE OF SALES</code>”,</p>
 
-  <p class="noindent">but in general there is no need to give more qualification than necessary to avoid ambiguity. Thus,</p>
+  <p>but in general there is no need to give more qualification than necessary to avoid ambiguity. Thus,</p>
 
   <p class="center">“<code>NAME OF SHIPPER OF TRANSACTION OF PURCHASES</code>”</p>
 
-  <p class="noindent">may be abbreviated to</p>
+  <p>may be abbreviated to</p>
 
   <p class="center">“<code>NAME OF SHIPPER</code>”</p>
 
-  <p class="noindent">since only one part of the data has been called <code>SHIPPER</code>.</p>
+  <p>since only one part of the data has been called <code>SHIPPER</code>.</p>
 
   <p class="indent">These rules of COBOL may be stated more precisely as follows:</p>
 
@@ -343,17 +343,17 @@
 
   <div class="equation"><a id="ch02eq-lev1sec4-2"></a><img src="../Images/ch02/425equ01.jpg"></div>
 
-  <p class="noindent">would not be allowed, since there is no unambiguous way to refer to the second appearance of <code>CC</code>. (See <a href="../Text/ch02c.html#ch02ex_1_4_4">exercise 4</a>.)</p>
+  <p>would not be allowed, since there is no unambiguous way to refer to the second appearance of <code>CC</code>. (See <a href="../Text/ch02c.html#ch02ex_1_4_4">exercise 4</a>.)</p>
 
   <p class="indent"><a id="page_426"></a>COBOL has another feature that affects compiler writing and the application we are considering, namely an option in the language that makes it possible to refer to many items at once. A COBOL programmer may write</p>
 
   <p class="center"><code>MOVE CORRESPONDING</code> <em>α</em> <code>TO</code> <em>β</em></p>
 
-  <p class="noindent">which moves all items with corresponding names from data area <em>α</em> to data area <em>β</em>. For example, the COBOL statement</p>
+  <p>which moves all items with corresponding names from data area <em>α</em> to data area <em>β</em>. For example, the COBOL statement</p>
 
   <p class="center"><code>MOVE CORRESPONDING DATE OF SALES TO DATE OF PURCHASES</code></p>
 
-  <p class="noindent">would mean that the values of <code>MONTH</code>, <code>DAY</code>, and <code>YEAR</code> from the <code>SALES</code> file are to be moved to the variables <code>MONTH</code>, <code>DAY</code>, and <code>YEAR</code> in the <code>PURCHASES</code> file. (The relative order of <code>DAY</code> and <code>MONTH</code> is thereby interchanged.)</p>
+  <p>would mean that the values of <code>MONTH</code>, <code>DAY</code>, and <code>YEAR</code> from the <code>SALES</code> file are to be moved to the variables <code>MONTH</code>, <code>DAY</code>, and <code>YEAR</code> in the <code>PURCHASES</code> file. (The relative order of <code>DAY</code> and <code>MONTH</code> is thereby interchanged.)</p>
 
   <p class="indent">The problem we will investigate in this section is to design three algorithms suitable for use in a COBOL compiler, which are to do the following things:</p>
 
@@ -371,7 +371,7 @@
 
   <div class="equation"><a id="ch02eq-lev1sec4-3"></a><img src="../Images/ch02/426equ01.jpg"></div>
 
-  <p class="noindent">we should first look up the name <em>A</em><sub>0</sub> in the Symbol Table. There ought to be a series of links from the Symbol Table entry to all Data Table entries for this name. Then for each Data Table entry we will want a link to the entry for the group item that contains it. Now if there is a further link field from the Data Table items back to the Symbol Table, it is not hard to see how a reference like (<a href="../Text/ch02c.html#ch02eq-lev1sec4-3">3</a>) can be processed. Furthermore, we will want some sort of links from the Data Table entries for group items to the items in the group, in order to locate the pairs indicated by “<code>MOVE CORRESPONDING</code>”.</p>
+  <p>we should first look up the name <em>A</em><sub>0</sub> in the Symbol Table. There ought to be a series of links from the Symbol Table entry to all Data Table entries for this name. Then for each Data Table entry we will want a link to the entry for the group item that contains it. Now if there is a further link field from the Data Table items back to the Symbol Table, it is not hard to see how a reference like (<a href="../Text/ch02c.html#ch02eq-lev1sec4-3">3</a>) can be processed. Furthermore, we will want some sort of links from the Data Table entries for group items to the items in the group, in order to locate the pairs indicated by “<code>MOVE CORRESPONDING</code>”.</p>
 
   <p class="indent"><a id="page_427"></a>We have thereby found a potential need for five link fields in each Data Table entry:</p>
 
@@ -385,25 +385,25 @@
 
   <p class="uln-indent"><code>SIB</code> (a link to the next subitem in the group containing this item).</p>
 
-  <p class="noindent">It is clear that COBOL data structures like those for <code>SALES</code> and <code>PURCHASES</code> above are essentially trees; and the <code>PARENT</code>, <code>CHILD</code>, and <code>SIB</code> links that appear here are familiar from our previous study. (The conventional binary tree representation of a tree consists of the <code>CHILD</code> and <code>SIB</code> links; adding the <code>PARENT</code> link gives what we have called a “triply linked tree.” The five links above consist of these three tree links together with <code>PREV</code> and <code>NAME</code>, which superimpose further information on the tree structure.)</p>
+  <p>It is clear that COBOL data structures like those for <code>SALES</code> and <code>PURCHASES</code> above are essentially trees; and the <code>PARENT</code>, <code>CHILD</code>, and <code>SIB</code> links that appear here are familiar from our previous study. (The conventional binary tree representation of a tree consists of the <code>CHILD</code> and <code>SIB</code> links; adding the <code>PARENT</code> link gives what we have called a “triply linked tree.” The five links above consist of these three tree links together with <code>PREV</code> and <code>NAME</code>, which superimpose further information on the tree structure.)</p>
 
   <p class="indent">Perhaps not all five of these links will turn out to be necessary, or sufficient, but we will try first to design our algorithms under the tentative assumption that Data Table entries will involve these five link fields (plus further information irrelevant to our problems). As an example of the multiple linking used, consider the two COBOL data structures</p>
 
   <div class="equation"><a id="ch02eq-lev1sec4-4"></a><img src="../Images/ch02/427equ01.jpg"></div>
 
-  <p class="noindent">They would be represented as shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec4-5">5</a>) (with links indicated symbolically). The <code>LINK</code> field of each Symbol Table entry points to the most recently encountered Data Table entry for the symbolic name in question.</p>
+  <p>They would be represented as shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec4-5">5</a>) (with links indicated symbolically). The <code>LINK</code> field of each Symbol Table entry points to the most recently encountered Data Table entry for the symbolic name in question.</p>
 
   <p class="indent">The first algorithm we require is one that builds the Data Table in such a form. Note the flexibility in choice of level numbers that is allowed by the COBOL rules; the left structure in (<a href="../Text/ch02c.html#ch02eq-lev1sec4-4">4</a>) is completely equivalent to</p>
 
   <div class="image"><img src="../Images/ch02/e427_01.jpg"></div>
 
-  <p class="noindent">because level numbers do not have to be sequential.</p>
+  <p>because level numbers do not have to be sequential.</p>
 
   <div class="equation"><a id="page_428"></a><a id="ch02eq-lev1sec4-5"></a><img src="../Images/ch02/428equ01.jpg"></div>
 
   <p class="indent">Some sequences of level numbers are illegal, however; for example, if the level number of <code>D</code> in (<a href="../Text/ch02c.html#ch02eq-lev1sec4-4">4</a>) were changed to “<code>6</code>” (in either place) we would have a meaningless data configuration, violating the rule that all items of a group must have the same number. The following algorithm therefore makes sure that COBOL’s rule (a) has not been broken.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec4-A"></a><strong>Algorithm A</strong> (<em>Build Data Table</em>). This algorithm is given a sequence of pairs (<code>L</code><em>,</em> <code>P</code>), where <code>L</code> is a positive integer “level number” and <code>P</code> points to a Symbol Table entry, corresponding to COBOL data structures such as (<a href="../Text/ch02c.html#ch02eq-lev1sec4-4">4</a>) above. The algorithm builds a Data Table as in the example (<a href="../Text/ch02c.html#ch02eq-lev1sec4-5">5</a>) above. When <code>P</code> points to a Symbol Table entry that has not appeared before, <code>LINK(P)</code> will equal Λ. This algorithm uses an auxiliary stack that is treated as usual (using either sequential memory allocation, as in <a href="../Text/ch02.html#ch02lev2sec2">Section 2.2.2</a>, or linked allocation, as in <a href="../Text/ch02.html#ch02lev2sec3">Section 2.2.3</a>).</p>
+  <p><a id="ch02alg-lev1sec4-A"></a><strong>Algorithm A</strong> (<em>Build Data Table</em>). This algorithm is given a sequence of pairs (<code>L</code><em>,</em> <code>P</code>), where <code>L</code> is a positive integer “level number” and <code>P</code> points to a Symbol Table entry, corresponding to COBOL data structures such as (<a href="../Text/ch02c.html#ch02eq-lev1sec4-4">4</a>) above. The algorithm builds a Data Table as in the example (<a href="../Text/ch02c.html#ch02eq-lev1sec4-5">5</a>) above. When <code>P</code> points to a Symbol Table entry that has not appeared before, <code>LINK(P)</code> will equal Λ. This algorithm uses an auxiliary stack that is treated as usual (using either sequential memory allocation, as in <a href="../Text/ch02.html#ch02lev2sec2">Section 2.2.2</a>, or linked allocation, as in <a href="../Text/ch02.html#ch02lev2sec3">Section 2.2.3</a>).</p>
 
   <p class="indenthanging"><strong>A1.</strong> [Initialize.] Set the stack contents to the single entry (0<em>,</em> Λ). (The stack entries throughout this algorithm are pairs (<code>L</code><em>,</em> <code>P</code>), where <code>L</code> is an integer and <code>P</code> is a pointer; as this algorithm proceeds, the stack contains the level numbers and pointers to the most recent data entries on all levels higher in the tree than the current level. For example, just before encountering the pair “<code>3 F</code>” in the example above, the stack would contain</p>
 
@@ -433,9 +433,9 @@
 
   <div class="equation"><a id="ch02eq-lev1sec4-6"></a><img src="../Images/ch02/429equ01.jpg"></div>
 
-  <p class="noindent">A good compiler will also check to ensure that such a reference is unambiguous. In this case, a suitable algorithm suggests itself immediately: All we need to do is to run through the list of Data Table entries for the name <em>A</em><sub>0</sub> and make sure that exactly one of these entries matches the stated qualification <em>A</em><sub>1</sub><em>, ..., A<sub>n</sub></em>.</p>
+  <p>A good compiler will also check to ensure that such a reference is unambiguous. In this case, a suitable algorithm suggests itself immediately: All we need to do is to run through the list of Data Table entries for the name <em>A</em><sub>0</sub> and make sure that exactly one of these entries matches the stated qualification <em>A</em><sub>1</sub><em>, ..., A<sub>n</sub></em>.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec4-B"></a><strong>Algorithm B</strong> (<em>Check a qualified reference</em>). Corresponding to reference (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>), a Symbol Table subroutine will find pointers <em>P</em><sub>0</sub><em>, P</em><sub>1</sub><em>, ..., P<sub>n</sub></em> to the Symbol Table entries for <em>A</em><sub>0</sub><em>, A</em><sub>1</sub><em>, ..., A<sub>n</sub></em>, respectively.</p>
+  <p><a id="ch02alg-lev1sec4-B"></a><strong>Algorithm B</strong> (<em>Check a qualified reference</em>). Corresponding to reference (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>), a Symbol Table subroutine will find pointers <em>P</em><sub>0</sub><em>, P</em><sub>1</sub><em>, ..., P<sub>n</sub></em> to the Symbol Table entries for <em>A</em><sub>0</sub><em>, A</em><sub>1</sub><em>, ..., A<sub>n</sub></em>, respectively.</p>
 
   <p class="indent">The purpose of this algorithm is to examine <em>P</em><sub>0</sub><em>, P</em><sub>1</sub><em>, ..., P<sub>n</sub></em> and either to determine that reference (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>) is in error, or to set variable <code>Q</code> to the address of the Data Table entry for the item referred to by (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>).</p>
 
@@ -451,7 +451,7 @@
 
   <p class="indenthanging"><strong>B6.</strong> [<em>A<sub>k</sub></em> match?] If <code>NAME(S)</code> = <em>P<sub>k</sub></em>, go to B3, otherwise go to B5. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent">Note that the <code>CHILD</code> and <code>SIB</code> links are not needed by this algorithm.</p>
+  <p>Note that the <code>CHILD</code> and <code>SIB</code> links are not needed by this algorithm.</p>
 
   <div class="image">
     <a id="ch02fig40"></a><img src="../Images/ch02/02fig40.jpg">
@@ -463,28 +463,28 @@
 
   <div class="equation"><a id="ch02eq-lev1sec4-7"></a><img src="../Images/ch02/430equ01.jpg"></div>
 
-  <p class="noindent">where <em>α</em> and <em>β</em> are references such as (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>) to data items, is an abbreviation for the set of all statements</p>
+  <p>where <em>α</em> and <em>β</em> are references such as (<a href="../Text/ch02c.html#ch02eq-lev1sec4-6">6</a>) to data items, is an abbreviation for the set of all statements</p>
 
   <p class="center"><code>MOVE</code> <em>α</em>′ <code>TO</code> <em>β</em>′</p>
 
-  <p class="noindent">where there exists an integer <em>n</em> ≥ 0 and <em>n</em> names <em>A</em><sub>0</sub><em>, A</em><sub>1</sub><em>, ..., A<sub>n−</sub></em><sub>1</sub> such that</p>
+  <p>where there exists an integer <em>n</em> ≥ 0 and <em>n</em> names <em>A</em><sub>0</sub><em>, A</em><sub>1</sub><em>, ..., A<sub>n−</sub></em><sub>1</sub> such that</p>
 
   <div class="equation"><a id="ch02eq-lev1sec4-8"></a><img src="../Images/ch02/430equ02.jpg"></div>
 
-  <p class="noindent">and either <em>α</em>′ or <em>β</em>′ is an elementary item (not a group item). Furthermore we require that the first levels of (<a href="../Text/ch02c.html#ch02eq-lev1sec4-8">8</a>) show <em>complete</em> qualifications, namely that <em>A<sub>j</sub></em><sub>+1</sub> be the parent of <em>A<sub>j</sub></em> for 0 <em>≤ j &lt; n</em> − 1 and that <em>α</em> and <em>β</em> are parents of <em>A<sub>n−</sub></em><sub>1</sub>; <em>α</em>′ and <em>β</em>′ must be exactly <em>n</em> levels farther down in the tree than <em>α</em> and <em>β</em> are.</p>
+  <p>and either <em>α</em>′ or <em>β</em>′ is an elementary item (not a group item). Furthermore we require that the first levels of (<a href="../Text/ch02c.html#ch02eq-lev1sec4-8">8</a>) show <em>complete</em> qualifications, namely that <em>A<sub>j</sub></em><sub>+1</sub> be the parent of <em>A<sub>j</sub></em> for 0 <em>≤ j &lt; n</em> − 1 and that <em>α</em> and <em>β</em> are parents of <em>A<sub>n−</sub></em><sub>1</sub>; <em>α</em>′ and <em>β</em>′ must be exactly <em>n</em> levels farther down in the tree than <em>α</em> and <em>β</em> are.</p>
 
   <p class="indent">With respect to our example (<a href="../Text/ch02c.html#ch02eq-lev1sec4-4">4</a>),</p>
 
   <p class="center"><code>MOVE CORRESPONDING A TO H</code></p>
 
-  <p class="noindent">is therefore an abbreviation for the statements</p>
+  <p>is therefore an abbreviation for the statements</p>
 
   <p class="uln-indent1"><code>MOVE B OF A TO B OF H</code><br>
   <code>MOVE G OF F OF A TO G OF F OF H</code></p>
 
   <p class="indent">The algorithm to recognize all corresponding pairs <em>α</em>′, <em>β</em>′ is quite interesting although not difficult; we move through the tree whose root is <em>α</em>, in preorder, <a id="page_431"></a>simultaneously looking in the <em>β</em> tree for matching names, and skipping over subtrees in which no corresponding elements can possibly occur. The names <em>A</em><sub>0</sub><em>, ..., A<sub>n−</sub></em><sub>1</sub> of (<a href="../Text/ch02c.html#ch02eq-lev1sec4-8">8</a>) are discovered in the opposite order <em>A<sub>n−</sub></em><sub>1</sub><em>, ..., A</em><sub>0</sub>.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec4-C"></a><strong>Algorithm C</strong> (<em>Find</em> <code>CORRESPONDING</code> <em>pairs</em>). Given <code>P0</code> and <code>Q0</code>, which point to Data Table entries for <em>α</em> and <em>β</em>, respectively, this algorithm successively finds all pairs (<code>P</code><em>,</em> <code>Q</code>) of pointers to items (α′, <em>β</em>′) satisfying the constraints mentioned above.</p>
+  <p><a id="ch02alg-lev1sec4-C"></a><strong>Algorithm C</strong> (<em>Find</em> <code>CORRESPONDING</code> <em>pairs</em>). Given <code>P0</code> and <code>Q0</code>, which point to Data Table entries for <em>α</em> and <em>β</em>, respectively, this algorithm successively finds all pairs (<code>P</code><em>,</em> <code>Q</code>) of pointers to items (α′, <em>β</em>′) satisfying the constraints mentioned above.</p>
 
   <p class="indenthanging"><strong>C1.</strong> [Initialize.] Set <code>P</code> ← <code>P0</code>, <code>Q</code> ← <code>Q0</code>. (In the remainder of this algorithm, the pointer variables <code>P</code> and <code>Q</code> will walk through trees having the respective roots <em>α</em> and <em>β</em>.)</p>
 
@@ -504,7 +504,7 @@
 
   <p class="indenthanging"><strong>C5.</strong> [Done?] If <code>P</code> = <code>P0</code>, the algorithm terminates; otherwise go to C4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent">A flow chart for this algorithm is shown in <a href="../Text/ch02c.html#ch02fig41">Fig. 41</a>. A proof that this algorithm is valid can readily be constructed by induction on the size of the trees involved (see <a href="../Text/ch02c.html#ch02ex_1_4_9">exercise 9</a>).</p>
+  <p>A flow chart for this algorithm is shown in <a href="../Text/ch02c.html#ch02fig41">Fig. 41</a>. A proof that this algorithm is valid can readily be constructed by induction on the size of the trees involved (see <a href="../Text/ch02c.html#ch02ex_1_4_9">exercise 9</a>).</p>
 
   <div class="image">
     <a id="ch02fig41"></a><img src="../Images/ch02/02fig41.jpg">
@@ -584,7 +584,7 @@
   <div class="heading">
     <h3 id="ch02lev1sec5"><a id="page_435"></a>2.5. Dynamic Storage Allocation</h3>
 
-    <p class="noindent">We Have Seen how the use of links implies that data structures need not be sequentially located in memory; a number of tables may independently grow and shrink in a common pooled memory area. However, our discussions have always tacitly assumed that all nodes have the same size — that every node occupies a certain fixed number of memory cells.</p>
+    <p>We Have Seen how the use of links implies that data structures need not be sequentially located in memory; a number of tables may independently grow and shrink in a common pooled memory area. However, our discussions have always tacitly assumed that all nodes have the same size — that every node occupies a certain fixed number of memory cells.</p>
   </div>
 
   <p class="indent">For a great many applications, a suitable compromise can be found so that a uniform node size is indeed used for all structures (for example, see <a href="../Text/ch02c.html#ch02ex_1_5_2">exercise 2</a>). Instead of simply taking the maximum size that is needed and wasting space in smaller nodes, it is customary to pick a rather small node size and to employ what may be called the classical <em>linked-memory philosophy</em>: “If there isn’t room for the information here, let’s put it somewhere else and plant a link to it.”</p>
@@ -595,7 +595,7 @@
 
   <p class="indent">In 1975 or so, several authors began to call the pool of available memory a “heap.” But in the present series of books, we will use that word only in its more traditional sense related to priority queues (see Section 5.2.3).</p>
 
-  <p class="noindent"><strong>A. Reservation.</strong> <a href="../Text/ch02c.html#ch02fig42">Figure 42</a> shows a typical <em>memory map</em> or “checkerboard,” a chart showing the current state of some memory pool. In this case the memory is shown partitioned into 53 blocks of storage that are “reserved,” or in use, mixed together with 21 “free” or “available” blocks that are not in use. After dynamic storage allocation has been in operation for awhile, the computer memory will perhaps look something like this. Our first problem is to answer two questions:</p>
+  <p><strong>A. Reservation.</strong> <a href="../Text/ch02c.html#ch02fig42">Figure 42</a> shows a typical <em>memory map</em> or “checkerboard,” a chart showing the current state of some memory pool. In this case the memory is shown partitioned into 53 blocks of storage that are “reserved,” or in use, mixed together with 21 “free” or “available” blocks that are not in use. After dynamic storage allocation has been in operation for awhile, the computer memory will perhaps look something like this. Our first problem is to answer two questions:</p>
 
   <p class="indenthangingA">a) How is this partitioning of available space to be represented inside the computer?</p>
 
@@ -615,7 +615,7 @@
 
   <div class="image"><img src="../Images/ch02/436pro01.jpg"></div>
 
-  <p class="noindent">Thus locations 0 through 100 form the first available block; after the reserved areas 101–290 and 291–631 shown in <a href="../Text/ch02c.html#ch02fig42">Fig. 42</a>, we have more free space in location 632–673; etc.</p>
+  <p>Thus locations 0 through 100 form the first available block; after the reserved areas 101–290 and 291–631 shown in <a href="../Text/ch02c.html#ch02fig42">Fig. 42</a>, we have more free space in location 632–673; etc.</p>
 
   <p class="indent">As for question (b), if we want <em>n</em> consecutive words, clearly we must locate some block of <em>m ≥ n</em> available words and reduce its size to <em>m − n</em>. (Furthermore, when <em>m</em> = <em>n</em>, we must also delete this block from the list.) There may be several blocks with <em>n</em> or more cells, and so the question becomes, <em>which</em> area should be chosen?</p>
 
@@ -625,9 +625,9 @@
 
   <div class="equation"><a id="ch02eq-lev1sec5-1"></a><img src="../Images/ch02/437equ01.jpg"></div>
 
-  <p class="noindent">(A contrary example appears in <a href="../Text/ch02c.html#ch02ex_1_5_7">exercise 7</a>.) The point is that neither method clearly dominates the other, hence the simple first-fit method can be recommended.</p>
+  <p>(A contrary example appears in <a href="../Text/ch02c.html#ch02ex_1_5_7">exercise 7</a>.) The point is that neither method clearly dominates the other, hence the simple first-fit method can be recommended.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec5-A"></a><strong>Algorithm A</strong> (<em>First-fit method</em>). Let <code>AVAIL</code> point to the first available block of storage, and suppose that each available block with address <code>P</code> has two fields: <code>SIZE(P)</code>, the number of words in the block; and <code>LINK(P)</code>, a pointer to the next available block. The last pointer is <em>Λ</em>. This algorithm searches for and reserves a block of <code>N</code> words, or reports failure.</p>
+  <p><a id="ch02alg-lev1sec5-A"></a><strong>Algorithm A</strong> (<em>First-fit method</em>). Let <code>AVAIL</code> point to the first available block of storage, and suppose that each available block with address <code>P</code> has two fields: <code>SIZE(P)</code>, the number of words in the block; and <code>LINK(P)</code>, a pointer to the next available block. The last pointer is <em>Λ</em>. This algorithm searches for and reserves a block of <code>N</code> words, or reports failure.</p>
 
   <p class="indenthanging"><strong>A1.</strong> [Initialize.] Set <code>Q</code> ← <code>LOC(AVAIL)</code>. (Throughout the algorithm we use two pointers, <code>Q</code> and <code>P</code>, which are generally related by the condition <code>P</code> = <code>LINK(Q)</code>. We assume that <code>LINK(LOC(AVAIL))</code> = <code>AVAIL</code>.)</p>
 
@@ -649,7 +649,7 @@
 
   <p class="indent">A value for the constant <em>c</em> of about 8 or 10 is suggested, although very little theory or empirical evidence exists to compare this with other choices. When the best-fit method is being used, the test of <code>K</code> &lt; <em>c</em> is even <em>more</em> important than it is for the first-fit method, because tighter fits (smaller values of <code>K</code>) are much more likely to occur, and the number of available blocks should be kept as small as possible for that algorithm.</p>
 
-  <p class="noindent"><strong>B. Liberation.</strong> Now let’s consider the inverse problem: How should we return blocks to the available space list when they are no longer needed?</p>
+  <p><strong>B. Liberation.</strong> Now let’s consider the inverse problem: How should we return blocks to the available space list when they are no longer needed?</p>
 
   <p class="indent">It is perhaps tempting to dismiss this problem by using garbage collection (see <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a>); we could follow a policy of simply doing nothing until space runs out, then searching for all the areas currently in use and fashioning a new <code>AVAIL</code> list.</p>
 
@@ -659,23 +659,23 @@
 
   <div class="equation"><a id="ch02eq-lev1sec5-2"></a><img src="../Images/ch02/439equ01.jpg"></div>
 
-  <p class="noindent">In this diagram, the heavily shaded areas at the extreme left and right are unavailable. We may now reserve a section of the area known to be available:</p>
+  <p>In this diagram, the heavily shaded areas at the extreme left and right are unavailable. We may now reserve a section of the area known to be available:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-3"></a><img src="../Images/ch02/439equ02.jpg"></div>
 
-  <p class="noindent">If garbage collection occurs at this point, we have two separate free areas,</p>
+  <p>If garbage collection occurs at this point, we have two separate free areas,</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-4"></a><img src="../Images/ch02/439equ03.jpg"></div>
 
-  <p class="noindent">Boundaries between available and reserved areas have a tendency to perpetuate themselves, and as time goes on the situation gets progressively worse. But if we had used a philosophy of returning blocks to the <code>AVAIL</code> list as soon as they become free, <em>and collapsing adjacent available areas together</em>, we would have collapsed (<a href="../Text/ch02c.html#ch02eq-lev1sec5-2">2</a>) into</p>
+  <p>Boundaries between available and reserved areas have a tendency to perpetuate themselves, and as time goes on the situation gets progressively worse. But if we had used a philosophy of returning blocks to the <code>AVAIL</code> list as soon as they become free, <em>and collapsing adjacent available areas together</em>, we would have collapsed (<a href="../Text/ch02c.html#ch02eq-lev1sec5-2">2</a>) into</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-5"></a><img src="../Images/ch02/439equ04.jpg"></div>
 
-  <p class="noindent">and we would have obtained</p>
+  <p>and we would have obtained</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-6"></a><img src="../Images/ch02/439equ05.jpg"></div>
 
-  <p class="noindent">which is much better than (<a href="../Text/ch02c.html#ch02eq-lev1sec5-4">4</a>). This phenomenon causes the garbage-collection technique to leave memory more broken up than it should be.</p>
+  <p>which is much better than (<a href="../Text/ch02c.html#ch02eq-lev1sec5-4">4</a>). This phenomenon causes the garbage-collection technique to leave memory more broken up than it should be.</p>
 
   <p class="indent">In order to remove this difficulty, we can use garbage collection together with the process of <em>compacting memory</em>, that is, moving all the reserved blocks into consecutive locations, so that all available blocks come together whenever garbage collection is done. The allocation algorithm now becomes completely trivial by contrast with <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, since there is only one available block at all times. Even though this technique takes time to recopy all the locations that are in use, and to change the value of the link fields therein, it can be applied with reasonable efficiency when there is a disciplined use of pointers, and when there is a spare link field in each block for use by the garbage collection algorithms. (See <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 33</a>.)</p>
 
@@ -685,7 +685,7 @@
 
   <p class="indent"><a id="page_440"></a>The first solution to these problems is to maintain the <code>AVAIL</code> list in order of increasing memory locations.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec5-B"></a><strong>Algorithm B</strong> (<em>Liberation with sorted list</em>). Under the assumptions of <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, with the additional assumption that the <code>AVAIL</code> list is sorted by memory location (that is, if <code>P</code> points to an available block and <code>LINK(P)</code> ≠ <em>Λ</em>, then <code>LINK(P)</code> &gt; <code>P</code>), this algorithm adds the block of <code>N</code> consecutive cells beginning at location <code>P0</code> to the <code>AVAIL</code> list. We naturally assume that none of these <code>N</code> cells is already available.</p>
+  <p><a id="ch02alg-lev1sec5-B"></a><strong>Algorithm B</strong> (<em>Liberation with sorted list</em>). Under the assumptions of <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, with the additional assumption that the <code>AVAIL</code> list is sorted by memory location (that is, if <code>P</code> points to an available block and <code>LINK(P)</code> ≠ <em>Λ</em>, then <code>LINK(P)</code> &gt; <code>P</code>), this algorithm adds the block of <code>N</code> consecutive cells beginning at location <code>P0</code> to the <code>AVAIL</code> list. We naturally assume that none of these <code>N</code> cells is already available.</p>
 
   <p class="indenthanging"><strong>B1.</strong> [Initialize.] Set <code>Q</code> ← <code>LOC(AVAIL)</code>. (See the remarks in step A1 above.)</p>
 
@@ -699,7 +699,7 @@
 
   <p class="indenthangingAP">so this test always fails when <code>Q</code> = <code>LOC(AVAIL)</code>), set <code>SIZE(Q)</code> ← <code>SIZE(Q)</code> + <code>N</code> and <code>LINK(Q)</code> ← <code>LINK(P0)</code>. Otherwise set <code>LINK(Q)</code> ← <code>P0</code>, <code>SIZE(P0)</code> ← <code>N</code>. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent">Steps B3 and B4 do the desired collapsing, based on the fact that the pointers <code>Q</code> &lt; <code>P0</code> &lt; <code>P</code> are the beginning locations of three consecutive available areas.</p>
+  <p>Steps B3 and B4 do the desired collapsing, based on the fact that the pointers <code>Q</code> &lt; <code>P0</code> &lt; <code>P</code> are the beginning locations of three consecutive available areas.</p>
 
   <p class="indent">If the <code>AVAIL</code> list is not maintained in order of locations, the reader can see that a “brute force” approach to the collapsing problem would require a complete search through the entire <code>AVAIL</code> list; <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> reduces this to a search through about <em>half</em> of the <code>AVAIL</code> list (in step B2) on the average. <a href="../Text/ch02c.html#ch02ex_1_5_11">Exercise 11</a> shows how <a href="../Text/ch02c.html#ch02alg-lev1sec5-B">Algorithm B</a> can be modified so that, on the average, only about one-third of the <code>AVAIL</code> list must be searched. But obviously, when the <code>AVAIL</code> list is long, all of these methods are much slower than we want them to be. Isn’t there some way to reserve and free storage areas so that we don’t need to do extensive searching through the <code>AVAIL</code> list?</p>
 
@@ -715,13 +715,13 @@
 
   <div class="equation"><a id="ch02eq-lev1sec5-8"></a><img src="../Images/ch02/441equ02.jpg"></div>
 
-  <p class="noindent">To ensure proper “boundary conditions,” the list head is set up as follows:</p>
+  <p>To ensure proper “boundary conditions,” the list head is set up as follows:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-9"></a><img src="../Images/ch02/441equ03.jpg"></div>
 
   <p class="indent">A first-fit reservation algorithm for this technique may be designed very much like <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a>, so we shall not consider it here (see <a href="../Text/ch02c.html#ch02ex_1_5_12">exercise 12</a>). The principal new feature of this method is the way the block can be freed in essentially a fixed amount of time:</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec5-C"></a><strong>Algorithm C</strong> (<em>Liberation with boundary tags</em>). Assume that blocks of locations have the forms shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec5-7">7</a>), and assume that the <code>AVAIL</code> list is doubly linked, as described above. This algorithm puts the block of locations starting with address <code>P0</code> into the <code>AVAIL</code> list. If the pool of available storage runs from locations <em>m</em><sub>0</sub> through <em>m</em><sub>1</sub>, inclusive, the algorithm assumes for convenience that</p>
+  <p><a id="ch02alg-lev1sec5-C"></a><strong>Algorithm C</strong> (<em>Liberation with boundary tags</em>). Assume that blocks of locations have the forms shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec5-7">7</a>), and assume that the <code>AVAIL</code> list is doubly linked, as described above. This algorithm puts the block of locations starting with address <code>P0</code> into the <code>AVAIL</code> list. If the pool of available storage runs from locations <em>m</em><sub>0</sub> through <em>m</em><sub>1</sub>, inclusive, the algorithm assumes for convenience that</p>
 
   <p class="center"><code>TAG(</code><em>m</em><sub>0</sub> − 1<code>)</code> = <code>TAG(</code><em>m</em><sub>1</sub> + 1<code>)</code> = “+”.</p>
 
@@ -737,7 +737,7 @@
 
   <p class="indent">The steps of <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a> are straightforward consequences of the storage layout (<a href="../Text/ch02c.html#ch02eq-lev1sec5-7">7</a>); a slightly longer algorithm that is a little faster appears in <a href="../Text/ch02c.html#ch02ex_1_5_15">exercise 15</a>. In step C5, <code>AVAIL</code> is an abbreviation for <code>LINK(LOC(AVAIL))</code>, as shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec5-9">9</a>).</p>
 
-  <p class="noindent"><strong>C. The “buddy system.”</strong> We will now study another approach to dynamic storage allocation, suitable for use with binary computers. This method uses one bit of overhead in each block, and it requires all blocks to be of length 1, 2, 4, 8, or 16, etc. If a block is not 2<em><sup>k</sup></em> words long for some integer <em>k</em>, the next higher power of 2 is chosen and extra unused space is allocated accordingly.</p>
+  <p><strong>C. The “buddy system.”</strong> We will now study another approach to dynamic storage allocation, suitable for use with binary computers. This method uses one bit of overhead in each block, and it requires all blocks to be of length 1, 2, 4, 8, or 16, etc. If a block is not 2<em><sup>k</sup></em> words long for some integer <em>k</em>, the next higher power of 2 is chosen and extra unused space is allocated accordingly.</p>
 
   <p class="indent">The idea of this method is to keep separate lists of available blocks of each size 2<em><sup>k</sup></em>, 0 <em>≤ k ≤ m</em>. The entire pool of memory space under allocation consists of 2<em><sup>m</sup></em> words, which can be assumed to have the addresses 0 through 2<em><sup>m</sup></em> − 1. Originally, the entire block of 2<em><sup>m</sup></em> words is available. Later, when a block of <em>2k</em> words is desired, and if nothing of this size is available, a larger available block is <em>split</em> into two equal parts; ultimately, a block of the right size 2<em><sup>k</sup></em> will appear. When one block splits into two (each of which is half as large as the original), these two blocks are called <em>buddies</em>. Later when both buddies are available again, they coalesce back into a single block; thus the process can be maintained indefinitely, unless we run out of space at some point.</p>
 
@@ -747,29 +747,29 @@
 
   <div class="equation"><a id="ch02eq-lev1sec5-10"></a><img src="../Images/ch02/442equ01.jpg"></div>
 
-  <p class="noindent">This function is readily computed with the “exclusive or” instruction (sometimes called “selective complement” or “add without carry”) usually found on binary computers; see <a href="../Text/ch02c.html#ch02ex_1_5_28">exercise 28</a>.</p>
+  <p>This function is readily computed with the “exclusive or” instruction (sometimes called “selective complement” or “add without carry”) usually found on binary computers; see <a href="../Text/ch02c.html#ch02ex_1_5_28">exercise 28</a>.</p>
 
   <p class="indent">The buddy system makes use of a one-bit <code>TAG</code> field in each block:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-11"></a><img src="../Images/ch02/442equ02.jpg"></div>
 
-  <p class="noindent"><a id="page_443"></a>This <code>TAG</code> field is present in all blocks, and it must not be tampered with by the users who reserve blocks. The <em>available</em> blocks also have two link fields, <code>LINKF</code> and <code>LINKB</code>, which are the usual forward and backward links of a doubly linked list; and they also have a <code>KVAL</code> field to specify <em>k</em> when their size is 2<em><sup>k</sup></em>. The algorithms below make use of the table locations <code>AVAIL[</code>0<code>]</code>, <code>AVAIL[</code>1<code>]</code>, <em>...</em>, <code>AVAIL[</code><em>m</em><code>]</code>, which serve respectively as the heads of the lists of available storage of sizes 1, 2, 4, <em>...</em>, 2<em><sup>m</sup></em>. These lists are doubly linked, so as usual the list heads contain two pointers (see <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>):</p>
+  <p><a id="page_443"></a>This <code>TAG</code> field is present in all blocks, and it must not be tampered with by the users who reserve blocks. The <em>available</em> blocks also have two link fields, <code>LINKF</code> and <code>LINKB</code>, which are the usual forward and backward links of a doubly linked list; and they also have a <code>KVAL</code> field to specify <em>k</em> when their size is 2<em><sup>k</sup></em>. The algorithms below make use of the table locations <code>AVAIL[</code>0<code>]</code>, <code>AVAIL[</code>1<code>]</code>, <em>...</em>, <code>AVAIL[</code><em>m</em><code>]</code>, which serve respectively as the heads of the lists of available storage of sizes 1, 2, 4, <em>...</em>, 2<em><sup>m</sup></em>. These lists are doubly linked, so as usual the list heads contain two pointers (see <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>):</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-12"></a><img src="../Images/ch02/443equ01.jpg"></div>
 
-  <p class="noindent">Initially, before any storage has been allocated, we have</p>
+  <p>Initially, before any storage has been allocated, we have</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-13"></a><img src="../Images/ch02/443equ02.jpg"></div>
 
-  <p class="noindent">(indicating a single available block of length 2<em><sup>m</sup></em>, beginning in location 0), and</p>
+  <p>(indicating a single available block of length 2<em><sup>m</sup></em>, beginning in location 0), and</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-14"></a><img src="../Images/ch02/443equ03.jpg"></div>
 
-  <p class="noindent">(indicating empty lists for available blocks of lengths 2<em><sup>k</sup></em> for all <em>k &lt; m</em>).</p>
+  <p>(indicating empty lists for available blocks of lengths 2<em><sup>k</sup></em> for all <em>k &lt; m</em>).</p>
 
   <p class="indent">From this description of the buddy system, the reader may find it enjoyable to design the necessary algorithms for reserving and freeing storage areas before looking at the algorithms given below. Notice the comparative ease with which blocks can be halved in the reservation algorithm.</p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec5-R"></a><strong>Algorithm R</strong> (<em>Buddy system reservation</em>). This algorithm finds and reserves a block of 2<em><sup>k</sup></em> locations, or reports failure, using the organization of the buddy system as explained above.</p>
+  <p><a id="ch02alg-lev1sec5-R"></a><strong>Algorithm R</strong> (<em>Buddy system reservation</em>). This algorithm finds and reserves a block of 2<em><sup>k</sup></em> locations, or reports failure, using the organization of the buddy system as explained above.</p>
 
   <p class="indenthanging"><strong>R1.</strong> [Find block.] Let <em>j</em> be the smallest integer in the range <em>k ≤ j ≤ m</em> for which <code>AVAILF[</code><em>j</em><code>]</code> ≠ <code>LOC(AVAIL[</code><em>j</em><code>])</code>, that is, for which the list of available blocks of size 2<em><sup>j</sup></em> is not empty. If no such <em>j</em> exists, the algorithm terminates unsuccessfully, since there are no known available blocks of sufficient size to meet the request.</p>
 
@@ -779,7 +779,7 @@
 
   <p class="indenthanging"><strong>R4.</strong> [Split.] Decrease <em>j</em> by 1. Then set <code>P</code> ← <code>L</code> + 2<em><sup>j</sup></em>, <code>TAG(P)</code> ← 1, <code>KVAL(P)</code> <em>← j</em>, <code>LINKF(P)</code> ← <code>LINKB(P)</code> ← <code>LOC(AVAIL[</code><em>j</em><code>])</code><em>,</em> <code>AVAILF[</code><em>j</em><code>]</code> ← <code>AVAILB[</code><em>j</em><code>]</code> ← <code>P</code>. (This splits a large block and enters the unused half in the <code>AVAIL[</code><em>j</em><code>]</code> list, which was empty.) Go back to step R3. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent"><a id="ch02alg-lev1sec5-S"></a><strong>Algorithm S</strong> (<em>Buddy system liberation</em>). This algorithm returns a block of 2<em><sup>k</sup></em> locations, starting in address <code>L</code>, to free storage, using the organization of the buddy system as explained above.</p>
+  <p><a id="ch02alg-lev1sec5-S"></a><strong>Algorithm S</strong> (<em>Buddy system liberation</em>). This algorithm returns a block of 2<em><sup>k</sup></em> locations, starting in address <code>L</code>, to free storage, using the organization of the buddy system as explained above.</p>
 
   <p class="indenthanging"><a id="page_444"></a><strong>S1.</strong> [Is buddy available?] Set <code>P</code> ← buddy<em><sub>k</sub></em><code>(L)</code>. (See Eq. (<a href="../Text/ch02c.html#ch02eq-lev1sec5-10">10</a>).) If <em>k</em> = <em>m</em> or if <code>TAG(P)</code> = 0, or if <code>TAG(P)</code> = 1 and <code>KVAL(P)</code> ≠ <em>k</em>, go to S3.</p>
 
@@ -791,17 +791,17 @@
 
   <p class="indenthanging"><strong>S3.</strong> [Put on list.] Set <code>TAG(L)</code> ← 1, <code>P</code> ← <code>AVAILF[</code><em>k</em><code>]</code>, <code>LINKF(L)</code> ← <code>P</code>, <code>LINKB(P)</code> ← <code>L</code><em>,</em> <code>KVAL(L)</code> <em>← k</em>, <code>LINKB(L)</code> ← <code>LOC(AVAIL[</code><em>k</em><code>])</code>, <code>AVAILF[</code><em>k</em><code>]</code> ← <code>L</code>. (This puts block <code>L</code> on the <code>AVAIL[</code><em>k</em><code>]</code> list.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent"><strong>D. Comparison of the methods.</strong> The mathematical analysis of these dynamic storage-allocation algorithms has proved to be quite difficult, but there is one interesting phenomenon that is fairly easy to analyze, namely the “fifty-percent rule”:</p>
+  <p><strong>D. Comparison of the methods.</strong> The mathematical analysis of these dynamic storage-allocation algorithms has proved to be quite difficult, but there is one interesting phenomenon that is fairly easy to analyze, namely the “fifty-percent rule”:</p>
 
   <p class="uln-indent"><em>If <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithms A</a> and <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">B</a> are used continually in such a way that the system tends to an equilibrium condition, where there are N reserved blocks in the system, on the average, each equally likely to be the next one freed, and where the quantity</em> <code>K</code> <em>in <a href="../Text/ch02c.html#ch02alg-lev1sec5-A">Algorithm A</a> takes on nonzero values (or, more generally, values ≥ c as in step A4′) with probability p, then the average number of available blocks tends to approximately</em> <span class="middle"><img src="../Images/ch02/1by2.jpg"></span> <em>pN.</em></p>
 
-  <p class="noindent">This rule tells us approximately how long the <code>AVAIL</code> list will be. When the quantity <em>p</em> is near 1 — this will happen if <em>c</em> is very small and if the block sizes are infrequently equal to each other — we have about half as many available blocks as unavailable ones; hence the name “fifty-percent rule.”</p>
+  <p>This rule tells us approximately how long the <code>AVAIL</code> list will be. When the quantity <em>p</em> is near 1 — this will happen if <em>c</em> is very small and if the block sizes are infrequently equal to each other — we have about half as many available blocks as unavailable ones; hence the name “fifty-percent rule.”</p>
 
   <p class="indent">It is not hard to derive this rule. Consider the following memory map:</p>
 
   <div class="image"><img src="../Images/ch02/e444_01.jpg"></div>
 
-  <p class="noindent">This shows the reserved blocks divided into three categories:</p>
+  <p>This shows the reserved blocks divided into three categories:</p>
 
   <p class="indenthangingA"><em>A</em>: when freed, the number of available blocks will decrease by one;</p>
 
@@ -809,11 +809,11 @@
 
   <p class="indenthangingA"><em>C</em>: when freed, the number of available blocks will increase by one.</p>
 
-  <p class="noindent">Now let <em>N</em> be the number of reserved blocks, and let <em>M</em> be the number of available ones; let <em>A</em>, <em>B</em>, and <em>C</em> be the number of blocks of the types identified above. We have</p>
+  <p>Now let <em>N</em> be the number of reserved blocks, and let <em>M</em> be the number of available ones; let <em>A</em>, <em>B</em>, and <em>C</em> be the number of blocks of the types identified above. We have</p>
 
   <div class="equation"><a id="ch02eq-lev1sec5-15"></a><img src="../Images/ch02/444equ01.jpg"></div>
 
-  <p class="noindent">where <span class="ent">∊</span> = 0, 1, or 2 depending on conditions at the lower and upper boundaries.</p>
+  <p>where <span class="ent">∊</span> = 0, 1, or 2 depending on conditions at the lower and upper boundaries.</p>
 
   <p class="indent">Let us assume that <em>N</em> is essentially constant, but that <em>A</em>, <em>B</em>, <em>C</em>, and <span class="ent">∊</span> are random quantities that reach a stationary distribution after a block is freed and a (slightly different) stationary distribution after a block is allocated. The average change in <em>M</em> when a block is freed is the average value of (<em>C −A</em>)<em>/N</em>; the average change in <em>M</em> when a block is allocated is −1 + <em>p</em>. So the equilibrium assumption <a id="page_445"></a>tells us that the average value of <em>C − A − N</em> + <em>pN</em> is zero. But then the average value of 2<em>M</em> is <em>pN</em> plus the average value of <span class="ent">∊</span>, since 2<em>M</em> = <em>N</em> + <em>A − C</em> + <span class="ent">∊</span> by (<a href="../Text/ch02c.html#ch02eq-lev1sec5-15">15</a>). The fifty-percent rule follows.</p>
 
@@ -833,7 +833,7 @@
 
   <p class="indenthanging"><strong>P4.</strong> [Use data.] Reserve a new block of length <em>S</em>, which is due to be freed at (<code>TIME</code> + <em>T</em>). Return to P1. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent">Whenever <code>TIME</code> was a multiple of 200, detailed statistics about the performance of the reservation and liberation algorithms were printed. The same sequence of values of <em>S</em> and <em>T</em> was used for each pair of algorithms tested. After <code>TIME</code> advanced past 2000, the system usually had reached a more or less steady state that gave every indication of being maintained indefinitely thereafter. However, depending on the total amount of storage available and on the distributions of <em>S</em> and <em>T</em> in step P3, the allocation algorithms would occasionally fail to find enough space and the simulation experiment was then terminated.</p>
+  <p>Whenever <code>TIME</code> was a multiple of 200, detailed statistics about the performance of the reservation and liberation algorithms were printed. The same sequence of values of <em>S</em> and <em>T</em> was used for each pair of algorithms tested. After <code>TIME</code> advanced past 2000, the system usually had reached a more or less steady state that gave every indication of being maintained indefinitely thereafter. However, depending on the total amount of storage available and on the distributions of <em>S</em> and <em>T</em> in step P3, the allocation algorithms would occasionally fail to find enough space and the simulation experiment was then terminated.</p>
 
   <p class="indent"><a id="page_446"></a>Let <em>C</em> be the total number of memory locations available, and let <span class="middle"><img src="../Images/ch02/s-bar.jpg"></span> and <span class="middle"><img src="../Images/ch02/t-bar.jpg"></span> denote the average values of <em>S</em> and <em>T</em> in step P3. It is easy to see that the expected number of unavailable words of memory at any given time is <span class="middle"><img src="../Images/ch02/st-bar.jpg"></span>, once <code>TIME</code> is sufficiently large. When <span class="middle"><img src="../Images/ch02/st-bar.jpg"></span> was greater than about <span class="middle"><img src="../Images/ch02/e446_01.jpg"></span> in the experiments, memory overflow usually occurred, often before <em>C</em> words of memory were actually needed. The memory was able to become over 90 percent filled when the block size was small compared to <em>C</em>, but when the block sizes were allowed to exceed <span class="middle"><img src="../Images/ch02/e446_02.jpg"></span> (as well as taking on much smaller values) the program tended to regard the memory as “full” when fewer than <span class="middle"><img src="../Images/ch02/e446_03.jpg"></span> locations were actually in use. Empirical evidence suggests strongly that <em>block sizes larger than</em> <span class="middle"><img src="../Images/ch02/e446_04.jpg"></span> <em>should not be used with dynamic storage allocation</em> if effective operation is expected.</p>
 
@@ -847,7 +847,7 @@
 
   <p class="uln-indent">(<em>S3</em>) sizes (10, 12, 14, 16, 18, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200, 250, 500, 1000, 2000, 3000, 4000) selected with equal probability.</p>
 
-  <p class="noindent">The time distribution <em>T</em> was usually a random integer chosen uniformly between 1 and <em>t</em>, for fixed <em>t</em> = 10, 100, or 1000.</p>
+  <p>The time distribution <em>T</em> was usually a random integer chosen uniformly between 1 and <em>t</em>, for fixed <em>t</em> = 10, 100, or 1000.</p>
 
   <p class="indent">Experiments were also made in which <em>T</em> was chosen uniformly between 1 and min (<span class="middle"><img src="../Images/ch02/e446_06.jpg"></span>) in step P3, where <em>U</em> is the number of time units remaining the next scheduled freeing of some currently reserved block in the system. This time distribution was meant to simulate an “almost-last-in-first-out” behavior: For if <em>T</em> were always chosen <em>≤ U</em>, the storage allocation system would degenerate into simply a stack operation requiring no complex algorithms. (See <a href="../Text/ch02c.html#ch02ex_1_5_1">exercise 1</a>.) The stated distribution causes <em>T</em> to be chosen greater than <em>U</em> about 20 percent of the time, so we have almost, but not quite, a stack operation. When this distribution was used, algorithms such as A, B, and C behaved much better than usual; there were rarely, if ever, more than two items in the entire <code>AVAIL</code> list, while there were about 14 reserved blocks. On the other hand, the buddy system algorithms, R and S, were slower when this distribution was used, because they tend to split and coalesce blocks more frequently in a stack-like operation. The theoretical properties of this time distribution appear to be quite difficult to deduce (see <a href="../Text/ch02c.html#ch02ex_1_5_32">exercise 32</a>).</p>
 
@@ -883,7 +883,7 @@
 
   <div class="image"><img src="../Images/ch02/e449_01.jpg"></div>
 
-  <p class="noindent">Here <em>A</em> ≥ 1 is the number of iterations necessary when searching for an available block that is large enough; <em>R</em> ≥ 0 is the number of times a block is split in two (the initial difference of <em>j − k</em> in <a href="../Text/ch02c.html#ch02alg-lev1sec5-R">Algorithm R</a>); and <em>S</em> ≥ 0 is the number of times buddy blocks are reunited during <a href="../Text/ch02c.html#ch02alg-lev1sec5-S">Algorithm S</a>. The simulation experiments indicate that under the stated assumptions with size distribution (<em>S1</em>) and time chosen between 1 and 1000, we may take <em>A</em> = 2.8, <em>R</em> = <em>S</em> = 0.04 on the average. (The average values <em>A</em> = 1.3, <em>R</em> = <em>S</em> = 0.9 were observed when the “almost-last-in-first-out” time distribution was substituted as explained above.) This shows that both methods are quite fast, with the buddy system slightly faster in <code>MIX</code>’s case. Remember that the buddy system requires about 44 percent more space when block sizes are not constrained to be powers of 2.</p>
+  <p>Here <em>A</em> ≥ 1 is the number of iterations necessary when searching for an available block that is large enough; <em>R</em> ≥ 0 is the number of times a block is split in two (the initial difference of <em>j − k</em> in <a href="../Text/ch02c.html#ch02alg-lev1sec5-R">Algorithm R</a>); and <em>S</em> ≥ 0 is the number of times buddy blocks are reunited during <a href="../Text/ch02c.html#ch02alg-lev1sec5-S">Algorithm S</a>. The simulation experiments indicate that under the stated assumptions with size distribution (<em>S1</em>) and time chosen between 1 and 1000, we may take <em>A</em> = 2.8, <em>R</em> = <em>S</em> = 0.04 on the average. (The average values <em>A</em> = 1.3, <em>R</em> = <em>S</em> = 0.9 were observed when the “almost-last-in-first-out” time distribution was substituted as explained above.) This shows that both methods are quite fast, with the buddy system slightly faster in <code>MIX</code>’s case. Remember that the buddy system requires about 44 percent more space when block sizes are not constrained to be powers of 2.</p>
 
   <p class="indent">A corresponding time estimate for the garbage collection and compacting algorithm of <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 33</a> is about 104 units of time to locate a free node, assuming that garbage collection occurs when the memory is approximately half full, and assuming that the nodes have an average length of 5 words with 2 links per node. The pros and cons of garbage collection are discussed in <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a>. When the memory is not heavily loaded and when the appropriate restrictions are met, garbage collection and compacting is very efficient; for example, on the <code>MIX</code> computer, the garbage collection method is faster than the other two, if the accessible items never occupy more than about one-third of the total memory space, and if the nodes are relatively small.</p>
 
@@ -899,7 +899,7 @@
 
   <p class="indent">For further empirical results about dynamic storage allocation, see the articles by B. Randell, <em>CACM</em> <strong>12</strong> (1969), 365–369, 372; P. W. Purdom, S. M. Stigler, and T. O. Cheam, <em>BIT</em> <strong>11</strong> (1971), 187–195; B. H. Margolin, R. P. Parmelee, and M. Schatzoff, <em>IBM Systems J.</em> <strong>10</strong> (1971), 283–304; J. A. Campbell, <em>Comp. J.</em> <strong>14</strong> (1971), 7–9; John E. Shore, <em>CACM</em> <strong>18</strong> (1975), 433–440; Norman R. Nielsen, <em>CACM</em> <strong>20</strong> (1977), 864–873.</p>
 
-  <p class="noindent"><strong>*E. Distributed fit.</strong> If the distribution of block sizes is known in advance, and if each block present is equally likely to be the next one freed regardless of when it was allocated, we can use a technique that has substantially better memory utilization than the general-purpose techniques described so far, by following the suggestions of E. G. Coffman, Jr., and F. T. Leighton [<em>J. Computer and System Sci.</em> <strong>38</strong> (1989), 2–35]. Their “distributed-fit method” works by partitioning memory into roughly <span class="middle"><img src="../Images/ch02/e450_01.jpg"></span> slots, where <em>N</em> is the desired maximum number of blocks to be handled in steady state. Each slot has a fixed size, although different slots may have different sizes; the main point is that any given slot has fixed boundaries, and it will either be empty or contain a single allocated block.</p>
+  <p><strong>*E. Distributed fit.</strong> If the distribution of block sizes is known in advance, and if each block present is equally likely to be the next one freed regardless of when it was allocated, we can use a technique that has substantially better memory utilization than the general-purpose techniques described so far, by following the suggestions of E. G. Coffman, Jr., and F. T. Leighton [<em>J. Computer and System Sci.</em> <strong>38</strong> (1989), 2–35]. Their “distributed-fit method” works by partitioning memory into roughly <span class="middle"><img src="../Images/ch02/e450_01.jpg"></span> slots, where <em>N</em> is the desired maximum number of blocks to be handled in steady state. Each slot has a fixed size, although different slots may have different sizes; the main point is that any given slot has fixed boundaries, and it will either be empty or contain a single allocated block.</p>
 
   <p class="indent">The first <em>N</em> slots in Coffman and Leighton’s scheme are laid out according to the assumed distribution of sizes, while the last <span class="middle"><img src="../Images/ch02/e450_02.jpg"></span> slots all have the maximum size. For example, if we assume that the block sizes will be uniformly distributed between 1 and 256, and if we expect to handle <em>N</em> = 2<sup>14</sup> such blocks, we would divide the memory into <em>N/</em>256 = 2<sup>6</sup> slots of each size 1, 2, <em>...</em>, 256, followed by an “overflow area” that contains <span class="middle"><img src="../Images/ch02/e450_03.jpg"></span> blocks of size 256. When the system is operating at full capacity, we expect it to handle <em>N</em> blocks of average size <span class="middle"><img src="../Images/ch02/e450_04.jpg"></span>, occupying <span class="middle"><img src="../Images/ch02/e450_05.jpg"></span> locations; this is the amount of space we have allocated to the first <em>N</em> slots. We have also <a id="page_451"></a>set aside an additional 1792 · 256 = 458<em>,</em>752 locations to handle the effects of random variations; this additional overhead amounts to <em>O</em>(<em>N</em><sup>−1<em>/</em>2</sup> log <em>N</em>) of the total space, rather than a constant multiple of <em>N</em> as in the buddy system, so it becomes a negligible fraction when <em>N</em> → ∞. In our example, however, it still amounts to about 18% of the total allocation.</p>
 
@@ -909,13 +909,13 @@
 
   <p class="indent">In our example, the starting slot for the search during an allocation is not uniform among slots 1, 2, <em>...</em>, <em>N</em>; it is, instead, uniform among slots 1, 65, 129, ..., <em>N</em> − 63, because there are <em>N/</em>256 = 64 slots of each size. But this deviation from the random model considered in the previous paragraph makes overflow even less likely than predicted. All bets are off, of course, if the assumptions about block size distribution and occupancy time are violated.</p>
 
-  <p class="noindent"><strong>F. Overflow.</strong> What do we do when no more room is available? Suppose there is a request for, say, <em>n</em> consecutive words, when all available blocks are too small. The first time this happens, there usually are more than <em>n</em> available locations <a id="page_452"></a>present, but they are not consecutive; compacting memory (that is, moving some of the locations that are in use, so that all available locations are brought together) would mean that we could continue processing. But compacting is slow, and it requires a disciplined use of pointers; moreover, the vast majority of cases in which the first-fit method runs out of room will soon thereafter run completely out of space anyway, no matter how much compacting and re-compacting is done. Therefore it is generally not worthwhile to write a compacting program, except under special circumstances in connection with garbage collection, as in <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 33</a>. If overflow is expected to occur, some method for removing items from memory and storing them on an external memory device can be used, with provision for bringing the information back again when it is needed. This implies that all programs referring to the dynamic memory area must be severely restricted with regard to the allowable references they make to other blocks, and special computer hardware (for example, interrupt on absence of data, or automatic “paging”) is generally required for efficient operation under these conditions.</p>
+  <p><strong>F. Overflow.</strong> What do we do when no more room is available? Suppose there is a request for, say, <em>n</em> consecutive words, when all available blocks are too small. The first time this happens, there usually are more than <em>n</em> available locations <a id="page_452"></a>present, but they are not consecutive; compacting memory (that is, moving some of the locations that are in use, so that all available locations are brought together) would mean that we could continue processing. But compacting is slow, and it requires a disciplined use of pointers; moreover, the vast majority of cases in which the first-fit method runs out of room will soon thereafter run completely out of space anyway, no matter how much compacting and re-compacting is done. Therefore it is generally not worthwhile to write a compacting program, except under special circumstances in connection with garbage collection, as in <a href="../Text/ch02c.html#ch02ex_1_5_33">exercise 33</a>. If overflow is expected to occur, some method for removing items from memory and storing them on an external memory device can be used, with provision for bringing the information back again when it is needed. This implies that all programs referring to the dynamic memory area must be severely restricted with regard to the allowable references they make to other blocks, and special computer hardware (for example, interrupt on absence of data, or automatic “paging”) is generally required for efficient operation under these conditions.</p>
 
   <p class="indent">Some decision procedure is necessary to decide which blocks are the most likely candidates for removal. One idea is to maintain a doubly linked list of the reserved blocks, in which a block is moved up to the front of the list each time it is accessed; then the blocks are effectively sorted in order of their last access, and the block at the rear of the list is the one to remove first. A similar effect can be achieved more simply by putting the reserved blocks into a circular list and including a “recently used” bit in each block; the latter is set to 1 whenever the block is accessed. When it is time to remove a block, a pointer moves along the circular list, resetting all “recently used” bits to 0 until finding a block that has not been used since the last time the pointer reached this part of the circle.</p>
 
   <p class="indent">J. M. Robson has shown [<em>JACM</em> <strong>18</strong> (1971), 416–423] that dynamic storage allocation strategies that never relocate reserved blocks cannot possibly be guaranteed to use memory efficiently; there will always be pathological circumstances in which the method breaks down. For example, even when blocks are restricted to be of sizes 1 and 2, overflow might occur with the memory only about <span class="middle"><img src="../Images/ch02/2by3.jpg"></span> full, no matter what allocation algorithm is used! Robson’s interesting results are surveyed in <a href="../Text/ch02c.html#ch02ex_1_5_36">exercises 36</a>–<a href="../Text/ch02c.html#ch02ex_1_5_40">40</a>, and in <a href="../Text/ch02c.html#ch02ex_1_5_42">exercises 42</a>–<a href="../Text/ch02c.html#ch02ex_1_5_43">43</a> where he has shown that the best-fit method has a very bad worst case by comparison with first-fit.</p>
 
-  <p class="noindent"><strong>G. For further reading.</strong> A comprehensive survey and critical review of dynamic storage allocation techniques, based on many more years of experience than were available to the author when the material above was written, has been compiled by Paul R. Wilson, Mark S. Johnstone, Michael Neely, and David Boles, <em>Lecture Notes in Computer Science</em> <strong>986</strong> (1995), 1–116.</p>
+  <p><strong>G. For further reading.</strong> A comprehensive survey and critical review of dynamic storage allocation techniques, based on many more years of experience than were available to the author when the material above was written, has been compiled by Paul R. Wilson, Mark S. Johnstone, Michael Neely, and David Boles, <em>Lecture Notes in Computer Science</em> <strong>986</strong> (1995), 1–116.</p>
 
   <p class="ex-title">Exercises</p>
 
@@ -995,7 +995,7 @@
 
   <div class="imageL"><img src="../Images/ch02/p0455_01.jpg"></div>
 
-  <p class="noindent">The node immediately following <code>NODE(P)</code> in memory is <code>NODE(P</code> + <code>SIZE(P))</code>. Assume that the only fields in <code>NODE(P)</code> that are used as links to other nodes are <code>LINK(P</code> + 1<code>)</code>, <code>LINK(P</code> + 2<code>)</code>, <em>...</em>, <code>LINK(P</code> + <code>T(P))</code>, and each of these link fields is either Λ or the address of the first word of another node. Finally, assume that there is one further link variable in the program, called <code>USE</code>, and it points to one of the nodes.</p>
+  <p>The node immediately following <code>NODE(P)</code> in memory is <code>NODE(P</code> + <code>SIZE(P))</code>. Assume that the only fields in <code>NODE(P)</code> that are used as links to other nodes are <code>LINK(P</code> + 1<code>)</code>, <code>LINK(P</code> + 2<code>)</code>, <em>...</em>, <code>LINK(P</code> + <code>T(P))</code>, and each of these link fields is either Λ or the address of the first word of another node. Finally, assume that there is one further link variable in the program, called <code>USE</code>, and it points to one of the nodes.</p>
 
   <p class="indent">Design an algorithm that (i) determines all nodes accessible directly or indirectly from the variable <code>USE</code>, (ii) moves these nodes into memory locations 1 through <code>K</code>−1, for some <code>K</code>, changing all links so that structural relationships are preserved, and (iii) sets <code>AVAIL</code> ← <code>K</code>.</p>
 
@@ -1003,7 +1003,7 @@
 
   <div class="image"><img src="../Images/ch02/455fig01.jpg"></div>
 
-  <p class="noindent">Your algorithm should transform this into</p>
+  <p>Your algorithm should transform this into</p>
 
   <div class="image"><img src="../Images/ch02/455fig02.jpg"></div>
 
@@ -1034,7 +1034,7 @@
   <div class="heading">
     <h3 id="ch02lev1sec6"><a id="page_457"></a>2.6. History and Bibliography</h3>
 
-    <p class="noindent">Linear Lists and rectangular arrays of information kept in consecutive memory locations were widely used from the earliest days of stored-program computers, and the earliest treatises on programming gave the basic algorithms for traversing these structures. [For example, see J. von Neumann, <em>Collected Works</em> <strong>5</strong>, 113– 116 (written 1946); M. V. Wilkes, D. J. Wheeler, S. Gill, <em>The Preparation of Programs for an Electronic Digital Computer</em> (Reading, Mass.: Addison– Wesley, 1951), subroutine V-1; and see especially also the work of Konrad Zuse, <em>Berichte der Gesellschaft für Mathematik und Datenverarbeitung</em> <strong>63</strong> (Bonn: 1972), written in 1945. Zuse was the first to develop nontrivial algorithms that worked with lists of dynamically varying lengths.] Before the days of index registers, operations on sequential linear lists were done by performing arithmetic on the machine language instructions themselves, and the need to do such arithmetic was one of the early motivations for having a computer whose programs share memory space with the data they manipulate.</p>
+    <p>Linear Lists and rectangular arrays of information kept in consecutive memory locations were widely used from the earliest days of stored-program computers, and the earliest treatises on programming gave the basic algorithms for traversing these structures. [For example, see J. von Neumann, <em>Collected Works</em> <strong>5</strong>, 113– 116 (written 1946); M. V. Wilkes, D. J. Wheeler, S. Gill, <em>The Preparation of Programs for an Electronic Digital Computer</em> (Reading, Mass.: Addison– Wesley, 1951), subroutine V-1; and see especially also the work of Konrad Zuse, <em>Berichte der Gesellschaft für Mathematik und Datenverarbeitung</em> <strong>63</strong> (Bonn: 1972), written in 1945. Zuse was the first to develop nontrivial algorithms that worked with lists of dynamically varying lengths.] Before the days of index registers, operations on sequential linear lists were done by performing arithmetic on the machine language instructions themselves, and the need to do such arithmetic was one of the early motivations for having a computer whose programs share memory space with the data they manipulate.</p>
   </div>
 
   <p class="indent">Techniques that permit variable-length linear lists to share sequential locations, in such a way that they shift back and forth when necessary as described in <a href="../Text/ch02.html#ch02lev2sec2">Section 2.2.2</a>, were apparently a much later invention. J. Dunlap of Digitek Corporation developed such techniques before 1963 in connection with the design of a series of compiler programs; about the same time the idea appeared independently in the design of a COBOL compiler at IBM Corporation, and a collection of related subroutines called CITRUS was subsequently used at various installations. The techniques remained unpublished until after they had been developed independently by Jan Garwick of Norway; see <em>BIT</em> <strong>4</strong> (1964), 137–140.</p>

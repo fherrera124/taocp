@@ -37,7 +37,7 @@
   <div class="heading">
     <h3 id="ch02lev1sec1">2.1. Introduction</h3>
 
-    <p class="noindent">C<small>OMPUTER PROGRAMS</small> usually operate on tables of information. In most cases these tables are not simply amorphous masses of numerical values; they involve important <em>structural relationships</em> between the data elements.</p>
+    <p>C<small>OMPUTER PROGRAMS</small> usually operate on tables of information. In most cases these tables are not simply amorphous masses of numerical values; they involve important <em>structural relationships</em> between the data elements.</p>
   </div>
 
   <p class="indent">In its simplest form, a table might be a linear list of elements, when its relevant structural properties might include the answers to such questions as: Which element is first in the list? Which is last? Which elements precede and follow a given one? How many elements are in the list? A lot can be said about structure even in this apparently simple case (see <a href="../Text/ch02.html#ch02lev1sec2">Section 2.2</a>).</p>
@@ -56,19 +56,19 @@
 
   <div class="equation"><a id="ch02eq-lev1sec1-1"></a><img src="../Images/ch02/233equ01.jpg"></div>
 
-  <p class="noindent">(This format reflects the contents of two <code>MIX</code> words. Recall that a <code>MIX</code> word consists of five bytes and a sign; see <a href="../Text/ch01b.html#ch01lev2sec12">Section 1.3.1</a>. In this example we assume that the signs are + in each word.) The <em>address</em> of a node, also called a <em>link</em>, <em>pointer</em>, or <em>reference</em> to that node, is the memory location of its first word. The address is often taken relative to some base location, but in this chapter for simplicity we will take the address to be an absolute memory location.</p>
+  <p>(This format reflects the contents of two <code>MIX</code> words. Recall that a <code>MIX</code> word consists of five bytes and a sign; see <a href="../Text/ch01b.html#ch01lev2sec12">Section 1.3.1</a>. In this example we assume that the signs are + in each word.) The <em>address</em> of a node, also called a <em>link</em>, <em>pointer</em>, or <em>reference</em> to that node, is the memory location of its first word. The address is often taken relative to some base location, but in this chapter for simplicity we will take the address to be an absolute memory location.</p>
 
   <p class="indent">The contents of any field within a node may represent numbers, alphabetic characters, links, or anything else the programmer may desire. In connection with the example above, we might wish to represent a pile of cards that might <a id="page_234"></a>appear in a game of solitaire: <code>TAG</code> = 1 means that the card is face down, <code>TAG</code> = 0 means that it is face up; <code>SUIT</code> = 1, 2, 3, or 4 for clubs, diamonds, hearts, or spades, respectively; <code>RANK</code> = 1, 2, . . ., 13 for ace, deuce, . . ., king; <code>NEXT</code> is a <em>link</em> to the card <em>below</em> this one in the pile; and <code>TITLE</code> is a five-character alphabetic name of this card, for use in printouts. A typical pile might look like this:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec1-2"></a><img src="../Images/ch02/234equ01.jpg"></div>
 
-  <p class="noindent">The memory locations in the computer representation are shown here as 100, 386, and 242; they could have been any other numbers as far as this example is concerned, since each card links to the one below it. Notice the special link <em>“Λ”</em> in node 100; <em>we use the capital Greek letter Lambda to denote the null link</em>, the link to no node. The null link <em>Λ</em> appears in node 100 since the 10 of clubs is the bottom card of the pile. Within the machine, <em>Λ</em> is represented by some easily recognizable value that cannot be the address of a node. We will generally assume that no node appears in location 0; consequently, <em>Λ</em> will almost always be represented as the link value 0 in <code>MIX</code> programs.</p>
+  <p>The memory locations in the computer representation are shown here as 100, 386, and 242; they could have been any other numbers as far as this example is concerned, since each card links to the one below it. Notice the special link <em>“Λ”</em> in node 100; <em>we use the capital Greek letter Lambda to denote the null link</em>, the link to no node. The null link <em>Λ</em> appears in node 100 since the 10 of clubs is the bottom card of the pile. Within the machine, <em>Λ</em> is represented by some easily recognizable value that cannot be the address of a node. We will generally assume that no node appears in location 0; consequently, <em>Λ</em> will almost always be represented as the link value 0 in <code>MIX</code> programs.</p>
 
   <p class="indent">The introduction of links to other elements of data is an extremely important idea in computer programming; links are the key to the representation of complex structures. When displaying computer representations of nodes it is usually convenient to represent links by arrows, so that example (<a href="../Text/ch02.html#ch02eq-lev1sec1-2">2</a>) would appear thus:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec1-3"></a><img src="../Images/ch02/234equ02.jpg"></div>
 
-  <p class="noindent">The actual locations 242, 386, and 100 (which are irrelevant anyway) no longer appear in representation (<a href="../Text/ch02.html#ch02eq-lev1sec1-3">3</a>). Electrical circuit notation for a “grounded” wire is used to indicate a null link, shown here at the right of the diagram. Notice also that (<a href="../Text/ch02.html#ch02eq-lev1sec1-3">3</a>) indicates the top card by an arrow from “<code>TOP</code>”; here <code>TOP</code> is a <em>link variable</em>, often called a pointer variable, namely a variable whose value is a link. All references to nodes in a program are made directly through link variables (or link constants), or indirectly through link fields in other nodes.</p>
+  <p>The actual locations 242, 386, and 100 (which are irrelevant anyway) no longer appear in representation (<a href="../Text/ch02.html#ch02eq-lev1sec1-3">3</a>). Electrical circuit notation for a “grounded” wire is used to indicate a null link, shown here at the right of the diagram. Notice also that (<a href="../Text/ch02.html#ch02eq-lev1sec1-3">3</a>) indicates the top card by an arrow from “<code>TOP</code>”; here <code>TOP</code> is a <em>link variable</em>, often called a pointer variable, namely a variable whose value is a link. All references to nodes in a program are made directly through link variables (or link constants), or indirectly through link fields in other nodes.</p>
 
   <p class="indent"><a id="page_235"></a>Now we come to the most important part of the notation, the means of referring to fields within nodes. This is done simply by giving the name of the field followed by a link to the desired node in parentheses; for example, in (<a href="../Text/ch02.html#ch02eq-lev1sec1-2">2</a>) and (<a href="../Text/ch02.html#ch02eq-lev1sec1-3">3</a>) with the fields of (<a href="../Text/ch02.html#ch02eq-lev1sec1-1">1</a>) we have</p>
 
@@ -82,7 +82,7 @@
 
   <p class="indenthanging"><strong>A3.</strong> Set <code>TAG</code>(<code>TOP</code>) ← 0. (This marks the card as “face up.”) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent">Another example is the following algorithm, which counts the number of cards currently in the pile:</p>
+  <p>Another example is the following algorithm, which counts the number of cards currently in the pile:</p>
 
   <p class="indenthanging"><strong>B1.</strong> Set <code>N</code> ← 0, <code>X</code> ← <code>TOP</code>. (Here <code>N</code> is an integer variable, <code>X</code> is a link variable.)</p>
 
@@ -102,13 +102,13 @@
 
   <div class="equation"><a id="ch02eq-lev1sec1-5"></a><img src="../Images/ch02/236equ01.jpg"></div>
 
-  <p class="noindent">The ease and efficiency with which these operations can be carried out in a computer is the primary reason for the importance of the “linked memory” concept.</p>
+  <p>The ease and efficiency with which these operations can be carried out in a computer is the primary reason for the importance of the “linked memory” concept.</p>
 
   <p class="indent">Sometimes we have a single variable that denotes a whole node; its value is a sequence of fields instead of just one field. Thus we might write</p>
 
   <div class="equation"><a id="ch02eq-lev1sec1-6"></a><img src="../Images/ch02/236equ02.jpg"></div>
 
-  <p class="noindent">where <code>NODE</code> is a field specification just like <code>CONTENTS</code>, except that it refers to an entire node, and where <code>CARD</code> is a variable that assumes structured values like those in (<a href="../Text/ch02.html#ch02eq-lev1sec1-1">1</a>). If there are <em>c</em> words in a node, the notation (<a href="../Text/ch02.html#ch02eq-lev1sec1-6">6</a>) is an abbreviation for the <em>c</em> low-level assignments</p>
+  <p>where <code>NODE</code> is a field specification just like <code>CONTENTS</code>, except that it refers to an entire node, and where <code>CARD</code> is a variable that assumes structured values like those in (<a href="../Text/ch02.html#ch02eq-lev1sec1-1">1</a>). If there are <em>c</em> words in a node, the notation (<a href="../Text/ch02.html#ch02eq-lev1sec1-6">6</a>) is an abbreviation for the <em>c</em> low-level assignments</p>
 
   <div class="equation"><a id="ch02eq-lev1sec1-7"></a><img src="../Images/ch02/236equ03.jpg"></div>
 
@@ -145,7 +145,7 @@
     <div class="heading">
       <h4 id="ch02lev2sec1">2.2.1. Stacks, Queues, and Deques</h4>
 
-      <p class="noindent">D<small>ATA USUALLY</small> has much more structural information than we actually want to represent directly in a computer. For example, each “playing card” node in the preceding section had a <code>NEXT</code> field to specify what card was beneath it in the pile, but we provided no direct way to find what card, if any, was <em>above</em> a given card, or to find what pile a given card was in. And of course we totally suppressed most of the characteristic features of <em>real</em> playing cards: the details of the design on the back, the relation to other objects in the room where the game was being played, the individual molecules within the cards, etc. It is conceivable that such structural information would be relevant in certain computer applications, but obviously we never want to store <em>all</em> of the structure that is present in every situation. Indeed, for most card-playing situations we would not need all of the facts retained in the earlier example; the <code>TAG</code> field, which tells whether a card is face up or face down, will often be unnecessary.</p>
+      <p>D<small>ATA USUALLY</small> has much more structural information than we actually want to represent directly in a computer. For example, each “playing card” node in the preceding section had a <code>NEXT</code> field to specify what card was beneath it in the pile, but we provided no direct way to find what card, if any, was <em>above</em> a given card, or to find what pile a given card was in. And of course we totally suppressed most of the characteristic features of <em>real</em> playing cards: the details of the design on the back, the relation to other objects in the room where the game was being played, the individual molecules within the cards, etc. It is conceivable that such structural information would be relevant in certain computer applications, but obviously we never want to store <em>all</em> of the structure that is present in every situation. Indeed, for most card-playing situations we would not need all of the facts retained in the earlier example; the <code>TAG</code> field, which tells whether a card is face up or face down, will often be unnecessary.</p>
     </div>
   </div>
 
@@ -175,7 +175,7 @@
 
   <p class="indenti">ix) Search the list for the occurrence of a node with a particular value in some field.</p>
 
-  <p class="noindent">In operations (i), (ii), and (iii) the special cases <em>k</em> = 1 and <em>k</em> = <em>n</em> are of principal importance, since the first and last items of a linear list may be easier to get at than a general element is. We will not discuss operations (viii) and (ix) in this chapter, since those topics are the subjects of Chapters 5 and 6, respectively.</p>
+  <p>In operations (i), (ii), and (iii) the special cases <em>k</em> = 1 and <em>k</em> = <em>n</em> are of principal importance, since the first and last items of a linear list may be easier to get at than a general element is. We will not discuss operations (viii) and (ix) in this chapter, since those topics are the subjects of Chapters 5 and 6, respectively.</p>
 
   <p class="indent">A computer application rarely calls for all nine of these operations in their full generality, so we find that there are many ways to represent linear lists depending on the class of operations that are to be done most frequently. It is difficult to design a single representation method for linear lists in which all of these operations are efficient; for example, the ability to gain access to the <em>k</em>th node of a long list for random <em>k</em> is comparatively hard to do if at the same time we are inserting and deleting items in the middle of the list. Therefore we distinguish between types of linear lists depending on the principal operations to be performed, just as we have noted that computer memories are distinguished by their intended applications.</p>
 
@@ -187,7 +187,7 @@
 
   <p class="indentii">A <em>deque</em> (“double-ended queue”) is a linear list for which all insertions and deletions (and usually all accesses) are made at the ends of the list.</p>
 
-  <p class="noindent">A deque is therefore more general than a stack or a queue; it has some properties in common with a deck of cards, and it is pronounced the same way. We also distinguish <em>output-restricted</em> or <em>input-restricted</em> deques, in which deletions or insertions, respectively, are allowed to take place at only one end.</p>
+  <p>A deque is therefore more general than a stack or a queue; it has some properties in common with a deck of cards, and it is pronounced the same way. We also distinguish <em>output-restricted</em> or <em>input-restricted</em> deques, in which deletions or insertions, respectively, are allowed to take place at only one end.</p>
 
   <p class="indent">In some disciplines the word “queue” has been used in a much broader sense, to describe any kind of list that is subject to insertions and deletions; the special cases identified above are then called various “queuing disciplines.” Only the restricted use of the term “queue” is intended in this book, however, by analogy with orderly queues of people waiting in line for service.</p>
 
@@ -225,17 +225,17 @@
 
   <div class="equation"><a id="ch02eq-lev2sec1-1"></a><img src="../Images/ch02/242equ01.jpg"></div>
 
-  <p class="noindent">(when <em>A</em> is a stack) to mean that the value <em>x</em> is <em>inserted</em> on top of stack <em>A</em>, or (when <em>A</em> is a queue) to mean that <em>x</em> is <em>inserted</em> at the rear of the queue. Similarly, the notation</p>
+  <p>(when <em>A</em> is a stack) to mean that the value <em>x</em> is <em>inserted</em> on top of stack <em>A</em>, or (when <em>A</em> is a queue) to mean that <em>x</em> is <em>inserted</em> at the rear of the queue. Similarly, the notation</p>
 
   <div class="equation"><a id="ch02eq-lev2sec1-2"></a><img src="../Images/ch02/242equ02.jpg"></div>
 
-  <p class="noindent">is used to mean that the variable <em>x</em> is set equal to the value at the top of stack <em>A</em> or at the front of queue <em>A</em>, and this value is <em>deleted</em> from <em>A</em>. Notation (<a href="../Text/ch02.html#ch02eq-lev2sec1-2">2</a>) is meaningless when <em>A</em> is empty — that is, when <em>A</em> contains no values.</p>
+  <p>is used to mean that the variable <em>x</em> is set equal to the value at the top of stack <em>A</em> or at the front of queue <em>A</em>, and this value is <em>deleted</em> from <em>A</em>. Notation (<a href="../Text/ch02.html#ch02eq-lev2sec1-2">2</a>) is meaningless when <em>A</em> is empty — that is, when <em>A</em> contains no values.</p>
 
   <p class="indent">If <em>A</em> is a nonempty stack, we may write</p>
 
   <div class="equation"><a id="ch02eq-lev2sec1-3"></a><img src="../Images/ch02/242equ03.jpg"></div>
 
-  <p class="noindent">to denote its top element.</p>
+  <p>to denote its top element.</p>
 
   <p class="ex-title">Exercises</p>
 
@@ -278,16 +278,16 @@
   <div class="heading">
     <h4 id="ch02lev2sec2"><a id="page_244"></a>2.2.2. Sequential Allocation</h4>
 
-    <p class="noindent">The simplest and most natural way to keep a linear list inside a computer is to put the list items in consecutive locations, one node after the other. Then we will have</p>
+    <p>The simplest and most natural way to keep a linear list inside a computer is to put the list items in consecutive locations, one node after the other. Then we will have</p>
   </div>
 
   <p class="center"><code>LOC</code>(<code>X</code>[ <em>j</em> + 1]) = <code>LOC</code>(<code>X</code>[ <em>j</em>]) + <em>c,</em></p>
 
-  <p class="noindent">where <em>c</em> is the number of words per node. (Usually <em>c</em> = 1. When <em>c</em> &gt; 1, it is sometimes more convenient to split a single list into <em>c</em> “parallel” lists, so that the <em>k</em>th word of node <code>X</code>[<em>j</em>] is stored a fixed distance from the location of the first word of <code>X</code>[ <em>j</em>], depending on <em>k</em>. We will continually assume, however, that adjacent groups of <em>c</em> words form a single node.) In general,</p>
+  <p>where <em>c</em> is the number of words per node. (Usually <em>c</em> = 1. When <em>c</em> &gt; 1, it is sometimes more convenient to split a single list into <em>c</em> “parallel” lists, so that the <em>k</em>th word of node <code>X</code>[<em>j</em>] is stored a fixed distance from the location of the first word of <code>X</code>[ <em>j</em>], depending on <em>k</em>. We will continually assume, however, that adjacent groups of <em>c</em> words form a single node.) In general,</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-1"></a><img src="../Images/ch02/244equ01.jpg"></div>
 
-  <p class="noindent">where <code>L</code><sub>0</sub> is a constant called the <em>base address</em>, the location of an artificially assumed node <code>X</code>[0].</p>
+  <p>where <code>L</code><sub>0</sub> is a constant called the <em>base address</em>, the location of an artificially assumed node <code>X</code>[0].</p>
 
   <p class="indent">This technique for representing a linear list is so obvious and well-known that there seems to be no need to dwell on it at any length. But we will be seeing many other “more sophisticated” methods of representation later on in this chapter, and it is a good idea to examine the simple case first to see just how far we can go with it. It is important to understand the limitations as well as the power of the use of sequential allocation.</p>
 
@@ -295,21 +295,21 @@
 
   <div class="equation"><a id="ch02eq-lev2sec2-2"></a><img src="../Images/ch02/244equ02.jpg"></div>
 
-  <p class="noindent">And when the stack is not empty, we can set <code>Y</code> equal to the top node and delete that node by reversing the actions of (<a href="../Text/ch02.html#ch02eq-lev2sec2-2">2</a>):</p>
+  <p>And when the stack is not empty, we can set <code>Y</code> equal to the top node and delete that node by reversing the actions of (<a href="../Text/ch02.html#ch02eq-lev2sec2-2">2</a>):</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-3"></a><img src="../Images/ch02/244equ03.jpg"></div>
 
-  <p class="noindent">(Inside a computer it is usually most efficient to maintain the value <em>c</em><code>T</code> instead of <code>T</code>, because of (<a href="../Text/ch02.html#ch02eq-lev2sec2-1">1</a>). Such modifications are easily made, so we will continue our discussion as though <em>c</em> = 1.)</p>
+  <p>(Inside a computer it is usually most efficient to maintain the value <em>c</em><code>T</code> instead of <code>T</code>, because of (<a href="../Text/ch02.html#ch02eq-lev2sec2-1">1</a>). Such modifications are easily made, so we will continue our discussion as though <em>c</em> = 1.)</p>
 
   <p class="indent">The representation of a <em>queue</em> or a more general <em>deque</em> is a little trickier. An obvious solution is to keep two pointers, say <code>F</code> and <code>R</code> (for the front and rear of the queue), with <code>F</code> = <code>R</code> = 0 when the queue is empty. Then inserting an element at the rear of the queue would be</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-4"></a><img src="../Images/ch02/244equ04.jpg"></div>
 
-  <p class="noindent">Removing the front node (<code>F</code> points just below the front) would be</p>
+  <p>Removing the front node (<code>F</code> points just below the front) would be</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-5"></a><img src="../Images/ch02/244equ05.jpg"></div>
 
-  <p class="noindent">But note what can happen: If <code>R</code> always stays ahead of <code>F</code> (so that there is always at least one node in the queue) the table entries used are <code>X</code>[1], <code>X</code>[2], . . ., <code>X</code>[1000], . . ., ad infinitum, and this is terribly wasteful of storage space. The simple method of (<a href="../Text/ch02.html#ch02eq-lev2sec2-4">4</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec2-5">5</a>) should therefore be used only in the situation <a id="page_245"></a>when <code>F</code> is known to catch up to <code>R</code> quite regularly — for example, if all deletions come in spurts that empty the queue.</p>
+  <p>But note what can happen: If <code>R</code> always stays ahead of <code>F</code> (so that there is always at least one node in the queue) the table entries used are <code>X</code>[1], <code>X</code>[2], . . ., <code>X</code>[1000], . . ., ad infinitum, and this is terribly wasteful of storage space. The simple method of (<a href="../Text/ch02.html#ch02eq-lev2sec2-4">4</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec2-5">5</a>) should therefore be used only in the situation <a id="page_245"></a>when <code>F</code> is known to catch up to <code>R</code> quite regularly — for example, if all deletions come in spurts that empty the queue.</p>
 
   <p class="indent">To circumvent the problem of the queue overrunning memory, we can set aside <code>M</code> nodes <code>X</code>[1]<em>, . . .,</em> <code>X</code>[<code>M</code>] arranged implicitly in a circle with <code>X</code>[1] following <code>X</code>[<code>M</code>]. Then processes (<a href="../Text/ch02.html#ch02eq-lev2sec2-4">4</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec2-5">5</a>) above become</p>
 
@@ -317,7 +317,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec2-7"></a><img src="../Images/ch02/245equ02.jpg"></div>
 
-  <p class="noindent">We have, in fact, already seen circular queuing action like this, when we looked at input-output buffering in <a href="../Text/ch01c.html#ch01lev2sec18">Section 1.4.4</a>.</p>
+  <p>We have, in fact, already seen circular queuing action like this, when we looked at input-output buffering in <a href="../Text/ch01c.html#ch01lev2sec18">Section 1.4.4</a>.</p>
 
   <p class="indent">Our discussion so far has been very unrealistic, because we have tacitly assumed that nothing could go wrong. When we deleted a node from a stack or queue, we assumed that there was at least one node present. When we inserted a node into a stack or queue, we assumed that there was room for it in memory. But clearly the method of (<a href="../Text/ch02.html#ch02eq-lev2sec2-6">6</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec2-7">7</a>) allows at most <code>M</code> nodes in the entire queue, and methods (<a href="../Text/ch02.html#ch02eq-lev2sec2-2">2</a>), (<a href="../Text/ch02.html#ch02eq-lev2sec2-3">3</a>), (<a href="../Text/ch02.html#ch02eq-lev2sec2-4">4</a>), (<a href="../Text/ch02.html#ch02eq-lev2sec2-5">5</a>) allow <code>T</code> and <code>R</code> to reach only a certain maximum amount within any given computer program. The following specifications show how the actions should be rewritten for the common case where we do not assume that these restrictions are automatically satisfied:</p>
 
@@ -329,7 +329,7 @@
 
   <div class="equation"><a id="ch02eq4"></a><img src="../Images/ch02/245equ06.jpg"></div>
 
-  <p class="noindent">Here we assume that <code>X</code>[1]<em>, . . .,</em> <code>X</code>[<code>M</code>] is the total amount of space allowed for the list; <code>OVERFLOW</code> and <code>UNDERFLOW</code> mean an excess or deficiency of items. The initial setting <code>F</code> = <code>R</code> = 0 for the queue pointers is no longer valid when we use (<a href="../Text/ch02.html#ch02eq3">6a</a>) and (<a href="../Text/ch02.html#ch02eq4">7a</a>), because overflow will not be detected when <code>F</code> = 0; we should start with <code>F</code> = <code>R</code> = 1, say.</p>
+  <p>Here we assume that <code>X</code>[1]<em>, . . .,</em> <code>X</code>[<code>M</code>] is the total amount of space allowed for the list; <code>OVERFLOW</code> and <code>UNDERFLOW</code> mean an excess or deficiency of items. The initial setting <code>F</code> = <code>R</code> = 0 for the queue pointers is no longer valid when we use (<a href="../Text/ch02.html#ch02eq3">6a</a>) and (<a href="../Text/ch02.html#ch02eq4">7a</a>), because overflow will not be detected when <code>F</code> = 0; we should start with <code>F</code> = <code>R</code> = 1, say.</p>
 
   <p class="indent">The reader is urged to work <a href="../Text/ch02.html#ch02ex_2_2_1">exercise 1</a>, which discusses a nontrivial aspect of this simple queuing mechanism.</p>
 
@@ -341,13 +341,13 @@
 
   <div class="image"><img src="../Images/ch02/246fig01.jpg"></div>
 
-  <p class="noindent">Here list 1 expands to the right, and list 2 (stored in reverse order) expands to the left. <code>OVERFLOW</code> will not occur unless the total size of both lists exhausts all memory space. The lists may independently expand and contract so that the effective maximum size of each one could be significantly more than half of the available space. This layout of memory space is used very frequently.</p>
+  <p>Here list 1 expands to the right, and list 2 (stored in reverse order) expands to the left. <code>OVERFLOW</code> will not occur unless the total size of both lists exhausts all memory space. The lists may independently expand and contract so that the effective maximum size of each one could be significantly more than half of the available space. This layout of memory space is used very frequently.</p>
 
   <p class="indent">We can easily convince ourselves, however, that there is no way to store three or more variable-size sequential lists in memory so that (a) <code>OVERFLOW</code> will occur only when the total size of all lists exceeds the total space, and (b) each list has a fixed location for its “bottom” element. When there are, say, ten or more variable-size lists — and this is not unusual — the storage allocation problem becomes very significant. If we wish to satisfy condition (a), we must give up condition (b); that is, we must allow the “bottom” elements of the lists to change their positions. This means that the location <code>L</code><sub>0</sub> of Eq. (<a href="../Text/ch02.html#ch02eq-lev2sec2-1">1</a>) is not constant any longer; no reference to the table may be made to an absolute memory address, since all references must be relative to the base address <code>L</code><sub>0</sub>. In the case of <code>MIX</code>, the coding to bring the <code>I</code>th one-word node into register A is changed from</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-8"></a><img src="../Images/ch02/246equ01.jpg"></div>
 
-  <p class="noindent">where <code>BASE</code> contains <span class="image"><img src="../Images/ch02/e246_01.jpg"></span>. Such relative addressing evidently takes longer than fixed-base addressing, although it would be only slightly slower if <code>MIX</code> had an “indirect addressing” feature (see <a href="../Text/ch02.html#ch02ex_2_2_3">exercise 3</a>).</p>
+  <p>where <code>BASE</code> contains <span class="image"><img src="../Images/ch02/e246_01.jpg"></span>. Such relative addressing evidently takes longer than fixed-base addressing, although it would be only slightly slower if <code>MIX</code> had an “indirect addressing” feature (see <a href="../Text/ch02.html#ch02ex_2_2_3">exercise 3</a>).</p>
 
   <p class="indent"><a id="page_247"></a>An important special case occurs when each of the variable-size lists is a stack. Then, since only the top element of each stack is relevant at any time, we can proceed almost as efficiently as before. Suppose that we have <em>n</em> stacks; the insertion and deletion algorithms above become the following, if <code>BASE</code>[<em>i</em>] and <code>TOP</code>[<em>i</em>] are link variables for the <em>i</em>th stack, and if each node is one word long:</p>
 
@@ -355,7 +355,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec2-10"></a><img src="../Images/ch02/247equ02.jpg"></div>
 
-  <p class="noindent">Here <code>BASE</code>[<em>i</em> + 1] is the base location of the (<em>i</em> + 1)st stack. The condition <code>TOP</code>[<em>i</em>] = <code>BASE</code>[<em>i</em>] means that stack <em>i</em> is empty.</p>
+  <p>Here <code>BASE</code>[<em>i</em> + 1] is the base location of the (<em>i</em> + 1)st stack. The condition <code>TOP</code>[<em>i</em>] = <code>BASE</code>[<em>i</em>] means that stack <em>i</em> is empty.</p>
 
   <p class="indent">In (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>), <code>OVERFLOW</code> is no longer such a crisis as it was before; we can “repack memory,” making room for the table that overflowed by taking some away from tables that aren’t yet filled. Several ways to do the repacking suggest themselves; we will now consider some of them in detail, since they can be quite important when linear lists are allocated sequentially. We will start by giving the simplest of the methods, and will then consider some of the alternatives.</p>
 
@@ -363,7 +363,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec2-11"></a><img src="../Images/ch02/247equ03.jpg"></div>
 
-  <p class="noindent">We also set <code>BASE</code>[<em>n</em> + 1] = <code>L</code><sub>∞</sub> so that (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>) will work properly for <em>i</em> = <em>n</em>.</p>
+  <p>We also set <code>BASE</code>[<em>n</em> + 1] = <code>L</code><sub>∞</sub> so that (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>) will work properly for <em>i</em> = <em>n</em>.</p>
 
   <p class="indent">When <code>OVERFLOW</code> occurs with respect to stack <em>i</em>, there are three possibilities:</p>
 
@@ -391,17 +391,17 @@
     <p class="fig-caption"><strong>Fig. 4.</strong> Example of memory configuration after several insertions and deletions.</p>
   </div>
 
-  <p class="noindent">(Here I<sub><em>j</em></sub> and D<sub><em>j</em></sub> refer to insertion and deletion in stack <em>j</em>, and an asterisk refers to an occurrence of <code>OVERFLOW</code>, assuming that no space is initially allocated to stacks 1, 2, and 3.)</p>
+  <p>(Here I<sub><em>j</em></sub> and D<sub><em>j</em></sub> refer to insertion and deletion in stack <em>j</em>, and an asterisk refers to an occurrence of <code>OVERFLOW</code>, assuming that no space is initially allocated to stacks 1, 2, and 3.)</p>
 
   <p class="indent">It is clear that many of the first stack overflows that occur with this method could be eliminated if we chose our initial conditions wisely, instead of allocating all space initially to the <em>n</em>th stack as suggested in (<a href="../Text/ch02.html#ch02eq-lev2sec2-11">11</a>). For example, if we expect each stack to be of the same size, we can start out with</p>
 
   <div class="equation"><a id="ch02eq-lev2sec2-13"></a><img src="../Images/ch02/248equ02.jpg"></div>
 
-  <p class="noindent">Operating experience with a particular program may suggest better starting values; however, no matter how well the initial allocation is set up, it can save at most a fixed number of overflows, and the effect is noticeable only in the early stages of a program run. (See <a href="../Text/ch02.html#ch02ex_2_2_17">exercise 17</a>.)</p>
+  <p>Operating experience with a particular program may suggest better starting values; however, no matter how well the initial allocation is set up, it can save at most a fixed number of overflows, and the effect is noticeable only in the early stages of a program run. (See <a href="../Text/ch02.html#ch02ex_2_2_17">exercise 17</a>.)</p>
 
   <p class="indent">Another possible way to improve the method above would be to make room for more than one new entry each time memory is repacked. This idea has been exploited by J. Garwick, who suggests a complete repacking of memory when overflow occurs, based on the change in size of each stack since the last repacking. His algorithm uses an additional array, called <code>OLDTOP</code> [<em>j</em>], 1 ≤ <em>j</em> ≤ <em>n</em>, which retains the value that <code>TOP</code> [<em>j</em>] had just after the previous allocation of memory. Initially, the tables are set as before, with <code>OLDTOP</code> [<em>j</em>] = <code>TOP</code> [<em>j</em>] . The algorithm proceeds as follows:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec2-G"></a><strong>Algorithm G</strong> <em>(Reallocate sequential tables).</em> Assume that <code>OVERFLOW</code> has occurred in stack <em>i</em>, according to (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>). After <a href="../Text/ch02.html#ch02alg-lev2sec2-G">Algorithm G</a> has been performed, either we will find the memory capacity exceeded or the memory will have been rearranged so that the action <code>CONTENTS</code> (<code>TOP</code> [<em>i</em>]) ← <code>Y</code> may be done. (Notice that <code>TOP</code> [<em>i</em>] has already been increased in (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>) before <a href="../Text/ch02.html#ch02alg-lev2sec2-G">Algorithm G</a> takes place.)</p>
+  <p><a id="ch02alg-lev2sec2-G"></a><strong>Algorithm G</strong> <em>(Reallocate sequential tables).</em> Assume that <code>OVERFLOW</code> has occurred in stack <em>i</em>, according to (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>). After <a href="../Text/ch02.html#ch02alg-lev2sec2-G">Algorithm G</a> has been performed, either we will find the memory capacity exceeded or the memory will have been rearranged so that the action <code>CONTENTS</code> (<code>TOP</code> [<em>i</em>]) ← <code>Y</code> may be done. (Notice that <code>TOP</code> [<em>i</em>] has already been increased in (<a href="../Text/ch02.html#ch02eq-lev2sec2-9">9</a>) before <a href="../Text/ch02.html#ch02alg-lev2sec2-G">Algorithm G</a> takes place.)</p>
 
   <p class="indenthanging"><strong>G1.</strong> [Initialize.] Set <code>SUM</code> ← <code>L</code><sub>∞</sub> - <code>L</code><sub>0</sub>, <code>INC</code> ← 0. Then do step G2 for 1 ≤ <em>j</em> ≤ <em>n</em>. (The effect will be to make <code>SUM</code> equal to the total amount of memory space left, and <code>INC</code> equal to the total amount of increases in table sizes since the last allocation.) After this has been done, go on to step G3.</p>
 
@@ -417,7 +417,7 @@
 
   <p class="indent">Perhaps the most interesting part of this whole algorithm is the general repacking process, which we shall now describe. Repacking is not trivial, since some portions of memory shift up and others shift down; it is obviously important not to overwrite any of the good information in memory while it is being moved.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec2-R"></a><strong>Algorithm R</strong> <em>(Relocate sequential tables)</em>. For 1 ≤ <em>j</em> ≤ <em>n</em>, the information specified by <code>BASE</code>[<em>j</em>] and <code>TOP</code>[<em>j</em>] in accord with the conventions stated above is moved to new positions specified by <code>NEWBASE</code>[<em>j</em>], and the values of <code>BASE</code>[<em>j</em>] and <code>TOP</code>[<em>j</em>] are suitably adjusted. This algorithm is based on the easily verified fact that the data to be moved downward cannot overlap with any data that is to be moved upward, nor with any data that is supposed to stay put.</p>
+  <p><a id="ch02alg-lev2sec2-R"></a><strong>Algorithm R</strong> <em>(Relocate sequential tables)</em>. For 1 ≤ <em>j</em> ≤ <em>n</em>, the information specified by <code>BASE</code>[<em>j</em>] and <code>TOP</code>[<em>j</em>] in accord with the conventions stated above is moved to new positions specified by <code>NEWBASE</code>[<em>j</em>], and the values of <code>BASE</code>[<em>j</em>] and <code>TOP</code>[<em>j</em>] are suitably adjusted. This algorithm is based on the easily verified fact that the data to be moved downward cannot overlap with any data that is to be moved upward, nor with any data that is supposed to stay put.</p>
 
   <p class="indenthanging"><strong>R1.</strong> [Initialize.] Set <em>j</em> ← 1.</p>
 
@@ -443,7 +443,7 @@
 
   <p class="center"><code>OLDTOP</code>[ <em>j</em>] ≡ <code>D</code>[ <em>j</em>] ≡ <code>NEWBASE</code>[ <em>j</em> + 1]</p>
 
-  <p class="noindent">for 1 ≤ <em>j</em> ≤ <em>n</em>; that is, these three tables can share common memory locations since their values are never needed at conflicting times.</p>
+  <p>for 1 ≤ <em>j</em> ≤ <em>n</em>; that is, these three tables can share common memory locations since their values are never needed at conflicting times.</p>
 
   <p class="indent">We have described these repacking algorithms for stacks, but it is clear that they can be adapted to any relatively addressed tables in which the current information is contained between <code>BASE</code>[ <em>j</em>] and <code>TOP</code>[ <em>j</em>]. Other pointers (for example, <code>FRONT</code>[ <em>j</em>] and <code>REAR</code>[ <em>j</em>]) could also be attached to the lists, making them serve as a queue or deque. See <a href="../Text/ch02.html#ch02ex_2_2_8">exercise 8</a>, which considers the case of a queue in detail.</p>
 
@@ -453,7 +453,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec2-14"></a><img src="../Images/ch02/250equ01.jpg"></div>
 
-  <p class="noindent">Thus, as we might expect, the number of moves is essentially proportional to the <em>square</em> of the number of times the tables grow. The same is true if the individual stacks aren’t equally likely (see <a href="../Text/ch02.html#ch02ex_2_2_10">exercise 10</a>).</p>
+  <p>Thus, as we might expect, the number of moves is essentially proportional to the <em>square</em> of the number of times the tables grow. The same is true if the individual stacks aren’t equally likely (see <a href="../Text/ch02.html#ch02ex_2_2_10">exercise 10</a>).</p>
 
   <p class="indent">The moral of the story seems to be that a very large number of moves will be made if a reasonably large number of items is put into the tables. This is the price we must pay for the ability to pack a large number of sequential tables together tightly. No theory has been developed to analyze the average <a id="page_251"></a>behavior of <a href="../Text/ch02.html#ch02alg-lev2sec2-G">Algorithm G</a>, and it is unlikely that any simple model will be able to describe the characteristics of real-life tables in such an environment. However, <a href="../Text/ch02.html#ch02ex_2_2_18">exercise 18</a> provides a worst-case guarantee that the running time will not be too bad if the memory doesn’t get too full.</p>
 
@@ -483,7 +483,7 @@
 
   <p class="uln-indenta">7: M = resulting address defined from the ‘<code>ADDRESS</code>,<code>I</code><sub>1</sub> :<code>I</code><sub>2</sub>’ fields found in location A. The case <code>I</code><sub>1</sub> = <code>I</code><sub>2</sub> = 7 in location A is not allowed. (The reason for the latter restriction is discussed in <a href="../Text/ch02.html#ch02ex_2_2_5">exercise 5</a>.)</p>
 
-  <p class="noindent"><a id="page_252"></a>Here A denotes the address before the operation, and M denotes the resulting address after the address modification. In all cases the result is undefined if the value of M does not fit in two bytes and a sign. The execution time is increased by one unit for each “indirect-addressing” (modification 7) operation performed.</p>
+  <p><a id="page_252"></a>Here A denotes the address before the operation, and M denotes the resulting address after the address modification. In all cases the result is undefined if the value of M does not fit in two bytes and a sign. The execution time is increased by one unit for each “indirect-addressing” (modification 7) operation performed.</p>
 
   <p class="indent">As a nontrivial example, suppose that location 1000 contains ‘<code>NOP 1000,1:7</code>’; location 1001 contains ‘<code>NOP 1000,2</code>’; and index registers 1 and 2 respectively contain 1 and 2. Then the command ‘<code>LDA 1000,7:2</code>’ is equivalent to ‘<code>LDA 1004</code>’, because</p>
 
@@ -562,18 +562,18 @@
   <div class="heading">
     <h4 id="ch02lev2sec3">2.2.3. Linked Allocation</h4>
 
-    <p class="noindent">Instead of keeping a linear list in sequential memory locations, we can make use of a much more flexible scheme in which each node contains a link to the next node of the list.</p>
+    <p>Instead of keeping a linear list in sequential memory locations, we can make use of a much more flexible scheme in which each node contains a link to the next node of the list.</p>
   </div>
 
   <div class="image"><img src="../Images/ch02/e254_04.jpg"></div>
 
-  <p class="noindent"><a id="page_255"></a>Here A, B, C, D, and E are arbitrary locations in the memory, and <em>Λ</em> is the null link (see <a href="../Text/ch02.html#ch02lev1sec1">Section 2.1</a>). The program that uses this table in the case of sequential allocation would have an additional variable or constant whose value indicates that the table is five items in length, or else this information would be specified by a sentinel code within item 5 or in the following location. A program for linked allocation would have a link variable or link constant that points to A; all the other items of the list can be found from address A.</p>
+  <p><a id="page_255"></a>Here A, B, C, D, and E are arbitrary locations in the memory, and <em>Λ</em> is the null link (see <a href="../Text/ch02.html#ch02lev1sec1">Section 2.1</a>). The program that uses this table in the case of sequential allocation would have an additional variable or constant whose value indicates that the table is five items in length, or else this information would be specified by a sentinel code within item 5 or in the following location. A program for linked allocation would have a link variable or link constant that points to A; all the other items of the list can be found from address A.</p>
 
   <p class="indent">Recall from <a href="../Text/ch02.html#ch02lev1sec1">Section 2.1</a> that links are often shown simply by arrows, since the actual memory locations occupied are usually irrelevant. The linked table above might therefore be shown as follows:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-1"></a><img src="../Images/ch02/255equ01.jpg"></div>
 
-  <p class="noindent">Here <code>FIRST</code> is a link variable pointing to the first node of the list.</p>
+  <p>Here <code>FIRST</code> is a link variable pointing to the first node of the list.</p>
 
   <p class="indent">We can make several obvious comparisons between these two basic forms of storage:</p>
 
@@ -585,7 +585,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-2"></a><img src="../Images/ch02/255equ02.jpg"></div>
 
-  <p class="noindent">By comparison, this operation would be extremely time-consuming in a long sequential table.</p>
+  <p>By comparison, this operation would be extremely time-consuming in a long sequential table.</p>
 
   <p class="indent">4) References to random parts of the list are much faster in the sequential case. To gain access to the <em>k</em>th item in the list, when <em>k</em> is a variable, takes a fixed time in the sequential case, but we need <em>k</em> iterations to march down to the right <a id="page_256"></a>place in the linked case. Thus the usefulness of linked memory is predicated on the fact that in the large majority of applications we want to walk through lists sequentially, not randomly; if items in the middle or at the bottom of the list are needed, we try to keep an additional link variable or list of link variables pointing to the proper places.</p>
 
@@ -605,13 +605,13 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-4"></a><img src="../Images/ch02/256equ02.jpg"></div>
 
-  <p class="noindent">This effectively removes the top of the <code>AVAIL</code> stack and makes <code>X</code> point to the node just removed. <em>Operation</em> (<a href="../Text/ch02.html#ch02eq-lev2sec3-4">4</a>) <em>occurs so often that we have a special notation for it:</em> “X <span class="ent">⇐</span> <code>AVAIL</code>” will mean <code>X</code> is set to point to a new node.</p>
+  <p>This effectively removes the top of the <code>AVAIL</code> stack and makes <code>X</code> point to the node just removed. <em>Operation</em> (<a href="../Text/ch02.html#ch02eq-lev2sec3-4">4</a>) <em>occurs so often that we have a special notation for it:</em> “X <span class="ent">⇐</span> <code>AVAIL</code>” will mean <code>X</code> is set to point to a new node.</p>
 
   <p class="indent">When a node is deleted and no longer needed, process (<a href="../Text/ch02.html#ch02eq-lev2sec3-4">4</a>) can be reversed:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-5"></a><img src="../Images/ch02/256equ03.jpg"></div>
 
-  <p class="noindent"><a id="page_257"></a>This operation puts the node addressed by <code>X</code> back onto the list of raw material; we denote (<a href="../Text/ch02.html#ch02eq-lev2sec3-5">5</a>) by “<code>AVAIL</code> <span class="ent">⇐</span> <code>X</code>”.</p>
+  <p><a id="page_257"></a>This operation puts the node addressed by <code>X</code> back onto the list of raw material; we denote (<a href="../Text/ch02.html#ch02eq-lev2sec3-5">5</a>) by “<code>AVAIL</code> <span class="ent">⇐</span> <code>X</code>”.</p>
 
   <p class="indent">Several important things have been omitted from this discussion of the <code>AVAIL</code> stack. We did not say how to set it up at the beginning of a program; clearly this can be done by (a) linking together all nodes that are to be used for linked memory, (b) setting <code>AVAIL</code> to the address of the first of these nodes, and (c) making the last node link to <em>Λ</em>. The set of all nodes that can be allocated is called the <em>storage pool</em>.</p>
 
@@ -619,7 +619,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-6"></a><img src="../Images/ch02/257equ01.jpg"></div>
 
-  <p class="noindent">The possibility of overflow must always be considered. Here <code>OVERFLOW</code> generally means that we terminate the program with regrets; or else we can go into a “garbage collection” routine that attempts to find more available space. Garbage collection is discussed in <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a>.</p>
+  <p>The possibility of overflow must always be considered. Here <code>OVERFLOW</code> generally means that we terminate the program with regrets; or else we can go into a “garbage collection” routine that attempts to find more available space. Garbage collection is discussed in <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a>.</p>
 
   <p class="indent">There is another important technique for handling the <code>AVAIL</code> stack: We often do not know in advance how much memory space should be used for the storage pool. There may be a sequential table of variable size that wants to coexist in memory with the linked tables; in such a case we do not want the linked memory area to take any more space than is absolutely necessary. So suppose that we wish to place the linked memory area in ascending locations beginning with <code>L</code><sub>0</sub> and that this area is never to extend past the value of variable <code>SEQMIN</code> (which represents the current lower bound of the sequential table). Then we can proceed as follows, using a new variable <code>POOLMAX</code>:</p>
 
@@ -633,7 +633,7 @@
 
   <p class="indenthangingA">d) The operation <code>AVAIL</code> <span class="ent">⇐</span> <code>X</code> is unchanged from (<a href="../Text/ch02.html#ch02eq-lev2sec3-5">5</a>).</p>
 
-  <p class="noindent">This idea actually represents little more than the previous method with a special recovery procedure substituted for the <code>OVERFLOW</code> situation in (<a href="../Text/ch02.html#ch02eq-lev2sec3-6">6</a>). The net effect is to keep the storage pool as small as possible. Many people like to use this idea even when <em>all</em> lists occupy the storage pool area (so that <code>SEQMIN</code> is constant), since it avoids the rather time-consuming operation of initially linking all available cells together and it facilitates debugging. We could, of course, put the sequential list on the bottom and the pool on the top, having <code>POOLMIN</code> and <code>SEQMAX</code> instead of <code>POOLMAX</code> and <code>SEQMIN</code>.</p>
+  <p>This idea actually represents little more than the previous method with a special recovery procedure substituted for the <code>OVERFLOW</code> situation in (<a href="../Text/ch02.html#ch02eq-lev2sec3-6">6</a>). The net effect is to keep the storage pool as small as possible. Many people like to use this idea even when <em>all</em> lists occupy the storage pool area (so that <code>SEQMIN</code> is constant), since it avoids the rather time-consuming operation of initially linking all available cells together and it facilitates debugging. We could, of course, put the sequential list on the bottom and the pool on the top, having <code>POOLMIN</code> and <code>SEQMAX</code> instead of <code>POOLMAX</code> and <code>SEQMIN</code>.</p>
 
   <p class="indent"><a id="page_258"></a>Thus it is quite easy to maintain a pool of available nodes, in such a way that free nodes can efficiently be found and later returned. These methods give us a source of raw material to use in linked tables. Our discussion was predicated on the implicit assumption that all nodes have a fixed size, <em>c</em>; the cases that arise when different sizes of nodes are present are very important, but we will defer that discussion until <a href="../Text/ch02c.html#ch02lev1sec5">Section 2.5</a>. Now we will consider a few of the most common list operations in the special case where stacks and queues are involved.</p>
 
@@ -649,17 +649,17 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-8"></a><img src="../Images/ch02/258equ01.jpg"></div>
 
-  <p class="noindent">Conversely, to set <code>Y</code> equal to the information at the top of the stack and to “pop up” the stack:</p>
+  <p>Conversely, to set <code>Y</code> equal to the information at the top of the stack and to “pop up” the stack:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-9"></a><img src="../Images/ch02/258equ02.jpg"></div>
 
-  <p class="noindent">These operations should be compared with the analogous mechanisms for sequentially allocated stacks, (<a href="../Text/ch02.html#ch02eq1">2a</a>) and (<a href="../Text/ch02.html#ch02eq2">3a</a>) in <a href="../Text/ch02.html#ch02lev2sec2">Section 2.2.2</a>. The reader should study (<a href="../Text/ch02.html#ch02eq-lev2sec3-8">8</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-9">9</a>) carefully, since they are extremely important operations.</p>
+  <p>These operations should be compared with the analogous mechanisms for sequentially allocated stacks, (<a href="../Text/ch02.html#ch02eq1">2a</a>) and (<a href="../Text/ch02.html#ch02eq2">3a</a>) in <a href="../Text/ch02.html#ch02lev2sec2">Section 2.2.2</a>. The reader should study (<a href="../Text/ch02.html#ch02eq-lev2sec3-8">8</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-9">9</a>) carefully, since they are extremely important operations.</p>
 
   <p class="indent">Before looking at the case of queues, let us see how the stack operations can be expressed conveniently in programs for <code>MIX</code>. A program for insertion, with <code>P</code> ≡ rI1, can be written as follows:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-10"></a><img src="../Images/ch02/258equ03.jpg"></div>
 
-  <p class="noindent">This takes 17 units of time, compared to 12 units for the comparable operation with a sequential table (although <code>OVERFLOW</code> in the sequential case would in many cases take considerably longer). In this program, as in others to follow in this chapter, <code>OVERFLOW</code> denotes either an ending routine or a subroutine that finds more space and returns to location rJ − 2.</p>
+  <p>This takes 17 units of time, compared to 12 units for the comparable operation with a sequential table (although <code>OVERFLOW</code> in the sequential case would in many cases take considerably longer). In this program, as in others to follow in this chapter, <code>OVERFLOW</code> denotes either an ending routine or a subroutine that finds more space and returns to location rJ − 2.</p>
 
   <p class="indent"><a id="page_259"></a>A program for deletion is equally simple:</p>
 
@@ -673,15 +673,15 @@
 
   <p class="indent">the value of <code>T</code> has become the previous value of <code>AVAIL</code>.</p>
 
-  <p class="noindent">So the insertion process (except for setting <code>INFO</code>(<code>P</code>) ← <code>Y</code>) is the cyclic permutation</p>
+  <p>So the insertion process (except for setting <code>INFO</code>(<code>P</code>) ← <code>Y</code>) is the cyclic permutation</p>
 
   <div class="image"><img src="../Images/ch02/259fig01.jpg"></div>
 
-  <p class="noindent">Similarly in the case of deletion, where <code>P</code> has the value of <code>T</code> before the operation and we assume that <code>P</code> ≠ <em>Λ</em>, we have <code>Y</code> ← <code>INFO</code>(<code>P</code>) and</p>
+  <p>Similarly in the case of deletion, where <code>P</code> has the value of <code>T</code> before the operation and we assume that <code>P</code> ≠ <em>Λ</em>, we have <code>Y</code> ← <code>INFO</code>(<code>P</code>) and</p>
 
   <div class="image"><img src="../Images/ch02/259fig02.jpg"></div>
 
-  <p class="noindent">The fact that the permutation is cyclic is not really a relevant issue, since <em>any</em> permutation of three elements that moves every element is cyclic. The important point is rather that precisely three links are permuted in these operations.</p>
+  <p>The fact that the permutation is cyclic is not really a relevant issue, since <em>any</em> permutation of three elements that moves every element is cyclic. The important point is rather that precisely three links are permuted in these operations.</p>
 
   <p class="indent">The insertion and deletion algorithms of (<a href="../Text/ch02.html#ch02eq-lev2sec3-8">8</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-9">9</a>) have been described for stacks, but they apply much more generally to insertion and deletion in <em>any</em> linear list. Insertion, for example, is performed just before the node pointed to by link variable <code>T</code>. The insertion of item 2<span class="middle"><img src="../Images/ch02/1by2.jpg"></span> in (<a href="../Text/ch02.html#ch02eq-lev2sec3-2">2</a>) above would be done by using operation (<a href="../Text/ch02.html#ch02eq-lev2sec3-8">8</a>) with <code>T</code> = <code>LINK</code>(<code>LINK</code>(<code>FIRST</code>)).</p>
 
@@ -689,7 +689,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-12"></a><img src="../Images/ch02/259equ02.jpg"></div>
 
-  <p class="noindent">Except for <code>R</code>, this diagram is abstractly identical to <a href="../Text/ch02.html#ch02fig05">Fig. 5</a> on page <a href="../Text/ch02.html#page_258">258</a>.</p>
+  <p>Except for <code>R</code>, this diagram is abstractly identical to <a href="../Text/ch02.html#ch02fig05">Fig. 5</a> on page <a href="../Text/ch02.html#page_258">258</a>.</p>
 
   <p class="indent"><a id="page_260"></a>Whenever the layout of a list is designed, it is important to specify all conditions carefully, particularly for the case when the list is empty. One of the most common programming errors connected with linked allocation is the failure to handle empty lists properly; the other common error is to forget about changing some of the links when a structure is being manipulated. In order to avoid the first type of error, we should always examine the “boundary conditions” carefully. To avoid making the second type of error, it is helpful to draw “before and after” diagrams and to compare them, in order to see which links must change.</p>
 
@@ -697,7 +697,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-13"></a><img src="../Images/ch02/260equ01.jpg"></div>
 
-  <p class="noindent">(The notation used here implies that a new node has been obtained from the <code>AVAIL</code> list.) Comparing (<a href="../Text/ch02.html#ch02eq-lev2sec3-12">12</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-13">13</a>) shows us how to proceed when inserting the information <code>Y</code> at the rear of the queue:</p>
+  <p>(The notation used here implies that a new node has been obtained from the <code>AVAIL</code> list.) Comparing (<a href="../Text/ch02.html#ch02eq-lev2sec3-12">12</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-13">13</a>) shows us how to proceed when inserting the information <code>Y</code> at the rear of the queue:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-14"></a><img src="../Images/ch02/260equ02.jpg"></div>
 
@@ -705,21 +705,21 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-15"></a><img src="../Images/ch02/260equ03.jpg"></div>
 
-  <p class="noindent">It is desirable to have operations (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) apply in this case also, even if insertion into an empty queue means that we must change <em>both</em> <code>F</code> and <code>R</code>, not only <code>R</code>. We find that (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) will work properly if <code>R</code> = <code>LOC</code>(<code>F</code>) when the queue is empty, <em>assuming that</em> <code>F</code> ≡ <code>LINK</code>(<code>LOC</code>(<code>F</code>)); the value of variable <code>F</code> must be <em>stored in the</em> <code>LINK</code> <em>field of its location</em> if this idea is to work. In order to make the testing for an empty queue as efficient as possible, we will let <code>F</code> = <em>Λ</em> in this case. Our policy is therefore that</p>
+  <p>It is desirable to have operations (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) apply in this case also, even if insertion into an empty queue means that we must change <em>both</em> <code>F</code> and <code>R</code>, not only <code>R</code>. We find that (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) will work properly if <code>R</code> = <code>LOC</code>(<code>F</code>) when the queue is empty, <em>assuming that</em> <code>F</code> ≡ <code>LINK</code>(<code>LOC</code>(<code>F</code>)); the value of variable <code>F</code> must be <em>stored in the</em> <code>LINK</code> <em>field of its location</em> if this idea is to work. In order to make the testing for an empty queue as efficient as possible, we will let <code>F</code> = <em>Λ</em> in this case. Our policy is therefore that</p>
 
   <p class="center"><em>an empty queue is represented by</em> <code>F</code> = <em>Λ and</em> <code>R</code> = <code>LOC</code>(<code>F</code>).</p>
 
-  <p class="noindent">If the operations (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) are applied under these circumstances, we obtain (<a href="../Text/ch02.html#ch02eq-lev2sec3-15">15</a>).</p>
+  <p>If the operations (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) are applied under these circumstances, we obtain (<a href="../Text/ch02.html#ch02eq-lev2sec3-15">15</a>).</p>
 
   <p class="indent">The deletion operation for queues is derived in a similar fashion. If (<a href="../Text/ch02.html#ch02eq-lev2sec3-12">12</a>) is the situation before deletion, the situation afterwards is</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-16"></a><img src="../Images/ch02/260equ04.jpg"></div>
 
-  <p class="noindent">For the boundary conditions we must make sure that the deletion operation works when the queue is empty either before or after the operation. These <a id="page_261"></a>considerations lead us to the following way to do queue deletion in general:</p>
+  <p>For the boundary conditions we must make sure that the deletion operation works when the queue is empty either before or after the operation. These <a id="page_261"></a>considerations lead us to the following way to do queue deletion in general:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec3-17"></a><img src="../Images/ch02/261equ01.jpg"></div>
 
-  <p class="noindent">Notice that <code>R</code> must be changed when the queue becomes empty; this is precisely the type of “boundary condition” we should always be watching for.</p>
+  <p>Notice that <code>R</code> must be changed when the queue becomes empty; this is precisely the type of “boundary condition” we should always be watching for.</p>
 
   <p class="indent">These suggestions are not the only way to represent queues in a linearly linked fashion; <a href="../Text/ch02.html#ch02ex_2_3_30">exercise 30</a> describes a somewhat more natural alternative, and we will give other methods later in this chapter. Indeed, none of the operations above are meant to be prescribed as the only way to do something; they are intended as examples of the basic means of operating with linked lists. The reader who has had only a little previous experience with such techniques will find it helpful to reread the present section up to this point before going on.</p>
 
@@ -733,7 +733,7 @@
 
   <p class="indenti">iii) <em>x</em> <span class="ent">≼</span> <em>x</em>. (Reflexivity.)</p>
 
-  <p class="noindent">The notation <em>x</em> <span class="ent">≼</span> <em>y</em> may be read “<em>x</em> precedes or equals <em>y</em>.” If <em>x</em> <span class="ent">≼</span> <em>y</em> and <em>x</em> ≠ <em>y</em>, we write <em>x</em> <span class="ent">≺</span> <em>y</em> and say “<em>x</em> precedes <em>y</em>.” It is easy to see from (i), (ii), and (iii) that we always have</p>
+  <p>The notation <em>x</em> <span class="ent">≼</span> <em>y</em> may be read “<em>x</em> precedes or equals <em>y</em>.” If <em>x</em> <span class="ent">≼</span> <em>y</em> and <em>x</em> ≠ <em>y</em>, we write <em>x</em> <span class="ent">≺</span> <em>y</em> and say “<em>x</em> precedes <em>y</em>.” It is easy to see from (i), (ii), and (iii) that we always have</p>
 
   <p class="indenti">i′) If <em>x</em> <span class="ent">≺</span> <em>y</em> and <em>y</em> <span class="ent">≺</span> <em>z</em>, then <em>x</em> <span class="ent">≺</span> <em>z</em>. (Transitivity.)</p>
 
@@ -741,7 +741,7 @@
 
   <p class="indenti">iii′) <em>x</em> <span class="ent">⊀</span> <em>x</em>. (Irreflexivity.)</p>
 
-  <p class="noindent"><a id="page_262"></a>The relation denoted by <em>y</em> <span class="ent">⊀</span> <em>x</em> means “<em>y</em> does not precede <em>x</em>.” If we start with a relation <span class="ent">≺</span> satisfying properties (i′), (ii′), and (iii′), we can reverse the process above and define <em>x</em> <span class="ent">≼</span> <em>y</em> if <em>x</em> <span class="ent">≺</span> <em>y</em> or <em>x</em> = <em>y</em>; then properties (i), (ii), and (iii) are true. Therefore we may regard either properties (i), (ii), (iii) or properties (i′),(ii′), (iii′) as the definition of partial order. Notice that property (ii′) is actually a consequence of (i′) and (iii′), although (ii) does not follow from (i) and (iii).</p>
+  <p><a id="page_262"></a>The relation denoted by <em>y</em> <span class="ent">⊀</span> <em>x</em> means “<em>y</em> does not precede <em>x</em>.” If we start with a relation <span class="ent">≺</span> satisfying properties (i′), (ii′), and (iii′), we can reverse the process above and define <em>x</em> <span class="ent">≼</span> <em>y</em> if <em>x</em> <span class="ent">≺</span> <em>y</em> or <em>x</em> = <em>y</em>; then properties (i), (ii), and (iii) are true. Therefore we may regard either properties (i), (ii), (iii) or properties (i′),(ii′), (iii′) as the definition of partial order. Notice that property (ii′) is actually a consequence of (i′) and (iii′), although (ii) does not follow from (i) and (iii).</p>
 
   <p class="indent">Partial orderings occur quite frequently in everyday life as well as in mathematics. As examples from mathematics we can mention the relation <em>x</em> ≤ <em>y</em> between real numbers <em>x</em> and <em>y</em>; the relation <em>x</em> <span class="ent">⊆</span> <em>y</em> between sets of objects; the relation <em>x\y</em> (<em>x</em> divides <em>y</em>) between positive integers. In the case of PERT networks, <em>S</em> is a set of jobs that must be done, and the relation “<em>x</em> <span class="ent">≺</span> <em>y</em>” means “<em>x</em> must be done before <em>y</em>.”</p>
 
@@ -773,17 +773,17 @@
 
   <div class="equation"><a id="ch02eq-lev2sec3-18"></a><img src="../Images/ch02/264equ01.jpg"></div>
 
-  <p class="noindent">It is not necessary to give any more relations than are needed to characterize the desired partial ordering. Thus, additional relations like 9 <span class="ent">≺</span> 8 (which can be deduced from 9 <span class="ent">≺</span> 5 and 5 <span class="ent">≺</span> 8) may be omitted from or added to the input without harm. In general, it is necessary to give only the relations corresponding to arrows on a diagram such as <a href="../Text/ch02.html#ch02fig06">Fig. 6</a>.</p>
+  <p>It is not necessary to give any more relations than are needed to characterize the desired partial ordering. Thus, additional relations like 9 <span class="ent">≺</span> 8 (which can be deduced from 9 <span class="ent">≺</span> 5 and 5 <span class="ent">≺</span> 8) may be omitted from or added to the input without harm. In general, it is necessary to give only the relations corresponding to arrows on a diagram such as <a href="../Text/ch02.html#ch02fig06">Fig. 6</a>.</p>
 
   <p class="indent">The algorithm that follows uses a sequential table <code>X</code>[1], <code>X</code>[2], . . ., <code>X</code>[<em>n</em>], and each node <code>X</code>[<em>k</em>] has the form</p>
 
   <div class="image"><img src="../Images/ch02/e264_002.jpg"></div>
 
-  <p class="noindent">Here <code>COUNT</code>[<em>k</em>] is the <em>number of direct predecessors</em> of object <em>k</em> (the number of relations <em>j</em> <span class="ent">≺</span> <em>k</em> that have appeared in the input), and <code>TOP</code>[<em>k</em>] is a link to the beginning of the <em>list of direct successors</em> of object <em>k</em>. The latter list contains entries in the format</p>
+  <p>Here <code>COUNT</code>[<em>k</em>] is the <em>number of direct predecessors</em> of object <em>k</em> (the number of relations <em>j</em> <span class="ent">≺</span> <em>k</em> that have appeared in the input), and <code>TOP</code>[<em>k</em>] is a link to the beginning of the <em>list of direct successors</em> of object <em>k</em>. The latter list contains entries in the format</p>
 
   <div class="image"><img src="../Images/ch02/e264_003.jpg"></div>
 
-  <p class="noindent">where <code>SUC</code> is a direct successor of <em>k</em> and <code>NEXT</code> is the next item of the list. As an example of these conventions, <a href="../Text/ch02.html#ch02fig08">Fig. 8</a> shows the schematic contents of memory corresponding to the input (<a href="../Text/ch02.html#ch02eq-lev2sec3-18">18</a>).</p>
+  <p>where <code>SUC</code> is a direct successor of <em>k</em> and <code>NEXT</code> is the next item of the list. As an example of these conventions, <a href="../Text/ch02.html#ch02fig08">Fig. 8</a> shows the schematic contents of memory corresponding to the input (<a href="../Text/ch02.html#ch02eq-lev2sec3-18">18</a>).</p>
 
   <div class="image">
     <a id="ch02fig08"></a><img src="../Images/ch02/02fig08.jpg">
@@ -793,7 +793,7 @@
 
   <p class="indent">Using this memory layout, it is not difficult to work out the algorithm. We want to output the nodes whose <code>COUNT</code> field is zero, then to decrease the <code>COUNT</code> fields of all successors of those nodes by one. The trick is to avoid doing any “searching” for nodes whose <code>COUNT</code> field is zero, and this can be done by maintaining a queue containing those nodes. The links for this queue are kept in the <code>COUNT</code> field, which by now has served its previous purpose; for clarity in the algorithm below, we use the notation <code>QLINK</code>[<em>k</em>] to stand for <code>COUNT</code>[<em>k</em>] when that field is no longer being used to keep a count.</p>
 
-  <p class="noindent"><a id="page_265"></a><a id="ch02alg-lev2sec3-T"></a><strong>Algorithm T</strong> (<em>Topological sort</em>). This algorithm inputs a sequence of relations <em>j</em> <span class="ent">≺</span> <em>k</em>, indicating that object <em>j</em> precedes object <em>k</em> in a certain partial ordering, assuming that 1 ≤ <em>j</em>, <em>k</em> ≤ <em>n</em>. The output is the set of <em>n</em> objects embedded in a linear order. The internal tables used are: <code>QLINK[0]</code>, <code>COUNT[1]</code> = <code>QLINK[1]</code>, <code>COUNT[2]</code> = <code>QLINK[2]</code>, . . ., <code>COUNT</code>[<em>n</em>] = <code>QLINK</code>[<em>n</em>]; <code>TOP[1]</code>, <code>TOP[2]</code>, . . ., <code>TOP</code>[<em>n</em>]; a storage pool with one node for each input relation and with <code>SUC</code> and <code>NEXT</code> fields as shown above; <code>P</code>, a Link variable used to refer to the nodes in the storage pool; <code>F</code> and <code>R</code>, integer-valued variables used to refer to the front and rear of a queue whose links are in the <code>QLINK</code> table; and <code>N</code>, a variable that counts how many objects have yet to be output.</p>
+  <p><a id="page_265"></a><a id="ch02alg-lev2sec3-T"></a><strong>Algorithm T</strong> (<em>Topological sort</em>). This algorithm inputs a sequence of relations <em>j</em> <span class="ent">≺</span> <em>k</em>, indicating that object <em>j</em> precedes object <em>k</em> in a certain partial ordering, assuming that 1 ≤ <em>j</em>, <em>k</em> ≤ <em>n</em>. The output is the set of <em>n</em> objects embedded in a linear order. The internal tables used are: <code>QLINK[0]</code>, <code>COUNT[1]</code> = <code>QLINK[1]</code>, <code>COUNT[2]</code> = <code>QLINK[2]</code>, . . ., <code>COUNT</code>[<em>n</em>] = <code>QLINK</code>[<em>n</em>]; <code>TOP[1]</code>, <code>TOP[2]</code>, . . ., <code>TOP</code>[<em>n</em>]; a storage pool with one node for each input relation and with <code>SUC</code> and <code>NEXT</code> fields as shown above; <code>P</code>, a Link variable used to refer to the nodes in the storage pool; <code>F</code> and <code>R</code>, integer-valued variables used to refer to the front and rear of a queue whose links are in the <code>QLINK</code> table; and <code>N</code>, a variable that counts how many objects have yet to be output.</p>
 
   <p class="indenthanging"><strong>T1.</strong> [Initialize.] Input the value of <em>n</em>. Set <code>COUNT</code>[<em>k</em>] ← 0 and <code>TOP</code>[<em>k</em>] ← <em>Λ</em> for 1 ≤ <em>k</em> ≤ <em>n</em>. Set <code>N</code> ← <em>n</em>.</p>
 
@@ -819,7 +819,7 @@
 
   <p class="indent">The coding of <a href="../Text/ch02.html#ch02alg-lev2sec3-T">Algorithm T</a> in <code>MIX</code> assembly language has a few additional points of interest. Since no deletion from tables is made in the algorithm (because no storage must be freed for later use), the operation <code>P</code> <span class="ent">⇐</span> <code>AVAIL</code> can be done in an extremely simple way, as shown in lines 19 and 32 below; we need not keep any linked pool of memory, and we can choose new nodes consecutively. The program includes complete input and output with magnetic tape, according to the conventions mentioned above, but buffering is omitted for the sake of simplicity. The reader should not find it very difficult to follow the details of the coding in this program, since it corresponds directly to <a href="../Text/ch02.html#ch02alg-lev2sec3-T">Algorithm T</a> but with slight changes for efficiency. The efficient use of index registers, which is an important aspect of linked memory processing, is illustrated here.</p>
 
-  <p class="noindent"><a id="ch02pro_01"></a><strong>Program T</strong> (<em>Topological sort</em>). In this program, the following equivalences should be noted: rI6 ≡ <code>N</code>, rI5 ≡ buffer pointer, rI4 ≡ <em>k</em>, rI3 ≡ <em>j</em> and <code>R</code>, rI2 ≡ <code>AVAIL</code> and <code>P</code>, rI1 ≡ <code>F</code>, <code>TOP</code>[ <em>j</em>] ≡ X + <em>j</em> (4:5), <code>COUNT</code>[<em>k</em>] ≡ <code>QLINK</code>[<em>k</em>] ≡ <code>X</code> + <em>k</em> (2 : 3).</p>
+  <p><a id="ch02pro_01"></a><strong>Program T</strong> (<em>Topological sort</em>). In this program, the following equivalences should be noted: rI6 ≡ <code>N</code>, rI5 ≡ buffer pointer, rI4 ≡ <em>k</em>, rI3 ≡ <em>j</em> and <code>R</code>, rI2 ≡ <code>AVAIL</code> and <code>P</code>, rI1 ≡ <code>F</code>, <code>TOP</code>[ <em>j</em>] ≡ X + <em>j</em> (4:5), <code>COUNT</code>[<em>k</em>] ≡ <code>QLINK</code>[<em>k</em>] ≡ <code>X</code> + <em>k</em> (2 : 3).</p>
 
   <div class="image"><img src="../Images/ch02/266pro01.jpg"></div>
 
@@ -952,7 +952,7 @@
   <div class="heading">
     <h4 id="ch02lev2sec4">2.2.4. Circular Lists</h4>
 
-    <p class="noindent">A slight change in the manner of linking furnishes us with an important alternative to the methods of the preceding section.</p>
+    <p>A slight change in the manner of linking furnishes us with an important alternative to the methods of the preceding section.</p>
   </div>
 
   <p class="indent">A <em>circularly linked list</em> (briefly: a circular list) has the property that its last node links back to the first instead of to <em>Λ</em>. It is then possible to access all of the list starting at any given point; we also achieve an extra degree of symmetry, and if we choose we need not think of the list as having a last or first node.</p>
@@ -961,7 +961,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec4-1"></a><img src="../Images/ch02/273equ01.jpg"></div>
 
-  <p class="noindent">Assume that the nodes have two fields, <code>INFO</code> and <code>LINK</code>, as in the preceding section. There is a link variable <code>PTR</code> that points to the rightmost node of the list, and <code>LINK</code>(<code>PTR</code>) is the address of the leftmost node. The following primitive operations are most important:</p>
+  <p>Assume that the nodes have two fields, <code>INFO</code> and <code>LINK</code>, as in the preceding section. There is a link variable <code>PTR</code> that points to the rightmost node of the list, and <code>LINK</code>(<code>PTR</code>) is the address of the leftmost node. The following primitive operations are most important:</p>
 
   <p class="indenthangingA">a) Insert <code>Y</code> at left: <code>P</code> <span class="ent">⇐</span> <code>AVAIL</code>, <code>INFO</code>(<code>P</code>) ← <code>Y</code>, <code>LINK</code>(<code>P</code>) ← <code>LINK</code>(<code>PTR</code>), <code>LINK</code>(<code>PTR</code>) ← <code>P</code>.</p>
 
@@ -969,7 +969,7 @@
 
   <p class="indenthangingA">c) Set <code>Y</code> to left node and delete: <code>P</code> ← <code>LINK</code>(<code>PTR</code>), <code>Y</code> ← <code>INFO</code>(<code>P</code>), <code>LINK</code>(<code>PTR</code>) ← <code>LINK</code>(<code>P</code>), <code>AVAIL</code> <span class="ent">⇐</span> <code>P</code>.</p>
 
-  <p class="noindent"><a id="page_274"></a>Operation (b) is a little surprising at first glance; the operation <code>PTR</code> ← <code>LINK</code>(<code>PTR</code>) effectively moves the leftmost node to the right in the diagram (<a href="../Text/ch02.html#ch02eq-lev2sec4-1">1</a>), and this is quite easy to understand if the list is regarded as a circle instead of as a straight line with connected ends.</p>
+  <p><a id="page_274"></a>Operation (b) is a little surprising at first glance; the operation <code>PTR</code> ← <code>LINK</code>(<code>PTR</code>) effectively moves the leftmost node to the right in the diagram (<a href="../Text/ch02.html#ch02eq-lev2sec4-1">1</a>), and this is quite easy to understand if the list is regarded as a circle instead of as a straight line with connected ends.</p>
 
   <p class="indent">The alert reader will observe that we have made a serious mistake in operations (a), (b), and (c). What is it? <em>Answer:</em> We have forgotten to consider the possibility of an <em>empty</em> list. If, for example, operation (c) is applied five times to the list (<a href="../Text/ch02.html#ch02eq-lev2sec4-1">1</a>), we will have <code>PTR</code> pointing to a node in the <code>AVAIL</code> list, and this can lead to serious difficulties; for example, imagine applying operation (c) once more! If we take the position that <code>PTR</code> will equal <em>Λ</em> in the case of an empty list, we could remedy the operations by inserting the additional instructions “if <code>PTR</code> = Λ, then <code>PTR</code> ← <code>LINK</code>(<code>P</code>) ← <code>P</code>; otherwise . . .” after “<code>INFO</code>(<code>P</code>) ← <code>Y</code>” in (a); preceding (c) by the test “if <code>PTR</code> = Λ, then <code>UNDERFLOW</code>”; and following (c) by “if <code>PTR</code> = <code>P</code>, then <code>PTR</code> ← Λ”.</p>
 
@@ -979,13 +979,13 @@
 
   <div class="equation"><a id="ch02eq-lev2sec4-2"></a><img src="../Images/ch02/274equ01.jpg"></div>
 
-  <p class="noindent">[Recall that the “↔” operation denotes interchange: <code>P</code> ← <code>AVAIL</code>, <code>AVAIL</code> ← <code>LINK</code>(<code>PTR</code>), <code>LINK</code>(<code>PTR</code>) ← <code>P</code>.] Operation (<a href="../Text/ch02.html#ch02eq-lev2sec4-2">2</a>) is clearly valid if <code>PTR</code> points <em>anywhere</em> in the circular list. Afterwards we should of course set <code>PTR</code> ← <em>Λ</em>.</p>
+  <p>[Recall that the “↔” operation denotes interchange: <code>P</code> ← <code>AVAIL</code>, <code>AVAIL</code> ← <code>LINK</code>(<code>PTR</code>), <code>LINK</code>(<code>PTR</code>) ← <code>P</code>.] Operation (<a href="../Text/ch02.html#ch02eq-lev2sec4-2">2</a>) is clearly valid if <code>PTR</code> points <em>anywhere</em> in the circular list. Afterwards we should of course set <code>PTR</code> ← <em>Λ</em>.</p>
 
   <p class="indent">Using a similar technique, if <code>PTR</code><sub>1</sub> and <code>PTR</code><sub>2</sub> point to disjoint circular lists L<sub>1</sub> and <code>L</code><sub>2</sub>, respectively, we can insert the entire list <code>L</code><sub>2</sub> at the right of L<sub>1</sub> :</p>
 
   <div class="equation"><a id="ch02eq-lev2sec4-3"></a><img src="../Images/ch02/274equ02.jpg"></div>
 
-  <p class="noindent">Splitting one circular list into two, in various ways, is another simple operation that can be done. These operations correspond to the concatenation and deconcatenation of strings.</p>
+  <p>Splitting one circular list into two, in various ways, is another simple operation that can be done. These operations correspond to the concatenation and deconcatenation of strings.</p>
 
   <p class="indent">Thus we see that a circular list can be used not only to represent inherently circular structures, but also to represent linear structures; a circular list with one pointer to the rear node is essentially equivalent to a straight linear list with two pointers to the front and rear. The natural question to ask, in connection with this observation, is “How do we find the end of the list, when there is circular symmetry?” There is no <em>Λ</em> link to signal the end! The answer is that when we <a id="page_275"></a>are operating on an entire list, moving from one node to the next, we should stop when we get back to our starting place (assuming, of course, that the starting place is still present in the list).</p>
 
@@ -993,7 +993,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec4-4"></a><img src="../Images/ch02/275equ01.jpg"></div>
 
-  <p class="noindent">References to lists like (<a href="../Text/ch02.html#ch02eq-lev2sec4-4">4</a>) are usually made via the list head, which is often in a fixed memory location. The disadvantage of list heads is that there is no pointer to the right end, so we must sacrifice operation (b) stated above.</p>
+  <p>References to lists like (<a href="../Text/ch02.html#ch02eq-lev2sec4-4">4</a>) are usually made via the list head, which is often in a fixed memory location. The disadvantage of list heads is that there is no pointer to the right end, so we must sacrifice operation (b) stated above.</p>
 
   <p class="indent">Diagram (<a href="../Text/ch02.html#ch02eq-lev2sec4-4">4</a>) may be compared with <a href="../Text/ch02.html#ch02lev2sec3">2.2.3</a>–(<a href="../Text/ch02.html#ch02eq-lev2sec3-1">1</a>) at the beginning of the previous section, in which the link associated with “item 5” now points to <code>LOC</code>(<code>FIRST</code>) instead of to Λ; the variable <code>FIRST</code> is now thought of as a link within a node, namely the link that is in <code>NODE</code>(<code>LOC</code>(<code>FIRST</code>)). The principal difference between (<a href="../Text/ch02.html#ch02eq-lev2sec4-4">4</a>) and <a href="../Text/ch02.html#ch02lev2sec3">2.2.3</a>–(<a href="../Text/ch02.html#ch02eq-lev2sec3-1">1</a>) is that (<a href="../Text/ch02.html#ch02eq-lev2sec4-4">4</a>) makes it possible (though not necessarily efficient) to get to any point of the list from any other point.</p>
 
@@ -1001,21 +1001,21 @@
 
   <p class="center">(<em>x</em><sup>4</sup> + 2<em>x</em><sup>3</sup><em>y</em> + 3<em>x</em><sup>2</sup><em>y</em><sup>2</sup> + 4<em>xy</em><sup>3</sup> + 5<em>y</em><sup>4</sup>)&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;&nbsp;&nbsp;(<em>x</em><sup>2</sup> − 2<em>xy</em> + <em>y</em><sup>2</sup>)</p>
 
-  <p class="noindent">to get</p>
+  <p>to get</p>
 
   <p class="center">(<em>x</em><sup>6</sup> − 6<em>xy</em><sup>5</sup> + 5<em>y</em><sup>6</sup>).</p>
 
-  <p class="noindent">Linked allocation is a natural tool for this purpose, since polynomials can grow to unpredictable sizes and we may want to represent many polynomials in memory at the same time.</p>
+  <p>Linked allocation is a natural tool for this purpose, since polynomials can grow to unpredictable sizes and we may want to represent many polynomials in memory at the same time.</p>
 
   <p class="indent">We will consider here the two operations of addition and multiplication. Let us suppose that a polynomial is represented as a list in which each node stands for one nonzero term, and has the two-word form</p>
 
   <div class="equation"><a id="ch02eq-lev2sec4-5"></a><img src="../Images/ch02/275equ02.jpg"></div>
 
-  <p class="noindent">Here <code>COEF</code> is the coefficient of the term in <em>x</em><sup>A</sup><em>y</em><sup>B</sup><em>z</em><sup>C</sup>. We will assume that the coefficients and exponents will always lie in the range allowed by this format, and that it is not necessary to check the ranges during our calculations. The notation <code>ABC</code> will be used to stand for the ± <code>A B C</code> fields of the node (<a href="../Text/ch02.html#ch02eq-lev2sec4-5">5</a>), treated as a single unit. The sign of <code>ABC</code>, namely the sign of the second word in (<a href="../Text/ch02.html#ch02eq-lev2sec4-5">5</a>), will always be <a id="page_276"></a>plus, except that there is a <em>special node</em> at the end of every polynomial that has <code>ABC</code> = −1 and <code>COEF</code> = 0. This special node is a great convenience, analogous to our discussion of a list head above, because it provides a convenient sentinel and it avoids the problem of an empty list (corresponding to the polynomial 0). The nodes of the list always appear in <em>decreasing order</em> of the <code>ABC</code> field, if we follow the direction of the links, except that the special node (which has <code>ABC</code> = −1) links to the largest value of <code>ABC</code>. For example, the polynomial <em>x</em><sup>6</sup> − 6<em>xy</em><sup>5</sup> + 5<em>y</em><sup>6</sup> would be represented thus:</p>
+  <p>Here <code>COEF</code> is the coefficient of the term in <em>x</em><sup>A</sup><em>y</em><sup>B</sup><em>z</em><sup>C</sup>. We will assume that the coefficients and exponents will always lie in the range allowed by this format, and that it is not necessary to check the ranges during our calculations. The notation <code>ABC</code> will be used to stand for the ± <code>A B C</code> fields of the node (<a href="../Text/ch02.html#ch02eq-lev2sec4-5">5</a>), treated as a single unit. The sign of <code>ABC</code>, namely the sign of the second word in (<a href="../Text/ch02.html#ch02eq-lev2sec4-5">5</a>), will always be <a id="page_276"></a>plus, except that there is a <em>special node</em> at the end of every polynomial that has <code>ABC</code> = −1 and <code>COEF</code> = 0. This special node is a great convenience, analogous to our discussion of a list head above, because it provides a convenient sentinel and it avoids the problem of an empty list (corresponding to the polynomial 0). The nodes of the list always appear in <em>decreasing order</em> of the <code>ABC</code> field, if we follow the direction of the links, except that the special node (which has <code>ABC</code> = −1) links to the largest value of <code>ABC</code>. For example, the polynomial <em>x</em><sup>6</sup> − 6<em>xy</em><sup>5</sup> + 5<em>y</em><sup>6</sup> would be represented thus:</p>
 
   <div class="image"><img src="../Images/ch02/276fig01.jpg"></div>
 
-  <p class="noindent"><a id="ch02alg-lev2sec4-A"></a><strong>Algorithm A</strong> (<em>Addition of polynomials</em>). This algorithm adds polynomial(<code>P</code>) to polynomial(<code>Q</code>), assuming that <code>P</code> and <code>Q</code> are pointer variables pointing to polynomials having the form above. The list <code>P</code> will be unchanged; the list <code>Q</code> will retain the sum. Pointer variables <code>P</code> and <code>Q</code> return to their starting points at the conclusion of this algorithm; auxiliary pointer variables <code>Q1</code> and <code>Q2</code> are also used.</p>
+  <p><a id="ch02alg-lev2sec4-A"></a><strong>Algorithm A</strong> (<em>Addition of polynomials</em>). This algorithm adds polynomial(<code>P</code>) to polynomial(<code>Q</code>), assuming that <code>P</code> and <code>Q</code> are pointer variables pointing to polynomials having the form above. The list <code>P</code> will be unchanged; the list <code>Q</code> will retain the sum. Pointer variables <code>P</code> and <code>Q</code> return to their starting points at the conclusion of this algorithm; auxiliary pointer variables <code>Q1</code> and <code>Q2</code> are also used.</p>
 
   <p class="indenthanging"><strong>A1.</strong> [Initialize.] Set <code>P</code> ← <code>LINK</code>(<code>P</code>), <code>Q1</code> ← <code>Q</code>, <code>Q</code> ← <code>LINK</code>(<code>Q</code>). (Now both <code>P</code> and <code>Q</code> point to the leading terms of their polynomials. Throughout most of this algorithm the variable <code>Q1</code> will be one step behind <code>Q</code>, in the sense that <code>Q</code> = <code>LINK</code>(<code>Q1</code>).)</p>
 
@@ -1033,7 +1033,7 @@
 
   <p class="indent"><a id="page_277"></a>Given <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, the multiplication operation is surprisingly easy:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec4-M"></a><strong>Algorithm M</strong> (<em>Multiplication of polynomials</em>). This algorithm, analogous to <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, replaces polynomial(<code>Q</code>) by</p>
+  <p><a id="ch02alg-lev2sec4-M"></a><strong>Algorithm M</strong> (<em>Multiplication of polynomials</em>). This algorithm, analogous to <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, replaces polynomial(<code>Q</code>) by</p>
 
   <p class="center">polynomial(<code>Q</code>) + polynomial(<code>M</code>) × polynomial(<code>P</code>).</p>
 
@@ -1041,13 +1041,13 @@
 
   <p class="indenthanging"><strong>M2.</strong> [Multiply cycle.] Perform <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, except that wherever the notation “<code>ABC</code>(<code>P</code>)” appears in that algorithm, replace it by “(if <code>ABC</code>(<code>P</code>) &lt; 0 then −1, otherwise <code>ABC</code>(<code>P</code>) + <code>ABC</code>(<code>M</code>))”; wherever “<code>COEF</code>(<code>P</code>)” appears in that algorithm replace it by “<code>COEF</code>(<code>P</code>) × <code>COEF</code>(<code>M</code>)”. Then go back to step M1. <span class="middle"><img src="../Images/ch02/box.jpg"></span></p>
 
-  <p class="noindent">The programming of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a> in <code>MIX</code> language shows again the ease with which linked lists are manipulated in a computer. In the following code we assume that <code>OVERFLOW</code> is a subroutine that either terminates the program (due to lack of memory space) or finds further available space and exits to rJ − 2.</p>
+  <p>The programming of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a> in <code>MIX</code> language shows again the ease with which linked lists are manipulated in a computer. In the following code we assume that <code>OVERFLOW</code> is a subroutine that either terminates the program (due to lack of memory space) or finds further available space and exits to rJ − 2.</p>
 
-  <p class="noindent"><a id="ch02pro_02"></a><strong>Program A</strong> (<em>Addition of polynomials</em>). This is a subroutine written so that it can be used in conjunction with a multiplication subroutine (see <a href="../Text/ch02.html#ch02ex_2_4_15">exercise 15</a>).</p>
+  <p><a id="ch02pro_02"></a><strong>Program A</strong> (<em>Addition of polynomials</em>). This is a subroutine written so that it can be used in conjunction with a multiplication subroutine (see <a href="../Text/ch02.html#ch02ex_2_4_15">exercise 15</a>).</p>
 
   <div class="imageL"><img src="../Images/ch02/p0277_01.jpg"></div>
 
-  <p class="noindent">In the coding below, <code>P</code> ≡ rI1, <code>Q</code> ≡ r<code>I</code>2, <code>Q</code>1 ≡ r<code>I</code>3, and <code>Q</code>2 ≡ r<code>I</code>6, in the notation of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>.</p>
+  <p>In the coding below, <code>P</code> ≡ rI1, <code>Q</code> ≡ r<code>I</code>2, <code>Q</code>1 ≡ r<code>I</code>3, and <code>Q</code>2 ≡ r<code>I</code>6, in the notation of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>.</p>
 
   <div class="image"><img src="../Images/ch02/277pro01.jpg"></div>
 
@@ -1063,7 +1063,7 @@
 
   <p class="uln-indent1"><em>q</em>′ = number of unmatched terms in polynomial(<code>Q</code>).</p>
 
-  <p class="noindent">The analysis given with <a href="../Text/ch02.html#ch02pro_02">Program A</a> uses the abbreviations</p>
+  <p>The analysis given with <a href="../Text/ch02.html#ch02pro_02">Program A</a> uses the abbreviations</p>
 
   <p class="uln-indent1"><em>m</em> = <em>m</em>′ + <em>m</em><sup>′′</sup>, <em>p</em> = <em>m</em> + <em>p</em>′, <em>q</em> = <em>m</em> + <em>q</em>′, <em>x</em> = 1 + <em>m</em> + <em>p</em>′ + <em>q</em>′;</p>
 
@@ -1128,22 +1128,22 @@
   <div class="heading">
     <h4 id="ch02lev2sec5">2.2.5. Doubly Linked Lists</h4>
 
-    <p class="noindent">For even greater flexibility in the manipulation of linear lists, we can include two links in each node, pointing to the items on either side of that node:</p>
+    <p>For even greater flexibility in the manipulation of linear lists, we can include two links in each node, pointing to the items on either side of that node:</p>
   </div>
 
   <div class="equation"><a id="ch02eq-lev2sec5-1"></a><img src="../Images/ch02/280equ01.jpg"></div>
 
-  <p class="noindent">Here <code>LEFT</code> and <code>RIGHT</code> are pointer variables to the left and right of the list. Each node of the list includes two links, called, for example, <code>LLINK</code> and <code>RLINK</code>. The operations of a general deque are readily performed with such a representation; see <a href="../Text/ch02a.html#ch02ex_2_5_1">exercise 1</a>. However, manipulations of doubly linked lists almost always become much easier if a <em>list head</em> node is part of each list, as described in the preceding section. When a list head is present, we have the following typical diagram of a doubly linked list:</p>
+  <p>Here <code>LEFT</code> and <code>RIGHT</code> are pointer variables to the left and right of the list. Each node of the list includes two links, called, for example, <code>LLINK</code> and <code>RLINK</code>. The operations of a general deque are readily performed with such a representation; see <a href="../Text/ch02a.html#ch02ex_2_5_1">exercise 1</a>. However, manipulations of doubly linked lists almost always become much easier if a <em>list head</em> node is part of each list, as described in the preceding section. When a list head is present, we have the following typical diagram of a doubly linked list:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec5-2"></a><img src="../Images/ch02/280equ02.jpg"></div>
 
-  <p class="noindent">The <code>RLINK</code> and <code>LLINK</code> fields of the list head take the place of <code>LEFT</code> and <code>RIGHT</code> in (<a href="../Text/ch02.html#ch02eq-lev2sec5-1">1</a>). There is complete symmetry between left and right; the list head could equally well have been shown at the right of (<a href="../Text/ch02.html#ch02eq-lev2sec5-2">2</a>). If the list is empty, both link fields of the list head point to the head itself.</p>
+  <p>The <code>RLINK</code> and <code>LLINK</code> fields of the list head take the place of <code>LEFT</code> and <code>RIGHT</code> in (<a href="../Text/ch02.html#ch02eq-lev2sec5-1">1</a>). There is complete symmetry between left and right; the list head could equally well have been shown at the right of (<a href="../Text/ch02.html#ch02eq-lev2sec5-2">2</a>). If the list is empty, both link fields of the list head point to the head itself.</p>
 
   <p class="indent">The list representation (<a href="../Text/ch02.html#ch02eq-lev2sec5-2">2</a>) clearly satisfies the condition</p>
 
   <div class="equation"><a id="ch02eq-lev2sec5-3"></a><img src="../Images/ch02/280equ03.jpg"></div>
 
-  <p class="noindent"><a id="page_281"></a>if <code>X</code> is the location of any node in the list (including the head). This fact is the principal reason that representation (<a href="../Text/ch02.html#ch02eq-lev2sec5-2">2</a>) is preferable to (<a href="../Text/ch02.html#ch02eq-lev2sec5-1">1</a>).</p>
+  <p><a id="page_281"></a>if <code>X</code> is the location of any node in the list (including the head). This fact is the principal reason that representation (<a href="../Text/ch02.html#ch02eq-lev2sec5-2">2</a>) is preferable to (<a href="../Text/ch02.html#ch02eq-lev2sec5-1">1</a>).</p>
 
   <p class="indent">A doubly linked list usually takes more memory space than a singly linked one does (although there is sometimes room for another link in a node that doesn’t fill a complete computer word). But the additional operations that can be performed efficiently with two-way links are often more than ample compensation for the extra space requirement. Besides the obvious advantage of being able to go back and forth at will when examining a doubly linked list, one of the principal new abilities is the fact that <em>we can delete</em> <code>NODE</code>(<code>X</code>) <em>from the list it is in, given only the value of</em> X. This deletion operation is easy to derive from a “before and after” diagram (<a href="../Text/ch02.html#ch02fig11">Fig. 11</a>) and it is very simple:</p>
 
@@ -1161,7 +1161,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec5-5"></a><img src="../Images/ch02/281equ02.jpg"></div>
 
-  <p class="noindent">do such an insertion to the right of <code>NODE</code>(<code>X</code>); and by interchanging left and right we get the corresponding algorithm for insertion to the left. Operation (<a href="../Text/ch02.html#ch02eq-lev2sec5-5">5</a>) changes the settings of five links, so it is a little slower than an insertion operation in a one-way list where only three links need to be changed.</p>
+  <p>do such an insertion to the right of <code>NODE</code>(<code>X</code>); and by interchanging left and right we get the corresponding algorithm for insertion to the left. Operation (<a href="../Text/ch02.html#ch02eq-lev2sec5-5">5</a>) changes the settings of five links, so it is a little slower than an insertion operation in a one-way list where only three links need to be changed.</p>
 
   <p class="indent"><a id="page_282"></a>As an example of the use of doubly linked lists, we will now consider the writing of a <em>discrete simulation</em> program. “Discrete simulation” means the simulation of a system in which all changes in the state of the system may be assumed to happen at certain discrete instants of time. The “system” being simulated is usually a set of individual activities that are largely independent although they interact with each other; examples are customers at a store, ships in a harbor, people in a corporation. In a discrete simulation, we proceed by doing whatever is to be done at a certain instant of simulated time, then advance the simulated clock to the next time when some action is scheduled to occur.</p>
 
@@ -1187,9 +1187,9 @@
 
   <p class="indent-1"><code>STATE</code>, the current state of the elevator (<code>GOINGUP</code>, <code>GOINGDOWN</code>, or <code>NEUTRAL</code>).</p>
 
-  <p class="noindent">Initially <code>FLOOR</code> = 2, <code>D1</code> = <code>D2</code> = <code>D3</code> = 0, and <code>STATE</code> = <code>NEUTRAL</code>.</p>
+  <p>Initially <code>FLOOR</code> = 2, <code>D1</code> = <code>D2</code> = <code>D3</code> = 0, and <code>STATE</code> = <code>NEUTRAL</code>.</p>
 
-  <p class="noindent"><strong>Coroutine U</strong> (<em>Users</em>). Everyone who enters the system begins to perform the actions specified below, starting at step U1.</p>
+  <p><strong>Coroutine U</strong> (<em>Users</em>). Everyone who enters the system begins to perform the actions specified below, starting at step U1.</p>
 
   <p class="indenthanging"><strong>U1.</strong> [Enter, prepare for successor.] The following quantities are determined in some manner that will not be specified here:</p>
 
@@ -1218,7 +1218,7 @@
 
   <p class="indenthanging"><strong>U6.</strong> [Get out.] Delete this user from the <code>ELEVATOR</code> list and from the simulated system. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent"><strong>Coroutine E</strong> (<em>Elevator</em>). This coroutine represents the actions of the elevator; step E4 also handles the control of when people get in and out.</p>
+  <p><strong>Coroutine E</strong> (<em>Elevator</em>). This coroutine represents the actions of the elevator; step E4 also handles the control of when people get in and out.</p>
 
   <p class="indenthanging"><strong>E1.</strong> [Wait for call.] (At this point the elevator is sitting at floor 2 with the doors closed, waiting for something to happen.) If someone presses a button, the <code>DECISION</code> subroutine will take us to step E3 or E6. Meanwhile, wait.</p>
 
@@ -1240,7 +1240,7 @@
 
   <p class="indenthanging"><strong>E9.</strong> [Set inaction indicator.] Set <code>D2</code> ← 0 and perform the <code>DECISION</code> subroutine. (This independent action is initiated in step E3 but it is almost always canceled in step E6. See <a href="../Text/ch02a.html#ch02ex_2_5_4">exercise 4</a>.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
-  <p class="noindent"><a id="page_287"></a><strong>Subroutine D</strong> (DECISION <em>subroutine</em>). This subroutine is performed at certain critical times, as specified in the coroutines above, when a decision about the elevator’s next direction is to be made.</p>
+  <p><a id="page_287"></a><strong>Subroutine D</strong> (DECISION <em>subroutine</em>). This subroutine is performed at certain critical times, as specified in the coroutines above, when a decision about the elevator’s next direction is to be made.</p>
 
   <p class="indenthanging"><strong>D1.</strong> [Decision necessary?] If <code>STATE</code> ≠ <code>NEUTRAL</code>, exit from this subroutine.</p>
 
@@ -1270,7 +1270,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec5-6"></a><img src="../Images/ch02/288equ01.jpg"></div>
 
-  <p class="noindent">Here <code>LLINK1</code> and <code>RLINK1</code> are the links for the <code>WAIT</code> list; <code>LLINK2</code> and <code>RLINK2</code> are used as links in the <code>QUEUE</code> lists or the <code>ELEVATOR</code>. The latter two fields and the <code>IN</code> and <code>OUT</code> field are relevant when node (<a href="../Text/ch02.html#ch02eq-lev2sec5-6">6</a>) represents a user, but they are not relevant for nodes that represent elevator actions. The third word of the node is actually a <code>MIX</code> ‘<code>JMP</code>’ instruction.</p>
+  <p>Here <code>LLINK1</code> and <code>RLINK1</code> are the links for the <code>WAIT</code> list; <code>LLINK2</code> and <code>RLINK2</code> are used as links in the <code>QUEUE</code> lists or the <code>ELEVATOR</code>. The latter two fields and the <code>IN</code> and <code>OUT</code> field are relevant when node (<a href="../Text/ch02.html#ch02eq-lev2sec5-6">6</a>) represents a user, but they are not relevant for nodes that represent elevator actions. The third word of the node is actually a <code>MIX</code> ‘<code>JMP</code>’ instruction.</p>
 
   <p class="indent"><a href="../Text/ch02.html#ch02fig12">Figure 12</a> shows typical contents of the <code>WAIT</code> list, <code>ELEVATOR</code> list, and one of the <code>QUEUE</code> lists; each node in the <code>QUEUE</code> list is simultaneously in the <code>WAIT</code> list with <code>NEXTINST</code> = U4, but this has not been indicated in the figure, since the complexity of the linking would obscure the basic idea.</p>
 

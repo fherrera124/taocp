@@ -63,42 +63,42 @@
   <div class="heading">
     <h4 id="ch02lev2sec6">2.2.6. Arrays and Orthogonal Lists</h4>
 
-    <p class="noindent">One of the simplest generalizations of a linear list is a two-dimensional or higher-dimensional array of information. For example, consider the case of an <em>m</em> × <em>n</em> matrix</p>
+    <p>One of the simplest generalizations of a linear list is a two-dimensional or higher-dimensional array of information. For example, consider the case of an <em>m</em> × <em>n</em> matrix</p>
   </div>
 
   <div class="equation"><a id="ch02eq-lev2sec6-1"></a><img src="../Images/ch02/298equ01.jpg"></div>
 
-  <p class="noindent"><a id="page_299"></a>In this two-dimensional array, each node <code>A[</code><em>j,k</em><code>]</code> belongs to two linear lists: the “row <em>j</em>” list <code>A[</code><em>j</em>,1<code>]</code>, <code>A[</code><em>j</em>,2<code>]</code>, ..., <code>A[</code><em>j</em>,<em>n</em><code>]</code> and the “column <em>k</em>” list <code>A[</code>1,<em>k</em><code>]</code>, <code>A[2</code>,<em>k</em><code>]</code>, ..., <code>A[</code><em>m</em>,<em>k</em><code>]</code>. These orthogonal row and column lists essentially account for the two-dimensional structure of a matrix. Similar remarks apply to higherdimensional arrays of information.</p>
+  <p><a id="page_299"></a>In this two-dimensional array, each node <code>A[</code><em>j,k</em><code>]</code> belongs to two linear lists: the “row <em>j</em>” list <code>A[</code><em>j</em>,1<code>]</code>, <code>A[</code><em>j</em>,2<code>]</code>, ..., <code>A[</code><em>j</em>,<em>n</em><code>]</code> and the “column <em>k</em>” list <code>A[</code>1,<em>k</em><code>]</code>, <code>A[2</code>,<em>k</em><code>]</code>, ..., <code>A[</code><em>m</em>,<em>k</em><code>]</code>. These orthogonal row and column lists essentially account for the two-dimensional structure of a matrix. Similar remarks apply to higherdimensional arrays of information.</p>
 
-  <p class="noindent"><strong>Sequential Allocation.</strong> When an array like (<a href="../Text/ch02a.html#ch02eq-lev2sec6-1">1</a>) is stored in <em>sequential</em> memory locations, storage is usually allocated so that</p>
+  <p><strong>Sequential Allocation.</strong> When an array like (<a href="../Text/ch02a.html#ch02eq-lev2sec6-1">1</a>) is stored in <em>sequential</em> memory locations, storage is usually allocated so that</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-2"></a><img src="../Images/ch02/299equ01.jpg"></div>
 
-  <p class="noindent">where <em>a</em><sub>0</sub>, <em>a</em><sub>1</sub>, and <em>a</em><sub>2</sub> are constants. Let us consider a more general case: Suppose we have a four-dimensional array with one-word elements <code>Q[I,J,K,L]</code> for 0 ≤ <code>I</code> ≤ 2, 0 ≤ <code>J</code> ≤ 4, 0 ≤ <code>K</code> ≤ 10, 0 ≤ <code>L</code> ≤ 2. We would like to allocate storage so that</p>
+  <p>where <em>a</em><sub>0</sub>, <em>a</em><sub>1</sub>, and <em>a</em><sub>2</sub> are constants. Let us consider a more general case: Suppose we have a four-dimensional array with one-word elements <code>Q[I,J,K,L]</code> for 0 ≤ <code>I</code> ≤ 2, 0 ≤ <code>J</code> ≤ 4, 0 ≤ <code>K</code> ≤ 10, 0 ≤ <code>L</code> ≤ 2. We would like to allocate storage so that</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-3"></a><img src="../Images/ch02/299equ02.jpg"></div>
 
-  <p class="noindent">This means that a change in <code>I</code>, <code>J</code>, <code>K</code>, or <code>L</code> leads to a readily calculated change in the location of <code>Q[I,J,K,L]</code>. The most natural (and most commonly used) way to allocate storage is to arrange the array elements according to the lexicographic order of their indices (<a href="../Text/ch01.html#ch01ex_2_1_15">exercise 1.2.1–15</a>(d)), sometimes called “row major order”:</p>
+  <p>This means that a change in <code>I</code>, <code>J</code>, <code>K</code>, or <code>L</code> leads to a readily calculated change in the location of <code>Q[I,J,K,L]</code>. The most natural (and most commonly used) way to allocate storage is to arrange the array elements according to the lexicographic order of their indices (<a href="../Text/ch01.html#ch01ex_2_1_15">exercise 1.2.1–15</a>(d)), sometimes called “row major order”:</p>
 
   <div class="equation"><img src="../Images/ch02/299equ03a.jpg"></div>
 
-  <p class="noindent">It is easy to see that this order satisfies the requirements of (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>), and we have</p>
+  <p>It is easy to see that this order satisfies the requirements of (<a href="../Text/ch02a.html#ch02eq-lev2sec6-3">3</a>), and we have</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-4"></a><img src="../Images/ch02/299equ03.jpg"></div>
 
-  <p class="noindent">In general, given a <em>k</em>-dimensional array with <em>c</em>-word elements <code>A[I</code><sub>1</sub><code>,I</code><sub>2</sub>, ... <code>,I</code><sub><em>k</em></sub><code>]</code> for</p>
+  <p>In general, given a <em>k</em>-dimensional array with <em>c</em>-word elements <code>A[I</code><sub>1</sub><code>,I</code><sub>2</sub>, ... <code>,I</code><sub><em>k</em></sub><code>]</code> for</p>
 
   <p class="center">0 ≤ <code>I</code><sub>1</sub> ≤ <em>d</em><sub>1</sub><em>,</em> 0 ≤ <code>I</code><sub>2</sub> ≤ <em>d</em><sub>2</sub><em>,&nbsp;&nbsp;&nbsp;...,</em>&nbsp;&nbsp;&nbsp;0 ≤ <code>I</code><sub><em>k</em></sub> ≤ <em>d</em><sub><em>k</em></sub><em>,</em></p>
 
-  <p class="noindent">we can store it in memory as</p>
+  <p>we can store it in memory as</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-5"></a><img src="../Images/ch02/299equ04.jpg"></div>
 
-  <p class="noindent">where</p>
+  <p>where</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-6"></a><img src="../Images/ch02/299equ05.jpg"></div>
 
-  <p class="noindent">To see why this formula works, observe that <em>a</em><sub><em>r</em></sub> is the amount of memory needed to store the subarray <code>A[I</code><sub>1</sub>, ...,<code>I</code><sub><em>r</em></sub>,<code>J</code><sub><em>r</em>+1</sub>, ...,<code>J</code><sub><em>k</em></sub><code>]</code> if <code>I</code><sub>1</sub><em>, ...,</em> <code>I</code><sub><em>r</em></sub> are constant and <code>J</code><sub><em>r</em>+1</sub><em>, ...,</em> <code>J</code><sub><em>k</em></sub> vary through all values 0 ≤ <code>J</code><sub><em>r</em>+1</sub> ≤ <em>d</em><sub><em>r</em>+1</sub>, ..., 0 ≤ <code>J</code><sub><em>k</em></sub> ≤ <em>d</em><sub><em>k</em></sub>; hence by the nature of lexicographic order the address of <code>A[I</code><sub>1</sub>, ...,<code>I</code><sub><em>k</em></sub><code>]</code> should change by precisely this amount when <code>I</code><sub><em>r</em></sub> changes by 1.</p>
+  <p>To see why this formula works, observe that <em>a</em><sub><em>r</em></sub> is the amount of memory needed to store the subarray <code>A[I</code><sub>1</sub>, ...,<code>I</code><sub><em>r</em></sub>,<code>J</code><sub><em>r</em>+1</sub>, ...,<code>J</code><sub><em>k</em></sub><code>]</code> if <code>I</code><sub>1</sub><em>, ...,</em> <code>I</code><sub><em>r</em></sub> are constant and <code>J</code><sub><em>r</em>+1</sub><em>, ...,</em> <code>J</code><sub><em>k</em></sub> vary through all values 0 ≤ <code>J</code><sub><em>r</em>+1</sub> ≤ <em>d</em><sub><em>r</em>+1</sub>, ..., 0 ≤ <code>J</code><sub><em>k</em></sub> ≤ <em>d</em><sub><em>k</em></sub>; hence by the nature of lexicographic order the address of <code>A[I</code><sub>1</sub>, ...,<code>I</code><sub><em>k</em></sub><code>]</code> should change by precisely this amount when <code>I</code><sub><em>r</em></sub> changes by 1.</p>
 
   <p class="indent"><a id="page_300"></a>Formulas (<a href="../Text/ch02a.html#ch02eq-lev2sec6-5">5</a>) and (<a href="../Text/ch02a.html#ch02eq-lev2sec6-6">6</a>) correspond to the value of the number <code>I</code><sub>1</sub><code>I</code><sub>2</sub> ... <code>I</code><sub><em>k</em></sub> in a mixed-radix number system. For example, if we had the array <code>TIME[W,D,H,M,S]</code> with 0 ≤ <code>W</code> &lt; 4, 0 ≤ <code>D</code> &lt; 7, 0 ≤ <code>H</code> &lt; 24, 0 ≤ <code>M</code> &lt; 60, and 0 ≤ <code>S</code> &lt; 60, the location of <code>TIME[W,D,H,M,S]</code> would be the location of <code>TIME[0,0,0,0,0]</code> plus the quantity “<code>W</code> weeks + <code>D</code> days + <code>H</code> hours + <code>M</code> minutes + <code>S</code> seconds” converted to seconds. Of course, it takes a pretty fancy application to make use of an array that has 2,419,200 elements.</p>
 
@@ -108,11 +108,11 @@
 
   <div class="equation"><a id="ch02eq-lev2sec6-7"></a><img src="../Images/ch02/300equ01.jpg"></div>
 
-  <p class="noindent">We may know that all other entries are zero, or that <code>A[</code><em>j</em>,<em>k</em><code>]</code> = <code>A[</code><em>k</em>,<em>j</em><code>]</code>, so that only half of the values need to be stored. If we want to store the lower triangular matrix (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>) in <span class="middle"><img src="../Images/ch02/1by2.jpg"></span>(<em>n</em> + 1)(<em>n</em> + 2) consecutive memory positions, we are forced to give up the possibility of linear allocation as in Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-2">2</a>), but we can ask instead for an allocation arrangement of the form</p>
+  <p>We may know that all other entries are zero, or that <code>A[</code><em>j</em>,<em>k</em><code>]</code> = <code>A[</code><em>k</em>,<em>j</em><code>]</code>, so that only half of the values need to be stored. If we want to store the lower triangular matrix (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>) in <span class="middle"><img src="../Images/ch02/1by2.jpg"></span>(<em>n</em> + 1)(<em>n</em> + 2) consecutive memory positions, we are forced to give up the possibility of linear allocation as in Eq. (<a href="../Text/ch02a.html#ch02eq-lev2sec6-2">2</a>), but we can ask instead for an allocation arrangement of the form</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-8"></a><img src="../Images/ch02/300equ02.jpg"></div>
 
-  <p class="noindent">where <em>f</em><sub>1</sub> and <em>f</em><sub>2</sub> are functions of one variable. (The constant <em>a</em><sub>0</sub> may be absorbed into either <em>f</em><sub>1</sub> or <em>f</em><sub>2</sub> if desired.) When the addressing has the form (<a href="../Text/ch02a.html#ch02eq-lev2sec6-8">8</a>), a random element <code>A[</code><em>j</em>,<em>k</em><code>]</code> can be quickly accessed if we keep two (rather short) auxiliary tables of the values of <em>f</em><sub>1</sub> and <em>f</em><sub>2</sub>; therefore these functions need to be calculated only once.</p>
+  <p>where <em>f</em><sub>1</sub> and <em>f</em><sub>2</sub> are functions of one variable. (The constant <em>a</em><sub>0</sub> may be absorbed into either <em>f</em><sub>1</sub> or <em>f</em><sub>2</sub> if desired.) When the addressing has the form (<a href="../Text/ch02a.html#ch02eq-lev2sec6-8">8</a>), a random element <code>A[</code><em>j</em>,<em>k</em><code>]</code> can be quickly accessed if we keep two (rather short) auxiliary tables of the values of <em>f</em><sub>1</sub> and <em>f</em><sub>2</sub>; therefore these functions need to be calculated only once.</p>
 
   <p class="indent">It turns out that lexicographic order of indices for the array (<a href="../Text/ch02a.html#ch02eq-lev2sec6-7">7</a>) satisfies condition (<a href="../Text/ch02a.html#ch02eq-lev2sec6-8">8</a>), and with one-word entries we have in fact the simple formula</p>
 
@@ -122,17 +122,17 @@
 
   <div class="equation"><a id="ch02eq-lev2sec6-10"></a><img src="../Images/ch02/300equ04.jpg"></div>
 
-  <p class="noindent"><a id="page_301"></a>Thus</p>
+  <p><a id="page_301"></a>Thus</p>
 
   <div class="image"><img src="../Images/ch02/e301_01.jpg"></div>
 
-  <p class="noindent">The two triangular matrices are packed together tightly within the space of (<em>n</em> + 1)(<em>n</em> + 2) locations, and we have linear addressing as in (<a href="../Text/ch02a.html#ch02eq-lev2sec6-2">2</a>).</p>
+  <p>The two triangular matrices are packed together tightly within the space of (<em>n</em> + 1)(<em>n</em> + 2) locations, and we have linear addressing as in (<a href="../Text/ch02a.html#ch02eq-lev2sec6-2">2</a>).</p>
 
   <p class="indent">The generalization of triangular matrices to higher dimensions is called a <em>tetrahedral array</em>. This interesting topic is the subject of <a href="../Text/ch02a.html#ch02ex_2_6_6">exercises 6</a> through <a href="../Text/ch02a.html#ch02ex_2_6_8">8</a>.</p>
 
   <p class="indent">As an example of typical programming techniques for use with sequentially stored arrays, see <a href="../Text/ch01b.html#ch01ex_2_13_10">exercise 1.3.2–10</a> and the two answers given for that exercise. The fundamental techniques for efficient traversal of rows and columns, as well as the uses of sequential stacks, are of particular interest within those programs.</p>
 
-  <p class="noindent"><strong>Linked Allocation.</strong> Linked memory allocation also applies to higher-dimensional arrays of information in a natural way. In general, our nodes can contain <em>k</em> link fields, one for each list the node belongs to. The use of linked memory is generally for cases in which the arrays are not strictly rectangular in character.</p>
+  <p><strong>Linked Allocation.</strong> Linked memory allocation also applies to higher-dimensional arrays of information in a natural way. In general, our nodes can contain <em>k</em> link fields, one for each list the node belongs to. The use of linked memory is generally for cases in which the arrays are not strictly rectangular in character.</p>
 
   <p class="indent">As an example, we might have a list in which every node represents a person, with four link fields: <code>SEX</code>, <code>AGE</code>, <code>EYES</code>, and <code>HAIR</code>. In the <code>EYES</code> field we link together all nodes with the same eye color, etc. (See <a href="../Text/ch02a.html#ch02fig13">Fig. 13</a>.) It is easy to visualize efficient algorithms for inserting new people into the list; deletion would, however, be much slower, unless we used double linking. We can also conceive of algorithms of varying degrees of efficiency for doing things like “Find all blue-eyed blonde women of ages 21 through 23”; see <a href="../Text/ch02a.html#ch02ex_2_6_9">exercises 9</a> and <a href="../Text/ch02a.html#ch02ex_2_6_10">10</a>. Problems in which each node of a list is to reside in several kinds of other lists at once arise rather frequently; indeed, the elevator system simulation described in the preceding section has nodes that are in both the <code>QUEUE</code> and <code>WAIT</code> lists simultaneously.</p>
 
@@ -148,15 +148,15 @@
 
   <div class="equation"><a id="ch02eq-lev2sec6-11"></a><img src="../Images/ch02/302equ01.jpg"></div>
 
-  <p class="noindent">Here <code>ROW</code> and <code>COL</code> are the row and column indices of the node; <code>VAL</code> is the value stored at that part of the matrix; <code>LEFT</code> and <code>UP</code> are links to the next nonzero entry to the left in the row, or upward in the column, respectively. There are special list head nodes, <code>BASEROW[</code><em>i</em><code>]</code> and <code>BASECOL[</code><em>j</em><code>]</code>, for every row and column. These nodes are identified by</p>
+  <p>Here <code>ROW</code> and <code>COL</code> are the row and column indices of the node; <code>VAL</code> is the value stored at that part of the matrix; <code>LEFT</code> and <code>UP</code> are links to the next nonzero entry to the left in the row, or upward in the column, respectively. There are special list head nodes, <code>BASEROW[</code><em>i</em><code>]</code> and <code>BASECOL[</code><em>j</em><code>]</code>, for every row and column. These nodes are identified by</p>
 
   <p class="center"><code>COL(LOC(BASEROW[</code><em>i</em><code>]))</code> &lt; 0&nbsp;&nbsp;&nbsp;and&nbsp;&nbsp;&nbsp;<code>ROW(LOC(BASECOL[</code><em>j</em><code>]))</code> &lt; 0.</p>
 
-  <p class="noindent">As usual in a circular list, the <code>LEFT</code> link in <code>BASEROW[</code><em>i</em><code>]</code> is the location of the rightmost value in that row, and <code>UP</code> in <code>BASECOL[</code><em>j</em><code>]</code> points to the bottom-most value in that column. For example, the matrix</p>
+  <p>As usual in a circular list, the <code>LEFT</code> link in <code>BASEROW[</code><em>i</em><code>]</code> is the location of the rightmost value in that row, and <code>UP</code> in <code>BASECOL[</code><em>j</em><code>]</code> points to the bottom-most value in that column. For example, the matrix</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-12"></a><img src="../Images/ch02/302equ02.jpg"></div>
 
-  <p class="noindent">would be represented as shown in <a href="../Text/ch02a.html#ch02fig14">Fig. 14</a>.</p>
+  <p>would be represented as shown in <a href="../Text/ch02a.html#ch02fig14">Fig. 14</a>.</p>
 
   <div class="image">
     <a id="ch02fig14"></a><img src="../Images/ch02/02fig14.jpg">
@@ -170,7 +170,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec6-13"></a><img src="../Images/ch02/303equ01.jpg"></div>
 
-  <p class="noindent">It is assumed that the <em>pivot element</em>, a, is nonzero. For example, a pivot step applied to matrix (<a href="../Text/ch02a.html#ch02eq-lev2sec6-12">12</a>), with the element 10 in row 2 column 1 as pivot, leads to</p>
+  <p>It is assumed that the <em>pivot element</em>, a, is nonzero. For example, a pivot step applied to matrix (<a href="../Text/ch02a.html#ch02eq-lev2sec6-12">12</a>), with the element 10 in row 2 column 1 as pivot, leads to</p>
 
   <div class="equation"><a id="ch02eq-lev2sec6-14"></a><img src="../Images/ch02/303equ02.jpg"></div>
 
@@ -178,7 +178,7 @@
 
   <p class="indent">The pivoting algorithm is in many ways a straightforward application of linking techniques we have already discussed; in particular, it bears strong resemblances to <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm 2.2.4A</a> for addition of polynomials. There are two things, however, that make the problem a little tricky: If in (<a href="../Text/ch02a.html#ch02eq-lev2sec6-13">13</a>) we have <em>b</em> ≠ 0 and <em>c</em> ≠ 0 but <em>d</em> ≠ 0, the sparse matrix representation has no entry for <em>d</em> and we must insert a new entry; and if <em>b</em> ≠ 0, <em>c</em> ≠ 0, <em>d</em> ≠ 0, but <em>d</em> − <em>bc</em>/<em>a</em> = 0, we must delete the entry that was formerly there. These insertion and deletion operations are more interesting in a two-dimensional array than in the one-dimensional case; to do them we must know what links are affected. Our algorithm processes the matrix rows successively from bottom to top. The efficient ability to insert and delete involves the introduction of a set of pointer variables <code>PTR[</code><em>j</em><code>]</code>, one for each column considered; these variables traverse the columns upwards, giving us the ability to update the proper links in both dimensions.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec6-S"></a><strong>Algorithm S</strong> (<em>Pivot step in a sparse matrix</em>). Given a matrix represented as in <a href="../Text/ch02a.html#ch02fig14">Fig. 14</a>, we perform the pivot operation (<a href="../Text/ch02a.html#ch02eq-lev2sec6-13">13</a>). Assume that <code>PIVOT</code> is a link variable pointing to the pivot element. The algorithm makes use of an auxiliary table of link variables <code>PTR[</code><em>j</em><code>]</code>, one for each column of the matrix. The variable <code>ALPHA</code> and the <code>VAL</code> field of each node are assumed to be floating point or rational quantities, while everything else in this algorithm has integer values.</p>
+  <p><a id="ch02alg-lev2sec6-S"></a><strong>Algorithm S</strong> (<em>Pivot step in a sparse matrix</em>). Given a matrix represented as in <a href="../Text/ch02a.html#ch02fig14">Fig. 14</a>, we perform the pivot operation (<a href="../Text/ch02a.html#ch02eq-lev2sec6-13">13</a>). Assume that <code>PIVOT</code> is a link variable pointing to the pivot element. The algorithm makes use of an auxiliary table of link variables <code>PTR[</code><em>j</em><code>]</code>, one for each column of the matrix. The variable <code>ALPHA</code> and the <code>VAL</code> field of each node are assumed to be floating point or rational quantities, while everything else in this algorithm has integer values.</p>
 
   <p class="indenthanging"><strong>S1.</strong> [Initialize.] Set <code>ALPHA</code> ← 1.0<em>/</em><code>VAL(PIVOT)</code>, <code>VAL(PIVOT)</code> ← 1.0, and</p>
 
@@ -271,7 +271,7 @@
   <div class="heading">
     <h3 id="ch02lev1sec3"><a id="page_308"></a>2.3. Trees</h3>
 
-    <p class="noindent">W<small>E NOW TURN</small> to a study of trees, the most important nonlinear structures that arise in computer algorithms. Generally speaking, tree structure means a “branching” relationship between nodes, much like that found in the trees of nature.</p>
+    <p>W<small>E NOW TURN</small> to a study of trees, the most important nonlinear structures that arise in computer algorithms. Generally speaking, tree structure means a “branching” relationship between nodes, much like that found in the trees of nature.</p>
   </div>
 
   <p class="indent">Let us define a <em>tree</em> formally as a finite set <em>T</em> of one or more nodes such that</p>
@@ -338,7 +338,7 @@
 
   <div class="equation"><a id="ch02eq-lev1sec3-1"></a><img src="../Images/ch02/312equ01.jpg"></div>
 
-  <p class="noindent">are distinct — the root has an empty right subtree in one case and a nonempty right subtree in the other — although as trees these diagrams would represent identical structures. A binary tree can be empty; a tree cannot. Therefore we will always be careful to use the word “binary” to distinguish between binary trees and ordinary trees. Some authors define binary trees in a slightly different manner (see <a href="../Text/ch02a.html#ch02ex_1_3_20">exercise 20</a>).</p>
+  <p>are distinct — the root has an empty right subtree in one case and a nonempty right subtree in the other — although as trees these diagrams would represent identical structures. A binary tree can be empty; a tree cannot. Therefore we will always be careful to use the word “binary” to distinguish between binary trees and ordinary trees. Some authors define binary trees in a slightly different manner (see <a href="../Text/ch02a.html#ch02ex_1_3_20">exercise 20</a>).</p>
 
   <p class="indent">Tree structure can be represented graphically in several other ways bearing no resemblance to actual trees. <a href="../Text/ch02a.html#ch02fig20">Figure 20</a> shows three diagrams that reflect the structure of <a href="../Text/ch02a.html#ch02fig19">Fig. 19</a>: <a href="../Text/ch02a.html#ch02fig20">Figure 20</a>(a) essentially represents <a href="../Text/ch02a.html#ch02fig19">Fig. 19</a> as an <em>oriented</em> tree; this diagram is a special case of the general idea of <em>nested sets</em>, namely a collection of sets in which any pair of sets is either disjoint or one contains the other. (See <a href="../Text/ch02a.html#ch02ex_1_3_10">exercise 10</a>.) Part (b) of the figure shows nested sets in a line, much as part (a) shows them in a plane; in part (b) the ordering of the tree is also indicated. Part (b) may also be regarded as an outline of an algebraic formula involving nested parentheses. Part (c) shows still another common way to represent tree structure, using <em>indentation</em>. The number of different representation methods in itself is ample evidence for the importance of tree structures in everyday life as well as in computer programming. Any hierarchical classification scheme leads to a tree structure.</p>
 
@@ -358,7 +358,7 @@
     <p class="fig-caption"><strong>Fig. 21.</strong> Tree representation of formula (<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>).</p>
   </div>
 
-  <p class="noindent">Standard mathematical conventions, according to which multiplication and division take precedence over addition and subtraction, allow us to use a simplified form like (<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>) instead of the fully parenthesized form “<em>a</em> − (<em>b</em> × ((<em>c/d</em>) + (<em>e/f</em>)))”. This connection between formulas and trees is very important in applications.</p>
+  <p>Standard mathematical conventions, according to which multiplication and division take precedence over addition and subtraction, allow us to use a simplified form like (<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>) instead of the fully parenthesized form “<em>a</em> − (<em>b</em> × ((<em>c/d</em>) + (<em>e/f</em>)))”. This connection between formulas and trees is very important in applications.</p>
 
   <p class="indent">Notice that the indented list in <a href="../Text/ch02a.html#ch02fig20">Fig. 20</a>(c) looks very much like the table of contents in a book. Indeed, this book itself has a tree structure; the tree structure of <a href="../Text/ch02.html#ch02">Chapter 2</a> is shown in <a href="../Text/ch02a.html#ch02fig22">Fig. 22</a>. Here we notice a significant idea: <em>The method used to number sections in this book is another way to specify tree structure</em>. Such a method is often called “Dewey decimal notation” for trees, by analogy with the similar classification scheme of this name used in libraries. The Dewey decimal notation for the tree of <a href="../Text/ch02a.html#ch02fig19">Fig. 19</a> is</p>
 
@@ -371,7 +371,7 @@
     <p class="fig-caption"><strong>Fig. 22.</strong> The structure of <a href="../Text/ch02.html#ch02">Chapter 2</a>.</p>
   </div>
 
-  <p class="noindent">Dewey decimal notation applies to any forest: The root of the <em>k</em>th tree in the forest is given number <em>k</em>; and if α is the number of any node of degree <em>m</em>, its children are numbered <em>α.</em>1<em>, α.</em>2<em>, ..., α.m</em>. The Dewey decimal notation satisfies many simple mathematical properties, and it is a useful tool in the analysis of trees. One example of this is the natural sequential ordering it gives to the nodes of an arbitrary tree, analogous to the ordering of sections within this book. <a href="../Text/ch02a.html#ch02lev1sec3">Section 2.3</a> precedes <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a>, and follows <a href="../Text/ch02a.html#ch02lev2sec6">Section 2.2.6</a>.</p>
+  <p>Dewey decimal notation applies to any forest: The root of the <em>k</em>th tree in the forest is given number <em>k</em>; and if α is the number of any node of degree <em>m</em>, its children are numbered <em>α.</em>1<em>, α.</em>2<em>, ..., α.m</em>. The Dewey decimal notation satisfies many simple mathematical properties, and it is a useful tool in the analysis of trees. One example of this is the natural sequential ordering it gives to the nodes of an arbitrary tree, analogous to the ordering of sections within this book. <a href="../Text/ch02a.html#ch02lev1sec3">Section 2.3</a> precedes <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a>, and follows <a href="../Text/ch02a.html#ch02lev2sec6">Section 2.2.6</a>.</p>
 
   <p class="indent">There is an intimate relation between Dewey decimal notation and the notation for indexed variables that we have already been using extensively. If <em>F</em> is a forest of trees, we may let <em>F</em> [1] denote the subtrees of the first tree, so that <em>F</em> [1][2] ≡ <em>F</em> [1<em>,</em> 2] stands for the subtrees of the second subtree of <em>F</em> [1], and <em>F</em> [1, 2, 1] stands for the first subforest of the latter, and so on. Node <em>a.b.c.d</em> in Dewey decimal notation is the parent of <em>F</em> [<em>a, b, c, d</em>]. This notation is an extension of ordinary index notation, because the admissible range of each index depends on the values in the preceding index positions.</p>
 
@@ -379,25 +379,25 @@
 
   <div class="image"><img src="../Images/ch02/e315_01.jpg"></div>
 
-  <p class="noindent">It is important to observe, however, that this tree structure does not faithfully reflect all of the matrix structure; the row relationships appear explicitly in the tree but the column relationships do not.</p>
+  <p>It is important to observe, however, that this tree structure does not faithfully reflect all of the matrix structure; the row relationships appear explicitly in the tree but the column relationships do not.</p>
 
   <p class="indent">A forest can, in turn, be regarded as a special case of what is commonly called a <em>list structure</em>. The word “list” is being used here in a very technical sense, and to distinguish the technical use of the word we will always capitalize it: “List.” A List is defined (recursively) as <em>a finite sequence of zero or more atoms or Lists</em>. Here “atom” is an undefined concept referring to elements from any universe of objects that might be desired, so long as it is possible to distinguish an atom from a List. By means of an obvious notational convention involving commas and parentheses, we can distinguish between atoms and Lists and we can conveniently display the ordering within a List. As an example, consider</p>
 
   <div class="equation"><a id="ch02eq-lev1sec3-3"></a><img src="../Images/ch02/315equ01.jpg"></div>
 
-  <p class="noindent">which is a List with five elements: first the atom <em>a</em>, then the List (<em>b, a, b</em>), then the empty List (), then the atom <em>c</em>, and finally the List (((<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>))). The latter List consists of the List ((<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>)), which consists of the List (<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>), which consists of the atom 2.</p>
+  <p>which is a List with five elements: first the atom <em>a</em>, then the List (<em>b, a, b</em>), then the empty List (), then the atom <em>c</em>, and finally the List (((<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>))). The latter List consists of the List ((<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>)), which consists of the List (<a href="../Text/ch02a.html#ch02eq-lev1sec3-2">2</a>), which consists of the atom 2.</p>
 
   <p class="indent">The following tree structure corresponds to <em>L</em>:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec3-4"></a><img src="../Images/ch02/315equ02.jpg"></div>
 
-  <p class="noindent">The asterisks in this diagram indicate the definition and appearance of a List, as opposed to the appearance of an atom. Index notation applies to Lists as it does to forests; for example, <em>L</em>[2] = (<em>b, a, b</em>), and <em>L</em>[2<em>,</em> 2] = <em>a</em>.</p>
+  <p>The asterisks in this diagram indicate the definition and appearance of a List, as opposed to the appearance of an atom. Index notation applies to Lists as it does to forests; for example, <em>L</em>[2] = (<em>b, a, b</em>), and <em>L</em>[2<em>,</em> 2] = <em>a</em>.</p>
 
   <p class="indent">No data is carried in the nodes for the Lists in (<a href="../Text/ch02a.html#ch02eq-lev1sec3-4">4</a>) other than the fact that they are Lists. But it is possible to label the nonatomic elements of Lists with information, as we have done for trees and other structures; thus</p>
 
   <p class="center"><em>A</em> = (<em>a</em>: (<em>b, c</em>), <em>d</em>: ())</p>
 
-  <p class="noindent"><a id="page_316"></a>would correspond to a tree that we can draw as follows:</p>
+  <p><a id="page_316"></a>would correspond to a tree that we can draw as follows:</p>
 
   <div class="image"><img src="../Images/ch02/e316_01.jpg"></div>
 
@@ -405,11 +405,11 @@
 
   <div class="equation"><a id="ch02eq-lev1sec3-5"></a><img src="../Images/ch02/316equ01.jpg"></div>
 
-  <p class="noindent">corresponds to no tree structure, nor does the List</p>
+  <p>corresponds to no tree structure, nor does the List</p>
 
   <div class="equation"><a id="ch02eq-lev1sec3-6"></a><img src="../Images/ch02/316equ02.jpg"></div>
 
-  <p class="noindent">(In these examples, capital letters refer to Lists, lowercase letters to labels and atoms.) We might diagram (<a href="../Text/ch02a.html#ch02eq-lev1sec3-5">5</a>) and (<a href="../Text/ch02a.html#ch02eq-lev1sec3-6">6</a>) as follows, using an asterisk to denote each place where a List is defined:</p>
+  <p>(In these examples, capital letters refer to Lists, lowercase letters to labels and atoms.) We might diagram (<a href="../Text/ch02a.html#ch02eq-lev1sec3-5">5</a>) and (<a href="../Text/ch02a.html#ch02eq-lev1sec3-6">6</a>) as follows, using an asterisk to denote each place where a List is defined:</p>
 
   <div class="equation"><a id="ch02eq-lev1sec3-7"></a><img src="../Images/ch02/316equ03.jpg"></div>
 
@@ -472,14 +472,14 @@
   <div class="heading">
     <h4 id="ch02lev2sec7">2.3.1. Traversing Binary Trees</h4>
 
-    <p class="noindent">It is important to acquire a good understanding of the properties of binary trees before making further investigations of trees, since general trees are usually represented in terms of some equivalent binary tree inside a computer.</p>
+    <p>It is important to acquire a good understanding of the properties of binary trees before making further investigations of trees, since general trees are usually represented in terms of some equivalent binary tree inside a computer.</p>
   </div>
 
   <p class="indent">We have defined a binary tree as a finite set of nodes that either is empty, or consists of a root together with two binary trees. This definition suggests a natural way to represent binary trees within a computer: We can have two links, <code>LLINK</code> and <code>RLINK</code>, within each node, and a link variable <code>T</code> that is a “pointer to the tree.” If the tree is empty, <code>T</code> = <em>Λ;</em> otherwise <code>T</code> is the address of the root node of the tree, and <code>LLINK(T)</code>, <code>RLINK(T)</code> are pointers to the left and right subtrees of the root, respectively. These rules recursively define the memory representation of any binary tree; for example,</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-1"></a><img src="../Images/ch02/318equ01.jpg"></div>
 
-  <p class="noindent">is represented by</p>
+  <p>is represented by</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-2"></a><img src="../Images/ch02/318equ02.jpg"></div>
 
@@ -491,19 +491,19 @@
 
   <div class="image"><img src="../Images/ch02/e319_01.jpg"></div>
 
-  <p class="noindent">If we apply these definitions to the binary tree of (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>) and (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>), we find that the nodes in preorder are</p>
+  <p>If we apply these definitions to the binary tree of (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>) and (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>), we find that the nodes in preorder are</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-3"></a><img src="../Images/ch02/319equ01.jpg"></div>
 
-  <p class="noindent">(First comes the root A, then comes the left subtree</p>
+  <p>(First comes the root A, then comes the left subtree</p>
 
   <div class="image"><img src="../Images/ch02/e319_02.jpg"></div>
 
-  <p class="noindent">in preorder, and finally we traverse the right subtree in preorder.) For inorder we visit the root between visits to the nodes of each subtree, essentially as though the nodes were “projected” down onto a single horizontal line, and this gives the sequence</p>
+  <p>in preorder, and finally we traverse the right subtree in preorder.) For inorder we visit the root between visits to the nodes of each subtree, essentially as though the nodes were “projected” down onto a single horizontal line, and this gives the sequence</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-4"></a><img src="../Images/ch02/319equ02.jpg"></div>
 
-  <p class="noindent">The postorder for the nodes of this binary tree is, similarly,</p>
+  <p>The postorder for the nodes of this binary tree is, similarly,</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-5"></a><img src="../Images/ch02/319equ03.jpg"></div>
 
@@ -517,7 +517,7 @@
 
   <p class="indent">A recursively stated definition, such as the one just given for the three basic orders, must be reworked in order to make it directly applicable to computer implementation. General methods for doing this are discussed in Chapter 8; we usually make use of an auxiliary stack, as in the following algorithm:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec7-T"></a><strong>Algorithm T</strong> <em>(Traverse binary tree in inorder).</em> Let <code>T</code> be a pointer to a binary tree having a representation as in (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>); this algorithm visits all the nodes of the binary tree in inorder, making use of an auxiliary stack <code>A</code>.</p>
+  <p><a id="ch02alg-lev2sec7-T"></a><strong>Algorithm T</strong> <em>(Traverse binary tree in inorder).</em> Let <code>T</code> be a pointer to a binary tree having a representation as in (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>); this algorithm visits all the nodes of the binary tree in inorder, making use of an auxiliary stack <code>A</code>.</p>
 
   <p class="indenthanging"><strong>T1.</strong> [Initialize.] Set stack <code>A</code> empty, and set the link variable <code>P</code> ← <code>T.</code></p>
 
@@ -537,7 +537,7 @@
 
   <p class="uln-indent"><em>Starting at step T2 with</em> <code>P</code> <em>a pointer to a binary tree of n nodes and with the stack</em> <code>A</code> <em>containing</em> <code>A[1]</code> ... <code>A[</code><em>m</em><code>]</code> <em>for some m</em> ≥ 0, <em>the procedure of steps T2–T5 will traverse the binary tree in question, in inorder, and will then arrive at step T4 with stack</em> <code>A</code> returned to its original value <code>A[1]</code> ... <code>A[</code><em>m</em><code>]</code>.</p>
 
-  <p class="noindent">This statement is obviously true when <em>n</em> = 0, because of step T2. If <em>n</em> &gt; 0, let <code>P</code><sub>0</sub> be the value of <code>P</code> upon entry to step T2. Since <code>P</code><sub>0</sub> ≠ <em>Λ</em>, we will perform step T3, which means that stack <code>A</code> is changed to <code>A[1]</code> ... <code>A[</code><em>m</em><code>] P</code><sub>0</sub> and <code>P</code> is set to <code>LLINK(P</code><sub>0</sub>). Now the left subtree has fewer than <em>n</em> nodes, so by induction we will traverse the left subtree in inorder and will ultimately arrive at step T4 with <code>A[1]</code> ... <code>A[</code><em>m</em><code>] P</code><sub>0</sub> on the stack. Step T4 returns the stack to <code>A[1]</code> ... <code>A[</code><em>m</em><code>]</code> and sets <code>P</code> ← <code>P</code><sub>0</sub> . Step T5 now visits <code>NODE(P</code><sub>0</sub>) and sets <code>P</code> ← <code>RLINK(P</code><sub>0</sub>). Now the right subtree has fewer than <em>n</em> nodes, so by induction we will traverse the right subtree in inorder and arrive at step T4 as required. The tree has been traversed in inorder, by the definition of that order. This completes the proof.</p>
+  <p>This statement is obviously true when <em>n</em> = 0, because of step T2. If <em>n</em> &gt; 0, let <code>P</code><sub>0</sub> be the value of <code>P</code> upon entry to step T2. Since <code>P</code><sub>0</sub> ≠ <em>Λ</em>, we will perform step T3, which means that stack <code>A</code> is changed to <code>A[1]</code> ... <code>A[</code><em>m</em><code>] P</code><sub>0</sub> and <code>P</code> is set to <code>LLINK(P</code><sub>0</sub>). Now the left subtree has fewer than <em>n</em> nodes, so by induction we will traverse the left subtree in inorder and will ultimately arrive at step T4 with <code>A[1]</code> ... <code>A[</code><em>m</em><code>] P</code><sub>0</sub> on the stack. Step T4 returns the stack to <code>A[1]</code> ... <code>A[</code><em>m</em><code>]</code> and sets <code>P</code> ← <code>P</code><sub>0</sub> . Step T5 now visits <code>NODE(P</code><sub>0</sub>) and sets <code>P</code> ← <code>RLINK(P</code><sub>0</sub>). Now the right subtree has fewer than <em>n</em> nodes, so by induction we will traverse the right subtree in inorder and arrive at step T4 as required. The tree has been traversed in inorder, by the definition of that order. This completes the proof.</p>
 
   <p class="indent">An almost identical algorithm may be formulated that traverses binary trees in preorder (see <a href="../Text/ch02a.html#ch02ex_2_7_12">exercise 12</a>). It is slightly more difficult to achieve the traversal in postorder (see <a href="../Text/ch02a.html#ch02ex_2_7_13">exercise 13</a>), and for this reason postorder is not as important for binary trees as the others are.</p>
 
@@ -545,7 +545,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec7-6"></a><img src="../Images/ch02/321equ01.jpg"></div>
 
-  <p class="noindent">If there is no such successor or predecessor of <code>NODE(P)</code>, the value <code>LOC(T)</code> is generally used, where <code>T</code> is an external pointer to the tree in question. We have <code>*(P*)</code> = (<code>*P)</code><code>*</code> = <code>P</code>, <code>$(P$)</code> = <code>($P)$</code> = <code>P</code>, and <code>#(P#)</code> = <code>(#P)#</code> = <code>P</code>. As an example of this notation, let <code>INFO(P)</code> be the letter shown in <code>NODE(P)</code> in the tree (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>); then if <code>P</code> points to the root, we have <code>INFO(P)</code> = <em>A</em>, <code>INFO(P*)</code> = <em>B</em>, <code>INFO(P$)</code> = <em>E</em>, <code>INFO($P)</code> = <em>B</em>, <code>INFO(#P)</code> = <em>C</em>, and <code>P#</code> = <code>*P</code> = <code>LOC(T)</code>.</p>
+  <p>If there is no such successor or predecessor of <code>NODE(P)</code>, the value <code>LOC(T)</code> is generally used, where <code>T</code> is an external pointer to the tree in question. We have <code>*(P*)</code> = (<code>*P)</code><code>*</code> = <code>P</code>, <code>$(P$)</code> = <code>($P)$</code> = <code>P</code>, and <code>#(P#)</code> = <code>(#P)#</code> = <code>P</code>. As an example of this notation, let <code>INFO(P)</code> be the letter shown in <code>NODE(P)</code> in the tree (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>); then if <code>P</code> points to the root, we have <code>INFO(P)</code> = <em>A</em>, <code>INFO(P*)</code> = <em>B</em>, <code>INFO(P$)</code> = <em>E</em>, <code>INFO($P)</code> = <em>B</em>, <code>INFO(#P)</code> = <em>C</em>, and <code>P#</code> = <code>*P</code> = <code>LOC(T)</code>.</p>
 
   <p class="indent">At this point the reader will perhaps experience a feeling of insecurity about the intuitive meanings of <code>P*</code>, <code>P$</code>, etc. As we proceed further, the ideas will gradually become clearer; <a href="../Text/ch02a.html#ch02ex_2_7_16">exercise 16</a> at the end of this section may also be of help. The “<code>$</code>” in “<code>P$</code>” is meant to suggest the letter S, for “symmetric order.”</p>
 
@@ -555,7 +555,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec7-7"></a><img src="../Images/ch02/322equ01.jpg"></div>
 
-  <p class="noindent">Here dotted lines represent the “threads,” which always go to a higher node of the tree. <em>Every</em> node now has two links: Some nodes, like <em>C</em>, have two ordinary links to left and right subtrees; other nodes, like <em>H</em>, have two thread links; and some nodes have one link of each type. The special threads emanating from <em>D</em> and <em>J</em> will be explained later. They appear in the “leftmost” and “rightmost” nodes.</p>
+  <p>Here dotted lines represent the “threads,” which always go to a higher node of the tree. <em>Every</em> node now has two links: Some nodes, like <em>C</em>, have two ordinary links to left and right subtrees; other nodes, like <em>H</em>, have two thread links; and some nodes have one link of each type. The special threads emanating from <em>D</em> and <em>J</em> will be explained later. They appear in the “leftmost” and “rightmost” nodes.</p>
 
   <p class="indent">In the memory representation of a threaded binary tree it is necessary to distinguish between the dotted and solid links; this can be done as suggested above by two additional one-bit fields in each node, <code>LTAG</code> and <code>RTAG</code>. The threaded representation may be defined precisely as follows:</p>
 
@@ -573,7 +573,7 @@
 
   <p class="indent"><a id="page_323"></a>The great advantage of threaded trees is t hat traversal algorithms become simpler. For example, the following algorithm calculates <code>P$</code>, given <code>P</code>:</p>
 
-  <p class="noindent"><strong>Algorithm S</strong> (<em>Symmetric (inorder) successor in a threaded binary tree).</em> If <code>P</code> points to a node of a threaded binary tree, this algorithm sets <code>Q</code> ← <code>P$</code>.</p>
+  <p><strong>Algorithm S</strong> (<em>Symmetric (inorder) successor in a threaded binary tree).</em> If <code>P</code> points to a node of a threaded binary tree, this algorithm sets <code>Q</code> ← <code>P$</code>.</p>
 
   <p class="indenthanging"><strong>S1.</strong> [<code>RLINK(P)</code> a thread?] Set <code>Q</code> ← <code>RLINK(P)</code>. If <code>RTAG(P)</code> = 1, terminate the algorithm.</p>
 
@@ -587,11 +587,11 @@
 
   <div class="equation"><a id="ch02eq-lev2sec7-8"></a><img src="../Images/ch02/324equ01.jpg"></div>
 
-  <p class="noindent">(Here <code>HEAD</code> denotes <code>LOC(T)</code>, the address of the list head.) An empty threaded tree will satisfy the conditions</p>
+  <p>(Here <code>HEAD</code> denotes <code>LOC(T)</code>, the address of the list head.) An empty threaded tree will satisfy the conditions</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-9"></a><img src="../Images/ch02/324equ02.jpg"></div>
 
-  <p class="noindent">The tree grows by having nodes inserted to the <em>left</em> of the list head. (These initial conditions are primarily dictated by the algorithm to compute <code>P*</code>, which appears in <a href="../Text/ch02a.html#ch02ex_2_7_17">exercise 17</a>.) In accordance with these conventions, the computer representation for the binary tree (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>), as a threaded tree, is</p>
+  <p>The tree grows by having nodes inserted to the <em>left</em> of the list head. (These initial conditions are primarily dictated by the algorithm to compute <code>P*</code>, which appears in <a href="../Text/ch02a.html#ch02ex_2_7_17">exercise 17</a>.) In accordance with these conventions, the computer representation for the binary tree (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>), as a threaded tree, is</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-10"></a><img src="../Images/ch02/324equ03.jpg"></div>
 
@@ -599,17 +599,17 @@
 
   <div class="image"><img src="../Images/ch02/e324_01.jpg"></div>
 
-  <p class="noindent">In an unthreaded tree, <code>LTAG</code> and <code>RTAG</code> will always be “+” and terminal links will be represented by zero. In a threaded tree, we will use “+” for tags that are 0 and “−” for tags that are 1. The abbreviations <code>LLINKT</code> and <code>RLINKT</code> will be used to stand for the combined <code>LTAG-LLINK</code> and <code>RTAG-RLINK</code> fields, respectively.</p>
+  <p>In an unthreaded tree, <code>LTAG</code> and <code>RTAG</code> will always be “+” and terminal links will be represented by zero. In a threaded tree, we will use “+” for tags that are 0 and “−” for tags that are 1. The abbreviations <code>LLINKT</code> and <code>RLINKT</code> will be used to stand for the combined <code>LTAG-LLINK</code> and <code>RTAG-RLINK</code> fields, respectively.</p>
 
-  <p class="noindent"><a id="page_325"></a><span class="middle"><img src="../Images/ch02/signal.jpg"></span> <em>The two tag bits occupy otherwise-unused sign positions of a <code>MIX</code> word, so they cost nothing in memory space. Similarly, with the <code>MMIX</code> computer we will be able to use the least significant bits of link fields as tag bits that come “for free,” because pointer values will generally be even, and because <code>MMIX</code> will make it easy to ignore the low-order bits when addressing memory.</em></p>
+  <p><a id="page_325"></a><span class="middle"><img src="../Images/ch02/signal.jpg"></span> <em>The two tag bits occupy otherwise-unused sign positions of a <code>MIX</code> word, so they cost nothing in memory space. Similarly, with the <code>MMIX</code> computer we will be able to use the least significant bits of link fields as tag bits that come “for free,” because pointer values will generally be even, and because <code>MMIX</code> will make it easy to ignore the low-order bits when addressing memory.</em></p>
 
   <p class="indent">The following two programs traverse a binary tree in symmetric order (that is, inorder), jumping to location <code>VISIT</code> periodically with index register 5 pointing to the node that is currently of interest.</p>
 
-  <p class="noindent"><a id="ch02a_pro_t"></a><strong>Program T.</strong> In this implementation of <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a>, the stack is kept in locations <code>A</code> + 1, <code>A</code> + 2, ..., <code>A</code> + <code>MAX</code>; r<code>I</code>6 is the stack pointer and r<code>I</code>5 ≡ P. <code>OVERFLOW</code> occurs if the stack grows too large. The program has been rearranged slightly from <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> (step T2 appears thrice), so that the test for an empty stack need not be made when going directly from T3 to T2 to T4.</p>
+  <p><a id="ch02a_pro_t"></a><strong>Program T.</strong> In this implementation of <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a>, the stack is kept in locations <code>A</code> + 1, <code>A</code> + 2, ..., <code>A</code> + <code>MAX</code>; r<code>I</code>6 is the stack pointer and r<code>I</code>5 ≡ P. <code>OVERFLOW</code> occurs if the stack grows too large. The program has been rearranged slightly from <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> (step T2 appears thrice), so that the test for an empty stack need not be made when going directly from T3 to T2 to T4.</p>
 
   <div class="image"><img src="../Images/ch02/325pro01.jpg"></div>
 
-  <p class="noindent"><a id="ch02a_pro_s"></a><strong>Program S.</strong> <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a> has been augmented with initialization and termination conditions to make this program comparable to <a href="../Text/ch02a.html#ch02a_pro_t">Program T</a>.</p>
+  <p><a id="ch02a_pro_s"></a><strong>Program S.</strong> <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a> has been augmented with initialization and termination conditions to make this program comparable to <a href="../Text/ch02a.html#ch02a_pro_t">Program T</a>.</p>
 
   <div class="image"><img src="../Images/ch02/325pro02.jpg"></div>
 
@@ -621,7 +621,7 @@
 
   <p class="indenti">iii) the number of “visits” is the number of nodes in the tree.</p>
 
-  <p class="noindent">The analysis tells us <a href="../Text/ch02a.html#ch02a_pro_t">Program T</a> takes 15<em>n</em> + <em>a</em> + 4 units of time, and <a href="../Text/ch02a.html#ch02a_pro_s">Program S</a> takes 11<em>n</em> − <em>a</em> + 7 units, where <em>n</em> is the number of nodes in the tree and <em>a</em> is the number of terminal right links (nodes with no right subtree). The quantity <em>a</em> can be as low as 1, assuming that <em>n</em> ≠ 0, and it can be as high as <em>n</em>. If left and right are symmetrical, the average value of <em>a</em> is (<em>n</em> + 1)<em>/</em>2, as a consequence of facts proved in <a href="../Text/ch02a.html#ch02ex_2_7_14">exercise 14</a>.</p>
+  <p>The analysis tells us <a href="../Text/ch02a.html#ch02a_pro_t">Program T</a> takes 15<em>n</em> + <em>a</em> + 4 units of time, and <a href="../Text/ch02a.html#ch02a_pro_s">Program S</a> takes 11<em>n</em> − <em>a</em> + 7 units, where <em>n</em> is the number of nodes in the tree and <em>a</em> is the number of terminal right links (nodes with no right subtree). The quantity <em>a</em> can be as low as 1, assuming that <em>n</em> ≠ 0, and it can be as high as <em>n</em>. If left and right are symmetrical, the average value of <em>a</em> is (<em>n</em> + 1)<em>/</em>2, as a consequence of facts proved in <a href="../Text/ch02a.html#ch02ex_2_7_14">exercise 14</a>.</p>
 
   <p class="indent">The principal conclusions we may reach on the basis of this analysis are:</p>
 
@@ -639,7 +639,7 @@
 
   <p class="indent">Most of the usefulness of threaded trees would disappear if it were hard to set up the thread links in the first place. What makes the idea really work is that threaded trees grow almost as easily as ordinary ones do. We have the following algorithm:</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec7-I"></a><strong>Algorithm I</strong> (<em>Insertion into a threaded binary tree</em>). This algorithm attaches a single node, <code>NODE(Q)</code>, as the right subtree of <code>NODE(P)</code>, if the right subtree is empty (that is, if <code>RTAG(P)</code> = 1); otherwise it inserts <code>NODE(Q)</code> between <code>NODE(P)</code> and <code>NODE(RLINK(P))</code>, making the latter node the right child of <code>NODE(Q)</code>. The binary tree in which the insertion takes place is assumed to be threaded as in (<a href="../Text/ch02a.html#ch02eq-lev2sec7-10">10</a>); for a modification, see <a href="../Text/ch02a.html#ch02ex_2_7_23">exercise 23</a>.</p>
+  <p><a id="ch02alg-lev2sec7-I"></a><strong>Algorithm I</strong> (<em>Insertion into a threaded binary tree</em>). This algorithm attaches a single node, <code>NODE(Q)</code>, as the right subtree of <code>NODE(P)</code>, if the right subtree is empty (that is, if <code>RTAG(P)</code> = 1); otherwise it inserts <code>NODE(Q)</code> between <code>NODE(P)</code> and <code>NODE(RLINK(P))</code>, making the latter node the right child of <code>NODE(Q)</code>. The binary tree in which the insertion takes place is assumed to be threaded as in (<a href="../Text/ch02a.html#ch02eq-lev2sec7-10">10</a>); for a modification, see <a href="../Text/ch02a.html#ch02ex_2_7_23">exercise 23</a>.</p>
 
   <p class="indenthanging"><strong>I1.</strong> [Adjust tags and links.] Set <code>RLINK(Q)</code> ← <code>RLINK(P)</code>, <code>RTAG(Q)</code> ← <code>RTAG(P)</code>, <code>RLINK(P)</code> ← <code>Q</code>, <code>RTAG(P)</code> ← 0, <code>LLINK(Q)</code> ← <code>P</code>, <code>LTAG(Q)</code> ← 1.</p>
 
@@ -651,7 +651,7 @@
 
   <p class="indent">Let us now consider an important property of binary trees, and its connection to traversal. Two binary trees <em>T</em> and <em>T</em> ′ are said to be <em>similar</em> if they have the same structure; formally, this means that (a) they are both empty, or (b) they are both nonempty and their left and right subtrees are respectively similar. Similarity means, informally, that the diagrams of <em>T</em> and <em>T</em>′ have the same “shape.” Another way to phrase similarity is to say that there is a one-to-one correspondence between the nodes of <em>T</em> and <em>T</em>′ that preserves the structure:</p>
 
-  <p class="noindent"><a id="page_328"></a>If nodes <em>u</em><sub>1</sub> and <em>u</em><sub>2</sub> in <em>T</em> correspond respectively to <span class="middle"><img src="../Images/ch02/e328_01.jpg"></span> and <span class="middle"><img src="../Images/ch02/e328_02.jpg"></span> in <em>T</em> ′, then <em>u</em><sub>1</sub> is in the left subtree of <em>u</em><sub>2</sub> if and only if <span class="middle"><img src="../Images/ch02/e328_03.jpg"></span> is in the left subtree of <span class="middle"><img src="../Images/ch02/e328_04.jpg"></span>, and the same is true for right subtrees.</p>
+  <p><a id="page_328"></a>If nodes <em>u</em><sub>1</sub> and <em>u</em><sub>2</sub> in <em>T</em> correspond respectively to <span class="middle"><img src="../Images/ch02/e328_01.jpg"></span> and <span class="middle"><img src="../Images/ch02/e328_02.jpg"></span> in <em>T</em> ′, then <em>u</em><sub>1</sub> is in the left subtree of <em>u</em><sub>2</sub> if and only if <span class="middle"><img src="../Images/ch02/e328_03.jpg"></span> is in the left subtree of <span class="middle"><img src="../Images/ch02/e328_04.jpg"></span>, and the same is true for right subtrees.</p>
 
   <p class="indent">The binary trees <em>T</em> and <em>T</em>′ are said to be <em>equivalent</em> if they are similar and if corresponding nodes contain the same information. Formally, let info(<em>u</em>) denote the information contained in a node <em>u</em>; the trees are equivalent if and only if (a) they are both empty, or (b) they are both nonempty and info(root(<em>T</em>)) = info(root(<em>T</em>′)) and their left and right subtrees are respectively equivalent.</p>
 
@@ -659,39 +659,39 @@
 
   <div class="image"><img src="../Images/ch02/e328_05.jpg"></div>
 
-  <p class="noindent">in which the first two are dissimilar. The second, third, and fourth are similar and, in fact, the second and fourth are equivalent.</p>
+  <p>in which the first two are dissimilar. The second, third, and fourth are similar and, in fact, the second and fourth are equivalent.</p>
 
   <p class="indent">Some computer applications involving tree structures require an algorithm to decide whether two binary trees are similar or equivalent. The following theorem is useful in this regard:</p>
 
-  <p class="noindent"><a id="ch02a_the_a"></a><strong>Theorem A.</strong> <em>Let the nodes of binary trees T and T′ be respectively</em></p>
+  <p><a id="ch02a_the_a"></a><strong>Theorem A.</strong> <em>Let the nodes of binary trees T and T′ be respectively</em></p>
 
   <div class="image"><img src="../Images/ch02/e328_06.jpg"></div>
 
-  <p class="noindent"><em>in preorder. For any node <em>u</em> let</em></p>
+  <p><em>in preorder. For any node <em>u</em> let</em></p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-11"></a><img src="../Images/ch02/328equ01.jpg"></div>
 
-  <p class="noindent"><em>Then <em>T</em> and <em>T</em>′ are similar if and only if n = n′ and</em></p>
+  <p><em>Then <em>T</em> and <em>T</em>′ are similar if and only if n = n′ and</em></p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-12"></a><img src="../Images/ch02/328equ02.jpg"></div>
 
-  <p class="noindent"><em>Moreover, <em>T</em> and <em>T</em>′ are equivalent if and only if in addition we have</em></p>
+  <p><em>Moreover, <em>T</em> and <em>T</em>′ are equivalent if and only if in addition we have</em></p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-13"></a><img src="../Images/ch02/328equ03.jpg"></div>
 
   <p class="indent">Notice that <em>l</em> and <em>r</em> are the complements of the <code>LTAG</code> and <code>RTAG</code> bits in a threaded tree. This theorem characterizes any binary tree structure in terms of two sequences of 0s and 1s.</p>
 
-  <p class="noindent"><em>Proof.</em> It is clear that the condition for equivalence of binary trees will follow immediately if we prove the condition for similarity; furthermore the conditions <em>n</em> = <em>n</em>′ and (<a href="../Text/ch02a.html#ch02eq-lev2sec7-12">12</a>) are certainly necessary, since corresponding nodes of similar trees must have the same position in preorder. Therefore it suffices to prove that the conditions (<a href="../Text/ch02a.html#ch02eq-lev2sec7-12">12</a>) and <em>n</em> = <em>n</em>′ are sufficient to guarantee the similarity of <em>T</em> and <em>T</em> ′. The proof is by induction on <em>n</em>, using the following auxiliary result:</p>
+  <p><em>Proof.</em> It is clear that the condition for equivalence of binary trees will follow immediately if we prove the condition for similarity; furthermore the conditions <em>n</em> = <em>n</em>′ and (<a href="../Text/ch02a.html#ch02eq-lev2sec7-12">12</a>) are certainly necessary, since corresponding nodes of similar trees must have the same position in preorder. Therefore it suffices to prove that the conditions (<a href="../Text/ch02a.html#ch02eq-lev2sec7-12">12</a>) and <em>n</em> = <em>n</em>′ are sufficient to guarantee the similarity of <em>T</em> and <em>T</em> ′. The proof is by induction on <em>n</em>, using the following auxiliary result:</p>
 
-  <p class="noindent"><a id="ch02aLemma-p"></a><a id="page_329"></a><strong>Lemma P.</strong> <em>Let the nodes of a nonempty binary tree be u</em><sub>1</sub>, <em>u</em><sub>2</sub>, ..., <em>u</em><sub><em>n</em></sub><em>in preorder, and let f</em>(<em>u</em>) = <em>l</em>(<em>u</em>) + <em>r</em>(<em>u</em>) − 1. Then</p>
+  <p><a id="ch02aLemma-p"></a><a id="page_329"></a><strong>Lemma P.</strong> <em>Let the nodes of a nonempty binary tree be u</em><sub>1</sub>, <em>u</em><sub>2</sub>, ..., <em>u</em><sub><em>n</em></sub><em>in preorder, and let f</em>(<em>u</em>) = <em>l</em>(<em>u</em>) + <em>r</em>(<em>u</em>) − 1. Then</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-14"></a><img src="../Images/ch02/329equ01.jpg"></div>
 
-  <p class="noindent"><em>Proof</em>. The result is clear for <em>n</em> = 1. If <em>n</em> &gt; 1, the binary tree consists of its root <em>u</em><sub>1</sub> and further nodes. If <em>f</em> (<em>u</em><sub>1</sub>) = 0, then either the left subtree or the right subtree is empty, so the condition is obviously true by induction. If <em>f</em> (<em>u</em><sub>1</sub>) = 1, let the left subtree have <em>n</em><sub><em>l</em></sub> nodes; by induction we have</p>
+  <p><em>Proof</em>. The result is clear for <em>n</em> = 1. If <em>n</em> &gt; 1, the binary tree consists of its root <em>u</em><sub>1</sub> and further nodes. If <em>f</em> (<em>u</em><sub>1</sub>) = 0, then either the left subtree or the right subtree is empty, so the condition is obviously true by induction. If <em>f</em> (<em>u</em><sub>1</sub>) = 1, let the left subtree have <em>n</em><sub><em>l</em></sub> nodes; by induction we have</p>
 
   <div class="equation"><a id="ch02eq-lev2sec7-15"></a><img src="../Images/ch02/329equ02.jpg"></div>
 
-  <p class="noindent">and the condition (<a href="../Text/ch02a.html#ch02eq-lev2sec7-14">14</a>) is again evident. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p>and the condition (<a href="../Text/ch02a.html#ch02eq-lev2sec7-14">14</a>) is again evident. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
 
   <p class="indent">(For other theorems analogous to Lemma P, see the discussion of Polish notation in Chapter 10.)</p>
 
@@ -711,7 +711,7 @@
 
   <p class="indent">We conclude this section by giving a typical, yet basic, algorithm for binary trees, one that makes a copy of a binary tree into different memory locations.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec7-C"></a><strong>Algorithm C</strong> (<em>Copy a binary tree</em>). Let <code>HEAD</code> be the address of the list head of a binary tree <em>T</em>; thus, <em>T</em> is the left subtree of <code>HEAD</code>, reached via <code>LLINK(HEAD)</code>. Let <code>NODE(U)</code> be a node with an empty left subtree. This algorithm makes a copy of <em>T</em> and the copy becomes the left subtree of <code>NODE(U)</code>. In particular, if <code>NODE(U)</code> is the list head of an empty binary tree, this algorithm changes the empty tree into a copy of <em>T</em>.</p>
+  <p><a id="ch02alg-lev2sec7-C"></a><strong>Algorithm C</strong> (<em>Copy a binary tree</em>). Let <code>HEAD</code> be the address of the list head of a binary tree <em>T</em>; thus, <em>T</em> is the left subtree of <code>HEAD</code>, reached via <code>LLINK(HEAD)</code>. Let <code>NODE(U)</code> be a node with an empty left subtree. This algorithm makes a copy of <em>T</em> and the copy becomes the left subtree of <code>NODE(U)</code>. In particular, if <code>NODE(U)</code> is the list head of an empty binary tree, this algorithm changes the empty tree into a copy of <em>T</em>.</p>
 
   <p class="indenthanging"><strong>C1.</strong> [Initialize.] Set <code>P</code> ← <code>HEAD</code>, <code>Q</code> ← <code>U</code>. Go to C4.</p>
 
@@ -794,11 +794,11 @@
 
   <p class="indenthangingA">d) traverse the right subtree, in double order.</p>
 
-  <p class="noindent">For example, traversal of (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>) in double order gives the sequence</p>
+  <p>For example, traversal of (<a href="../Text/ch02a.html#ch02eq-lev2sec7-1">1</a>) in double order gives the sequence</p>
 
   <p class="center"><em>A</em><sub>1</sub><em>B</em><sub>1</sub><em>D</em><sub>1</sub><em>D</em><sub>2</sub><em>B</em><sub>2</sub><em>A</em><sub>2</sub><em>C</em><sub>1</sub><em>E</em><sub>1</sub><em>E</em><sub>2</sub><em>G</em><sub>1</sub><em>G</em><sub>2</sub><em>C</em><sub>2</sub><em>F</em><sub>1</sub><em>H</em><sub>1</sub><em>H</em><sub>2</sub><em>F</em><sub>2</sub><em>J</em><sub>1</sub><em>J</em><sub>2</sub>,</p>
 
-  <p class="noindent">where <em>A</em><sub>1</sub> means that <em>A</em> is being visited for the first time.</p>
+  <p>where <em>A</em><sub>1</sub> means that <em>A</em> is being visited for the first time.</p>
 
   <p class="indent">If <code>P</code> points to a node of the tree and if <em>d</em> = 1 or 2, define (<code>P</code><em>, d</em>)<em><sup>Δ</sup></em> = (<code>Q</code><em>, e</em>) if the next step in double order after visiting <code>NODE(P)</code> the <em>d</em>th time is to visit <code>NODE(Q)</code> the <em>e</em>th time; or, if (<code>P</code><em>, d</em>) is the last step in double order, we write (<code>P</code><em>, d</em>)<em><sup>Δ</sup></em> = (<code>HEAD</code><em>,</em> 2), where <code>HEAD</code> is the address of the list head. We also define (<code>HEAD</code><em>,</em> 1)<em><sup>Δ</sup></em> as the first step in double order.</p>
 
@@ -863,28 +863,28 @@
   <div class="heading">
     <h4 id="ch02lev2sec8">2.3.2. Binary Tree Representation of Trees</h4>
 
-    <p class="noindent">We turn now from binary trees to just plain trees. Let us recall the basic differences between trees and binary trees as we have defined them:</p>
+    <p>We turn now from binary trees to just plain trees. Let us recall the basic differences between trees and binary trees as we have defined them:</p>
   </div>
 
   <p class="indenthangingA">1) A tree always has a root node, so it is never empty; each node of a tree can have 0, 1, 2, 3, ... children.</p>
 
   <p class="indenthangingA">2) A binary tree can be empty, and each of its nodes can have 0, 1, or 2 children; we distinguish between a “left” child and a “right” child.</p>
 
-  <p class="noindent">Recall also that a forest is an ordered set of zero or more trees. The subtrees immediately below any node of a tree form a forest.</p>
+  <p>Recall also that a forest is an ordered set of zero or more trees. The subtrees immediately below any node of a tree form a forest.</p>
 
   <p class="indent">There is a natural way to represent any forest as a binary tree. Consider the following forest of two trees:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-1"></a><img src="../Images/ch02/334equ01.jpg"></div>
 
-  <p class="noindent">The corresponding binary tree is obtained by linking together the children of each family and removing vertical links except from a parent to a first child:</p>
+  <p>The corresponding binary tree is obtained by linking together the children of each family and removing vertical links except from a parent to a first child:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-2"></a><img src="../Images/ch02/334equ02.jpg"></div>
 
-  <p class="noindent"><a id="page_335"></a>Then, tilt the diagram 45° clockwise and tweak it slightly, obtaining a binary tree:</p>
+  <p><a id="page_335"></a>Then, tilt the diagram 45° clockwise and tweak it slightly, obtaining a binary tree:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-3"></a><img src="../Images/ch02/335equ01.jpg"></div>
 
-  <p class="noindent">Conversely, it is easy to see that any binary tree corresponds to a unique forest of trees by reversing the process.</p>
+  <p>Conversely, it is easy to see that any binary tree corresponds to a unique forest of trees by reversing the process.</p>
 
   <p class="indent">The transformation from (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>) to (<a href="../Text/ch02a.html#ch02eq-lev2sec8-3">3</a>) is extremely important; it is called the <em>natural correspondence</em> between forests and binary trees. In particular, it gives a correspondence between trees and a special class of binary trees, namely the binary trees that have a root but no right subtree. (We might also change our viewpoint slightly and let the root of a tree correspond to the list head of a binary tree, thus obtaining a one-to-one correspondence between trees with <em>n</em> + 1 nodes and binary trees with <em>n</em> nodes.)</p>
 
@@ -894,15 +894,15 @@
 
   <p class="indenthangingA">b) If <em>n</em> &gt; 0, the root of <em>B</em>(<em>F</em>) is root(<em>T</em><sub>1</sub>); the left subtree of <em>B</em>(<em>F</em>) is <em>B</em>(<em>T</em><sub>11</sub>, <em>T</em><sub>12</sub>, ..., <em>T</em><sub>1<em>m</em></sub>), where <em>T</em><sub>11</sub>, <em>T</em><sub>12</sub>, ..., <em>T</em><sub>1<em>m</em></sub> are the subtrees of root(<em>T</em><sub>1</sub>); and the right subtree of B(F) is B(<em>T</em><sub>2</sub>, ..., <em>T</em><sub><em>n</em></sub>).</p>
 
-  <p class="noindent">These rules specify the transformation from (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>) to (<a href="../Text/ch02a.html#ch02eq-lev2sec8-3">3</a>) precisely.</p>
+  <p>These rules specify the transformation from (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>) to (<a href="../Text/ch02a.html#ch02eq-lev2sec8-3">3</a>) precisely.</p>
 
   <p class="indent">It will occasionally be convenient to draw our binary tree diagram as in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-2">2</a>), without the 45° rotation. The <em>threaded</em> binary tree corresponding to (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>) is</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-4"></a><img src="../Images/ch02/335equ02.jpg"></div>
 
-  <p class="noindent">(compare with <a href="../Text/ch02a.html#ch02fig24">Fig. 24</a>, giving the latter a 45° change in orientation). Notice that <em>right thread links go from the rightmost child of a family to the parent</em>.</p>
+  <p>(compare with <a href="../Text/ch02a.html#ch02fig24">Fig. 24</a>, giving the latter a 45° change in orientation). Notice that <em>right thread links go from the rightmost child of a family to the parent</em>.</p>
 
-  <p class="noindent"><a id="page_336"></a>Left thread links do not have such a natural interpretation, due to the lack of symmetry between left and right.</p>
+  <p><a id="page_336"></a>Left thread links do not have such a natural interpretation, due to the lack of symmetry between left and right.</p>
 
   <p class="indent">The ideas about traversal explored in the previous section can be recast in terms of forests (and, therefore, trees). There is no simple analog of the inorder sequence, since there is no obvious place to insert a root among its descendants; but preorder and postorder carry over in an obvious manner. Given any nonempty forest, the two basic ways to traverse it may be defined as follows:</p>
 
@@ -912,7 +912,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec8-5"></a><img src="../Images/ch02/336equ01.jpg"></div>
 
-  <p class="noindent">This notation corresponds to the forest (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>): We represent a tree by the information written in its root, followed by a representation of its subtrees; we represent a nonempty forest by a parenthesized list of the representations of its trees, separated by commas.</p>
+  <p>This notation corresponds to the forest (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>): We represent a tree by the information written in its root, followed by a representation of its subtrees; we represent a nonempty forest by a parenthesized list of the representations of its trees, separated by commas.</p>
 
   <p class="indent">If (<a href="../Text/ch02a.html#ch02eq-lev2sec8-1">1</a>) is traversed in preorder, we visit the nodes in the sequence <em>A B C K D E H F J G</em>; this is simply (<a href="../Text/ch02a.html#ch02eq-lev2sec8-5">5</a>) with the parentheses and commas removed. Preorder is a natural way to list the nodes of a tree: We list the root first, then the descendants. If a tree structure is represented by indentation as in <a href="../Text/ch02a.html#ch02fig20">Fig. 20</a>(c), the rows appear in preorder. The section numbers of this book itself (see <a href="../Text/ch02a.html#ch02fig22">Fig. 22</a>) appear in preorder; thus, for example, <a href="../Text/ch02a.html#ch02lev1sec3">Section 2.3</a> is followed by <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a>, then come <a href="../Text/ch02a.html#ch02lev2sec8">Sections 2.3.2</a>, <a href="../Text/ch02a.html#ch02lev2sec9">2.3.3</a>, <a href="../Text/ch02b.html#ch02lev2sec10">2.3.4</a>, <a href="../Text/ch02b.html#ch02lev3sec1">2.3.4.1</a>, ..., <a href="../Text/ch02b.html#ch02lev3sec6">2.3.4.6</a>, <a href="../Text/ch02c.html#ch02lev2sec11">2.3.5</a>, <a href="../Text/ch02c.html#ch02lev1sec4">2.4</a>, etc.</p>
 
@@ -922,7 +922,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec8-6"></a><img src="../Images/ch02/336equ02.jpg"></div>
 
-  <p class="noindent">in which a node appears just <em>after</em> its descendants instead of just before.</p>
+  <p>in which a node appears just <em>after</em> its descendants instead of just before.</p>
 
   <p class="indent">The definitions of preorder and postorder mesh very nicely with the natural correspondence between trees and binary trees, since the subtrees of the first tree correspond to the left binary subtree, and the remaining trees correspond to the right binary subtree. By comparing these definitions with the corresponding <a id="page_337"></a>definitions on page <a href="../Text/ch02a.html#page_319">319</a>, we find that traversing a forest in preorder is <em>exactly the same</em> as traversing the corresponding binary tree in preorder. Traversing a forest in postorder is exactly the same as traversing the corresponding binary tree in <em>inorder</em>. The algorithms developed in <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a> may therefore be used without change. (Note that postorder for trees corresponds to inorder, <em>not</em> postorder, for binary trees. This is fortunate, since we have seen that it is comparatively hard to traverse binary trees in postorder.) Because of this equivalence, we use the notation <code>P$</code> for the <em>postorder</em> successor of node <code>P</code> in a tree or forest, while it denotes the <em>inorder</em> successor in a binary tree.</p>
 
@@ -930,7 +930,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec8-7"></a><img src="../Images/ch02/337equ01.jpg"></div>
 
-  <p class="noindent">Here the illustration on the left is a conventional tree diagram like <a href="../Text/ch02a.html#ch02fig21">Fig. 21</a>, in which the binary operators +, −, ×, <em>/</em>, and ↑ (the latter denotes exponentiation) have two subtrees corresponding to their operands; the unary operator “ln” has one subtree; variables and constants are terminal nodes. The illustration on the right shows the equivalent right-threaded binary tree, including an additional node <em>y</em> that is a list head for the tree. The list head has the form described in <a href="../Text/ch02a.html#ch02lev2sec7">2.3.1</a>–(<a href="../Text/ch02a.html#ch02eq-lev2sec7-8">8</a>).</p>
+  <p>Here the illustration on the left is a conventional tree diagram like <a href="../Text/ch02a.html#ch02fig21">Fig. 21</a>, in which the binary operators +, −, ×, <em>/</em>, and ↑ (the latter denotes exponentiation) have two subtrees corresponding to their operands; the unary operator “ln” has one subtree; variables and constants are terminal nodes. The illustration on the right shows the equivalent right-threaded binary tree, including an additional node <em>y</em> that is a list head for the tree. The list head has the form described in <a href="../Text/ch02a.html#ch02lev2sec7">2.3.1</a>–(<a href="../Text/ch02a.html#ch02eq-lev2sec7-8">8</a>).</p>
 
   <p class="indent">It is important to note that, even though the left-hand tree in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-7">7</a>) bears a superficial resemblance to a binary tree, we are treating it here as a <em>tree</em>, and representing it by a quite different binary tree, shown at the right in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-7">7</a>). Although we could develop routines for algebraic manipulations based directly on binary tree structures — the so-called “three-address code” representations of algebraic formulas — several simplifications occur in practice if we use the general tree representation of algebraic formulas, as in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-7">7</a>), because postorder traversal is easier in a tree.</p>
 
@@ -940,13 +940,13 @@
 
   <div class="equation"><a id="ch02eq-lev2sec8-9"></a><img src="../Images/ch02/338equ02.jpg"></div>
 
-  <p class="noindent">Algebraic expressions like (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) and (<a href="../Text/ch02a.html#ch02eq-lev2sec8-9">9</a>) are very important, and they are known as “Polish notations” because form (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) was introduced by the Polish logician, Jan Łukasiewicz. Expression (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) is the <em>prefix notation</em> for formula (<a href="../Text/ch02a.html#ch02eq-lev2sec8-7">7</a>), and (<a href="../Text/ch02a.html#ch02eq-lev2sec8-9">9</a>) is the corresponding <em>postfix notation</em>. We will return to the interesting topic of Polish notation in later chapters; for now let us be content with the knowledge that Polish notation is directly related to the basic orders of tree traversal.</p>
+  <p>Algebraic expressions like (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) and (<a href="../Text/ch02a.html#ch02eq-lev2sec8-9">9</a>) are very important, and they are known as “Polish notations” because form (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) was introduced by the Polish logician, Jan Łukasiewicz. Expression (<a href="../Text/ch02a.html#ch02eq-lev2sec8-8">8</a>) is the <em>prefix notation</em> for formula (<a href="../Text/ch02a.html#ch02eq-lev2sec8-7">7</a>), and (<a href="../Text/ch02a.html#ch02eq-lev2sec8-9">9</a>) is the corresponding <em>postfix notation</em>. We will return to the interesting topic of Polish notation in later chapters; for now let us be content with the knowledge that Polish notation is directly related to the basic orders of tree traversal.</p>
 
-  <p class="noindent">We shall assume that tree structures for the algebraic formulas with which we will be dealing have nodes of the following form in <code>MIX</code> programs:</p>
+  <p>We shall assume that tree structures for the algebraic formulas with which we will be dealing have nodes of the following form in <code>MIX</code> programs:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-10"></a><img src="../Images/ch02/338equ03.jpg"></div>
 
-  <p class="noindent">Here <code>RLINK</code> and <code>LLINK</code> have the usual significance, and <code>RTAG</code> is negative for thread links (corresponding to <code>RTAG</code> = 1 in the statements of algorithms). The <code>TYPE</code> field is used to distinguish different kinds of nodes: <code>TYPE</code> = 0 means that the node represents a constant, and <code>INFO</code> is the value of the constant. <code>TYPE</code> = 1 means that the node represents a variable, and <code>INFO</code> is the five-letter alphabetic name of this variable. <code>TYPE</code> ≥ 2 means that the node represents an operator; <code>INFO</code> is the alphabetic name of the operator and the value <code>TYPE</code> = 2, 3, 4, ... is used to distinguish the different operators +, −, ×, <em>/</em>, etc. We will not concern ourselves here with how the tree structure has been set up inside the computer memory in the first place, since this topic is analyzed in great detail in Chapter 10; let us merely assume that the tree already appears in our computer memory, deferring questions of input and output until later.</p>
+  <p>Here <code>RLINK</code> and <code>LLINK</code> have the usual significance, and <code>RTAG</code> is negative for thread links (corresponding to <code>RTAG</code> = 1 in the statements of algorithms). The <code>TYPE</code> field is used to distinguish different kinds of nodes: <code>TYPE</code> = 0 means that the node represents a constant, and <code>INFO</code> is the value of the constant. <code>TYPE</code> = 1 means that the node represents a variable, and <code>INFO</code> is the five-letter alphabetic name of this variable. <code>TYPE</code> ≥ 2 means that the node represents an operator; <code>INFO</code> is the alphabetic name of the operator and the value <code>TYPE</code> = 2, 3, 4, ... is used to distinguish the different operators +, −, ×, <em>/</em>, etc. We will not concern ourselves here with how the tree structure has been set up inside the computer memory in the first place, since this topic is analyzed in great detail in Chapter 10; let us merely assume that the tree already appears in our computer memory, deferring questions of input and output until later.</p>
 
   <p class="indent">We shall now discuss the classical example of algebraic manipulation, finding the <em>derivative</em> of a formula with respect to the variable <em>x</em>. Programs for algebraic differentiation were among the first symbol-manipulation routines ever written for computers; they were used as early as 1952. The process of differentiation illustrates many of the techniques of algebraic manipulation, and it is of significant practical value in scientific applications.</p>
 
@@ -970,25 +970,25 @@
 
   <div class="equation"><a id="ch02eq-lev2sec8-19"></a><img src="../Images/ch02/339equ02.jpg"></div>
 
-  <p class="noindent">These rules allow us to evaluate the derivative <em>D</em>(<em>y</em>) for any formula <em>y</em> composed of the operators listed. The “−” sign in rule (<a href="../Text/ch02a.html#ch02eq-lev2sec8-14">14</a>) is a unary operator, which is different from the binary “−” in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-16">16</a>); we will use “neg” to stand for unary negation in the tree nodes below.</p>
+  <p>These rules allow us to evaluate the derivative <em>D</em>(<em>y</em>) for any formula <em>y</em> composed of the operators listed. The “−” sign in rule (<a href="../Text/ch02a.html#ch02eq-lev2sec8-14">14</a>) is a unary operator, which is different from the binary “−” in (<a href="../Text/ch02a.html#ch02eq-lev2sec8-16">16</a>); we will use “neg” to stand for unary negation in the tree nodes below.</p>
 
   <p class="indent">Unfortunately rules (<a href="../Text/ch02a.html#ch02eq-lev2sec8-11">11</a>)–(<a href="../Text/ch02a.html#ch02eq-lev2sec8-19">19</a>) don’t tell the whole story. If we apply them blindly to a rather simple formula like</p>
 
   <p class="center"><em>y</em> = 3 ln(<em>x</em> + 1) − <em>a</em>/<em>x</em><sup>2</sup>,</p>
 
-  <p class="noindent">we get</p>
+  <p>we get</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-20"></a><img src="../Images/ch02/339equ03.jpg"></div>
 
-  <p class="noindent">which is correct but totally unsatisfactory. To avoid so many redundant operations in the answer, we must recognize the special cases of adding or multiplying by zero, multiplying by one, or raising to the first power. These simplifications reduce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-20">20</a>) to</p>
+  <p>which is correct but totally unsatisfactory. To avoid so many redundant operations in the answer, we must recognize the special cases of adding or multiplying by zero, multiplying by one, or raising to the first power. These simplifications reduce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-20">20</a>) to</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-21"></a><img src="../Images/ch02/339equ04.jpg"></div>
 
-  <p class="noindent">which is more acceptable but still not ideal. The concept of a really satisfactory answer is not well-defined, because different mathematicians will prefer formulas to be expressed in different ways; however, it is clear that (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>) is not as simple as it could be. In order to make substantial progress over formula (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>), it is necessary to develop algebraic simplification routines (see <a href="../Text/ch02a.html#ch02ex_2_8_17">exercise 17</a>), which would reduce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>) to, for example,</p>
+  <p>which is more acceptable but still not ideal. The concept of a really satisfactory answer is not well-defined, because different mathematicians will prefer formulas to be expressed in different ways; however, it is clear that (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>) is not as simple as it could be. In order to make substantial progress over formula (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>), it is necessary to develop algebraic simplification routines (see <a href="../Text/ch02a.html#ch02ex_2_8_17">exercise 17</a>), which would reduce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>) to, for example,</p>
 
   <div class="equation"><a id="ch02eq-lev2sec8-22"></a><img src="../Images/ch02/339equ05.jpg"></div>
 
-  <p class="noindent">We will content ourselves here with routines that can produce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>), not (<a href="../Text/ch02a.html#ch02eq-lev2sec8-22">22</a>).</p>
+  <p>We will content ourselves here with routines that can produce (<a href="../Text/ch02a.html#ch02eq-lev2sec8-21">21</a>), not (<a href="../Text/ch02a.html#ch02eq-lev2sec8-22">22</a>).</p>
 
   <p class="indent">Our main interest in this algorithm is, as usual, in the details of how the process is carried out inside a computer. Many higher-level languages and special routines are available at most computer installations, with built-in facilities to simplify algebraic manipulations like these; but the purpose of the present example is to gain more experience in fundamental tree operations.</p>
 
@@ -996,7 +996,7 @@
 
   <p class="indent">By using a right-threaded tree, we avoid the need for a stack during the operation of the algorithm. On the other hand, a threaded tree representation has the disadvantage that we will need to make copies of subtrees; for example, in the rule for <em>D</em>(<em>u</em> ↑ <em>v</em>) we might need to copy <em>u</em> and <em>υ</em> three times each. If we <a id="page_340"></a>had chosen to use a List representation as in <a href="../Text/ch02c.html#ch02lev2sec11">Section 2.3.5</a> instead of a tree, we could have avoided such copying.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec8-D"></a><strong>Algorithm D</strong> (<em>Differentiation</em>). If <code>Y</code> is the address of a list head that points to a formula represented as described above, and if <code>DY</code> is the address of the list head for an empty tree, this algorithm makes <code>NODE(DY)</code> point to a tree representing the analytic derivative of <code>Y</code> with respect to the variable “<code>X</code>”.</p>
+  <p><a id="ch02alg-lev2sec8-D"></a><strong>Algorithm D</strong> (<em>Differentiation</em>). If <code>Y</code> is the address of a list head that points to a formula represented as described above, and if <code>DY</code> is the address of the list head for an empty tree, this algorithm makes <code>NODE(DY)</code> point to a tree representing the analytic derivative of <code>Y</code> with respect to the variable “<code>X</code>”.</p>
 
   <p class="indenthanging"><strong>D1.</strong> [Initialize.] Set <code>P</code> ← <code>Y$</code> (namely, the first node of the tree, in postorder, which is the first node of the corresponding binary tree in inorder).</p>
 
@@ -1018,21 +1018,21 @@
 
   <p class="indenti"><code>TREE(</code><em>x</em><code>)</code> makes a new tree with <em>x</em> as a terminal root node: <code>W</code> <span class="ent">⇐</span> <code>AVAIL</code>, <code>INFO(W)</code> ← <em>x</em>, <code>LLINK(W)</code> ← <em>Λ</em>.</p>
 
-  <p class="noindent"><a id="page_341"></a>Furthermore <code>TYPE(W)</code> is set appropriately, depending on <em>x</em>. In all cases, the value of <code>TREE</code> is <code>W</code>, that is, a pointer to the tree just constructed. The reader should study these three definitions carefully, since they illustrate the binary tree representation of trees. Another function, <code>COPY(U)</code>, makes a copy of the tree pointed to by <code>U</code> and has as its value a pointer to the tree thereby created. The basic functions <code>TREE</code> and <code>COPY</code> make it easy to build up a tree for the derivative of a formula, step by step.</p>
+  <p><a id="page_341"></a>Furthermore <code>TYPE(W)</code> is set appropriately, depending on <em>x</em>. In all cases, the value of <code>TREE</code> is <code>W</code>, that is, a pointer to the tree just constructed. The reader should study these three definitions carefully, since they illustrate the binary tree representation of trees. Another function, <code>COPY(U)</code>, makes a copy of the tree pointed to by <code>U</code> and has as its value a pointer to the tree thereby created. The basic functions <code>TREE</code> and <code>COPY</code> make it easy to build up a tree for the derivative of a formula, step by step.</p>
 
-  <p class="noindent"><strong>Nullary operators</strong> (<em>constants and variables</em>). For these operations, <code>NODE(P)</code> is a terminal node, and the values of <code>P1</code>, <code>P2</code>, <code>Q1</code>, and <code>Q</code> before the operation are irrelevant.</p>
+  <p><strong>Nullary operators</strong> (<em>constants and variables</em>). For these operations, <code>NODE(P)</code> is a terminal node, and the values of <code>P1</code>, <code>P2</code>, <code>Q1</code>, and <code>Q</code> before the operation are irrelevant.</p>
 
   <p class="indent"><code>DIFF</code><code>[</code>0<code>]</code>: <code>(NODE(P)</code> is a constant.) Set <code>Q</code> ← <code>TREE(0)</code>.</p>
 
   <p class="indent"><code>DIFF</code><code>[</code>1<code>]</code>: <code>(NODE(P)</code> is a variable.) If <code>INFO(P)</code> = “<code>X</code>”, set <code>Q</code> ← <code>TREE(1)</code>; otherwise set <code>Q</code> ← <code>TREE(0)</code>.</p>
 
-  <p class="noindent"><strong>Unary operators</strong> (<em>logarithm and negation</em>). For these operations, <code>NODE(P)</code> has one child, <em>U</em>, pointed to by <code>P1</code>, and <code>Q</code> points to <em>D</em>(<em>U</em>). The values of <code>P2</code> and <code>Q1</code> before the operation are irrelevant.</p>
+  <p><strong>Unary operators</strong> (<em>logarithm and negation</em>). For these operations, <code>NODE(P)</code> has one child, <em>U</em>, pointed to by <code>P1</code>, and <code>Q</code> points to <em>D</em>(<em>U</em>). The values of <code>P2</code> and <code>Q1</code> before the operation are irrelevant.</p>
 
   <p class="indent"><code>DIFF[</code>2<code>]</code>: (<code>NODE(P)</code> is “ln”.) If <code>INFO(Q)</code> ≠ 0, set <code>Q</code> ← <code>TREE</code>(“/”,<code>Q,COPY(P1))</code>.</p>
 
   <p class="indent"><code>DIFF[</code>3<code>]</code>: (<code>NODE(P)</code> is “neg”.) If <code>INFO(Q)</code> ≠ 0, set <code>Q</code> ← <code>TREE</code>(“neg”,<code>Q)</code>.</p>
 
-  <p class="noindent"><strong>Binary operators</strong> (<em>addition, subtraction, multiplication, division, exponentiation</em>). For these operations, <code>NODE(P)</code> has two children, <em>U</em> and <em>V</em>, pointed to respectively by <code>P1</code> and <code>P2</code>; <code>Q1</code> and <code>Q</code> point respectively to <em>D</em>(<em>U</em>), <em>D</em>(<em>V</em>).</p>
+  <p><strong>Binary operators</strong> (<em>addition, subtraction, multiplication, division, exponentiation</em>). For these operations, <code>NODE(P)</code> has two children, <em>U</em> and <em>V</em>, pointed to respectively by <code>P1</code> and <code>P2</code>; <code>Q1</code> and <code>Q</code> point respectively to <em>D</em>(<em>U</em>), <em>D</em>(<em>V</em>).</p>
 
   <p class="indent"><code>DIFF[</code>4<code>]</code>: (“+” operation.) If <code>INFO(Q1)</code> = 0, set <code>AVAIL</code> <span class="ent">⇐</span> <code>Q1</code>. Otherwise if <code>INFO(Q)</code> = 0, set <code>AVAIL</code> <span class="ent">⇐</span> <code>Q</code> and <code>Q</code> ← <code>Q1</code>; otherwise set <code>Q</code> ← <code>TREE</code>(“+”,<code>Q1,Q)</code>.</p>
 
@@ -1052,29 +1052,29 @@
 
   <p class="center"><code>Q1</code> ← <code>TREE</code><code>(</code>“/”,<code>Q1,COPY(P2))</code>.</p>
 
-  <p class="noindent">Then if <code>INFO(Q)</code> ≠ 0, set</p>
+  <p>Then if <code>INFO(Q)</code> ≠ 0, set</p>
 
   <p class="center"><code>Q</code> ← <code>TREE(</code>“/”,<code>MULT(COPY(P1),Q),TREE(</code>“↑”,<code>COPY(P2),TREE(2)))</code>.</p>
 
-  <p class="noindent">Then go to <code>DIFF[</code>5<code>]</code>.</p>
+  <p>Then go to <code>DIFF[</code>5<code>]</code>.</p>
 
   <p class="center"><code>DIFF[</code>8<code>]</code>: (“↑” operation.) See <a href="../Text/ch02a.html#ch02ex_2_8_12">exercise 12</a>.</p>
 
   <p class="indent"><a id="page_342"></a>We conclude this section by showing how all of the operations above are readily transformed into a computer program, starting “from scratch” with only <code>MIX</code> machine language as a basis.</p>
 
-  <p class="noindent"><a id="ch02a_pro_d"></a><strong>Program D</strong> (<em>Differentiation</em>). The following <code>MIXAL</code> program performs <a href="../Text/ch02a.html#ch02alg-lev2sec8-D">Algorithm D</a>, with rI2 ≡ <code>P</code>, rI3 ≡ <code>P2</code>, rI4 ≡ <code>P1</code>, rI5 ≡ <code>Q</code>, rI6 ≡ <code>Q1</code>. The order of computations has been rearranged a little, for convenience.</p>
+  <p><a id="ch02a_pro_d"></a><strong>Program D</strong> (<em>Differentiation</em>). The following <code>MIXAL</code> program performs <a href="../Text/ch02a.html#ch02alg-lev2sec8-D">Algorithm D</a>, with rI2 ≡ <code>P</code>, rI3 ≡ <code>P2</code>, rI4 ≡ <code>P1</code>, rI5 ≡ <code>Q</code>, rI6 ≡ <code>Q1</code>. The order of computations has been rearranged a little, for convenience.</p>
 
   <div class="image"><img src="../Images/ch02/342pro01.jpg"></div>
 
   <div class="image"><img src="../Images/ch02/342pro01a.jpg"></div>
 
-  <p class="noindent">The next part of the program contains the basic subroutines <code>TREE</code> and <code>COPY</code>. The former has three entrances <code>TREE0</code>, <code>TREE1</code>, and <code>TREE2</code>, according to the number of subtrees of the tree being constructed. Regardless of which entrance to the subroutine is used, rA will contain the address of a special constant indicating <a id="page_343"></a>what type of node forms the root of the tree being constructed; these special constants appear in lines 105–124.</p>
+  <p>The next part of the program contains the basic subroutines <code>TREE</code> and <code>COPY</code>. The former has three entrances <code>TREE0</code>, <code>TREE1</code>, and <code>TREE2</code>, according to the number of subtrees of the tree being constructed. Regardless of which entrance to the subroutine is used, rA will contain the address of a special constant indicating <a id="page_343"></a>what type of node forms the root of the tree being constructed; these special constants appear in lines 105–124.</p>
 
   <div class="image"><img src="../Images/ch02/343pro01.jpg"></div>
 
   <div class="image"><img src="../Images/ch02/343pro01a.jpg"></div>
 
-  <p class="noindent"><a id="page_344"></a>The remaining portion of the program corresponds to the differentiation routines <code>DIFF[0]</code>, <code>DIFF[1]</code>, ...; these routines are written to return control to step D3 after processing a binary operator, otherwise they return to step D4.</p>
+  <p><a id="page_344"></a>The remaining portion of the program corresponds to the differentiation routines <code>DIFF[0]</code>, <code>DIFF[1]</code>, ...; these routines are written to return control to step D3 after processing a binary operator, otherwise they return to step D4.</p>
 
   <div class="image"><img src="../Images/ch02/344pro01.jpg"></div>
 
@@ -1146,7 +1146,7 @@
 
   <p class="indenti">vi) <em>x</em> <span class="ent">≽</span> <em>y</em> if and only if <em>x</em> = <em>y</em>, when <em>x</em> and <em>y</em> are variables.</p>
 
-  <p class="noindent">For example, we find <em>a</em> <span class="ent">∧</span> (<em>b</em> <span class="ent">∨</span> <em>c</em>) <span class="ent">≽</span> (<em>a</em> <span class="ent">∧</span> <em>b</em>) <span class="ent">∨</span> (<em>a</em> <span class="ent">∧</span> <em>c</em>) <span class="ent">⋡</span> <em>a</em> <span class="ent">∧</span> (<em>b</em> <span class="ent">∨</span> <em>c</em>).</p>
+  <p>For example, we find <em>a</em> <span class="ent">∧</span> (<em>b</em> <span class="ent">∨</span> <em>c</em>) <span class="ent">≽</span> (<em>a</em> <span class="ent">∧</span> <em>b</em>) <span class="ent">∨</span> (<em>a</em> <span class="ent">∧</span> <em>c</em>) <span class="ent">⋡</span> <em>a</em> <span class="ent">∧</span> (<em>b</em> <span class="ent">∨</span> <em>c</em>).</p>
 
   <p class="indent">Design an algorithm that tests whether or not <em>X</em> <span class="ent">≽</span> <em>Y</em>, given two formulas <em>X</em> and <em>Y</em> in the free lattice.</p>
 
@@ -1167,7 +1167,7 @@
   <div class="heading">
     <h4 id="ch02lev2sec9">2.3.3. Other Representations of Trees</h4>
 
-    <p class="noindent">There are many ways to represent tree structures inside a computer besides the <code>LLINK-RLINK</code> (left child – right sibling) method given in the previous section. As usual, the proper choice of representation depends heavily on what kind of operations we want to perform on the trees. In this section we will consider a few of the tree representation methods that have proved to be especially useful.</p>
+    <p>There are many ways to represent tree structures inside a computer besides the <code>LLINK-RLINK</code> (left child – right sibling) method given in the previous section. As usual, the proper choice of representation depends heavily on what kind of operations we want to perform on the trees. In this section we will consider a few of the tree representation methods that have proved to be especially useful.</p>
   </div>
 
   <p class="indent">First we can use <em>sequential</em> memory techniques. As in the case of linear lists, this mode of allocation is most suitable when we want a compact representation of a tree structure that is not going to be subject to radical dynamic changes in size or shape during program execution. There are many situations in which we need essentially constant tables of tree structures for reference within a program, and the desired form of these trees in memory depends on the way in which the tables are to be examined.</p>
@@ -1176,7 +1176,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-1"></a><img src="../Images/ch02/349equ01.jpg"></div>
 
-  <p class="noindent">considered in the previous section, which has the tree diagrams</p>
+  <p>considered in the previous section, which has the tree diagrams</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-2"></a><img src="../Images/ch02/349equ02.jpg"></div>
 
@@ -1184,7 +1184,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-3"></a><img src="../Images/ch02/349equ03.jpg"></div>
 
-  <p class="noindent">Here nonnull <code>RLINK</code>s have been indicated by arrows, and <code>LTAG</code> = 1 (for terminal nodes) is indicated by “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>”. <code>LLINK</code> is unnecessary, since it would either be null or it would point to the next item in sequence. It is instructive to compare (<a href="../Text/ch02a.html#ch02eq-lev2sec9-1">1</a>) with (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>).</p>
+  <p>Here nonnull <code>RLINK</code>s have been indicated by arrows, and <code>LTAG</code> = 1 (for terminal nodes) is indicated by “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>”. <code>LLINK</code> is unnecessary, since it would either be null or it would point to the next item in sequence. It is instructive to compare (<a href="../Text/ch02a.html#ch02eq-lev2sec9-1">1</a>) with (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>).</p>
 
   <p class="indent">This representation has several interesting properties. In the first place, all subtrees of a node appear immediately after that node, so that all subtrees within the original forest appear in consecutive blocks. [Compare this with the “nested parentheses” in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-1">1</a>) and in <a href="../Text/ch02a.html#ch02fig20">Fig. 20</a>(b).] In the second place, notice that the <code>RLINK</code> arrows never cross each other in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>); this will be true in general, for in a binary tree all nodes between <code>X</code> and <code>RLINK(X)</code> in preorder lie in the left subtree of <code>X</code>, hence no outward arrows will emerge from that part of the tree. In the third place, we may observe that the <code>LTAG</code> field, which indicates whether a node is terminal or not, is redundant, since “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>” occurs only at the end of the forest and just <em>preceding</em> every downward pointing arrow.</p>
 
@@ -1192,7 +1192,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-4"></a><img src="../Images/ch02/349equ04.jpg"></div>
 
-  <p class="noindent">As we scan (<a href="../Text/ch02a.html#ch02eq-lev2sec9-4">4</a>) from left to right, the positions with <code>RTAG</code> ≠ “<span class="middle"><img src="../Images/ch02/en0477_02.jpg"></span>” correspond to nonnull <code>RLINK</code>s that must be filled in. Each time we pass an item with <code>LTAG</code> = “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>”, we should complete the most recent instance of an incomplete <code>RLINK</code>. (The locations of incomplete <code>RLINK</code>s can therefore be kept on a stack.) We have essentially proved <a href="../Text/ch02a.html#ch02a_the_a">Theorem 2.3.1A</a> again.</p>
+  <p>As we scan (<a href="../Text/ch02a.html#ch02eq-lev2sec9-4">4</a>) from left to right, the positions with <code>RTAG</code> ≠ “<span class="middle"><img src="../Images/ch02/en0477_02.jpg"></span>” correspond to nonnull <code>RLINK</code>s that must be filled in. Each time we pass an item with <code>LTAG</code> = “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>”, we should complete the most recent instance of an incomplete <code>RLINK</code>. (The locations of incomplete <code>RLINK</code>s can therefore be kept on a stack.) We have essentially proved <a href="../Text/ch02a.html#ch02a_the_a">Theorem 2.3.1A</a> again.</p>
 
   <p class="indent">The fact that <code>RLINK</code> or <code>LTAG</code> is redundant in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>) is of little or no help to us unless we are scanning the entire forest sequentially, since extra computation is required to deduce the missing information. Therefore we often need all of<a id="page_350"></a> the data in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>). However, there is evidently some wasted space, since more than half of the <code>RLINK</code> fields are equal to <em>Λ</em> for this particular forest. There are two common ways to make use of the wasted space:</p>
 
@@ -1200,13 +1200,13 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-5"></a><img src="../Images/ch02/350equ01.jpg"></div>
 
-  <p class="noindent">The arrows still do not cross each other. Furthermore, <code>LTAG(X)</code> = “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>” is characterized by the condition <code>SCOPE(X)</code> = <code>X</code> + <em>c</em>, where <em>c</em> is the number of words per node. One example of the use of this <code>SCOPE</code> idea appears in <a href="../Text/ch02c.html#ch02lev1sec4">exercise 2.4</a>–<a href="../Text/ch02c.html#ch02ex_1_4_12">12</a>.</p>
+  <p>The arrows still do not cross each other. Furthermore, <code>LTAG(X)</code> = “<span class="middle"><img src="../Images/ch02/en0470_02.jpg"></span>” is characterized by the condition <code>SCOPE(X)</code> = <code>X</code> + <em>c</em>, where <em>c</em> is the number of words per node. One example of the use of this <code>SCOPE</code> idea appears in <a href="../Text/ch02c.html#ch02lev1sec4">exercise 2.4</a>–<a href="../Text/ch02c.html#ch02ex_1_4_12">12</a>.</p>
 
   <p class="indent"><strong>2)</strong> Decrease the size of each node by removing the <code>RLINK</code> field, and add special “link” nodes just before nodes that formerly had a nonnull <code>RLINK</code>:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-6"></a><img src="../Images/ch02/350equ02.jpg"></div>
 
-  <p class="noindent">Here “<code>*</code>” indicates the special link nodes, whose <code>INFO</code> somehow characterizes them as links pointing as shown by the arrows. If the <code>INFO</code> and <code>RLINK</code> fields of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>) occupy roughly the same amount of space, the net effect of the change to (<a href="../Text/ch02a.html#ch02eq-lev2sec9-6">6</a>) is to consume less memory, since the number of “<code>*</code>” nodes is always less than the number of non-“<code>*</code>” nodes. Representation (<a href="../Text/ch02a.html#ch02eq-lev2sec9-6">6</a>) is somewhat analogous to a sequence of instructions in a one-address computer like <code>MIX</code>, with the “<code>*</code>” nodes corresponding to conditional jump instructions.</p>
+  <p>Here “<code>*</code>” indicates the special link nodes, whose <code>INFO</code> somehow characterizes them as links pointing as shown by the arrows. If the <code>INFO</code> and <code>RLINK</code> fields of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>) occupy roughly the same amount of space, the net effect of the change to (<a href="../Text/ch02a.html#ch02eq-lev2sec9-6">6</a>) is to consume less memory, since the number of “<code>*</code>” nodes is always less than the number of non-“<code>*</code>” nodes. Representation (<a href="../Text/ch02a.html#ch02eq-lev2sec9-6">6</a>) is somewhat analogous to a sequence of instructions in a one-address computer like <code>MIX</code>, with the “<code>*</code>” nodes corresponding to conditional jump instructions.</p>
 
   <p class="indent">Another sequential representation analogous to (<a href="../Text/ch02a.html#ch02eq-lev2sec9-3">3</a>) may be devised by omitting <code>RLINK</code>s instead of <code>LLINK</code>s. In this case we list the nodes of the forest in a new order that may be called <em>family order</em> since the members of each family appear together. Family order for any forest may be defined recursively as follows:</p>
 
@@ -1216,19 +1216,19 @@
 
   <p class="indent">Traverse the subtrees of the root of the first tree (in family order).</p>
 
-  <p class="noindent">(Compare this with the definitions of preorder and postorder in the previous section. Family order is identical with the reverse of postorder in the corresponding binary tree.)</p>
+  <p>(Compare this with the definitions of preorder and postorder in the previous section. Family order is identical with the reverse of postorder in the corresponding binary tree.)</p>
 
   <p class="indent">The <em>family order sequential representation</em> of the trees (<a href="../Text/ch02a.html#ch02eq-lev2sec9-2">2</a>) is</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-7"></a><img src="../Images/ch02/350equ03.jpg"></div>
 
-  <p class="noindent">In this case the <code>RTAG</code> entries serve to delimit the families. Family order begins by listing the roots of all trees in the forest, then continues by listing individual families, successively choosing the family of the most recently appearing node whose family has not yet been listed. It follows that the <code>LLINK</code> arrows will <a id="page_351"></a>never cross; and the other properties of preorder representation carry over in a similar way.</p>
+  <p>In this case the <code>RTAG</code> entries serve to delimit the families. Family order begins by listing the roots of all trees in the forest, then continues by listing individual families, successively choosing the family of the most recently appearing node whose family has not yet been listed. It follows that the <code>LLINK</code> arrows will <a id="page_351"></a>never cross; and the other properties of preorder representation carry over in a similar way.</p>
 
   <p class="indent">Instead of using family order, we could also simply list the nodes from left to right, one level at a time. This is called “level order” [see G. Salton, <em>CACM</em> <strong>5</strong> (1962), 103–114], and the <em>level order sequential representation</em> of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-2">2</a>) is</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-8"></a><img src="../Images/ch02/351equ01.jpg"></div>
 
-  <p class="noindent">This is like (<a href="../Text/ch02a.html#ch02eq-lev2sec9-7">7</a>), but the families are chosen in first-in-first-out fashion rather than last-in-first-out. Either (<a href="../Text/ch02a.html#ch02eq-lev2sec9-7">7</a>) or (<a href="../Text/ch02a.html#ch02eq-lev2sec9-8">8</a>) may be regarded as a natural analog, for trees, of the sequential representation of linear lists.</p>
+  <p>This is like (<a href="../Text/ch02a.html#ch02eq-lev2sec9-7">7</a>), but the families are chosen in first-in-first-out fashion rather than last-in-first-out. Either (<a href="../Text/ch02a.html#ch02eq-lev2sec9-7">7</a>) or (<a href="../Text/ch02a.html#ch02eq-lev2sec9-8">8</a>) may be regarded as a natural analog, for trees, of the sequential representation of linear lists.</p>
 
   <p class="indent">The reader will easily see how to design algorithms that traverse and analyze trees represented sequentially as above, since the <code>LLINK</code> and <code>RLINK</code> information is essentially available just as though we had a fully linked tree structure.</p>
 
@@ -1236,9 +1236,9 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-9"></a><img src="../Images/ch02/351equ02.jpg"></div>
 
-  <p class="noindent">For a proof that this is sufficient to characterize the tree structure, see <a href="../Text/ch02a.html#ch02lev2sec8">exercise 2.3.2</a>–<a href="../Text/ch02a.html#ch02ex_2_8_10">10</a>. This order is useful for the “bottom-up” evaluation of functions defined on the nodes of a tree, as in the following algorithm.</p>
+  <p>For a proof that this is sufficient to characterize the tree structure, see <a href="../Text/ch02a.html#ch02lev2sec8">exercise 2.3.2</a>–<a href="../Text/ch02a.html#ch02ex_2_8_10">10</a>. This order is useful for the “bottom-up” evaluation of functions defined on the nodes of a tree, as in the following algorithm.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec9-F"></a><strong>Algorithm F</strong> (<em>Evaluate a locally defined function in a tree</em>). Suppose <em>f</em> is a function of the nodes of a tree, such that the value of <em>f</em> at a node <em>x</em> depends only on <em>x</em> and the values of <em>f</em> on the children of <em>x</em>. The following algorithm, using an auxiliary stack, evaluates <em>f</em> at each node of a nonempty forest.</p>
+  <p><a id="ch02alg-lev2sec9-F"></a><strong>Algorithm F</strong> (<em>Evaluate a locally defined function in a tree</em>). Suppose <em>f</em> is a function of the nodes of a tree, such that the value of <em>f</em> at a node <em>x</em> depends only on <em>x</em> and the values of <em>f</em> on the children of <em>x</em>. The following algorithm, using an auxiliary stack, evaluates <em>f</em> at each node of a nonempty forest.</p>
 
   <p class="indenthanging"><strong>F1.</strong> [Initialize.] Set the stack empty, and let <code>P</code> point to the first node of the forest in postorder.</p>
 
@@ -1256,11 +1256,11 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-10"></a><img src="../Images/ch02/352equ01.jpg"></div>
 
-  <p class="noindent">This new form shows that we may assume (without loss of generality) that all <code>INFO</code> in a tree structure appears in its terminal nodes. Therefore in the natural binary tree representation of <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>, the <code>LLINK</code> and <code>INFO</code> fields are mutually exclusive and they can share the same field in each node. A node might have the fields</p>
+  <p>This new form shows that we may assume (without loss of generality) that all <code>INFO</code> in a tree structure appears in its terminal nodes. Therefore in the natural binary tree representation of <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>, the <code>LLINK</code> and <code>INFO</code> fields are mutually exclusive and they can share the same field in each node. A node might have the fields</p>
 
   <div class="image"><img src="../Images/ch02/e352_01.jpg"></div>
 
-  <p class="noindent">where the sign <code>LTAG</code> tells whether the second field is a link or not. (Compare this representation with, for example, the two-word format of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) in <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>.) By cutting <code>INFO</code> down from 5 bytes to 3, we can fit each node into one word. However, notice that there are now 15 nodes instead of 10; the forest (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) takes 15 words of memory while (<a href="../Text/ch02a.html#ch02eq-lev2sec9-2">2</a>) takes 20, yet the latter has 50 bytes of <code>INFO</code> compared to 30 in the other. There is no real gain in memory space in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) unless the excess <code>INFO</code> space was going to waste; the <code>LLINK</code>s replaced in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) are removed at the expense of about the same number of new <code>RLINK</code>s in the added nodes. Precise details of the differences between the two representations are discussed in <a href="../Text/ch02b.html#ch02ex_2_9_4">exercise 4</a>.</p>
+  <p>where the sign <code>LTAG</code> tells whether the second field is a link or not. (Compare this representation with, for example, the two-word format of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) in <a href="../Text/ch02a.html#ch02lev2sec8">Section 2.3.2</a>.) By cutting <code>INFO</code> down from 5 bytes to 3, we can fit each node into one word. However, notice that there are now 15 nodes instead of 10; the forest (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) takes 15 words of memory while (<a href="../Text/ch02a.html#ch02eq-lev2sec9-2">2</a>) takes 20, yet the latter has 50 bytes of <code>INFO</code> compared to 30 in the other. There is no real gain in memory space in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) unless the excess <code>INFO</code> space was going to waste; the <code>LLINK</code>s replaced in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-10">10</a>) are removed at the expense of about the same number of new <code>RLINK</code>s in the added nodes. Precise details of the differences between the two representations are discussed in <a href="../Text/ch02b.html#ch02ex_2_9_4">exercise 4</a>.</p>
 
   <p class="indent">In the standard binary tree representation of a tree, the <code>LLINK</code> field might be more accurately called the <code>LCHILD</code> field, since it points from a parent node to its leftmost child. The leftmost child is usually the “youngest” of the children in the tree, since it is easier to insert a node at the left of a family than at the right; so the abbreviation <code>LCHILD</code> may also be thought of as the “last child” or “least child.”</p>
 
@@ -1282,31 +1282,31 @@
 
   <p class="indenti">iii) <em>x</em> ≡ <em>x</em>. (Reflexivity.)</p>
 
-  <p class="noindent">(Compare this with the definition of a partial ordering relation in <a href="../Text/ch02.html#ch02lev2sec3">Section 2.2.3</a>; equivalence relations are quite different from partial orderings, in spite of the fact that two of the three defining properties are the same.) Examples of equivalence relations are the relation “=”, the relation of congruence (modulo <em>m</em>) for integers, the relation of similarity between trees as defined in <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a>, etc.</p>
+  <p>(Compare this with the definition of a partial ordering relation in <a href="../Text/ch02.html#ch02lev2sec3">Section 2.2.3</a>; equivalence relations are quite different from partial orderings, in spite of the fact that two of the three defining properties are the same.) Examples of equivalence relations are the relation “=”, the relation of congruence (modulo <em>m</em>) for integers, the relation of similarity between trees as defined in <a href="../Text/ch02a.html#ch02lev2sec7">Section 2.3.1</a>, etc.</p>
 
   <p class="indent"><a id="page_354"></a>The equivalence problem is to read in pairs of equivalent elements and to determine later whether two particular elements can be proved equivalent or not on the basis of the given pairs. For example, suppose that <em>S</em> is the set {1, 2, 3, 4, 5, 6, 7, 8, 9} and suppose that we are given the pairs</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-11"></a><img src="../Images/ch02/354equ01.jpg"></div>
 
-  <p class="noindent">It follows that, for example, 2 ≡ 6, since 2 ≡ 7 ≡ 3 ≡ 9 ≡ 8 ≡ 6. But we cannot show that 1 ≡ 6. In fact, the pairs (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) divide <em>S</em> into two classes</p>
+  <p>It follows that, for example, 2 ≡ 6, since 2 ≡ 7 ≡ 3 ≡ 9 ≡ 8 ≡ 6. But we cannot show that 1 ≡ 6. In fact, the pairs (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) divide <em>S</em> into two classes</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-12"></a><img src="../Images/ch02/354equ02.jpg"></div>
 
-  <p class="noindent">such that two elements are equivalent if and only if they belong to the same class. It is not difficult to prove that <em>any</em> equivalence relation partitions its set <em>S</em> into disjoint classes (called the <em>equivalence classes</em>), such that two elements are equivalent if and only if they belong to the same class.</p>
+  <p>such that two elements are equivalent if and only if they belong to the same class. It is not difficult to prove that <em>any</em> equivalence relation partitions its set <em>S</em> into disjoint classes (called the <em>equivalence classes</em>), such that two elements are equivalent if and only if they belong to the same class.</p>
 
   <p class="indent">Therefore a solution to the equivalence problem is a matter of keeping track of equivalence classes like (<a href="../Text/ch02a.html#ch02eq-lev2sec9-12">12</a>). We may start with each element alone in its class, thus:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-13"></a><img src="../Images/ch02/354equ03.jpg"></div>
 
-  <p class="noindent">Now if we are given the relation 1 ≡ 5, we put {1, 5} together in a class. After processing the first three relations 1 ≡ 5, 6 ≡ 8, and 7 ≡ 2, we will have changed (<a href="../Text/ch02a.html#ch02eq-lev2sec9-13">13</a>) to</p>
+  <p>Now if we are given the relation 1 ≡ 5, we put {1, 5} together in a class. After processing the first three relations 1 ≡ 5, 6 ≡ 8, and 7 ≡ 2, we will have changed (<a href="../Text/ch02a.html#ch02eq-lev2sec9-13">13</a>) to</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-14"></a><img src="../Images/ch02/354equ04.jpg"></div>
 
-  <p class="noindent">Now the pair 9 ≡ 8 puts {6, 8, 9} together, etc.</p>
+  <p>Now the pair 9 ≡ 8 puts {6, 8, 9} together, etc.</p>
 
   <p class="indent">The problem is to find a good way to represent situations like (<a href="../Text/ch02a.html#ch02eq-lev2sec9-12">12</a>), (<a href="../Text/ch02a.html#ch02eq-lev2sec9-13">13</a>), and (<a href="../Text/ch02a.html#ch02eq-lev2sec9-14">14</a>) within a computer so that we can efficiently perform the operations of merging classes together and of testing whether two given elements are in the same class. The algorithm below uses oriented tree structures for this purpose: The elements of <em>S</em> become nodes of an oriented forest; and two nodes are equivalent, as a consequence of the equivalent pairs read so far, <em>if and only if they belong to the same tree</em>. This test is easy to make, since two elements are in the same tree if and only if they are below the same root element. Furthermore, it is easy to merge two oriented trees together, by simply attaching one as a new subtree of the other’s root.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec9-E"></a><strong>Algorithm E</strong> (<em>Process equivalence relations</em>). Let <em>S</em> be the set of numbers {1, 2, ..., <em>n</em>}, and let <code>PARENT[</code>1<code>]</code>, <code>PARENT[</code>2<code>]</code>, ..., <code>PARENT[</code><em>n</em><code>]</code> be integer variables. This algorithm inputs a set of relations such as (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) and adjusts the <code>PARENT</code> table to represent a set of oriented trees, so that two elements are equivalent as a consequence of the given relations if and only if they belong to the same tree. (<em>Note:</em> In a more general situation, the elements of <em>S</em> would be symbolic names instead of simply the numbers from 1 to <em>n</em>; then a search routine, as in Chapter 6, would locate nodes corresponding to the elements of <em>S</em>, and <code>PARENT</code> would be a field in each node. The modifications for this more general case are straightforward.)</p>
+  <p><a id="ch02alg-lev2sec9-E"></a><strong>Algorithm E</strong> (<em>Process equivalence relations</em>). Let <em>S</em> be the set of numbers {1, 2, ..., <em>n</em>}, and let <code>PARENT[</code>1<code>]</code>, <code>PARENT[</code>2<code>]</code>, ..., <code>PARENT[</code><em>n</em><code>]</code> be integer variables. This algorithm inputs a set of relations such as (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) and adjusts the <code>PARENT</code> table to represent a set of oriented trees, so that two elements are equivalent as a consequence of the given relations if and only if they belong to the same tree. (<em>Note:</em> In a more general situation, the elements of <em>S</em> would be symbolic names instead of simply the numbers from 1 to <em>n</em>; then a search routine, as in Chapter 6, would locate nodes corresponding to the elements of <em>S</em>, and <code>PARENT</code> would be a field in each node. The modifications for this more general case are straightforward.)</p>
 
   <p class="indenthanging"><a id="page_355"></a><strong>E1.</strong> [Initialize.] Set <code>PARENT</code>[<em>k</em>] ← 0 for 1 ≤ <em>k</em> ≤ <em>n</em>. (This means that all trees initially consist of a root alone, as in (<a href="../Text/ch02a.html#ch02eq-lev2sec9-13">13</a>).)</p>
 
@@ -1320,11 +1320,11 @@
 
   <div class="equation"><a id="ch02eq-lev2sec9-15"></a><img src="../Images/ch02/355equ01.jpg"></div>
 
-  <p class="noindent">which represents the trees</p>
+  <p>which represents the trees</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-16"></a><img src="../Images/ch02/355equ02.jpg"></div>
 
-  <p class="noindent">After this point, the remaining relations of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) are somewhat more interesting; see <a href="../Text/ch02b.html#ch02ex_2_9_9">exercise 9</a>.</p>
+  <p>After this point, the remaining relations of (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>) are somewhat more interesting; see <a href="../Text/ch02b.html#ch02ex_2_9_9">exercise 9</a>.</p>
 
   <p class="indent">This equivalence problem arises in many applications. We will discuss significant refinements of <a href="../Text/ch02a.html#ch02alg-lev2sec9-E">Algorithm E</a> in Section 7.4.1, when we study the connectivity of graphs. A more general version of the problem, which arises when a compiler processes “equivalence declarations” in languages like <code>FORTRAN</code>, is discussed in <a href="../Text/ch02b.html#ch02ex_2_9_11">exercise 11</a>.</p>
 
@@ -1342,7 +1342,7 @@
 
   <div class="image"><img src="../Images/ch02/e357_01.jpg"></div>
 
-  <p class="noindent">where <em>x</em> is a variable, <em>n</em> &gt; 0, 0 = <em>e</em><sub>0</sub> &lt; <em>e</em><sub>1</sub> &lt; · · · &lt; <em>e</em><sub><em>n</em></sub>, and <em>g</em><sub>0</sub>, ..., <em>g</em><sub><em>n</em></sub> are polynomials involving only variables alphabetically less than <em>x</em>; <em>g</em><sub>1</sub>, ..., <em>g</em><sub><em>n</em></sub> are not zero. This recursive definition of polynomials lends itself to tree representation as indicated in <a href="../Text/ch02a.html#ch02fig28">Fig. 28</a>. Nodes have six fields, which in the case of <code>MIX</code> might fit in three words:</p>
+  <p>where <em>x</em> is a variable, <em>n</em> &gt; 0, 0 = <em>e</em><sub>0</sub> &lt; <em>e</em><sub>1</sub> &lt; · · · &lt; <em>e</em><sub><em>n</em></sub>, and <em>g</em><sub>0</sub>, ..., <em>g</em><sub><em>n</em></sub> are polynomials involving only variables alphabetically less than <em>x</em>; <em>g</em><sub>1</sub>, ..., <em>g</em><sub><em>n</em></sub> are not zero. This recursive definition of polynomials lends itself to tree representation as indicated in <a href="../Text/ch02a.html#ch02fig28">Fig. 28</a>. Nodes have six fields, which in the case of <code>MIX</code> might fit in three words:</p>
 
   <div class="equation"><a id="ch02eq-lev2sec9-17"></a><img src="../Images/ch02/357equ01.jpg"></div>
 
@@ -1352,11 +1352,11 @@
     <p class="fig-caption"><strong>Fig. 28.</strong> Representation of polynomials using four-directional links. Shaded areas of nodes indicate information that is irrelevant in the context considered.</p>
   </div>
 
-  <p class="noindent">Here <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code>, and <code>DOWN</code> are links; <code>EXP</code> is an integer representing an exponent; and <code>CV</code> is either a constant (coefficient) or the alphabetic name of a variable. The root node has <code>UP</code> = <em>Λ</em>, <code>EXP</code> = 0, <code>LEFT</code> = <code>RIGHT</code> = <code>*</code> (self).</p>
+  <p>Here <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code>, and <code>DOWN</code> are links; <code>EXP</code> is an integer representing an exponent; and <code>CV</code> is either a constant (coefficient) or the alphabetic name of a variable. The root node has <code>UP</code> = <em>Λ</em>, <code>EXP</code> = 0, <code>LEFT</code> = <code>RIGHT</code> = <code>*</code> (self).</p>
 
   <p class="indent">The following algorithm illustrates traversal, insertion, and deletion in such a four-way-linked tree, so it bears careful study.</p>
 
-  <p class="noindent"><a id="ch02alg-lev2sec9-A"></a><strong>Algorithm A</strong> (<em>Addition of polynomials</em>). This algorithm adds polynomial<code>(P)</code> to polynomial<code>(Q)</code>, assuming that <code>P</code> and <code>Q</code> are pointer variables that link to the roots of distinct polynomial trees having the form shown in <a href="../Text/ch02a.html#ch02fig28">Fig. 28</a>. At the conclusion of the algorithm, polynomial<code>(P)</code> will be unchanged, and polynomial<code>(Q)</code> will contain the sum.</p>
+  <p><a id="ch02alg-lev2sec9-A"></a><strong>Algorithm A</strong> (<em>Addition of polynomials</em>). This algorithm adds polynomial<code>(P)</code> to polynomial<code>(Q)</code>, assuming that <code>P</code> and <code>Q</code> are pointer variables that link to the roots of distinct polynomial trees having the form shown in <a href="../Text/ch02a.html#ch02fig28">Fig. 28</a>. At the conclusion of the algorithm, polynomial<code>(P)</code> will be unchanged, and polynomial<code>(Q)</code> will contain the sum.</p>
 
   <p class="indenthanging"><strong>A1.</strong> [Test type of polynomial.] If <code>DOWN(P)</code> = <em>Λ</em> (that is, if <code>P</code> points to a constant), then set <code>Q</code> ← <code>DOWN(Q)</code> zero or more times until <code>DOWN(Q)</code> = <em>Λ</em> <a id="page_358"></a>and go to A3. If <code>DOWN(P)</code> ≠ <em>Λ</em>, then if <code>DOWN(Q)</code> = <em>Λ</em> or if <code>CV(Q)</code> &lt; <code>CV(P)</code>, go to A2. Otherwise if <code>CV(Q)</code> = <code>CV(P)</code>, set <code>P</code> ← <code>DOWN(P)</code>, <code>Q</code> ← <code>DOWN(Q)</code> and repeat this step; if <code>CV(Q)</code> &gt; <code>CV(P)</code>, set <code>Q</code> ← <code>DOWN(Q)</code> and repeat this step. (Step A1 either finds two matching terms of the polynomials or else determines that an insertion of a new variable must be made into the current part of polynomial<code>(Q)</code>.)</p>
 

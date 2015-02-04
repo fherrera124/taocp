@@ -124,7 +124,7 @@
     <div class="heading">
       <h4 id="ch01lev2sec15">1.4.1. Subroutines</h4>
 
-      <p class="noindent">W<small>HEN A CERTAIN</small> task is to be performed at several different places in a program, it is usually undesirable to repeat the coding in each place. To avoid this situation, the coding (called a <em>subroutine</em>) can be put into one place only, and a few extra instructions can be added to restart the outer program properly after the subroutine is finished. Transfer of control between subroutines and main programs is called <em>subroutine linkage</em>.</p>
+      <p>W<small>HEN A CERTAIN</small> task is to be performed at several different places in a program, it is usually undesirable to repeat the coding in each place. To avoid this situation, the coding (called a <em>subroutine</em>) can be put into one place only, and a few extra instructions can be added to restart the outer program properly after the subroutine is finished. Transfer of control between subroutines and main programs is called <em>subroutine linkage</em>.</p>
     </div>
   </div>
 
@@ -140,15 +140,15 @@
 
   <div class="equation"><a id="ch01eq-lev2sec15-1"></a><img src="../Images/ch01/186equ01.jpg"></div>
 
-  <p class="noindent"><a id="page_187"></a>In a larger program containing this coding as a subroutine, the single instruction ‘<code>JMP MAX100</code>’ would cause register A to be set to the current maximum value of locations <code>X</code> + 1 through <code>X</code> + 100, and the position of the maximum would appear in rI2. Subroutine linkage in this case is achieved by the instructions ‘<code>MAX100 STJ EXIT</code>’ and, later, ‘<code>EXIT JMP</code> *’. Because of the way the J-register operates, the exit instruction will then jump to the location following the place where the original reference to <code>MAX100</code> was made.</p>
+  <p><a id="page_187"></a>In a larger program containing this coding as a subroutine, the single instruction ‘<code>JMP MAX100</code>’ would cause register A to be set to the current maximum value of locations <code>X</code> + 1 through <code>X</code> + 100, and the position of the maximum would appear in rI2. Subroutine linkage in this case is achieved by the instructions ‘<code>MAX100 STJ EXIT</code>’ and, later, ‘<code>EXIT JMP</code> *’. Because of the way the J-register operates, the exit instruction will then jump to the location following the place where the original reference to <code>MAX100</code> was made.</p>
 
-  <p class="noindent"><span class="middle"><img src="../Images/ch01/signal.jpg"></span> <em>Newer computers, such as the machine <code>MMIX</code> that is destined to replace <code>MIX</code>, have better ways to remember return addresses. The main difference is that program instructions are no longer modified in memory; the relevant information is kept in registers or in a special array, not within the program itself. (See <a href="../Text/ch01c.html#ch01ex_2_15_7">exercise 7</a>.) The next edition of this book will adopt the modern view, but for now we will stick to the old-time practice of self-modifying code.</em></p>
+  <p><span class="middle"><img src="../Images/ch01/signal.jpg"></span> <em>Newer computers, such as the machine <code>MMIX</code> that is destined to replace <code>MIX</code>, have better ways to remember return addresses. The main difference is that program instructions are no longer modified in memory; the relevant information is kept in registers or in a special array, not within the program itself. (See <a href="../Text/ch01c.html#ch01ex_2_15_7">exercise 7</a>.) The next edition of this book will adopt the modern view, but for now we will stick to the old-time practice of self-modifying code.</em></p>
 
   <p class="indent">It is not hard to obtain <em>quantitative</em> statements about the amount of code saved and the amount of time lost when subroutines are used. Suppose that a piece of coding requires <em>k</em> locations and that it appears in <em>m</em> places in the program. Rewriting this as a subroutine, we need an extra instruction <code>STJ</code> and an exit line for the subroutine, plus a single <code>JMP</code> instruction in each of the <em>m</em> places where the subroutine is called. This gives a total of <em>m</em> + <em>k</em> + 2 locations, rather than <em>mk</em>, so the amount saved is</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-2"></a><img src="../Images/ch01/187equ01.jpg"></div>
 
-  <p class="noindent">If <em>k</em> is 1 or <em>m</em> is 1 we cannot possibly save any space by using subroutines; this, of course, is obvious. If <em>k</em> is 2, <em>m</em> must be greater than 4 in order to gain, etc.</p>
+  <p>If <em>k</em> is 1 or <em>m</em> is 1 we cannot possibly save any space by using subroutines; this, of course, is obvious. If <em>k</em> is 2, <em>m</em> must be greater than 4 in order to gain, etc.</p>
 
   <p class="indent">The amount of time lost is the time taken for the extra <code>JMP, STJ,</code> and <code>JMP</code> instructions, which are not present if the subroutine is not used; therefore if the subroutine is used <em>t</em> times during a run of the program, 4<em>t</em> extra cycles of time are required.</p>
 
@@ -160,13 +160,13 @@
 
   <div class="image"><img src="../Images/ch01/e188_01.jpg"></div>
 
-  <p class="noindent">involves two steps.</p>
+  <p>involves two steps.</p>
 
   <p class="indent">If the calling sequence takes <em>c</em> memory locations, formula (<a href="../Text/ch01c.html#ch01eq-lev2sec15-2">2</a>) for the amount of space saved changes to</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-3"></a><img src="../Images/ch01/188equ01.jpg"></div>
 
-  <p class="noindent">and the time lost for subroutine linkage is slightly increased.</p>
+  <p>and the time lost for subroutine linkage is slightly increased.</p>
 
   <p class="indent">A further correction to the formulas above can be necessary because certain registers might need to be saved and restored. For example, in the <code>MAX100</code> subroutine, we must remember that by writing ‘<code>JMP MAX100</code>’ we are not only getting the maximum value in register A and its position in register I2; we are also setting register I3 to zero. A subroutine may destroy register contents, and this must be kept in mind. In order to prevent <code>MAX100</code> from changing the setting of rI3, it would be necessary to include additional instructions. The shortest and fastest way to do this with <code>MIX</code> would be to insert the instruction ‘<code>ST3 3F(0:2</code>)’ just after <code>MAX100</code> and then ‘<code>3H ENT3 *</code>’ just before <code>EXIT</code>. The net cost would be an extra two lines of code, plus three machine cycles on every call of the subroutine.</p>
 
@@ -174,17 +174,17 @@
 
   <div class="equation"><a id="ch01eq-lev2sec15-4"></a><img src="../Images/ch01/188equ02.jpg"></div>
 
-  <p class="noindent">(We will customarily omit mention of the fact that register J and the comparison indicator are affected by a subroutine; it has been mentioned here only for completeness.) Note that rX and rI1 are unaffected by the action of the subroutine, for otherwise these registers would have been mentioned in the exit conditions. A specification should also mention all memory locations external to the subroutine that might be affected; in this case the specification allows us to conclude that nothing has been stored, since (<a href="../Text/ch01c.html#ch01eq-lev2sec15-4">4</a>) doesn’t say anything about changes to memory.</p>
+  <p>(We will customarily omit mention of the fact that register J and the comparison indicator are affected by a subroutine; it has been mentioned here only for completeness.) Note that rX and rI1 are unaffected by the action of the subroutine, for otherwise these registers would have been mentioned in the exit conditions. A specification should also mention all memory locations external to the subroutine that might be affected; in this case the specification allows us to conclude that nothing has been stored, since (<a href="../Text/ch01c.html#ch01eq-lev2sec15-4">4</a>) doesn’t say anything about changes to memory.</p>
 
   <p class="indent"><a id="page_189"></a>Now let’s consider <em>multiple entrances</em> to subroutines. Suppose we have a program that requires the general subroutine <code>MAXIMUM</code>, but it usually wants to use the special case <code>MAX100</code> in which <em>n</em> = 100. The two can be combined as follows:</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-5"></a><img src="../Images/ch01/189equ01.jpg"></div>
 
-  <p class="noindent">Subroutine (<a href="../Text/ch01c.html#ch01eq-lev2sec15-5">5</a>) is essentially the same as (<a href="../Text/ch01c.html#ch01eq-lev2sec15-1">1</a>), with the first two instructions interchanged; we have used the fact that ‘<code>ENT3</code>’ does not change the setting of the J-register. If we wanted to add a <em>third</em> entrance, <code>MAX50</code>, to this subroutine, we could insert the code</p>
+  <p>Subroutine (<a href="../Text/ch01c.html#ch01eq-lev2sec15-5">5</a>) is essentially the same as (<a href="../Text/ch01c.html#ch01eq-lev2sec15-1">1</a>), with the first two instructions interchanged; we have used the fact that ‘<code>ENT3</code>’ does not change the setting of the J-register. If we wanted to add a <em>third</em> entrance, <code>MAX50</code>, to this subroutine, we could insert the code</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-6"></a><img src="../Images/ch01/189equ02.jpg"></div>
 
-  <p class="noindent">at the beginning. (Recall that <code>‘JSJ’</code> means jump without changing register J.)</p>
+  <p>at the beginning. (Recall that <code>‘JSJ’</code> means jump without changing register J.)</p>
 
   <p class="indent">When the number of parameters is small, it is often desirable to transmit them to a subroutine either by having them in convenient registers (as we have used rI3 to hold the parameter <em>n</em> in <code>MAXN</code> and as we used rI1 to hold the parameter <em>n</em> in <code>MAXIMUM</code>), or by storing them in fixed memory cells.</p>
 
@@ -192,21 +192,21 @@
 
   <div class="equation"><a id="ch01eq-lev2sec15-7"></a><img src="../Images/ch01/189equ03.jpg"></div>
 
-  <p class="noindent">then the subroutine could be written as follows:</p>
+  <p>then the subroutine could be written as follows:</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-8"></a><img src="../Images/ch01/189equ04.jpg"></div>
 
-  <p class="noindent">On machines like System/360, for which linkage is ordinarily done by putting the exit location in an index register, a convention like this is particularly convenient. It is also useful when a subroutine needs many arguments, or when a program has been written by a compiler. The technique of multiple entrances that we used above often fails in this case, however. We could “fake it” by writing</p>
+  <p>On machines like System/360, for which linkage is ordinarily done by putting the exit location in an index register, a convention like this is particularly convenient. It is also useful when a subroutine needs many arguments, or when a program has been written by a compiler. The technique of multiple entrances that we used above often fails in this case, however. We could “fake it” by writing</p>
 
   <div class="image"><img src="../Images/ch01/e189_01.jpg"></div>
 
-  <p class="noindent">but this is not as attractive as (<a href="../Text/ch01c.html#ch01eq-lev2sec15-5">5</a>).</p>
+  <p>but this is not as attractive as (<a href="../Text/ch01c.html#ch01eq-lev2sec15-5">5</a>).</p>
 
   <p class="indent"><a id="page_190"></a>A technique similar to that of listing arguments after the jump is normally used for subroutines with <em>multiple exits</em>. Multiple exit means that we want the subroutine to return to one of several different locations, depending on conditions detected by the subroutine. In the strictest sense, the location to which a subroutine exits is a parameter; so if there are several places to which it might exit, depending on the circumstances, they should be supplied as arguments. Our final example of the “maximum” subroutine will have two entrances and two exits. The calling sequence is:</p>
 
   <div class="image"><img src="../Images/ch01/e190_01.jpg"></div>
 
-  <p class="noindent">(In other words, exit is made to the location <em>two</em> past the jump when the maximum value is positive and less than the contents of register X.) The subroutine for these conditions is easily written:</p>
+  <p>(In other words, exit is made to the location <em>two</em> past the jump when the maximum value is positive and less than the contents of register X.) The subroutine for these conditions is easily written:</p>
 
   <div class="equation"><a id="ch01eq-lev2sec15-9"></a><img src="../Images/ch01/190equ01.jpg"></div>
 
@@ -265,7 +265,7 @@
   <div class="heading">
     <h4 id="ch01lev2sec16">1.4.2. Coroutines</h4>
 
-    <p class="noindent">Subroutines are special cases of more general program components, called <em>coroutines</em>. In contrast to the unsymmetric relationship between a main routine and a subroutine, there is complete symmetry between coroutines, which <em>call on each other</em>.</p>
+    <p>Subroutines are special cases of more general program components, called <em>coroutines</em>. In contrast to the unsymmetric relationship between a main routine and a subroutine, there is complete symmetry between coroutines, which <em>call on each other</em>.</p>
   </div>
 
   <p class="indent"><a id="page_194"></a>To understand the coroutine concept, let us consider another way of thinking about subroutines. The viewpoint adopted in the previous section was that a subroutine merely was an extension of the computer hardware, introduced to save lines of coding. This may be true, but another point of view is possible: We may consider the main program and the subroutine as a <em>team</em> of programs, each member of the team having a certain job to do. The main program, in the course of doing its job, will activate the subprogram; the subprogram will perform its own function and then activate the main program. We might stretch our imagination to believe that, from the subroutine’s point of view, when it exits <em>it</em> is calling the <em>main</em> routine; the main routine continues to perform its duty, then “exits” to the subroutine. The subroutine acts, then calls the main routine again.</p>
@@ -278,7 +278,7 @@
 
   <div class="equation"><a id="ch01eq-lev2sec16-1"></a><img src="../Images/ch01/194equ01.jpg"></div>
 
-  <p class="noindent">This requires four machine cycles for transfer of control each way. Initially <code>AX</code> and <code>BX</code> are set to jump to the starting places of each coroutine, <code>A1</code> and <code>B1</code>. Suppose we start up coroutine <code>A</code> first, at location <code>A1</code>. When it executes ‘<code>JMP B</code>’ from location <code>A2</code>, say, the instruction in location <code>B</code> stores rJ in <code>AX</code>, which then says ‘<code>JMP A2+1</code>’. The instruction in <code>BX</code> gets us to location <code>B1</code>, and after coroutine <code>B</code> begins its execution, it will eventually get to an instruction ‘<code>JMP A</code>’ in location <code>B2</code>, say. We store rJ in <code>BX</code> and jump to location <code>A2+1</code>, continuing the execution of coroutine <code>A</code> until it again jumps to <code>B</code>, which stores rJ in <code>AX</code> and jumps to <code>B2+1</code>, etc.</p>
+  <p>This requires four machine cycles for transfer of control each way. Initially <code>AX</code> and <code>BX</code> are set to jump to the starting places of each coroutine, <code>A1</code> and <code>B1</code>. Suppose we start up coroutine <code>A</code> first, at location <code>A1</code>. When it executes ‘<code>JMP B</code>’ from location <code>A2</code>, say, the instruction in location <code>B</code> stores rJ in <code>AX</code>, which then says ‘<code>JMP A2+1</code>’. The instruction in <code>BX</code> gets us to location <code>B1</code>, and after coroutine <code>B</code> begins its execution, it will eventually get to an instruction ‘<code>JMP A</code>’ in location <code>B2</code>, say. We store rJ in <code>BX</code> and jump to location <code>A2+1</code>, continuing the execution of coroutine <code>A</code> until it again jumps to <code>B</code>, which stores rJ in <code>AX</code> and jumps to <code>B2+1</code>, etc.</p>
 
   <p class="indent">The essential difference between routine-subroutine and coroutine-coroutine linkage, as can be seen by studying the example above, is that a subroutine is always initiated <em>at its beginning</em>, which is usually a fixed place; the main routine or a coroutine is always initiated <em>at the place following</em> where it last terminated.</p>
 
@@ -288,11 +288,11 @@
 
   <div class="equation"><a id="ch01eq-lev2sec16-2"></a><img src="../Images/ch01/195equ01.jpg"></div>
 
-  <p class="noindent">This has been punched onto cards; blank columns appearing on these cards are to be ignored. The input is to be understood as follows, from left to right: If the next character is a digit <code>0</code>, <code>1</code>, ..., <code>9</code>, say <em>n</em>, it indicates (<em>n</em> + 1) repetitions of the following character, whether the following character is a digit or not. A nondigit simply denotes itself. The output of our program is to consist of the sequence indicated in this manner and separated into groups of three characters each, until a period appears; the last group may have fewer than three characters. For example, (<a href="../Text/ch01c.html#ch01eq-lev2sec16-2">2</a>) should be translated by our program into</p>
+  <p>This has been punched onto cards; blank columns appearing on these cards are to be ignored. The input is to be understood as follows, from left to right: If the next character is a digit <code>0</code>, <code>1</code>, ..., <code>9</code>, say <em>n</em>, it indicates (<em>n</em> + 1) repetitions of the following character, whether the following character is a digit or not. A nondigit simply denotes itself. The output of our program is to consist of the sequence indicated in this manner and separated into groups of three characters each, until a period appears; the last group may have fewer than three characters. For example, (<a href="../Text/ch01c.html#ch01eq-lev2sec16-2">2</a>) should be translated by our program into</p>
 
   <div class="equation"><a id="ch01eq-lev2sec16-3"></a><img src="../Images/ch01/195equ02.jpg"></div>
 
-  <p class="noindent">Note that <code>3426F</code> does not mean 3427 repetitions of the letter <code>F</code>; it means 4 fours and 3 sixes followed by <code>F</code>. If the input sequence is ‘<code>1</code>.’, the output is simply ‘.’, not ‘..’, because the first period terminates the output. Our program should punch the output onto cards, with sixteen groups of three on each card except possibly the last.</p>
+  <p>Note that <code>3426F</code> does not mean 3427 repetitions of the letter <code>F</code>; it means 4 fours and 3 sixes followed by <code>F</code>. If the input sequence is ‘<code>1</code>.’, the output is simply ‘.’, not ‘..’, because the first period terminates the output. Our program should punch the output onto cards, with sixteen groups of three on each card except possibly the last.</p>
 
   <p class="indent">To accomplish this translation, we will write two coroutines and a subroutine. The subroutine, called <code>NEXTCHAR</code>, is designed to find nonblank characters of the input, and to put the next such character into register A:</p>
 
@@ -306,7 +306,7 @@
 
   <div class="image3"><img src="../Images/ch01/196pro01.jpg"></div>
 
-  <p class="noindent">(Recall that in <code>MIX</code>’s character code, the digits 0–9 have codes 30–39.) This coroutine has the following characteristics:</p>
+  <p>(Recall that in <code>MIX</code>’s character code, the digits 0–9 have codes 30–39.) This coroutine has the following characteristics:</p>
 
   <div class="imageL"><img src="../Images/ch01/p0196_02.jpg"></div>
 
@@ -360,7 +360,7 @@
 
   <p class="uln-indent"><em>Little boy</em>. “Just watch me, and get off two stops before I do.”</p>
 
-  <p class="noindent">(The joke is that the little boy gives a two-pass algorithm.)</p>
+  <p>(The joke is that the little boy gives a two-pass algorithm.)</p>
 
   <p class="indent">So much for multipass algorithms. We will see further examples of coroutines in numerous places throughout this book, for example, as part of the buffering schemes in <a href="../Text/ch01c.html#ch01lev2sec18">Section 1.4.4</a>. Coroutines also play an important role in discrete system simulation; see <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>. The important idea of <em>replicated coroutines</em> is discussed in Chapter 8, and some interesting applications of this idea may be found in Chapter 10.</p>
 
@@ -383,7 +383,7 @@
   <div class="heading">
     <h4 id="ch01lev2sec17">1.4.3. Interpretive Routines</h4>
 
-    <p class="noindent">In this section we will investigate a common type of computer program, the <em>interpretive routine</em> (which will be called <em>interpreter</em> for short). An interpretive routine is a computer program that performs the instructions of another program, where the other program is written in some machine-like language. By a machine-like language, we mean a way of representing instructions, where the instructions typically have operation codes, addresses, etc. (This definition, like most definitions of today’s computer terms, is not precise, nor should it be; we <a id="page_201"></a>cannot draw the line exactly and say just which programs are interpreters and which are not.)</p>
+    <p>In this section we will investigate a common type of computer program, the <em>interpretive routine</em> (which will be called <em>interpreter</em> for short). An interpretive routine is a computer program that performs the instructions of another program, where the other program is written in some machine-like language. By a machine-like language, we mean a way of representing instructions, where the instructions typically have operation codes, addresses, etc. (This definition, like most definitions of today’s computer terms, is not precise, nor should it be; we <a id="page_201"></a>cannot draw the line exactly and say just which programs are interpreters and which are not.)</p>
   </div>
 
   <p class="indent">Historically, the first interpreters were built around machine-like languages designed specially for simple programming; such languages were easier to use than a real machine language. The rise of symbolic languages for programming soon eliminated the need for interpretive routines of that kind, but interpreters have by no means begun to die out. On the contrary, their use has continued to grow, to the extent that an effective use of interpretive routines may be regarded as one of the essential characteristics of modern programming. The new applications of interpreters are made chiefly for the following reasons:</p>
@@ -411,7 +411,7 @@
   <div class="heading">
     <h5 id="ch01lev3sec4">1.4.3.1. A <span class="EmpStrong">MIX</span> simulator</h5>
 
-    <p class="noindent">When the language presented to an interpretive routine is the machine language of another computer, the interpreter is often called a <em>simulator</em> (or sometimes an <em>emulator</em>).</p>
+    <p>When the language presented to an interpretive routine is the machine language of another computer, the interpreter is often called a <em>simulator</em> (or sometimes an <em>emulator</em>).</p>
   </div>
 
   <p class="indent">In the author’s opinion, entirely too much programmers’ time has been spent in writing such simulators and entirely too much computer time has been <a id="page_203"></a>wasted in using them. The motivation for simulators is simple: A computer installation buys a new machine and still wants to run programs written for the old machine (rather than rewriting the programs). However, this usually costs more and gives poorer results than if a special task force of programmers were given temporary employment to do the reprogramming. For example, the author once participated in such a reprogramming project, and a serious error was discovered in the original program, which had been in use for several years; the new program worked at five times the speed of the old, besides giving the right answers for a change! (Not all simulators are bad; for example, it is usually advantageous for a computer manufacturer to simulate a new machine before it has been built, so that software for the new machine may be developed as soon as possible. But that is a very specialized application.) An extreme example of the inefficient use of computer simulators is the true story of machine <em>A</em> simulating machine <em>B</em> running a program that simulates machine <em>C</em> ! This is the way to make a large, expensive computer give poorer results than its cheaper cousin.</p>
@@ -430,7 +430,7 @@
 
   <p class="center"><code>AREG, I1REG, I2REG, I3REG, I4REG, I5REG, I6REG, XREG, JREG, ZERO.</code></p>
 
-  <p class="noindent">Here <code>ZERO</code> is a “register” filled with zeros at all times. The positions of <code>JREG</code> and <code>ZERO</code> are suggested by the op-code numbers of the instructions <code>STJ</code> and <code>STZ</code>.</p>
+  <p>Here <code>ZERO</code> is a “register” filled with zeros at all times. The positions of <code>JREG</code> and <code>ZERO</code> are suggested by the op-code numbers of the instructions <code>STJ</code> and <code>STZ</code>.</p>
 
   <p class="indent"><a id="page_204"></a>In keeping with our philosophy of writing the simulator as though it were not really done with <code>MIX</code> hardware, we will treat the signs as independent parts of a register. For example, many computers cannot represent the number “minus zero”, while <code>MIX</code> definitely can; therefore we will always treat signs specially in this program. The locations <code>AREG, I1REG, ..., ZERO</code> will always contain the absolute values of the corresponding register contents; another set of locations in our program, called <code>SIGNA, SIGN1, ..., SIGNZ</code> will contain +1 or −1, depending on whether the sign of the corresponding register is plus or minus.</p>
 
@@ -448,7 +448,7 @@
 
   <p class="uln-indent"><code>INST</code> = the present instruction.</p>
 
-  <p class="noindent"><a id="ch01c_pro_m"></a><strong>Program M.</strong></p>
+  <p><a id="ch01c_pro_m"></a><strong>Program M.</strong></p>
 
   <div class="image3"><img src="../Images/ch01/204pro01.jpg"></div>
 
@@ -462,7 +462,7 @@
 
   <div class="image3"><img src="../Images/ch01/205pro01a.jpg"></div>
 
-  <p class="noindent"><a id="page_206"></a>(The entries for operators <code>LD<em>i</em>, LD<em>i</em>N,</code> and <code>INC<em>i</em></code> have an additional ‘<code>,1</code>’ to set the (3:3) field nonzero; this is used below in lines 289–290 to indicate the fact that the size of the quantity within the corresponding index register must be checked after simulating these operations.)</p>
+  <p><a id="page_206"></a>(The entries for operators <code>LD<em>i</em>, LD<em>i</em>N,</code> and <code>INC<em>i</em></code> have an additional ‘<code>,1</code>’ to set the (3:3) field nonzero; this is used below in lines 289–290 to indicate the fact that the size of the quantity within the corresponding index register must be checked after simulating these operations.)</p>
 
   <p class="indent">The next part of our simulator program merely lists the locations used to contain the contents of the simulated registers:</p>
 
@@ -541,7 +541,7 @@
   <div class="heading">
     <h5 id="ch01lev3sec5">*1.4.3.2. Trace routines</h5>
 
-    <p class="noindent">When a machine is being simulated on itself (as <code>MIX</code> was simulated on <code>MIX</code> in the previous section) we have the special case of a simulator called a <em>trace</em> or <em>monitor</em> routine. Such programs are occasionally used to help in debugging, since they print out a step-by-step account of how the simulated program behaves.</p>
+    <p>When a machine is being simulated on itself (as <code>MIX</code> was simulated on <code>MIX</code> in the previous section) we have the special case of a simulator called a <em>trace</em> or <em>monitor</em> routine. Such programs are occasionally used to help in debugging, since they print out a step-by-step account of how the simulated program behaves.</p>
   </div>
 
   <p class="indent">The program in the preceding section was written as though another computer were simulating <code>MIX</code>. A quite different approach is used for trace programs; we generally let registers represent themselves and let the operators perform themselves. In fact, we usually contrive to let the machine execute most of the instructions by itself. The chief exception is a jump or conditional jump instruction, which must not be executed without modification, since the trace program must remain in control. Each machine also has idiosyncratic features that make tracing more of a challenge; in <code>MIX</code>’s case, the J-register presents the most interesting problem.</p>
@@ -607,10 +607,10 @@
   <div class="heading">
     <h4 id="ch01lev2sec18"><a id="page_215"></a>1.4.4. Input and Output</h4>
 
-    <p class="noindent">Perhaps the most outstanding differences between one computer and the next are the facilities available for doing input and output, and the computer instructions that govern those peripheral devices. We cannot hope to discuss in a single book all of the problems and techniques that arise in this area, so we will confine ourselves to a study of typical input-output methods that apply to most computers. The input-output operators of <code>MIX</code> represent a compromise between the widely varying facilities available in actual machines; to give an example of how to think about input-output, let us discuss in this section the problem of getting the best <code>MIX</code> input-output.</p>
+    <p>Perhaps the most outstanding differences between one computer and the next are the facilities available for doing input and output, and the computer instructions that govern those peripheral devices. We cannot hope to discuss in a single book all of the problems and techniques that arise in this area, so we will confine ourselves to a study of typical input-output methods that apply to most computers. The input-output operators of <code>MIX</code> represent a compromise between the widely varying facilities available in actual machines; to give an example of how to think about input-output, let us discuss in this section the problem of getting the best <code>MIX</code> input-output.</p>
   </div>
 
-  <p class="noindent"><span class="middle"><img src="../Images/ch01/signal.jpg"></span> <em>Once again the reader is asked to be indulgent about the anachronistic <span class="EmpItalic">MIX</span> computer with its punched cards, etc. Although such old-fashioned devices are now quite obsolete, they still can teach important lessons. The <span class="EmpItalic">MMIX</span> computer, when it comes, will of course teach those lessons even better.</em></p>
+  <p><span class="middle"><img src="../Images/ch01/signal.jpg"></span> <em>Once again the reader is asked to be indulgent about the anachronistic <span class="EmpItalic">MIX</span> computer with its punched cards, etc. Although such old-fashioned devices are now quite obsolete, they still can teach important lessons. The <span class="EmpItalic">MMIX</span> computer, when it comes, will of course teach those lessons even better.</em></p>
 
   <p class="indent">Many computer users feel that input and output are not actually part of “real” programming; input and output are considered to be tedious tasks that people must perform only because they need to get information in and out of a machine. For this reason, the input and output facilities of a computer are usually not learned until after all other features have been examined, and it frequently happens that only a small fraction of the programmers of a particular machine ever know much about the details of input and output. This attitude is somewhat natural, because the input-output facilities of machines have never been especially pretty. However, the situation cannot be expected to improve until more people give serious thought to the subject. We shall see in this section and elsewhere (for example, in Section 5.4.6) that some very interesting issues arise in connection with input-output, and some pleasant algorithms do exist.</p>
 
@@ -622,17 +622,17 @@
 
   <div class="equation"><a id="ch01eq-lev2sec18-1"></a><img src="../Images/ch01/216equ01.jpg"></div>
 
-  <p class="noindent">We have used this rudimentary method in the program of <a href="../Text/ch01c.html#ch01lev2sec16">Section 1.4.2</a> (see lines <a href="../Text/ch01c.html#l195pro01">07–08</a> and <a href="../Text/ch01c.html#l196pro02">52–53</a>). The method is generally wasteful of computer time, however, because a very large amount of potentially useful calculating time, say 1000<em>u</em> or even 10000<em>u</em>, is consumed by repeated execution of the <code>‘JBUS’</code> instruction. The program’s running speed can be as much as doubled if this additional time is utilized for calculation. (See <a href="../Text/ch01c.html#ch01ex_2_18_4">exercises 4</a> and <a href="../Text/ch01c.html#ch01ex_2_18_5">5</a>.)</p>
+  <p>We have used this rudimentary method in the program of <a href="../Text/ch01c.html#ch01lev2sec16">Section 1.4.2</a> (see lines <a href="../Text/ch01c.html#l195pro01">07–08</a> and <a href="../Text/ch01c.html#l196pro02">52–53</a>). The method is generally wasteful of computer time, however, because a very large amount of potentially useful calculating time, say 1000<em>u</em> or even 10000<em>u</em>, is consumed by repeated execution of the <code>‘JBUS’</code> instruction. The program’s running speed can be as much as doubled if this additional time is utilized for calculation. (See <a href="../Text/ch01c.html#ch01ex_2_18_4">exercises 4</a> and <a href="../Text/ch01c.html#ch01ex_2_18_5">5</a>.)</p>
 
   <p class="indent">One way to avoid such a “busy wait” is to use two areas of memory for the input: We can read into one area while computing with the data in the other. For example, we could begin our program with the instruction</p>
 
   <div class="equation"><a id="ch01eq-lev2sec18-2"></a><img src="../Images/ch01/216equ02.jpg"></div>
 
-  <p class="noindent">Subsequently, we may give the following five commands whenever a tape block is desired:</p>
+  <p>Subsequently, we may give the following five commands whenever a tape block is desired:</p>
 
   <div class="equation"><a id="ch01eq-lev2sec18-3"></a><img src="../Images/ch01/216equ03.jpg"></div>
 
-  <p class="noindent">This has the same overall effect as (<a href="../Text/ch01c.html#ch01eq-lev2sec18-1">1</a>), but it keeps the input tape busy while the program works on the data in locations 1000–1099.</p>
+  <p>This has the same overall effect as (<a href="../Text/ch01c.html#ch01eq-lev2sec18-1">1</a>), but it keeps the input tape busy while the program works on the data in locations 1000–1099.</p>
 
   <p class="indent">The last instruction of (<a href="../Text/ch01c.html#ch01eq-lev2sec18-3">3</a>) begins to read a tape block into locations 2000– 2099 before the preceding block has been examined. This is called “reading ahead” or <em>anticipated input</em> — it is done on faith that the block will eventually be needed. In fact, however, we might discover that no more input is really required, after we begin to examine the block in 1000–1099. For example, consider the analogous situation in the coroutine program of <a href="../Text/ch01c.html#ch01lev2sec16">Section 1.4.2</a>, where the input was coming from punched cards instead of tape: A ‘.’ appearing anywhere in the card meant that it was the final card of the deck. Such a situation would make anticipated input impossible, unless we could assume that either (a) a blank card or special trailer card of some other sort would follow the input deck, or (b) an identifying mark (e.g., ‘.’) would appear in, say, column 80 of the final card of the deck. Some means for terminating the input properly at the end of the program must always be provided whenever input has been anticipated.</p>
 
@@ -646,7 +646,7 @@
 
   <div class="equation"><a id="ch01eq-lev2sec18-4"></a><img src="../Images/ch01/217equ01.jpg"></div>
 
-  <p class="noindent">In this routine, index register 6 is used to address the last word of input; we assume that the calling program does not affect this register. The symbol <code>U</code> <a id="page_218"></a>refers to a tape unit, and the symbol <code>SENTINEL</code> refers to a value that is known (from characteristics of the program) to be <em>absent</em> from all tape blocks.</p>
+  <p>In this routine, index register 6 is used to address the last word of input; we assume that the calling program does not affect this register. The symbol <code>U</code> <a id="page_218"></a>refers to a tape unit, and the symbol <code>SENTINEL</code> refers to a value that is known (from characteristics of the program) to be <em>absent</em> from all tape blocks.</p>
 
   <p class="indent">Several things about this subroutine should be noted:</p>
 
@@ -662,7 +662,7 @@
 
   <p class="indent">The techniques that we have illustrated for input apply, with minor changes, to output as well (see <a href="../Text/ch01c.html#ch01ex_2_18_2">exercises 2</a> and <a href="../Text/ch01c.html#ch01ex_2_18_3">3</a>).</p>
 
-  <p class="noindent"><strong>Multiple buffers.</strong> Buffer swapping is just the special case <em>N</em> = 2 of a general method involving <em>N</em> buffers. In some applications it is desirable to have more than two buffers; for example, consider the following type of algorithm:</p>
+  <p><strong>Multiple buffers.</strong> Buffer swapping is just the special case <em>N</em> = 2 of a general method involving <em>N</em> buffers. In some applications it is desirable to have more than two buffers; for example, consider the following type of algorithm:</p>
 
   <p class="uln-indent"><a id="page_219"></a><strong>Step 1.</strong> Read five blocks in rapid succession.</p>
 
@@ -670,7 +670,7 @@
 
   <p class="uln-indent"><strong>Step 3.</strong> Return to step 1.</p>
 
-  <p class="noindent">Here five or six buffers would be desirable, so that the next batch of five blocks could be read during step 2. This tendency for I/O activity to be “bunched” makes multiple buffering an improvement over buffer swapping.</p>
+  <p>Here five or six buffers would be desirable, so that the next batch of five blocks could be read during step 2. This tendency for I/O activity to be “bunched” makes multiple buffering an improvement over buffer swapping.</p>
 
   <p class="indent">Suppose we have <em>N</em> buffers for some input or output process using a single I/O device; we will imagine that the buffers are arranged in a circle, as in <a href="../Text/ch01c.html#ch01fig23">Fig. 23</a>. The program external to the buffering process can be assumed to have the following general form with respect to the I/O unit of interest: .</p>
 
@@ -682,13 +682,13 @@
     <p class="fig-caption"><strong>Fig. 23.</strong> A circle of buffers (<em>N</em> = 6).</p>
   </div>
 
-  <p class="noindent">in other words, we can assume that the program alternates between an action called “<code>ASSIGN</code>” and an action called “<code>RELEASE</code>”, separated by other computations that do not affect the allocation of buffers.</p>
+  <p>in other words, we can assume that the program alternates between an action called “<code>ASSIGN</code>” and an action called “<code>RELEASE</code>”, separated by other computations that do not affect the allocation of buffers.</p>
 
   <p class="uln-indent"><code>ASSIGN</code> means that the program acquires the address of the next buffer area; this address is assigned as the value of some program variable.</p>
 
   <p class="uln-indent"><code>RELEASE</code> means that the program is done with the current buffer area.</p>
 
-  <p class="noindent">Between <code>ASSIGN</code> and <code>RELEASE</code> the program is communicating with one of the buffers, called the <em>current</em> buffer area; between <code>RELEASE</code> and <code>ASSIGN</code>, the program makes no reference to any buffer area.</p>
+  <p>Between <code>ASSIGN</code> and <code>RELEASE</code> the program is communicating with one of the buffers, called the <em>current</em> buffer area; between <code>RELEASE</code> and <code>ASSIGN</code>, the program makes no reference to any buffer area.</p>
 
   <p class="indent">Conceivably, <code>ASSIGN</code> could immediately follow <code>RELEASE</code>, and discussions of buffering have often been based on this assumption. However, if <code>RELEASE</code> is done as soon as possible, the buffering process has more freedom and will be more effective; by separating the two essentially different functions of <code>ASSIGN</code> and <code>RELEASE</code> we will find that the buffering technique remains easy to understand, and our discussion will be meaningful even if <em>N</em> = 1.</p>
 
@@ -696,11 +696,11 @@
 
   <p class="indent">For output, consider the case of a line printer. The action <code>ASSIGN</code> occurs when a free buffer area is needed, into which a line image is to be placed for printing. We wish to set an index register equal to the memory address of such an area. The action <code>RELEASE</code> occurs when this line image has been fully set up in the buffer area, in a form ready to be printed.</p>
 
-  <p class="noindent"><em>Example:</em> To print the contents of locations 0800–0823, we might write</p>
+  <p><em>Example:</em> To print the contents of locations 0800–0823, we might write</p>
 
   <div class="equation"><a id="ch01eq-lev2sec18-5"></a><img src="../Images/ch01/220equ01.jpg"></div>
 
-  <p class="noindent">where <code>ASSIGNP</code> and <code>RELEASEP</code> represent subroutines to do the two buffering functions for the line printer.</p>
+  <p>where <code>ASSIGNP</code> and <code>RELEASEP</code> represent subroutines to do the two buffering functions for the line printer.</p>
 
   <p class="indent">In an optimal situation, from the standpoint of the computer, the <code>ASSIGN</code> operation will require virtually no execution time. This means, on input, that each card image will have been anticipated, so that the data is available when the program is ready for it; and on output, it means that there will always be a free place in memory to record the line image. In either case, no time will be spent waiting for the I/O device.</p>
 
@@ -722,7 +722,7 @@
 
   <p class="indent">The algorithms below apply equally well to input or output, but for definiteness we will consider first the case of input from a card reader. Suppose that a program has reached the state shown in <a href="../Text/ch01c.html#ch01fig23">Fig. 23</a>. This means that four card images have been anticipated by the buffering process, and they reside in the green buffers. At this moment, two things are happening <em>simultaneously</em>: (a) The program is computing, following a <code>RELEASE</code> operation; (b) a card is being read into the buffer indicated by <code>NEXTR</code>. This state of affairs will continue until the input cycle is completed (the unit will then go from “busy” to “ready”), or until the program does an <code>ASSIGN</code> operation. Suppose the latter occurs first; then the buffer indicated by <code>NEXTG</code> changes to yellow (it is assigned as the current buffer),</p>
 
-  <p class="noindent"><a id="page_221"></a><code>NEXTG</code> moves clockwise, and we arrive at the position shown in <a href="../Text/ch01c.html#ch01fig24">Fig. 24(a)</a>. If now the input is completed, another anticipated block is present; so the buffer changes from red to green, and <code>NEXTR</code> moves over as shown in <a href="../Text/ch01c.html#ch01fig24">Fig. 24(b)</a>. If the <code>RELEASE</code> operation follows next, we obtain <a href="../Text/ch01c.html#ch01fig24">Fig. 24(c)</a>.</p>
+  <p><a id="page_221"></a><code>NEXTG</code> moves clockwise, and we arrive at the position shown in <a href="../Text/ch01c.html#ch01fig24">Fig. 24(a)</a>. If now the input is completed, another anticipated block is present; so the buffer changes from red to green, and <code>NEXTR</code> moves over as shown in <a href="../Text/ch01c.html#ch01fig24">Fig. 24(b)</a>. If the <code>RELEASE</code> operation follows next, we obtain <a href="../Text/ch01c.html#ch01fig24">Fig. 24(c)</a>.</p>
 
   <p class="indent">For an example concerning output, see <a href="../Text/ch01c.html#ch01fig27">Fig. 27</a> on page <a href="../Text/ch01c.html#ch01fig27">226</a>. That illustration shows the “colors” of buffer areas as a function of time, in a program that opens with four quick outputs, then produces four at a slow pace, and finally issues two in rapid succession as the program ends. Three buffers appear in that example.</p>
 
@@ -732,15 +732,15 @@
 
   <p class="indenthangingA">b) if <code>NEXTR</code> tries to pass <code>NEXTG,</code> the I/O device has gotten ahead of the program and we must shut it down until the next <code>RELEASE</code> is given.</p>
 
-  <p class="noindent">Both of these situations are depicted in <a href="../Text/ch01c.html#ch01fig24">Fig. 24</a>. (See <a href="../Text/ch01c.html#ch01ex_2_18_9">exercise 9</a>.)</p>
+  <p>Both of these situations are depicted in <a href="../Text/ch01c.html#ch01fig24">Fig. 24</a>. (See <a href="../Text/ch01c.html#ch01ex_2_18_9">exercise 9</a>.)</p>
 
   <p class="indent">Fortunately, in spite of the rather lengthy explanation just given of the ideas behind a circle of buffers, the actual algorithms for handling the situation are quite simple. In the following description,</p>
 
   <div class="equation"><a id="ch01eq-lev2sec18-6"></a><img src="../Images/ch01/221equ01.jpg"></div>
 
-  <p class="noindent">The variable <em>n</em> is used in the algorithm below to avoid interference between <code>NEXTG</code> and <code>NEXTR</code>.</p>
+  <p>The variable <em>n</em> is used in the algorithm below to avoid interference between <code>NEXTG</code> and <code>NEXTR</code>.</p>
 
-  <p class="noindent"><a id="ch01alg-lev2sec18-A"></a><strong>Algorithm A</strong> <code>(ASSIGN).</code> This algorithm includes the steps implied by <code>ASSIGN</code> within a computational program, as described above.</p>
+  <p><a id="ch01alg-lev2sec18-A"></a><strong>Algorithm A</strong> <code>(ASSIGN).</code> This algorithm includes the steps implied by <code>ASSIGN</code> within a computational program, as described above.</p>
 
   <p class="indenthanging"><strong>Al.</strong> [Wait for <em>n</em> &lt; N.] If <em>n</em> = <em>N</em>, stall the program until <em>n</em> &lt; <em>N</em>. (If <em>n</em> = <em>N</em>, no buffers are ready to be assigned; but <a href="../Text/ch01c.html#ch01alg-lev2sec18-B">Algorithm B</a> below, which runs in parallel with this one, will eventually succeed in producing a green buffer.)</p>
 
@@ -748,11 +748,11 @@
 
   <p class="indenthanging"><strong>A3.</strong> [Advance <code>NEXTG</code>.] Advance <code>NEXTG</code> to the next clockwise buffer. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
 
-  <p class="noindent"><a id="ch01alg-lev2sec18-R"></a><strong>Algorithm R</strong> (<code>RELEASE</code>). This algorithm includes the steps implied by <code>RELEASE</code> within a computational program, as described above.</p>
+  <p><a id="ch01alg-lev2sec18-R"></a><strong>Algorithm R</strong> (<code>RELEASE</code>). This algorithm includes the steps implied by <code>RELEASE</code> within a computational program, as described above.</p>
 
   <p class="indenthanging"><strong>R1.</strong> [Increase <em>n</em>.] Increase <em>n</em> by one. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
 
-  <p class="noindent"><a id="ch01alg-lev2sec18-B"></a><strong>Algorithm B</strong> (<em>Buffer control</em>). This algorithm performs the actual initiation of I/O operators in the machine; it is to be executed “simultaneously” with the main program, in the sense described below.</p>
+  <p><a id="ch01alg-lev2sec18-B"></a><strong>Algorithm B</strong> (<em>Buffer control</em>). This algorithm performs the actual initiation of I/O operators in the machine; it is to be executed “simultaneously” with the main program, in the sense described below.</p>
 
   <p class="indenthanging"><strong>B1.</strong> [Compute.] Let the main program compute for a short period of time; step B2. will be executed after a certain time delay, at a time when the I/O device is ready for another operation.</p>
 
@@ -770,7 +770,7 @@
 
   <p class="indent">Coding this algorithm for <code>MIX</code> is extremely simple. For convenience, assume that the buffers are linked so that the word <em>preceding</em> each one is the address of the next; for example, with <em>N</em> = 3 buffers we have <code>CONTENTS(BUF1</code> − 1<code>)</code> = <code>BUF2</code>, <code>CONTENTS(BUF2</code> − 1<code>)</code> = <code>BUF3</code>, and <code>CONTENTS(BUF3</code> − 1<code>)</code> = <code>BUF1</code>.</p>
 
-  <p class="noindent"><a id="programA"></a><strong>Program A</strong> (<code>ASSIGN</code><em>, a subroutine within the</em> <code>COMPUTE</code> <em>coroutine</em>). rI4 ≡ <code>CURRENT</code>; rI6 ≡ <em>n</em>; calling sequence is <code>JMP ASSIGN</code>; on exit, rX contains <code>NEXTG</code>.</p>
+  <p><a id="programA"></a><strong>Program A</strong> (<code>ASSIGN</code><em>, a subroutine within the</em> <code>COMPUTE</code> <em>coroutine</em>). rI4 ≡ <code>CURRENT</code>; rI6 ≡ <em>n</em>; calling sequence is <code>JMP ASSIGN</code>; on exit, rX contains <code>NEXTG</code>.</p>
 
   <div class="image2"><img src="../Images/ch01/e222_01.jpg"></div>
 
@@ -780,11 +780,11 @@
     <p class="fig-caption"><strong>Fig. 25.</strong> Algorithms for multiple buffering.</p>
   </div>
 
-  <p class="noindent"><a id="programR"></a><strong>Program R</strong> (<code>RELEASE</code><em>, code used within the</em> <code>COMPUTE</code> <em>coroutine</em>). rI6 ≡ <em>n</em>. This short code is to be inserted wherever <code>RELEASE</code> is desired.</p>
+  <p><a id="programR"></a><strong>Program R</strong> (<code>RELEASE</code><em>, code used within the</em> <code>COMPUTE</code> <em>coroutine</em>). rI6 ≡ <em>n</em>. This short code is to be inserted wherever <code>RELEASE</code> is desired.</p>
 
   <div class="image3"><img src="../Images/ch01/223pro01.jpg"></div>
 
-  <p class="noindent"><a id="programB"></a><strong>Program B</strong> (<em>The</em> <code>CONTROL</code> <em>coroutine</em>). rI6 ≡ <em>n</em>, rI5 ≡ <code>NEXTR</code>.</p>
+  <p><a id="programB"></a><strong>Program B</strong> (<em>The</em> <code>CONTROL</code> <em>coroutine</em>). rI6 ≡ <em>n</em>, rI5 ≡ <code>NEXTR</code>.</p>
 
   <div class="image3"><img src="../Images/ch01/223pro02.jpg"></div>
 
@@ -792,7 +792,7 @@
 
   <div class="image3"><img src="../Images/ch01/223pro03.jpg"></div>
 
-  <p class="noindent">and the instruction ‘<code>JRED CONTROL(U)</code>’ should be placed within <code>COMPUTE</code> about once in every fifty instructions.</p>
+  <p>and the instruction ‘<code>JRED CONTROL(U)</code>’ should be placed within <code>COMPUTE</code> about once in every fifty instructions.</p>
 
   <p class="indent">Thus the programs for multiple buffering essentially amount to only seven instructions for <code>CONTROL</code>, eight for <code>ASSIGN</code>, and two for <code>RELEASE</code>.</p>
 
@@ -850,13 +850,13 @@
     <p class="fig-caption"><strong>Fig. 27.</strong> Output with three buffers (see <a href="../Text/ch01c.html#ch01ex_2_18_9">exercise 9</a>).</p>
   </div>
 
-  <p class="noindent">This list means “assign, compute for 1000<em>u</em>, release, compute for 1000<em>u</em>, assign, ..., compute for 2000<em>u</em>, release, compute for 1000<em>u</em>.” The computation times given do not include any intervals during which the computer might have to wait for the output device to catch up (as at the fourth “assign” in <a href="../Text/ch01c.html#ch01fig27">Fig. 27</a>). The output device operates at a speed of 7500<em>u</em> per block.</p>
+  <p>This list means “assign, compute for 1000<em>u</em>, release, compute for 1000<em>u</em>, assign, ..., compute for 2000<em>u</em>, release, compute for 1000<em>u</em>.” The computation times given do not include any intervals during which the computer might have to wait for the output device to catch up (as at the fourth “assign” in <a href="../Text/ch01c.html#ch01fig27">Fig. 27</a>). The output device operates at a speed of 7500<em>u</em> per block.</p>
 
   <p class="indent"><a id="page_227"></a>The following chart specifies the actions shown in <a href="../Text/ch01c.html#ch01fig27">Fig. 27</a> as time passes:</p>
 
   <div class="image"><img src="../Images/ch01/227pro01.jpg"></div>
 
-  <p class="noindent">The total time required was therefore 81500<em>u</em>; the computer was idle from 6000–8500, 10500–16000, and 69000–81500, or 20500<em>u</em> altogether; the output unit was idle from 0–1000, 46000–47000, and 54500–59000, or 6500<em>u</em>.</p>
+  <p>The total time required was therefore 81500<em>u</em>; the computer was idle from 6000–8500, 10500–16000, and 69000–81500, or 20500<em>u</em> altogether; the output unit was idle from 0–1000, 46000–47000, and 54500–59000, or 6500<em>u</em>.</p>
 
   <p class="indent">Make a time-action chart like the above for the same program, assuming that there are only <em>two</em> buffers.</p>
 
@@ -882,7 +882,7 @@
 
   <div class="image"><img src="../Images/ch01/e228_01.jpg"></div>
 
-  <p class="noindent">the machine enters control state, at a location depending on the type of interrupt.</p>
+  <p>the machine enters control state, at a location depending on the type of interrupt.</p>
 
   <p class="indent">Location −0010 acts as a “clock”: Every 1000<em>u</em> of time, the number appearing in this location is decreased by one, and if the result is zero an interrupt to location –0011 occurs.</p>
 
@@ -899,7 +899,7 @@
   <div class="heading">
     <h4 id="ch01lev2sec19"><a id="page_229"></a>1.4.5. History and Bibliography</h4>
 
-    <p class="noindent">Most of the fundamental techniques described in <a href="../Text/ch01c.html#ch01lev1sec4">Section 1.4</a> have been developed independently by a number of different people, and the exact history of the ideas will probably never be known. An attempt has been made to record here the most important contributions to the history, and to put them in perspective.</p>
+    <p>Most of the fundamental techniques described in <a href="../Text/ch01c.html#ch01lev1sec4">Section 1.4</a> have been developed independently by a number of different people, and the exact history of the ideas will probably never be known. An attempt has been made to record here the most important contributions to the history, and to put them in perspective.</p>
   </div>
 
   <p class="indent">Subroutines were the first labor-saving devices invented for programmers. In the 19th century, Charles Babbage envisioned a library of routines for his Analytical Engine [see <em>Charles Babbage and His Calculating Engines</em>, edited by Philip and Emily Morrison (Dover, 1961), 56]; and we might say that his dream came true in 1944 when Grace M. Hopper wrote a subroutine for computing sin <em>x</em> on the Harvard Mark I calculator [see <em>Mechanisation of Thought Processes</em> (London: Nat. Phys. Lab., 1959), 164]. However, these were essentially “open subroutines,” meant to be inserted into a program where needed instead of being linked up dynamically. Babbage’s planned machine was controlled by sequences of punched cards, as on the Jacquard loom; the Mark I was controlled by a number of paper tapes. Thus they were quite different from today’s stored-program computers.</p>
