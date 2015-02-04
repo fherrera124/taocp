@@ -112,7 +112,7 @@
 
 ####TODO:
 
-  - Replace &lt;p class="center"&gt;&lt;span class="middle"&gt; for &lt;div class="image"&gt;
+  -
 
 
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
