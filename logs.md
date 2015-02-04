@@ -112,7 +112,7 @@
 
 ####TODO:
 
-  -
+  - Remove "<style type="text/css">.st {font-weight: 800}</style><!--required in a formula-->" from app01.html.
 
 
 <a id="note1"></a>[*](#err1) Found it by chance. That's weird, according to the date Knuth applied the fix, that bug should not be there.
