@@ -37,8 +37,8 @@
 
   - Answer **6** of **Section 1.2.4**:
 
-    - Before: ![Alt \lfloor\sqrt{x}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor\lt(n+1)^{2}\Leftrightarrow \lfloor\sqrt{x}\rfloor=n](./imgs/13.gif)
-    - Actual: ![Alt \lfloor\sqrt{x}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor<(n+1)^{2}\Leftrightarrow\lfloor\sqrt{\lfloor{x}\rfloor}\rfloor=n](./imgs/14.gif)
+    - Before: ![Alt \lfloor{\sqrt{x}}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor\lt(n+1)^{2}\Leftrightarrow \lfloor\sqrt{x}\rfloor=n](./imgs/13.gif)
+    - Actual: ![Alt \lfloor{\sqrt{x}}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor<(n+1)^{2}\Leftrightarrow\lfloor{\sqrt{\lfloor{x}\rfloor}}\rfloor=n](./imgs/14.gif)
 
   - Answer **17** of **Section 1.2.7**:
 
@@ -52,13 +52,13 @@
 
   - Answer **36** of **Section 1.2.8**:
 
-    - Before: \[...\] if and only if ![Alt \lfloor(k+1)\phi^{-1}\rfloor=1](./imgs/19.gif)
-    - Actual: \[...\] if and only if ![Alt \lfloor(k+1)\phi^{-1}\rfloor-\lfloor k\phi^{-1}\rfloor=1](./imgs/20.gif)
+    - Before: \[...\] if and only if ![Alt \lfloor{(k+1)\phi^{-1}}\rfloor=1](./imgs/19.gif)
+    - Actual: \[...\] if and only if ![Alt \lfloor{(k+1)\phi^{-1}}\rfloor-\lfloor{k\phi^{-1}}\rfloor=1](./imgs/20.gif)
 
   - Answer **37** of **Section 1.2.8**:
 
     - Before: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt \mu](./imgs/21.gif)
-    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt \mu(m)=F_j](./imgs/22.gif);
+    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt \mu(m)=F_{j}](./imgs/22.gif);
 
   - Answer **6** of **Section 1.2.10**:
 
