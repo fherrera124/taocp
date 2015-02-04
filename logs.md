@@ -37,8 +37,8 @@
 
   - Answer **6** of **Section 1.2.4**:
 
-    - Before: ![Alt text](./imgs/13.gif)
-    - Actual: ![Alt text](./imgs/14.gif)
+    - Before: ![Alt \lfloor\sqrt{x}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor\lt(n+1)^{2}\Leftrightarrow \lfloor\sqrt{x}\rfloor=n](./imgs/13.gif)
+    - Actual: ![Alt \lfloor\sqrt{x}\rfloor=n\Leftrightarrow n^{2}\le x<(n+1)^{2}\Leftrightarrow n^{2}\le\lfloor{x}\rfloor<(n+1)^{2}\Leftrightarrow\lfloor\sqrt{\lfloor{x}\rfloor}\rfloor=n](./imgs/14.gif)
 
   - Answer **17** of **Section 1.2.7**:
 
@@ -62,8 +62,8 @@
 
   - Answer **6** of **Section 1.2.10**:
 
-    - Before: ![Alt text](./imgs/23.gif)
-    - Actual: ![Alt text](./imgs/24.gif)
+    - Before: ![Alt 6\sqrt{2}/5\approx 1.697](./imgs/23.gif)
+    - Actual: ![Alt \ln(q+pe^{t})=\ln(1+pt+\frac{pt^{2}}{2}+\frac{pt^{3}}{6}+\cdots)=](./imgs/24.gif)![Alt pt+p(1-p)\frac{t^{2}}{2}+p(1-p)(1-2p)\frac{t^{3}}{6}+\cdots](./imgs/24-2.gif)
 
   - Answer **22** of **Section 1.2.10**:
 
