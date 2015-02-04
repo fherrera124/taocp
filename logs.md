@@ -4,8 +4,8 @@
 
     <a id="err1"></a>**Page 505** second display in answer **9** (17 Oct 2007) [*](#note1):
 
-    - Before: ![Alt text](./imgs/1.gif)
-    - (Not modified yet) Should be: ![Alt text](./imgs/2.gif)
+    - Before: ![Alt x^{z}](./imgs/1.gif)
+    - (Not modified yet) Should be: ![Alt x^{x}](./imgs/2.gif)
 
 ####According to **ERRATA TO VOLUME 1 (AFTER 2010)**:
 
@@ -98,12 +98,12 @@
   - Answer **10** of **Section 1.2.9**:
 
     - Before: **ausent**.
-    - Actual: ![Alt text](./imgs/37.gif),
+    - Actual: ![Alt e_{1}=S_{1}](./imgs/37.gif),
 
   - Answer **23** of **Section 1.2.9**:
 
-    - Before: ![Alt text](./imgs/38.gif)
-    - Actual: ![Alt text](./imgs/39.gif)
+    - Before: ![Alt g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}+z_{2}](./imgs/38.gif)
+    - Actual: ![Alt g_{2}(z_{1},z_{2})=z_{1}+z_{2}+z_{1}z_{2}](./imgs/39.gif)
 
   - On id="page\_172":
 
