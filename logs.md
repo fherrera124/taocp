@@ -13,8 +13,8 @@
 
     **Page 476** replacement for answer **4** (22 Dec 2013):
 
-    - Before: **4.** ![Alt text](./imgs/3.gif); so ![Alt text](./imgs/4.gif); hence the result.
-    - Actual: **4.** By part (f), ![Alt text](./imgs/5.gif); hence ![Alt text](./imgs/6.gif); use part (e).
+    - Before: **4.** ![Alt x-1<\lfloor{x}\rfloor\le x](./imgs/3.gif); so ![Alt -x+1>-\lfloor{x}\rfloor\ge-x](./imgs/4.gif); hence the result.
+    - Actual: **4.** By part (f), ![Alt x\le\lceil{x}\rceil<x+1](./imgs/5.gif); hence ![Alt -x-1<\lceil{x}\rceil\le-x](./imgs/6.gif); use part (e).
 
 ####<a id="title"></a>Errata to the digital edition [**](#note2):
 
@@ -47,18 +47,18 @@
 
   - Answer **21** of **Section 1.2.8**:
 
-    - Before: \[...\] the solution is ![Alt text](./imgs/17.gif)
-    - Actual: \[...\] the solution is ![Alt text](./imgs/18.gif)
+    - Before: \[...\] the solution is ![Alt (x^{n+1}F_{n+1}+x^{n+2}F_{n-x})/(x^{2}+x-1)](./imgs/17.gif)
+    - Actual: \[...\] the solution is ![Alt (x^{n+1}F_{n+1}+x^{n+2}F_{n}-x)/(x^{2}+x-1)](./imgs/18.gif)
 
   - Answer **36** of **Section 1.2.8**:
 
-    - Before: \[...\] if and only if ![Alt text](./imgs/19.gif)
-    - Actual: \[...\] if and only if ![Alt text](./imgs/20.gif)
+    - Before: \[...\] if and only if ![Alt \lfloor(k+1)\phi^{-1}\rfloor=1](./imgs/19.gif)
+    - Actual: \[...\] if and only if ![Alt \lfloor(k+1)\phi^{-1}\rfloor-\lfloor k\phi^{-1}\rfloor=1](./imgs/20.gif)
 
   - Answer **37** of **Section 1.2.8**:
 
-    - Before: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt text](./imgs/21.gif)
-    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt text](./imgs/22.gif);
+    - Before: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt \mu](./imgs/21.gif)
+    - Actual: &lt;em&gt;Proof:&lt;/em&gt; Let ![Alt \mu(m)=F_j](./imgs/22.gif);
 
   - Answer **6** of **Section 1.2.10**:
 
@@ -67,13 +67,13 @@
 
   - Answer **22** of **Section 1.2.10**:
 
-    - Before: \[...\] it is ![Alt text](./imgs/25.gif).
-    - Actual: \[...\] it is ![Alt text](./imgs/26.gif).
+    - Before: \[...\] it is ![Alt 1/2](./imgs/25.gif).
+    - Actual: \[...\] it is ![Alt <1/2](./imgs/26.gif).
 
   - Answer **3** of **Section 1.2.11.2**:
 
-    - Before: \[...\] we have ![Alt text](./imgs/27.gif).
-    - Actual: \[...\] we have ![Alt text](./imgs/28.gif).
+    - Before: \[...\] we have ![Alt B_{m}(\frac12)=(2^{1-m}-1)](./imgs/27.gif).
+    - Actual: \[...\] we have ![Alt B_{m}(\frac12)=(2^{1-m}-1)B_{m}](./imgs/28.gif).
 
   - Answer **8** of **Section 1.2.11.3**:
 
