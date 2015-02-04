@@ -2,7 +2,7 @@
 
   - Errors:
 
-    **Page 505** second display in answer **9** (17 Oct 2007) [*](#note1):<a id="err1"></a>
+    <a id="err1"></a>**Page 505** second display in answer **9** (17 Oct 2007) [*](#note1):
 
     - Before: x^\{z\}
     - (Not modified yet) Should be: x^\{x\}
@@ -16,7 +16,7 @@
     - Before: **4.** $x-1\\lt\\lfloor\{x\}\\rfloor≤x$; so $-x+1\\gt-\\lfloor\{x\}\\rfloor≥-x$; hence the result.
     - Actual: **4.** By part (f), $x\\le\\lceil\{x\}\\rceil\\lt x+1$; hence $-x-1\\lt\\lceil\{x\}\\rceil\\le-x$; use part (e).
 
-####Errata to the digital edition [**](#note2):<a id="title"></a>
+####<a id="title"></a>Errata to the digital edition [**](#note2):
 
 The app01.html file was a mess, particulary with the images. Some of them incompletes or just incorrect. Let me know if you find one of my corrections wrong.
 
