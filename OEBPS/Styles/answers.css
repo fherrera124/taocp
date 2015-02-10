@@ -111,13 +111,6 @@ em {
 .top img {
   vertical-align: text-top;
 }
-/*.Rotsan_italic
-{
-  font-family: "RotisSansSerif-Italic";
-  src: url(fonts/RotisSansSerif-Italic.ttf);
-  font-weight: normal;
-  font-style: italic;
-}*/
 div.equation img{
   max-width:99%;
   max-height:99%;
