@@ -122,13 +122,13 @@
 
   <p class="indenthanging"><strong>A2.</strong> [Does <code>NODE(K)</code> imply another?] Set <code>K1 ← K + 1. If NODE(K</code>) is an atom or unmarked, go to step A3. Otherwise, if <code>NODE(ALINK(K))</code> is unmarked: Mark it and, if it is not an atom, set <code>K1</code> ← min(<code>K1, ALINK(K))</code>. Similarly, if <code>NODE(BLINK(K))</code> is unmarked: Mark it and, if it is not an atom, set <code>K1</code> ← min(<code>K1, BLINK(K))</code>.</p>
 
-  <p class="indenthanging"><strong>A3.</strong> [Done?] Set <code>K ← K1</code>. If <code>K ≤ M</code>, return to step A2; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A3.</strong> [Done?] Set <code>K ← K1</code>. If <code>K ≤ M</code>, return to step A2; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent"><em>Throughout this algorithm and the ones that follow in this section, we will assume for convenience that the nonexistent node “<code>NODE(Λ)</code>” is marked.</em> (For example, <code>ALINK(K)</code> or <code>BLINK(K)</code> may equal Λ in step A2.)</p>
 
   <p class="indent">A variant of <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a> sets <code>K1 ← M + 1</code> in step A1, removes the operation “<code>K1 ← K + 1</code>” from step A2, and instead changes step A3 to</p>
 
-  <p class="indenthanging"><strong>A3</strong>′<strong>.</strong> [Done?] Set <code>K ← K + 1</code>. If <code>K ≤ M</code>, return to step A2. Otherwise if <code>K1 ≤ M</code>, set <code>K ← K1</code> and <code>K1 ← M + 1</code> and return to step A2. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A3</strong>′<strong>.</strong> [Done?] Set <code>K ← K + 1</code>. If <code>K ≤ M</code>, return to step A2. Otherwise if <code>K1 ≤ M</code>, set <code>K ← K1</code> and <code>K1 ← M + 1</code> and return to step A2. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">It is very difficult to give a precise analysis of <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a>, or to determine whether it is better or worse than the variant just described, since no meaningful way to describe the probability distribution of the input presents itself. We can say that it takes up time proportional to <em>n</em><code>M</code> in the worst case, where <em>n</em> is the number of cells it marks; and, in general, we can be sure that it is very slow when <em>n</em> is large. <a href="../Text/ch02c.html#ch02alg-lev2sec11-A">Algorithm A</a> is too slow to make garbage collection a usable technique.</p>
 
@@ -142,7 +142,7 @@
 
   <p class="indenthanging"><strong>B3.</strong> [Remove top entry.] Set <code>K ← STACK[T], T ← T − 1.</code></p>
 
-  <p class="indenthanging"><strong>B4.</strong> [Examine links.] If <code>NODE(K)</code> is an atom, return to step B2. Otherwise, if <code>NODE(ALINK(K))</code> is unmarked, mark it and set <code>T ← T + 1, STACK[T] ← ALINK(K)</code>; if <code>NODE(BLINK(K))</code> is unmarked, mark it and set <code>T ← T + 1, STACK[T] ← BLINK(K)</code>. Return to B2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>B4.</strong> [Examine links.] If <code>NODE(K)</code> is an atom, return to step B2. Otherwise, if <code>NODE(ALINK(K))</code> is unmarked, mark it and set <code>T ← T + 1, STACK[T] ← ALINK(K)</code>; if <code>NODE(BLINK(K))</code> is unmarked, mark it and set <code>T ← T + 1, STACK[T] ← BLINK(K)</code>. Return to B2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent"><a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a> clearly has an execution time essentially proportional to the number of cells it marks, and this is as good as we could possibly expect; but it is not really usable for garbage collection because there is no place to keep the stack! It does not seem unreasonable to assume that the stack in <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a> might grow up to, say, five percent of the size of memory; but when garbage collection is called, and all available space has been used up, there is only a fixed (rather small) number of cells to use for such a stack. Most of the early garbage collection procedures were essentially based on this algorithm. If the special stack space was used up, the entire program had to be terminated.</p>
 
@@ -160,7 +160,7 @@
 
   <p class="indenthanging"><strong>C4.</strong> [Examine links.] If <code>NODE(K)</code> is an atom, return to step C2. Otherwise, if <code>NODE(ALINK(K))</code> is unmarked, mark it and insert <code>ALINK(K)</code> on the stack. Similarly, if <code>NODE(BLINK(K))</code> is unmarked, mark it and insert <code>BLINK(K)</code> on the stack. Return to C2.</p>
 
-  <p class="indenthanging"><strong>C5.</strong> [Sweep.] If <code>K1</code> &gt; <code>M</code>, the algorithm terminates. (The variable <code>K1</code> represents the smallest location where there is a possibility of a new lead to a node that should be marked.) Otherwise, if <code>NODE(K1)</code> is an atom or unmarked, increase <code>K1</code> by 1 and repeat this step. If <code>NODE(K1)</code> is marked, set <code>K ← K1</code>, increase <code>K1</code> by 1, and go to C4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>C5.</strong> [Sweep.] If <code>K1</code> &gt; <code>M</code>, the algorithm terminates. (The variable <code>K1</code> represents the smallest location where there is a possibility of a new lead to a node that should be marked.) Otherwise, if <code>NODE(K1)</code> is an atom or unmarked, increase <code>K1</code> by 1 and repeat this step. If <code>NODE(K1)</code> is marked, set <code>K ← K1</code>, increase <code>K1</code> by 1, and go to C4. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">This algorithm and <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a> can be improved if <code>X</code> is never put on the stack when <code>NODE(X)</code> is an atom; moreover, steps B4 and C4 need not put items on the stack when they know that the items will immediately be removed. Such <a id="page_417"></a>modifications are straightforward and they have been left out to avoid making the algorithms unnecessarily complicated.</p>
 
@@ -176,7 +176,7 @@
 
   <p class="indenthanging"><strong>D3.</strong> [Remove top entry.] Set <code>P ← TOP, TOP ← REF(P).</code></p>
 
-  <p class="indenthanging"><strong>D4.</strong> [Move through List.] Set <code>P ← RLINK(P)</code>; then if <code>P</code> = <em>Λ</em>, or if <code>T(P)</code> = 0, go to D2. Otherwise set <code>S(P)</code> ← 1. If <code>T(P)</code> &gt; 1, set <code>S(REF(P)) ← 1</code> (thereby marking the atomic information). Otherwise <code>(T(P) = 1)</code>, set <code>Q ← REF(P); if Q ≠ <em>Λ</em></code> and <code>S(Q) = 0</code>, set <code>S(Q) ← 1, REF(Q) ← TOP, TOP ← Q</code>. Repeat step D4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>D4.</strong> [Move through List.] Set <code>P ← RLINK(P)</code>; then if <code>P</code> = <em>Λ</em>, or if <code>T(P)</code> = 0, go to D2. Otherwise set <code>S(P)</code> ← 1. If <code>T(P)</code> &gt; 1, set <code>S(REF(P)) ← 1</code> (thereby marking the atomic information). Otherwise <code>(T(P) = 1)</code>, set <code>Q ← REF(P); if Q ≠ <em>Λ</em></code> and <code>S(Q) = 0</code>, set <code>S(Q) ← 1, REF(Q) ← TOP, TOP ← Q</code>. Repeat step D4. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent"><a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a> may be compared to <a href="../Text/ch02c.html#ch02alg-lev2sec11-B">Algorithm B</a>, which is quite similar, and its running time is essentially proportional to the number of nodes marked. However, <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a> is <em>not</em> recommended without qualification, because its seemingly rather mild restrictions are often too stringent for a general Listprocessing system. This algorithm essentially requires that all List structures be well-formed, as in (<a href="../Text/ch02c.html#ch02eq-lev2sec11-7">7</a>), whenever garbage collection is called into action. But algorithms for List manipulations <em>momentarily</em> leave the List structures malformed, and a garbage collector such as <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a> must not be used during those momentary periods. Moreover, care must be taken in step D1 when the program contains pointers to the middle of a List.</p>
 
@@ -218,7 +218,7 @@
     <p class="fig-caption"><strong>Fig. 39.</strong> A structure marked by <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a>. (The table shows only changes that have occurred since the previous step.)</p>
   </div>
 
-  <p class="indenthanging"><strong>E6.</strong> [Up.] (This step undoes the link switching made in step E4 or E5; the setting of <code>ATOM(T)</code> tells whether <code>ALINK(T)</code> or <code>BLINK(T)</code> is to be restored.) If <code>T</code> = <em>Λ</em>, the algorithm terminates. Otherwise set <code>Q ← T.</code> If <code>ATOM(Q)</code> = 1, set <code>ATOM(Q)</code> ← 0, <code>T ← ALINK(Q), ALINK(Q)</code> ← <code>P, P ← Q,</code> and return to E5. If <code>ATOM(Q)</code> = 0, set <code>T ← BLINK(Q), BLINK(Q) ← P, P ← Q,</code> and repeat E6. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>E6.</strong> [Up.] (This step undoes the link switching made in step E4 or E5; the setting of <code>ATOM(T)</code> tells whether <code>ALINK(T)</code> or <code>BLINK(T)</code> is to be restored.) If <code>T</code> = <em>Λ</em>, the algorithm terminates. Otherwise set <code>Q ← T.</code> If <code>ATOM(Q)</code> = 1, set <code>ATOM(Q)</code> ← 0, <code>T ← ALINK(Q), ALINK(Q)</code> ← <code>P, P ← Q,</code> and return to E5. If <code>ATOM(Q)</code> = 0, set <code>T ← BLINK(Q), BLINK(Q) ← P, P ← Q,</code> and repeat E6. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">An example of this algorithm in action appears in <a href="../Text/ch02c.html#ch02fig39">Fig. 39</a>, which shows the successive steps encountered for a simple List structure. The reader will find it worthwhile to study <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a> very carefully; notice how the linking structure is artificially changed in steps E4 and E5, in order to maintain a stack analogous to the stack in <a href="../Text/ch02c.html#ch02alg-lev2sec11-D">Algorithm D</a>. When we return to a previous state, the <code>ATOM</code> field is used to tell whether <code>ALINK</code> or <code>BLINK</code> contains the artificial address. The “nesting” shown at the bottom of <a href="../Text/ch02c.html#ch02fig39">Fig. 39</a> illustrates how each nonatomic node is visited three times during <a href="../Text/ch02c.html#ch02alg-lev2sec11-E">Algorithm E</a>: The same configuration <code>(T,P)</code> occurs at the beginning of steps E2, E5, and E6.</p>
 
@@ -425,7 +425,7 @@
 
   <p class="indenthanging"><strong>A6.</strong> [Set family links.] Set <code>PARENT(Q)</code> ← <code>P1</code>, <code>CHILD(Q)</code> ← <em>Λ</em>, <code>SIB(Q)</code> ← <em>Λ</em>.</p>
 
-  <p class="indenthanging"><strong>A7.</strong> [Add to stack.] Place (<code>L</code><em>,</em> <code>Q</code>) on top of the stack, and return to step A2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A7.</strong> [Add to stack.] Place (<code>L</code><em>,</em> <code>Q</code>) on top of the stack, and return to step A2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The introduction of an auxiliary stack, as explained in step A1, makes this algorithm so transparent that it needs no further explanation.</p>
 
@@ -449,7 +449,7 @@
 
   <p class="indenthanging"><strong>B5.</strong> [Move up tree.] Set <code>S</code> ← <code>PARENT(S)</code>. If <code>S</code> = <em>Λ</em>, we have failed to find a match; set <code>P</code> ← <code>PREV(P)</code> and go to B2.</p>
 
-  <p class="indenthanging"><strong>B6.</strong> [<em>A<sub>k</sub></em> match?] If <code>NAME(S)</code> = <em>P<sub>k</sub></em>, go to B3, otherwise go to B5. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>B6.</strong> [<em>A<sub>k</sub></em> match?] If <code>NAME(S)</code> = <em>P<sub>k</sub></em>, go to B3, otherwise go to B5. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>Note that the <code>CHILD</code> and <code>SIB</code> links are not needed by this algorithm.</p>
 
@@ -502,7 +502,7 @@
 
   <p class="indenthanging"><strong>C4.</strong> [Move on.] If <code>SIB(P)</code> ≠ <em>Λ</em>, set <code>P</code> ← <code>SIB(P)</code> and <code>Q</code> ← <code>CHILD(PARENT(Q))</code>, and go back to C3. If <code>SIB(P)</code> = <em>Λ</em>, set <code>P</code> ← <code>PARENT(P)</code> and <code>Q</code> ← <code>PARENT(Q)</code>.</p>
 
-  <p class="indenthanging"><strong>C5.</strong> [Done?] If <code>P</code> = <code>P0</code>, the algorithm terminates; otherwise go to C4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>C5.</strong> [Done?] If <code>P</code> = <code>P0</code>, the algorithm terminates; otherwise go to C4. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>A flow chart for this algorithm is shown in <a href="../Text/ch02c.html#ch02fig41">Fig. 41</a>. A proof that this algorithm is valid can readily be constructed by induction on the size of the trees involved (see <a href="../Text/ch02c.html#ch02ex_1_4_9">exercise 9</a>).</p>
 
@@ -635,7 +635,7 @@
 
   <p class="indenthanging"><strong>A3.</strong> [Is <code>SIZE</code> enough?] If <code>SIZE(P)</code> ≥ <code>N</code>, go to A4; otherwise set <code>Q</code> ← <code>P</code> and return to step A2.</p>
 
-  <p class="indenthanging"><strong>A4.</strong> [Reserve <code>N</code>.] Set <code>K</code> ← <code>SIZE(P)</code> − <code>N</code>. If <code>K</code> = 0, set <code>LINK(Q)</code> ← <code>LINK(P)</code> (thereby removing an empty area from the list); otherwise set <code>SIZE(P)</code> ← <code>K</code>. The algorithm terminates successfully, having reserved an area of length <code>N</code> beginning with location <code>P</code> + <code>K</code>. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A4.</strong> [Reserve <code>N</code>.] Set <code>K</code> ← <code>SIZE(P)</code> − <code>N</code>. If <code>K</code> = 0, set <code>LINK(Q)</code> ← <code>LINK(P)</code> (thereby removing an empty area from the list); otherwise set <code>SIZE(P)</code> ← <code>K</code>. The algorithm terminates successfully, having reserved an area of length <code>N</code> beginning with location <code>P</code> + <code>K</code>. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">This algorithm is certainly straightforward enough. However, a significant improvement in its running speed can be made with only a rather slight change in strategy. This improvement is quite important, and the reader will find it a pleasure to discover it without being told the secret (see <a href="../Text/ch02c.html#ch02ex_1_5_6">exercise 6</a>).</p>
 
@@ -697,7 +697,7 @@
 
   <p class="center"><code>SIZE(LOC(AVAIL))</code> = 0,</p>
 
-  <p class="indenthangingAP">so this test always fails when <code>Q</code> = <code>LOC(AVAIL)</code>), set <code>SIZE(Q)</code> ← <code>SIZE(Q)</code> + <code>N</code> and <code>LINK(Q)</code> ← <code>LINK(P0)</code>. Otherwise set <code>LINK(Q)</code> ← <code>P0</code>, <code>SIZE(P0)</code> ← <code>N</code>. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthangingAP">so this test always fails when <code>Q</code> = <code>LOC(AVAIL)</code>), set <code>SIZE(Q)</code> ← <code>SIZE(Q)</code> + <code>N</code> and <code>LINK(Q)</code> ← <code>LINK(P0)</code>. Otherwise set <code>LINK(Q)</code> ← <code>P0</code>, <code>SIZE(P0)</code> ← <code>N</code>. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>Steps B3 and B4 do the desired collapsing, based on the fact that the pointers <code>Q</code> &lt; <code>P0</code> &lt; <code>P</code> are the beginning locations of three consecutive available areas.</p>
 
@@ -733,7 +733,7 @@
 
   <p class="indenthanging"><strong>C4.</strong> [Delete upper area.] Set <code>P1</code> ← <code>LINK(P)</code>, <code>P2</code> ← <code>LINK(P</code>+1<code>)</code>, <code>LINK(P1</code>+1<code>)</code> ← <code>P2</code>, <code>LINK(P2)</code> ← <code>P1</code>, <code>SIZE(P0)</code> ← <code>SIZE(P0)</code> + <code>SIZE(P)</code>, <code>P</code> ← <code>P</code> + <code>SIZE(P)</code>.</p>
 
-  <p class="indenthanging"><a id="page_442"></a><strong>C5.</strong> [Add to <code>AVAIL</code> list.] Set <code>SIZE(P</code> − 1<code>)</code> ← <code>SIZE(P0)</code>, <code>LINK(P0)</code> ← <code>AVAIL</code>, <code>LINK(P0</code> + 1<code>)</code> ← <code>LOC(AVAIL)</code>, <code>LINK(AVAIL</code> + 1<code>)</code> ← <code>P0</code>, <code>AVAIL</code> ← <code>P0</code>, <code>TAG(P0)</code> ← <code>TAG(P</code> − 1<code>)</code> ← “−”. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><a id="page_442"></a><strong>C5.</strong> [Add to <code>AVAIL</code> list.] Set <code>SIZE(P</code> − 1<code>)</code> ← <code>SIZE(P0)</code>, <code>LINK(P0)</code> ← <code>AVAIL</code>, <code>LINK(P0</code> + 1<code>)</code> ← <code>LOC(AVAIL)</code>, <code>LINK(AVAIL</code> + 1<code>)</code> ← <code>P0</code>, <code>AVAIL</code> ← <code>P0</code>, <code>TAG(P0)</code> ← <code>TAG(P</code> − 1<code>)</code> ← “−”. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The steps of <a href="../Text/ch02c.html#ch02alg-lev1sec5-C">Algorithm C</a> are straightforward consequences of the storage layout (<a href="../Text/ch02c.html#ch02eq-lev1sec5-7">7</a>); a slightly longer algorithm that is a little faster appears in <a href="../Text/ch02c.html#ch02ex_1_5_15">exercise 15</a>. In step C5, <code>AVAIL</code> is an abbreviation for <code>LINK(LOC(AVAIL))</code>, as shown in (<a href="../Text/ch02c.html#ch02eq-lev1sec5-9">9</a>).</p>
 
@@ -777,7 +777,7 @@
 
   <p class="indenthanging"><strong>R3.</strong> [Split required?] If <em>j</em> = <em>k</em>, the algorithm terminates (we have found and reserved an available block starting at address <code>L</code>).</p>
 
-  <p class="indenthanging"><strong>R4.</strong> [Split.] Decrease <em>j</em> by 1. Then set <code>P</code> ← <code>L</code> + 2<em><sup>j</sup></em>, <code>TAG(P)</code> ← 1, <code>KVAL(P)</code> <em>← j</em>, <code>LINKF(P)</code> ← <code>LINKB(P)</code> ← <code>LOC(AVAIL[</code><em>j</em><code>])</code><em>,</em> <code>AVAILF[</code><em>j</em><code>]</code> ← <code>AVAILB[</code><em>j</em><code>]</code> ← <code>P</code>. (This splits a large block and enters the unused half in the <code>AVAIL[</code><em>j</em><code>]</code> list, which was empty.) Go back to step R3. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>R4.</strong> [Split.] Decrease <em>j</em> by 1. Then set <code>P</code> ← <code>L</code> + 2<em><sup>j</sup></em>, <code>TAG(P)</code> ← 1, <code>KVAL(P)</code> <em>← j</em>, <code>LINKF(P)</code> ← <code>LINKB(P)</code> ← <code>LOC(AVAIL[</code><em>j</em><code>])</code><em>,</em> <code>AVAILF[</code><em>j</em><code>]</code> ← <code>AVAILB[</code><em>j</em><code>]</code> ← <code>P</code>. (This splits a large block and enters the unused half in the <code>AVAIL[</code><em>j</em><code>]</code> list, which was empty.) Go back to step R3. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p><a id="ch02alg-lev1sec5-S"></a><strong>Algorithm S</strong> (<em>Buddy system liberation</em>). This algorithm returns a block of 2<em><sup>k</sup></em> locations, starting in address <code>L</code>, to free storage, using the organization of the buddy system as explained above.</p>
 
@@ -789,7 +789,7 @@
 
   <p class="indenthangingAP">(This removes block <code>P</code> from the <code>AVAIL[</code><em>k</em><code>]</code> list.) Then set <em>k ← k</em> + 1, and if <code>P</code> &lt; <code>L</code> set <code>L</code> ← <code>P</code>. Return to S1.</p>
 
-  <p class="indenthanging"><strong>S3.</strong> [Put on list.] Set <code>TAG(L)</code> ← 1, <code>P</code> ← <code>AVAILF[</code><em>k</em><code>]</code>, <code>LINKF(L)</code> ← <code>P</code>, <code>LINKB(P)</code> ← <code>L</code><em>,</em> <code>KVAL(L)</code> <em>← k</em>, <code>LINKB(L)</code> ← <code>LOC(AVAIL[</code><em>k</em><code>])</code>, <code>AVAILF[</code><em>k</em><code>]</code> ← <code>L</code>. (This puts block <code>L</code> on the <code>AVAIL[</code><em>k</em><code>]</code> list.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>S3.</strong> [Put on list.] Set <code>TAG(L)</code> ← 1, <code>P</code> ← <code>AVAILF[</code><em>k</em><code>]</code>, <code>LINKF(L)</code> ← <code>P</code>, <code>LINKB(P)</code> ← <code>L</code><em>,</em> <code>KVAL(L)</code> <em>← k</em>, <code>LINKB(L)</code> ← <code>LOC(AVAIL[</code><em>k</em><code>])</code>, <code>AVAILF[</code><em>k</em><code>]</code> ← <code>L</code>. (This puts block <code>L</code> on the <code>AVAIL[</code><em>k</em><code>]</code> list.) <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p><strong>D. Comparison of the methods.</strong> The mathematical analysis of these dynamic storage-allocation algorithms has proved to be quite difficult, but there is one interesting phenomenon that is fairly easy to analyze, namely the “fifty-percent rule”:</p>
 
@@ -831,7 +831,7 @@
 
   <p class="indenthanging"><strong>P3.</strong> [Get data.] Calculate two quantities <em>S</em> (a random size) and <em>T</em> (a random lifetime), based on some probability distributions, using the methods of Chapter 3.</p>
 
-  <p class="indenthanging"><strong>P4.</strong> [Use data.] Reserve a new block of length <em>S</em>, which is due to be freed at (<code>TIME</code> + <em>T</em>). Return to P1. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>P4.</strong> [Use data.] Reserve a new block of length <em>S</em>, which is due to be freed at (<code>TIME</code> + <em>T</em>). Return to P1. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>Whenever <code>TIME</code> was a multiple of 200, detailed statistics about the performance of the reservation and liberation algorithms were printed. The same sequence of values of <em>S</em> and <em>T</em> was used for each pair of algorithms tested. After <code>TIME</code> advanced past 2000, the system usually had reached a more or less steady state that gave every indication of being maintained indefinitely thereafter. However, depending on the total amount of storage available and on the distributions of <em>S</em> and <em>T</em> in step P3, the allocation algorithms would occasionally fail to find enough space and the simulation experiment was then terminated.</p>
 

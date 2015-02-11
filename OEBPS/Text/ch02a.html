@@ -198,7 +198,7 @@
 
   <p class="indenthanging"><strong>S7.</strong> [Pivot.] Set <code>VAL(P1)</code> ← <code>VAL(P1)</code> − <code>VAL(Q0)</code> × <code>VAL(P0)</code>. If now <code>VAL(P1)</code> = 0, go to S8. (<em>Note:</em> When floating point arithmetic is being used, this test “<code>VAL(P1)</code> = 0” should be replaced by “|<code>VAL(P1)</code>| &lt; <code>EPSILON</code>” or better yet by the condition “most of the significant figures of <code>VAL(P1)</code> were lost in the subtraction.”) Otherwise, set <code>PTR[J]</code> ← <code>P1</code>, <code>P</code> ← <code>P1</code>, <code>P1</code> ← <code>LEFT(P)</code>, and go back to S4.</p>
 
-  <p class="indenthanging"><strong>S8.</strong> [Delete <code>I</code>, <code>J</code> element.] If <code>UP(PTR[J])</code> ≠ <code>P1</code> (or, what is essentially the same thing, if <code>ROW(UP(PTR[J])</code>) &gt; <code>I</code>), set <code>PTR[J]</code> ← <code>UP(PTR[J])</code> and repeat step S8; otherwise, set <code>UP(PTR[J])</code> ← <code>UP(P1)</code>, <code>LEFT(P)</code> ← <code>LEFT(P1)</code>, <code>AVAIL</code> <span class="ent">⇐</span> <code>P1</code>, <code>P1</code> ← <code>LEFT(P)</code>. Go back to S4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>S8.</strong> [Delete <code>I</code>, <code>J</code> element.] If <code>UP(PTR[J])</code> ≠ <code>P1</code> (or, what is essentially the same thing, if <code>ROW(UP(PTR[J])</code>) &gt; <code>I</code>), set <code>PTR[J]</code> ← <code>UP(PTR[J])</code> and repeat step S8; otherwise, set <code>UP(PTR[J])</code> ← <code>UP(P1)</code>, <code>LEFT(P)</code> ← <code>LEFT(P1)</code>, <code>AVAIL</code> <span class="ent">⇐</span> <code>P1</code>, <code>P1</code> ← <code>LEFT(P)</code>. Go back to S4. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The programming of this algorithm is left as a very instructive exercise for the reader (see <a href="../Text/ch02a.html#ch02ex_2_6_15">exercise 15</a>). It is worth pointing out here that it is necessary to allocate only one word of memory to each of the nodes <code>BASEROW[</code><em>i</em><code>]</code>, <code>BASECOL[</code><em>j</em><code>]</code>, since most of their fields are irrelevant. (See the shaded areas in <a href="../Text/ch02a.html#ch02fig14">Fig. 14</a>, and see the program of <a href="../Text/ch02.html#ch02lev2sec5">Section 2.2.5</a>.) Furthermore, the value −<code>PTR[</code><em>j</em><code>]</code> can be stored as <code>ROW(LOC(BASECOL[</code><em>j</em><code>]))</code> for additional storage space economy. The running time of <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a> is very roughly proportional to the number of matrix elements affected by the pivot operation.</p>
 
@@ -527,7 +527,7 @@
 
   <p class="indenthanging"><strong>T4.</strong> [<code>P</code> <span class="ent">⇐</span> Stack.] If stack <code>A</code> is empty, the algorithm terminates; otherwise set <code>p</code> <span class="ent">⇐</span> <code>A</code>.</p>
 
-  <p class="indenthanging"><strong>T5.</strong> [Visit <code>P</code>.] Visit <code>NDDE(P).</code> Then set <code>P</code> ← <code>RLINK (P)</code> and return to step T2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>T5.</strong> [Visit <code>P</code>.] Visit <code>NDDE(P).</code> Then set <code>P</code> ← <code>RLINK (P)</code> and return to step T2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">In the final step of this algorithm, the word “visit” means that we do whatever activity is intended as the tree is being traversed. <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> runs like a coroutine with respect to this other activity: The main program activates the coroutine whenever it wants <code>P</code> to move from one node to its inorder successor. Of course, since this coroutine calls the main routine in only one place, it is not much different from a subroutine (see <a href="../Text/ch01c.html#ch01lev2sec16">Section 1.4.2</a>). <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> assumes that the external activity deletes neither <code>NODE(P)</code> nor any of its ancestors from the tree.</p>
 
@@ -577,7 +577,7 @@
 
   <p class="indenthanging"><strong>S1.</strong> [<code>RLINK(P)</code> a thread?] Set <code>Q</code> ← <code>RLINK(P)</code>. If <code>RTAG(P)</code> = 1, terminate the algorithm.</p>
 
-  <p class="indenthanging"><strong>S2.</strong> [Search to left.] If <code>LTAG(Q)</code> = 0, set <code>Q</code> ← <code>LLINK(Q)</code> and repeat this step. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>S2.</strong> [Search to left.] If <code>LTAG(Q)</code> = 0, set <code>Q</code> ← <code>LLINK(Q)</code> and repeat this step. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">Notice that no stack is needed here to accomplish what was done using a stack in <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a>. In fact, the ordinary representation (<a href="../Text/ch02a.html#ch02eq-lev2sec7-2">2</a>) makes it impossible to find <code>P\$</code> efficiently, given only the address of a random point <code>P</code> in the tree. Since no links point upward in an unthreaded representation, there is no clue to what nodes are above a given node, unless we retain a history of how we reached that point. The stack in <a href="../Text/ch02a.html#ch02alg-lev2sec7-T">Algorithm T</a> provides the necessary history when threads are absent.</p>
 
@@ -643,7 +643,7 @@
 
   <p class="indenthanging"><strong>I1.</strong> [Adjust tags and links.] Set <code>RLINK(Q)</code> ← <code>RLINK(P)</code>, <code>RTAG(Q)</code> ← <code>RTAG(P)</code>, <code>RLINK(P)</code> ← <code>Q</code>, <code>RTAG(P)</code> ← 0, <code>LLINK(Q)</code> ← <code>P</code>, <code>LTAG(Q)</code> ← 1.</p>
 
-  <p class="indenthanging"><strong>I2.</strong> [Was <code>RLINK(P)</code> a thread?] If <code>RTAG(Q)</code> = 0, set <code>LLINK(Q\$)</code> ← <code>Q</code>. (Here <code>Q\$</code> is determined by <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a>, which will work properly even though <code>LLINK(Q\$)</code> now points to <code>NODE(P)</code> instead of <code>NODE(Q)</code>. This step is necessary only when inserting into the midst of a threaded tree instead of merely inserting a new leaf.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>I2.</strong> [Was <code>RLINK(P)</code> a thread?] If <code>RTAG(Q)</code> = 0, set <code>LLINK(Q\$)</code> ← <code>Q</code>. (Here <code>Q\$</code> is determined by <a href="../Text/ch02a.html#ch02alg-lev2sec6-S">Algorithm S</a>, which will work properly even though <code>LLINK(Q\$)</code> now points to <code>NODE(P)</code> instead of <code>NODE(Q)</code>. This step is necessary only when inserting into the midst of a threaded tree instead of merely inserting a new leaf.) <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">By reversing the roles of left and right (in particular, by replacing <code>Q\$</code> by <code>\$Q</code> in step I2), we obtain an algorithm that inserts to the left in a similar way.</p>
 
@@ -691,7 +691,7 @@
 
   <div class="equation"><a id="ch02eq-lev2sec7-15"></a><img src="../Images/ch02/329equ02.jpg"></div>
 
-  <p>and the condition (<a href="../Text/ch02a.html#ch02eq-lev2sec7-14">14</a>) is again evident. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p>and the condition (<a href="../Text/ch02a.html#ch02eq-lev2sec7-14">14</a>) is again evident. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">(For other theorems analogous to Lemma P, see the discussion of Polish notation in Chapter 10.)</p>
 
@@ -705,7 +705,7 @@
 
   <p class="indent">if <em>l</em>(<em>u</em><sub>1</sub>) = 1, <em>r</em>(<em>u</em><sub>1</sub>) = 0, then <em>n</em><sub><em>l</em></sub> = <em>n</em> − 1 = <span class="middle"><img src="../Images/ch02/e329_02.jpg"></span>;</p>
 
-  <p class="indent">if <em>l</em>(<em>u</em><sub>1</sub>) = <em>r</em>(<em>u</em><sub>1</sub>) = 1, then by Lemma P we can find the least <em>k</em> &gt; 0 such that <em>f</em> (<em>u</em><sub>1</sub>) + · · · + <em>f</em> (<em>u</em><sub><em>k</em></sub>) = 0; and <em>n</em><sub>l</sub> = <em>k</em> − 1 = <span class="middle"><img src="../Images/ch02/e329_02.jpg"></span> (see (<a href="../Text/ch02a.html#ch02eq-lev2sec7-15">15</a>)). <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indent">if <em>l</em>(<em>u</em><sub>1</sub>) = <em>r</em>(<em>u</em><sub>1</sub>) = 1, then by Lemma P we can find the least <em>k</em> &gt; 0 such that <em>f</em> (<em>u</em><sub>1</sub>) + · · · + <em>f</em> (<em>u</em><sub><em>k</em></sub>) = 0; and <em>n</em><sub>l</sub> = <em>k</em> − 1 = <span class="middle"><img src="../Images/ch02/e329_02.jpg"></span> (see (<a href="../Text/ch02a.html#ch02eq-lev2sec7-15">15</a>)). <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">As a consequence of <a href="../Text/ch02a.html#ch02a_the_a">Theorem A</a>, we can test two threaded binary trees for equivalence or similarity by simply traversing them in preorder and checking the <code>INFO</code> and <code>TAG</code> fields. Some interesting extensions of <a href="../Text/ch02a.html#ch02a_the_a">Theorem A</a> have been obtained by A. J. Blikle, <em>Bull. de l’Acad. Polonaise des Sciences</em>, Série des Sciences Math., Astr., Phys., <strong>14</strong> (1966), 203–208; he considered an infinite class of possible traversal orders, only six of which (including preorder) were called “addressless” because of their simple properties.</p>
 
@@ -723,7 +723,7 @@
 
   <p class="indenthanging"><strong>C5.</strong> [Advance.] Set <code>P</code> ← <code>P*</code>, <code>Q</code> ← <code>Q*</code>.</p>
 
-  <p class="indenthanging"><strong>C6.</strong> [Test if complete.] If <code>P</code> = <code>HEAD</code> (or equivalently if <code>Q</code> = <code>RLINK(U)</code>, assuming that <code>NODE(U)</code> has a nonempty right subtree), the algorithm terminates; otherwise go to step C2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>C6.</strong> [Test if complete.] If <code>P</code> = <code>HEAD</code> (or equivalently if <code>Q</code> = <code>RLINK(U)</code>, assuming that <code>NODE(U)</code> has a nonempty right subtree), the algorithm terminates; otherwise go to step C2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">This simple algorithm shows a typical application of tree traversal. The description here applies to threaded, unthreaded, or partially threaded trees. Step C5 requires the calculation of preorder successors <code>P*</code> and <code>Q*</code>; for unthreaded trees, this generally is done with an auxiliary stack. A proof of the validity of <a href="../Text/ch02a.html#ch02alg-lev2sec7-C">Algorithm C</a> appears in <a href="../Text/ch02a.html#ch02ex_2_7_29">exercise 29</a>; a <code>MIX</code> program corresponding to this algorithm in the case of a right-threaded binary tree appears in <a href="../Text/ch02a.html#ch02ex_2_8_13">exercise 2.3.2–13</a>. For threaded trees, the “attaching” in steps C2 and C4 is done using <a href="../Text/ch02a.html#ch02alg-lev2sec7-I">Algorithm I</a>.</p>
 
@@ -1006,7 +1006,7 @@
 
   <p class="indenthanging"><strong>D4.</strong> [Advance to <code>P\$</code>.] Set <code>P2</code> ← <code>P, P</code> ← <code>P\$</code>. Now if <code>RTAG(P2)</code> = 0 (that is, if <code>NODE(P2)</code> has a sibling to the right), set <code>RLINK(P2)</code> ← <code>Q</code>. (This is the tricky part of the algorithm: We temporarily destroy the structure of tree <code>Y</code>, so that a link to the derivative of <code>P2</code> is saved for future use. The missing link will be restored later in step D3. See <a href="../Text/ch02a.html#ch02ex_2_8_21">exercise 21</a> for further discussion of this trick.)</p>
 
-  <p class="indenthanging"><strong>D5.</strong> [Done?] If <code>P</code> ≠ <code>Y</code>, return to step D2. Otherwise set <code>LLINK(DY)</code> ← <code>Q</code> and <code>RLINK(Q)</code> ← <code>DY, RTAG(Q)</code> ← 1. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>D5.</strong> [Done?] If <code>P</code> ≠ <code>Y</code>, return to step D2. Otherwise set <code>LLINK(DY)</code> ← <code>Q</code> and <code>RLINK(Q)</code> ← <code>DY, RTAG(Q)</code> ← 1. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The procedure described in <a href="../Text/ch02a.html#ch02alg-lev2sec8-D">Algorithm D</a> is just the background routine for the differentiation operations that are performed by the processing routines <code>DIFF[0], DIFF[1]</code>, ..., called in step D2. In many ways, <a href="../Text/ch02a.html#ch02alg-lev2sec8-D">Algorithm D</a> is like the control routine for an interpretive system or machine simulator, as discussed in <a href="../Text/ch01c.html#ch01lev2sec17">Section 1.4.3</a>, but it traverses a tree instead of a simple sequence of instructions.</p>
 
@@ -1246,7 +1246,7 @@
 
   <p class="indenthanging"><strong>F3.</strong> [Update the stack.] Remove the top <em>d</em> items of the stack; then put the value <em>f</em> (<code>NODE(P)</code>) on top of the stack.</p>
 
-  <p class="indenthanging"><strong>F4.</strong> [Advance.] If <code>P</code> is the last node in postorder, terminate the algorithm. (The stack will then contain <em>f</em> (root(<em>T</em><sub><em>m</em></sub>)), ..., <em>f</em> (root(<em>T</em><sub>1</sub>)), from top to bottom, where <em>T</em><sub>1</sub>, ..., <em>T</em><sub><em>m</em></sub> are the trees of the given forest.) Otherwise set <code>P</code> to its successor in postorder (this would be simply <code>P</code> ← <code>P</code> + <em>c</em> in the representation (<a href="../Text/ch02a.html#ch02eq-lev2sec9-9">9</a>)), and return to step F2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>F4.</strong> [Advance.] If <code>P</code> is the last node in postorder, terminate the algorithm. (The stack will then contain <em>f</em> (root(<em>T</em><sub><em>m</em></sub>)), ..., <em>f</em> (root(<em>T</em><sub>1</sub>)), from top to bottom, where <em>T</em><sub>1</sub>, ..., <em>T</em><sub><em>m</em></sub> are the trees of the given forest.) Otherwise set <code>P</code> to its successor in postorder (this would be simply <code>P</code> ← <code>P</code> + <em>c</em> in the representation (<a href="../Text/ch02a.html#ch02eq-lev2sec9-9">9</a>)), and return to step F2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent"><a id="page_352"></a>The validity of <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a> follows by induction on the size of the trees processed (see <a href="../Text/ch02b.html#ch02ex_2_9_16">exercise 16</a>). This algorithm bears a striking similarity to the differentiation procedure of the previous section (<a href="../Text/ch02a.html#ch02alg-lev2sec8-D">Algorithm 2.3.2D</a>), which evaluates a function of a closely related type; see <a href="../Text/ch02b.html#ch02ex_2_9_3">exercise 3</a>. The same idea is used in many interpretive routines in connection with the evaluation of arithmetic expressions in postfix notation; we will return to this topic in Chapter 8. See also <a href="../Text/ch02b.html#ch02ex_2_9_17">exercise 17</a>, which gives another important procedure similar to <a href="../Text/ch02a.html#ch02alg-lev2sec9-F">Algorithm F</a>.</p>
 
@@ -1314,7 +1314,7 @@
 
   <p class="indenthanging"><strong>E3.</strong> [Find roots.] If <code>PARENT[</code><em>j</em><code>]</code> &gt; 0, set <em>j</em> ← <code>PARENT[</code><em>j</em><code>]</code> and repeat this step. If <code>PARENT[</code><em>k</em><code>]</code> &gt; 0, set <em>k</em> ← <code>PARENT[</code><em>k</em><code>]</code> and repeat this step. (After this operation, <em>j</em> and <em>k</em> have moved up to the roots of two trees that are to be made equivalent. The input relation <em>j</em> ≡ <em>k</em> was redundant if and only if we now have <em>j</em> = <em>k</em>.)</p>
 
-  <p class="indenthanging"><strong>E4.</strong> [Merge trees.] If <em>j</em> ≠ <em>k</em>, set <code>PARENT[</code><em>j</em><code>]</code> ← <em>k</em>. Go back to step E2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>E4.</strong> [Merge trees.] If <em>j</em> ≠ <em>k</em>, set <code>PARENT[</code><em>j</em><code>]</code> ← <em>k</em>. Go back to step E2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The reader should try this algorithm on the input (<a href="../Text/ch02a.html#ch02eq-lev2sec9-11">11</a>). After processing 1 ≡ 5, 6 ≡ 8, 7 ≡ 2, and 9 ≡ 8, we will have</p>
 
@@ -1378,7 +1378,7 @@
 
   <p class="indenthanging1"><a id="page_359"></a><strong>A10.</strong> [Zero detected?] If <code>DOWN(Q)</code> = <em>Λ</em>, <code>CV(Q)</code> = 0, and <code>EXP(Q)</code> ≠ 0, set <code>P</code> ← <code>UP(P)</code> and go to A8; otherwise go to A6.</p>
 
-  <p class="indenthanging1"><strong>A11.</strong> [Terminate.] Set <code>Q</code> ← <code>UP(Q)</code> zero or more times until <code>UP(Q)</code> = <em>Λ</em> (thus bringing <code>Q</code> to the root of the tree). <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging1"><strong>A11.</strong> [Terminate.] Set <code>Q</code> ← <code>UP(Q)</code> zero or more times until <code>UP(Q)</code> = <em>Λ</em> (thus bringing <code>Q</code> to the root of the tree). <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">This algorithm will actually run much faster than <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm 2.2.4A</a> if polynomial<code>(P)</code> has few terms and polynomial<code>(Q)</code> has many, since it is not necessary to pass over all of polynomial<code>(Q)</code> during the addition process. The reader will find it instructive to simulate <a href="../Text/ch02a.html#ch02alg-lev2sec9-A">Algorithm A</a> by hand, adding the polynomial <em>xy</em> − <em>x</em><sup>2</sup> − <em>xyz</em> − <em>z</em><sup>3</sup> + 3<em>xz</em><sup>3</sup> to the polynomial shown in <a href="../Text/ch02a.html#ch02fig28">Fig. 28</a>. (This case does not demonstrate the efficiency of the algorithm, but it makes the algorithm go through all of its paces by showing the difficult situations that must be handled.) For further commentary on <a href="../Text/ch02a.html#ch02alg-lev2sec9-A">Algorithm A</a>, see <a href="../Text/ch02b.html#ch02ex_2_9_12">exercises 12</a> and <a href="../Text/ch02b.html#ch02ex_2_9_13">13</a>.</p>
 

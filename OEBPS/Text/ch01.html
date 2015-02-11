@@ -62,7 +62,7 @@
 
   <p class="indenthanging"><strong>E2.</strong> [Is it zero?] If <em>r</em> = 0, the algorithm terminates; <em>n</em> is the answer.</p>
 
-  <p class="indenthanging"><strong>E3.</strong> [Reduce.] Set $m←n$, $n←r$, and go back to step E1. <span class="middle"><img src="../Images/ch01/common-01.png"></span></p>
+  <p class="indenthanging"><strong>E3.</strong> [Reduce.] Set $m←n$, $n←r$, and go back to step E1. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="indent">Of course, Euclid did not present his algorithm in just this manner. The format above illustrates the style in which all of the algorithms throughout this book will be presented.</p>
 
@@ -84,7 +84,7 @@
 
   <p class="indent">An algorithm starts at the lowest-numbered step, usually step 1, and it performs subsequent steps in sequential order unless otherwise specified. In step E3, the imperative “go back to step E1” specifies the computational order in an obvious fashion. In step E2, the action is prefaced by the condition “If <em>r</em> = 0”; so if <em>r</em> ≠ 0, the rest of that sentence does not apply and no action is specified. We might have added the redundant sentence, “If <em>r</em> ≠ 0, go on to step E3.”</p>
 
-  <p class="indent">The heavy vertical line “<span class="middle"><img src="../Images/ch01/common-01.png"></span>” appearing at the end of step E3 is used to indicate the end of an algorithm and the resumption of text.</p>
+  <p class="indent">The heavy vertical line “<span class="middle"><img src="../Images/ch01/box.png"></span>” appearing at the end of step E3 is used to indicate the end of an algorithm and the resumption of text.</p>
 
   <p class="indent">We have now discussed virtually all the notational conventions used in the algorithms of this book, except for a notation used to denote “subscripted” or <a id="page_4"></a>“indexed” items that are elements of an ordered array. Suppose we have <em>n</em> quantities, $v_{1},v_{2},...,v_{n}$; instead of writing $v_{j}$ for the <em>j</em> th element, the notation $v[j]$ is often used. Similarly, $a[i,j]$ is sometimes used in preference to a doubly subscripted notation like $a_{ij}$. Sometimes multiple-letter names are used for variables, usually set in capital letters; thus <code>TEMP</code> might be the name of a variable used for temporarily holding a computed value, <code>PRIME[K]</code> might denote the <code>K</code>th prime number, and so on.</p>
 
@@ -228,7 +228,7 @@
 
   <p class="indenthanging"><strong>I3.</strong> [Prove $P(k+1)$.] According to (b), output a proof that “If all of $P(1),...,P(k)$ are true, then $P(k+1)$ is true.” Also output “We have already proved $P(1),...,P(k)$; hence $P(k+1)$ is true.”</p>
 
-  <p class="indenthanging"><strong>I4.</strong> [Increase <em>k</em>.] Increase <em>k</em> by 1 and go to step I2. <span class="middle"><img src="../Images/ch01/common-01.png"></span></p>
+  <p class="indenthanging"><strong>I4.</strong> [Increase <em>k</em>.] Increase <em>k</em> by 1 and go to step I2. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <div class="image">
     <a id="ch01fig02"></a><img src="../Images/ch01/01fig02.png">
@@ -288,7 +288,7 @@
 
   <p class="indenthanging"><strong>E3.</strong> [Remainder zero?] If <em>r</em> = 0, the algorithm terminates; we have in this case $am+bn=d$ as desired.</p>
 
-  <p class="indenthanging"><strong>E4.</strong> [Recycle.] Set $c←d$, $d←r$, $t←a'$, $a'←a$, $a←t-qa$, $t←b'$, $b'←b$, $b←t-qb$, and go back to E2. <span class="middle"><img src="../Images/ch01/common-01.png"></span></p>
+  <p class="indenthanging"><strong>E4.</strong> [Recycle.] Set $c←d$, $d←r$, $t←a'$, $a'←a$, $a←t-qa$, $t←b'$, $b'←b$, $b←t-qb$, and go back to E2. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="indent">If we suppress the variables <em>a</em>, <em>b</em>, <em>a</em>′, and <em>b</em>′ from this algorithm and use <em>m</em> and <em>n</em> for the auxiliary variables <em>c</em> and <em>d</em>, we have our old algorithm, <a href="../Text/ch01.html#ch01alg-lev1sec1-E">1.1E</a>. The new version does a little more, by determining the coefficients <em>a</em> and <em>b</em>. Suppose that <em>m</em> = 1769 and <em>n</em> = 551; we have successively (after step E2):</p>
 
@@ -1059,7 +1059,7 @@
 
   <div class="equation" id="ch01eq-lev2sec4-3"><img src="../Images/ch01/040equ01.png"></div>
 
-  <p>We have <em>x</em> mod <em>y</em> = 0 if and only if <em>x</em> is a multiple of <em>y</em>, that is, if and only if <em>x</em> is divisible by <em>y</em>. The notation $y\minus x$, read “<em>y</em> divides <em>x</em>,” means that <em>y</em> is a positive integer and $x\bmod y=0$.</p>
+  <p>We have <em>x</em> mod <em>y</em> = 0 if and only if <em>x</em> is a multiple of <em>y</em>, that is, if and only if <em>x</em> is divisible by <em>y</em>. The notation $y{\setminus}x$, read “<em>y</em> divides <em>x</em>,” means that <em>y</em> is a positive integer and $x\bmod y=0$.</p>
 
   <p class="indent">The “mod” operation is useful also when <em>x</em> and <em>y</em> take arbitrary real values. For example, with trigonometric functions we can write</p>
 

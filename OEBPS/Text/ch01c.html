@@ -746,11 +746,11 @@
 
   <p class="indenthanging"><a id="page_222"></a><strong>A2.</strong> [<code>CURRENT</code> ← <code>NEXTG</code>.] Set <code>CURRENT</code> ← <code>NEXTG</code> (thereby assigning the current buffer).</p>
 
-  <p class="indenthanging"><strong>A3.</strong> [Advance <code>NEXTG</code>.] Advance <code>NEXTG</code> to the next clockwise buffer. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
+  <p class="indenthanging"><strong>A3.</strong> [Advance <code>NEXTG</code>.] Advance <code>NEXTG</code> to the next clockwise buffer. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p><a id="ch01alg-lev2sec18-R"></a><strong>Algorithm R</strong> (<code>RELEASE</code>). This algorithm includes the steps implied by <code>RELEASE</code> within a computational program, as described above.</p>
 
-  <p class="indenthanging"><strong>R1.</strong> [Increase <em>n</em>.] Increase <em>n</em> by one. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
+  <p class="indenthanging"><strong>R1.</strong> [Increase <em>n</em>.] Increase <em>n</em> by one. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p><a id="ch01alg-lev2sec18-B"></a><strong>Algorithm B</strong> (<em>Buffer control</em>). This algorithm performs the actual initiation of I/O operators in the machine; it is to be executed “simultaneously” with the main program, in the sense described below.</p>
 
@@ -764,7 +764,7 @@
 
   <p class="indenthanging"><strong>B5.</strong> [Advance <code>NEXTR</code>.] Advance <code>NEXTR</code> to the next clockwise buffer.</p>
 
-  <p class="indenthanging"><strong>B6.</strong> [Decrease <em>n</em>.] Decrease <em>n</em> by one, and go to B2. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
+  <p class="indenthanging"><strong>B6.</strong> [Decrease <em>n</em>.] Decrease <em>n</em> by one, and go to B2. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="indent">In these algorithms, we have two independent processes going on “simultaneously,” the buffering control program and the computation program. These processes are, in fact, <em>coroutines</em>, which we will call <code>CONTROL</code> and <code>COMPUTE</code>. Coroutine <code>CONTROL</code> jumps to <code>COMPUTE</code> in steps B1 and B4; coroutine <code>COMPUTE</code> jumps to <code>CONTROL</code> by interspersing “jump ready” instructions at sporadic intervals in its program.</p>
 

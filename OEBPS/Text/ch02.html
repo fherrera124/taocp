@@ -80,7 +80,7 @@
 
   <p class="indenthanging"><strong>A2.</strong> Set <code>TOP</code> ← <code>NEWCARD</code>. (This keeps <code>TOP</code> pointing to the top of the pile.)</p>
 
-  <p class="indenthanging"><strong>A3.</strong> Set <code>TAG</code>(<code>TOP</code>) ← 0. (This marks the card as “face up.”) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A3.</strong> Set <code>TAG</code>(<code>TOP</code>) ← 0. (This marks the card as “face up.”) <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>Another example is the following algorithm, which counts the number of cards currently in the pile:</p>
 
@@ -88,7 +88,7 @@
 
   <p class="indenthanging"><strong>B2.</strong> If <code>X</code> = <em>Λ</em>, stop; <code>N</code> is the number of cards in the pile.</p>
 
-  <p class="indenthanging"><strong>B3.</strong> Set <code>N</code> ← <code>N</code> + 1, <code>X</code> ← <code>NEXT</code>(<code>X</code>), and go back to step B2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>B3.</strong> Set <code>N</code> ← <code>N</code> + 1, <code>X</code> ← <code>NEXT</code>(<code>X</code>), and go back to step B2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">Notice that we are using symbolic names for two quite different things in these algorithms: as names of <em>variables</em> (<code>TOP</code>, <code>NEWCARD</code>, <code>N</code>, <code>X</code>) and as names of <em>fields</em> (<code>TAG</code>, <code>NEXT</code>). These two usages must not be confused. If <code>F</code> is a field name and <code>L</code> ≠ <em>Λ</em> is a link, then <code>F</code>(<code>L</code>) is a variable; but <code>F</code> itself is not a variable — it does not possess a value unless it is qualified by a nonnull link.</p>
 
@@ -413,7 +413,7 @@
 
   <p class="indenthanging"><strong>G5.</strong> [Compute new base addresses.] Set <code>NEWBASE[</code>1<code>]</code> ← <code>BASE[</code>1<code>]</code> and σ ← 0; then for <em>j</em> = 2, 3, . . ., <em>n</em> set τ ← σ + α + <code>D</code>[ <em>j</em> − 1]β, <code>NEWBASE</code>[ <em>j</em>] ← <code>NEWBASE</code>[ <em>j</em> − 1] + <code>TOP</code>[ <em>j</em> − 1] − <code>BASE</code>[ <em>j</em> − 1] + \lfloor{τ}\rfloor − \lfloor{σ}\rfloor, and σ ← τ .</p>
 
-  <p class="indenthanging"><strong>G6.</strong> [Repack.] Set <code>TOP</code>[<em>i</em>] ← <code>TOP</code>[<em>i</em>] − 1. (This reflects the true size of the <em>i</em>th list, so that no attempt will be made to move information from beyond the list boundary.) Perform <a href="../Text/ch02.html#ch02alg-lev2sec2-R">Algorithm R</a> below, and then reset <code>TOP</code>[<em>i</em>] ←<code>TOP</code>[<em>i</em>] + 1. Finally set <code>OLDTOP</code>[ <em>j</em>] ← <code>TOP</code>[ <em>j</em>] for 1 ≤ <em>j</em> ≤ <em>n</em>. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>G6.</strong> [Repack.] Set <code>TOP</code>[<em>i</em>] ← <code>TOP</code>[<em>i</em>] − 1. (This reflects the true size of the <em>i</em>th list, so that no attempt will be made to move information from beyond the list boundary.) Perform <a href="../Text/ch02.html#ch02alg-lev2sec2-R">Algorithm R</a> below, and then reset <code>TOP</code>[<em>i</em>] ←<code>TOP</code>[<em>i</em>] + 1. Finally set <code>OLDTOP</code>[ <em>j</em>] ← <code>TOP</code>[ <em>j</em>] for 1 ≤ <em>j</em> ≤ <em>n</em>. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">Perhaps the most interesting part of this whole algorithm is the general repacking process, which we shall now describe. Repacking is not trivial, since some portions of memory shift up and others shift down; it is obviously important not to overwrite any of the good information in memory while it is being moved.</p>
 
@@ -435,7 +435,7 @@
 
   <p class="indenthanging-A">b) <em>j</em> = 1: The algorithm terminates.</p>
 
-  <p class="indenthanging"><a id="page_250"></a><strong>R5.</strong> [Shift list up.] Set δ ← <code>NEWBASE</code>[ <em>j</em>] − <code>BASE</code>[ <em>j</em>]. Set <code>CONTENTS</code>(<code>L</code> + δ) ← <code>CONTENTS</code>(<code>L</code>), for <code>L</code> = <code>TOP</code>[ <em>j</em>], <code>TOP</code>[ <em>j</em>] − 1, . . ., <code>BASE</code>[ <em>j</em>] + 1. (As in step R3, no action may actually be needed here.) Set <code>BASE</code>[ <em>j</em>] ← <code>NEWBASE</code>[ <em>j</em>], <code>TOP</code>[ <em>j</em>] ← <code>TOP</code>[ <em>j</em>] + δ. Go back to R4. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><a id="page_250"></a><strong>R5.</strong> [Shift list up.] Set δ ← <code>NEWBASE</code>[ <em>j</em>] − <code>BASE</code>[ <em>j</em>]. Set <code>CONTENTS</code>(<code>L</code> + δ) ← <code>CONTENTS</code>(<code>L</code>), for <code>L</code> = <code>TOP</code>[ <em>j</em>], <code>TOP</code>[ <em>j</em>] − 1, . . ., <code>BASE</code>[ <em>j</em>] + 1. (As in step R3, no action may actually be needed here.) Set <code>BASE</code>[ <em>j</em>] ← <code>NEWBASE</code>[ <em>j</em>], <code>TOP</code>[ <em>j</em>] ← <code>TOP</code>[ <em>j</em>] + δ. Go back to R4. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">Notice that stack 1 never needs to be moved. Therefore we should put the largest stack first, if we know which one will be largest.</p>
 
@@ -813,7 +813,7 @@
 
   <p class="indenthanging"><strong>T7.</strong> [Remove from queue.] Set <code>F</code> ← <code>QLINK</code>[<code>F</code>] and go back to T5.</p>
 
-  <p class="indenthanging"><strong>T8.</strong> [End of process.] The algorithm terminates. If <code>N</code> = 0, we have output all of the object numbers in the desired “topological order,” followed by a zero. Otherwise the <code>N</code> object numbers not yet output contain a loop, in violation of the hypothesis of partial order. (See <a href="../Text/ch02.html#ch02ex_2_3_23">exercise 23</a> for an algorithm that prints out the contents of one such loop.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>T8.</strong> [End of process.] The algorithm terminates. If <code>N</code> = 0, we have output all of the object numbers in the desired “topological order,” followed by a zero. Otherwise the <code>N</code> object numbers not yet output contain a loop, in violation of the hypothesis of partial order. (See <a href="../Text/ch02.html#ch02ex_2_3_23">exercise 23</a> for an algorithm that prints out the contents of one such loop.) <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The reader will find it helpful to try this algorithm by hand on the input (<a href="../Text/ch02.html#ch02eq-lev2sec3-18">18</a>). <a href="../Text/ch02.html#ch02alg-lev2sec3-T">Algorithm T</a> shows a nice interplay between sequential memory and linked <a id="page_266"></a>memory techniques. Sequential memory is used for the main table <code>X</code><code>[</code>1<code>]</code>, . . .,<code>X</code>[<em>n</em>], which contains the <code>COUNT</code>[<em>k</em>] and <code>TOP</code>[<em>k</em>] entries, because we want to make references to “random” parts of this table in step T3. (If the input were alphabetic, however, another type of table would be used for speedier search, as in Chapter 6.) Linked memory is used for the tables of “immediate successors,” since those table entries have no particular order in the input. The queue of nodes waiting to be output is kept in the midst of the sequential table by linking the nodes together in output order. This linking is done by table index instead of by address; in other words, when the front of the queue is <code>X</code>[<em>k</em>], we have <code>F</code> = <em>k</em> instead of <code>F</code> = <code>LOC</code>(<code>X</code>[<em>k</em>]). The queue operations used in steps T4, T6, and T7 are not identical to those in (<a href="../Text/ch02.html#ch02eq-lev2sec3-14">14</a>) and (<a href="../Text/ch02.html#ch02eq-lev2sec3-17">17</a>), since we are taking advantage of special properties of the queue in this system; no nodes need to be created or returned to available space during this part of the algorithm.</p>
 
@@ -1025,7 +1025,7 @@
 
   <p class="indenthanging"><strong>A4.</strong> [Delete zero term.] Set <code>Q</code>2 ← <code>Q</code>, <code>LINK</code>(<code>Q</code>1) ← <code>Q</code> ← <code>LINK</code>(<code>Q</code>), and <code>AVAIL</code> <span class="ent">⇐</span> <code>Q</code>2. (A zero term created in step A3 has been removed from polynomial(<code>Q</code>).) Set <code>P</code> ← <code>LINK</code>(<code>P</code>) and go back to A2.</p>
 
-  <p class="indenthanging"><strong>A5.</strong> [Insert new term.] (Polynomial(<code>P</code>) contains a term that is not present in polynomial(<code>Q</code>), so we insert it in polynomial(<code>Q</code>).) Set <code>Q2</code> <span class="ent">⇐</span> <code>AVAIL</code>, <code>COEF</code>(<code>Q2</code>) ← <code>COEF</code>(<code>P</code>), <code>ABC</code>(<code>Q2</code>) ← <code>ABC</code>(<code>P</code>), <code>LINK</code>(<code>Q2</code>) ← <code>Q</code>, <code>LINK</code>(<code>Q1</code>) ← Q2, <code>Q1</code> ← <code>Q2</code>, <code>P</code> ← <code>LINK</code>(<code>P</code>), and return to step A2. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>A5.</strong> [Insert new term.] (Polynomial(<code>P</code>) contains a term that is not present in polynomial(<code>Q</code>), so we insert it in polynomial(<code>Q</code>).) Set <code>Q2</code> <span class="ent">⇐</span> <code>AVAIL</code>, <code>COEF</code>(<code>Q2</code>) ← <code>COEF</code>(<code>P</code>), <code>ABC</code>(<code>Q2</code>) ← <code>ABC</code>(<code>P</code>), <code>LINK</code>(<code>Q2</code>) ← <code>Q</code>, <code>LINK</code>(<code>Q1</code>) ← Q2, <code>Q1</code> ← <code>Q2</code>, <code>P</code> ← <code>LINK</code>(<code>P</code>), and return to step A2. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">One of the most noteworthy features of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a> is the manner in which the pointer variable <code>Q1</code> follows the pointer <code>Q</code> around the list. This is very typical of list processing algorithms, and we will see a dozen more algorithms with the same characteristic. Can the reader see why this idea was used in <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>?</p>
 
@@ -1039,7 +1039,7 @@
 
   <p class="indenthanging"><strong>M1.</strong> [Next multiplier.] Set <code>M</code> ← <code>LINK</code>(<code>M</code>). If <code>ABC</code>(<code>M</code>) &lt; 0, the algorithm terminates.</p>
 
-  <p class="indenthanging"><strong>M2.</strong> [Multiply cycle.] Perform <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, except that wherever the notation “<code>ABC</code>(<code>P</code>)” appears in that algorithm, replace it by “(if <code>ABC</code>(<code>P</code>) &lt; 0 then −1, otherwise <code>ABC</code>(<code>P</code>) + <code>ABC</code>(<code>M</code>))”; wherever “<code>COEF</code>(<code>P</code>)” appears in that algorithm replace it by “<code>COEF</code>(<code>P</code>) × <code>COEF</code>(<code>M</code>)”. Then go back to step M1. <span class="middle"><img src="../Images/ch02/box.jpg"></span></p>
+  <p class="indenthanging"><strong>M2.</strong> [Multiply cycle.] Perform <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a>, except that wherever the notation “<code>ABC</code>(<code>P</code>)” appears in that algorithm, replace it by “(if <code>ABC</code>(<code>P</code>) &lt; 0 then −1, otherwise <code>ABC</code>(<code>P</code>) + <code>ABC</code>(<code>M</code>))”; wherever “<code>COEF</code>(<code>P</code>)” appears in that algorithm replace it by “<code>COEF</code>(<code>P</code>) × <code>COEF</code>(<code>M</code>)”. Then go back to step M1. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p>The programming of <a href="../Text/ch02.html#ch02alg-lev2sec4-A">Algorithm A</a> in <code>MIX</code> language shows again the ease with which linked lists are manipulated in a computer. In the following code we assume that <code>OVERFLOW</code> is a subroutine that either terminates the program (due to lack of memory space) or finds further available space and exits to rJ − 2.</p>
 
@@ -1216,7 +1216,7 @@
 
   <p class="indenthangingP1">Now the user waits until being sent to step U6 by step E4 below, when the elevator has reached the desired floor.</p>
 
-  <p class="indenthanging"><strong>U6.</strong> [Get out.] Delete this user from the <code>ELEVATOR</code> list and from the simulated system. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>U6.</strong> [Get out.] Delete this user from the <code>ELEVATOR</code> list and from the simulated system. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p><strong>Coroutine E</strong> (<em>Elevator</em>). This coroutine represents the actions of the elevator; step E4 also handles the control of when people get in and out.</p>
 
@@ -1238,7 +1238,7 @@
 
   <p class="indenthanging"><strong>E8.</strong> [Go down a floor.] This step is like E7 with directions reversed, and also the times 51 and 14 are changed to 61 and 23, respectively. (It takes the elevator longer to go down than up.)</p>
 
-  <p class="indenthanging"><strong>E9.</strong> [Set inaction indicator.] Set <code>D2</code> ← 0 and perform the <code>DECISION</code> subroutine. (This independent action is initiated in step E3 but it is almost always canceled in step E6. See <a href="../Text/ch02a.html#ch02ex_2_5_4">exercise 4</a>.) <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>E9.</strong> [Set inaction indicator.] Set <code>D2</code> ← 0 and perform the <code>DECISION</code> subroutine. (This independent action is initiated in step E3 but it is almost always canceled in step E6. See <a href="../Text/ch02a.html#ch02ex_2_5_4">exercise 4</a>.) <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p><a id="page_287"></a><strong>Subroutine D</strong> (DECISION <em>subroutine</em>). This subroutine is performed at certain critical times, as specified in the coroutines above, when a decision about the elevator’s next direction is to be made.</p>
 
@@ -1250,7 +1250,7 @@
 
   <p class="indenthanging"><strong>D4.</strong> [Set <code>STATE</code>.] If <code>FLOOR</code> <em>&gt; j</em>, set <code>STATE</code> ← <code>GOINGDOWN</code>; if <code>FLOOR</code> <em>&lt; j</em>, set <code>STATE</code> ← <code>GOINGUP</code>.</p>
 
-  <p class="indenthanging"><strong>D5.</strong> [Elevator dormant?] If the elevator coroutine is positioned at step E1, and if <em>j</em> ≠ 2, set the elevator to perform step E6 after 20 units of time. Exit from the subroutine. <span class="middle"><img src="../Images/ch02/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>D5.</strong> [Elevator dormant?] If the elevator coroutine is positioned at step E1, and if <em>j</em> ≠ 2, set the elevator to perform step E6 after 20 units of time. Exit from the subroutine. <span class="middle"><img src="../Images/ch02/box.png"></span></p>
 
   <p class="indent">The elevator system described above is quite complicated by comparison with other algorithms we have seen in this book, but the choice of a real-life system is more typical of a simulation problem than any cooked-up “textbook example” would ever be.</p>
 

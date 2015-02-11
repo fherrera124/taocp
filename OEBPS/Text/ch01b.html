@@ -979,7 +979,7 @@
 
   <p class="uln-indent"><code>CHAR 1</code></p>
 
-  <p class="uln-indent"><code>HLT 1</code> <span class="middle"><img src="../Images/ch01/common-01.jpg"></span></p>
+  <p class="uln-indent"><code>HLT 1</code> <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/ch01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_12_19a" id="ch01ex_2_12_19">19</a>.</strong> [<em>14</em>] What is the execution time of the program in the preceding exercise, not counting the <code>HLT</code> instruction?</p>
 
@@ -1148,7 +1148,7 @@
 
   <p class="indenthanging1"><strong>P10.</strong> [Set up line.] Put <code>PRIME[M]</code>, <code>PRIME[50 + M], ..., PRIME[450 + M]</code> into <code>BUFFER[B]</code> in the proper format.</p>
 
-  <p class="indenthanging1"><strong>P11.</strong> [Print line.] Print <code>BUFFER[B]</code>; set <code>B ← 1 – B</code> (thereby switching to the other buffer); and increase <code>M</code> by 1. If <code>M</code> ≤ 50, return to P10; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/common-01.jpg"></span></p>
+  <p class="indenthanging1"><strong>P11.</strong> [Print line.] Print <code>BUFFER[B]</code>; set <code>B ← 1 – B</code> (thereby switching to the other buffer); and increase <code>M</code> by 1. If <code>M</code> ≤ 50, return to P10; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <div class="image">
     <a id="page_148"></a><a id="ch01fig14"></a><img src="../Images/ch01/01fig14.jpg">
@@ -1661,7 +1661,7 @@
 
   <p class="indenthanging"><strong>A5.</strong> <code>[CURRENT = START?]</code> If <code>CURRENT ≠ START</code>, output <code>CURRENT</code> and go back to step A4 starting again at the left of the formula (thereby continuing the development of a cycle in the output).</p>
 
-  <p class="indenthanging"><strong>A6.</strong> [Close.] (A complete cycle in the output has been found.) Output a right parenthesis, and go back to step A2. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
+  <p class="indenthanging"><strong>A6.</strong> [Close.] (A complete cycle in the output has been found.) Output a right parenthesis, and go back to step A2. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="indent">For example, consider formula (<a href="../Text/ch01b.html#ch01eq-lev2sec14-6">6</a>); <a href="../Text/ch01b.html#ch01tab04">Table 1</a> shows successive stages in its processing. The first line of that table shows the formula after right parentheses have been replaced by the leading element of the corresponding cycle; succeeding lines show the progress that is made as more and more elements are tagged. A cursor shows the current point of interest in the formula. The output is “$(a\,d\,g)(c\,e\,b)(f)$”; notice that singleton cycles will appear in the output.</p>
 
@@ -1783,7 +1783,7 @@
 
   <p class="indenthanging"><strong>B3.</strong> [Change <em>T</em> [<em>i</em>].] Exchange $Z↔T[i]$. If this makes $T[i]=0$, set $j←i$. Return to step B2.</p>
 
-  <p class="indenthanging"><strong>B4.</strong> [Change $T[j]$.] Set $T[j]←Z$. (At this point, <em>j</em> is the row that shows a “)” entry in the notation of <a href="../Text/ch01b.html#ch01tab05">Table 2</a>, corresponding to the right parenthesis that matches the left parenthesis just scanned.) Return to step B2. <span class="middle"><img src="../Images/ch01/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>B4.</strong> [Change $T[j]$.] Set $T[j]←Z$. (At this point, <em>j</em> is the row that shows a “)” entry in the notation of <a href="../Text/ch01b.html#ch01tab05">Table 2</a>, corresponding to the right parenthesis that matches the left parenthesis just scanned.) Return to step B2. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p class="indent">Of course, after this algorithm has been performed, we still must output the contents of table <em>T</em> in cycle form; this is easily done by a “tagging” method, as we shall see below.</p>
 
@@ -1829,7 +1829,7 @@
 
   <p class="indenthanging"><strong>I5.</strong> [Store final value.] Set $X[m]←-i$. (Originally $X[-i]$ was equal to <em>m</em>.)</p>
 
-  <p class="indenthanging"><strong>I6.</strong> [Loop on <em>m</em>.] Decrease <em>m</em> by 1. If $m\gt 0$, go back to I2; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/common-01.jpg"></span></p>
+  <p class="indenthanging"><strong>I6.</strong> [Loop on <em>m</em>.] Decrease <em>m</em> by 1. If $m\gt 0$, go back to I2; otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <p>See <a href="../Text/ch01b.html#ch01tab06">Table 3</a> for an example of this algorithm. The method is based on inversion of successive cycles of the permutation, tagging the inverted elements by making them negative, afterwards restoring the correct sign.</p>
 
@@ -1859,7 +1859,7 @@
 
   <p class="indenthanging"><strong>J4.</strong> [Invert.] Set $X[j]←X[-i]$, $X[-i]←m$.</p>
 
-  <p class="indenthanging"><strong>J5.</strong> [Loop on <em>m</em>.] Decrease <em>m</em> by 1; if $m\gt 0$, go back to J2. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/box.jpg"></span></p>
+  <p class="indenthanging"><strong>J5.</strong> [Loop on <em>m</em>.] Decrease <em>m</em> by 1; if $m\gt 0$, go back to J2. Otherwise the algorithm terminates. <span class="middle"><img src="../Images/ch01/box.png"></span></p>
 
   <div class="image">
     <a id="page_178"></a><a id="ch01tab07"></a><img src="../Images/ch01/178tab01.jpg">
