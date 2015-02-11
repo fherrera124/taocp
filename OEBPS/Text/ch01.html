@@ -28,14 +28,21 @@
 
   <div class="image"><img src="../Images/ch01/xx-fig01.png"></div>
 
-  <p class="blockquote"><a id="page_1"></a><span class="roman_italic">Many persons who are not conversant with mathematical studies imagine that because the business of [Babbage’s Analytical Engine] is to give its results in numerical notation, the nature of its processes must consequently be arithmetical and numerical, rather than algebraical and analytical. This is an error. The engine can arrange and combine its numerical quantities exactly as if they were letters or any other general symbols; and in fact it might bring out its results in algebraical notation, were provisions made accordingly.</span></p>
+  <p class="blockquote"><a id="page_1"></a><em>Many persons who are not conversant with mathematical studies<br>
+  imagine that because the business of [Babbage’s Analytical Engine] is to<br>
+  give its results in numerical notation, the nature of its processes must<br>
+  consequently be arithmetical and numerical, rather than algebraical and<br>
+  analytical. This is an error. The engine can arrange and combine its<br>
+  numerical quantities exactly as if they were letters or any other general<br>
+  symbols; and in fact it might bring out its results in algebraical notation,<br>
+  were provisions made accordingly.</em></p>
 
   <p class="attribution">— AUGUSTA ADA, Countess of Lovelace (1843)</p>
 
-  <p class="blockquote"><span class="roman_italic">Practice yourself, for heaven’s sake, in little things;
-  and thence proceed to greater</span>.</p>
+  <p class="blockquote"><em>Practice yourself, for heaven’s sake, in little things;<br>
+  and thence proceed to greater</em>.</p>
 
-  <p class="attribution">— EPICTETUS (<span class="roman_italic">Discourses</span> IV.i)</p>
+  <p class="attribution">— EPICTETUS (<em>Discourses</em> IV.i)</p>
 
   <div class="heading">
     <h3 id="ch01lev1sec1">1.1. Algorithms</h3>
@@ -93,17 +100,17 @@
 
   <p class="indent">So this is an algorithm. The modern meaning for algorithm is quite similar to that of <em>recipe, process, method, technique, procedure, routine, rigmarole,</em> except that the word “algorithm” connotes something just a little different. Besides merely being a finite set of rules that gives a sequence of operations for solving a specific type of problem, an algorithm has five important features:</p>
 
-  <p class="number">1) <em>Finiteness.</em> An algorithm must always terminate after a finite number of steps. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> satisfies this condition, because after step E1 the value of <em>r</em> is <em>less</em> than <em>n</em>; so if <em>r</em> ≠ 0, the value of <em>n</em> decreases</em> the next time step E1 is encountered. A decreasing sequence of positive integers must eventually terminate, so step E1 is executed only a finite number of times for any given original <a id="page_5"></a>value of <em>n</em>. Note, however, that the number of steps can become arbitrarily large; certain huge choices of <em>m</em> and <em>n</em> will cause step E1 to be executed more than a million times.</p>
+  <p class="indent">1) <em>Finiteness.</em> An algorithm must always terminate after a finite number of steps. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> satisfies this condition, because after step E1 the value of <em>r</em> is <em>less</em> than <em>n</em>; so if <em>r</em> ≠ 0, the value of <em>n</em> decreases</em> the next time step E1 is encountered. A decreasing sequence of positive integers must eventually terminate, so step E1 is executed only a finite number of times for any given original <a id="page_5"></a>value of <em>n</em>. Note, however, that the number of steps can become arbitrarily large; certain huge choices of <em>m</em> and <em>n</em> will cause step E1 to be executed more than a million times.</p>
 
   <p class="indent">(A procedure that has all of the characteristics of an algorithm except that it possibly lacks finiteness may be called a <em>computational method</em>. Euclid originally presented not only an algorithm for the greatest common divisor of numbers, but also a very similar geometrical construction for the “greatest common measure” of the lengths of two line segments; this is a computational method that does not terminate if the given lengths are incommensurable. Another example of a nonterminating computational method is a <em>reactive process</em>, which continually interacts with its environment.)</p>
 
-  <p class="number">2) <em>Definiteness.</em> Each step of an algorithm must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case. The algorithms of this book will hopefully meet this criterion, but they are specified in the English language, so there is a possibility that the reader might not understand exactly what the author intended. To get around this difficulty, formally defined <em>programming languages</em> or <em>computer languages</em> are designed for specifying algorithms, in which every statement has a very definite meaning. Many of the algorithms of this book will be given both in English and in a computer language. An expression of a computational method in a computer language is called a <em>program</em>.</p>
+  <p class="indent">2) <em>Definiteness.</em> Each step of an algorithm must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case. The algorithms of this book will hopefully meet this criterion, but they are specified in the English language, so there is a possibility that the reader might not understand exactly what the author intended. To get around this difficulty, formally defined <em>programming languages</em> or <em>computer languages</em> are designed for specifying algorithms, in which every statement has a very definite meaning. Many of the algorithms of this book will be given both in English and in a computer language. An expression of a computational method in a computer language is called a <em>program</em>.</p>
 
   <p class="indent">In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, the criterion of definiteness as applied to step E1 means that the reader is supposed to understand exactly what it means to divide <em>m</em> by <em>n</em> and what the remainder is. In actual fact, there is no universal agreement about what this means if <em>m</em> and <em>n</em> are not positive integers; what is the remainder of −8 divided by −π? What is the remainder of $59/13$ divided by zero? Therefore the criterion of definiteness means we must make sure that the values of <em>m</em> and <em>n</em> are always positive integers whenever step E1 is to be executed. This is initially true, by hypothesis; and after step E1, <em>r</em> is a nonnegative integer that must be nonzero if we get to step E3. So <em>m</em> and <em>n</em> are indeed positive integers as required.</p>
 
-  <p class="number">3) <em>Input.</em> An algorithm has zero or more <em>inputs</em>: quantities that are given to it initially before the algorithm begins, or dynamically as the algorithm runs. These inputs are taken from specified sets of objects. In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, for example, there are two inputs, namely <em>m</em> and <em>n</em>, both taken from the set of <em>positive integers</em>.</p>
+  <p class="indent">3) <em>Input.</em> An algorithm has zero or more <em>inputs</em>: quantities that are given to it initially before the algorithm begins, or dynamically as the algorithm runs. These inputs are taken from specified sets of objects. In <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a>, for example, there are two inputs, namely <em>m</em> and <em>n</em>, both taken from the set of <em>positive integers</em>.</p>
 
-  <p class="number">4) <em>Output.</em> An algorithm has one or more <em>outputs</em>: quantities that have a specified relation to the inputs. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> has one output, namely <em>n</em> in step E2, the greatest common divisor of the two inputs.</p>
+  <p class="indent">4) <em>Output.</em> An algorithm has one or more <em>outputs</em>: quantities that have a specified relation to the inputs. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> has one output, namely <em>n</em> in step E2, the greatest common divisor of the two inputs.</p>
 
   <p class="indent">(We can easily <em>prove</em> that this number is indeed the greatest common divisor, as follows. After step E1, we have</p>
 
@@ -111,7 +118,7 @@
 
   <p>for some integer <em>q</em>. If <em>r</em> = 0, then <em>m</em> is a multiple of <em>n</em>, and clearly in such a case <em>n</em> is the greatest common divisor of <em>m</em> and <em>n</em>. If <em>r</em> ≠ 0, note that any number that divides both <em>m</em> and <em>n</em> must divide $m-qn=r$, and any number that divides <a id="page_6"></a>both <em>n</em> and <em>r</em> must divide $qn+r=m$; so the set of common divisors of <em>m</em> and <em>n</em> is the same as the set of common divisors of <em>n</em> and <em>r</em>. In particular, the <em>greatest</em> common divisor of <em>m</em> and <em>n</em> is the same as the greatest common divisor of <em>n</em> and <em>r</em>. Therefore step E3 does not change the answer to the original problem.)</p>
 
-  <p class="number">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n}+x^{n}+y^{n}=z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
+  <p class="indent">5) <em>Effectiveness.</em> An algorithm is also generally expected to be <em>effective</em>, in the sense that its operations must all be sufficiently basic that they can in principle be done exactly and in a finite length of time by someone using pencil and paper. <a href="../Text/ch01.html#ch01alg-lev1sec1-E">Algorithm E</a> uses only the operations of dividing one positive integer by another, testing if an integer is zero, and setting the value of one variable equal to the value of another. These operations are effective, because integers can be represented on paper in a finite manner, and because there is at least one method (the “division algorithm”) for dividing one by another. But the same operations would <em>not</em> be effective if the values involved were arbitrary real numbers specified by an infinite decimal expansion, nor if the values were the lengths of physical line segments (which cannot be specified exactly). Another example of a noneffective step is, “If 4 is the largest integer <em>n</em> for which there is a solution to the equation $w^{n}+x^{n}+y^{n}=z^{n}$ in positive integers <em>w</em>, <em>x</em>, <em>y</em>, and <em>z</em>, then go to step E4.” Such a statement would not be an effective operation until someone successfully constructs an algorithm to determine whether 4 is or is not the largest integer with the stated property.</p>
 
   <p class="indent">Let us try to compare the concept of an algorithm with that of a cookbook recipe. A recipe presumably has the qualities of finiteness (although it is said that a watched pot never boils), input (eggs, flour, etc.), and output (TV dinner, etc.), but it notoriously lacks definiteness. There are frequent cases in which a cook’s instructions are indefinite: “Add a dash of salt.” A “dash” is defined to be “less than ⅛ teaspoon,” and salt is perhaps well enough defined; but where should the salt be added — on top? on the side? Instructions like “toss lightly until mixture is crumbly” or “warm cognac in small saucepan” are quite adequate as explanations to a trained chef, but an algorithm must be specified to such a degree that even a computer can follow the directions. Nevertheless, a computer programmer can learn much by studying a good recipe book. (The author has in fact barely resisted the temptation to name the present volume “The Programmer’s Cookbook.” Perhaps someday he will attempt a book called “Algorithms for the Kitchen.”)</p>
 
@@ -335,7 +342,7 @@
 
   <p class="indent"><a id="page_18"></a>The concept of inductive assertions actually appeared in embryonic form in 1946, at the same time as flow charts were introduced by H. H. Goldstine and J. von Neumann. Their original flow charts included “assertion boxes” that are in close analogy with the assertions in <a href="../Text/ch01.html#ch01fig04">Fig. 4</a>. [See John von Neumann, <em>Collected Works</em> <strong>5</strong> (New York: Macmillan, 1963), 91–99. See also A. M. Turing’s early comments about verification in <em>Report of a Conference on High Speed Automatic Calculating Machines</em> (Cambridge Univ., 1949), 67–68 and figures; reprinted with commentary by F. L. Morris and C. B. Jones in <em>Annals of the History of Computing</em> <strong>6</strong> (1984), 139–143.]</p>
 
-  <p class="blockquote"><span class="roman_italic">The understanding of the theory of a routine<br>
+  <p class="blockquote"><em>The understanding of the theory of a routine<br>
   may be greatly aided by providing, at the time of construction<br>
   one or two statements concerning the state of the machine<br>
   at well chosen points. ...<br>
@@ -344,7 +351,7 @@
   In the extreme form of the experimental method<br>
   the routine is tried out on the machine with a variety of initial<br>
   conditions and is pronounced fit if the assertions hold in each case.<br>
-  Both methods have their weaknesses.</span></p>
+  Both methods have their weaknesses.</em></p>
 
   <p class="attribution">— A. M. TURING, Ferranti Mark I Programming Manual (1950)</p>
 
@@ -888,11 +895,11 @@
 
   <p class="exercises3"><span class="middle"><img src="../Images/ch01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_20a" id="ch01ex_2_3_20">20</a>.</strong> [<em>25</em>] Dr. I. J. Matrix has observed a remarkable sequence of formulas: 9 × 1 + 2 = 11, 9 × 12 + 3 = 111, 9 × 123 + 4 = 1111, 9 × 1234 + 5 = 11111.</p>
 
-  <p class="indenthangingA">a) Write the good doctor’s great discovery in terms of the ∑-notation.</p>
+  <p class="custom1">a) Write the good doctor’s great discovery in terms of the ∑-notation.</p>
 
-  <p class="indenthangingA">b) Your answer to part (a) undoubtedly involves the number 10 as base of the decimal system; generalize this formula so that you get a formula that will perhaps work in any base <em>b</em>.</p>
+  <p class="custom1">b) Your answer to part (a) undoubtedly involves the number 10 as base of the decimal system; generalize this formula so that you get a formula that will perhaps work in any base <em>b</em>.</p>
 
-  <p class="indenthangingA">c) Prove your formula from part (b) by using formulas derived in the text or in <a href="../Text/ch01.html#ch01ex_2_3_16">exercise 16</a> above.</p>
+  <p class="custom1">c) Prove your formula from part (b) by using formulas derived in the text or in <a href="../Text/ch01.html#ch01ex_2_3_16">exercise 16</a> above.</p>
 
   <p class="exercises3"><span class="middle"><img src="../Images/ch01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_3_21a" id="ch01ex_2_3_21">21</a>.</strong> [<em>M25</em>] Derive rule (d) from (<a href="../Text/ch01.html#ch01eq-lev2sec3-8">8</a>) and (<a href="../Text/ch01.html#ch01eq-lev2sec3-17">17</a>).</p>
 
@@ -1040,11 +1047,11 @@
 
   <p>Consequently</p>
 
-  <p class="indenthangingA">a) if <em>y</em> &gt; 0, then $0≤x\bmod y\lt y$;</p>
+  <p class="custom2">a) if <em>y</em> &gt; 0, then $0≤x\bmod y\lt y$;</p>
 
-  <p class="indenthangingA">b) if <em>y</em> &lt; 0, then $0≥x\bmod y\gt y$;</p>
+  <p class="custom2">b) if <em>y</em> &lt; 0, then $0≥x\bmod y\gt y$;</p>
 
-  <p class="indenthangingA"><a id="page_40"></a>c) the quantity $x-(x\bmod y)$ is an integral multiple of <em>y</em>.</p>
+  <p class="custom2"><a id="page_40"></a>c) the quantity $x-(x\bmod y)$ is an integral multiple of <em>y</em>.</p>
 
   <p>We call $x\bmod y$ the <em>remainder</em> when <em>x</em> is divided by <em>y</em>; similarly, we call $\lfloor{x/y}\rfloor$ the <em>quotient</em>.</p>
 
@@ -1108,17 +1115,17 @@
 
   <p class="exercises"><strong><a href="../Text/app01.html#ch01ex_2_4_3a" id="ch01ex_2_4_3">3</a>.</strong> [<em>M10</em>] Let <em>n</em> be an integer, and let <em>x</em> be a real number. Prove that</p>
 
-  <p class="indenthangingA">a) $\lfloor{x}\rfloor\lt n$ if and only if <em>x</em> &lt; n;
+  <p class="custom2">a) $\lfloor{x}\rfloor\lt n$ if and only if <em>x</em> &lt; n;
 
-  <p class="indenthangingA">b) $n≤\lfloor{x}\rfloor$ if and only if <em>n</em> ≤ <em>x</em>;</p>
+  <p class="custom2">b) $n≤\lfloor{x}\rfloor$ if and only if <em>n</em> ≤ <em>x</em>;</p>
 
-  <p class="indenthangingA">c) $\lceil{x}\rceil≤n$ if and only if <em>x</em> ≤ n;
+  <p class="custom2">c) $\lceil{x}\rceil≤n$ if and only if <em>x</em> ≤ n;
 
-  <p class="indenthangingA">d) $n\lt\lceil{x}\rceil$ if and only if <em>n</em> &lt; <em>x</em>;</p>
+  <p class="custom2">d) $n\lt\lceil{x}\rceil$ if and only if <em>n</em> &lt; <em>x</em>;</p>
 
-  <p class="indenthangingA">e) $\lfloor{x}\rfloor=n$ if and only if $x-1\lt n≤x$, and if and only if $n≤x\lt n+1$;</p>
+  <p class="custom2">e) $\lfloor{x}\rfloor=n$ if and only if $x-1\lt n≤x$, and if and only if $n≤x\lt n+1$;</p>
 
-  <p class="indenthangingA">f) $\lceil{x}\rceil=n$ if and only if $x≤n\lt x+1$, and if and only if $n-1\lt x≤n$.</p>
+  <p class="custom2">f) $\lceil{x}\rceil=n$ if and only if $x≤n\lt x+1$, and if and only if $n-1\lt x≤n$.</p>
 
   <p class="exercisesp">[<em>These formulas are the most important tools for proving facts about $\lfloor{x}\rfloor$ and $\lceil{x}\rceil$</em>.]</p>
 
@@ -1214,23 +1221,23 @@
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_39a" id="ch01ex_2_4_39">39</a>.</strong> [<em>HM35</em>] A function <em>f</em> for which <span class="middle"><img src="../Images/ch01/e043_09.png"></span>, whenever <em>n</em> is a positive integer, is called a <em>replicative function</em>. The previous exercise establishes the fact that $\lfloor{x}\rfloor$ is replicative. Show that the following functions are replicative:</p>
 
-  <p class="indenthangingA">a) <span class="middle"><img src="../Images/ch01/e043_10.png"></span>;</p>
+  <p class="custom1">a) <span class="middle"><img src="../Images/ch01/e043_10.png"></span>;</p>
 
-  <p class="indenthangingA">b) $f(x)=$ [<em>x</em> is an integer];</p>
+  <p class="custom1">b) $f(x)=$ [<em>x</em> is an integer];</p>
 
-  <p class="indenthangingA">c) $f(x)=$ [<em>x</em> is a positive integer];</p>
+  <p class="custom1">c) $f(x)=$ [<em>x</em> is a positive integer];</p>
 
-  <p class="indenthangingA">d) $f(x)=$ [there exists a rational number <em>r</em> and an integer <em>m</em> such that $x=rπ+m$];</p>
+  <p class="custom1">d) $f(x)=$ [there exists a rational number <em>r</em> and an integer <em>m</em> such that $x=rπ+m$];</p>
 
-  <p class="indenthangingA">e) three other functions like the one in (d), with <em>r</em> and/or <em>m</em> restricted to positive values;</p>
+  <p class="custom1">e) three other functions like the one in (d), with <em>r</em> and/or <em>m</em> restricted to positive values;</p>
 
-  <p class="indenthangingA">f) $f(x)=\log|2\sin πx|$, if the value $f(x)=-∞$ is allowed;</p>
+  <p class="custom1">f) $f(x)=\log|2\sin πx|$, if the value $f(x)=-∞$ is allowed;</p>
 
-  <p class="indenthangingA">g) the sum of any two replicative functions;</p>
+  <p class="custom1">g) the sum of any two replicative functions;</p>
 
-  <p class="indenthangingA">h) a constant multiple of a replicative function;</p>
+  <p class="custom1">h) a constant multiple of a replicative function;</p>
 
-  <p class="indenthangingA">i) the function $g(x)=f(x-\lfloor{x}\rfloor)$, where $f(x)$ is replicative.</p>
+  <p class="custom1">i) the function $g(x)=f(x-\lfloor{x}\rfloor)$, where $f(x)$ is replicative.</p>
 
   <p class="exercises1"><a id="page_44"></a><strong><a href="../Text/app01.html#ch01ex_2_4_40a" id="ch01ex_2_4_40">40</a>.</strong> [<em>HM46</em>] Study the class of replicative functions; determine all replicative functions of a special type. For example, is the function in (a) of <a href="../Text/ch01.html#ch01ex_2_4_39">exercise 39</a> the only continuous replicative function? It may be interesting to study also the more general class of functions for which</p>
 
@@ -1270,17 +1277,17 @@
 
   <p class="exercises3"><a id="page_45"></a><span class="middle"><img src="../Images/ch01/arrow.png"></span>&nbsp;&nbsp;&nbsp;<strong><a href="../Text/app01.html#ch01ex_2_4_47a" id="ch01ex_2_4_47">47</a>.</strong> [<em>M31</em>] When <em>p</em> is an odd prime number, the <em>Legendre symbol</em> <span class="middle"><img src="../Images/ch01/e045_01.png"></span> is defined to be +1, 0, or −1, depending on whether $q^{(p-1)/2}\bmod p$ is 1, 0, or <em>p</em> − 1. (<a href="../Text/ch01.html#ch01ex_2_4_26">Exercise 26</a> proves that these are the only possible values.)</p>
 
-  <p class="indenthangingA">a) Given that <em>q</em> is not a multiple of <em>p</em>, show that the numbers</p>
+  <p class="custom1">a) Given that <em>q</em> is not a multiple of <em>p</em>, show that the numbers</p>
 
   <p class="center">$(-1)^{\lfloor{2kq/p}\rfloor}(2kq\bmod p)$,&nbsp;&nbsp;&nbsp;&nbsp;$0\lt k\lt p/2$,</p>
 
   <p class="indenthangingNP">are congruent in some order to the numbers $2,4,...,p-\md[1]{p}$. Hence <span class="middle"><img src="../Images/ch01/e045_03.png"></span> where <span class="middle"><img src="../Images/ch01/e045_03a.png"></span>.</p>
 
-  <p class="indenthangingA">b) Use the result of (a) to calculate <span class="middle"><img src="../Images/ch01/e045_04.png"></span>.</p>
+  <p class="custom1">b) Use the result of (a) to calculate <span class="middle"><img src="../Images/ch01/e045_04.png"></span>.</p>
 
-  <p class="indenthangingA">c) Given that <em>q</em> is odd, show that <span class="middle"><img src="../Images/ch01/e045_04a.png"></span> unless <em>q</em> is a multiple of <em>p</em>. [<em>Hint:</em> Consider the quantity $\lfloor{(p-1-2k)q/p}\rfloor$.]</p>
+  <p class="custom1">c) Given that <em>q</em> is odd, show that <span class="middle"><img src="../Images/ch01/e045_04a.png"></span> unless <em>q</em> is a multiple of <em>p</em>. [<em>Hint:</em> Consider the quantity $\lfloor{(p-1-2k)q/p}\rfloor$.]</p>
 
-  <p class="indenthangingA">d) Use the general reciprocity formula of <a href="../Text/ch01.html#ch01ex_2_4_46">exercise 46</a> to obtain the <em>law of quadratic reciprocity</em>, <span class="middle"><img src="../Images/ch01/e045_05.png"></span>, given that <em>p</em> and <em>q</em> are distinct odd primes.</p>
+  <p class="custom1">d) Use the general reciprocity formula of <a href="../Text/ch01.html#ch01ex_2_4_46">exercise 46</a> to obtain the <em>law of quadratic reciprocity</em>, <span class="middle"><img src="../Images/ch01/e045_05.png"></span>, given that <em>p</em> and <em>q</em> are distinct odd primes.</p>
 
   <p class="exercises1"><strong><a href="../Text/app01.html#ch01ex_2_4_48a" id="ch01ex_2_4_48">48</a>.</strong> [<em>M26</em>] Prove or disprove the following identities, for integers <em>m</em> and <em>n</em>:</p>
 

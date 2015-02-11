@@ -240,9 +240,9 @@
 
   <p class="indent"><em>Note:</em> The author wrote most of the preceding comments in 1964, after he had successfully completed several medium-sized software projects but before he had developed a mature programming style. Later, during the 1980s, he learned that an additional technique, called <em>structured documentation</em> or <em>literate programming</em>, is probably even more important. A summary of his current beliefs about the best way to write programs of all kinds appears in the book <em>Literate Programming</em> (Cambridge Univ. Press, first published in 1992). Incidentally, Chapter 11 of that book contains a detailed record of all bugs removed from the TeX program during the period 1978–1991.</p>
 
-  <p class="blockquote"><span class="roman_italic">Up to a point it is better to let the snags [bugs] be there<br>
+  <p class="blockquote"><em>Up to a point it is better to let the snags [bugs] be there<br>
   than to spend such time in design that there are none<br>
-  (how many decades would this course take?).</span></p>
+  (how many decades would this course take?).</em></p>
 
   <p class="attribution">— A. M. TURING, Proposals for ACE (1945)</p>
 
@@ -554,17 +554,17 @@
 
   <p class="indent"><a id="page_213"></a>The following things should be noted about trace routines in general and this one in particular.</p>
 
-  <p class="number">1) We have presented only the most interesting part of a trace program, the part that retains control while executing another program. For a trace to be useful, there must also be a routine for writing out the contents of registers, and this has not been included. Such a routine distracts from the more subtle features of a trace program, although it certainly is important; the necessary modifications are left as an exercise (see <a href="../Text/ch01c.html#ch01ex_3_5_2">exercise 2</a>).</p>
+  <p class="indent">1) We have presented only the most interesting part of a trace program, the part that retains control while executing another program. For a trace to be useful, there must also be a routine for writing out the contents of registers, and this has not been included. Such a routine distracts from the more subtle features of a trace program, although it certainly is important; the necessary modifications are left as an exercise (see <a href="../Text/ch01c.html#ch01ex_3_5_2">exercise 2</a>).</p>
 
-  <p class="number">2) Space is generally more important than time; that is, the program should be written to be as short as possible. Then the trace routine will be able to coexist with extremely large programs. The running time is consumed by output anyway.</p>
+  <p class="indent">2) Space is generally more important than time; that is, the program should be written to be as short as possible. Then the trace routine will be able to coexist with extremely large programs. The running time is consumed by output anyway.</p>
 
-  <p class="number">3) Care was taken to avoid destroying the contents of most registers; in fact, the program uses only <code>MIX</code>’s A-register. Neither the comparison indicator nor <a id="page_214"></a>the overflow toggle are affected by the trace routine. (The less we use, the less we need to restore.)</p>
+  <p class="indent">3) Care was taken to avoid destroying the contents of most registers; in fact, the program uses only <code>MIX</code>’s A-register. Neither the comparison indicator nor <a id="page_214"></a>the overflow toggle are affected by the trace routine. (The less we use, the less we need to restore.)</p>
 
-  <p class="number">4) When a jump to location <code>JUMP</code> occurs, it is not necessary to <code>‘STA AREG’</code>, since rA cannot have changed.</p>
+  <p class="indent">4) When a jump to location <code>JUMP</code> occurs, it is not necessary to <code>‘STA AREG’</code>, since rA cannot have changed.</p>
 
-  <p class="number">5) After leaving the trace routine, the J-register is not reset properly. <a href="../Text/ch01c.html#ch01ex_3_5_1">Exercise 1</a> shows how to remedy this.</p>
+  <p class="indent">5) After leaving the trace routine, the J-register is not reset properly. <a href="../Text/ch01c.html#ch01ex_3_5_1">Exercise 1</a> shows how to remedy this.</p>
 
-  <p class="number">6) The program being traced is subject to only three restrictions:</p>
+  <p class="indent">6) The program being traced is subject to only three restrictions:</p>
 
   <p class="indenthangingAA">a) It must not store anything into the locations used by the trace program.</p>
 
@@ -650,15 +650,15 @@
 
   <p class="indent">Several things about this subroutine should be noted:</p>
 
-  <p class="number">1) The sentinel constant appears as the 101st word of each buffer, and it makes a convenient test for the end of the buffer. In many applications, however, the sentinel technique will not be reliable, since any word may appear on tape. If we were doing card input, a similar method (with the 17th word of the buffer equal to a sentinel) could always be used without fear of failure; in that case, any negative word could serve as a sentinel, since <code>MIX</code> input from cards always gives nonnegative words.</p>
+  <p class="indent">1) The sentinel constant appears as the 101st word of each buffer, and it makes a convenient test for the end of the buffer. In many applications, however, the sentinel technique will not be reliable, since any word may appear on tape. If we were doing card input, a similar method (with the 17th word of the buffer equal to a sentinel) could always be used without fear of failure; in that case, any negative word could serve as a sentinel, since <code>MIX</code> input from cards always gives nonnegative words.</p>
 
-  <p class="number">2) Each buffer contains the address of the other buffer (see lines 07, 11, and 14). This “linking together” facilitates the swapping process.</p>
+  <p class="indent">2) Each buffer contains the address of the other buffer (see lines 07, 11, and 14). This “linking together” facilitates the swapping process.</p>
 
-  <p class="number">3) No <code>JBUS</code> instruction was necessary, since the next input was initiated before any word of the previous block was accessed. If the quantities <em>C</em> and <em>T</em> refer as before to computation time and tape time, the execution time per tape block is now max (<em>C, T</em>); it is therefore possible to keep the tape going at full speed if <em>C ≤ T</em>. (<em>Note</em>: <code>MIX</code> is an idealized computer in this regard, however, since no I/O errors must be treated by the program. On most machines some instructions to test the successful completion of the previous operation would be necessary just before the <code>‘IN’</code> instruction here.)</p>
+  <p class="indent">3) No <code>JBUS</code> instruction was necessary, since the next input was initiated before any word of the previous block was accessed. If the quantities <em>C</em> and <em>T</em> refer as before to computation time and tape time, the execution time per tape block is now max (<em>C, T</em>); it is therefore possible to keep the tape going at full speed if <em>C ≤ T</em>. (<em>Note</em>: <code>MIX</code> is an idealized computer in this regard, however, since no I/O errors must be treated by the program. On most machines some instructions to test the successful completion of the previous operation would be necessary just before the <code>‘IN’</code> instruction here.)</p>
 
-  <p class="number">4) To make subroutine (<a href="../Text/ch01c.html#ch01eq-lev2sec18-4">4</a>) work properly, it will be necessary to get things started out right when the program begins. Details are left to the reader (see <a href="../Text/ch01c.html#ch01ex_2_18_6">exercise 6</a>).</p>
+  <p class="indent">4) To make subroutine (<a href="../Text/ch01c.html#ch01eq-lev2sec18-4">4</a>) work properly, it will be necessary to get things started out right when the program begins. Details are left to the reader (see <a href="../Text/ch01c.html#ch01ex_2_18_6">exercise 6</a>).</p>
 
-  <p class="number">5) The <code>WORDIN</code> subroutine makes the tape unit appear to have a block length of 1 rather than 100 as far as the rest of the program is concerned. The idea of having several program-oriented records filling a single actual tape block is called <em>blocking of records</em>.</p>
+  <p class="indent">5) The <code>WORDIN</code> subroutine makes the tape unit appear to have a block length of 1 rather than 100 as far as the rest of the program is concerned. The idea of having several program-oriented records filling a single actual tape block is called <em>blocking of records</em>.</p>
 
   <p class="indent">The techniques that we have illustrated for input apply, with minor changes, to output as well (see <a href="../Text/ch01c.html#ch01ex_2_18_2">exercises 2</a> and <a href="../Text/ch01c.html#ch01ex_2_18_3">3</a>).</p>
 
@@ -918,8 +918,8 @@
 
   <p class="indent">The DYSEAC computer [Alan L. Leiner, <em>JACM</em> <strong>1</strong> (1954), 57–81] introduced the idea of input-output devices communicating directly with memory while a program is running, then interrupting the program upon completion. Such a system implies that buffering algorithms had been developed, but the details went unpublished. The first published reference to buffering techniques in the sense we have described gives a highly sophisticated approach; see O. Mock and C. J. Swift, “Programmed Input-Output Buffering,” <em>Proc. ACM Nat. Meeting</em> <strong>13</strong> (1958), paper 19, and <em>JACM</em> <strong>6</strong> (1959), 145–151. (The reader is cautioned that both articles contain a good deal of local jargon, which may take some time to understand, but neighboring articles in <em>JACM</em> <strong>6</strong> will help.) An interrupt system that enabled buffering of input and output was independently developed by E. W. Dijkstra in 1957 and 1958, in connection with B. J. Loopstra’s and C. S. Scholten’s X1 computer [see <em>Comp. J.</em> <strong>2</strong> (1959), 39–43]. Dijkstra’s doctoral thesis, “Communication with an Automatic Computer” (1959), discussed primitive synchronization operations by which users could create long chains of buffers with respect to paper tape and typewriter I/O; each buffer contained either a single character or a single number. He later developed the ideas into the important general notion of <em>semaphores</em>, which are basic to the control of all sorts of concurrent processes, not just input-output [see <em>Programming Languages</em>, ed. by F. Genuys (Academic Press, 1968), 43–112; <em>BIT</em> <strong>8</strong> (1968), 174–186; <em>Acta Informatica</em> <strong>1</strong> (1971), 115–138]. The paper “Input-Output Buffering and FORTRAN” by David E. Ferguson, <em>JACM</em> <strong>7</strong> (1960), 1–9, describes buffer circles and gives a detailed description of simple buffering with many units at once.</p>
 
-  <p class="blockquote"><span class="roman_italic">About 1,000 instructions is a reasonable upper limit<br>
-  for the complexity of problems now envisioned.</span></p>
+  <p class="blockquote"><em>About 1,000 instructions is a reasonable upper limit<br>
+  for the complexity of problems now envisioned.</em></p>
 
   <p class="attribution">— HERMAN GOLDSTINE and JOHN VON NEUMANN (1946)</p>
 </body>

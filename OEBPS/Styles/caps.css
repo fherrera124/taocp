@@ -26,7 +26,7 @@ h1 {
   margin-bottom:12pt;
   text-align:center;
   font-weight:700;
-  page-break-after:avoid
+  page-break-after:avoid;
 }
 h2 {
   margin-top:7pt;
@@ -66,34 +66,30 @@ h6 {
 .indent {
   margin-top:4pt;
   margin-bottom:4pt;
-  text-indent:25pt
+  text-indent:25pt;
 }
-.noindent {
+.uln-indent {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:25pt
+}
+.noindent {/*posiblemente lo elimine*/
   margin-top:4pt;
   margin-bottom:4pt;
   text-indent:.002pt
 }
-.attribution {
-  font-family:"Arial Unicode MS";
-  src:url(fonts/ARIALUNI.TTF);
-  margin-top:3pt;
-  margin-bottom:20pt;
-  margin-right:25pt;
-  text-align:right
-}
 .blockquote {
-  font-family:"Arial Unicode MS";
-  src:url(fonts/ARIALUNI.TTF);
   margin-top:20pt;
   margin-bottom:4pt;
-  margin-left:200pt;
-  text-align:right
-}
-.roman_italic {
-  font-family:"Arial_Italic";
-  src:url(fonts/Arial_Italic.ttf);
+  text-align:right;
+  font-family:"Arial";
   font-weight:400;
-  font-style:italic
+}
+.attribution {
+  font-family:"Arial";
+  margin-top:3pt;
+  margin-bottom:20pt;
+  text-align:right;
 }
 div.image img {
   max-width:99%;
@@ -140,11 +136,6 @@ code {
   text-align:left;
   font-size:.88em
 }
-.uln-indent {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  margin-left:25pt
-}
 .heading {
   page-break-inside:avoid
 }
@@ -182,24 +173,30 @@ code {
   text-indent:-.5pt;
   text-align:left
 }
-.indenthangingA {
+.indenthangingA { /*pendiente continuar pasando los de esta clase a custom1 o custom2*/
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:35pt;
   text-indent:-13pt;
   text-align:left
 }
+.custom1 {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:32pt;
+  text-indent:-13pt;
+}
+.custom2 {
+  margin-top:4pt;
+  margin-bottom:4pt;
+  margin-left:29pt; /*maybe 28pt, or 27pt*/
+  text-indent:-13pt;
+}
 .indenthanging {
   margin-top:4pt;
   margin-bottom:4pt;
   margin-left:25pt;
   text-indent:-19pt;
-  text-align:left
-}
-.number {
-  margin-top:4pt;
-  margin-bottom:4pt;
-  text-indent:25pt;
   text-align:left
 }
 .exercises1N {
@@ -231,12 +228,12 @@ code {
 }
 div.image4 img.img1 {
   width:95%;
-  height:95%
+  height:95%;
 }
 .image4 {
   margin-top:5pt;
   text-align:center;
-  page-break-inside:avoid
+  page-break-inside:avoid;
 }
 .middle img {
   vertical-align: middle;
@@ -249,15 +246,6 @@ div.imageL img {
   margin-top:5pt;
   text-align:left;
   margin-left:28pt;
-}
-div.image4 img.img1 {
-  width:95%;
-  height:95%;
-}
-.image4 {
-  margin-top:5pt;
-  text-align:center;
-  page-break-inside:avoid;
 }
 .indenthangingB {
   margin-top:4pt;
@@ -322,4 +310,8 @@ div.image3 img {
 }
 a {
   text-decoration: none;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }

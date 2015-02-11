@@ -458,8 +458,8 @@
 
   <p class="exercisesp">for all $m≥1$. [<em>Hint:</em> Apply Watson’s lemma to the identity of <a href="../Text/ch01b.html#ch01ex_3_3_15">exercise 15</a>.]</p>
 
-  <p class="blockquote"><span class="roman_italic">I feel as if I should succeed in doing something in mathematics,<br>
-  although I cannot see why it is so very important.</span></p>
+  <p class="blockquote"><em>I feel as if I should succeed in doing something in mathematics,<br>
+  although I cannot see why it is so very important.</em></p>
 
   <p class="attribution">— HELEN KELLER (1898)</p>
 
@@ -891,11 +891,11 @@
 
   <p class="indent"><em>Example:</em> The sequence <code>LDA 1000; INCA 1; STA 1000</code> takes exactly 5<em>u</em>.</p>
 
-  <p class="blockquote"><span class="roman_italic">And now I see with eye serene</span><br>
-  <span class="roman_italic">The very pulse of the machine.</span></p>
+  <p class="blockquote"><em>And now I see with eye serene<br>
+  The very pulse of the machine.</em></p>
 
   <p class="attribution">— WILLIAM WORDSWORTH,<br>
-  <span class="roman_italic">She Was a Phantom of Delight</span> (1804)</p>
+  <em>She Was a Phantom of Delight</em> (1804)</p>
 
   <p><strong>Summary.</strong> We have now discussed all the features of <code>MIX</code>, except for its “<code>GO</code> button,” which is discussed in <a href="../Text/ch01b.html#ch01ex_2_12_26">exercise 26</a>. Although <code>MIX</code> has nearly 150 different operations, they fit into a few simple patterns so that they can easily be remembered. <a href="../Text/ch01b.html#ch01tab03">Table 1</a> summarizes the operations for each C-setting. The name of each operator is followed in parentheses by its default F-field.</p>
 
@@ -1164,13 +1164,13 @@
 
   <p class="indent">The following points of interest should be noted about this program:</p>
 
-  <p class="number">1. Lines 01, 02, and 39 begin with an asterisk: This signifies a “comment” line that is merely explanatory, having no actual effect on the assembled program.</p>
+  <p class="indent">1. Lines 01, 02, and 39 begin with an asterisk: This signifies a “comment” line that is merely explanatory, having no actual effect on the assembled program.</p>
 
-  <p class="number">2. As in <a href="../Text/ch01b.html#ch01b_pro_m">Program M</a>, the pseudo-operation <code>EQU</code> in line 03 sets the equivalent of a symbol; in this case, the equivalent of <code>L</code> is set to 500. (In the program of lines 10–24, L represents the number of primes to be computed.) Notice that in line 05 the symbol <code>PRIME</code> gets a <em>negative</em> equivalent; the equivalent of a symbol may be any signed five-byte number. In line 07 the equivalent of <code>BUF1</code> is calculated as <code>BUF0+25</code>, namely <code>2025. MIXAL</code> provides a limited amount of arithmetic on numbers; another example appears on line 13, where the value of <code>PRIME+L</code> (in this case, 499) is calculated by the assembly program.</p>
+  <p class="indent">2. As in <a href="../Text/ch01b.html#ch01b_pro_m">Program M</a>, the pseudo-operation <code>EQU</code> in line 03 sets the equivalent of a symbol; in this case, the equivalent of <code>L</code> is set to 500. (In the program of lines 10–24, L represents the number of primes to be computed.) Notice that in line 05 the symbol <code>PRIME</code> gets a <em>negative</em> equivalent; the equivalent of a symbol may be any signed five-byte number. In line 07 the equivalent of <code>BUF1</code> is calculated as <code>BUF0+25</code>, namely <code>2025. MIXAL</code> provides a limited amount of arithmetic on numbers; another example appears on line 13, where the value of <code>PRIME+L</code> (in this case, 499) is calculated by the assembly program.</p>
 
-  <p class="number">3. The symbol <code>PRINTER</code> has been used in the F-part on lines 09, 25, and 35. The F-part, which is always enclosed in parentheses, may be numeric or symbolic, just as the other portions of the <code>ADDRESS</code> field are. Line 31 illustrates the partial field specification ‘(<code>1:4</code>)’, using a colon.</p>
+  <p class="indent">3. The symbol <code>PRINTER</code> has been used in the F-part on lines 09, 25, and 35. The F-part, which is always enclosed in parentheses, may be numeric or symbolic, just as the other portions of the <code>ADDRESS</code> field are. Line 31 illustrates the partial field specification ‘(<code>1:4</code>)’, using a colon.</p>
 
-  <p class="number">4. <code>MIXAL</code> provides several ways to specify non-instruction words. Line 41 uses the pseudo-operation <code>CON</code> to specify an ordinary constant, ‘2’; the result of <a id="page_150"></a>line 41 is to assemble the word</p>
+  <p class="indent">4. <code>MIXAL</code> provides several ways to specify non-instruction words. Line 41 uses the pseudo-operation <code>CON</code> to specify an ordinary constant, ‘2’; the result of <a id="page_150"></a>line 41 is to assemble the word</p>
 
   <div class="image"><img src="../Images/ch01/e150_01.jpg"></div>
 
@@ -1192,7 +1192,7 @@
 
   <p class="indent">The use of literal constants is a decided convenience, because it means that programmers do not have to invent symbolic names for trivial constants, nor do they have to remember to insert constants at the end of each program. Programmers can keep their minds on the central problems and not worry about such routine details. (However, the literal constants in <a href="../Text/ch01b.html#ch01b_pro_p">Program P</a> aren’t especially good examples, because we would have had a slightly better program if we had replaced lines 10 and 11 by the more efficient commands ‘<code>ENT1 1-L</code>’ and ‘<code>ENT2 3</code>’.)</p>
 
-  <p class="number">5. A good assembly language should mimic the way a programmer <em>thinks</em> about machine programs. One example of this philosophy is the use of literal constants, as we have just mentioned; another example is the use of ‘<code>*</code>’, which was explained in <a href="../Text/ch01b.html#ch01b_pro_m">Program M</a>. A third example is the idea of <em>local symbols</em> such as the symbol <code>2H</code>, which appears in the location field of lines 12, 25, and 28.</p>
+  <p class="indent">5. A good assembly language should mimic the way a programmer <em>thinks</em> about machine programs. One example of this philosophy is the use of literal constants, as we have just mentioned; another example is the use of ‘<code>*</code>’, which was explained in <a href="../Text/ch01b.html#ch01b_pro_m">Program M</a>. A third example is the idea of <em>local symbols</em> such as the symbol <code>2H</code>, which appears in the location field of lines 12, 25, and 28.</p>
 
   <p class="indent">Local symbols are special symbols whose equivalents can be <em>redefined</em> as many times as desired. A global symbol like <code>PRIME</code> has but one significance throughout a program, and if it were to appear in the location field of more than one line an error would be indicated by the assembler. But local symbols have a different nature; we write, for example, 2H (“2 here”) in the location field, and <code>2F</code> (“2 forward”) or <code>2B</code> (“2 backward”) in the address field of a <code>MIXAL</code> line:</p>
 
@@ -1211,9 +1211,9 @@
 
   <p class="indent">The idea of local symbols was introduced by M. E. Conway in 1958, in connection with an assembly program for the UNIVAC I. Local symbols relieve programmers from the necessity of choosing symbolic names for every address, when all they want to do is refer to an instruction a few lines away. There often is no appropriate name for nearby locations, so programmers have tended to introduce meaningless symbols like <code>X1</code>, <code>X2</code>, <code>X3</code>, etc., with the potential danger of duplication. Local symbols are therefore quite useful and natural in an assembly language.</p>
 
-  <p class="number">6. The address part of lines 30 and 38 is blank. This means that the assembled address will be zero. We could have left the address blank in line 17 as well, but the program would have been less readable without the redundant <code>0</code>.</p>
+  <p class="indent">6. The address part of lines 30 and 38 is blank. This means that the assembled address will be zero. We could have left the address blank in line 17 as well, but the program would have been less readable without the redundant <code>0</code>.</p>
 
-  <p class="number">7. Lines 43–47 use the pseudo-operation <code>ALF</code>, which creates a five-byte constant in <code>MIX</code> alphameric character code. For example, line 45 causes the word</p>
+  <p class="indent">7. Lines 43–47 use the pseudo-operation <code>ALF</code>, which creates a five-byte constant in <code>MIX</code> alphameric character code. For example, line 45 causes the word</p>
 
   <div class="image"><img src="../Images/ch01/e151_02.jpg"></div>
 
@@ -1221,9 +1221,9 @@
 
   <p class="indent"><em>All locations whose contents are not specified in the <span class="EmpItalic">MIXAL</span> program are ordinarily set to positive zero</em> (except the locations that are used by the loading routine, usually 3700–3999). Thus there is no need to set the other words of the title line to blanks, after line 47.</p>
 
-  <p class="number">8. Arithmetic may be used together with <code>ORIG</code>: See lines 40, 42, 48, and 50.</p>
+  <p class="indent">8. Arithmetic may be used together with <code>ORIG</code>: See lines 40, 42, 48, and 50.</p>
 
-  <p class="number">9. The last line of a complete <code>MIXAL</code> program always has the <code>OP</code>-code ‘<code>END</code>’. The address on this line is the location at which the program is to begin, once it has been loaded into memory.</p>
+  <p class="indent">9. The last line of a complete <code>MIXAL</code> program always has the <code>OP</code>-code ‘<code>END</code>’. The address on this line is the location at which the program is to begin, once it has been loaded into memory.</p>
 
   <p class="number1">10. As a final note about <a href="../Text/ch01b.html#ch01b_pro_p">Program P</a>, we can observe that the instructions have been organized so that index registers are counted towards zero, and tested against zero, whenever possible. For example, the quantity <code>J-500</code>, not <code>J</code>, is kept in rI1. Lines 26–34 are particularly noteworthy, although perhaps a bit tricky.</p>
 
@@ -1247,13 +1247,13 @@
 
   <p class="indent">Now we have seen what can be done in <code>MIXAL</code>. We conclude this section by describing the rules more carefully, and in particular we shall observe what is <em>not</em> allowed in <code>MIXAL</code>. The following comparatively few rules define the language.</p>
 
-  <p class="number">1. A <em>symbol</em> is a string of one to ten letters and/or digits, containing at least one letter. <em>Examples:</em> <code>PRIME</code>, <code>TEMP</code>, <code>20BY20</code>. The special symbols <em>d</em><code>H</code>, <em>d</em><code>F</code>, and <em>d</em><code>B</code>, where <em>d</em> is a single digit, will for the purposes of this definition be replaced by other unique symbols according to the “local symbol” convention described earlier.</p>
+  <p class="indent">1. A <em>symbol</em> is a string of one to ten letters and/or digits, containing at least one letter. <em>Examples:</em> <code>PRIME</code>, <code>TEMP</code>, <code>20BY20</code>. The special symbols <em>d</em><code>H</code>, <em>d</em><code>F</code>, and <em>d</em><code>B</code>, where <em>d</em> is a single digit, will for the purposes of this definition be replaced by other unique symbols according to the “local symbol” convention described earlier.</p>
 
-  <p class="number">2. A <em>number</em> is a string of one to ten digits. <em>Example:</em> <code>00052</code>.</p>
+  <p class="indent">2. A <em>number</em> is a string of one to ten digits. <em>Example:</em> <code>00052</code>.</p>
 
-  <p class="number">3. Each appearance of a symbol in a <code>MIXAL</code> program is said to be either a “defined symbol” or a “future reference.” A <em>defined symbol</em> is a symbol that has appeared in the <code>LOC</code> field of a preceding line of this <code>MIXAL</code> program. A <em>future reference</em> is a symbol that has not yet been defined in this way.</p>
+  <p class="indent">3. Each appearance of a symbol in a <code>MIXAL</code> program is said to be either a “defined symbol” or a “future reference.” A <em>defined symbol</em> is a symbol that has appeared in the <code>LOC</code> field of a preceding line of this <code>MIXAL</code> program. A <em>future reference</em> is a symbol that has not yet been defined in this way.</p>
 
-  <p class="number">4. An <em>atomic expression</em> is either</p>
+  <p class="indent">4. An <em>atomic expression</em> is either</p>
 
   <p class="indenthangingAB">a) a number, or</p>
 
@@ -1261,7 +1261,7 @@
 
   <p class="indenthangingAB">c) an asterisk (denoting the value of <span class="middle"><img src="../Images/ch01/star.jpg"></span>; see rules 10 and 11).</p>
 
-  <p class="number">5. An <em>expression</em> is either</p>
+  <p class="indent">5. An <em>expression</em> is either</p>
 
   <p class="indenthangingAB">a) an atomic expression, or</p>
 
@@ -1277,7 +1277,7 @@
 
   <div class="image"><img src="../Images/ch01/e154_01.jpg"></div>
 
-  <p class="number">6. An <em>A-part</em> (which is used to describe the address field of a <code>MIX</code> instruction) is either</p>
+  <p class="indent">6. An <em>A-part</em> (which is used to describe the address field of a <code>MIX</code> instruction) is either</p>
 
   <p class="indenthangingAB">a) vacuous (denoting the value zero), or</p>
 
@@ -1287,19 +1287,19 @@
 
   <p class="indenthangingAB">d) a literal constant (denoting a reference to an internally created symbol; see rule 12).</p>
 
-  <p class="number">7. An <em>index part</em> (which is used to describe the index field of a <code>MIX</code> instruction) is either</p>
+  <p class="indent">7. An <em>index part</em> (which is used to describe the index field of a <code>MIX</code> instruction) is either</p>
 
   <p class="indenthangingAB">a) vacuous (denoting the value zero), or</p>
 
   <p class="indenthangingAB">b) a comma followed by an expression (denoting the value of that expression).</p>
 
-  <p class="number">8. An <em>F-part</em> (which is used to describe the F-field of a <code>MIX</code> instruction) is either</p>
+  <p class="indent">8. An <em>F-part</em> (which is used to describe the F-field of a <code>MIX</code> instruction) is either</p>
 
   <p class="indenthangingAB">a) vacuous (denoting the normal F-setting, based on the <code>OP</code> field as shown in <a href="../Text/ch01b.html#ch01tab03">Table 1.3.1</a>–<a href="../Text/ch01b.html#ch01tab03">1</a>), or</p>
 
   <p class="indenthangingAB">b) a left parenthesis followed by an expression followed by a right parenthesis (denoting the value of the expression).</p>
 
-  <p class="number">9. A <em>W-value</em> (which is used to describe a <em>full-word</em> <code>MIX</code> constant) is either</p>
+  <p class="indent">9. A <em>W-value</em> (which is used to describe a <em>full-word</em> <code>MIX</code> constant) is either</p>
 
   <p class="indenthangingAB">a) an expression followed by an F-part (in which case a vacuous F-part denotes (0:5)), or</p>
 
@@ -1313,9 +1313,9 @@
 
   <div class="image"><img src="../Images/ch01/e155_01.jpg"></div>
 
-  <p class="number">10. The assembly process makes use of a value denoted by <span class="middle"><img src="../Images/ch01/star.jpg"></span> (called the <em>location counter</em>), which is initially zero. The value of <span class="middle"><img src="../Images/ch01/star.jpg"></span> should always be a nonnegative number that can fit in two bytes. When the location field of a line is not blank, it must contain a symbol that has not been previously defined. The equivalent of that symbol is then defined to be the current value of <span class="middle"><img src="../Images/ch01/star.jpg"></span>.</p>
+  <p class="indent">10. The assembly process makes use of a value denoted by <span class="middle"><img src="../Images/ch01/star.jpg"></span> (called the <em>location counter</em>), which is initially zero. The value of <span class="middle"><img src="../Images/ch01/star.jpg"></span> should always be a nonnegative number that can fit in two bytes. When the location field of a line is not blank, it must contain a symbol that has not been previously defined. The equivalent of that symbol is then defined to be the current value of <span class="middle"><img src="../Images/ch01/star.jpg"></span>.</p>
 
-  <p class="number">11. After processing the <code>LOC</code> field as described in rule 10, the assembly process depends on the value of the <code>OP</code> field. There are six possibilities for <code>OP</code>:</p>
+  <p class="indent">11. After processing the <code>LOC</code> field as described in rule 10, the assembly process depends on the value of the <code>OP</code> field. There are six possibilities for <code>OP</code>:</p>
 
   <p class="indenthangingAB">a) <code>OP</code> is a symbolic <code>MIX</code> operator (see <a href="../Text/ch01b.html#ch01tab03">Table 1</a> at the end of the previous section). The chart defines the normal C and F values for each <code>MIX</code> operator. In this case the <code>ADDRESS</code> should be an A-part (rule 6), followed by an index part (rule 7), followed by an F-part (rule 8). We thereby obtain four values: C, F, A, and I. The effect is to assemble the word determined by the sequence ‘<code>LDA C</code>; <code>STA WORD</code>; <code>LDA F</code>; <code>STA WORD(4:4)</code>; <code>LDA I</code>; <code>STA WORD(3:3)</code>; <code>LDA A</code>; <code>STA WORD(0:2)</code>’ into the location specified by <span class="middle"><img src="../Images/ch01/star.jpg"></span>, and to advance <span class="middle"><img src="../Images/ch01/star.jpg"></span> by 1.</p>
 
@@ -1337,9 +1337,9 @@
 
   <p class="indenthangingAB"><a id="page_156"></a>f) <code>OP</code> is ‘<code>END</code>’. The <code>ADDRESS</code> should be a W-value, which specifies in its (4:5) field the location of the instruction at which the program begins. The <code>END</code> line signals the end of a <code>MIXAL</code> program. The assembler effectively inserts additional lines just before the <code>END</code> line, in arbitrary order, corresponding to all undefined symbols and literal constants (see rules 12 and 13). Thus a symbol in the <code>LOC</code> field of the <code>END</code> line will denote the first location following the inserted words.</p>
 
-  <p class="number">12. Literal constants: A W-value that is less than 10 characters long may be enclosed between ‘<code>=</code>’ signs and used as a future reference. The effect is to create a new symbol internally and to insert a <code>CON</code> line defining that symbol, just before the <code>END</code> line (see remark 4 following <a href="../Text/ch01b.html#ch01b_pro_p">Program P</a>).</p>
+  <p class="indent">12. Literal constants: A W-value that is less than 10 characters long may be enclosed between ‘<code>=</code>’ signs and used as a future reference. The effect is to create a new symbol internally and to insert a <code>CON</code> line defining that symbol, just before the <code>END</code> line (see remark 4 following <a href="../Text/ch01b.html#ch01b_pro_p">Program P</a>).</p>
 
-  <p class="number">13. Every symbol has one and only one equivalent value; this is a fullword <code>MIX</code> number that is normally determined by the symbol’s appearance in <code>LOC</code> according to rule 10 or rule 11(b). If the symbol never appears in <code>LOC</code>, a new line is effectively inserted before the <code>END</code> line, having <code>OP</code> = ‘<code>CON</code>’ and <code>ADDRESS</code> = ‘<code>0</code>’ and the name of the symbol in <code>LOC</code>.</p>
+  <p class="indent">13. Every symbol has one and only one equivalent value; this is a fullword <code>MIX</code> number that is normally determined by the symbol’s appearance in <code>LOC</code> according to rule 10 or rule 11(b). If the symbol never appears in <code>LOC</code>, a new line is effectively inserted before the <code>END</code> line, having <code>OP</code> = ‘<code>CON</code>’ and <code>ADDRESS</code> = ‘<code>0</code>’ and the name of the symbol in <code>LOC</code>.</p>
 
   <p class="indent"><em>Note</em>: The most significant consequence of the rules above is the restriction on future references. A symbol that has not yet been defined in the <code>LOC</code> field of a previous line may not be used except as the A-part of an instruction. In particular, it may not be used (a) in connection with arithmetic operations; or (b) in the <code>ADDRESS</code> field of <code>EQU</code>, <code>ORIG</code>, or <code>CON</code>. For example,</p>
 

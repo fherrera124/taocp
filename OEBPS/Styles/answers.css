@@ -69,11 +69,11 @@ p, .uln-indent, .uln-indent1, .indenthangingA, .indenthangingAA, .uln-indentC, .
   margin-left: 38pt;
   text-indent: -20pt;
 }
-.indenthangingA {/*pendiente arreglar para ejs resueltos*/
-  margin-left: 35pt;
+.indenthangingA {
+  margin-left: 32pt;
   text-indent: -13pt;
 }
-.indenthangingAA {
+.indenthangingAA {/*chekar*/
   margin-left: 50pt;
   text-indent: -20.5pt;
 }
@@ -120,12 +120,29 @@ div.equation img{
   margin-bottom:4pt;
   text-align:right;
 }
-.roman_italic {
-  font-family:"Arial_Italic";
-  src:url(fonts/Arial_Italic.ttf);
-  font-weight:400;
-  font-style:italic;
-}
 a {
   text-decoration: none;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.caption {
+  margin-bottom:8pt;
+  text-align:center;
+  page-break-before:avoid;
+  page-break-inside:avoid;
+}
+.blockquote {
+  margin-top:20pt;
+  margin-bottom:4pt;
+  text-align:right;
+  font-family:"Arial";
+  font-weight:400;
+}
+.attribution {
+  font-family:"Arial";
+  margin-top:3pt;
+  margin-bottom:20pt;
+  text-align:right;
 }
